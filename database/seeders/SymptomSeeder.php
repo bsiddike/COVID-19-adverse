@@ -49,6 +49,7 @@ class SymptomSeeder extends Seeder
                         'symptomversion5' => $line[10] ?? null,
                     ]);
                 }
+
                 return null;
             });
 

@@ -7,7 +7,6 @@ use App\Http\Requests\Backend\Organization\CreateSymptomRequest;
 use App\Http\Requests\Backend\Organization\UpdateSymptomRequest;
 use App\Services\Auth\AuthenticatedSessionService;
 use App\Services\Backend\Organization\SymptomService;
-use App\Services\Backend\Organization\PatientService;
 use App\Supports\Constant;
 use App\Supports\Utility;
 use Exception;
@@ -39,7 +38,7 @@ class SymptomController extends Controller
      * @var SymptomService
      */
     private $symptomService;
-    
+
     /**
      * SymptomController Constructor
      *
@@ -64,11 +63,11 @@ class SymptomController extends Controller
     public function index(Request $request)
     {
         $filters = $request->except('page');
-        
+
         $symptoms = $this->symptomService->symptomPaginate($filters);
 
         return view('backend.organization.symptom.index', [
-            'symptoms' => $symptoms
+            'symptoms' => $symptoms,
         ]);
     }
 

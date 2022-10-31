@@ -27,7 +27,7 @@ class VaccineSeeder extends Seeder
                  */
                 if ($line[0] != 'VAERS_ID') {
                     return Vaccine::create([
-                        'vaers_id' => (int)$line[0] ?? null,
+                        'vaers_id' => (int) $line[0] ?? null,
                         'vax_type' => $line[1] ?? null,
                         'vax_manu' => $line[2] ?? null,
                         'vax_lot' => $line[3] ?? null,
@@ -37,6 +37,7 @@ class VaccineSeeder extends Seeder
                         'vax_name' => $line[7] ?? null,
                     ]);
                 }
+
                 return null;
             });
 

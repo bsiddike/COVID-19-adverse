@@ -11,8 +11,8 @@ use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\Model\ModelEnabledController;
 use App\Http\Controllers\Backend\Model\ModelRestoreController;
 use App\Http\Controllers\Backend\Model\ModelSoftDeleteController;
-use App\Http\Controllers\Backend\Organization\SymptomController;
 use App\Http\Controllers\Backend\Organization\PatientController;
+use App\Http\Controllers\Backend\Organization\SymptomController;
 use App\Http\Controllers\Backend\Organization\VaccineController;
 use App\Http\Controllers\Backend\OrganizationController;
 use App\Http\Controllers\Backend\Setting\PermissionController;
@@ -47,11 +47,11 @@ Route::get('cache-clear', function () {
 //Frontend
 Route::name('frontend.')->group(function () {
     Route::name('organization.')->group(function () {
-/*        Route::get('applicant-registration', [ApplicantController::class, 'create'])
-            ->name('applicants.create')->middleware('guest');
+        /*        Route::get('applicant-registration', [ApplicantController::class, 'create'])
+                    ->name('applicants.create')->middleware('guest');
 
-        Route::post('applicant-registration', [ApplicantController::class, 'store'])
-            ->name('applicants.store');*/
+                Route::post('applicant-registration', [ApplicantController::class, 'store'])
+                    ->name('applicants.store');*/
     });
 });
 
@@ -130,10 +130,10 @@ Route::prefix('backend')->group(function () {
         Route::get('/dashboard', DashboardController::class)
             ->name('dashboard');
 
-/*        Route::get('applicant-registration', [ApplicantController::class, 'create'])
-            ->name('applicants.create');
-        Route::post('applicant-registration', [ApplicantController::class, 'store'])
-            ->name('applicants.store');*/
+        /*        Route::get('applicant-registration', [ApplicantController::class, 'create'])
+                    ->name('applicants.create');
+                Route::post('applicant-registration', [ApplicantController::class, 'store'])
+                    ->name('applicants.store');*/
 
         //Common Operations
         Route::prefix('common')->name('common.')->group(function () {
@@ -194,7 +194,6 @@ Route::prefix('backend')->group(function () {
                 Route::get('ajax', [RoleController::class, 'ajax'])->name('ajax')->middleware('ajax');
             });
             Route::resource('roles', RoleController::class)->where(['role' => '([0-9]+)']);
-
         });
     });
 });

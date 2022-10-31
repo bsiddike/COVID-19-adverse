@@ -3,7 +3,6 @@
 namespace App\Repositories\Eloquent\Backend\Organization;
 
 use App\Abstracts\Repository\EloquentRepository;
-use App\Models\Backend\Organization\Enumerator;
 use App\Models\Symptom;
 use App\Services\Auth\AuthenticatedSessionService;
 use App\Supports\Constant;

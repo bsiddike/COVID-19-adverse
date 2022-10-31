@@ -63,4 +63,4 @@ class CreatePatientsTable extends Migration
     {
         Schema::dropIfExists('patients');
     }
-};
+}

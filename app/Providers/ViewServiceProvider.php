@@ -35,7 +35,7 @@ class ViewServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-/*        View::composer('backend.wizard.affected-gender', AffectedGenderComposer::class);*/
+        /*        View::composer('backend.wizard.affected-gender', AffectedGenderComposer::class);*/
         /*        View::composer('admin::layouts.partials.navbar-message', MessageDropDownComposer::class);
                 View::composer('admin::layouts.partials.navbar-shortcut', NavbarShortcutComposer::class);
                 View::composer('admin::layouts.partials.navbar-notification', NotificationDropDownComposer::class);*/

@@ -39,4 +39,4 @@ class CreateSymptomsTable extends Migration
     {
         Schema::dropIfExists('symptoms');
     }
-};
+}

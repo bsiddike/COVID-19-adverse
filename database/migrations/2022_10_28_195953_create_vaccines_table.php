@@ -4,7 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVaccinesTable extends Migration {
+class CreateVaccinesTable extends Migration
+{
     /**
      * Run the migrations.
      *
@@ -35,4 +36,4 @@ class CreateVaccinesTable extends Migration {
     {
         Schema::dropIfExists('vaccines');
     }
-};
+}

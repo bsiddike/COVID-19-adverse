@@ -158,7 +158,6 @@ Breadcrumbs::for('backend.settings.roles.edit', function (BreadcrumbTrail $trail
     $trail->push(__('common.Edit'), route('backend.settings.roles.edit', $role->id));
 });
 
-
 /****************************************** Organization ******************************************/
 
 Breadcrumbs::for('backend.organization', function (BreadcrumbTrail $trail) {

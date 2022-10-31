@@ -60,7 +60,7 @@ class PatientSeeder extends Seeder
 
                 if ($line[0] != 'VAERS_ID') {
                     return Patient::create([
-                        'vaers_id' => (int)$line[0] ?? null,
+                        'vaers_id' => (int) $line[0] ?? null,
                         'recive_date' => $line[1] ?? null,
                         'state' => $line[2] ?? null,
                         'age_yrs' => $line[3] ?? null,
@@ -94,9 +94,10 @@ class PatientSeeder extends Seeder
                         'birth_defect' => $line[31] ?? null,
                         'ofc_visit' => $line[32] ?? null,
                         'er_ed_visit' => $line[33] ?? null,
-                        'allergies' => $line[34] ?? null
+                        'allergies' => $line[34] ?? null,
                     ]);
                 }
+
                 return null;
             });
 

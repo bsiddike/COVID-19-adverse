@@ -27,11 +27,11 @@
 
 
 
-@section('breadcrumbs', \Breadcrumbs::render())
+@section('breadcrumbs', Breadcrumbs::render())
 
 @section('actions')
-    {!! \Html::linkButton('Add Setting', 'backend.settings.create', [], 'fas fa-plus', 'success') !!}
-    {!! \Html::bulkDropdown('backend.settings', 0, ['color' => 'warning']) !!}
+    {!! Html::linkButton('Add Setting', 'backend.settings.create', [], 'fas fa-plus', 'success') !!}
+    {!! Html::bulkDropdown('backend.settings', 0, ['color' => 'warning']) !!}
 @endsection
 
 @section('content')
@@ -40,7 +40,7 @@
             <div class="col-12">
                 <div class="card card-default">
                     <div class="card-header p-0 border-bottom-0">
-                        {!! \Html::cardSearch('search', 'backend.settings.index',
+                        {!! Html::cardSearch('search', 'backend.settings.index',
 ['placeholder' => 'Search Setting Name, Module, etc.',
 'class' => 'form-control', 'id' => 'search', 'data-target-table' => 'user-table']) !!}
 

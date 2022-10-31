@@ -8,6 +8,6 @@
            data-offvalue="{{ \App\Supports\Constant::DISABLED_OPTION }}"
            @if($model->enabled == \App\Supports\Constant::ENABLED_OPTION) checked @endif
     >
-{{--@else
-    @php throw new \Exception('Input must be instance of Eloquent Model'); @endphp--}}
+    {{--@else
+        @php throw new \Exception('Input must be instance of Eloquent Model'); @endphp--}}
 @endif

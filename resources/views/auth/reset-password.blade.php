@@ -20,14 +20,14 @@
         <div class="card">
             <div class="card-body login-card-body">
                 <p class="login-box-msg">{{ __('Reset your password with new one.') }}</p>
-                {!! \Form::open(['route' => 'auth.password.update', 'id' => 'password-update-form', 'method' => 'post']) !!}
+                {!! Form::open(['route' => 'auth.password.update', 'id' => 'password-update-form', 'method' => 'post']) !!}
 
-                {!! \Form::hidden('token', $token) !!}
+                {!! Form::hidden('token', $token) !!}
 
                 @if(config('auth.credential_field') == \App\Supports\Constant::LOGIN_EMAIL
                 || (config('auth.credential_field') == \App\Supports\Constant::LOGIN_OTP
                     && config('auth.credential_otp_field') == \App\Supports\Constant::OTP_EMAIL))
-                    {!! \Form::iEmail('email', __('Email'), null, true, "fas fa-envelope", "after",
+                    {!! Form::iEmail('email', __('Email'), null, true, "fas fa-envelope", "after",
                                         [ 'minlength' => '5', 'maxlength' => '250',
                                             'size' => '250', 'placeholder' => 'Enter Email Address']) !!}
                 @endif
@@ -35,23 +35,23 @@
                 @if(config('auth.credential_field') == \App\Supports\Constant::LOGIN_MOBILE
                 || (config('auth.credential_field') == \App\Supports\Constant::LOGIN_OTP
                     && config('auth.credential_otp_field') == \App\Supports\Constant::OTP_MOBILE))
-                    {!! \Form::iTel('mobile', __('Mobile'), null, true, "fas fa-mobile", "after",
+                    {!! Form::iTel('mobile', __('Mobile'), null, true, "fas fa-mobile", "after",
                                         [ 'minlength' => '11', 'maxlength' => '11',
                                             'size' => '11', 'placeholder' => 'Enter Mobile Number']) !!}
                 @endif
 
                 @if(config('auth.credential_field') == \App\Supports\Constant::LOGIN_USERNAME)
-                    {!! \Form::iText('username', __('Username'), null, true, "fas fa-user-shield", "after",
+                    {!! Form::iText('username', __('Username'), null, true, "fas fa-user-shield", "after",
                                         [ 'minlength' => '5', 'maxlength' => '250',
                                             'size' => '250', 'placeholder' => 'Enter Username']) !!}
                 @endif
 
                 @if(config('auth.credential_field') != \App\Supports\Constant::LOGIN_OTP)
-                    {!! \Form::iPassword('password', __('Password'), true, "fas fa-lock", "after",
+                    {!! Form::iPassword('password', __('Password'), true, "fas fa-lock", "after",
                                         ["placeholder" => 'Enter New Password', 'autocomplete' => "current-password",
                                          'minlength' => '5', 'maxlength' => '250', 'size' => '250']) !!}
 
-                    {!! \Form::iPassword('password_confirmation', __('Retype Password'), true, "fas fa-lock", "after",
+                    {!! Form::iPassword('password_confirmation', __('Retype Password'), true, "fas fa-lock", "after",
                                         ["placeholder" => 'Retype New Password',
                                         'minlength' => '5', 'maxlength' => '250', 'size' => '250']) !!}
 
@@ -60,7 +60,7 @@
                     @if(config('auth.allow_remembering'))
                         <div class="col-8">
                             <div class="icheck-primary">
-                                {!! \Form::checkbox('remember', 'yes', null, ['id' => 'remember_me']) !!}
+                                {!! Form::checkbox('remember', 'yes', null, ['id' => 'remember_me']) !!}
                                 <label for="remember_me">
                                     {{ __('Remember me') }}
                                 </label>
@@ -73,7 +73,7 @@
                     </div>
                     <!-- /.col -->
                 </div>
-                {!! \Form::close() !!}
+                {!! Form::close() !!}
 
                 {{--
                 <div class="social-auth-links text-center mb-3">
@@ -157,7 +157,7 @@
                         required: true,
                         minlength: {{ config('auth.minimum_password_length') }},
                         maxlength: 250,
-                        equalTo : '#password'
+                        equalTo: '#password'
                     }
                     @endif
                 },

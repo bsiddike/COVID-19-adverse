@@ -27,10 +27,10 @@
 
 @section('body-class', 'sidebar-mini')
 
-@section('breadcrumbs', \Breadcrumbs::render())
+@section('breadcrumbs', Breadcrumbs::render())
 
 @section('actions')
-    {!! \Html::backButton('admin.') !!}
+    {!! Html::backButton('admin.') !!}
 @endsection
 
 @section('content')

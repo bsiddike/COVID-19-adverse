@@ -24,11 +24,11 @@
 
 
 
-@section('breadcrumbs', \Breadcrumbs::render())
+@section('breadcrumbs', Breadcrumbs::render())
 
 @section('actions')
-    {!! \Html::linkButton('Add User', 'backend.settings.users.create', [], 'fas fa-plus', 'success') !!}
-    {!! \Html::bulkDropdown('backend.settings.users', 0, ['color' => 'warning']) !!}
+    {!! Html::linkButton('Add User', 'backend.settings.users.create', [], 'fas fa-plus', 'success') !!}
+    {!! Html::bulkDropdown('backend.settings.users', 0, ['color' => 'warning']) !!}
 
 @endsection
 
@@ -39,7 +39,7 @@
                 <div class="card card-default">
                     @if(!empty($users))
                         <div class="card-body p-0">
-                            {!! \Html::cardSearch('search', 'backend.settings.users.index',
+                            {!! Html::cardSearch('search', 'backend.settings.users.index',
         ['placeholder' => 'Search Role Name, Code, Guard, Status, etc.',
         'class' => 'form-control', 'id' => 'search', 'data-target-table' => 'user-table']) !!}
                             <div class="table-responsive">
@@ -73,11 +73,11 @@
                                             </td>
                                             <td class="text-left">{{ $user->email ?? '-' }}</td>
                                             <td class="text-center exclude-search">
-                                                {!! \Html::enableToggle($user) !!}
+                                                {!! Html::enableToggle($user) !!}
                                             </td>
                                             <td class="text-center">{{ $user->created_at->format(config('backend.datetime')) ?? '' }}</td>
                                             <td class="exclude-search pr-3 text-center align-middle">
-                                                {!! \Html::actionDropdown('backend.settings.users', $user->id, array_merge(['show', 'edit'], ($user->deleted_at == null) ? ['delete'] : ['restore'])) !!}
+                                                {!! Html::actionDropdown('backend.settings.users', $user->id, array_merge(['show', 'edit'], ($user->deleted_at == null) ? ['delete'] : ['restore'])) !!}
                                             </td>
                                         </tr>
                                     @empty

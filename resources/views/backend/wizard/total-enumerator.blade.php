@@ -2,13 +2,14 @@
     <!-- small box -->
     <div class="small-box bg-success">
         <div class="inner">
-            <h3>{{ $enumerators ?? 0 }}</h3>
+            <h3>{{ $symptoms ?? 0 }}</h3>
 
-            <p>{!! __('enumerator.Enumerators') !!}</p>
+            <p>Symptoms</p>
         </div>
         <div class="icon">
-            <i class="fas fa-user-check"></i>
+            <i class="fas fa-viruses"></i>
         </div>
-        <a href="{{ route('backend.organization.enumerators.index') }}" class="small-box-footer">{!! __('common.More info') !!} <i class="fas fa-arrow-circle-right"></i></a>
+        <a href="{{ route('backend.organization.patients.index') }}"
+           class="small-box-footer">{!! __('common.More info') !!} <i class="fas fa-arrow-circle-right"></i></a>
     </div>
 </div>

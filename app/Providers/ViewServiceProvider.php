@@ -2,9 +2,7 @@
 
 namespace App\Providers;
 
-use App\Http\View\Composers\MessageDropDownComposer;
-use App\Http\View\Composers\NavbarShortcutComposer;
-use App\Http\View\Composers\NotificationDropDownComposer;
+use App\Http\View\Composers\AffectedGenderComposer;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -37,9 +35,10 @@ class ViewServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer('admin::layouts.partials.navbar-message', MessageDropDownComposer::class);
-        View::composer('admin::layouts.partials.navbar-shortcut', NavbarShortcutComposer::class);
-        View::composer('admin::layouts.partials.navbar-notification', NotificationDropDownComposer::class);
+        /*        View::composer('backend.wizard.affected-gender', AffectedGenderComposer::class);*/
+        /*        View::composer('admin::layouts.partials.navbar-message', MessageDropDownComposer::class);
+                View::composer('admin::layouts.partials.navbar-shortcut', NavbarShortcutComposer::class);
+                View::composer('admin::layouts.partials.navbar-notification', NotificationDropDownComposer::class);*/
         /*        View::composer(['admin::layouts.partials.navbar-user', 'admin::layouts.partials.menu-sidebar'], UserDropDownComposer::class);*/
     }
 }

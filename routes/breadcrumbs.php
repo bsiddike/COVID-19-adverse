@@ -1,14 +1,10 @@
 <?php
 
 use App\Models\Backend\Organization\Enumerator;
-use App\Models\Backend\Organization\Survey;
-use App\Models\Backend\Setting\Catalog;
-use App\Models\Backend\Setting\City;
-use App\Models\Backend\Setting\Country;
 use App\Models\Backend\Setting\Permission;
 use App\Models\Backend\Setting\Role;
-use App\Models\Backend\Setting\State;
 use App\Models\Backend\Setting\User;
+use App\Models\Patient;
 use Diglactic\Breadcrumbs\Breadcrumbs;
 use Diglactic\Breadcrumbs\Generator as BreadcrumbTrail;
 
@@ -162,118 +158,6 @@ Breadcrumbs::for('backend.settings.roles.edit', function (BreadcrumbTrail $trail
     $trail->push(__('common.Edit'), route('backend.settings.roles.edit', $role->id));
 });
 
-/****************************************** Catalog ******************************************/
-
-Breadcrumbs::for('backend.settings.catalogs.index', function (BreadcrumbTrail $trail) {
-    $trail->parent('backend.settings');
-
-    $trail->push(__('menu-sidebar.Catalogs'), route('backend.settings.catalogs.index'));
-});
-
-Breadcrumbs::for('backend.settings.catalogs.create', function (BreadcrumbTrail $trail) {
-    $trail->parent('backend.settings.catalogs.index');
-
-    $trail->push(__('common.Add'), route('backend.settings.catalogs.create'));
-});
-
-Breadcrumbs::for('backend.settings.catalogs.show', function (BreadcrumbTrail $trail, $catalog) {
-    $trail->parent('backend.settings.catalogs.index');
-
-    $catalog = ($catalog instanceof Catalog) ? $catalog : $catalog[0];
-
-    $trail->push($catalog->name, route('backend.settings.catalogs.show', $catalog->id));
-});
-
-Breadcrumbs::for('backend.settings.catalogs.edit', function (BreadcrumbTrail $trail, Catalog $catalog) {
-    $trail->parent('backend.settings.catalogs.show', [$catalog]);
-
-    $trail->push(__('common.Edit'), route('backend.settings.catalogs.edit', $catalog->id));
-});
-
-/****************************************** Country ******************************************/
-
-Breadcrumbs::for('backend.settings.countries.index', function (BreadcrumbTrail $trail) {
-    $trail->parent('backend.settings');
-
-    $trail->push(__('menu-sidebar.Countries'), route('backend.settings.countries.index'));
-});
-
-Breadcrumbs::for('backend.settings.countries.create', function (BreadcrumbTrail $trail) {
-    $trail->parent('backend.settings.countries.index');
-
-    $trail->push(__('common.Add'), route('backend.settings.countries.create'));
-});
-
-Breadcrumbs::for('backend.settings.countries.show', function (BreadcrumbTrail $trail, $country) {
-    $trail->parent('backend.settings.countries.index');
-
-    $country = ($country instanceof Country) ? $country : $country[0];
-
-    $trail->push($country->name, route('backend.settings.countries.show', $country->id));
-});
-
-Breadcrumbs::for('backend.settings.countries.edit', function (BreadcrumbTrail $trail, Country $country) {
-    $trail->parent('backend.settings.countries.show', [$country]);
-
-    $trail->push(__('common.Edit'), route('backend.settings.countries.edit', $country->id));
-});
-
-/****************************************** State ******************************************/
-
-Breadcrumbs::for('backend.settings.states.index', function (BreadcrumbTrail $trail) {
-    $trail->parent('backend.settings');
-
-    $trail->push(__('menu-sidebar.States'), route('backend.settings.states.index'));
-});
-
-Breadcrumbs::for('backend.settings.states.create', function (BreadcrumbTrail $trail) {
-    $trail->parent('backend.settings.states.index');
-
-    $trail->push(__('common.Add'), route('backend.settings.states.create'));
-});
-
-Breadcrumbs::for('backend.settings.states.show', function (BreadcrumbTrail $trail, $state) {
-    $trail->parent('backend.settings.states.index');
-
-    $state = ($state instanceof State) ? $state : $state[0];
-
-    $trail->push($state->name ?? '', route('backend.settings.states.show', $state->id));
-});
-
-Breadcrumbs::for('backend.settings.states.edit', function (BreadcrumbTrail $trail, State $state) {
-    $trail->parent('backend.settings.states.show', [$state]);
-
-    $trail->push(__('common.Edit'), route('backend.settings.states.edit', $state->id));
-});
-
-/****************************************** City ******************************************/
-
-Breadcrumbs::for('backend.settings.cities.index', function (BreadcrumbTrail $trail) {
-    $trail->parent('backend.settings');
-
-    $trail->push(__('menu-sidebar.Cities'), route('backend.settings.cities.index'));
-});
-
-Breadcrumbs::for('backend.settings.cities.create', function (BreadcrumbTrail $trail) {
-    $trail->parent('backend.settings.cities.index');
-
-    $trail->push(__('common.Add'), route('backend.settings.cities.create'));
-});
-
-Breadcrumbs::for('backend.settings.cities.show', function (BreadcrumbTrail $trail, $city) {
-    $trail->parent('backend.settings.cities.index');
-
-    $city = ($city instanceof City) ? $city : $city[0];
-
-    $trail->push($city->name, route('backend.settings.cities.show', $city->id));
-});
-
-Breadcrumbs::for('backend.settings.cities.edit', function (BreadcrumbTrail $trail, City $city) {
-    $trail->parent('backend.settings.cities.show', [$city]);
-
-    $trail->push(__('common.Edit'), route('backend.settings.cities.edit', $city->id));
-});
-
 /****************************************** Organization ******************************************/
 
 Breadcrumbs::for('backend.organization', function (BreadcrumbTrail $trail) {
@@ -284,56 +168,84 @@ Breadcrumbs::for('backend.organization', function (BreadcrumbTrail $trail) {
 
 /****************************************** Survey ******************************************/
 
-Breadcrumbs::for('backend.organization.surveys.index', function (BreadcrumbTrail $trail) {
+Breadcrumbs::for('backend.organization.patients.index', function (BreadcrumbTrail $trail) {
     $trail->parent('backend.organization');
 
-    $trail->push(__('menu-sidebar.Surveys'), route('backend.organization.surveys.index'));
+    $trail->push(__('menu-sidebar.Surveys'), route('backend.organization.patients.index'));
 });
 
-Breadcrumbs::for('backend.organization.surveys.create', function (BreadcrumbTrail $trail) {
-    $trail->parent('backend.organization.surveys.index');
+Breadcrumbs::for('backend.organization.patients.create', function (BreadcrumbTrail $trail) {
+    $trail->parent('backend.organization.patients.index');
 
-    $trail->push(__('common.Add'), route('backend.organization.surveys.create'));
+    $trail->push(__('common.Add'), route('backend.organization.patients.create'));
 });
 
-Breadcrumbs::for('backend.organization.surveys.show', function (BreadcrumbTrail $trail, $survey) {
-    $trail->parent('backend.organization.surveys.index');
+Breadcrumbs::for('backend.organization.patients.show', function (BreadcrumbTrail $trail, $patient) {
+    $trail->parent('backend.organization.patients.index');
 
-    $survey = ($survey instanceof Survey) ? $survey : $survey[0];
+    $patient = ($patient instanceof Patient) ? $patient : $patient[0];
 
-    $trail->push($survey->name, route('backend.organization.surveys.show', $survey->id));
+    $trail->push($patient->name, route('backend.organization.patients.show', $patient->id));
 });
 
-Breadcrumbs::for('backend.organization.surveys.edit', function (BreadcrumbTrail $trail, Survey $survey) {
-    $trail->parent('backend.organization.surveys.show', [$survey]);
+Breadcrumbs::for('backend.organization.patients.edit', function (BreadcrumbTrail $trail, Patient $patient) {
+    $trail->parent('backend.organization.patients.show', [$patient]);
 
-    $trail->push(__('common.Edit'), route('backend.organization.surveys.edit', $survey->id));
+    $trail->push(__('common.Edit'), route('backend.organization.patients.edit', $patient->id));
 });
 
 /****************************************** Enumerator ******************************************/
 
-Breadcrumbs::for('backend.organization.enumerators.index', function (BreadcrumbTrail $trail) {
+Breadcrumbs::for('backend.organization.symptoms.index', function (BreadcrumbTrail $trail) {
     $trail->parent('backend.organization');
 
-    $trail->push(__('menu-sidebar.Enumerators'), route('backend.organization.enumerators.index'));
+    $trail->push(__('menu-sidebar.Enumerators'), route('backend.organization.symptoms.index'));
 });
 
-Breadcrumbs::for('backend.organization.enumerators.create', function (BreadcrumbTrail $trail) {
-    $trail->parent('backend.organization.enumerators.index');
+Breadcrumbs::for('backend.organization.symptoms.create', function (BreadcrumbTrail $trail) {
+    $trail->parent('backend.organization.symptoms.index');
 
-    $trail->push(__('common.Add'), route('backend.organization.enumerators.create'));
+    $trail->push(__('common.Add'), route('backend.organization.symptoms.create'));
 });
 
-Breadcrumbs::for('backend.organization.enumerators.show', function (BreadcrumbTrail $trail, $enumerator) {
-    $trail->parent('backend.organization.enumerators.index');
+Breadcrumbs::for('backend.organization.symptoms.show', function (BreadcrumbTrail $trail, $symptom) {
+    $trail->parent('backend.organization.symptoms.index');
 
-    $enumerator = ($enumerator instanceof Enumerator) ? $enumerator : $enumerator[0];
+    $symptom = ($symptom instanceof Enumerator) ? $symptom : $symptom[0];
 
-    $trail->push($enumerator->name, route('backend.organization.enumerators.show', $enumerator->id));
+    $trail->push($symptom->name, route('backend.organization.symptoms.show', $symptom->id));
 });
 
-Breadcrumbs::for('backend.organization.enumerators.edit', function (BreadcrumbTrail $trail, Enumerator $enumerator) {
-    $trail->parent('backend.organization.enumerators.show', [$enumerator]);
+Breadcrumbs::for('backend.organization.symptoms.edit', function (BreadcrumbTrail $trail, Enumerator $symptom) {
+    $trail->parent('backend.organization.symptoms.show', [$symptom]);
 
-    $trail->push(__('common.Edit'), route('backend.organization.enumerators.edit', $enumerator->id));
+    $trail->push(__('common.Edit'), route('backend.organization.symptoms.edit', $symptom->id));
+});
+
+/****************************************** Enumerator ******************************************/
+
+Breadcrumbs::for('backend.organization.vaccines.index', function (BreadcrumbTrail $trail) {
+    $trail->parent('backend.organization');
+
+    $trail->push(__('menu-sidebar.Enumerators'), route('backend.organization.vaccines.index'));
+});
+
+Breadcrumbs::for('backend.organization.vaccines.create', function (BreadcrumbTrail $trail) {
+    $trail->parent('backend.organization.vaccines.index');
+
+    $trail->push(__('common.Add'), route('backend.organization.vaccines.create'));
+});
+
+Breadcrumbs::for('backend.organization.vaccines.show', function (BreadcrumbTrail $trail, $symptom) {
+    $trail->parent('backend.organization.vaccines.index');
+
+    $symptom = ($symptom instanceof Enumerator) ? $symptom : $symptom[0];
+
+    $trail->push($symptom->name, route('backend.organization.vaccines.show', $symptom->id));
+});
+
+Breadcrumbs::for('backend.organization.vaccines.edit', function (BreadcrumbTrail $trail, Enumerator $symptom) {
+    $trail->parent('backend.organization.vaccines.show', [$symptom]);
+
+    $trail->push(__('common.Edit'), route('backend.organization.vaccines.edit', $symptom->id));
 });

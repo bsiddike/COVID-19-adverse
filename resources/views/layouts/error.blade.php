@@ -47,15 +47,15 @@
                             <i class="fas fa-exclamation-triangle text-@yield('text-color', 'danger')"></i> @yield('message')
                         </h3>
 
-{{--                        <p>
-                            We could not find the page you were looking for.
-                            Meanwhile, you may <a href="../../index.html">return to dashboard</a> or try using the search
-                            form.
-                        </p>--}}
+                        {{--                        <p>
+                                                    We could not find the page you were looking for.
+                                                    Meanwhile, you may <a href="../../index.html">return to dashboard</a> or try using the search
+                                                    form.
+                                                </p>--}}
 
-                        {!! \Form::open(['link' => '#', 'method' => 'get', 'class' => 'search-form']) !!}
+                        {!! Form::open(['link' => '#', 'method' => 'get', 'class' => 'search-form']) !!}
                         <div class="input-group">
-                            {!! \Form::search('search', \request()->query('search'),
+                            {!! Form::search('search', request()->query('search'),
                                     ['class' => 'form-control', 'id' => 'search-from',
                                     'placeholder' => 'Type you search ...']) !!}
                             <div class="input-group-append">
@@ -65,7 +65,7 @@
                             </div>
                         </div>
                         <!-- /.input-group -->
-                        {!! \Form::close() !!}
+                        {!! Form::close() !!}
                     </div>
                     <!-- /.error-content -->
                 </div>
@@ -96,4 +96,4 @@
     <script src="{{ asset('assets/js/utility.min.js') }}"></script>
     <!-- inline js -->
     @include('layouts.includes.page-script')
-    @endsection
+@endsection

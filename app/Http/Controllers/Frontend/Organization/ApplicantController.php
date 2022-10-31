@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Frontend\Organization;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Frontend\Organization\ApplicantRequest;
-use App\Services\Backend\Organization\EnumeratorService;
-use App\Services\Backend\Organization\SurveyService;
+use App\Services\Backend\Organization\PatientService;
+use App\Services\Backend\Organization\SymptomService;
 use App\Services\Backend\Setting\CatalogService;
 use App\Services\Backend\Setting\ExamLevelService;
 use App\Services\Backend\Setting\StateService;
@@ -24,12 +24,12 @@ use Psr\Container\NotFoundExceptionInterface;
 class ApplicantController extends Controller
 {
     /**
-     * @var EnumeratorService
+     * @var SymptomService
      */
     private $enumeratorService;
 
     /**
-     * @var SurveyService
+     * @var PatientService
      */
     private $surveyService;
 
@@ -51,17 +51,17 @@ class ApplicantController extends Controller
     /**
      * ApplicantController Constructor
      *
-     * @param  EnumeratorService  $enumeratorService
-     * @param  SurveyService  $surveyService
+     * @param  SymptomService  $enumeratorService
+     * @param  PatientService  $surveyService
      * @param  CatalogService  $catalogService
      * @param  ExamLevelService  $examLevelService
      * @param  StateService  $stateService
      */
-    public function __construct(EnumeratorService $enumeratorService,
-        SurveyService $surveyService,
-        CatalogService $catalogService,
-        ExamLevelService $examLevelService,
-        StateService $stateService)
+    public function __construct(SymptomService $enumeratorService,
+                                PatientService $surveyService,
+                                CatalogService $catalogService,
+                                ExamLevelService $examLevelService,
+                                StateService $stateService)
     {
         $this->enumeratorService = $enumeratorService;
         $this->surveyService = $surveyService;

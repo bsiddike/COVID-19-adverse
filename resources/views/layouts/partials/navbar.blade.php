@@ -65,9 +65,9 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('common.Cancel') }}</button>
-                {!! \Form::open(['route' => 'auth.logout']) !!}
+                {!! Form::open(['route' => 'auth.logout']) !!}
                 <button type="submit" class="btn btn-primary">{{ __('common.Sign out') }}</button>
-                {!! \Form::close() !!}
+                {!! Form::close() !!}
             </div>
         </div>
     </div>

@@ -23,10 +23,10 @@
 @endpush
 
 
-@section('breadcrumbs', \Breadcrumbs::render(Route::getCurrentRoute()->getName()))
+@section('breadcrumbs', Breadcrumbs::render(Route::getCurrentRoute()->getName()))
 
 @section('actions')
-    {!! \Html::backButton('backend.settings.permissions.index') !!}
+    {!! Html::backButton('backend.settings.permissions.index') !!}
 @endsection
 
 @section('content')
@@ -34,9 +34,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card card-default">
-                    {!! \Form::open(['route' => 'backend.settings.permissions.store', 'id' => 'permission-form']) !!}
+                    {!! Form::open(['route' => 'backend.settings.permissions.store', 'id' => 'permission-form']) !!}
                     @include('backend.setting.permission.form')
-                    {!! \Form::close() !!}
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>

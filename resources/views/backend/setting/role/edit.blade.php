@@ -17,7 +17,7 @@
 @section('breadcrumbs', Breadcrumbs::render(Route::getCurrentRoute()->getName(), $role))
 
 @section('actions')
-    {!! \Html::backButton('backend.settings.roles.index') !!}
+    {!! Html::backButton('backend.settings.roles.index') !!}
 @endsection
 
 @section('content')
@@ -25,9 +25,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                    {!! \Form::open(['route' => ['backend.settings.roles.update', $role->id], 'method' => 'put', 'id' => 'role-form']) !!}
+                    {!! Form::open(['route' => ['backend.settings.roles.update', $role->id], 'method' => 'put', 'id' => 'role-form']) !!}
                     @include('backend.setting.role.form')
-                    {!! \Form::close() !!}
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>

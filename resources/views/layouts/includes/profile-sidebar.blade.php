@@ -47,16 +47,16 @@
 
         <div class="list-group list-group-flush mt-3">
             <a href="{{ route('backend.settings.users.show', $user->id) }}"
-               class="rounded list-group-item list-group-item-action @if(\Route::is('backend.settings.users.show')) active @endif">
-                <span class="@if(\Route::is('backend.settings.users.show')) font-weight-bold @endif">
+               class="rounded list-group-item list-group-item-action @if(Route::is('backend.settings.users.show')) active @endif">
+                <span class="@if(Route::is('backend.settings.users.show')) font-weight-bold @endif">
                 <i class="fa fa-user-circle mr-2"></i>
                     Profile Detail
                 </span>
             </a>
 
             <a href="{{ route('backend.settings.users.edit', $user->id) }}"
-               class="rounded list-group-item list-group-item-action @if(\Route::is('backend.settings.users.edit')) active @endif">
-                <span class="@if(\Route::is('backend.settings.users.edit')) font-weight-bold @endif">
+               class="rounded list-group-item list-group-item-action @if(Route::is('backend.settings.users.edit')) active @endif">
+                <span class="@if(Route::is('backend.settings.users.edit')) font-weight-bold @endif">
                 <i class="fa fa-key mr-2"></i>
                     Password Reset
                 </span>

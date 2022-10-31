@@ -8,7 +8,7 @@
                 <span class="d-none d-md-inline-flex ml-2">{!!  __('common.Actions') !!}</span>
             </button>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                @if(in_array('edit', $options['actions']) && \Route::has($resourceRouteName . '.edit'))
+                @if(in_array('edit', $options['actions']) && Route::has($resourceRouteName . '.edit'))
                     @can($resourceRouteName . '.edit')
                         <a href="{{ route($resourceRouteName . '.edit', $id) }}" title="Edit"
                            class="dropdown-item py-2 px-3 link-muted">
@@ -16,7 +16,7 @@
                     @endcan
                 @endif
 
-                @if(in_array('delete', $options['actions']) && \Route::has($resourceRouteName . '.destroy'))
+                @if(in_array('delete', $options['actions']) && Route::has($resourceRouteName . '.destroy'))
                     @can($resourceRouteName . '.destroy')
                         <a href="{{ route('backend.common.delete', [$resourceRouteName, $id]) }}" title="Delete"
                            class="dropdown-item py-2 px-3 link-muted delete-btn">
@@ -25,7 +25,7 @@
                     @endcan
                 @endif
 
-                @if(in_array('restore', $options['actions']) && \Route::has($resourceRouteName . '.restore'))
+                @if(in_array('restore', $options['actions']) && Route::has($resourceRouteName . '.restore'))
                     @can($resourceRouteName . '.restore')
                         <a href="{{ route('backend.common.restore', [$resourceRouteName, $id]) }}" title="Restore"
                            class="dropdown-item py-2 px-3 link-muted delete-btn">

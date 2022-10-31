@@ -1,0 +1,11 @@
+
+In Container.php line 879:
+                                                                              
+  Target class [App\Services\Backend\Setting\CatalogService] does not exist.  
+                                                                              
+
+In Container.php line 877:
+                                                                    
+  Class App\Services\Backend\Setting\CatalogService does not exist  
+                                                                    
+

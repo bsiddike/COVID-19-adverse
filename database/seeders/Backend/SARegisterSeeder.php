@@ -4,7 +4,6 @@ namespace Database\Seeders\Backend;
 
 use App\Models\Backend\Setting\Role;
 use App\Models\Backend\Setting\User;
-use App\Repositories\Eloquent\Backend\Common\AddressBookRepository;
 use App\Repositories\Eloquent\Backend\Setting\UserRepository;
 use App\Services\Backend\Common\FileUploadService;
 use App\Supports\Constant;
@@ -28,24 +27,16 @@ class SARegisterSeeder extends Seeder
     private $fileUploadService;
 
     /**
-     * @var AddressBookRepository
-     */
-    private $addressBookRepository;
-
-    /**
      * UserSeeder constructor.
      *
      * @param  UserRepository  $userRepository
      * @param  FileUploadService  $fileUploadService
-     * @param  AddressBookRepository  $addressBookRepository
      */
     public function __construct(UserRepository $userRepository,
-        FileUploadService $fileUploadService,
-        AddressBookRepository $addressBookRepository)
+        FileUploadService $fileUploadService)
     {
         $this->userRepository = $userRepository;
         $this->fileUploadService = $fileUploadService;
-        $this->addressBookRepository = $addressBookRepository;
     }
 
     /**

@@ -11,14 +11,12 @@ use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\Model\ModelEnabledController;
 use App\Http\Controllers\Backend\Model\ModelRestoreController;
 use App\Http\Controllers\Backend\Model\ModelSoftDeleteController;
-use App\Http\Controllers\Backend\Organization\EnumeratorController;
-use App\Http\Controllers\Backend\Organization\SurveyController;
+use App\Http\Controllers\Backend\Organization\SymptomController;
+use App\Http\Controllers\Backend\Organization\PatientController;
+use App\Http\Controllers\Backend\Organization\VaccineController;
 use App\Http\Controllers\Backend\OrganizationController;
-use App\Http\Controllers\Backend\Setting\CatalogController;
-use App\Http\Controllers\Backend\Setting\ExamGroupController;
 use App\Http\Controllers\Backend\Setting\PermissionController;
 use App\Http\Controllers\Backend\Setting\RoleController;
-use App\Http\Controllers\Backend\Setting\StateController;
 use App\Http\Controllers\Backend\Setting\UserController;
 use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Frontend\Organization\ApplicantController;
@@ -27,14 +25,14 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /**
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
+ * |--------------------------------------------------------------------------
+ * | Web Routes
+ * |--------------------------------------------------------------------------
+ * |
+ * | Here is where you can register web routes for your application. These
+ * | routes are loaded by the RouteServiceProvider within a group which
+ * | contains the "web" middleware group. Now create something great!
+ * |
  */
 Route::get('/', function () {
     return redirect()->to('backend/login');
@@ -47,15 +45,15 @@ Route::get('cache-clear', function () {
 });
 
 //Frontend
-/*Route::name('frontend.')->group(function () {
+Route::name('frontend.')->group(function () {
     Route::name('organization.')->group(function () {
-        Route::get('applicant-registration', [ApplicantController::class, 'create'])
+/*        Route::get('applicant-registration', [ApplicantController::class, 'create'])
             ->name('applicants.create')->middleware('guest');
 
         Route::post('applicant-registration', [ApplicantController::class, 'store'])
-            ->name('applicants.store');
+            ->name('applicants.store');*/
     });
-});*/
+});
 
 Route::prefix('backend')->group(function () {
     /**
@@ -131,10 +129,11 @@ Route::prefix('backend')->group(function () {
     Route::middleware(['auth'])->name('backend.')->group(function () {
         Route::get('/dashboard', DashboardController::class)
             ->name('dashboard');
-        Route::get('applicant-registration', [ApplicantController::class, 'create'])
+
+/*        Route::get('applicant-registration', [ApplicantController::class, 'create'])
             ->name('applicants.create');
         Route::post('applicant-registration', [ApplicantController::class, 'store'])
-            ->name('applicants.store');
+            ->name('applicants.store');*/
 
         //Common Operations
         Route::prefix('common')->name('common.')->group(function () {
@@ -147,19 +146,25 @@ Route::prefix('backend')->group(function () {
         Route::get('organization', OrganizationController::class)->name('organization');
         Route::prefix('organization')->name('organization.')->group(function () {
             //Survey
-            Route::prefix('surveys')->name('surveys.')->group(function () {
-                Route::patch('{survey}/restore', [SurveyController::class, 'restore'])->name('restore');
-                Route::get('export', [SurveyController::class, 'export'])->name('export');
+            Route::prefix('patients')->name('patients.')->group(function () {
+                Route::patch('{patient}/restore', [PatientController::class, 'restore'])->name('restore');
+                Route::get('export', [PatientController::class, 'export'])->name('export');
             });
-            Route::resource('surveys', SurveyController::class)->where(['survey' => '([0-9]+)']);
+            Route::resource('patients', PatientController::class)->where(['patient' => '([0-9]+)']);
 
             //Enumerator
-            Route::prefix('enumerators')->name('enumerators.')->group(function () {
-                Route::patch('{survey}/restore', [EnumeratorController::class, 'restore'])->name('restore');
-                Route::get('export', [EnumeratorController::class, 'export'])->name('export');
-                Route::get('ajax', [EnumeratorController::class, 'ajax'])->name('ajax')->middleware('ajax');
+            Route::prefix('symptoms')->name('symptoms.')->group(function () {
+                Route::get('export', [VaccineController::class, 'export'])->name('export');
+                Route::get('ajax', [VaccineController::class, 'ajax'])->name('ajax')->middleware('ajax');
             });
-            Route::resource('enumerators', EnumeratorController::class)->where(['enumerator' => '([0-9]+)']);
+            Route::resource('symptoms', SymptomController::class)->where(['symptom' => '([0-9]+)']);
+
+            //Enumerator
+            Route::prefix('vaccines')->name('vaccines.')->group(function () {
+                Route::get('export', [VaccineController::class, 'export'])->name('export');
+                Route::get('ajax', [VaccineController::class, 'ajax'])->name('ajax')->middleware('ajax');
+            });
+            Route::resource('vaccines', VaccineController::class)->where(['vaccine' => '([0-9]+)']);
         });
 
         //Setting
@@ -190,27 +195,6 @@ Route::prefix('backend')->group(function () {
             });
             Route::resource('roles', RoleController::class)->where(['role' => '([0-9]+)']);
 
-            //Catalogs
-            Route::prefix('catalogs')->name('catalogs.')->group(function () {
-                Route::patch('{catalog}/restore', [CatalogController::class, 'restore'])->name('restore');
-                Route::get('export', [CatalogController::class, 'export'])->name('export');
-                Route::get('ajax', [CatalogController::class, 'ajax'])->name('ajax')->middleware('ajax');
-            });
-            Route::resource('catalogs', CatalogController::class)->where(['catalog' => '([0-9]+)']);
-
-            //State
-            Route::prefix('states')->name('states.')->group(function () {
-                Route::patch('{state}/restore', [StateController::class, 'restore'])->name('restore');
-                Route::get('/export', [StateController::class, 'export'])->name('export');
-                Route::get('ajax', [StateController::class, 'ajax'])->name('ajax')->middleware('ajax');
-            });
-            Route::resource('states', StateController::class)->where(['state' => '([0-9]+)']);
-
-            //Exam Group
-            Route::prefix('exam-groups')->name('exam-groups.')->group(function () {
-                Route::get('ajax', [ExamGroupController::class, 'ajax'])->name('ajax')->middleware('ajax')->withoutMiddleware('auth');
-            });
-            Route::resource('exam-groups', ExamGroupController::class)->where(['exam-group' => '([0-9]+)']);
         });
     });
 });

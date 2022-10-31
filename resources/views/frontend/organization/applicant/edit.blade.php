@@ -23,10 +23,10 @@
 @endpush
 
 
-@section('breadcrumbs', \Breadcrumbs::render(Route::getCurrentRoute()->getName(), $enumerator))
+@section('breadcrumbs', Breadcrumbs::render(Route::getCurrentRoute()->getName(), $enumerator))
 
 @section('actions')
-    {!! \Html::backButton('backend.organization.enumerators.index') !!}
+    {!! Html::backButton('backend.organization.enumerators.index') !!}
 @endsection
 
 @section('content')
@@ -34,9 +34,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                    {!! \Form::open(['route' => ['backend.organization.enumerators.update', $enumerator->id], 'method' => 'put', 'id' => 'enumerator-form']) !!}
+                    {!! Form::open(['route' => ['backend.organization.enumerators.update', $enumerator->id], 'method' => 'put', 'id' => 'enumerator-form']) !!}
                     @include('backend.organization.enumerator.form')
-                    {!! \Form::close() !!}
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>

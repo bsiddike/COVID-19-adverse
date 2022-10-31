@@ -24,10 +24,10 @@
 
 
 
-@section('breadcrumbs', \Breadcrumbs::render())
+@section('breadcrumbs', Breadcrumbs::render())
 
 @section('actions')
-    {!! \Html::linkButton(__('enumerator.Add Enumerator'), 'backend.organization.enumerators.create', [], 'fas fa-plus', 'success') !!}
+    {!! Html::linkButton(__('enumerator.Add Enumerator'), 'backend.organization.enumerators.create', [], 'fas fa-plus', 'success') !!}
     {{--{!! \Html::bulkDropdown('backend.organization.enumerators', 0, ['color' => 'warning']) !!}--}}
 @endsection
 
@@ -38,7 +38,7 @@
                 <div class="card card-default">
                     @if(!empty($enumerators))
                         <div class="card-body p-0">
-                            {!! \Html::cardSearch('search', 'backend.organization.enumerators.index',
+                            {!! Html::cardSearch('search', 'backend.organization.enumerators.index',
                             ['placeholder' => 'Search Enumerator Name etc.',
                             'class' => 'form-control', 'id' => 'search', 'data-target-table' => 'enumerator-table']) !!}
                             <div class="table-responsive">
@@ -71,14 +71,15 @@
                                                 @endcan
                                             </td>
                                             <td>
-                                                {{ $enumerator->mobile_1 }}@if(!empty($enumerator->mobile_2)), <br>{{ $enumerator->mobile_2 }}@endif
+                                                {{ $enumerator->mobile_1 }}@if(!empty($enumerator->mobile_2)),
+                                                <br>{{ $enumerator->mobile_2 }}@endif
                                             </td>
                                             <td>
                                                 {{ $enumerator->email }}
                                             </td>
                                             <td class="text-center">{{ $enumerator->created_at->format(config('backend.datetime')) ?? '' }}</td>
                                             <td class="exclude-search pr-3 text-center align-middle">
-                                                {!! \Html::actionDropdown('backend.organization.enumerators', $enumerator->id, array_merge(['show', 'edit'], ($enumerator->deleted_at == null) ? ['delete'] : ['restore'])) !!}
+                                                {!! Html::actionDropdown('backend.organization.enumerators', $enumerator->id, array_merge(['show', 'edit'], ($enumerator->deleted_at == null) ? ['delete'] : ['restore'])) !!}
                                             </td>
                                         </tr>
                                     @empty

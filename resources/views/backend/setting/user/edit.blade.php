@@ -25,7 +25,7 @@
 @section('breadcrumbs', Breadcrumbs::render(Route::getCurrentRoute()->getName(), $user))
 
 @section('actions')
-    {!! \Html::backButton('backend.settings.users.index') !!}
+    {!! Html::backButton('backend.settings.users.index') !!}
 @endsection
 
 @section('content')
@@ -33,9 +33,9 @@
         <div class="row">
             <div class="col-12">
                 <div class="card card-default">
-                    {!! \Form::open(['route' => ['backend.settings.users.update', $user->id], 'files' => true, 'id' => 'user-form', 'method' => 'put']) !!}
+                    {!! Form::open(['route' => ['backend.settings.users.update', $user->id], 'files' => true, 'id' => 'user-form', 'method' => 'put']) !!}
                     @include('backend.setting.user.form')
-                    {!! \Form::close() !!}
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>

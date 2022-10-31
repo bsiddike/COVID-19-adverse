@@ -28,7 +28,7 @@
             @endif
             --}}
 
-            @if(\Route::has($resourceRouteName . '.import'))
+            @if(Route::has($resourceRouteName . '.import'))
                 @can($resourceRouteName . '.import')
                     <a href="{{ route($resourceRouteName . '.import') }}" title="Import"
                        class="dropdown-item py-2 px-3 import-btn link-muted">
@@ -37,7 +37,7 @@
                 @endcan
             @endif
 
-            @if(\Route::has($resourceRouteName . '.export'))
+            @if(Route::has($resourceRouteName . '.export'))
                 @can($resourceRouteName . '.export')
                     <a href="{{ route($resourceRouteName . '.export') }}" title="Export"
                        class="dropdown-item py-2 px-3 link-muted export-btn">
@@ -46,7 +46,7 @@
                 @endcan
             @endif
 
-            @if(\Route::has($resourceRouteName . '.print'))
+            @if(Route::has($resourceRouteName . '.print'))
                 @can($resourceRouteName . '.print')
                     <a href="{{ route($resourceRouteName . '.print') }}" title="Print"
                        class="dropdown-item py-2 px-3 print-btn link-muted">

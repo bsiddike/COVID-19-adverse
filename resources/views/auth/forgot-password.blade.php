@@ -34,11 +34,11 @@
                     {{ __('Forgot your password? Here you can easily retrieve a new password.') }}
                 </p>
 
-                {!! \Form::open(['route' => 'auth.password.email', 'id' => 'password-reset-form', 'method' => 'post']) !!}
+                {!! Form::open(['route' => 'auth.password.email', 'id' => 'password-reset-form', 'method' => 'post']) !!}
                 @if(config('auth.credential_field') == \App\Supports\Constant::LOGIN_EMAIL
                                 || (config('auth.credential_field') == \App\Supports\Constant::LOGIN_OTP
                                     && config('auth.credential_otp_field') == \App\Supports\Constant::OTP_EMAIL))
-                    {!! \Form::iEmail('email', __('Email'), null, true, "fas fa-envelope", "after",
+                    {!! Form::iEmail('email', __('Email'), null, true, "fas fa-envelope", "after",
                                         [ 'minlength' => '5', 'maxlength' => '250',
                                             'size' => '250', 'placeholder' => 'Enter Email Address']) !!}
                 @endif
@@ -46,13 +46,13 @@
                 @if(config('auth.credential_field') == \App\Supports\Constant::LOGIN_MOBILE
                 || (config('auth.credential_field') == \App\Supports\Constant::LOGIN_OTP
                     && config('auth.credential_otp_field') == \App\Supports\Constant::OTP_MOBILE))
-                    {!! \Form::iTel('mobile', __('Mobile'), null, true, "fas fa-mobile", "after",
+                    {!! Form::iTel('mobile', __('Mobile'), null, true, "fas fa-mobile", "after",
                                         [ 'minlength' => '11', 'maxlength' => '11',
                                             'size' => '11', 'placeholder' => 'Enter Mobile Number']) !!}
                 @endif
 
                 @if(config('auth.credential_field') == \App\Supports\Constant::LOGIN_USERNAME)
-                    {!! \Form::iText('username', __('Username'), null, true, "fas fa-user-shield", "after",
+                    {!! Form::iText('username', __('Username'), null, true, "fas fa-user-shield", "after",
                                         [ 'minlength' => '5', 'maxlength' => '250',
                                             'size' => '250', 'placeholder' => 'Enter Username']) !!}
                 @endif
@@ -62,7 +62,7 @@
                     </div>
                     <!-- /.col -->
                 </div>
-                {!! \Form::close() !!}
+                {!! Form::close() !!}
 
                 @if(Route::has('auth.login'))
                     <p class="mb-0">

@@ -31,8 +31,8 @@
 @section('breadcrumbs', Breadcrumbs::render(Route::getCurrentRoute()->getName(), $permission))
 
 @section('actions')
-    {!! \Html::backButton('backend.settings.permissions.index') !!}
-    {!! \Html::modelDropdown('backend.settings.permissions', $permission->id, ['color' => 'success',
+    {!! Html::backButton('backend.settings.permissions.index') !!}
+    {!! Html::modelDropdown('backend.settings.permissions', $permission->id, ['color' => 'success',
         'actions' => array_merge(['edit'], ($permission->deleted_at == null) ? ['delete'] : ['restore'])]) !!}
 @endsection
 
@@ -89,7 +89,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="pills-timeline" role="tabpanel" aria-labelledby="pills-timeline-tab">
+                            <div class="tab-pane fade" id="pills-timeline" role="tabpanel"
+                                 aria-labelledby="pills-timeline-tab">
                                 @include('layouts.partials.timeline', $timeline)
                             </div>
                         </div>

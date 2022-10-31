@@ -25,8 +25,8 @@
 @section('breadcrumbs', Breadcrumbs::render(Route::getCurrentRoute()->getName(), $enumerator))
 
 @section('actions')
-    {!! \Html::backButton('backend.organization.enumerators.index') !!}
-    {!! \Html::modelDropdown('backend.organization.enumerators', $enumerator->id, ['color' => 'success',
+    {!! Html::backButton('backend.organization.enumerators.index') !!}
+    {!! Html::modelDropdown('backend.organization.enumerators', $enumerator->id, ['color' => 'success',
         'actions' => array_merge(['edit'], ($enumerator->deleted_at == null) ? ['delete'] : ['restore'])]) !!}
 @endsection
 
@@ -265,7 +265,7 @@
                                                 </td>
                                                 <td class="text-center">
                                                     @php
-                                                        $endServiceDate = ($workQualification->end_date != null) ? $workQualification->end_date : \Carbon\Carbon::now();
+                                                        use Carbon\Carbon;$endServiceDate = ($workQualification->end_date != null) ? $workQualification->end_date : Carbon::now()
                                                     @endphp
                                                     {!! str_replace(['after', 'before'], '', $endServiceDate->diffForHumans($workQualification->start_date)) !!}
                                                 </td>

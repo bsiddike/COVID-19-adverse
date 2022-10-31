@@ -28,10 +28,10 @@
 
 
 
-@section('breadcrumbs', \Breadcrumbs::render(Route::getCurrentRoute()->getName(), $permission))
+@section('breadcrumbs', Breadcrumbs::render(Route::getCurrentRoute()->getName(), $permission))
 
 @section('actions')
-    {!! \Html::backButton('backend.settings.permissions.index') !!}
+    {!! Html::backButton('backend.settings.permissions.index') !!}
 @endsection
 
 @section('content')
@@ -39,9 +39,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                    {!! \Form::open(['route' => ['backend.settings.permissions.update', $permission->id], 'method' => 'put', 'id' => 'permission-form']) !!}
+                    {!! Form::open(['route' => ['backend.settings.permissions.update', $permission->id], 'method' => 'put', 'id' => 'permission-form']) !!}
                     @include('backend.setting.permission.form')
-                    {!! \Form::close() !!}
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>

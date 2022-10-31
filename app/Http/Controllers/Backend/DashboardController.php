@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Services\Backend\Organization\EnumeratorService;
-use App\Services\Backend\Organization\SurveyService;
+use App\Models\Patient;
+use App\Models\Symptom;
+use App\Models\Vaccine;
+use App\Services\Backend\Organization\SymptomService;
+use App\Services\Backend\Organization\PatientService;
 use App\Services\Backend\Setting\UserService;
 use App\Supports\Constant;
 use Illuminate\Contracts\Foundation\Application;
@@ -15,35 +18,12 @@ use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
-    /**
-     * @var UserService
-     */
-    private $userService;
-
-    /**
-     * @var EnumeratorService
-     */
-    private $enumeratorService;
-
-    /**
-     * @var SurveyService
-     */
-    private $surveyService;
 
     /**
      * DashboardController constructor.
-     *
-     * @param  UserService  $userService
-     * @param  EnumeratorService  $enumeratorService
-     * @param  SurveyService  $surveyService
      */
-    public function __construct(UserService $userService,
-        EnumeratorService $enumeratorService,
-        SurveyService $surveyService)
+    public function __construct()
     {
-        $this->userService = $userService;
-        $this->enumeratorService = $enumeratorService;
-        $this->surveyService = $surveyService;
     }
 
     /**
@@ -54,21 +34,39 @@ class DashboardController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $requestUser = Auth::user();
-
-        $request->created_by = empty(array_intersect(
-            $requestUser->roles
-                ->pluck('id')
-                ->toArray(),
-            Constant::EXECUTIVE_ROLES
-        ))
-            ? $requestUser->id
-            : null;
-
         return view('backend.dashboard', [
-            'users' => $this->userService->getAllUsers(['role' => Constant::VISIBLE_ROLES])->count(),
-            'enumerators' => $this->enumeratorService->getAllEnumerators($request->all())->count(),
-            'surveys' => $this->surveyService->getAllSurveys()->count(),
+            'patients' => Patient::all()->count(),
+            'symptoms' => Symptom::all()->count(),
+            'vaccines' =>Vaccine::all()->count(),
+            'pieData' => $this->getGenderMetrics()
         ]);
+    }
+
+
+    private function getGenderMetrics()
+    {
+
+        $data = Patient::selectRaw('count(id) as aggregate, sex')->groupBy('sex')->get()->toArray();
+
+        $pieChartData = [
+            "labels" => ['Female', 'Male', 'Unknown'],
+            "datasets" => [
+                [
+                    "data" => [],
+                    "backgroundColor" => ['#f56954', '#00a65a', '#f39c12']
+                ]
+            ]
+        ];
+
+        foreach ($data as $datum) {
+            if ($datum['sex'] == 'F')
+                $pieChartData['datasets'][0]['data'][0] = $datum['aggregate'];
+            else if ($datum['sex'] == 'M')
+                $pieChartData['datasets'][0]['data'][1] = $datum['aggregate'];
+            else
+                $pieChartData['datasets'][0]['data'][2] = $datum['aggregate'];
+        }
+
+        return $pieChartData;
     }
 }

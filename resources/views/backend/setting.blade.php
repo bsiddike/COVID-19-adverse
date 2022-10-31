@@ -27,10 +27,10 @@
 
 
 
-@section('breadcrumbs', \Breadcrumbs::render())
+@section('breadcrumbs', Breadcrumbs::render())
 
 @section('actions')
-    {!! \Html::backButton('backend') !!}
+    {!! Html::backButton('backend') !!}
 @endsection
 
 @section('content')
@@ -44,7 +44,8 @@
                                 @foreach($settings as $setting)
                                     <div class="col-sm-12 col-md-6">
                                         <div class="info-box shadow-sm border">
-                                <span class="info-box-icon shadow-lg" style="background-color: {{ $setting['color'] ?? null }}">
+                                <span class="info-box-icon shadow-lg"
+                                      style="background-color: {{ $setting['color'] ?? null }}">
                                     <i class="{{ $setting['icon'] ?? null }} text-white"></i>
                                 </span>
                                             <div class="info-box-content">

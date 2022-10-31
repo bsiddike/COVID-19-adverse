@@ -5,12 +5,12 @@ namespace App\Services\Backend\Common;
 use App\Abstracts\Service\Service;
 use App\Models\Setting\User;
 use App\Services\Backend\Setting\UserService;
-use function auth;
 use Exception;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notification;
 use Illuminate\Support\Facades\Auth;
+use function auth;
 
 class NotificationService extends Service
 {

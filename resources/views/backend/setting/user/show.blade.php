@@ -27,7 +27,7 @@
 
 
 @section('actions')
-    {!! \Html::backButton('backend.settings.users.index') !!}
+    {!! Html::backButton('backend.settings.users.index') !!}
     {{--    @can('backend.settings.roles.user')
             <a href="#!" data-toggle="modal" data-target="#bd-example-modal-lg"
                class="btn btn-primary m-1 m-md-0">
@@ -35,7 +35,7 @@
                 <span class="d-none d-md-inline-flex">Add / Remove Roles</span>
             </a>
         @endcan--}}
-    {!! \Html::modelDropdown('backend.settings.users', $user->id, ['color' => 'success',
+    {!! Html::modelDropdown('backend.settings.users', $user->id, ['color' => 'success',
     'actions' => array_merge(['edit'], ($user->deleted_at == null) ? ['delete'] : ['restore'])]) !!}
 @endsection
 

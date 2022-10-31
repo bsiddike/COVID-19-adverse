@@ -27,10 +27,10 @@
 
 
 
-@section('breadcrumbs', \Breadcrumbs::render())
+@section('breadcrumbs', Breadcrumbs::render())
 
 @section('actions')
-    {!! \Html::linkButton('Add Permission', 'backend.settings.permissions.create', [], 'fas fa-plus', 'success') !!}
+    {!! Html::linkButton('Add Permission', 'backend.settings.permissions.create', [], 'fas fa-plus', 'success') !!}
     {{--{!! \Html::bulkDropdown('backend.settings.permissions', 0, ['color' => 'warning']) !!}--}}
 @endsection
 
@@ -41,7 +41,7 @@
                 <div class="card card-default">
                     @if(!empty($permissions))
                         <div class="card-body p-0">
-                            {!! \Html::cardSearch('search', 'backend.settings.permissions.index',
+                            {!! Html::cardSearch('search', 'backend.settings.permissions.index',
                             ['placeholder' => 'Search Permission Display Name, Code, Guard, Status, etc.',
                             'class' => 'form-control', 'id' => 'search', 'data-target-table' => 'permission-table']) !!}
                             <div class="table-responsive">
@@ -77,11 +77,11 @@
                                             <td>{{ $permission->name }}</td>
                                             <td>{{ $permission->guard_name }}</td>
                                             <td class="text-center exclude-search">
-                                                {!! \Html::enableToggle($permission) !!}
+                                                {!! Html::enableToggle($permission) !!}
                                             </td>
                                             <td class="text-center">{{ $permission->created_at->format(config('backend.datetime')) ?? '' }}</td>
                                             <td class="exclude-search pr-3 text-center align-middle">
-                                                {!! \Html::actionDropdown('backend.settings.permissions', $permission->id, array_merge(['show', 'edit'], ($permission->deleted_at == null) ? ['delete'] : ['restore'])) !!}
+                                                {!! Html::actionDropdown('backend.settings.permissions', $permission->id, array_merge(['show', 'edit'], ($permission->deleted_at == null) ? ['delete'] : ['restore'])) !!}
                                             </td>
                                         </tr>
                                     @empty

@@ -4,13 +4,10 @@ namespace App\Repositories\Eloquent\Backend\Organization;
 
 use App\Abstracts\Repository\EloquentRepository;
 use App\Models\Symptom;
-use App\Services\Auth\AuthenticatedSessionService;
-use App\Supports\Constant;
 use Exception;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Support\Facades\DB;
 
 /**
  * @class EnumeratorRepository

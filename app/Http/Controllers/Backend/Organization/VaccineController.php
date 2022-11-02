@@ -3,15 +3,11 @@
 namespace App\Http\Controllers\Backend\Organization;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Backend\Organization\CreateEnumeratorRequest;
-use App\Http\Requests\Backend\Organization\UpdateEnumeratorRequest;
+use App\Http\Requests\Backend\Organization\CreateVaccineRequest;
+use App\Http\Requests\Backend\Organization\UpdateVaccineRequest;
 use App\Services\Auth\AuthenticatedSessionService;
 use App\Services\Backend\Organization\PatientService;
-use App\Services\Backend\Organization\SymptomService;
-use App\Services\Backend\Setting\CatalogService;
-use App\Services\Backend\Setting\ExamLevelService;
-use App\Services\Backend\Setting\StateService;
-use App\Supports\Constant;
+use App\Services\Backend\Organization\VaccineService;
 use App\Supports\Utility;
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
@@ -29,7 +25,7 @@ use Psr\Container\NotFoundExceptionInterface;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 /**
- * @class EnumeratorController
+ * @class VaccineController
  */
 class VaccineController extends Controller
 {
@@ -39,59 +35,35 @@ class VaccineController extends Controller
     private $authenticatedSessionService;
 
     /**
-     * @var SymptomService
+     * @var VaccineService
      */
-    private $enumeratorService;
+    private $vaccineService;
 
     /**
      * @var PatientService
      */
-    private $surveyService;
+    private $patientService;
 
     /**
-     * @var CatalogService
-     */
-    private $catalogService;
-
-    /**
-     * @var ExamLevelService
-     */
-    private $examLevelService;
-
-    /**
-     * @var StateService
-     */
-    private $stateService;
-
-    /**
-     * EnumeratorController Constructor
+     * VaccineController Constructor
      *
-     * @param  AuthenticatedSessionService  $authenticatedSessionService
-     * @param  SymptomService  $enumeratorService
-     * @param  PatientService  $surveyService
-     * @param  CatalogService  $catalogService
-     * @param  ExamLevelService  $examLevelService
-     * @param  StateService  $stateService
+     * @param AuthenticatedSessionService $authenticatedSessionService
+     * @param VaccineService $vaccineService
+     * @param PatientService $surveyService
      */
     public function __construct(AuthenticatedSessionService $authenticatedSessionService,
-                                SymptomService $enumeratorService,
-                                PatientService $surveyService,
-                                CatalogService $catalogService,
-                                ExamLevelService $examLevelService,
-                                StateService $stateService)
+                                VaccineService $vaccineService,
+                                PatientService $patientService)
     {
         $this->authenticatedSessionService = $authenticatedSessionService;
-        $this->enumeratorService = $enumeratorService;
-        $this->surveyService = $surveyService;
-        $this->catalogService = $catalogService;
-        $this->examLevelService = $examLevelService;
-        $this->stateService = $stateService;
+        $this->vaccineService = $vaccineService;
+        $this->patientService = $patientService;
     }
 
     /**
      * Display a listing of the resource.
      *
-     * @param  Request  $request
+     * @param Request $request
      * @return Application|Factory|View
      *
      * @throws Exception
@@ -99,22 +71,11 @@ class VaccineController extends Controller
     public function index(Request $request)
     {
         $filters = $request->except('page');
-        if (isset(auth()->user()->roles[0]) && in_array(auth()->user()->roles[0]->id, [1, 2])) {
-            $filters['created_by'] = '';
-        } else {
-            $filters['created_by'] = auth()->user()->id;
-        }
-        $states = $this->stateService->getStateDropdown(['enabled' => Constant::ENABLED_OPTION, 'type' => 'district', 'sort' => ((session()->get('locale') == 'bd') ? 'native' : 'name'), 'direction' => 'asc'], (session()->get('locale') == 'bd'));
-        $divisions = $this->stateService->getStateDropdown(['enabled' => Constant::ENABLED_OPTION, 'type' => 'division', 'sort' => ((session()->get('locale') == 'bd') ? 'native' : 'name'), 'direction' => 'asc'], (session()->get('locale') == 'bd'));
-        $surveys = $this->surveyService->getSurveyDropDown(['enabled' => Constant::ENABLED_OPTION]);
-        $enumerators = $this->enumeratorService->enumeratorPaginate($filters);
 
-        return view('backend.organization.enumerator.index', [
-            'enumerators' => $enumerators,
-            'divisions' => $divisions,
-            'states' => $states,
-            'surveys' => $surveys,
-            'request' => $filters,
+        $vaccines = $this->vaccineService->vaccinePaginate($filters);
+
+        return view('backend.organization.vaccine.index', [
+            'vaccines' => $vaccines
         ]);
     }
 
@@ -129,38 +90,28 @@ class VaccineController extends Controller
      */
     public function create()
     {
-        $enables = [];
-        foreach (Constant::ENABLED_OPTIONS as $field => $label) {
-            $enables[$field] = __('common.'.$label);
-        }
 
-        return view('backend.organization.enumerator.create', [
-            'enables' => $enables,
-            'states' => $this->stateService->getStateDropdown(['enabled' => Constant::ENABLED_OPTION, 'type' => 'district', 'sort' => ((session()->get('locale') == 'bd') ? 'native' : 'name'), 'direction' => 'asc'], (session()->get('locale') == 'bd')),
-            'surveys' => $this->surveyService->getSurveyDropDown(['enabled' => Constant::ENABLED_OPTION]),
-            'genders' => $this->catalogService->getCatalogDropdown(['type' => Constant::CATALOG_TYPE['GENDER']], 'bn'),
-            'exam_dropdown' => $this->examLevelService->getExamLevelDropdown(['id' => [1, 2, 3, 4]]),
-        ]);
+        return view('backend.organization.vaccine.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  CreateEnumeratorRequest  $request
+     * @param CreateVaccineRequest $request
      * @return RedirectResponse
      *
      * @throws Exception|\Throwable
      */
-    public function store(CreateEnumeratorRequest $request): RedirectResponse
+    public function store(CreateVaccineRequest $request): RedirectResponse
     {
         $inputs = $request->except('_token');
 
-        $confirm = $this->enumeratorService->storeEnumerator($inputs);
+        $confirm = $this->vaccineService->storeVaccine($inputs);
 
         if ($confirm['status'] == true) {
             notify($confirm['message'], $confirm['level'], $confirm['title']);
 
-            return redirect()->route('backend.organization.enumerators.index');
+            return redirect()->route('backend.organization.vaccines.index');
         }
 
         notify($confirm['message'], $confirm['level'], $confirm['title']);
@@ -178,10 +129,10 @@ class VaccineController extends Controller
      */
     public function show($id)
     {
-        if ($enumerator = $this->enumeratorService->getEnumeratorById($id)) {
-            return view('backend.organization.enumerator.show', [
-                'enumerator' => $enumerator,
-                'timeline' => Utility::modelAudits($enumerator),
+        if ($vaccine = $this->vaccineService->getVaccineById($id)) {
+            return view('backend.organization.vaccine.show', [
+                'vaccine' => $vaccine,
+                'timeline' => Utility::modelAudits($vaccine),
             ]);
         }
 
@@ -200,19 +151,9 @@ class VaccineController extends Controller
      */
     public function edit($id)
     {
-        if ($enumerator = $this->enumeratorService->getEnumeratorById($id)) {
-            $enables = [];
-            foreach (Constant::ENABLED_OPTIONS as $field => $label) {
-                $enables[$field] = __('common.'.$label);
-            }
-
-            return view('backend.organization.enumerator.edit', [
-                'enumerator' => $enumerator,
-                'enables' => $enables,
-                'states' => $this->stateService->getStateDropdown(['enabled' => Constant::ENABLED_OPTION, 'type' => 'district', 'sort' => ((session()->get('locale') == 'bd') ? 'native' : 'name'), 'direction' => 'asc'], (session()->get('locale') == 'bd')),
-                'surveys' => $this->surveyService->getSurveyDropDown(),
-                'genders' => $this->catalogService->getCatalogDropdown(['type' => Constant::CATALOG_TYPE['GENDER']], 'bn'),
-                'exam_dropdown' => $this->examLevelService->getExamLevelDropdown(['id' => [1, 2, 3, 4]]),
+        if ($vaccine = $this->vaccineService->getVaccineById($id)) {
+            return view('backend.organization.vaccine.edit', [
+                'vaccine' => $vaccine
             ]);
         }
 
@@ -222,21 +163,21 @@ class VaccineController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  UpdateEnumeratorRequest  $request
+     * @param UpdateVaccineRequest $request
      * @param    $id
      * @return RedirectResponse
      *
      * @throws \Throwable
      */
-    public function update(UpdateEnumeratorRequest $request, $id): RedirectResponse
+    public function update(UpdateVaccineRequest $request, $id): RedirectResponse
     {
         $inputs = $request->except('_token', 'submit', '_method');
-        $confirm = $this->enumeratorService->updateEnumerator($inputs, $id);
+        $confirm = $this->vaccineService->updateVaccine($inputs, $id);
 
         if ($confirm['status'] == true) {
             notify($confirm['message'], $confirm['level'], $confirm['title']);
 
-            return redirect()->route('backend.organization.enumerators.index');
+            return redirect()->route('backend.organization.vaccines.index');
         }
 
         notify($confirm['message'], $confirm['level'], $confirm['title']);
@@ -248,7 +189,7 @@ class VaccineController extends Controller
      * Remove the specified resource from storage.
      *
      * @param $id
-     * @param  Request  $request
+     * @param Request $request
      * @return RedirectResponse
      *
      * @throws \Throwable
@@ -256,7 +197,7 @@ class VaccineController extends Controller
     public function destroy($id, Request $request)
     {
         if ($this->authenticatedSessionService->validate($request)) {
-            $confirm = $this->enumeratorService->destroyEnumerator($id);
+            $confirm = $this->vaccineService->destroyVaccine($id);
 
             if ($confirm['status'] == true) {
                 notify($confirm['message'], $confirm['level'], $confirm['title']);
@@ -264,7 +205,7 @@ class VaccineController extends Controller
                 notify($confirm['message'], $confirm['level'], $confirm['title']);
             }
 
-            return redirect()->route('backend.organization.enumerators.index');
+            return redirect()->route('backend.organization.vaccines.index');
         }
         abort(403, 'Wrong user credentials');
     }
@@ -273,7 +214,7 @@ class VaccineController extends Controller
      * Restore a Soft Deleted Resource
      *
      * @param $id
-     * @param  Request  $request
+     * @param Request $request
      * @return RedirectResponse|void
      *
      * @throws \Throwable
@@ -281,7 +222,7 @@ class VaccineController extends Controller
     public function restore($id, Request $request)
     {
         if ($this->authenticatedSessionService->validate($request)) {
-            $confirm = $this->enumeratorService->restoreEnumerator($id);
+            $confirm = $this->vaccineService->restoreVaccine($id);
 
             if ($confirm['status'] == true) {
                 notify($confirm['message'], $confirm['level'], $confirm['title']);
@@ -289,7 +230,7 @@ class VaccineController extends Controller
                 notify($confirm['message'], $confirm['level'], $confirm['title']);
             }
 
-            return redirect()->route('backend.organization.enumerators.index');
+            return redirect()->route('backend.organization.vaccines.index');
         }
         abort(403, 'Wrong user credentials');
     }
@@ -297,7 +238,7 @@ class VaccineController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param  Request  $request
+     * @param Request $request
      * @return string|StreamedResponse
      *
      * @throws IOException
@@ -312,22 +253,22 @@ class VaccineController extends Controller
 
         $filters = $request->except('page');
 
-        $enumeratorExport = $this->enumeratorService->exportEnumerator($filters);
+        $vaccineExport = $this->vaccineService->exportVaccine($filters);
 
-        $filename = 'Enumerator-'.date('Ymd-His').'-'.$request->get('filter').'.'.($filters['format'] ?? 'xlsx');
+        $filename = 'Vaccine-' . date('Ymd-His') . '-' . $request->get('filter') . '.' . ($filters['format'] ?? 'xlsx');
 
-        return $enumeratorExport->download($filename, function ($enumerator) use ($enumeratorExport, &$counter) {
-            $enumerator->counter = $counter;
+        return $vaccineExport->download($filename, function ($vaccine) use ($vaccineExport, &$counter) {
+            $vaccine->counter = $counter;
             $counter++;
 
-            return $enumeratorExport->map($enumerator);
+            return $vaccineExport->map($vaccine);
         });
     }
 
     /**
      * Display a detail of the resource.
      *
-     * @param  Request  $request
+     * @param Request $request
      * @return JsonResponse
      *
      * @throws Exception
@@ -336,18 +277,18 @@ class VaccineController extends Controller
     {
         $filters = $request->except('page');
 
-        $enumerators = $this->enumeratorService->getAllEnumerators($filters);
+        $vaccines = $this->vaccineService->getAllVaccines($filters);
 
-        if (count($enumerators) > 0) {
-            foreach ($enumerators as $index => $enumerator) {
-                $enumerators[$index]->update_route = route('backend.organization.enumerators.update', $enumerator->id);
-                $enumerators[$index]->survey_id = $enumerator->surveys->pluck('id')->toArray();
-                $enumerators[$index]->prev_post_state_id = $enumerator->previousPostings->pluck('id')->toArray();
-                $enumerators[$index]->future_post_state_id = $enumerator->futurePostings->pluck('id')->toArray();
-                unset($enumerators[$index]->surveys, $enumerators[$index]->previousPostings, $enumerators[$index]->futurePostings);
+        if (count($vaccines) > 0) {
+            foreach ($vaccines as $index => $vaccine) {
+                $vaccines[$index]->update_route = route('backend.organization.vaccines.update', $vaccine->id);
+                $vaccines[$index]->survey_id = $vaccine->surveys->pluck('id')->toArray();
+                $vaccines[$index]->prev_post_state_id = $vaccine->previousPostings->pluck('id')->toArray();
+                $vaccines[$index]->future_post_state_id = $vaccine->futurePostings->pluck('id')->toArray();
+                unset($vaccines[$index]->surveys, $vaccines[$index]->previousPostings, $vaccines[$index]->futurePostings);
             }
 
-            $jsonReturn = ['status' => true, 'data' => $enumerators];
+            $jsonReturn = ['status' => true, 'data' => $vaccines];
         } else {
             $jsonReturn = ['status' => false, 'data' => []];
         }

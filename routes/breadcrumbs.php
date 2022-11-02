@@ -5,6 +5,8 @@ use App\Models\Backend\Setting\Permission;
 use App\Models\Backend\Setting\Role;
 use App\Models\Backend\Setting\User;
 use App\Models\Patient;
+use App\Models\Symptom;
+use App\Models\Vaccine;
 use Diglactic\Breadcrumbs\Breadcrumbs;
 use Diglactic\Breadcrumbs\Generator as BreadcrumbTrail;
 
@@ -199,7 +201,7 @@ Breadcrumbs::for('backend.organization.patients.edit', function (BreadcrumbTrail
 Breadcrumbs::for('backend.organization.symptoms.index', function (BreadcrumbTrail $trail) {
     $trail->parent('backend.organization');
 
-    $trail->push(__('menu-sidebar.Enumerators'), route('backend.organization.symptoms.index'));
+    $trail->push('Symptoms', route('backend.organization.symptoms.index'));
 });
 
 Breadcrumbs::for('backend.organization.symptoms.create', function (BreadcrumbTrail $trail) {
@@ -211,12 +213,12 @@ Breadcrumbs::for('backend.organization.symptoms.create', function (BreadcrumbTra
 Breadcrumbs::for('backend.organization.symptoms.show', function (BreadcrumbTrail $trail, $symptom) {
     $trail->parent('backend.organization.symptoms.index');
 
-    $symptom = ($symptom instanceof Enumerator) ? $symptom : $symptom[0];
+    $symptom = ($symptom instanceof Symptom) ? $symptom : $symptom[0];
 
     $trail->push($symptom->name, route('backend.organization.symptoms.show', $symptom->id));
 });
 
-Breadcrumbs::for('backend.organization.symptoms.edit', function (BreadcrumbTrail $trail, Enumerator $symptom) {
+Breadcrumbs::for('backend.organization.symptoms.edit', function (BreadcrumbTrail $trail, Symptom $symptom) {
     $trail->parent('backend.organization.symptoms.show', [$symptom]);
 
     $trail->push(__('common.Edit'), route('backend.organization.symptoms.edit', $symptom->id));
@@ -227,7 +229,7 @@ Breadcrumbs::for('backend.organization.symptoms.edit', function (BreadcrumbTrail
 Breadcrumbs::for('backend.organization.vaccines.index', function (BreadcrumbTrail $trail) {
     $trail->parent('backend.organization');
 
-    $trail->push(__('menu-sidebar.Enumerators'), route('backend.organization.vaccines.index'));
+    $trail->push('Vaccines', route('backend.organization.vaccines.index'));
 });
 
 Breadcrumbs::for('backend.organization.vaccines.create', function (BreadcrumbTrail $trail) {
@@ -239,12 +241,12 @@ Breadcrumbs::for('backend.organization.vaccines.create', function (BreadcrumbTra
 Breadcrumbs::for('backend.organization.vaccines.show', function (BreadcrumbTrail $trail, $symptom) {
     $trail->parent('backend.organization.vaccines.index');
 
-    $symptom = ($symptom instanceof Enumerator) ? $symptom : $symptom[0];
+    $symptom = ($symptom instanceof Vaccine) ? $symptom : $symptom[0];
 
     $trail->push($symptom->name, route('backend.organization.vaccines.show', $symptom->id));
 });
 
-Breadcrumbs::for('backend.organization.vaccines.edit', function (BreadcrumbTrail $trail, Enumerator $symptom) {
+Breadcrumbs::for('backend.organization.vaccines.edit', function (BreadcrumbTrail $trail, Vaccine $symptom) {
     $trail->parent('backend.organization.vaccines.show', [$symptom]);
 
     $trail->push(__('common.Edit'), route('backend.organization.vaccines.edit', $symptom->id));

@@ -4,8 +4,8 @@ namespace App\Exports\Backend\Setting;
 
 use App\Abstracts\Export\FastExcelExport;
 use App\Models\Setting\Role;
-use function config;
 use OpenSpout\Common\Exception\InvalidArgumentException;
+use function config;
 
 class RoleExport extends FastExcelExport
 {

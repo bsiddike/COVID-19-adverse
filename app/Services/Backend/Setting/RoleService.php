@@ -2,8 +2,6 @@
 
 namespace App\Services\Backend\Setting;
 
-use function __;
-use function app;
 use App\Abstracts\Service\Service;
 use App\Exports\Backend\Setting\StateExport;
 use App\Models\Backend\Setting\Role;
@@ -16,6 +14,8 @@ use Illuminate\Database\Eloquent\Collection;
 use OpenSpout\Common\Exception\InvalidArgumentException;
 use Spatie\Permission\PermissionRegistrar;
 use Throwable;
+use function __;
+use function app;
 
 class RoleService extends Service
 {

@@ -2,7 +2,6 @@
 
 namespace App\Services\Auth;
 
-use function __;
 use App\Models\Setting\User;
 use App\Repositories\Eloquent\Backend\Setting\UserRepository;
 use App\Services\Backend\Common\FileUploadService;
@@ -12,6 +11,7 @@ use Exception;
 use Illuminate\Support\Facades\Auth;
 use Spatie\MediaLibrary\MediaCollections\Exceptions\FileDoesNotExist;
 use Spatie\MediaLibrary\MediaCollections\Exceptions\FileIsTooBig;
+use function __;
 
 class RegisteredUserService
 {

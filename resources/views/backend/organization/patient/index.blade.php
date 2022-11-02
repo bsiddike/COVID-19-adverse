@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Patents')
+@section('title', 'Patients')
 
 @push('meta')
 
@@ -27,7 +27,7 @@
 @section('breadcrumbs', Breadcrumbs::render())
 
 @section('actions')
-    {!! Html::linkButton('Patents', 'backend.organization.patients.create', [], 'fas fa-plus', 'success') !!}
+    {!! Html::linkButton('Add Patient', 'backend.organization.patients.create', [], 'fas fa-plus', 'success') !!}
     {{--{!! \Html::bulkDropdown('backend.organization.surveys', 0, ['color' => 'warning']) !!}--}}
 @endsection
 

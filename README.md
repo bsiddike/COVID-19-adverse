@@ -1,6 +1,5 @@
-# BBD NSDS Implementation Support Project
-This application is intend for enumerator/ applicant registration process assistance.
-
+# COVID 19 Surveillance Project
+A novel comprehensive multi-resource pharmacovigilance software application that enhances active
 ## Installation 
 This application is based on [Laravel@8.54](https://laravel.com). with boilerplate of [Adminlte 3](https://adminlte.io/themes/v3/) as UI Template.
 Please follow this steps properly to install this application.

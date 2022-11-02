@@ -17,7 +17,6 @@ class SymptomSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-
         (new FastExcel)
             ->withoutHeaders()
             ->import(base_path('database/data/2022VAERSSYMPTOMS.csv'), function ($line) {

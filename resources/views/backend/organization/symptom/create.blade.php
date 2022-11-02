@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', __('symptom.Add Enumerator'))
+@section('title', 'Add Symptom')
 
 @push('meta')
 

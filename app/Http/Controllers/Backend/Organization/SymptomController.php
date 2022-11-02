@@ -64,8 +64,8 @@ class SymptomController extends Controller
     {
         $filters = $request->except('page');
 
-        $symptoms = $this->symptomService->getAllSymptoms($filters);
-        dd($symptoms);
+        $symptoms = $this->symptomService->symptomPaginate($filters);
+
         return view('backend.organization.symptom.index', [
             'symptoms' => $symptoms,
         ]);
@@ -148,18 +148,9 @@ class SymptomController extends Controller
     public function edit($id)
     {
         if ($symptom = $this->symptomService->getSymptomById($id)) {
-            $enables = [];
-            foreach (Constant::ENABLED_OPTIONS as $field => $label) {
-                $enables[$field] = __('common.'.$label);
-            }
 
             return view('backend.organization.symptom.edit', [
-                'symptom' => $symptom,
-                'enables' => $enables,
-                'states' => $this->stateService->getStateDropdown(['enabled' => Constant::ENABLED_OPTION, 'type' => 'district', 'sort' => ((session()->get('locale') == 'bd') ? 'native' : 'name'), 'direction' => 'asc'], (session()->get('locale') == 'bd')),
-                'surveys' => $this->surveyService->getSurveyDropDown(),
-                'genders' => $this->catalogService->getCatalogDropdown(['type' => Constant::CATALOG_TYPE['GENDER']], 'bn'),
-                'exam_dropdown' => $this->examLevelService->getExamLevelDropdown(['id' => [1, 2, 3, 4]]),
+                'symptom' => $symptom
             ]);
         }
 

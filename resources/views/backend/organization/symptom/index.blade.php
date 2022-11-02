@@ -59,7 +59,6 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @dd($symptoms)
                                     @forelse($symptoms as $index => $symptom)
                                         <tr @if($symptom->deleted_at != null) class="table-danger" @endif>
                                             <td class="exclude-search align-middle">

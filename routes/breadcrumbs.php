@@ -215,7 +215,7 @@ Breadcrumbs::for('backend.organization.symptoms.show', function (BreadcrumbTrail
 
     $symptom = ($symptom instanceof Symptom) ? $symptom : $symptom[0];
 
-    $trail->push($symptom->name, route('backend.organization.symptoms.show', $symptom->id));
+    $trail->push($symptom->vaers_id, route('backend.organization.symptoms.show', $symptom->id));
 });
 
 Breadcrumbs::for('backend.organization.symptoms.edit', function (BreadcrumbTrail $trail, Symptom $symptom) {
@@ -238,16 +238,16 @@ Breadcrumbs::for('backend.organization.vaccines.create', function (BreadcrumbTra
     $trail->push(__('common.Add'), route('backend.organization.vaccines.create'));
 });
 
-Breadcrumbs::for('backend.organization.vaccines.show', function (BreadcrumbTrail $trail, $symptom) {
+Breadcrumbs::for('backend.organization.vaccines.show', function (BreadcrumbTrail $trail, $vaccine) {
     $trail->parent('backend.organization.vaccines.index');
 
-    $symptom = ($symptom instanceof Vaccine) ? $symptom : $symptom[0];
+    $vaccine = ($vaccine instanceof Vaccine) ? $vaccine : $vaccine[0];
 
-    $trail->push($symptom->name, route('backend.organization.vaccines.show', $symptom->id));
+    $trail->push($vaccine->vax_name, route('backend.organization.vaccines.show', $vaccine->id));
 });
 
-Breadcrumbs::for('backend.organization.vaccines.edit', function (BreadcrumbTrail $trail, Vaccine $symptom) {
-    $trail->parent('backend.organization.vaccines.show', [$symptom]);
+Breadcrumbs::for('backend.organization.vaccines.edit', function (BreadcrumbTrail $trail, Vaccine $vaccine) {
+    $trail->parent('backend.organization.vaccines.show', [$vaccine]);
 
-    $trail->push(__('common.Edit'), route('backend.organization.vaccines.edit', $symptom->id));
+    $trail->push(__('common.Edit'), route('backend.organization.vaccines.edit', $vaccine->id));
 });

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Edit Enumerator')
+@section('title', 'Edit Symptom')
 
 @push('meta')
 

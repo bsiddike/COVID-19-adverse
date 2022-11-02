@@ -26,7 +26,7 @@
 @section('breadcrumbs', Breadcrumbs::render(Route::getCurrentRoute()->getName()))
 
 @section('actions')
-    {!! Html::backButton('backend.organization.symptoms.index') !!}
+    {!! Html::backButton('backend.organization.vaccines.index') !!}
 @endsection
 
 @section('content')

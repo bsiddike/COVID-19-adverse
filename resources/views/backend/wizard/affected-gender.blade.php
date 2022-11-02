@@ -1,35 +1,32 @@
-
-<div class="col-md-4">
+<div class="col-lg-4 col-md-6 col-sm-12">
     <div class="card">
         <div class="card-header border-bottom-0">
             <h3 class="card-title">Gender Wise Affected</h3>
-            <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                </button>
-            </div>
         </div>
         <div class="card-body">
-            <div class="row">
+            <canvas id="pieChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+
+{{--            <div class="row">
                 <div class="col-md-5">
                     <ul class="chart-legend clearfix">
+                        @php $total = array_sum($pieData['datasets'][0]['data']); @endphp
                         <li><i class="far fa-circle text-danger"></i>
-                            Female ({{ $pieData['datasets'][0]['data'][0] }})
+                            Female ({{ percent($total, $pieData['datasets'][0]['data'][0]) }})
                         </li>
                         <li><i class="far fa-circle text-success"></i>
-                            Male ({{ $pieData['datasets'][0]['data'][1] }})
+                            Male ({{ percent($total, $pieData['datasets'][0]['data'][1]) }})
                         </li>
                         <li><i class="far fa-circle text-warning"></i>
-                            Unknown ({{ $pieData['datasets'][0]['data'][2] }})
+                            Unknown ({{ percent($total, $pieData['datasets'][0]['data'][2]) }})
                         </li>
                     </ul>
                 </div>
                 <div class="col-md-7">
                     <div class="chart-responsive">
-                        <canvas id="pieChart" height="200"></canvas>
+                        <canvas id="pieChart" ></canvas>
                     </div>
                 </div>
-            </div>
+            </div>--}}
             <!-- /.row -->
         </div>
     </div>
@@ -38,44 +35,17 @@
 @push('page-script')
     <script>
         $(document).ready(function () {
-            //-------------
-            // - PIE CHART -
-            //-------------
-            // Get context with jQuery - using jQuery's .get() method.
-            var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
-            var pieData = {!!  json_encode($pieData) !!};/*{
-                            labels: [
-                                'Chrome',
-                                'IE',
-                                'FireFox',
-                                'Safari',
-                                'Opera',
-                                'Navigator'
-                            ],
-                            datasets: [
-                                {
-                                    data: [700, 500, 400, 600, 300, 100],
-                                    backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de']
-                                }
-                            ]
-                        }*/
-            var pieOptions = {
-                legend: {
-                    display: false
+            var doughnut = new Chart($('#pieChart').get(0).getContext('2d'), {
+                type: 'pie',
+                data: {!!  json_encode($pieData) !!},
+                options: {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    legend : {
+                        position : 'left'
+                    }
                 }
-            }
-            // Create pie or douhnut chart
-            // You can switch between pie and douhnut using the method below.
-            // eslint-disable-next-line no-unused-vars
-            var pieChart = new Chart(pieChartCanvas, {
-                type: 'doughnut',
-                data: pieData,
-                options: pieOptions
-            })
-
-            //-----------------
-            // - END PIE CHART -
-            //-----------------
+            });
         });
     </script>
 @endpush

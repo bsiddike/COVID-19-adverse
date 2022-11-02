@@ -21,7 +21,7 @@ class DashboardController extends Controller
     }
 
     /**
-     * @param  Request  $request
+     * @param Request $request
      * @return array|Application|Factory|View|mixed
      *
      * @throws \Exception
@@ -44,7 +44,7 @@ class DashboardController extends Controller
             'labels' => ['Female', 'Male', 'Unknown'],
             'datasets' => [
                 [
-                    'data' => [],
+                    'data' => [0 => 0, 1 => 0, 2 => 0],
                     'backgroundColor' => ['#f56954', '#00a65a', '#f39c12'],
                 ],
             ],

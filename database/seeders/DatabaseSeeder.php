@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
             AdminRegisterSeeder::class,
             VaccineSeeder::class,
             PatientSeeder::class,
-            SymptomSeeder::class
+            SymptomSeeder::class,
         ]);
 
         Model::reguard();

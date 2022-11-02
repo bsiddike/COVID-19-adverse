@@ -4,8 +4,8 @@ namespace App\Exports\Backend;
 
 use App\Abstracts\Export\FastExcelExport;
 use App\Models\Organization;
-use OpenSpout\Common\Exception\InvalidArgumentException;
 use function config;
+use OpenSpout\Common\Exception\InvalidArgumentException;
 
 /**
  * @class OrganizationExport

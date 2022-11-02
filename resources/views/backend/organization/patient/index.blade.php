@@ -45,14 +45,14 @@
                                 <table class="table table-hover mb-0" id="branch-table">
                                     <thead class="thead-light">
                                     <tr>
-                                        <th class="text-center">@sortablelink('id', 'id')</th>
-                                        <th class="text-center">@sortablelink('vaers_id', 'vaers_id')</th>
-                                        <th class="text-center">@sortablelink('recive_date', 'recive_date')</th>
-                                        <th class="text-center">@sortablelink('state', 'state')</th>
-                                        <th class="text-center">@sortablelink('age_yrs', 'age_yrs')</th>
-                                        <th class="text-center">@sortablelink('cage_yr', 'cage_yr')</th>
-                                        <th class="text-center">@sortablelink('cage_mo', 'cage_mo')</th>
-                                        <th class="text-center">@sortablelink('sex', 'sex')</th>
+                                        <th class="text-center">@sortablelink('id', '#')</th>
+                                        <th class="text-center">@sortablelink('vaers_id', 'Vaers ID')</th>
+                                        <th class="text-center">@sortablelink('recive_date', 'Receive Date')</th>
+                                        <th class="text-center">@sortablelink('state', 'State')</th>
+                                        <th class="text-center">@sortablelink('age_yrs', 'Age(yr)')</th>
+                                        <th class="text-center">@sortablelink('cage_yr', 'Cage(yr)')</th>
+                                        <th class="text-center">@sortablelink('cage_mo', 'Cage month')</th>
+                                        <th class="text-center">@sortablelink('sex', 'Sex')</th>
                                         <th class="text-center">@sortablelink('rpt_date', 'rpt_date')</th>
 {{--                                        <th class="text-center">@sortablelink('symptom_text', 'symptom_text')</th>--}}
                                         <th class="text-center">@sortablelink('died', 'died')</th>

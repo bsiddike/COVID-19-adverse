@@ -3,8 +3,8 @@
 namespace App\Services\Auth;
 
 use App\Providers\RouteServiceProvider;
-use Illuminate\Http\Request;
 use function back;
+use Illuminate\Http\Request;
 use function redirect;
 
 class EmailVerificationNotificationService

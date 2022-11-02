@@ -21,7 +21,7 @@ class DashboardController extends Controller
     }
 
     /**
-     * @param Request $request
+     * @param  Request  $request
      * @return array|Application|Factory|View|mixed
      *
      * @throws \Exception

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', __('menu-sidebar.Enumerators'))
+@section('title', 'Symptoms')
 
 @push('meta')
 
@@ -27,55 +27,13 @@
 @section('breadcrumbs', Breadcrumbs::render())
 
 @section('actions')
-    {!! Html::linkButton(__('symptom.Add Enumerator'), 'backend.organization.symptoms.create', [], 'fas fa-plus', 'success') !!}
-    {!! Html::bulkDropdown('backend.organization.symptoms', 0, ['color' => 'warning']) !!}
+    {!! Html::linkButton('Add Symptoms', 'backend.organization.symptoms.create', [], 'fas fa-plus', 'success') !!}
+    {{--    {!! Html::bulkDropdown('backend.organization.symptoms', 0, ['color' => 'warning']) !!}--}}
 @endsection
 
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header border-transparent pb-0">
-                        <h2 class="card-title">Filter Results</h2>
-                        <div class="card-tools">
-                            <button type="button" class="btn btn-sm btn-warning" id="clearAll">
-                                <span>Clear All</span>
-                            </button>
-                            {{--<button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                <i class="fas fa-minus"></i>
-                            </button>
-                            <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                <i class="fas fa-times"></i>
-                            </button>--}}
-                        </div>
-                    </div>
-{{--                    <div class="card-body">
-                        <form method="GET" action="{{ route('backend.organization.symptoms.index') }}"
-                              accept-charset="UTF-8">
---}}{{--                            {!! Form::hSelect('survey_id', __('survey.Surveys'),$surveys,
-old('survey_id', isset($request['survey_id']) ? request('survey_id') : ''), false, 3, ['placeholder' => __('symptom.Select a Survey Option')]) !!}--}}{{--
-                            {!! Form::hRadio('work_options', __('symptom.Select the district(s) where you have worked earlier or want to work in future'), [1=>__('symptom.Worked Earlier'), 2=>__('symptom.Work in Future')], old('work_options', ($request['work_options'] ?? '')), false, 7) !!}
-                            <div id="select-section">
-                                {!! Form::hSelect('division_id', __('symptom.Division'),$divisions,
-    old('division_id', isset($request['division_id']) ? request('division_id') : null), false, 3, ['placeholder' => __('symptom.Select a Division Option')]) !!}
-                                {!! Form::hSelect('prev_post_state_id', __('symptom.Worked Earlier'),$states,
-    old('prev_post_state_id', isset($request['prev_post_state_id']) ? request('prev_post_state_id') : null), false, 3, ['placeholder' => __('symptom.Select a Worked Earlier Option')]) !!}
-                                {!! Form::hSelect('future_post_state_id', __('symptom.Want to work in future'),$states,
-    old('future_post_state_id', isset($request['future_post_state_id']) ? request('future_post_state_id') : null), false, 3, ['placeholder' => __('symptom.Select a Want to work in future Option')]) !!}
-                            </div>
-                            <div class="input-group">
-                                <input class="form-control" placeholder="Search Enumerator Name etc." id="search"
-                                       data-target-table="symptom-table" name="search" type="search"
-                                       value="{{ request('search') }}">
-                                <div class="input-group-append">
-                                    <input class="btn btn-primary input-group-right-btn" type="submit" value="Search">
-                                </div>
-                            </div>
-                        </form>
-                    </div>--}}
-                </div>
-            </div>
             <div class="col-12">
                 <div class="card card-default">
                     @if(!empty($symptoms))
@@ -84,46 +42,40 @@ old('survey_id', isset($request['survey_id']) ? request('survey_id') : ''), fals
                                 <table class="table table-hover mb-0" id="employee-table">
                                     <thead class="thead-light">
                                     <tr>
-                                        <th class="align-middle">
-                                            @sortablelink('id', '#')
-                                        </th>
-                                        <th>@sortablelink('name', __('common.Name'))</th>
-                                        <th>@sortablelink('mobile_1', __('common.Mobile'))</th>
-                                        <th>@sortablelink('email', __('common.Email'))</th>
-                                        <th>@sortablelink('whatsapp', __('symptom.Whatsapp Number'))</th>
+                                        <th class="align-middle">@sortablelink('id', '#')</th>
+                                        <th>@sortablelink('vaers_id', 'vaers_id'))</th>
+                                        <th>@sortablelink('symptom1', 'symptom1'))</th>
+                                        <th>@sortablelink('symptomversion1', 'symptomversion1'))</th>
+                                        <th>@sortablelink('symptom2', 'symptom2'))</th>
+                                        <th>@sortablelink('symptomversion2', 'symptomversion2'))</th>
+                                        <th>@sortablelink('symptom3', 'symptom3'))</th>
+                                        <th>@sortablelink('symptomversion3', 'symptomversion3'))</th>
+                                        <th>@sortablelink('symptom4', 'symptom4'))</th>
+                                        <th>@sortablelink('symptomversion4', 'symptomversion4'))</th>
+                                        <th>@sortablelink('symptom5', 'symptom5'))</th>
+                                        <th>@sortablelink('symptomversion5', 'symptomversion5'))</th>
                                         <th class="text-center">@sortablelink('created_at', __('common.Created'))</th>
                                         <th class="text-center">{!! __('common.Actions') !!}</th>
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    @dd($symptoms)
                                     @forelse($symptoms as $index => $symptom)
                                         <tr @if($symptom->deleted_at != null) class="table-danger" @endif>
                                             <td class="exclude-search align-middle">
                                                 {{ $symptom->id }}
                                             </td>
-                                            <td class="text-left">
-                                                @can('backend.organization.symptoms.show')
-                                                    <a href="{{ route('backend.organization.symptoms.show', $symptom->id) }}">
-                                                        {{ $symptom->name }}<br>
-                                                        {!!  $symptom->name_bd !!}
-
-                                                    </a>
-                                                @else
-                                                    {{ $symptom->name }}<br>
-                                                    {!!  $symptom->name_bd !!}
-                                                @endcan
-                                            </td>
-                                            <td>
-                                                {{ $symptom->mobile_1 }}@if(!empty($symptom->mobile_2)),
-                                                <br>{{ $symptom->mobile_2 }}@endif
-                                            </td>
-                                            <td>
-                                                {{ $symptom->email }}
-                                            </td>
-                                            <td>
-                                                {{ $symptom->whatsapp }}
-                                            </td>
-
+                                            <td>{{ $symptom->vaers_id ?? null }}</td>
+                                            <td>{{ $symptom->symptom1 ?? null }}</td>
+                                            <td>{{ $symptom->symptomversion1 ?? null }}</td>
+                                            <td>{{ $symptom->symptom2 ?? null }}</td>
+                                            <td>{{ $symptom->symptomversion2 ?? null }}</td>
+                                            <td>{{ $symptom->symptom3 ?? null }}</td>
+                                            <td>{{ $symptom->symptomversion3 ?? null }}</td>
+                                            <td>{{ $symptom->symptom4 ?? null }}</td>
+                                            <td>{{ $symptom->symptomversion4 ?? null }}</td>
+                                            <td>{{ $symptom->symptom5 ?? null }}</td>
+                                            <td>{{ $symptom->symptomversion5 ?? null }}</td>
                                             <td class="text-center">{{ $symptom->created_at->format(config('backend.datetime')) ?? '' }}</td>
                                             <td class="exclude-search pr-3 text-center align-middle">
                                                 {!! Html::actionDropdown('backend.organization.symptoms', $symptom->id, array_merge(['show', 'edit'], ($symptom->deleted_at == null) ? ['delete'] : ['restore'])) !!}

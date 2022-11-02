@@ -64,8 +64,8 @@ class SymptomController extends Controller
     {
         $filters = $request->except('page');
 
-        $symptoms = $this->symptomService->symptomPaginate($filters);
-
+        $symptoms = $this->symptomService->getAllSymptoms($filters);
+        dd($symptoms);
         return view('backend.organization.symptom.index', [
             'symptoms' => $symptoms,
         ]);

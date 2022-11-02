@@ -35,12 +35,61 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Filter Options</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                    {!! Form::open(['route' => 'backend.organization.patients.index', 'method'=> 'get']) !!}
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                {!! \Form::nText('year', 'Year', null, false) !!}
+                            </div>
+                            <div class="col-md-4">
+                                {!! \Form::nText('age', 'Age', null, false) !!}
+                            </div>
+                            <div class="col-md-4">
+                                {!! \Form::nSelect('sex', 'Sex',
+                                ['M' => 'Male', 'F' => 'Female', 'U' => 'Unknown'],
+                                 null, false, [ 'placeholder' => 'Select a sex']) !!}
+                            </div>
+                            <div class="col-md-4">
+                                {!! \Form::nSelect('vaccine_id', 'Vaccine',
+                                \App\Models\Vaccine::all()->pluck('vax_name', 'vaers_id')->toArray(),
+                                 null, false, [
+                                     'placeholder' => 'Select a vaccine Brand name'
+                                 ]) !!}
+                            </div>
+                            <div class="col-md-4">
+                                {!! \Form::nText('symptom', 'Symptom', null, false) !!}
+                            </div>
+                            <div class="col-md-4">
+                                {!! \Form::nText('state', 'State', null, false) !!}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </div>
+                    {!! \Form::close() !!}
+                </div>
+            </div>
+            <div class="col-12">
                 <div class="card card-default">
                     @if(!empty($patients))
                         <div class="card-body p-0">
-                            {!! Html::cardSearch('search', 'backend.organization.patients.index',
-                            ['placeholder' => 'Search Survey Name etc.',
-                            'class' => 'form-control', 'id' => 'search', 'data-target-table' => 'survey-table']) !!}
+                            {{--                            {!! Html::cardSearch('search', 'backend.organization.patients.index',
+                                                        ['placeholder' => 'Search Survey Name etc.',
+                                                        'class' => 'form-control', 'id' => 'search', 'data-target-table' => 'survey-table']) !!}--}}
                             <div class="table-responsive">
                                 <table class="table table-hover mb-0" id="branch-table">
                                     <thead class="thead-light">
@@ -67,7 +116,7 @@
                                         <th class="text-center">@sortablelink('vax_date', 'vax_date')</th>
                                         <th class="text-center">@sortablelink('onset_date', 'onset_date')</th>
                                         <th class="text-center">@sortablelink('numdays', 'numdays')</th>
-                                        <th class="text-center">@sortablelink('lab_data', 'lab_data')</th>
+{{--                                        <th class="text-center">@sortablelink('lab_data', 'lab_data')</th>--}}
                                         <th class="text-center">@sortablelink('v_adminby', 'v_adminby')</th>
                                         <th class="text-center">@sortablelink('v_fundby', 'v_fundby')</th>
                                         <th class="text-center">@sortablelink('other_meds', 'other_meds')</th>
@@ -112,7 +161,7 @@
                                             <td class="text-center">{{ $patient->vax_date ?? null }}</td>
                                             <td class="text-center">{{ $patient->onset_date ?? null }}</td>
                                             <td class="text-center">{{ $patient->numdays ?? null }}</td>
-                                            <td class="text-center">{{ $patient->lab_data ?? null }}</td>
+{{--                                            <td class="text-center">{{ $patient->lab_data ?? null }}</td>--}}
                                             <td class="text-center">{{ $patient->v_adminby ?? null }}</td>
                                             <td class="text-center">{{ $patient->v_fundby ?? null }}</td>
                                             <td class="text-center">{{ $patient->other_meds ?? null }}</td>

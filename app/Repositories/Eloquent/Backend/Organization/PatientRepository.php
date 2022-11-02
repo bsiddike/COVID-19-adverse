@@ -9,6 +9,7 @@ use Exception;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\DB;
 
 /**
  * @class SurveyRepository
@@ -29,24 +30,48 @@ class PatientRepository extends EloquentRepository
     /**
      * Search Function
      *
-     * @param  array  $filters
-     * @param  bool  $is_sortable
+     * @param array $filters
+     * @param bool $is_sortable
      * @return Builder
      */
     private function filterData(array $filters = [], bool $is_sortable = false): Builder
     {
+        foreach ($filters as $key => $value) {
+            if(is_null($filters[$key])) {
+                unset($filters[$key]);
+            }
+        }
+
         $query = $this->getQueryBuilder();
 
-        if (! empty($filters['search'])) {
+        /* "vaccine_id" => "1996875"*/
+
+        if (!empty($filters['search'])) {
             $query->where('name', 'like', "%{$filters['search']}%")
                 ->orWhere('enabled', '=', "%{$filters['search']}%");
         }
 
-        if (! empty($filters['enabled'])) {
-            $query->where('enabled', '=', $filters['enabled']);
+        if (!empty($filters['year'])) {
+            $query->where(DB::raw('YEAR(`recive_date`)'), '=', $filters['year']);
         }
 
-        if (! empty($filters['sort']) && ! empty($filters['direction'])) {
+        if (!empty($filters['sex'])) {
+            $query->where('sex', '=', $filters['sex']);
+        }
+
+        if (!empty($filters['age'])) {
+            $query->where('age_yrs', '=', $filters['age']);
+        }
+
+        if (!empty($filters['state'])) {
+            $query->where('state', '=', strtoupper($filters['state']));
+        }
+
+        if (!empty($filters['symptom'])) {
+            $query->where('symptom_text', 'like', "%{$filters['symptom']}%");
+        }
+
+        if (!empty($filters['sort']) && !empty($filters['direction'])) {
             $query->sortable($filters['sort'], $filters['direction']);
         }
 
@@ -64,15 +89,16 @@ class PatientRepository extends EloquentRepository
     /**
      * Pagination Generator
      *
-     * @param  array  $filters
-     * @param  array  $eagerRelations
-     * @param  bool  $is_sortable
+     * @param array $filters
+     * @param array $eagerRelations
+     * @param bool $is_sortable
      * @return LengthAwarePaginator
      *
      * @throws Exception
      */
     public function paginateWith(array $filters = [], array $eagerRelations = [], bool $is_sortable = false): LengthAwarePaginator
     {
+
         $query = $this->getQueryBuilder();
 
         try {
@@ -85,9 +111,9 @@ class PatientRepository extends EloquentRepository
     }
 
     /**
-     * @param  array  $filters
-     * @param  array  $eagerRelations
-     * @param  bool  $is_sortable
+     * @param array $filters
+     * @param array $eagerRelations
+     * @param bool $is_sortable
      * @return Builder[]|Collection
      *
      * @throws Exception

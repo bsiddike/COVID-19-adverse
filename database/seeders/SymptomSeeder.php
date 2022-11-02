@@ -20,7 +20,7 @@ class SymptomSeeder extends Seeder
 
         (new FastExcel)
             ->withoutHeaders()
-            ->import(base_path('database/data/1990VAERSSYMPTOMS.csv'), function ($line) {
+            ->import(base_path('database/data/2022VAERSSYMPTOMS.csv'), function ($line) {
                 /*0 => "VAERS_ID"
                   1 => "SYMPTOM1"
                   2 => "SYMPTOMVERSION1"

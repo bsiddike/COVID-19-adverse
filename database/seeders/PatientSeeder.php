@@ -20,7 +20,7 @@ class PatientSeeder extends Seeder
 
         (new FastExcel)
             ->withoutHeaders()
-            ->import(base_path('database/data/1990VAERSDATA.csv'), function ($line) {
+            ->import(base_path('database/data/2022VAERSDATA.csv'), function ($line) {
                 /*0 => "VAERS_ID"
                   1 => "RECVDATE"
                   2 => "STATE"

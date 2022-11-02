@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', __('menu-sidebar.Surveys'))
+@section('title', 'Patents')
 
 @push('meta')
 
@@ -27,7 +27,7 @@
 @section('breadcrumbs', Breadcrumbs::render())
 
 @section('actions')
-    {!! Html::linkButton(__('survey.Add Survey'), 'backend.organization.patients.create', [], 'fas fa-plus', 'success') !!}
+    {!! Html::linkButton('Patents', 'backend.organization.patients.create', [], 'fas fa-plus', 'success') !!}
     {{--{!! \Html::bulkDropdown('backend.organization.surveys', 0, ['color' => 'warning']) !!}--}}
 @endsection
 
@@ -54,7 +54,7 @@
                                         <th class="text-center">@sortablelink('cage_mo', 'Cage month')</th>
                                         <th class="text-center">@sortablelink('sex', 'Sex')</th>
                                         <th class="text-center">@sortablelink('rpt_date', 'rpt_date')</th>
-{{--                                        <th class="text-center">@sortablelink('symptom_text', 'symptom_text')</th>--}}
+                                        {{--                                        <th class="text-center">@sortablelink('symptom_text', 'symptom_text')</th>--}}
                                         <th class="text-center">@sortablelink('died', 'died')</th>
                                         <th class="text-center">@sortablelink('datedied', 'datedied')</th>
                                         <th class="text-center">@sortablelink('l_threat', 'l_threat')</th>
@@ -99,7 +99,7 @@
                                             <td class="text-center">{{ $patient->cage_mo ?? null }}</td>
                                             <td class="text-center">{{ $patient->sex ?? null }}</td>
                                             <td class="text-center">{{ $patient->rpt_date ?? null }}</td>
-{{--                                            <td class="text-center">{{ $patient->symptom_text ?? null }}</td>--}}
+                                            {{--                                            <td class="text-center">{{ $patient->symptom_text ?? null }}</td>--}}
                                             <td class="text-center">{{ $patient->died ?? null }}</td>
                                             <td class="text-center">{{ $patient->datedied ?? null }}</td>
                                             <td class="text-center">{{ $patient->l_threat ?? null }}</td>
@@ -133,7 +133,7 @@
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="6" class="exclude-search text-center">No data to display</td>
+                                            <td colspan="40" class="exclude-search text-center">No data to display</td>
                                         </tr>
                                     @endforelse
                                     </tbody>

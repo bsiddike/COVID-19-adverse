@@ -171,7 +171,7 @@ Breadcrumbs::for('backend.organization', function (BreadcrumbTrail $trail) {
 Breadcrumbs::for('backend.organization.patients.index', function (BreadcrumbTrail $trail) {
     $trail->parent('backend.organization');
 
-    $trail->push(__('menu-sidebar.Surveys'), route('backend.organization.patients.index'));
+    $trail->push('Patients', route('backend.organization.patients.index'));
 });
 
 Breadcrumbs::for('backend.organization.patients.create', function (BreadcrumbTrail $trail) {

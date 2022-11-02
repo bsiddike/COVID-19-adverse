@@ -148,9 +148,8 @@ class SymptomController extends Controller
     public function edit($id)
     {
         if ($symptom = $this->symptomService->getSymptomById($id)) {
-
             return view('backend.organization.symptom.edit', [
-                'symptom' => $symptom
+                'symptom' => $symptom,
             ]);
         }
 

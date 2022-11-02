@@ -52,28 +52,28 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-4">
-                                {!! \Form::nText('year', 'Year', null, false) !!}
+                                {!! \Form::nText('year', 'Year', request()->get('year'), false) !!}
                             </div>
                             <div class="col-md-4">
-                                {!! \Form::nText('age', 'Age', null, false) !!}
+                                {!! \Form::nText('age', 'Age', request()->get('age'), false) !!}
                             </div>
                             <div class="col-md-4">
                                 {!! \Form::nSelect('sex', 'Sex',
                                 ['M' => 'Male', 'F' => 'Female', 'U' => 'Unknown'],
-                                 null, false, [ 'placeholder' => 'Select a sex']) !!}
+                                 request()->get('sex'), false, [ 'placeholder' => 'Select a sex']) !!}
                             </div>
                             <div class="col-md-4">
                                 {!! \Form::nSelect('vaccine_id', 'Vaccine',
                                 \App\Models\Vaccine::all()->pluck('vax_name', 'vaers_id')->toArray(),
-                                 null, false, [
+                                 request()->get('vaccine_id'), false, [
                                      'placeholder' => 'Select a vaccine Brand name'
                                  ]) !!}
                             </div>
                             <div class="col-md-4">
-                                {!! \Form::nText('symptom', 'Symptom', null, false) !!}
+                                {!! \Form::nText('symptom', 'Symptom', request()->get('symptom'), false) !!}
                             </div>
                             <div class="col-md-4">
-                                {!! \Form::nText('state', 'State', null, false) !!}
+                                {!! \Form::nText('state', 'State', request()->get('state'), false) !!}
                             </div>
                         </div>
                     </div>

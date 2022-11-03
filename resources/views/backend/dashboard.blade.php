@@ -50,7 +50,9 @@
         </div>
         <div class="row">
             @include('backend.wizard.affected-gender')
-            @include('backend.wizard.affected-age-wize')
+            @include('backend.wizard.affected-age-wise')
+            @include('backend.wizard.affected-state')
+
         </div>
         <!-- /.container-fluid -->
     </div>

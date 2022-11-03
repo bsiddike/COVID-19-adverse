@@ -18,7 +18,8 @@ class DashboardController extends Controller
 
     /**
      * DashboardController constructor.
-     * @param PatientService $patientService
+     *
+     * @param  PatientService  $patientService
      */
     public function __construct(PatientService $patientService)
     {
@@ -26,7 +27,7 @@ class DashboardController extends Controller
     }
 
     /**
-     * @param Request $request
+     * @param  Request  $request
      * @return array|Application|Factory|View|mixed
      *
      * @throws \Exception
@@ -40,7 +41,7 @@ class DashboardController extends Controller
             'symptoms' => Symptom::all()->count(),
             'vaccines' => Vaccine::all()->count(),
             'affectedGender' => $this->getGenderMetrics($filters),
-            'affectedAge' => $this->getAgeMetrics($filters)
+            'affectedAge' => $this->getAgeMetrics($filters),
         ]);
     }
 
@@ -60,7 +61,6 @@ class DashboardController extends Controller
             ],
         ];
     }
-
 
     private function getAgeMetrics(array $filters = [])
     {

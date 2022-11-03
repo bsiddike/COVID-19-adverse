@@ -44,12 +44,13 @@
     <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-            @include('backend.wizard.total-user')
-            @include('backend.wizard.total-enumerator')
-            @include('backend.wizard.total-survey')
+            @include('backend.wizard.total-patient')
+            @include('backend.wizard.total-symptom')
+            @include('backend.wizard.total-vaccine')
         </div>
         <div class="row">
             @include('backend.wizard.affected-gender')
+            @include('backend.wizard.affected-age-wize')
         </div>
         <!-- /.container-fluid -->
     </div>

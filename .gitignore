@@ -26,3 +26,4 @@ vendor.zip
 composer.phar
 error_log
 composer.lock
+/build/*

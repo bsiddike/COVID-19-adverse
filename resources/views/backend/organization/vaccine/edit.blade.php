@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Edit Symptom')
+@section('title', 'Edit Vaccine')
 
 @push('meta')
 
@@ -23,10 +23,10 @@
 @endpush
 
 
-@section('breadcrumbs', Breadcrumbs::render(Route::getCurrentRoute()->getName(), $symptom))
+@section('breadcrumbs', Breadcrumbs::render(Route::getCurrentRoute()->getName(), $vaccine))
 
 @section('actions')
-    {!! Html::backButton('backend.organization.symptoms.index') !!}
+    {!! Html::backButton('backend.organization.vaccines.index') !!}
 @endsection
 
 @section('content')
@@ -34,8 +34,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                    {!! Form::open(['route' => ['backend.organization.symptoms.update', $symptom->id], 'method' => 'put', 'id' => 'symptom-form']) !!}
-                    @include('backend.organization.symptom.form')
+                    {!! Form::open(['route' => ['backend.organization.vaccines.update', $vaccine->id], 'method' => 'put', 'id' => 'vaccine-form']) !!}
+                    @include('backend.organization.vaccine.form')
                     {!! Form::close() !!}
                 </div>
             </div>

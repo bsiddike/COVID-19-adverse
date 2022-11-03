@@ -1,5 +1,5 @@
-# BBD NSDS Implementation Support Project
-This application is intend for enumerator/ applicant registration process assistance.
+# COVID 19 Surveillance Project
+A novel comprehensive multi-resource pharma covigilance software application that enhances active
 
 ## Installation 
 This application is based on [Laravel@8.54](https://laravel.com). with boilerplate of [Adminlte 3](https://adminlte.io/themes/v3/) as UI Template.
@@ -8,13 +8,12 @@ Please follow this steps properly to install this application.
 * Your PC Must have minimal PHP 7.4 installed to operate this application
 * For Windows please Download [XAMPP](https://www.apachefriends.org/download.html) for Development Environment.
 * Install [Composer](https://getcomposer.org/download/) package manager for application dependence.
-* Install [Node/NPM](https://nodejs.org/en/) for Asset Compilations
-* Mysql Database Server configuration **XAMPP** comes with prebuild mysql db server setup
+* Mysql Database Server configuration (**XAMPP** comes with prebuild mysql) db server setup
 
 If you have All this pre-required tools installed then follow this process to step by step .
-* Go To Project Directory using File Explorer then rename the .env.example file to .env
-* Open your DBMS Tool like **PHPmyAdmin**/ any other tools create a new Database there  
-* Open .env File using any text editor then change the DB Configuration values and save
+* Go To Project Directory using File Explorer then copy the .env.example file to .env
+* Open your DBMS Tool like **phpMyAdmin** or any other tools create a new Database there  
+* Open .env File using any text editor then change the DB Configuration `DB_DATABASE`, `DB_HOST`, `DB_USERNAME`, `DB_PASSWORD` values and save
 * Open Command Prompt/Git Bash Window on Project directory and run the command to install package
 ```bash
 composer install
@@ -27,14 +26,6 @@ php artisan migrate:refresh --seed
 ```bash
 php artisan key:generate
 ```
-* Now, to install npm packages run this command
-```bash
-npm install
-```
-* Finally, Run thwe asset compilation command
-```bash
-npm run dev
-```
 Installation process is complete.
 
 Run this command to start application
@@ -45,7 +36,7 @@ Application start on **[127.0.0.1:8000](http://127.0.0.1:8000)** address
 
 Administrator Login URL:**[Admin Login](http://127.0.0.1:8000/backend/login/)**
 
-Admin Email: **hafijul233@gmail.com**
+Admin Username: **hafijul233**
 
 Admin Password: **password**
 

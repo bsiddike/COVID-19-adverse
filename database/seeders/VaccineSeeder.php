@@ -20,7 +20,7 @@ class VaccineSeeder extends Seeder
 
         (new FastExcel)
             ->withoutHeaders()
-            ->import(base_path('database/data/1990VAERSVAX.csv'), function ($line) {
+            ->import(base_path('database/data/2022VAERSVAX.csv'), function ($line) {
                 /**
                  * 0 => "VAERS_ID", 1 => "VAX_TYPE", 2 => "VAX_MANU", 3 => "VAX_LOT"
                  * 4 => "VAX_DOSE_SERIES", 5 => "VAX_ROUTE", 6 => "VAX_SITE", 7 => "VAX_NAME"

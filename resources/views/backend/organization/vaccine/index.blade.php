@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Symptoms')
+@section('title', 'Vaccines')
 
 @push('meta')
 
@@ -27,8 +27,8 @@
 @section('breadcrumbs', Breadcrumbs::render())
 
 @section('actions')
-    {!! Html::linkButton('Add Symptoms', 'backend.organization.symptoms.create', [], 'fas fa-plus', 'success') !!}
-    {{--    {!! Html::bulkDropdown('backend.organization.symptoms', 0, ['color' => 'warning']) !!}--}}
+    {!! Html::linkButton( 'Add Vaccine', 'backend.organization.vaccines.create', [], 'fas fa-plus', 'success') !!}
+{{--    {!! Html::bulkDropdown('backend.organization.vaccines', 0, ['color' => 'warning']) !!}--}}
 @endsection
 
 @section('content')
@@ -36,48 +36,44 @@
         <div class="row">
             <div class="col-12">
                 <div class="card card-default">
-                    @if(!empty($symptoms))
+                    @if(!empty($vaccines))
                         <div class="card-body p-0">
                             <div class="table-responsive">
                                 <table class="table table-hover mb-0" id="employee-table">
                                     <thead class="thead-light">
                                     <tr>
-                                        <th class="align-middle">@sortablelink('id', '#')</th>
+                                        <th class="align-middle">
+                                            @sortablelink('id', '#')
+                                        </th>
                                         <th>@sortablelink('vaers_id', 'vaers_id'))</th>
-                                        <th>@sortablelink('symptom1', 'symptom1'))</th>
-                                        <th>@sortablelink('symptomversion1', 'symptomversion1'))</th>
-                                        <th>@sortablelink('symptom2', 'symptom2'))</th>
-                                        <th>@sortablelink('symptomversion2', 'symptomversion2'))</th>
-                                        <th>@sortablelink('symptom3', 'symptom3'))</th>
-                                        <th>@sortablelink('symptomversion3', 'symptomversion3'))</th>
-                                        <th>@sortablelink('symptom4', 'symptom4'))</th>
-                                        <th>@sortablelink('symptomversion4', 'symptomversion4'))</th>
-                                        <th>@sortablelink('symptom5', 'symptom5'))</th>
-                                        <th>@sortablelink('symptomversion5', 'symptomversion5'))</th>
+                                        <th>@sortablelink('vax_type', 'vax_type'))</th>
+                                        <th>@sortablelink('vax_manu', 'vax_manu'))</th>
+                                        <th>@sortablelink('vax_lot', 'vax_lot'))</th>
+                                        <th>@sortablelink('vax_dose_series', 'vax_dose_series'))</th>
+                                        <th>@sortablelink('vax_route', 'vax_route'))</th>
+                                        <th>@sortablelink('vax_site', 'vax_site'))</th>
+                                        <th>@sortablelink('vax_name', 'vax_name'))</th>
                                         <th class="text-center">@sortablelink('created_at', __('common.Created'))</th>
                                         <th class="text-center">{!! __('common.Actions') !!}</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @forelse($symptoms as $index => $symptom)
-                                        <tr @if($symptom->deleted_at != null) class="table-danger" @endif>
+                                    @forelse($vaccines as $index => $vaccine)
+                                        <tr @if($vaccine->deleted_at != null) class="table-danger" @endif>
                                             <td class="exclude-search align-middle">
-                                                {{ $symptom->id }}
+                                                {{ $vaccine->id }}
                                             </td>
-                                            <td>{{ $symptom->vaers_id ?? null }}</td>
-                                            <td>{{ $symptom->symptom1 ?? null }}</td>
-                                            <td>{{ $symptom->symptomversion1 ?? null }}</td>
-                                            <td>{{ $symptom->symptom2 ?? null }}</td>
-                                            <td>{{ $symptom->symptomversion2 ?? null }}</td>
-                                            <td>{{ $symptom->symptom3 ?? null }}</td>
-                                            <td>{{ $symptom->symptomversion3 ?? null }}</td>
-                                            <td>{{ $symptom->symptom4 ?? null }}</td>
-                                            <td>{{ $symptom->symptomversion4 ?? null }}</td>
-                                            <td>{{ $symptom->symptom5 ?? null }}</td>
-                                            <td>{{ $symptom->symptomversion5 ?? null }}</td>
-                                            <td class="text-center">{{ $symptom->created_at->format(config('backend.datetime')) ?? '' }}</td>
+                                            <td>{{ $vaccine->vaers_id }}</td>
+                                            <td>{{ $vaccine->vax_type }}</td>
+                                            <td>{{ $vaccine->vax_name }}</td>
+                                            <td>{{ $vaccine->vax_manu }}</td>
+                                            <td>{{ $vaccine->vax_lot }}</td>
+                                            <td>{{ $vaccine->vax_dose_series }}</td>
+                                            <td>{{ $vaccine->vax_route }}</td>
+                                            <td>{{ $vaccine->vax_site }}</td>
+                                            <td class="text-center">{{ $vaccine->created_at->format(config('backend.datetime')) ?? '' }}</td>
                                             <td class="exclude-search pr-3 text-center align-middle">
-                                                {!! Html::actionDropdown('backend.organization.symptoms', $symptom->id, array_merge(['show', 'edit'], ($symptom->deleted_at == null) ? ['delete'] : ['restore'])) !!}
+                                                {!! Html::actionDropdown('backend.organization.vaccines', $vaccine->id, array_merge(['show', 'edit'], ($vaccine->deleted_at == null) ? ['delete'] : ['restore'])) !!}
                                             </td>
                                         </tr>
                                     @empty
@@ -90,7 +86,7 @@
                             </div>
                         </div>
                         <div class="card-footer bg-transparent pb-0">
-                            {!! \App\Supports\CHTML::pagination($symptoms) !!}
+                            {!! \App\Supports\CHTML::pagination($vaccines) !!}
                         </div>
                     @else
                         <div class="card-body min-vh-100">
@@ -168,23 +164,23 @@
             $("#survey_id").select2({
                 width: "100%",
                 allowClear: true,
-                placeholder: "{{ __('symptom.Select a Survey Option') }}"
+                placeholder: "{{ __('vaccine.Select a Survey Option') }}"
             });
 
             $("#prev_post_state_id").select2({
                 width: "100%",
                 allowClear: true,
-                placeholder: "{{ __('symptom.Select a Worked Earlier Option') }}"
+                placeholder: "{{ __('vaccine.Select a Worked Earlier Option') }}"
             });
             $("#future_post_state_id").select2({
                 width: "100%",
                 allowClear: true,
-                placeholder: "{{ __('symptom.Select a Work in Future Option') }}"
+                placeholder: "{{ __('vaccine.Select a Work in Future Option') }}"
             });
             $("#division_id").select2({
                 width: "100%",
                 allowClear: true,
-                placeholder: "{{ __('symptom.Select a Division Option') }}"
+                placeholder: "{{ __('vaccine.Select a Division Option') }}"
             });
 
             $('#clearAll').click(function () {

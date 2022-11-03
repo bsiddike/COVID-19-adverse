@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', __('menu-sidebar.Surveys'))
+@section('title', 'Patients')
 
 @push('meta')
 
@@ -27,7 +27,7 @@
 @section('breadcrumbs', Breadcrumbs::render())
 
 @section('actions')
-    {!! Html::linkButton(__('survey.Add Survey'), 'backend.organization.patients.create', [], 'fas fa-plus', 'success') !!}
+    {!! Html::linkButton('Add Patient', 'backend.organization.patients.create', [], 'fas fa-plus', 'success') !!}
     {{--{!! \Html::bulkDropdown('backend.organization.surveys', 0, ['color' => 'warning']) !!}--}}
 @endsection
 
@@ -35,26 +35,75 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Filter Options</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                    {!! Form::open(['route' => 'backend.organization.patients.index', 'method'=> 'get']) !!}
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                {!! \Form::nText('year', 'Year', request()->get('year'), false) !!}
+                            </div>
+                            <div class="col-md-4">
+                                {!! \Form::nText('age', 'Age', request()->get('age'), false) !!}
+                            </div>
+                            <div class="col-md-4">
+                                {!! \Form::nSelect('sex', 'Sex',
+                                ['M' => 'Male', 'F' => 'Female', 'U' => 'Unknown'],
+                                 request()->get('sex'), false, [ 'placeholder' => 'Select a sex']) !!}
+                            </div>
+                            <div class="col-md-4">
+                                {!! \Form::nSelect('vaccine_id', 'Vaccine',
+                                \App\Models\Vaccine::all()->pluck('vax_name', 'vaers_id')->toArray(),
+                                 request()->get('vaccine_id'), false, [
+                                     'placeholder' => 'Select a vaccine Brand name'
+                                 ]) !!}
+                            </div>
+                            <div class="col-md-4">
+                                {!! \Form::nText('symptom', 'Symptom', request()->get('symptom'), false) !!}
+                            </div>
+                            <div class="col-md-4">
+                                {!! \Form::nText('state', 'State', request()->get('state'), false) !!}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </div>
+                    {!! \Form::close() !!}
+                </div>
+            </div>
+            <div class="col-12">
                 <div class="card card-default">
                     @if(!empty($patients))
                         <div class="card-body p-0">
-                            {!! Html::cardSearch('search', 'backend.organization.patients.index',
-                            ['placeholder' => 'Search Survey Name etc.',
-                            'class' => 'form-control', 'id' => 'search', 'data-target-table' => 'survey-table']) !!}
+                            {{--                            {!! Html::cardSearch('search', 'backend.organization.patients.index',
+                                                        ['placeholder' => 'Search Survey Name etc.',
+                                                        'class' => 'form-control', 'id' => 'search', 'data-target-table' => 'survey-table']) !!}--}}
                             <div class="table-responsive">
                                 <table class="table table-hover mb-0" id="branch-table">
                                     <thead class="thead-light">
                                     <tr>
-                                        <th class="text-center">@sortablelink('id', 'id')</th>
-                                        <th class="text-center">@sortablelink('vaers_id', 'vaers_id')</th>
-                                        <th class="text-center">@sortablelink('recive_date', 'recive_date')</th>
-                                        <th class="text-center">@sortablelink('state', 'state')</th>
-                                        <th class="text-center">@sortablelink('age_yrs', 'age_yrs')</th>
-                                        <th class="text-center">@sortablelink('cage_yr', 'cage_yr')</th>
-                                        <th class="text-center">@sortablelink('cage_mo', 'cage_mo')</th>
-                                        <th class="text-center">@sortablelink('sex', 'sex')</th>
+                                        <th class="text-center">@sortablelink('id', '#')</th>
+                                        <th class="text-center">@sortablelink('vaers_id', 'Vaers ID')</th>
+                                        <th class="text-center">@sortablelink('recive_date', 'Receive Date')</th>
+                                        <th class="text-center">@sortablelink('state', 'State')</th>
+                                        <th class="text-center">@sortablelink('age_yrs', 'Age(yr)')</th>
+                                        <th class="text-center">@sortablelink('cage_yr', 'Cage(yr)')</th>
+                                        <th class="text-center">@sortablelink('cage_mo', 'Cage month')</th>
+                                        <th class="text-center">@sortablelink('sex', 'Sex')</th>
                                         <th class="text-center">@sortablelink('rpt_date', 'rpt_date')</th>
-{{--                                        <th class="text-center">@sortablelink('symptom_text', 'symptom_text')</th>--}}
+                                        {{--                                        <th class="text-center">@sortablelink('symptom_text', 'symptom_text')</th>--}}
                                         <th class="text-center">@sortablelink('died', 'died')</th>
                                         <th class="text-center">@sortablelink('datedied', 'datedied')</th>
                                         <th class="text-center">@sortablelink('l_threat', 'l_threat')</th>
@@ -67,7 +116,7 @@
                                         <th class="text-center">@sortablelink('vax_date', 'vax_date')</th>
                                         <th class="text-center">@sortablelink('onset_date', 'onset_date')</th>
                                         <th class="text-center">@sortablelink('numdays', 'numdays')</th>
-                                        <th class="text-center">@sortablelink('lab_data', 'lab_data')</th>
+{{--                                        <th class="text-center">@sortablelink('lab_data', 'lab_data')</th>--}}
                                         <th class="text-center">@sortablelink('v_adminby', 'v_adminby')</th>
                                         <th class="text-center">@sortablelink('v_fundby', 'v_fundby')</th>
                                         <th class="text-center">@sortablelink('other_meds', 'other_meds')</th>
@@ -99,7 +148,7 @@
                                             <td class="text-center">{{ $patient->cage_mo ?? null }}</td>
                                             <td class="text-center">{{ $patient->sex ?? null }}</td>
                                             <td class="text-center">{{ $patient->rpt_date ?? null }}</td>
-{{--                                            <td class="text-center">{{ $patient->symptom_text ?? null }}</td>--}}
+                                            {{--                                            <td class="text-center">{{ $patient->symptom_text ?? null }}</td>--}}
                                             <td class="text-center">{{ $patient->died ?? null }}</td>
                                             <td class="text-center">{{ $patient->datedied ?? null }}</td>
                                             <td class="text-center">{{ $patient->l_threat ?? null }}</td>
@@ -112,7 +161,7 @@
                                             <td class="text-center">{{ $patient->vax_date ?? null }}</td>
                                             <td class="text-center">{{ $patient->onset_date ?? null }}</td>
                                             <td class="text-center">{{ $patient->numdays ?? null }}</td>
-                                            <td class="text-center">{{ $patient->lab_data ?? null }}</td>
+{{--                                            <td class="text-center">{{ $patient->lab_data ?? null }}</td>--}}
                                             <td class="text-center">{{ $patient->v_adminby ?? null }}</td>
                                             <td class="text-center">{{ $patient->v_fundby ?? null }}</td>
                                             <td class="text-center">{{ $patient->other_meds ?? null }}</td>
@@ -133,7 +182,7 @@
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="6" class="exclude-search text-center">No data to display</td>
+                                            <td colspan="40" class="exclude-search text-center">No data to display</td>
                                         </tr>
                                     @endforelse
                                     </tbody>

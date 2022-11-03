@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Models\Patient;
 use App\Models\Symptom;
 use App\Models\Vaccine;
+use App\Services\Backend\Organization\PatientService;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -13,11 +14,16 @@ use Illuminate\Routing\Controller;
 
 class DashboardController extends Controller
 {
+    private PatientService $patientService;
+
     /**
      * DashboardController constructor.
+     *
+     * @param  PatientService  $patientService
      */
-    public function __construct()
+    public function __construct(PatientService $patientService)
     {
+        $this->patientService = $patientService;
     }
 
     /**
@@ -28,38 +34,48 @@ class DashboardController extends Controller
      */
     public function __invoke(Request $request)
     {
+        $filters = $request->except('page');
+
         return view('backend.dashboard', [
             'patients' => Patient::all()->count(),
             'symptoms' => Symptom::all()->count(),
             'vaccines' => Vaccine::all()->count(),
-            'pieData' => $this->getGenderMetrics(),
+            'affectedGender' => $this->getGenderMetrics($filters),
+            'affectedAge' => $this->getAgeMetrics($filters),
         ]);
     }
 
-    private function getGenderMetrics()
+    private function getGenderMetrics(array $filters = [])
     {
-        $data = Patient::selectRaw('count(id) as aggregate, sex')->groupBy('sex')->get()->toArray();
+        $filters['metric'] = 'sex';
 
-        $pieChartData = [
-            'labels' => ['Female', 'Male', 'Unknown'],
+        $data = $this->patientService->getAllPatients($filters)->toArray();
+
+        return [
+            'labels' => array_keys($data[0]),
             'datasets' => [
                 [
-                    'data' => [],
+                    'data' => array_values($data[0]),
                     'backgroundColor' => ['#f56954', '#00a65a', '#f39c12'],
                 ],
             ],
         ];
+    }
 
-        foreach ($data as $datum) {
-            if ($datum['sex'] == 'F') {
-                $pieChartData['datasets'][0]['data'][0] = $datum['aggregate'];
-            } elseif ($datum['sex'] == 'M') {
-                $pieChartData['datasets'][0]['data'][1] = $datum['aggregate'];
-            } else {
-                $pieChartData['datasets'][0]['data'][2] = $datum['aggregate'];
-            }
-        }
+    private function getAgeMetrics(array $filters = [])
+    {
+        $filters['metric'] = 'age_yrs';
 
-        return $pieChartData;
+        $data = $this->patientService->getAllPatients($filters)->toArray();
+
+        return [
+            'labels' => array_keys($data[0]),
+            'datasets' => [
+                [
+                    'data' => array_values($data[0]),
+                    'backgroundColor' => ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#a2d6de'],
+                ],
+            ],
+        ];
     }
 }

@@ -10,7 +10,7 @@ use OpenSpout\Common\Exception\InvalidArgumentException;
 class CountryExport extends FastExcelExport
 {
     /**
-     * @param null $data
+     * @param  null  $data
      *
      * @throws InvalidArgumentException
      */
@@ -22,7 +22,7 @@ class CountryExport extends FastExcelExport
     }
 
     /**
-     * @param Permission $row
+     * @param  Permission  $row
      * @return array
      */
     public function map($row): array

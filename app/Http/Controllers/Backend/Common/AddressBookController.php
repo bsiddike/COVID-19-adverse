@@ -34,11 +34,11 @@ class AddressBookController extends Controller
     /**
      * AddressBookController Constructor
      *
-     * @param AuthenticatedSessionService $authenticatedSessionService
-     * @param AddressBookService $addressBookService
+     * @param  AuthenticatedSessionService  $authenticatedSessionService
+     * @param  AddressBookService  $addressBookService
      */
     public function __construct(AuthenticatedSessionService $authenticatedSessionService,
-                                AddressBookService          $addressBookService)
+                                AddressBookService $addressBookService)
     {
         $this->authenticatedSessionService = $authenticatedSessionService;
         $this->addressBookService = $addressBookService;
@@ -74,7 +74,7 @@ class AddressBookController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param AddressBookRequest $request
+     * @param  AddressBookRequest  $request
      * @return RedirectResponse
      *
      * @throws Exception|Throwable
@@ -135,7 +135,7 @@ class AddressBookController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param AddressBookRequest $request
+     * @param  AddressBookRequest  $request
      * @param    $id
      * @return RedirectResponse
      *
@@ -160,7 +160,7 @@ class AddressBookController extends Controller
      * Remove the specified resource from storage.
      *
      * @param $id
-     * @param Request $request
+     * @param  Request  $request
      * @return RedirectResponse
      *
      * @throws Throwable
@@ -185,7 +185,7 @@ class AddressBookController extends Controller
      * Restore a Soft Deleted Resource
      *
      * @param $id
-     * @param Request $request
+     * @param  Request  $request
      * @return RedirectResponse|void
      *
      * @throws Throwable
@@ -219,7 +219,7 @@ class AddressBookController extends Controller
 
         $addressBookExport = $this->addressBookService->exportAddressBook($filters);
 
-        $filename = 'Address-' . date('Ymd-His') . '.' . ($filters['format'] ?? 'xlsx');
+        $filename = 'Address-'.date('Ymd-His').'.'.($filters['format'] ?? 'xlsx');
 
         return $addressBookExport->download($filename, function ($addressBook) use ($addressBookExport) {
             return $addressBookExport->map($addressBook);
@@ -266,7 +266,7 @@ class AddressBookController extends Controller
 
         $addressBookExport = $this->addressBookService->exportAddressBook($filters);
 
-        $filename = 'Address-' . date('Ymd-His') . '.' . ($filters['format'] ?? 'xlsx');
+        $filename = 'Address-'.date('Ymd-His').'.'.($filters['format'] ?? 'xlsx');
 
         return $addressBookExport->download($filename, function ($addressBook) use ($addressBookExport) {
             return $addressBookExport->map($addressBook);

@@ -2,13 +2,13 @@
 
 namespace App\Services\Backend\Setting;
 
-use DB;
 use function __;
 use App\Abstracts\Service\Service;
 use App\Exports\Backend\Setting\CountryExport;
 use App\Models\Backend\Setting\Permission;
 use App\Repositories\Eloquent\Backend\Setting\PermissionRepository;
 use App\Supports\Constant;
+use DB;
 use Exception;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Builder;
@@ -25,7 +25,7 @@ class PermissionService extends Service
     /**
      * PermissionService constructor.
      *
-     * @param PermissionRepository $permissionRepository
+     * @param  PermissionRepository  $permissionRepository
      */
     public function __construct(PermissionRepository $permissionRepository)
     {
@@ -36,8 +36,8 @@ class PermissionService extends Service
     /**
      * Get All Permission models as collection
      *
-     * @param array $filters
-     * @param array $eagerRelations
+     * @param  array  $filters
+     * @param  array  $eagerRelations
      * @return Builder[]|Collection
      *
      * @throws Exception
@@ -50,8 +50,8 @@ class PermissionService extends Service
     /**
      * Create Permission Model Pagination
      *
-     * @param array $filters
-     * @param array $eagerRelations
+     * @param  array  $filters
+     * @param  array  $eagerRelations
      * @return LengthAwarePaginator
      *
      * @throws Exception
@@ -64,8 +64,8 @@ class PermissionService extends Service
     /**
      * Show Permission Model
      *
-     * @param int $id
-     * @param bool $purge
+     * @param  int  $id
+     * @param  bool  $purge
      * @return mixed
      *
      * @throws Exception
@@ -78,7 +78,7 @@ class PermissionService extends Service
     /**
      * Save Permission Model
      *
-     * @param array $inputs
+     * @param  array  $inputs
      * @return array
      *
      * @throws Exception
@@ -93,26 +93,26 @@ class PermissionService extends Service
                 DB::commit();
 
                 return ['status' => true, 'message' => __('New Permission Created'),
-                    'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!',];
+                    'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!', ];
             } else {
                 DB::rollBack();
 
                 return ['status' => false, 'message' => __('New Permission Creation Failed'),
-                    'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!',];
+                    'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!', ];
             }
         } catch (Exception $exception) {
             $this->permissionRepository->handleException($exception);
             DB::rollBack();
 
             return ['status' => false, 'message' => $exception->getMessage(),
-                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!',];
+                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!', ];
         }
     }
 
     /**
      * Update Permission Model
      *
-     * @param array $inputs
+     * @param  array  $inputs
      * @param $id
      * @return array
      *
@@ -128,23 +128,23 @@ class PermissionService extends Service
                     DB::commit();
 
                     return ['status' => true, 'message' => __('Permission Info Updated'),
-                        'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!',];
+                        'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!', ];
                 } else {
                     DB::rollBack();
 
                     return ['status' => false, 'message' => __('Permission Info Update Failed'),
-                        'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!',];
+                        'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!', ];
                 }
             } else {
                 return ['status' => false, 'message' => __('Permission Model Not Found'),
-                    'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Alert!',];
+                    'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Alert!', ];
             }
         } catch (Exception $exception) {
             $this->permissionRepository->handleException($exception);
             DB::rollBack();
 
             return ['status' => false, 'message' => $exception->getMessage(),
-                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!',];
+                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!', ];
         }
     }
 
@@ -164,19 +164,19 @@ class PermissionService extends Service
                 DB::commit();
 
                 return ['status' => true, 'message' => __('Permission is Trashed'),
-                    'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!',];
+                    'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!', ];
             } else {
                 DB::rollBack();
 
                 return ['status' => false, 'message' => __('Permission is Delete Failed'),
-                    'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!',];
+                    'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!', ];
             }
         } catch (Exception $exception) {
             $this->permissionRepository->handleException($exception);
             DB::rollBack();
 
             return ['status' => false, 'message' => $exception->getMessage(),
-                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!',];
+                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!', ];
         }
     }
 
@@ -196,26 +196,26 @@ class PermissionService extends Service
                 DB::commit();
 
                 return ['status' => true, 'message' => __('Permission is Restored'),
-                    'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!',];
+                    'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!', ];
             } else {
                 DB::rollBack();
 
                 return ['status' => false, 'message' => __('Permission is Restoration Failed'),
-                    'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!',];
+                    'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!', ];
             }
         } catch (Exception $exception) {
             $this->permissionRepository->handleException($exception);
             DB::rollBack();
 
             return ['status' => false, 'message' => $exception->getMessage(),
-                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!',];
+                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!', ];
         }
     }
 
     /**
      * Export Object for Export Download
      *
-     * @param array $filters
+     * @param  array  $filters
      * @return CountryExport
      *
      * @throws Exception

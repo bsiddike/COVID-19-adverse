@@ -2,18 +2,18 @@
 
 namespace App\Services\Auth;
 
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Validation\ValidationException;
-use Illuminate\View\View;
 use function __;
 use function back;
 use function event;
 use Illuminate\Auth\Events\PasswordReset;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules;
+use Illuminate\Validation\ValidationException;
+use Illuminate\View\View;
 use function redirect;
 use function view;
 
@@ -22,7 +22,7 @@ class NewPasswordService
     /**
      * Display the password reset view.
      *
-     * @param Request $request
+     * @param  Request  $request
      * @return View
      */
     public function create(Request $request)
@@ -33,7 +33,7 @@ class NewPasswordService
     /**
      * Handle an incoming new password request.
      *
-     * @param Request $request
+     * @param  Request  $request
      * @return RedirectResponse
      *
      * @throws ValidationException

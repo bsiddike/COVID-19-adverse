@@ -32,8 +32,8 @@ abstract class EloquentRepository implements RepositoryInterface
      * Repository constructor.
      * Constructor to bind model to repo
      *
-     * @param Model $model
-     * @param int $itemsPerPage
+     * @param  Model  $model
+     * @param  int  $itemsPerPage
      */
     public function __construct(Model $model, int $itemsPerPage = 10)
     {
@@ -54,7 +54,7 @@ abstract class EloquentRepository implements RepositoryInterface
     /**
      * create a new record in the database
      *
-     * @param array $data
+     * @param  array  $data
      * @return Model
      *
      * @throws Exception
@@ -76,7 +76,7 @@ abstract class EloquentRepository implements RepositoryInterface
     /**
      * update record in the database
      *
-     * @param array $data
+     * @param  array  $data
      * @param $id
      * @return bool
      *
@@ -104,14 +104,14 @@ abstract class EloquentRepository implements RepositoryInterface
      */
     public function delete($id): bool
     {
-        return (bool)$this->model->destroy($id);
+        return (bool) $this->model->destroy($id);
     }
 
     /**
      * show the record with the given id
      *
      * @param $id
-     * @param bool $purge
+     * @param  bool  $purge
      * @return mixed
      *
      * @throws Exception
@@ -140,7 +140,7 @@ abstract class EloquentRepository implements RepositoryInterface
      */
     public function restore($id): bool
     {
-        return (bool)$this->model->withTrashed()->find($id)->restore($id);
+        return (bool) $this->model->withTrashed()->find($id)->restore($id);
     }
 
     /**
@@ -156,7 +156,7 @@ abstract class EloquentRepository implements RepositoryInterface
     /**
      * Associated Dynamically  model
      *
-     * @param Model $model
+     * @param  Model  $model
      * @return void
      */
     public function setModel(Model $model)
@@ -186,8 +186,8 @@ abstract class EloquentRepository implements RepositoryInterface
     /**
      * Get the first Model meet this criteria
      *
-     * @param string $column
-     * @param string $operator
+     * @param  string  $column
+     * @param  string  $operator
      * @param $value
      * @return Model|null
      *
@@ -208,10 +208,10 @@ abstract class EloquentRepository implements RepositoryInterface
     /**
      * Get the all Model meet this criteria
      *
-     * @param string $column
-     * @param string $operator
+     * @param  string  $column
+     * @param  string  $operator
      * @param $value
-     * @param array $with
+     * @param  array  $with
      * @return mixed
      *
      * @throws Exception
@@ -232,7 +232,7 @@ abstract class EloquentRepository implements RepositoryInterface
     /**
      * Get the all Model Columns Collection
      *
-     * @param string $column
+     * @param  string  $column
      * @return mixed
      *
      * @throws Exception
@@ -278,9 +278,9 @@ abstract class EloquentRepository implements RepositoryInterface
     }
 
     /**
-     * @param array $filters
-     * @param array $eagerRelations
-     * @param bool $is_sortable
+     * @param  array  $filters
+     * @param  array  $eagerRelations
+     * @param  bool  $is_sortable
      * @return mixed
      *
      * @throws Exception

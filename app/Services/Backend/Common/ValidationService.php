@@ -7,8 +7,8 @@ use App\Abstracts\Service\Service;
 class ValidationService extends Service
 {
     /**
-     * @param string $value
-     * @param bool $update
+     * @param  string  $value
+     * @param  bool  $update
      * @return bool
      */
     public function UniqueEmail(string $value, bool $update = false): bool

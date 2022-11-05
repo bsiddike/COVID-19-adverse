@@ -16,7 +16,7 @@ class SurveyWiseExport extends FastExcelExport
     /**
      * EnumeratorExport constructor.
      *
-     * @param null $data
+     * @param  null  $data
      *
      * @throws InvalidArgumentException
      */
@@ -28,7 +28,7 @@ class SurveyWiseExport extends FastExcelExport
     }
 
     /**
-     * @param Enumerator $row
+     * @param  Enumerator  $row
      * @return array
      */
     public function map($row): array

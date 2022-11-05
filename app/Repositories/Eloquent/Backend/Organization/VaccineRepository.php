@@ -30,8 +30,8 @@ class VaccineRepository extends EloquentRepository
     /**
      * Search Function
      *
-     * @param array $filters
-     * @param bool $is_sortable
+     * @param  array  $filters
+     * @param  bool  $is_sortable
      * @return Builder
      */
     private function filterData(array $filters = [], bool $is_sortable = false): Builder
@@ -40,7 +40,7 @@ class VaccineRepository extends EloquentRepository
 
         $query->leftJoin('users', 'users.id', '=', 'enumerators.created_by');
 
-        if (!empty($filters['search'])) {
+        if (! empty($filters['search'])) {
             $query->where('name', 'like', "%{$filters['search']}%")
                 ->orWhere('enabled', 'like', "%{$filters['search']}%")
                 ->orWhere('nid', 'like', "%{$filters['search']}%")
@@ -51,15 +51,15 @@ class VaccineRepository extends EloquentRepository
                 ->orWhere('permanent_address', 'like', "%{$filters['search']}%");
         }
 
-        if (!empty($filters['enabled'])) {
+        if (! empty($filters['enabled'])) {
             $query->where('enabled', '=', $filters['enabled']);
         }
 
-        if (!empty($filters['nid'])) {
+        if (! empty($filters['nid'])) {
             $query->where('nid', '=', $filters['nid']);
         }
 
-        if (!empty($filters['sort']) && !empty($filters['direction'])) {
+        if (! empty($filters['sort']) && ! empty($filters['direction'])) {
             $query->orderBy($filters['sort'], $filters['direction']);
         }
 
@@ -77,9 +77,9 @@ class VaccineRepository extends EloquentRepository
     /**
      * Pagination Generator
      *
-     * @param array $filters
-     * @param array $eagerRelations
-     * @param bool $is_sortable
+     * @param  array  $filters
+     * @param  array  $eagerRelations
+     * @param  bool  $is_sortable
      * @return LengthAwarePaginator
      *
      * @throws Exception
@@ -97,9 +97,9 @@ class VaccineRepository extends EloquentRepository
     }
 
     /**
-     * @param array $filters
-     * @param array $eagerRelations
-     * @param bool $is_sortable
+     * @param  array  $filters
+     * @param  array  $eagerRelations
+     * @param  bool  $is_sortable
      * @return Builder[]|Collection
      *
      * @throws Exception
@@ -117,9 +117,9 @@ class VaccineRepository extends EloquentRepository
     }
 
     /**
-     * @param array $filters
-     * @param array $eagerRelations
-     * @param bool $is_sortable
+     * @param  array  $filters
+     * @param  array  $eagerRelations
+     * @param  bool  $is_sortable
      * @return Generator
      *
      * @throws Exception

@@ -60,7 +60,7 @@ class PatientSeeder extends Seeder
 
                 if ($line[0] != 'VAERS_ID') {
                     return Patient::create([
-                        'vaers_id' => (int)$line[0] ?? null,
+                        'vaers_id' => (int) $line[0] ?? null,
                         'recive_date' => server_date(($line[1] ?? null)),
                         'state' => clean($line[2]),
                         'age_yrs' => clean($line[3]),

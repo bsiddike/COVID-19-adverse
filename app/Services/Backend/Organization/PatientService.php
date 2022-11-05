@@ -27,7 +27,7 @@ class PatientService extends Service
     /**
      * PatientService constructor.
      *
-     * @param PatientRepository $patientRepository
+     * @param  PatientRepository  $patientRepository
      */
     public function __construct(PatientRepository $patientRepository)
     {
@@ -38,8 +38,8 @@ class PatientService extends Service
     /**
      * Get All Patient models as collection
      *
-     * @param array $filters
-     * @param array $eagerRelations
+     * @param  array  $filters
+     * @param  array  $eagerRelations
      * @return Builder[]|Collection
      *
      * @throws Exception
@@ -52,8 +52,8 @@ class PatientService extends Service
     /**
      * Create Patient Model Pagination
      *
-     * @param array $filters
-     * @param array $eagerRelations
+     * @param  array  $filters
+     * @param  array  $eagerRelations
      * @return LengthAwarePaginator
      *
      * @throws Exception
@@ -66,8 +66,8 @@ class PatientService extends Service
     /**
      * Show Patient Model
      *
-     * @param int $id
-     * @param bool $purge
+     * @param  int  $id
+     * @param  bool  $purge
      * @return mixed
      *
      * @throws Exception
@@ -80,7 +80,7 @@ class PatientService extends Service
     /**
      * Save Patient Model
      *
-     * @param array $inputs
+     * @param  array  $inputs
      * @return array
      *
      * @throws Exception
@@ -95,26 +95,26 @@ class PatientService extends Service
                 DB::commit();
 
                 return ['status' => true, 'message' => __('New Patient Created'),
-                    'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!',];
+                    'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!', ];
             } else {
                 DB::rollBack();
 
                 return ['status' => false, 'message' => __('New Patient Creation Failed'),
-                    'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!',];
+                    'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!', ];
             }
         } catch (Exception $exception) {
             $this->patientRepository->handleException($exception);
             DB::rollBack();
 
             return ['status' => false, 'message' => $exception->getMessage(),
-                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!',];
+                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!', ];
         }
     }
 
     /**
      * Update Patient Model
      *
-     * @param array $inputs
+     * @param  array  $inputs
      * @param $id
      * @return array
      *
@@ -130,23 +130,23 @@ class PatientService extends Service
                     DB::commit();
 
                     return ['status' => true, 'message' => __('Patient Info Updated'),
-                        'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!',];
+                        'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!', ];
                 } else {
                     DB::rollBack();
 
                     return ['status' => false, 'message' => __('Patient Info Update Failed'),
-                        'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!',];
+                        'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!', ];
                 }
             } else {
                 return ['status' => false, 'message' => __('Patient Model Not Found'),
-                    'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Alert!',];
+                    'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Alert!', ];
             }
         } catch (Exception $exception) {
             $this->patientRepository->handleException($exception);
             DB::rollBack();
 
             return ['status' => false, 'message' => $exception->getMessage(),
-                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!',];
+                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!', ];
         }
     }
 
@@ -166,19 +166,19 @@ class PatientService extends Service
                 DB::commit();
 
                 return ['status' => true, 'message' => __('Patient is Trashed'),
-                    'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!',];
+                    'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!', ];
             } else {
                 DB::rollBack();
 
                 return ['status' => false, 'message' => __('Patient is Delete Failed'),
-                    'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!',];
+                    'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!', ];
             }
         } catch (Exception $exception) {
             $this->patientRepository->handleException($exception);
             DB::rollBack();
 
             return ['status' => false, 'message' => $exception->getMessage(),
-                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!',];
+                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!', ];
         }
     }
 
@@ -198,26 +198,26 @@ class PatientService extends Service
                 DB::commit();
 
                 return ['status' => true, 'message' => __('Patient is Restored'),
-                    'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!',];
+                    'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!', ];
             } else {
                 DB::rollBack();
 
                 return ['status' => false, 'message' => __('Patient is Restoration Failed'),
-                    'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!',];
+                    'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!', ];
             }
         } catch (Exception $exception) {
             $this->patientRepository->handleException($exception);
             DB::rollBack();
 
             return ['status' => false, 'message' => $exception->getMessage(),
-                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!',];
+                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!', ];
         }
     }
 
     /**
      * Export Object for Export Download
      *
-     * @param array $filters
+     * @param  array  $filters
      * @return PatientExport
      *
      * @throws Exception
@@ -230,7 +230,7 @@ class PatientService extends Service
     /**
      * Created Array Styled Patient List for dropdown
      *
-     * @param array $filters
+     * @param  array  $filters
      * @return array
      *
      * @throws Exception

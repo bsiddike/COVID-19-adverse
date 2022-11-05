@@ -2,30 +2,26 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Models\Patient;
-use App\Models\Symptom;
-use App\Models\Vaccine;
 use App\Services\Backend\Organization\PatientService;
 use App\Services\Backend\Organization\SymptomService;
 use App\Services\Backend\Organization\VaccineService;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
 class DashboardController extends Controller
 {
     private PatientService $patientService;
+
     private SymptomService $symptomService;
+
     private VaccineService $vaccineService;
 
     /**
      * DashboardController constructor.
      *
-     * @param PatientService $patientService
-     * @param SymptomService $symptomService
-     * @param VaccineService $vaccineService
+     * @param  PatientService  $patientService
+     * @param  SymptomService  $symptomService
+     * @param  VaccineService  $vaccineService
      */
     public function __construct(PatientService $patientService,
                                 SymptomService $symptomService,
@@ -50,7 +46,7 @@ class DashboardController extends Controller
             'affectedGender' => $this->getGenderMetrics($filters),
             'affectedAge' => $this->getAgeMetrics($filters),
             'affectedMonth' => $this->getPatientLineChart($filters),
-            'patientsStateMap' => $this->getPatientMap($filters)
+            'patientsStateMap' => $this->getPatientMap($filters),
         ]);
     }
 
@@ -75,15 +71,14 @@ class DashboardController extends Controller
                 'maintainAspectRatio' => false,
                 'responsive' => true,
                 'legend' => [
-                    'position' => 'left'
-                ]
-            ]
+                    'position' => 'left',
+                ],
+            ],
         ];
     }
 
     private function getAgeMetrics(array $filters = [])
     {
-
         $filters['metric'] = 'age_yrs';
 
         $data = $this->patientService->getAllPatients($filters)->toArray();
@@ -103,27 +98,25 @@ class DashboardController extends Controller
                 'maintainAspectRatio' => false,
                 'responsive' => true,
                 'legend' => [
-                    'position' => 'left'
-                ]
-            ]
+                    'position' => 'left',
+                ],
+            ],
         ];
     }
 
     private function getPatientLineChart(array $filters = [])
     {
-
         $years = $this->patientService->getAllPatients(array_merge($filters, ['year_distinct' => true]))
             ->pluck('year')->toArray();
 
         $months = ['January', 'February', 'March', 'April', 'May', 'June',
-            'July', 'August', 'September', 'October', 'November', 'December'];
+            'July', 'August', 'September', 'October', 'November', 'December', ];
 
         $datasets = [];
 
         $filters['metric'] = 'patient_month';
 
         foreach ($years as $year) {
-
             $color = random_color();
             $filters['today_year'] = $year;
             $data = $this->patientService->getAllPatients($filters)->toArray();
@@ -137,7 +130,7 @@ class DashboardController extends Controller
                 'pointHighlightFill' => '#fff',
                 'pointHighlightStroke' => $color,
                 'data' => array_values($data[0]),
-                'fill' => false
+                'fill' => false,
             ];
         }
 
@@ -145,32 +138,32 @@ class DashboardController extends Controller
             'type' => 'line',
             'data' => [
                 'labels' => $months,
-                'datasets' => $datasets
+                'datasets' => $datasets,
             ],
             'options' => [
                 'datasetFill' => true,
                 'maintainAspectRatio' => false,
                 'responsive' => true,
                 'legend' => [
-                    'display' => true
+                    'display' => true,
                 ],
                 'scales' => [
                     'xAxes' => [
                         [
                             'gridLines' => [
                                 'display' => false,
-                            ]
-                        ]
+                            ],
+                        ],
                     ],
                     'yAxes' => [
                         [
                             'gridLines' => [
                                 'display' => false,
-                            ]
-                        ]
-                    ]
-                ]
-            ]
+                            ],
+                        ],
+                    ],
+                ],
+            ],
         ];
     }
 
@@ -184,32 +177,32 @@ class DashboardController extends Controller
             $state_name = strtoupper($state['state']);
             $state_count = strtonumber($state['aggregate'], 0);
             $areas[$state_name] = [
-                "value" => $state_count,
-                "href" => "#",
-                "tooltip" => [
-                    "content" => "<span style='font-weight:bold;'>{$state_name}</span><br/>Patients: {$state_count}"
-                ]
+                'value' => $state_count,
+                'href' => '#',
+                'tooltip' => [
+                    'content' => "<span style='font-weight:bold;'>{$state_name}</span><br/>Patients: {$state_count}",
+                ],
             ];
         }
 
         return [
-            "map" => [
-                "name" => 'usa_states',
-                "zoom" => [
-                    "enabled" => true,
-                    "maxLevel" => 10
+            'map' => [
+                'name' => 'usa_states',
+                'zoom' => [
+                    'enabled' => true,
+                    'maxLevel' => 10,
                 ],
-                "defaultArea" => [
-                    "attrs" => [
-                        "stroke" => "#fff",
-                        "stroke-width" => 1
+                'defaultArea' => [
+                    'attrs' => [
+                        'stroke' => '#fff',
+                        'stroke-width' => 1,
                     ],
-                    "attrsHover" => [
-                        "stroke-width" => 2
-                    ]
+                    'attrsHover' => [
+                        'stroke-width' => 2,
+                    ],
                 ],
             ],
-            "areas" => $areas
+            'areas' => $areas,
         ];
     }
 }

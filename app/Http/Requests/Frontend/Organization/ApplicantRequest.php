@@ -43,7 +43,7 @@ class ApplicantRequest extends FormRequest
             'father' => ['required', 'string', 'min:2', 'max:255'],
             'mother' => ['required', 'string', 'min:2', 'max:255'],
             'nid' => ['required', 'integer', new MinLength(10), new MaxLength(17),
-                'unique:App\Models\Backend\Organization\Enumerator,nid' . (isset($this->id) ? ',' . $this->id : null),
+                'unique:App\Models\Backend\Organization\Enumerator,nid'.(isset($this->id) ? ','.$this->id : null),
             ],
             'mobile_1' => ['required', 'string', new PhoneNumber],
             'mobile_2' => ['nullable', 'string', new PhoneNumber],

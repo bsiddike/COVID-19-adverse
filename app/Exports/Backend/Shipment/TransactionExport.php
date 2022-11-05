@@ -14,7 +14,7 @@ class TransactionExport extends FastExcelExport
     /**
      * TransactionExport constructor.
      *
-     * @param null $data
+     * @param  null  $data
      *
      * @throws InvalidArgumentException
      */
@@ -26,7 +26,7 @@ class TransactionExport extends FastExcelExport
     }
 
     /**
-     * @param Transaction $row
+     * @param  Transaction  $row
      * @return array
      */
     public function map($row): array

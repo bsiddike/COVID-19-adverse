@@ -18,7 +18,7 @@ class PasswordResetService
     private $userRepository;
 
     /**
-     * @param UserRepository $userRepository
+     * @param  UserRepository  $userRepository
      */
     public function __construct(UserRepository $userRepository)
     {
@@ -28,7 +28,7 @@ class PasswordResetService
     /**
      * create a new token to  reset user password
      *
-     * @param array $credentials
+     * @param  array  $credentials
      * @return array
      */
     public function createPasswordResetToken(array $credentials): array
@@ -41,7 +41,7 @@ class PasswordResetService
     }
 
     /**
-     * @param array $credentials
+     * @param  array  $credentials
      * @return array
      */
     public function updatePassword(array $credentials): array
@@ -63,28 +63,28 @@ class PasswordResetService
                 $confirmation = ['status' => true,
                     'message' => __('passwords.reset'),
                     'level' => Constant::MSG_TOASTR_SUCCESS,
-                    'title' => 'Notification!',];
+                    'title' => 'Notification!', ];
                 break;
 
             case Password::RESET_THROTTLED :
                 $confirmation = ['status' => false,
                     'message' => __('auth.throttle', ['seconds' => config('auth.passwords.users.throttle')]),
                     'level' => Constant::MSG_TOASTR_ERROR,
-                    'title' => 'Alert!',];
+                    'title' => 'Alert!', ];
                 break;
 
             case Password::INVALID_TOKEN:
                 $confirmation = ['status' => false,
                     'message' => __('passwords.token'),
                     'level' => Constant::MSG_TOASTR_ERROR,
-                    'title' => 'Alert!',];
+                    'title' => 'Alert!', ];
                 break;
 
             default:
                 $confirmation = ['status' => false,
                     'message' => __('auth.login.failed'),
                     'level' => Constant::MSG_TOASTR_ERROR,
-                    'title' => 'Alert!',];
+                    'title' => 'Alert!', ];
                 break;
         }
 
@@ -92,7 +92,7 @@ class PasswordResetService
     }
 
     /**
-     * @param array $credentials
+     * @param  array  $credentials
      * @return array
      */
     private function credentialBasedPasswordReset(array $credentials): array
@@ -109,21 +109,21 @@ class PasswordResetService
                     'message' => __('auth.token', ['minutes' => config('auth.passwords.users.expire')]),
                     'level' => Constant::MSG_TOASTR_SUCCESS,
                     'title' => 'Notification!',
-                    'token' => $resetToken,];
+                    'token' => $resetToken, ];
                 break;
 
             case Password::RESET_THROTTLED :
                 $confirmation = ['status' => false,
                     'message' => __('auth.throttle', ['seconds' => config('auth.passwords.users.throttle')]),
                     'level' => Constant::MSG_TOASTR_ERROR,
-                    'title' => 'Alert!',];
+                    'title' => 'Alert!', ];
                 break;
 
             default:
                 $confirmation = ['status' => false,
                     'message' => __('auth.login.failed'),
                     'level' => Constant::MSG_TOASTR_ERROR,
-                    'title' => 'Alert!',];
+                    'title' => 'Alert!', ];
                 break;
         }
 
@@ -131,7 +131,7 @@ class PasswordResetService
     }
 
     /**
-     * @param array $credential
+     * @param  array  $credential
      * @return array
      */
     private function otpBasedPasswordReset(array $credential): array

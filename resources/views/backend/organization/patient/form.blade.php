@@ -3,7 +3,7 @@
         <div class="col-md-6">{!! Form::nText('vaers_id', 'Vaers ID', old('vaers_id', $patient->vaers_id ?? null), true) !!}</div>
         <div class="col-md-6">{!! Form::nText('recive_date', 'Receive Date', old('recive_date', $patient->recive_date ?? null), true) !!}</div>
         <div class="col-md-6">{!! Form::nText('state', 'State', old('state', $patient->state ?? null), true) !!}</div>
-        <div class="col-md-6">{!! Form::nText('age_yrs', 'age_yrs', old('age_yrs', $patient->age_yrs ?? null), true) !!}</div>
+        <div class="col-md-6">{!! Form::nText('age_yrs', 'Age (yrs)', old('age_yrs', $patient->age_yrs ?? null), true) !!}</div>
         <div class="col-md-6">{!! Form::nText('cage_yr', 'cage_yr', old('cage_yr', $patient->cage_yr ?? null), true) !!}</div>
         <div class="col-md-6">{!! Form::nText('cage_mo', 'cage_mo', old('cage_mo', $patient->cage_mo ?? null), true) !!}</div>
         <div class="col-md-6">{!! Form::nText('sex', 'Sex', old('sex', $patient->sex ?? null), true) !!}</div>

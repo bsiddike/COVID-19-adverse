@@ -23,7 +23,7 @@ class AuthenticatedSessionService
     private $passwordResetService;
 
     /**
-     * @param PasswordResetService $passwordResetService
+     * @param  PasswordResetService  $passwordResetService
      * @return void
      */
     public function __construct(PasswordResetService $passwordResetService)
@@ -34,7 +34,7 @@ class AuthenticatedSessionService
     /**
      * Handle an incoming auth request.
      *
-     * @param LoginRequest $request
+     * @param  LoginRequest  $request
      * @return array
      */
     public function attemptLogin(LoginRequest $request): array
@@ -63,7 +63,7 @@ class AuthenticatedSessionService
     /**
      * Verify that current request user is who he claim to be
      *
-     * @param Request $request
+     * @param  Request  $request
      * @return bool
      */
     public function validate(Request $request): bool
@@ -95,7 +95,7 @@ class AuthenticatedSessionService
     /**
      * Destroy an authenticated session.
      *
-     * @param Request $request
+     * @param  Request  $request
      * @return array
      */
     public function attemptLogout(Request $request): array
@@ -108,10 +108,10 @@ class AuthenticatedSessionService
             $request->session()->regenerateToken();
 
             return ['status' => true, 'message' => 'User Logout Successful',
-                'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!',];
+                'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!', ];
         } catch (Exception $exception) {
-            return ['status' => false, 'message' => 'Error: ' . $exception->getMessage(),
-                'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Error!',];
+            return ['status' => false, 'message' => 'Error: '.$exception->getMessage(),
+                'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Error!', ];
         }
     }
 
@@ -151,7 +151,7 @@ class AuthenticatedSessionService
     public function hasForcePasswordReset(): bool
     {
         if ($authUser = Auth::user()) {
-            return (bool)$authUser->force_pass_reset;
+            return (bool) $authUser->force_pass_reset;
         }
 
         return false;
@@ -160,7 +160,7 @@ class AuthenticatedSessionService
     /**
      * Attempt to authenticate the request's credentials.
      *
-     * @param LoginRequest $request
+     * @param  LoginRequest  $request
      * @return array
      */
     private function authenticate(LoginRequest $request): array
@@ -173,26 +173,26 @@ class AuthenticatedSessionService
         $confirmation = ['status' => false,
             'message' => __('auth.login.failed'),
             'level' => Constant::MSG_TOASTR_ERROR,
-            'title' => 'Alert!',];
+            'title' => 'Alert!', ];
 
         if (config('auth.allow_remembering')) {
             $remember_me = $request->boolean('remember');
         }
 
         //authentication is OTP
-        $confirmation = (!isset($authInfo['password']))
+        $confirmation = (! isset($authInfo['password']))
             ? $this->otpBasedLogin($authInfo, $remember_me)
             : $this->credentialBasedLogin($authInfo, $remember_me);
 
         if ($confirmation['status'] === true) {
             //is user is banned to log in
-            if (!self::isUserEnabled()) {
+            if (! self::isUserEnabled()) {
                 //logout from all guard
                 Auth::logout();
                 $confirmation = ['status' => false,
                     'message' => __('auth.login.banned'),
                     'level' => Constant::MSG_TOASTR_WARNING,
-                    'title' => 'Alert!',];
+                    'title' => 'Alert!', ];
             } elseif ($this->hasForcePasswordReset()) {
                 //make this user as guest to reset password
                 Auth::logout();
@@ -205,7 +205,7 @@ class AuthenticatedSessionService
                     'message' => __('auth.login.forced'),
                     'level' => Constant::MSG_TOASTR_WARNING,
                     'title' => 'Notification!',
-                    'landing_page' => route('auth.password.reset', $tokenInfo['token']),];
+                    'landing_page' => route('auth.password.reset', $tokenInfo['token']), ];
             } else {
                 //set the auth user redirect page
                 $confirmation['landing_page'] = route(Auth::user()->home_page ?? Constant::DASHBOARD_ROUTE);
@@ -216,8 +216,8 @@ class AuthenticatedSessionService
     }
 
     /**
-     * @param array $credential
-     * @param bool $remember_me
+     * @param  array  $credential
+     * @param  bool  $remember_me
      * @return array
      */
     private function credentialBasedLogin(array $credential, bool $remember_me = false): array
@@ -232,8 +232,8 @@ class AuthenticatedSessionService
     }
 
     /**
-     * @param array $credential
-     * @param bool $remember_me
+     * @param  array  $credential
+     * @param  bool  $remember_me
      * @return array
      */
     private function otpBasedLogin(array $credential, bool $remember_me = false): array
@@ -250,12 +250,12 @@ class AuthenticatedSessionService
     /**
      * Ensure the login request is not rate limited.
      *
-     * @param LoginRequest $request
+     * @param  LoginRequest  $request
      * @return array
      */
     private function ensureIsNotRateLimited(LoginRequest $request): array
     {
-        if (!RateLimiter::tooManyAttempts($this->throttleKey($request), 5)) {
+        if (! RateLimiter::tooManyAttempts($this->throttleKey($request), 5)) {
             return ['status' => true, 'message' => __('auth.throttle'), 'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Warning'];
         }
 
@@ -272,18 +272,18 @@ class AuthenticatedSessionService
     /**
      * Get the rate limiting throttle key for the request.
      *
-     * @param LoginRequest $request
+     * @param  LoginRequest  $request
      * @return string
      */
     private function throttleKey(LoginRequest $request): string
     {
-        return Str::lower($request->input('email')) . '|' . $request->ip();
+        return Str::lower($request->input('email')).'|'.$request->ip();
     }
 
     /**
      * Collect Credential Info from Request based on Config
      *
-     * @param LoginRequest $request
+     * @param  LoginRequest  $request
      * @return array
      */
     private function formatAuthCredential(LoginRequest $request): array

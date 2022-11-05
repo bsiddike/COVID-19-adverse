@@ -29,27 +29,27 @@ class AddressBookRepository extends EloquentRepository
     /**
      * Search Function
      *
-     * @param array $filters
-     * @param bool $is_sortable
+     * @param  array  $filters
+     * @param  bool  $is_sortable
      * @return Builder
      */
     private function filterData(array $filters = [], bool $is_sortable = false): Builder
     {
         $query = $this->getQueryBuilder();
-        if (!empty($filters['search'])) {
+        if (! empty($filters['search'])) {
             $query->where('name', 'like', "%{$filters['search']}%")
                 ->orWhere('enabled', '=', "%{$filters['search']}%");
         }
 
-        if (!empty($filters['enabled'])) {
+        if (! empty($filters['enabled'])) {
             $query->where('enabled', '=', $filters['enabled']);
         }
 
-        if (!empty($filters['user_id'])) {
+        if (! empty($filters['user_id'])) {
             $query->where('user_id', '=', $filters['user_id']);
         }
 
-        if (!empty($filters['sort']) && !empty($filters['direction'])) {
+        if (! empty($filters['sort']) && ! empty($filters['direction'])) {
             $query->orderBy($filters['sort'], $filters['direction']);
         }
 
@@ -67,9 +67,9 @@ class AddressBookRepository extends EloquentRepository
     /**
      * Pagination Generator
      *
-     * @param array $filters
-     * @param array $eagerRelations
-     * @param bool $is_sortable
+     * @param  array  $filters
+     * @param  array  $eagerRelations
+     * @param  bool  $is_sortable
      * @return LengthAwarePaginator
      *
      * @throws Exception
@@ -86,9 +86,9 @@ class AddressBookRepository extends EloquentRepository
     }
 
     /**
-     * @param array $filters
-     * @param array $eagerRelations
-     * @param bool $is_sortable
+     * @param  array  $filters
+     * @param  array  $eagerRelations
+     * @param  bool  $is_sortable
      * @return Builder[]|Collection
      *
      * @throws Exception

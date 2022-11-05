@@ -224,10 +224,12 @@ class DashboardController extends Controller
             if (! isset($formatData[$datum['vax_name']])) {
                 $formatData[$datum['vax_name']] = [
                     'data' => [],
+                    'label' => 'Unknown',
                     'backgroundColor' => [],
                 ];
             }
             $formatData[$datum['vax_name']]['data'][] = $datum['aggregate'];
+            $formatData[$datum['vax_name']]['label'] = $datum['symptom1'];
             $formatData[$datum['vax_name']]['backgroundColor'][] = random_color();
         }
 

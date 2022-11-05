@@ -1,14 +1,14 @@
 @can('backend.settings.users.index')
     <div class="col-lg-4 col-6">
         <!-- small box -->
-        <div class="small-box bg-indigo">
+        <div class="small-box bg-secondary">
             <div class="inner">
-                <h3>{{ $patientsRecovered ?? 0 }}</h3>
+                <h3>{{ $patientsHospitalized ?? 0 }}</h3>
 
-                <p>Patient Recovered</p>
+                <p>Patient Hospitalized</p>
             </div>
             <div class="icon">
-                <i class="fas fa-smile"></i>
+                <i class="fas fa-bed"></i>
             </div>
             <a href="{{ route('backend.organization.patients.index') }}"
                class="small-box-footer">{!! __('common.More info') !!} <i class="fas fa-arrow-circle-right"></i></a>

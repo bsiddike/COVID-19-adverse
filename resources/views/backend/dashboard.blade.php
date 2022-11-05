@@ -47,6 +47,7 @@
             @include('backend.wizard.total-patient')
             @include('backend.wizard.total-symptom')
             @include('backend.wizard.total-vaccine')
+            @include('backend.wizard.total-patient-hospital')
             @include('backend.wizard.total-patient-recovered')
             @include('backend.wizard.total-patient-died')
         </div>

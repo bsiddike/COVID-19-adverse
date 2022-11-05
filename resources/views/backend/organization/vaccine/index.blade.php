@@ -43,16 +43,15 @@
                                     <thead class="thead-light">
                                     <tr>
                                         <th class="align-middle">
-                                            @sortablelink('id', '#')
-                                        </th>
-                                        <th>@sortablelink('vaers_id', 'vaers_id'))</th>
-                                        <th>@sortablelink('vax_type', 'vax_type'))</th>
-                                        <th>@sortablelink('vax_manu', 'vax_manu'))</th>
-                                        <th>@sortablelink('vax_lot', 'vax_lot'))</th>
-                                        <th>@sortablelink('vax_dose_series', 'vax_dose_series'))</th>
-                                        <th>@sortablelink('vax_route', 'vax_route'))</th>
-                                        <th>@sortablelink('vax_site', 'vax_site'))</th>
-                                        <th>@sortablelink('vax_name', 'vax_name'))</th>
+                                            @sortablelink('id', '#')</th>
+                                        <th>@sortablelink('vaers_id', 'Vears ID')</th>
+                                        <th>@sortablelink('vax_name', 'Label')</th>
+                                        <th>@sortablelink('vax_type', 'Type')</th>
+                                        <th>@sortablelink('vax_manu', 'Manufacture')</th>
+                                        <th>@sortablelink('vax_lot', 'Number')</th>
+                                        <th>@sortablelink('vax_dose_series', 'Dose')</th>
+                                        <th>@sortablelink('vax_route', 'Route')</th>
+                                        <th>@sortablelink('vax_site', 'Site')</th>
                                         <th class="text-center">@sortablelink('created_at', __('common.Created'))</th>
                                         <th class="text-center">{!! __('common.Actions') !!}</th>
                                     </tr>

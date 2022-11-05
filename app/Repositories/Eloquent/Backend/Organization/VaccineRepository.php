@@ -36,9 +36,15 @@ class VaccineRepository extends EloquentRepository
      */
     private function filterData(array $filters = [], bool $is_sortable = false): Builder
     {
-        $query = $this->getQueryBuilder();
+        $filters['metric'] = 'top_10_symptoms';
 
-        $query->leftJoin('users', 'users.id', '=', 'enumerators.created_by');
+        foreach ($filters as $key => $value) {
+            if (is_null($filters[$key])) {
+                unset($filters[$key]);
+            }
+        }
+
+        $query = $this->getQueryBuilder();
 
         if (!empty($filters['search'])) {
             $query->where('name', 'like', "%{$filters['search']}%")
@@ -70,21 +76,16 @@ class VaccineRepository extends EloquentRepository
         if (!empty($filters['metric'])) {
             switch ($filters['metric']) {
                 case 'top_10_symptoms' :
-                    $query->selectRaw("vax_name` as `name`, `symptom1` as `outcome`, count(`symptom1`) as aggregate")
+                    $query->selectRaw("`vax_name`, `symptoms`.`symptom1`, count(`symptoms`.`symptom1`) as `aggregate`")
                         ->join('symptoms', 'vaccines.vaers_id', "=", "symptoms.vaers_id")
                         ->where("vax_type", "=", "COVID19")
                         ->groupBy("vax_name", "symptom1")
-                        ->limit(10);
-
+                        ->orderBy('aggregate', 'desc');
                     break;
 
                 default:
                     $query;
             }
-        }
-
-        if (AuthenticatedSessionService::isSuperAdmin()) {
-            $query->withTrashed();
         }
 
         return $query;

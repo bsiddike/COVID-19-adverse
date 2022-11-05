@@ -19,9 +19,9 @@ class DashboardController extends Controller
     /**
      * DashboardController constructor.
      *
-     * @param  PatientService  $patientService
-     * @param  SymptomService  $symptomService
-     * @param  VaccineService  $vaccineService
+     * @param PatientService $patientService
+     * @param SymptomService $symptomService
+     * @param VaccineService $vaccineService
      */
     public function __construct(PatientService $patientService,
                                 SymptomService $symptomService,
@@ -47,6 +47,7 @@ class DashboardController extends Controller
             'affectedAge' => $this->getAgeMetrics($filters),
             'affectedMonth' => $this->getPatientLineChart($filters),
             'patientsStateMap' => $this->getPatientMap($filters),
+            'vaccineOutcomes' => $this->getTopVaccinesOutcomesMetrics($filters),
         ]);
     }
 
@@ -58,33 +59,6 @@ class DashboardController extends Controller
 
         return [
             'type' => 'doughnut',
-            'data' => [
-                'labels' => array_keys($data[0]),
-                'datasets' => [
-                    [
-                        'data' => array_values($data[0]),
-                        'backgroundColor' => ['#f56954', '#00a65a', '#f39c12'],
-                    ],
-                ],
-            ],
-            'options' => [
-                'maintainAspectRatio' => false,
-                'responsive' => true,
-                'legend' => [
-                    'position' => 'left',
-                ],
-            ],
-        ];
-    }
-
-    private function getTopVaccinesOutcomesMetrics(array $filters = [])
-    {
-        $filters['metric'] = 'top_10_symptoms';
-
-        $data = $this->patientService->getAllPatients($filters)->toArray();
-
-        return [
-            'type' => 'bar',
             'data' => [
                 'labels' => array_keys($data[0]),
                 'datasets' => [
@@ -137,7 +111,7 @@ class DashboardController extends Controller
             ->pluck('year')->toArray();
 
         $months = ['January', 'February', 'March', 'April', 'May', 'June',
-            'July', 'August', 'September', 'October', 'November', 'December', ];
+            'July', 'August', 'September', 'October', 'November', 'December',];
 
         $datasets = [];
 
@@ -230,6 +204,56 @@ class DashboardController extends Controller
                 ],
             ],
             'areas' => $areas,
+        ];
+    }
+
+    /**
+     * @throws \Exception
+     */
+    private function getTopVaccinesOutcomesMetrics(array $filters = [])
+    {
+        $filters['metric'] = 'top_10_symptoms';
+
+        $data = $this->vaccineService
+            ->getAllVaccines($filters)
+            ->toArray();
+
+        $formatData = [];
+
+        foreach ($data as $datum) {
+            if (!isset($formatData[$datum['vax_name']])) {
+                $formatData[$datum['vax_name']] = [
+                    "data" => [],
+                    "backgroundColor" => []
+                ];
+            }
+            $formatData[$datum['vax_name']]['data'][] = $datum['aggregate'];
+            $formatData[$datum['vax_name']]['backgroundColor'][] = random_color();
+        }
+
+        return [
+            'type' => 'bar',
+            'data' => [
+                'labels' => array_keys($formatData),
+                'datasets' => array_values($formatData),
+            ],
+            'options' => [
+                'maintainAspectRatio' => false,
+                'datasetFill' => false,
+                'responsive' => true,
+                'legend' => [
+                    'display' => false,
+                    'position' => 'left',
+                ],
+                'scales' => [
+                    'xAxes' => [[
+                        'stacked' => true,
+                    ]],
+                    'yAxes' => [[
+                        'stacked' => true
+                    ]],
+                ]
+            ]
         ];
     }
 }

@@ -75,3 +75,13 @@ if (!function_exists('random_color')) {
                 str_pad(dechex(mt_rand(0, 255)), 2, '0', STR_PAD_LEFT));
     }
 }
+
+if (!function_exists('clean')) {
+    function clean($str, $default = null)
+    {
+        $str = trim($str);
+        return (strlen($str) > 0)
+            ? trim($str)
+            : $default;
+    }
+}

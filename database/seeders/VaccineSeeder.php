@@ -28,13 +28,13 @@ class VaccineSeeder extends Seeder
                 if ($line[0] != 'VAERS_ID') {
                     return Vaccine::create([
                         'vaers_id' => (int) $line[0] ?? null,
-                        'vax_type' => $line[1] ?? null,
-                        'vax_manu' => $line[2] ?? null,
-                        'vax_lot' => $line[3] ?? null,
-                        'vax_dose_series' => $line[4] ?? null,
-                        'vax_route' => $line[5] ?? null,
-                        'vax_site' => $line[6] ?? null,
-                        'vax_name' => $line[7] ?? null,
+                        'vax_type' => clean($line[1]),
+                        'vax_manu' => clean($line[2]),
+                        'vax_lot' => clean($line[3]),
+                        'vax_dose_series' => clean($line[4]),
+                        'vax_route' => clean($line[5]),
+                        'vax_site' => clean($line[6]),
+                        'vax_name' => clean($line[7]),
                     ]);
                 }
 

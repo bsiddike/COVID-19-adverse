@@ -35,17 +35,17 @@ class SymptomSeeder extends Seeder
 
                 if ($line[0] != 'VAERS_ID') {
                     return Symptom::create([
-                        'vaers_id' => $line[0] ?? null,
-                        'symptom1' => $line[1] ?? null,
-                        'symptomversion1' => $line[2] ?? null,
-                        'symptom2' => $line[3] ?? null,
-                        'symptomversion2' => $line[4] ?? null,
-                        'symptom3' => $line[5] ?? null,
-                        'symptomversion3' => $line[6] ?? null,
-                        'symptom4' => $line[7] ?? null,
-                        'symptomversion4' => $line[8] ?? null,
-                        'symptom5' => $line[9] ?? null,
-                        'symptomversion5' => $line[10] ?? null,
+                        'vaers_id' => clean($line[0]),
+                        'symptom1' => clean($line[1]),
+                        'symptomversion1' => clean($line[2]),
+                        'symptom2' => clean($line[3]),
+                        'symptomversion2' => clean($line[4]),
+                        'symptom3' => clean($line[5]),
+                        'symptomversion3' => clean($line[6]),
+                        'symptom4' => clean($line[7]),
+                        'symptomversion4' => clean($line[8]),
+                        'symptom5' => clean($line[9]),
+                        'symptomversion5' => clean($line[10]),
                     ]);
                 }
 

@@ -54,6 +54,7 @@
             @include('backend.wizard.affected-gender')
             @include('backend.wizard.affected-age-wise')
             @include('backend.wizard.affected-monthly')
+            @include('backend.wizard.affected-state')
         </div>
         <!-- /.container-fluid -->
     </div>

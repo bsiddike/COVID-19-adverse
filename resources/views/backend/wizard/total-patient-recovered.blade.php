@@ -3,7 +3,7 @@
         <!-- small box -->
         <div class="small-box bg-indigo">
             <div class="inner">
-                <h3>{{ $patients_recovered ?? 0 }}</h3>
+                <h3>{{ $patientsRecovered ?? 0 }}</h3>
 
                 <p>Recovered</p>
             </div>

@@ -44,12 +44,12 @@ class DashboardController extends Controller
             'patients' => $this->patientService->getAllPatients($filters)->count(),
             'symptoms' => $this->symptomService->getAllSymptoms($filters)->count(),
             'vaccines' => $this->vaccineService->getAllVaccines($filters)->count(),
-            'patients_died' => $this->patientService->getAllPatients(array_merge($filters, ['died' => true]))->count(),
-            'patients_recovered' => $this->patientService->getAllPatients(array_merge($filters, ['recovered' => true]))->count(),
+            'patientsDied' => $this->patientService->getAllPatients(array_merge($filters, ['died' => true]))->count(),
+            'patientsRecovered' => $this->patientService->getAllPatients(array_merge($filters, ['recovered' => true]))->count(),
             'affectedGender' => $this->getGenderMetrics($filters),
             'affectedAge' => $this->getAgeMetrics($filters),
             'affectedMonth' => $this->getPatientLineChart($filters),
-
+            'patientsStateMap' => $this->getPatientMap($filters)
         ]);
     }
 
@@ -170,6 +170,45 @@ class DashboardController extends Controller
                     ]
                 ]
             ]
+        ];
+    }
+
+    private function getPatientMap(array $filters = [])
+    {
+        $filters['metric'] = 'state';
+        $states = $this->patientService->getAllPatients($filters)->toArray();
+        $areas = [];
+
+        foreach ($states as $state) {
+            $state_name = strtoupper($state['state']);
+            $state_count = strtonumber($state['aggregate'], 0);
+            $areas[$state_name] = [
+                "value" => $state_count,
+                "href" => "#",
+                "tooltip" => [
+                    "content" => "<span style='font-weight:bold;'>{$state_name}</span><br/>Patients: {$state_count}"
+                ]
+            ];
+        }
+
+        return [
+            "map" => [
+                "name" => 'usa_states',
+                "zoom" => [
+                    "enabled" => true,
+                    "maxLevel" => 10
+                ],
+                "defaultArea" => [
+                    "attrs" => [
+                        "stroke" => "#fff",
+                        "stroke-width" => 1
+                    ],
+                    "attrsHover" => [
+                        "stroke-width" => 2
+                    ]
+                ],
+            ],
+            "areas" => $areas
         ];
     }
 }

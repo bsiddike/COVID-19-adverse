@@ -4,7 +4,6 @@ namespace App\Repositories\Eloquent\Backend\Organization;
 
 use App\Abstracts\Repository\EloquentRepository;
 use App\Models\Vaccine;
-use App\Services\Auth\AuthenticatedSessionService;
 use Exception;
 use Generator;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
@@ -46,7 +45,7 @@ class VaccineRepository extends EloquentRepository
 
         $query = $this->getQueryBuilder();
 
-        if (!empty($filters['search'])) {
+        if (! empty($filters['search'])) {
             $query->where('name', 'like', "%{$filters['search']}%")
                 ->orWhere('enabled', 'like', "%{$filters['search']}%")
                 ->orWhere('nid', 'like', "%{$filters['search']}%")
@@ -76,10 +75,10 @@ class VaccineRepository extends EloquentRepository
         if (! empty($filters['metric'])) {
             switch ($filters['metric']) {
                 case 'top_10_symptoms' :
-                    $query->selectRaw("`vax_name`, `symptoms`.`symptom1`, count(`symptoms`.`symptom1`) as `aggregate`")
-                        ->join('symptoms', 'vaccines.vaers_id', "=", "symptoms.vaers_id")
-                        ->where("vax_type", "=", "COVID19")
-                        ->groupBy("vax_name", "symptom1")
+                    $query->selectRaw('`vax_name`, `symptoms`.`symptom1`, count(`symptoms`.`symptom1`) as `aggregate`')
+                        ->join('symptoms', 'vaccines.vaers_id', '=', 'symptoms.vaers_id')
+                        ->where('vax_type', '=', 'COVID19')
+                        ->groupBy('vax_name', 'symptom1')
                         ->orderBy('aggregate', 'desc');
                     break;
 

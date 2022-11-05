@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\DB;
 use InvalidArgumentException;
 use Spatie\MediaLibrary\MediaCollections\Exceptions\FileDoesNotExist;
 use Spatie\MediaLibrary\MediaCollections\Exceptions\FileIsTooBig;
+use Throwable;
 
 /**
  * Class UserService
@@ -41,7 +42,7 @@ class UserService extends Service
      * @param  FileUploadService  $fileUploadService
      */
     public function __construct(UserRepository $userRepository,
-        FileUploadService $fileUploadService)
+                                FileUploadService $fileUploadService)
     {
         $this->userRepository = $userRepository;
         $this->fileUploadService = $fileUploadService;
@@ -237,7 +238,7 @@ class UserService extends Service
                 return ['status' => false, 'message' => __('User is Delete Failed'),
                     'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!', ];
             }
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             $this->userRepository->handleException($exception);
             DB::rollBack();
 
@@ -275,7 +276,7 @@ class UserService extends Service
      * @param $id
      * @return array
      *
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function restoreUser($id): array
     {

@@ -2,12 +2,15 @@
 
 namespace App\Abstracts\Repository;
 
+use App;
 use App\Interfaces\RepositoryInterface;
+use BadMethodCallException;
 use Exception;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Log;
 use PDOException;
 
 /**
@@ -255,26 +258,20 @@ abstract class EloquentRepository implements RepositoryInterface
      */
     public function handleException($exception)
     {
-        \Log::error('Query Exception: ');
-        \Log::error($exception->getMessage());
+        Log::error('Query Exception: ');
+        Log::error($exception->getMessage());
         //if application is on production keep silent
-        if (\App::environment('production')) {
-            \Log::error($exception->getMessage());
-        }
-
-        //Eloquent Model Exception
+        if (App::environment('production')) {
+            Log::error($exception->getMessage());
+        } //Eloquent Model Exception
         elseif ($exception instanceof ModelNotFoundException) {
             throw new ModelNotFoundException($exception->getMessage());
-        }
-
-        //DB Error
+        } //DB Error
         elseif ($exception instanceof PDOException) {
             throw new PDOException($exception->getMessage());
-        } elseif ($exception instanceof \BadMethodCallException) {
-            throw new \BadMethodCallException($exception->getMessage());
-        }
-
-        //Through general Exception
+        } elseif ($exception instanceof BadMethodCallException) {
+            throw new BadMethodCallException($exception->getMessage());
+        } //Through general Exception
         else {
             throw new Exception($exception->getMessage());
         }

@@ -23,6 +23,7 @@ use OpenSpout\Writer\Exception\WriterNotOpenedException;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 use Symfony\Component\HttpFoundation\StreamedResponse;
+use Throwable;
 
 /**
  * @class VaccineController
@@ -99,7 +100,7 @@ class VaccineController extends Controller
      * @param  CreateVaccineRequest  $request
      * @return RedirectResponse
      *
-     * @throws Exception|\Throwable
+     * @throws Exception|Throwable
      */
     public function store(CreateVaccineRequest $request): RedirectResponse
     {
@@ -166,7 +167,7 @@ class VaccineController extends Controller
      * @param    $id
      * @return RedirectResponse
      *
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function update(UpdateVaccineRequest $request, $id): RedirectResponse
     {
@@ -191,7 +192,7 @@ class VaccineController extends Controller
      * @param  Request  $request
      * @return RedirectResponse
      *
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function destroy($id, Request $request)
     {
@@ -216,7 +217,7 @@ class VaccineController extends Controller
      * @param  Request  $request
      * @return RedirectResponse|void
      *
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function restore($id, Request $request)
     {

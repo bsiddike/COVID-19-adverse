@@ -5,6 +5,7 @@ namespace App\Supports;
 use App\Models\Backend\Common\Address;
 use App\Repositories\Eloquent\Backend\Setting\UserRepository;
 use Carbon\Carbon;
+use Exception;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
@@ -36,7 +37,7 @@ class Utility
      * @param  UserRepository|null  $userRepository
      * @return string
      *
-     * @throws \Exception
+     * @throws Exception
      */
     public static function generateUsername(string $name, UserRepository $userRepository = null): string
     {
@@ -173,7 +174,8 @@ class Utility
         }
 
         if (! empty($addressBook->country_id)) {
-            $address .= ($addressBook->country->name. /*', ' . $addressBook->country->iso3 .*/ '.');
+            $address .= ($addressBook->country->name. /*', ' . $addressBook->country->iso3 .*/
+                '.');
         }
 
         return $address;

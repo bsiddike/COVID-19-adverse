@@ -73,7 +73,7 @@ class UserRepository extends EloquentRepository
      * @param  string  $testUserName
      * @return bool
      *
-     * @throws \Exception
+     * @throws Exception
      */
     public function verifyUniqueUsername(string $testUserName): bool
     {

@@ -5,6 +5,7 @@ namespace App\Repositories\Eloquent\Backend\Organization;
 use App\Abstracts\Repository\EloquentRepository;
 use App\Models\Symptom;
 use Exception;
+use Generator;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
@@ -95,11 +96,11 @@ class SymptomRepository extends EloquentRepository
      * @param  array  $filters
      * @param  array  $eagerRelations
      * @param  bool  $is_sortable
-     * @return \Generator
+     * @return Generator
      *
      * @throws Exception
      */
-    public function exportWith(array $filters = [], array $eagerRelations = [], bool $is_sortable = false): \Generator
+    public function exportWith(array $filters = [], array $eagerRelations = [], bool $is_sortable = false): Generator
     {
         try {
             $query = $this->filterData($filters, $is_sortable);

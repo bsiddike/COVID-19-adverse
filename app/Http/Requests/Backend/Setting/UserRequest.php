@@ -61,6 +61,6 @@ class UserRequest extends FormRequest
             $rules['username'][] = 'nullable';
         }
 
-        return  $rules;
+        return $rules;
     }
 }

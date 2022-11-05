@@ -47,12 +47,14 @@
             @include('backend.wizard.total-patient')
             @include('backend.wizard.total-symptom')
             @include('backend.wizard.total-vaccine')
+            @include('backend.wizard.total-patient-recovered')
+            @include('backend.wizard.total-patient-died')
         </div>
         <div class="row">
             @include('backend.wizard.affected-gender')
             @include('backend.wizard.affected-age-wise')
+            @include('backend.wizard.affected-monthly')
             @include('backend.wizard.affected-state')
-
         </div>
         <!-- /.container-fluid -->
     </div>

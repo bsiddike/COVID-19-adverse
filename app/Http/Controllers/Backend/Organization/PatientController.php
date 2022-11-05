@@ -14,6 +14,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\StreamedResponse;
+use Throwable;
 
 /**
  * @class PatientController
@@ -77,7 +78,7 @@ class PatientController extends Controller
      * @param  Request  $request
      * @return RedirectResponse
      *
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function store(Request $request): RedirectResponse
     {
@@ -139,7 +140,7 @@ class PatientController extends Controller
      * @param    $id
      * @return RedirectResponse
      *
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function update(PatientRequest $request, $id): RedirectResponse
     {
@@ -163,7 +164,7 @@ class PatientController extends Controller
      * @param  Request  $request
      * @return RedirectResponse
      *
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function destroy($id, Request $request)
     {
@@ -188,7 +189,7 @@ class PatientController extends Controller
      * @param  Request  $request
      * @return RedirectResponse|void
      *
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function restore($id, Request $request)
     {

@@ -2,10 +2,17 @@
     <div class="row">
         <div class="col-md-6">{!! Form::nText('vaers_id', 'Vaers ID', old('vaers_id', $patient->vaers_id ?? null), true) !!}</div>
         <div class="col-md-6">{!! Form::nText('recive_date', 'Receive Date', old('recive_date', $patient->recive_date ?? null), true) !!}</div>
+<<<<<<< HEAD
 	<div class="col-md-6">{!! Form::nText('state', 'State', old('state', $patient->state ?? null), true) !!}</div>
         <div class="col-md-6">{!! Form::nText('age_yrs', 'Age Year', old('age_yrs', $patient->age_yrs ?? null), true) !!}</div>
         <div class="col-md-6">{!! Form::nText('cage_yr', 'Cage Year', old('cage_yr', $patient->cage_yr ?? null), true) !!}</div>
         <div class="col-md-6">{!! Form::nText('cage_mo', 'Cage Month', old('cage_mo', $patient->cage_mo ?? null), true) !!}</div>
+=======
+        <div class="col-md-6">{!! Form::nText('state', 'State', old('state', $patient->state ?? null), true) !!}</div>
+        <div class="col-md-6">{!! Form::nText('age_yrs', 'Age (yrs)', old('age_yrs', $patient->age_yrs ?? null), true) !!}</div>
+        <div class="col-md-6">{!! Form::nText('cage_yr', 'cage_yr', old('cage_yr', $patient->cage_yr ?? null), true) !!}</div>
+        <div class="col-md-6">{!! Form::nText('cage_mo', 'cage_mo', old('cage_mo', $patient->cage_mo ?? null), true) !!}</div>
+>>>>>>> 4baf4c01282f3735d3a1bfca9b545bdb339cf220
         <div class="col-md-6">{!! Form::nText('sex', 'Sex', old('sex', $patient->sex ?? null), true) !!}</div>
         <div class="col-md-6">{!! Form::nText('rpt_date', 'Report Date', old('rpt_date', $patient->rpt_date ?? null), true) !!}</div>
         {{--<div class="col-md-6">{!! Form::nText('symptom_text', 'Symptoms History', old('symptom_text', $patient->symptom_text ?? null), true) !!}</div>--}}

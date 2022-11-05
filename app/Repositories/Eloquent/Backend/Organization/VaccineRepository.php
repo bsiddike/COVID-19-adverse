@@ -6,6 +6,7 @@ use App\Abstracts\Repository\EloquentRepository;
 use App\Models\Vaccine;
 use App\Services\Auth\AuthenticatedSessionService;
 use Exception;
+use Generator;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
@@ -105,6 +106,7 @@ class VaccineRepository extends EloquentRepository
      */
     public function getWith(array $filters = [], array $eagerRelations = [], bool $is_sortable = false)
     {
+        $query = $this->getQueryBuilder();
         try {
             $query = $this->filterData($filters, $is_sortable);
         } catch (Exception $exception) {
@@ -118,11 +120,11 @@ class VaccineRepository extends EloquentRepository
      * @param  array  $filters
      * @param  array  $eagerRelations
      * @param  bool  $is_sortable
-     * @return \Generator
+     * @return Generator
      *
      * @throws Exception
      */
-    public function exportWith(array $filters = [], array $eagerRelations = [], bool $is_sortable = false): \Generator
+    public function exportWith(array $filters = [], array $eagerRelations = [], bool $is_sortable = false): Generator
     {
         try {
             $query = $this->filterData($filters, $is_sortable);

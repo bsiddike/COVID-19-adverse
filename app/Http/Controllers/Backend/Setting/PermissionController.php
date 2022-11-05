@@ -14,6 +14,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\StreamedResponse;
+use Throwable;
 
 class PermissionController extends Controller
 {
@@ -32,7 +33,7 @@ class PermissionController extends Controller
      * @param  PermissionService  $permissionService
      */
     public function __construct(AuthenticatedSessionService $authenticatedSessionService,
-        PermissionService $permissionService)
+                                PermissionService $permissionService)
     {
         $this->authenticatedSessionService = $authenticatedSessionService;
         $this->permissionService = $permissionService;
@@ -72,7 +73,7 @@ class PermissionController extends Controller
      * @param  PermissionRequest  $request
      * @return RedirectResponse
      *
-     * @throws Exception|\Throwable
+     * @throws Exception|Throwable
      */
     public function store(PermissionRequest $request): RedirectResponse
     {
@@ -134,7 +135,7 @@ class PermissionController extends Controller
      * @param    $id
      * @return RedirectResponse
      *
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function update(PermissionRequest $request, $id): RedirectResponse
     {
@@ -158,7 +159,7 @@ class PermissionController extends Controller
      * @param  Request  $request
      * @return RedirectResponse
      *
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function destroy($id, Request $request)
     {
@@ -183,7 +184,7 @@ class PermissionController extends Controller
      * @param  Request  $request
      * @return RedirectResponse|void
      *
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function restore($id, Request $request)
     {

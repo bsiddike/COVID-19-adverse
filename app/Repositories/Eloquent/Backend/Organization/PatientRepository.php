@@ -76,11 +76,11 @@ class PatientRepository extends EloquentRepository
             $query->where('died', '=', 'Y');
         }
 
-        if (!empty($filters['hospitalized'])) {
-            $query->where('hospital', '=', "Y");
+        if (! empty($filters['hospitalized'])) {
+            $query->where('hospital', '=', 'Y');
         }
 
-        if (!empty($filters['sort']) && !empty($filters['direction'])) {
+        if (! empty($filters['sort']) && ! empty($filters['direction'])) {
             $query->sortable($filters['sort'], $filters['direction']);
         }
 

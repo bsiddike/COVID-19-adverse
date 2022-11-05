@@ -19,9 +19,9 @@ class DashboardController extends Controller
     /**
      * DashboardController constructor.
      *
-     * @param PatientService $patientService
-     * @param SymptomService $symptomService
-     * @param VaccineService $vaccineService
+     * @param  PatientService  $patientService
+     * @param  SymptomService  $symptomService
+     * @param  VaccineService  $vaccineService
      */
     public function __construct(PatientService $patientService,
                                 SymptomService $symptomService,
@@ -111,7 +111,7 @@ class DashboardController extends Controller
             ->pluck('year')->toArray();
 
         $months = ['January', 'February', 'March', 'April', 'May', 'June',
-            'July', 'August', 'September', 'October', 'November', 'December',];
+            'July', 'August', 'September', 'October', 'November', 'December', ];
 
         $datasets = [];
 
@@ -221,10 +221,10 @@ class DashboardController extends Controller
         $formatData = [];
 
         foreach ($data as $datum) {
-            if (!isset($formatData[$datum['vax_name']])) {
+            if (! isset($formatData[$datum['vax_name']])) {
                 $formatData[$datum['vax_name']] = [
-                    "data" => [],
-                    "backgroundColor" => []
+                    'data' => [],
+                    'backgroundColor' => [],
                 ];
             }
             $formatData[$datum['vax_name']]['data'][] = $datum['aggregate'];
@@ -250,10 +250,10 @@ class DashboardController extends Controller
                         'stacked' => true,
                     ]],
                     'yAxes' => [[
-                        'stacked' => true
+                        'stacked' => true,
                     ]],
-                ]
-            ]
+                ],
+            ],
         ];
     }
 }

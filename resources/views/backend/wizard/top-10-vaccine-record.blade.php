@@ -1,7 +1,7 @@
-<div class="col-lg-12">
+<div class="col-lg-6">
     <div class="card">
         <div class="card-header border-bottom-0">
-            <h3 class="card-title">Monthly Affected</h3>
+            <h3 class="card-title">Bar Chart</h3>
             <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
                     <i class="fas fa-minus"></i>
@@ -18,22 +18,12 @@
                         <div class=""></div>
                     </div>
                 </div>
-                <canvas id="lineChart"
-                        style="min-height: 350px; height: 350px; max-height: 350px; max-width: 100%; display: block; width: 580px;"
-                        class="chartjs-render-monitor" width="725" height="312"></canvas>
+                <canvas id="barChart"
+                        style="min-height: 341px; height: 341px; max-height: 341px; max-width: 100%; display: block; width: 580px;">
+
+                </canvas>
             </div>
         </div>
-
     </div>
 </div>
 
-@push('page-script')
-    <script>
-
-        $(function () {
-            var lineChart = new Chart($('#lineChart').get(0).getContext('2d'),
-                    {!! json_encode($affectedMonth) !!}
-            );
-        });
-    </script>
-@endpush

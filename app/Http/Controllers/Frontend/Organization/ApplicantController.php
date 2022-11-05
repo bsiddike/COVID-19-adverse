@@ -17,6 +17,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
+use Throwable;
 
 /**
  * @class ApplicantController
@@ -51,17 +52,17 @@ class ApplicantController extends Controller
     /**
      * ApplicantController Constructor
      *
-     * @param  SymptomService  $enumeratorService
-     * @param  PatientService  $surveyService
-     * @param  CatalogService  $catalogService
-     * @param  ExamLevelService  $examLevelService
-     * @param  StateService  $stateService
+     * @param SymptomService $enumeratorService
+     * @param PatientService $surveyService
+     * @param CatalogService $catalogService
+     * @param ExamLevelService $examLevelService
+     * @param StateService $stateService
      */
-    public function __construct(SymptomService $enumeratorService,
-                                PatientService $surveyService,
-                                CatalogService $catalogService,
+    public function __construct(SymptomService   $enumeratorService,
+                                PatientService   $surveyService,
+                                CatalogService   $catalogService,
                                 ExamLevelService $examLevelService,
-                                StateService $stateService)
+                                StateService     $stateService)
     {
         $this->enumeratorService = $enumeratorService;
         $this->surveyService = $surveyService;
@@ -83,11 +84,11 @@ class ApplicantController extends Controller
     {
         $enables = [];
         foreach (Constant::ENABLED_OPTIONS as $field => $label) {
-            $enables[$field] = __('common.'.$label);
+            $enables[$field] = __('common.' . $label);
         }
         $examDropDown = [];
         foreach ($this->examLevelService->getExamLevelDropdown(['id' => [1, 2, 3, 4]]) as $field => $label) {
-            $examDropDown[$field] = __('enumerator.'.$label);
+            $examDropDown[$field] = __('enumerator.' . $label);
         }
 
         return view('frontend.organization.applicant.create', [
@@ -102,10 +103,10 @@ class ApplicantController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  ApplicantRequest  $request
+     * @param ApplicantRequest $request
      * @return RedirectResponse
      *
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function store(ApplicantRequest $request): RedirectResponse
     {

@@ -15,7 +15,7 @@ class UserRepository extends EloquentRepository
     /**
      * UserRepository constructor.
      *
-     * @param  null  $model
+     * @param null $model
      */
     public function __construct($model = null)
     {
@@ -28,7 +28,7 @@ class UserRepository extends EloquentRepository
     }
 
     /**
-     * @param  User|null  $user
+     * @param User|null $user
      * @return Collection
      */
     public function getAssignedRoles(User $user = null): ?Collection
@@ -41,8 +41,8 @@ class UserRepository extends EloquentRepository
     }
 
     /**
-     * @param  array  $roles
-     * @param  bool  $detachOldRoles
+     * @param array $roles
+     * @param bool $detachOldRoles
      * @return bool
      */
     public function manageRoles(array $roles = [], bool $detachOldRoles = false): bool
@@ -57,11 +57,11 @@ class UserRepository extends EloquentRepository
 
         $roleIds = ($detachOldRoles) ? $roles : array_unique(array_merge($alreadyAssignedRoles, $roles));
 
-        return (bool) $this->model->roles()->sync($roleIds, ['model_type' => get_class($this->model)]);
+        return (bool)$this->model->roles()->sync($roleIds, ['model_type' => get_class($this->model)]);
     }
 
     /**
-     * @param  string  $roleName
+     * @param string $roleName
      * @return mixed
      */
     public function usersByRole(string $roleName)
@@ -70,10 +70,10 @@ class UserRepository extends EloquentRepository
     }
 
     /**
-     * @param  string  $testUserName
+     * @param string $testUserName
      * @return bool
      *
-     * @throws \Exception
+     * @throws Exception
      */
     public function verifyUniqueUsername(string $testUserName): bool
     {
@@ -83,15 +83,15 @@ class UserRepository extends EloquentRepository
     /**
      * Search Function for Permissions
      *
-     * @param  array  $filters
-     * @param  bool  $is_sortable
+     * @param array $filters
+     * @param bool $is_sortable
      * @return Builder
      */
     private function filterData(array $filters = [], bool $is_sortable = false): Builder
     {
         $query = $this->getQueryBuilder();
 
-        if (isset($filters['search']) && ! empty($filters['search'])) {
+        if (isset($filters['search']) && !empty($filters['search'])) {
             $query->where('name', 'like', "%{$filters['search']}%")
                 ->orWhere('username', 'like', "%{$filters['search']}%")
                 ->orWhere('email', '=', "%{$filters['search']}%")
@@ -99,29 +99,29 @@ class UserRepository extends EloquentRepository
                 ->orWhere('enabled', '=', "%{$filters['search']}%");
         }
 
-        if (isset($filters['enabled']) && ! empty($filters['enabled'])) {
+        if (isset($filters['enabled']) && !empty($filters['enabled'])) {
             $query->where('enabled', '=', $filters['enabled']);
         }
 
-        if (isset($filters['parent_id']) && ! empty($filters['parent_id'])) {
+        if (isset($filters['parent_id']) && !empty($filters['parent_id'])) {
             $query->where('parent_id', '=', $filters['parent_id']);
         }
 
-        if (isset($filters['sort']) && ! empty($filters['direction'])) {
+        if (isset($filters['sort']) && !empty($filters['direction'])) {
             $query->orderBy($filters['sort'], $filters['direction']);
         }
 
         //Role may be int, string, array
-        if (isset($filters['role']) && ! empty($filters['role'])) {
+        if (isset($filters['role']) && !empty($filters['role'])) {
             $query->whereHas('roles', function ($subQuery) use ($filters) {
-                if (! is_array($filters['role'])) {
+                if (!is_array($filters['role'])) {
                     $filters['role'][] = $filters['role'];
                 }
 
                 $firstRole = array_shift($filters['role']);
                 $subQuery->where('id', '=', $firstRole);
 
-                if (! empty($filters['role'])) {
+                if (!empty($filters['role'])) {
                     foreach ($filters['role'] as $role) {
                         $subQuery->orWhere('id', '=', $role);
                     }
@@ -143,9 +143,9 @@ class UserRepository extends EloquentRepository
     /**
      * Pagination Generator
      *
-     * @param  array  $filters
-     * @param  array  $eagerRelations
-     * @param  bool  $is_sortable
+     * @param array $filters
+     * @param array $eagerRelations
+     * @param bool $is_sortable
      * @return LengthAwarePaginator
      *
      * @throws Exception
@@ -163,9 +163,9 @@ class UserRepository extends EloquentRepository
     }
 
     /**
-     * @param  array  $filters
-     * @param  array  $eagerRelations
-     * @param  bool  $is_sortable
+     * @param array $filters
+     * @param array $eagerRelations
+     * @param bool $is_sortable
      * @return Builder[]|\Illuminate\Database\Eloquent\Collection
      *
      * @throws Exception

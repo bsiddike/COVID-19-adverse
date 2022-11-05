@@ -14,6 +14,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\StreamedResponse;
+use Throwable;
 
 class PermissionController extends Controller
 {
@@ -28,11 +29,11 @@ class PermissionController extends Controller
     private $permissionService;
 
     /**
-     * @param  AuthenticatedSessionService  $authenticatedSessionService
-     * @param  PermissionService  $permissionService
+     * @param AuthenticatedSessionService $authenticatedSessionService
+     * @param PermissionService $permissionService
      */
     public function __construct(AuthenticatedSessionService $authenticatedSessionService,
-        PermissionService $permissionService)
+                                PermissionService           $permissionService)
     {
         $this->authenticatedSessionService = $authenticatedSessionService;
         $this->permissionService = $permissionService;
@@ -41,7 +42,7 @@ class PermissionController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param  Request  $request
+     * @param Request $request
      * @return Application|Factory|View
      *
      * @throws Exception
@@ -69,10 +70,10 @@ class PermissionController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  PermissionRequest  $request
+     * @param PermissionRequest $request
      * @return RedirectResponse
      *
-     * @throws Exception|\Throwable
+     * @throws Exception|Throwable
      */
     public function store(PermissionRequest $request): RedirectResponse
     {
@@ -130,11 +131,11 @@ class PermissionController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  PermissionRequest  $request
+     * @param PermissionRequest $request
      * @param    $id
      * @return RedirectResponse
      *
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function update(PermissionRequest $request, $id): RedirectResponse
     {
@@ -155,10 +156,10 @@ class PermissionController extends Controller
      * Remove the specified resource from storage.
      *
      * @param $id
-     * @param  Request  $request
+     * @param Request $request
      * @return RedirectResponse
      *
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function destroy($id, Request $request)
     {
@@ -180,10 +181,10 @@ class PermissionController extends Controller
      * Restore a Soft Deleted Resource
      *
      * @param $id
-     * @param  Request  $request
+     * @param Request $request
      * @return RedirectResponse|void
      *
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function restore($id, Request $request)
     {
@@ -214,7 +215,7 @@ class PermissionController extends Controller
 
         $permissionExport = $this->permissionService->exportPermission($filters);
 
-        $filename = 'Permission-'.date('Ymd-His').'.'.($filters['format'] ?? 'xlsx');
+        $filename = 'Permission-' . date('Ymd-His') . '.' . ($filters['format'] ?? 'xlsx');
 
         return $permissionExport->download($filename, function ($permission) use ($permissionExport) {
             return $permissionExport->map($permission);
@@ -261,7 +262,7 @@ class PermissionController extends Controller
 
         $permissionExport = $this->permissionService->exportPermission($filters);
 
-        $filename = 'Permission-'.date('Ymd-His').'.'.($filters['format'] ?? 'xlsx');
+        $filename = 'Permission-' . date('Ymd-His') . '.' . ($filters['format'] ?? 'xlsx');
 
         return $permissionExport->download($filename, function ($permission) use ($permissionExport) {
             return $permissionExport->map($permission);

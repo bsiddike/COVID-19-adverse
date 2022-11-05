@@ -15,7 +15,7 @@ class OrganizationExport extends FastExcelExport
     /**
      * OrganizationExport constructor.
      *
-     * @param  null  $data
+     * @param null $data
      *
      * @throws InvalidArgumentException
      */
@@ -27,7 +27,7 @@ class OrganizationExport extends FastExcelExport
     }
 
     /**
-     * @param  Organization  $row
+     * @param Organization $row
      * @return array
      */
     public function map($row): array

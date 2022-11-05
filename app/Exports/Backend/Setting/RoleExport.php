@@ -10,7 +10,7 @@ use OpenSpout\Common\Exception\InvalidArgumentException;
 class RoleExport extends FastExcelExport
 {
     /**
-     * @param  null  $data
+     * @param null $data
      *
      * @throws InvalidArgumentException
      */
@@ -22,7 +22,7 @@ class RoleExport extends FastExcelExport
     }
 
     /**
-     * @param  Role  $row
+     * @param Role $row
      * @return array
      */
     public function map($row): array

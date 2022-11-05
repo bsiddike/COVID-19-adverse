@@ -20,7 +20,7 @@ class AuthenticatedSessionController extends Controller
     private $authenticatedSessionService;
 
     /**
-     * @param  AuthenticatedSessionService  $authenticatedSessionService
+     * @param AuthenticatedSessionService $authenticatedSessionService
      */
     public function __construct(AuthenticatedSessionService $authenticatedSessionService)
     {
@@ -40,7 +40,7 @@ class AuthenticatedSessionController extends Controller
     /**
      * Handle an incoming auth request.
      *
-     * @param  LoginRequest  $request
+     * @param LoginRequest $request
      * @return RedirectResponse
      */
     public function store(LoginRequest $request): RedirectResponse
@@ -61,7 +61,7 @@ class AuthenticatedSessionController extends Controller
     /**
      * Destroy an authenticated session.
      *
-     * @param  Request  $request
+     * @param Request $request
      * @return RedirectResponse
      */
     public function destroy(Request $request): RedirectResponse

@@ -2,6 +2,7 @@
 
 namespace App\Services\Auth;
 
+use DB;
 use function __;
 use App\Models\Setting\User;
 use App\Repositories\Eloquent\Backend\Setting\UserRepository;
@@ -28,25 +29,25 @@ class RegisteredUserService
     /**
      * RegisteredUserService constructor.
      *
-     * @param  UserRepository  $userRepository
-     * @param  FileUploadService  $fileUploadService
+     * @param UserRepository $userRepository
+     * @param FileUploadService $fileUploadService
      */
-    public function __construct(UserRepository $userRepository,
-        FileUploadService $fileUploadService)
+    public function __construct(UserRepository    $userRepository,
+                                FileUploadService $fileUploadService)
     {
         $this->userRepository = $userRepository;
         $this->fileUploadService = $fileUploadService;
     }
 
     /**
-     * @param  array  $registerFormInputs
+     * @param array $registerFormInputs
      * @return array
      *
      * @throws Exception
      */
     public function attemptRegistration(array $registerFormInputs): ?array
     {
-        \DB::beginTransaction();
+        DB::beginTransaction();
         //format request object
         $inputs = $this->formatRegistrationInfo($registerFormInputs);
         try {
@@ -54,7 +55,7 @@ class RegisteredUserService
             $newUser = $this->userRepository->create($inputs);
             if ($newUser instanceof User) {
                 if ($this->attachAvatarImage($newUser) && $this->attachDefaultRoles($newUser)) {
-                    \DB::commit();
+                    DB::commit();
                     $newUser->refresh();
 
                     Auth::login($newUser);
@@ -66,7 +67,7 @@ class RegisteredUserService
             } else {
                 return ['status' => false, 'message' => 'User model creation failed', 'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Error!'];
             }
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             $this->userRepository->handleException($exception);
 
             return ['status' => false, 'message' => __($exception->getMessage()), 'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Error!'];
@@ -74,7 +75,7 @@ class RegisteredUserService
     }
 
     /**
-     * @param  array  $request
+     * @param array $request
      * @return array
      *
      * @throws Exception
@@ -94,7 +95,7 @@ class RegisteredUserService
     }
 
     /**
-     * @param  User  $user
+     * @param User $user
      * @return bool
      *
      * @throws FileDoesNotExist
@@ -111,7 +112,7 @@ class RegisteredUserService
     }
 
     /**
-     * @param  User  $user
+     * @param User $user
      * @return bool
      */
     protected function attachDefaultRoles(User $user): bool

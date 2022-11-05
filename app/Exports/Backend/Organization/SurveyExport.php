@@ -14,7 +14,7 @@ class SurveyExport extends FastExcelExport
     /**
      * SurveyExport constructor.
      *
-     * @param  null  $data
+     * @param null $data
      *
      * @throws InvalidArgumentException
      */
@@ -26,7 +26,7 @@ class SurveyExport extends FastExcelExport
     }
 
     /**
-     * @param  Enumerator  $row
+     * @param Enumerator $row
      * @return array
      */
     public function map($row): array

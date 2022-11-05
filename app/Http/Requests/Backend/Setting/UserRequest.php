@@ -33,9 +33,9 @@ class UserRequest extends FormRequest
             'role_id' => ['required', 'array', 'min:1', 'max:3'],
             'role_id.*' => ['required', 'integer', 'min:1', 'max:255'],
             'remarks' => ['nullable', 'string', 'min:3', 'max:255'],
-            'username' => ['string', 'min:5', 'max:255', new Username, 'unique:users,username,'.$this->user],
-            'email' => ['string', 'min:3', 'max:255', 'email', 'unique:users,email,'.$this->user],
-            'mobile' => ['string', 'min:11', 'max:13', new PhoneNumber, 'unique:users,mobile,'.$this->user],
+            'username' => ['string', 'min:5', 'max:255', new Username, 'unique:users,username,' . $this->user],
+            'email' => ['string', 'min:3', 'max:255', 'email', 'unique:users,email,' . $this->user],
+            'mobile' => ['string', 'min:11', 'max:13', new PhoneNumber, 'unique:users,mobile,' . $this->user],
         ];
 
         //Credential Field
@@ -61,6 +61,6 @@ class UserRequest extends FormRequest
             $rules['username'][] = 'nullable';
         }
 
-        return  $rules;
+        return $rules;
     }
 }

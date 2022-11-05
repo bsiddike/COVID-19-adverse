@@ -16,19 +16,19 @@ interface ExportInterface
     public function map($row): array;
 
     /**
-     * @param  BorderBuilder  $borderBuilder
+     * @param BorderBuilder $borderBuilder
      * @return mixed
      */
     public function setBorderStyle(BorderBuilder $borderBuilder);
 
     /**
-     * @param  StyleBuilder  $styleBuilder
+     * @param StyleBuilder $styleBuilder
      * @return mixed
      */
     public function setRowStyle(StyleBuilder $styleBuilder);
 
     /**
-     * @param  StyleBuilder  $styleBuilder
+     * @param StyleBuilder $styleBuilder
      * @return mixed
      */
     public function setHeadingStyle(StyleBuilder $styleBuilder);

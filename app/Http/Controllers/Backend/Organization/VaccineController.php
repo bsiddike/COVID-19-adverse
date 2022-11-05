@@ -23,6 +23,7 @@ use OpenSpout\Writer\Exception\WriterNotOpenedException;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 use Symfony\Component\HttpFoundation\StreamedResponse;
+use Throwable;
 
 /**
  * @class VaccineController
@@ -47,13 +48,13 @@ class VaccineController extends Controller
     /**
      * VaccineController Constructor
      *
-     * @param  AuthenticatedSessionService  $authenticatedSessionService
-     * @param  VaccineService  $vaccineService
-     * @param  PatientService  $surveyService
+     * @param AuthenticatedSessionService $authenticatedSessionService
+     * @param VaccineService $vaccineService
+     * @param PatientService $surveyService
      */
     public function __construct(AuthenticatedSessionService $authenticatedSessionService,
-                                VaccineService $vaccineService,
-                                PatientService $patientService)
+                                VaccineService              $vaccineService,
+                                PatientService              $patientService)
     {
         $this->authenticatedSessionService = $authenticatedSessionService;
         $this->vaccineService = $vaccineService;
@@ -63,7 +64,7 @@ class VaccineController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param  Request  $request
+     * @param Request $request
      * @return Application|Factory|View
      *
      * @throws Exception
@@ -96,10 +97,10 @@ class VaccineController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  CreateVaccineRequest  $request
+     * @param CreateVaccineRequest $request
      * @return RedirectResponse
      *
-     * @throws Exception|\Throwable
+     * @throws Exception|Throwable
      */
     public function store(CreateVaccineRequest $request): RedirectResponse
     {
@@ -162,11 +163,11 @@ class VaccineController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  UpdateVaccineRequest  $request
+     * @param UpdateVaccineRequest $request
      * @param    $id
      * @return RedirectResponse
      *
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function update(UpdateVaccineRequest $request, $id): RedirectResponse
     {
@@ -188,10 +189,10 @@ class VaccineController extends Controller
      * Remove the specified resource from storage.
      *
      * @param $id
-     * @param  Request  $request
+     * @param Request $request
      * @return RedirectResponse
      *
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function destroy($id, Request $request)
     {
@@ -213,10 +214,10 @@ class VaccineController extends Controller
      * Restore a Soft Deleted Resource
      *
      * @param $id
-     * @param  Request  $request
+     * @param Request $request
      * @return RedirectResponse|void
      *
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function restore($id, Request $request)
     {
@@ -237,7 +238,7 @@ class VaccineController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param  Request  $request
+     * @param Request $request
      * @return string|StreamedResponse
      *
      * @throws IOException
@@ -254,7 +255,7 @@ class VaccineController extends Controller
 
         $vaccineExport = $this->vaccineService->exportVaccine($filters);
 
-        $filename = 'Vaccine-'.date('Ymd-His').'-'.$request->get('filter').'.'.($filters['format'] ?? 'xlsx');
+        $filename = 'Vaccine-' . date('Ymd-His') . '-' . $request->get('filter') . '.' . ($filters['format'] ?? 'xlsx');
 
         return $vaccineExport->download($filename, function ($vaccine) use ($vaccineExport, &$counter) {
             $vaccine->counter = $counter;
@@ -267,7 +268,7 @@ class VaccineController extends Controller
     /**
      * Display a detail of the resource.
      *
-     * @param  Request  $request
+     * @param Request $request
      * @return JsonResponse
      *
      * @throws Exception

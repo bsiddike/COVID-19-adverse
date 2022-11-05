@@ -39,13 +39,13 @@ class RoleController extends Controller
     /**
      * PermissionController constructor.
      *
-     * @param  AuthenticatedSessionService  $authenticatedSessionService
-     * @param  RoleService  $roleService
-     * @param  PermissionService  $permissionService
+     * @param AuthenticatedSessionService $authenticatedSessionService
+     * @param RoleService $roleService
+     * @param PermissionService $permissionService
      */
     public function __construct(AuthenticatedSessionService $authenticatedSessionService,
-        RoleService $roleService,
-        PermissionService $permissionService)
+                                RoleService                 $roleService,
+                                PermissionService           $permissionService)
     {
         $this->roleService = $roleService;
         $this->authenticatedSessionService = $authenticatedSessionService;
@@ -55,7 +55,7 @@ class RoleController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param  Request  $request
+     * @param Request $request
      * @return Application|Factory|View
      *
      * @throws Exception
@@ -83,7 +83,7 @@ class RoleController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  RoleRequest  $request
+     * @param RoleRequest $request
      * @return RedirectResponse
      *
      * @throws Exception|Throwable
@@ -106,7 +106,7 @@ class RoleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Application|Factory|View
      *
      * @throws Exception
@@ -134,7 +134,7 @@ class RoleController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Application|Factory|View
      *
      * @throws Exception
@@ -151,7 +151,7 @@ class RoleController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  RoleRequest  $request
+     * @param RoleRequest $request
      * @param    $id
      * @return RedirectResponse
      *
@@ -175,8 +175,8 @@ class RoleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @param  Request  $request
+     * @param int $id
+     * @param Request $request
      * @return RedirectResponse
      *
      * @throws Throwable
@@ -200,10 +200,10 @@ class RoleController extends Controller
      * Restore a Soft Deleted Resource
      *
      * @param $id
-     * @param  Request  $request
+     * @param Request $request
      * @return RedirectResponse|void
      *
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function restore($id, Request $request)
     {
@@ -260,7 +260,7 @@ class RoleController extends Controller
 
         $roleExport = $this->roleService->exportRole($filters);
 
-        $filename = 'Role-'.date('Ymd-His').'.'.($filters['format'] ?? 'xlsx');
+        $filename = 'Role-' . date('Ymd-His') . '.' . ($filters['format'] ?? 'xlsx');
 
         return $roleExport->download($filename, function ($role) use ($roleExport) {
             return $roleExport->map($role);
@@ -280,7 +280,7 @@ class RoleController extends Controller
 
         $roleExport = $this->roleService->exportRole($filters);
 
-        $filename = 'Role-'.date('Ymd-His').'.'.($filters['format'] ?? 'xlsx');
+        $filename = 'Role-' . date('Ymd-His') . '.' . ($filters['format'] ?? 'xlsx');
 
         return $roleExport->download($filename, function ($role) {
             $format = [
@@ -316,7 +316,7 @@ class RoleController extends Controller
 
     /**
      * @param $id
-     * @param  Request  $request
+     * @param Request $request
      * @return JsonResponse|void
      *
      * @throws Exception
@@ -345,7 +345,7 @@ class RoleController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param  Request  $request
+     * @param Request $request
      * @return JsonResponse
      *
      * @throws Exception

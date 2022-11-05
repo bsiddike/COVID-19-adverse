@@ -5,6 +5,7 @@ namespace App\Repositories\Eloquent\Backend\Organization;
 use App\Abstracts\Repository\EloquentRepository;
 use App\Models\Symptom;
 use Exception;
+use Generator;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
@@ -28,15 +29,15 @@ class SymptomRepository extends EloquentRepository
     /**
      * Search Function
      *
-     * @param  array  $filters
-     * @param  bool  $is_sortable
+     * @param array $filters
+     * @param bool $is_sortable
      * @return Builder
      */
     private function filterData(array $filters = [], bool $is_sortable = false): Builder
     {
         $query = $this->getQueryBuilder();
 
-        if (! empty($filters['search'])) {
+        if (!empty($filters['search'])) {
             $query->where('name', 'like', "%{$filters['search']}%")
                 ->orWhere('enabled', 'like', "%{$filters['search']}%")
                 ->orWhere('nid', 'like', "%{$filters['search']}%")
@@ -53,9 +54,9 @@ class SymptomRepository extends EloquentRepository
     /**
      * Pagination Generator
      *
-     * @param  array  $filters
-     * @param  array  $eagerRelations
-     * @param  bool  $is_sortable
+     * @param array $filters
+     * @param array $eagerRelations
+     * @param bool $is_sortable
      * @return LengthAwarePaginator
      *
      * @throws Exception
@@ -73,9 +74,9 @@ class SymptomRepository extends EloquentRepository
     }
 
     /**
-     * @param  array  $filters
-     * @param  array  $eagerRelations
-     * @param  bool  $is_sortable
+     * @param array $filters
+     * @param array $eagerRelations
+     * @param bool $is_sortable
      * @return Builder[]|Collection
      *
      * @throws Exception
@@ -92,14 +93,14 @@ class SymptomRepository extends EloquentRepository
     }
 
     /**
-     * @param  array  $filters
-     * @param  array  $eagerRelations
-     * @param  bool  $is_sortable
-     * @return \Generator
+     * @param array $filters
+     * @param array $eagerRelations
+     * @param bool $is_sortable
+     * @return Generator
      *
      * @throws Exception
      */
-    public function exportWith(array $filters = [], array $eagerRelations = [], bool $is_sortable = false): \Generator
+    public function exportWith(array $filters = [], array $eagerRelations = [], bool $is_sortable = false): Generator
     {
         try {
             $query = $this->filterData($filters, $is_sortable);

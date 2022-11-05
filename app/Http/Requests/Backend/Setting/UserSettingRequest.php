@@ -30,9 +30,9 @@ class UserSettingRequest extends FormRequest
         $rules = [
             'id' => ['required', 'integer', 'min:1'],
             'enabled' => ['nullable', 'string', 'min:2', 'max:3'],
-            'username' => ['string', 'min:5', 'max:255', new Username, 'unique:users,username,'.$this->user],
-            'email' => ['string', 'min:3', 'max:255', 'email', 'unique:users,email,'.$this->user],
-            'mobile' => ['string', 'min:11', 'max:13', new PhoneNumber, 'unique:users,mobile,'.$this->user],
+            'username' => ['string', 'min:5', 'max:255', new Username, 'unique:users,username,' . $this->user],
+            'email' => ['string', 'min:3', 'max:255', 'email', 'unique:users,email,' . $this->user],
+            'mobile' => ['string', 'min:11', 'max:13', new PhoneNumber, 'unique:users,mobile,' . $this->user],
             'role_id' => ['required', 'array', 'min:1', 'max:3'],
             'role_id.*' => ['required', 'integer', 'min:1', 'max:255'],
         ];

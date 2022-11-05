@@ -14,7 +14,7 @@ class DriverExport extends FastExcelExport
     /**
      * DriverExport constructor.
      *
-     * @param  null  $data
+     * @param null $data
      *
      * @throws InvalidArgumentException
      */
@@ -26,7 +26,7 @@ class DriverExport extends FastExcelExport
     }
 
     /**
-     * @param  Driver  $row
+     * @param Driver $row
      * @return array
      */
     public function map($row): array

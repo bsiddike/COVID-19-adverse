@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\DB;
 use InvalidArgumentException;
 use Spatie\MediaLibrary\MediaCollections\Exceptions\FileDoesNotExist;
 use Spatie\MediaLibrary\MediaCollections\Exceptions\FileIsTooBig;
+use Throwable;
 
 /**
  * Class UserService
@@ -37,19 +38,19 @@ class UserService extends Service
     /**
      * UserService constructor.
      *
-     * @param  UserRepository  $userRepository
-     * @param  FileUploadService  $fileUploadService
+     * @param UserRepository $userRepository
+     * @param FileUploadService $fileUploadService
      */
-    public function __construct(UserRepository $userRepository,
-        FileUploadService $fileUploadService)
+    public function __construct(UserRepository    $userRepository,
+                                FileUploadService $fileUploadService)
     {
         $this->userRepository = $userRepository;
         $this->fileUploadService = $fileUploadService;
     }
 
     /**
-     * @param  array  $filters
-     * @param  array  $eagerRelations
+     * @param array $filters
+     * @param array $eagerRelations
      * @return Builder[]|Collection
      *
      * @throws Exception
@@ -60,8 +61,8 @@ class UserService extends Service
     }
 
     /**
-     * @param  array  $filters
-     * @param  array  $eagerRelations
+     * @param array $filters
+     * @param array $eagerRelations
      * @return LengthAwarePaginator
      *
      * @throws Exception
@@ -72,8 +73,8 @@ class UserService extends Service
     }
 
     /**
-     * @param  array  $requestData
-     * @param  UploadedFile|null  $photo
+     * @param array $requestData
+     * @param UploadedFile|null $photo
      * @return array
      *
      * @throws Exception
@@ -81,7 +82,7 @@ class UserService extends Service
     public function storeUser(array $requestData, UploadedFile $photo = null): array
     {
         //extract role id
-        if (! empty($requestData['role_id'])) {
+        if (!empty($requestData['role_id'])) {
             $roles = $requestData['role_id'];
             unset($requestData['role_id']);
         } else {
@@ -103,30 +104,30 @@ class UserService extends Service
                     DB::commit();
 
                     return ['status' => true, 'message' => __('New User Created'),
-                        'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!', ];
+                        'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!',];
                 }
 
                 DB::rollBack();
 
                 return ['status' => false, 'message' => __('Role or Avatar image Failed'),
-                    'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Warning!', ];
+                    'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Warning!',];
             }
 
             DB::rollBack();
 
             return ['status' => false, 'message' => __('New User Creation Failed'),
-                'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!', ];
+                'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!',];
         } catch (Exception $exception) {
             DB::rollBack();
             $this->userRepository->handleException($exception);
 
             return ['status' => false, 'message' => $exception->getMessage(),
-                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!', ];
+                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!',];
         }
     }
 
     /**
-     * @param  string  $roleName
+     * @param string $roleName
      * @return mixed
      *
      * @throws Exception
@@ -144,7 +145,7 @@ class UserService extends Service
 
     /**
      * @param $id
-     * @param  bool  $purge
+     * @param bool $purge
      * @return mixed|null
      *
      * @throws Exception
@@ -155,9 +156,9 @@ class UserService extends Service
     }
 
     /**
-     * @param  array  $requestData
+     * @param array $requestData
      * @param $id
-     * @param  UploadedFile|null  $photo
+     * @param UploadedFile|null $photo
      * @return array
      *
      * @throws Exception
@@ -165,14 +166,14 @@ class UserService extends Service
     public function updateUser(array $requestData, $id, UploadedFile $photo = null): array
     {
         //extract role id
-        if (! empty($requestData['role_id'])) {
+        if (!empty($requestData['role_id'])) {
             $roles = $requestData['role_id'];
             unset($requestData['role_id']);
         } else {
             $roles = [Constant::GUEST_ROLE_ID];
         }
         //hash user password
-        if (! empty($requestData['password'])) {
+        if (!empty($requestData['password'])) {
             $requestData['password'] = Utility::hashPassword($requestData['password']);
 
             //force password reset
@@ -194,25 +195,25 @@ class UserService extends Service
                     DB::commit();
 
                     return ['status' => true, 'message' => __('User Information Updated'),
-                        'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!', ];
+                        'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!',];
                 } else {
                     DB::rollBack();
 
                     return ['status' => false, 'message' => __('User Information Update Failed'),
-                        'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!', ];
+                        'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!',];
                 }
             } else {
                 DB::rollBack();
 
                 return ['status' => false, 'message' => __('Invalid User ID Update Failed'),
-                    'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Alert!', ];
+                    'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Alert!',];
             }
         } catch (Exception $exception) {
             $this->userRepository->handleException($exception);
             DB::rollBack();
 
             return ['status' => false, 'message' => $exception->getMessage(),
-                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!', ];
+                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!',];
         }
     }
 
@@ -230,28 +231,28 @@ class UserService extends Service
                 DB::commit();
 
                 return ['status' => true, 'message' => __('User is Trashed'),
-                    'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!', ];
+                    'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!',];
             } else {
                 DB::rollBack();
 
                 return ['status' => false, 'message' => __('User is Delete Failed'),
-                    'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!', ];
+                    'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!',];
             }
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             $this->userRepository->handleException($exception);
             DB::rollBack();
 
             return ['status' => false, 'message' => $exception->getMessage(),
-                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!', ];
+                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!',];
         }
     }
 
     /**
      * Attach avatar image to model
      *
-     * @param  User  $user
-     * @param  UploadedFile|null  $photo
-     * @param  bool  $replace
+     * @param User $user
+     * @param UploadedFile|null $photo
+     * @param bool $replace
      * @return bool
      *
      * @throws FileDoesNotExist
@@ -267,7 +268,7 @@ class UserService extends Service
                 ? $this->fileUploadService->createAvatarImageFromInput($photo)
                 : $this->fileUploadService->createAvatarImageFromText($user->name);
 
-            return (bool) $user->addMedia($profileImagePath)->toMediaCollection('avatars');
+            return (bool)$user->addMedia($profileImagePath)->toMediaCollection('avatars');
         }
     }
 
@@ -275,7 +276,7 @@ class UserService extends Service
      * @param $id
      * @return array
      *
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function restoreUser($id): array
     {
@@ -285,26 +286,26 @@ class UserService extends Service
                 DB::commit();
 
                 return ['status' => true, 'message' => __('User is Restored'),
-                    'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!', ];
+                    'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!',];
             } else {
                 DB::rollBack();
 
                 return ['status' => false, 'message' => __('User is Restoration Failed'),
-                    'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!', ];
+                    'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!',];
             }
         } catch (Exception $exception) {
             $this->userRepository->handleException($exception);
             DB::rollBack();
 
             return ['status' => false, 'message' => $exception->getMessage(),
-                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!', ];
+                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!',];
         }
     }
 
     /**
      * Export Object for Export Download
      *
-     * @param  array  $filters
+     * @param array $filters
      * @return UserExport
      *
      * @throws Exception

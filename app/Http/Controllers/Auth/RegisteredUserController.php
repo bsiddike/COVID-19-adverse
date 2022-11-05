@@ -9,6 +9,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Throwable;
 
 class RegisteredUserController extends Controller
 {
@@ -20,7 +21,7 @@ class RegisteredUserController extends Controller
     /**
      * RegisteredUserController constructor.
      *
-     * @param  RegisteredUserService  $registeredUserService
+     * @param RegisteredUserService $registeredUserService
      */
     public function __construct(RegisteredUserService $registeredUserService)
     {
@@ -40,10 +41,10 @@ class RegisteredUserController extends Controller
     /**
      * Handle an incoming registration request.
      *
-     * @param  RegisterRequest  $request
+     * @param RegisterRequest $request
      * @return RedirectResponse
      *
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function store(RegisterRequest $request): RedirectResponse
     {

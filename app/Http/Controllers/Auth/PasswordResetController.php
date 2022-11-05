@@ -17,7 +17,7 @@ class PasswordResetController extends Controller
     private $passwordResetService;
 
     /**
-     * @param  PasswordResetService  $passwordResetService
+     * @param PasswordResetService $passwordResetService
      */
     public function __construct(PasswordResetService $passwordResetService)
     {
@@ -37,7 +37,7 @@ class PasswordResetController extends Controller
     /**
      * Handle an incoming password reset link request.
      *
-     * @param  PasswordResetRequest  $request
+     * @param PasswordResetRequest $request
      * @return RedirectResponse
      */
     public function store(PasswordResetRequest $request): RedirectResponse

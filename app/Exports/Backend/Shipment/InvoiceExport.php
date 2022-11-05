@@ -14,7 +14,7 @@ class InvoiceExport extends FastExcelExport
     /**
      * InvoiceExport constructor.
      *
-     * @param  null  $data
+     * @param null $data
      *
      * @throws InvalidArgumentException
      */
@@ -26,7 +26,7 @@ class InvoiceExport extends FastExcelExport
     }
 
     /**
-     * @param  Invoice  $row
+     * @param Invoice $row
      * @return array
      */
     public function map($row): array

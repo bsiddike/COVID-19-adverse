@@ -14,7 +14,7 @@ class CustomerExport extends FastExcelExport
     /**
      * CustomerExport constructor.
      *
-     * @param  null  $data
+     * @param null $data
      *
      * @throws InvalidArgumentException
      */
@@ -26,7 +26,7 @@ class CustomerExport extends FastExcelExport
     }
 
     /**
-     * @param  Customer  $row
+     * @param Customer $row
      * @return array
      */
     public function map($row): array

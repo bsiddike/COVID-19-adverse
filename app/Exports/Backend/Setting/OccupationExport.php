@@ -15,7 +15,7 @@ class OccupationExport extends FastExcelExport
     /**
      * OccupationExport constructor.
      *
-     * @param  null  $data
+     * @param null $data
      *
      * @throws InvalidArgumentException
      */
@@ -27,7 +27,7 @@ class OccupationExport extends FastExcelExport
     }
 
     /**
-     * @param  Occupation  $row
+     * @param Occupation $row
      * @return array
      */
     public function map($row): array

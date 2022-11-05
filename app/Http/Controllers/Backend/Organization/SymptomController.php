@@ -23,6 +23,7 @@ use OpenSpout\Writer\Exception\WriterNotOpenedException;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 use Symfony\Component\HttpFoundation\StreamedResponse;
+use Throwable;
 
 /**
  * @class SymptomController
@@ -42,11 +43,11 @@ class SymptomController extends Controller
     /**
      * SymptomController Constructor
      *
-     * @param  AuthenticatedSessionService  $authenticatedSessionService
-     * @param  SymptomService  $symptomService
+     * @param AuthenticatedSessionService $authenticatedSessionService
+     * @param SymptomService $symptomService
      */
     public function __construct(AuthenticatedSessionService $authenticatedSessionService,
-                                SymptomService $symptomService)
+                                SymptomService              $symptomService)
     {
         $this->authenticatedSessionService = $authenticatedSessionService;
         $this->symptomService = $symptomService;
@@ -55,7 +56,7 @@ class SymptomController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param  Request  $request
+     * @param Request $request
      * @return Application|Factory|View
      *
      * @throws Exception
@@ -84,7 +85,7 @@ class SymptomController extends Controller
     {
         $enables = [];
         foreach (Constant::ENABLED_OPTIONS as $field => $label) {
-            $enables[$field] = __('common.'.$label);
+            $enables[$field] = __('common.' . $label);
         }
 
         return view('backend.organization.symptom.create');
@@ -93,10 +94,10 @@ class SymptomController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  CreateSymptomRequest  $request
+     * @param CreateSymptomRequest $request
      * @return RedirectResponse
      *
-     * @throws Exception|\Throwable
+     * @throws Exception|Throwable
      */
     public function store(Request $request): RedirectResponse
     {
@@ -159,11 +160,11 @@ class SymptomController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  UpdateSymptomRequest  $request
+     * @param UpdateSymptomRequest $request
      * @param    $id
      * @return RedirectResponse
      *
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function update(UpdateSymptomRequest $request, $id): RedirectResponse
     {
@@ -185,10 +186,10 @@ class SymptomController extends Controller
      * Remove the specified resource from storage.
      *
      * @param $id
-     * @param  Request  $request
+     * @param Request $request
      * @return RedirectResponse
      *
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function destroy($id, Request $request)
     {
@@ -210,10 +211,10 @@ class SymptomController extends Controller
      * Restore a Soft Deleted Resource
      *
      * @param $id
-     * @param  Request  $request
+     * @param Request $request
      * @return RedirectResponse|void
      *
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function restore($id, Request $request)
     {
@@ -234,7 +235,7 @@ class SymptomController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param  Request  $request
+     * @param Request $request
      * @return string|StreamedResponse
      *
      * @throws IOException
@@ -251,7 +252,7 @@ class SymptomController extends Controller
 
         $symptomExport = $this->symptomService->exportSymptom($filters);
 
-        $filename = 'Symptom-'.date('Ymd-His').'-'.$request->get('filter').'.'.($filters['format'] ?? 'xlsx');
+        $filename = 'Symptom-' . date('Ymd-His') . '-' . $request->get('filter') . '.' . ($filters['format'] ?? 'xlsx');
 
         return $symptomExport->download($filename, function ($symptom) use ($symptomExport, &$counter) {
             $symptom->counter = $counter;
@@ -264,7 +265,7 @@ class SymptomController extends Controller
     /**
      * Display a detail of the resource.
      *
-     * @param  Request  $request
+     * @param Request $request
      * @return JsonResponse
      *
      * @throws Exception

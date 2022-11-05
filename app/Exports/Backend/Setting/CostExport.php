@@ -14,7 +14,7 @@ class CostExport extends FastExcelExport
     /**
      * CostExport constructor.
      *
-     * @param  null  $data
+     * @param null $data
      *
      * @throws InvalidArgumentException
      */
@@ -26,7 +26,7 @@ class CostExport extends FastExcelExport
     }
 
     /**
-     * @param  ExamTitle  $row
+     * @param ExamTitle $row
      * @return array
      */
     public function map($row): array

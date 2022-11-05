@@ -1,5 +1,8 @@
 <?php
-if (! function_exists('percent')) {
+
+use Carbon\Carbon;
+
+if (!function_exists('percent')) {
 
     function percent($total, $individual, $decimals = 2, $thou_sep = '', $symbol = '%')
     {
@@ -9,7 +12,7 @@ if (! function_exists('percent')) {
     }
 }
 
-if (! function_exists('server_date')) {
+if (!function_exists('server_date')) {
     /**
      * @param string|null $input
      * @return string|null
@@ -17,7 +20,7 @@ if (! function_exists('server_date')) {
     function server_date(string $input = null): ?string
     {
         if ($input != null) {
-            $date = (\DateTime::createFromFormat('m/d/Y', $input));
+            $date = (DateTime::createFromFormat('m/d/Y', $input));
             if ($date instanceof DateTime) {
                 return $date->format('Y-m-d');
             }
@@ -28,12 +31,12 @@ if (! function_exists('server_date')) {
 }
 
 
-if (! function_exists('strtonumber')) {
+if (!function_exists('strtonumber')) {
     /**
      * convert a string value to float character
      *
-     * @param  string  $value
-     * @param  int  $default
+     * @param string $value
+     * @param int $default
      * @return float
      */
     function strtonumber($value, $default = 0)
@@ -46,29 +49,29 @@ if (! function_exists('strtonumber')) {
     }
 }
 
-if (! function_exists('convert_datetime')) {
+if (!function_exists('convert_datetime')) {
     /**
      * convert a datetime value to another timezone datetime
      *
      * @param $datetime
-     * @param  string  $toTimeZone
-     * @param  string  $fromTimeZone
-     * @return \Carbon\Carbon
+     * @param string $toTimeZone
+     * @param string $fromTimeZone
+     * @return Carbon
      */
     function convert_datetime($datetime, string $toTimeZone = 'UTC', string $fromTimeZone = 'UTC')
     {
-        return \Carbon\Carbon::parse($datetime, $fromTimeZone)->setTimezone($toTimeZone);
+        return Carbon::parse($datetime, $fromTimeZone)->setTimezone($toTimeZone);
     }
 }
 
-if (! function_exists('random_color')) {
+if (!function_exists('random_color')) {
     /**
      * @return string
      */
     function random_color(): string
     {
-        return '#'.(str_pad(dechex(mt_rand(0, 255)), 2, '0', STR_PAD_LEFT).
-                str_pad(dechex(mt_rand(0, 255)), 2, '0', STR_PAD_LEFT).
+        return '#' . (str_pad(dechex(mt_rand(0, 255)), 2, '0', STR_PAD_LEFT) .
+                str_pad(dechex(mt_rand(0, 255)), 2, '0', STR_PAD_LEFT) .
                 str_pad(dechex(mt_rand(0, 255)), 2, '0', STR_PAD_LEFT));
     }
 }

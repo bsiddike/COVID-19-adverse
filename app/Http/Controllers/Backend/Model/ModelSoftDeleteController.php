@@ -22,14 +22,14 @@ class ModelSoftDeleteController extends Controller
      *
      * @param $route
      * @param $id
-     * @param  ModelSoftDeleteRequest  $request
+     * @param ModelSoftDeleteRequest $request
      * @return Application|Factory|View
      */
     public function __invoke($route, $id, ModelSoftDeleteRequest $request)
     {
-        if ($request->user()->can($route.'.destroy')) {
+        if ($request->user()->can($route . '.destroy')) {
             return view('backend.model.soft-delete', [
-                'route' => [$route.'.destroy', $id],
+                'route' => [$route . '.destroy', $id],
                 'method' => 'delete',
             ]);
         }

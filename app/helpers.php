@@ -1,24 +1,74 @@
 <?php
+if (! function_exists('percent')) {
 
-function percent($total, $individual, $decimals = 2, $thou_sep = '', $symbol = '%')
-{
-    return ($total != 0)
-        ? (number_format((($individual * 100) / $total), $decimals, '.', $thou_sep).$symbol)
-        : 0 .$symbol;
+    function percent($total, $individual, $decimals = 2, $thou_sep = '', $symbol = '%')
+    {
+        return ($total != 0)
+            ? (number_format((($individual * 100) / $total), $decimals, '.', $thou_sep) . $symbol)
+            : 0 . $symbol;
+    }
 }
 
-/**
- * @param  string|null  $input
- * @return string|null
- */
-function server_date(string $input = null): ?string
-{
-    if ($input != null) {
-        $date = (\DateTime::createFromFormat('m/d/Y', $input));
-        if ($date instanceof DateTime) {
-            return $date->format('Y-m-d');
+if (! function_exists('server_date')) {
+    /**
+     * @param string|null $input
+     * @return string|null
+     */
+    function server_date(string $input = null): ?string
+    {
+        if ($input != null) {
+            $date = (\DateTime::createFromFormat('m/d/Y', $input));
+            if ($date instanceof DateTime) {
+                return $date->format('Y-m-d');
+            }
         }
-    }
 
-    return null;
+        return null;
+    }
+}
+
+
+if (! function_exists('strtonumber')) {
+    /**
+     * convert a string value to float character
+     *
+     * @param  string  $value
+     * @param  int  $default
+     * @return float
+     */
+    function strtonumber($value, $default = 0)
+    {
+        $floatValue = floatval(str_replace(',', '', trim($value)));
+
+        return ($default != 0)
+            ? $default
+            : $floatValue;
+    }
+}
+
+if (! function_exists('convert_datetime')) {
+    /**
+     * convert a datetime value to another timezone datetime
+     *
+     * @param $datetime
+     * @param  string  $toTimeZone
+     * @param  string  $fromTimeZone
+     * @return \Carbon\Carbon
+     */
+    function convert_datetime($datetime, string $toTimeZone = 'UTC', string $fromTimeZone = 'UTC')
+    {
+        return \Carbon\Carbon::parse($datetime, $fromTimeZone)->setTimezone($toTimeZone);
+    }
+}
+
+if (! function_exists('random_color')) {
+    /**
+     * @return string
+     */
+    function random_color(): string
+    {
+        return '#'.(str_pad(dechex(mt_rand(0, 255)), 2, '0', STR_PAD_LEFT).
+                str_pad(dechex(mt_rand(0, 255)), 2, '0', STR_PAD_LEFT).
+                str_pad(dechex(mt_rand(0, 255)), 2, '0', STR_PAD_LEFT));
+    }
 }

@@ -6,6 +6,8 @@ use App\Models\Patient;
 use App\Models\Symptom;
 use App\Models\Vaccine;
 use App\Services\Backend\Organization\PatientService;
+use App\Services\Backend\Organization\SymptomService;
+use App\Services\Backend\Organization\VaccineService;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -15,33 +17,39 @@ use Illuminate\Routing\Controller;
 class DashboardController extends Controller
 {
     private PatientService $patientService;
+    private SymptomService $symptomService;
+    private VaccineService $vaccineService;
 
     /**
      * DashboardController constructor.
      *
-     * @param  PatientService  $patientService
+     * @param PatientService $patientService
+     * @param SymptomService $symptomService
+     * @param VaccineService $vaccineService
      */
-    public function __construct(PatientService $patientService)
+    public function __construct(PatientService $patientService,
+                                SymptomService $symptomService,
+                                VaccineService $vaccineService)
     {
         $this->patientService = $patientService;
+        $this->symptomService = $symptomService;
+        $this->vaccineService = $vaccineService;
     }
 
-    /**
-     * @param  Request  $request
-     * @return array|Application|Factory|View|mixed
-     *
-     * @throws \Exception
-     */
     public function __invoke(Request $request)
     {
         $filters = $request->except('page');
 
         return view('backend.dashboard', [
-            'patients' => Patient::all()->count(),
-            'symptoms' => Symptom::all()->count(),
-            'vaccines' => Vaccine::all()->count(),
+            'patients' => $this->patientService->getAllPatients($filters)->count(),
+            'symptoms' => $this->symptomService->getAllSymptoms($filters)->count(),
+            'vaccines' => $this->vaccineService->getAllVaccines($filters)->count(),
+            'patients_died' => $this->patientService->getAllPatients(array_merge($filters, ['died' => true]))->count(),
+            'patients_recovered' => $this->patientService->getAllPatients(array_merge($filters, ['recovered' => true]))->count(),
             'affectedGender' => $this->getGenderMetrics($filters),
             'affectedAge' => $this->getAgeMetrics($filters),
+            'affectedMonth' => $this->getPatientLineChart($filters),
+
         ]);
     }
 
@@ -52,30 +60,116 @@ class DashboardController extends Controller
         $data = $this->patientService->getAllPatients($filters)->toArray();
 
         return [
-            'labels' => array_keys($data[0]),
-            'datasets' => [
-                [
-                    'data' => array_values($data[0]),
-                    'backgroundColor' => ['#f56954', '#00a65a', '#f39c12'],
+            'type' => 'doughnut',
+            'data' => [
+                'labels' => array_keys($data[0]),
+                'datasets' => [
+                    [
+                        'data' => array_values($data[0]),
+                        'backgroundColor' => ['#f56954', '#00a65a', '#f39c12'],
+                    ],
                 ],
             ],
+            'options' => [
+                'maintainAspectRatio' => false,
+                'responsive' => true,
+                'legend' => [
+                    'position' => 'left'
+                ]
+            ]
         ];
     }
 
     private function getAgeMetrics(array $filters = [])
     {
+
         $filters['metric'] = 'age_yrs';
 
         $data = $this->patientService->getAllPatients($filters)->toArray();
 
         return [
-            'labels' => array_keys($data[0]),
-            'datasets' => [
-                [
-                    'data' => array_values($data[0]),
-                    'backgroundColor' => ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#a2d6de'],
+            'type' => 'pie',
+            'data' => [
+                'labels' => array_keys($data[0]),
+                'datasets' => [
+                    [
+                        'data' => array_values($data[0]),
+                        'backgroundColor' => ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#a2d6de'],
+                    ],
                 ],
             ],
+            'options' => [
+                'maintainAspectRatio' => false,
+                'responsive' => true,
+                'legend' => [
+                    'position' => 'left'
+                ]
+            ]
+        ];
+    }
+
+    private function getPatientLineChart(array $filters = [])
+    {
+
+        $years = $this->patientService->getAllPatients(array_merge($filters, ['year_distinct' => true]))
+            ->pluck('year')->toArray();
+
+        $months = ['January', 'February', 'March', 'April', 'May', 'June',
+            'July', 'August', 'September', 'October', 'November', 'December'];
+
+        $datasets = [];
+
+        $filters['metric'] = 'patient_month';
+
+        foreach ($years as $year) {
+
+            $color = random_color();
+            $filters['today_year'] = $year;
+            $data = $this->patientService->getAllPatients($filters)->toArray();
+            $datasets[] = [
+                'label' => $year,
+                'backgroundColor' => $color,
+                'borderColor' => $color,
+                'pointRadius' => false,
+                'pointColor' => $color,
+                'pointStrokeColor' => $color,
+                'pointHighlightFill' => '#fff',
+                'pointHighlightStroke' => $color,
+                'data' => array_values($data[0]),
+                'fill' => false
+            ];
+        }
+
+        return [
+            'type' => 'line',
+            'data' => [
+                'labels' => $months,
+                'datasets' => $datasets
+            ],
+            'options' => [
+                'datasetFill' => true,
+                'maintainAspectRatio' => false,
+                'responsive' => true,
+                'legend' => [
+                    'display' => true
+                ],
+                'scales' => [
+                    'xAxes' => [
+                        [
+                            'gridLines' => [
+                                'display' => false,
+                            ]
+                        ]
+                    ],
+                    'yAxes' => [
+                        [
+                            'gridLines' => [
+                                'display' => false,
+                            ]
+                        ]
+                    ]
+                ]
+            ]
         ];
     }
 }

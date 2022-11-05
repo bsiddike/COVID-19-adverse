@@ -105,6 +105,7 @@ class VaccineRepository extends EloquentRepository
      */
     public function getWith(array $filters = [], array $eagerRelations = [], bool $is_sortable = false)
     {
+        $query = $this->getQueryBuilder();
         try {
             $query = $this->filterData($filters, $is_sortable);
         } catch (Exception $exception) {

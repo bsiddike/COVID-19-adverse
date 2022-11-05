@@ -14,17 +14,9 @@
 @push('page-script')
     <script>
         $(document).ready(function () {
-            var doughnut = new Chart($('#affectedAgeWise').get(0).getContext('2d'), {
-                type: 'pie',
-                data: {!!  json_encode($affectedAge) !!},
-                options: {
-                    maintainAspectRatio: false,
-                    responsive: true,
-                    legend: {
-                        position: 'left'
-                    }
-                }
-            });
+            var doughnut = new Chart($('#affectedAgeWise').get(0).getContext('2d'),
+                    {!!  json_encode($affectedAge) !!}
+            );
         });
     </script>
 @endpush

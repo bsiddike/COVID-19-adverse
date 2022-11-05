@@ -77,6 +77,33 @@ class DashboardController extends Controller
         ];
     }
 
+    private function getTopVaccinesOutcomesMetrics(array $filters = [])
+    {
+        $filters['metric'] = 'top_10_symptoms';
+
+        $data = $this->patientService->getAllPatients($filters)->toArray();
+
+        return [
+            'type' => 'bar',
+            'data' => [
+                'labels' => array_keys($data[0]),
+                'datasets' => [
+                    [
+                        'data' => array_values($data[0]),
+                        'backgroundColor' => ['#f56954', '#00a65a', '#f39c12'],
+                    ],
+                ],
+            ],
+            'options' => [
+                'maintainAspectRatio' => false,
+                'responsive' => true,
+                'legend' => [
+                    'position' => 'left',
+                ],
+            ],
+        ];
+    }
+
     private function getAgeMetrics(array $filters = [])
     {
         $filters['metric'] = 'age_yrs';

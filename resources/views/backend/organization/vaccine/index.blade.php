@@ -42,6 +42,7 @@
                                 <table class="table table-hover mb-0" id="employee-table">
                                     <thead class="thead-light">
                                     <tr>
+                                        <th class="text-center">{!! __('common.Actions') !!}</th>
                                         <th class="align-middle">
                                             @sortablelink('id', '#')</th>
                                         <th>@sortablelink('vaers_id', 'Vears ID')</th>
@@ -53,12 +54,15 @@
                                         <th>@sortablelink('vax_route', 'Route')</th>
                                         <th>@sortablelink('vax_site', 'Site')</th>
                                         <th class="text-center">@sortablelink('created_at', __('common.Created'))</th>
-                                        <th class="text-center">{!! __('common.Actions') !!}</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     @forelse($vaccines as $index => $vaccine)
                                         <tr @if($vaccine->deleted_at != null) class="table-danger" @endif>
+                                            <td class="exclude-search pr-3 text-center align-middle">
+                                                {!! Html::actionDropdown('backend.organization.vaccines', $vaccine->id, array_merge(['show', 'edit'], ($vaccine->deleted_at == null) ? ['delete'] : ['restore'])) !!}
+                                            </td>
+
                                             <td class="exclude-search align-middle">
                                                 {{ $vaccine->id }}
                                             </td>
@@ -71,9 +75,6 @@
                                             <td>{{ $vaccine->vax_route }}</td>
                                             <td>{{ $vaccine->vax_site }}</td>
                                             <td class="text-center">{{ $vaccine->created_at->format(config('backend.datetime')) ?? '' }}</td>
-                                            <td class="exclude-search pr-3 text-center align-middle">
-                                                {!! Html::actionDropdown('backend.organization.vaccines', $vaccine->id, array_merge(['show', 'edit'], ($vaccine->deleted_at == null) ? ['delete'] : ['restore'])) !!}
-                                            </td>
                                         </tr>
                                     @empty
                                         <tr>

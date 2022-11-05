@@ -42,6 +42,7 @@
                                 <table class="table table-hover mb-0" id="employee-table">
                                     <thead class="thead-light">
                                     <tr>
+                                        <th class="text-center">{!! __('common.Actions') !!}</th>
                                         <th class="align-middle">@sortablelink('id', '#')</th>
                                         <th>@sortablelink('vaers_id', 'Vears ID'))</th>
                                         <th>@sortablelink('symptom1', 'symptom 1'))</th>
@@ -55,12 +56,14 @@
                                         <th>@sortablelink('symptom5', 'symptom 5'))</th>
                                         <th>@sortablelink('symptomversion5', 'symptomversion5'))</th>
                                         <th class="text-center">@sortablelink('created_at', __('common.Created'))</th>
-                                        <th class="text-center">{!! __('common.Actions') !!}</th>
-                                    </tr>
+                                  </tr>
                                     </thead>
                                     <tbody>
                                     @forelse($symptoms as $index => $symptom)
                                         <tr @if($symptom->deleted_at != null) class="table-danger" @endif>
+                                            <td class="exclude-search pr-3 text-center align-middle">
+                                                {!! Html::actionDropdown('backend.organization.symptoms', $symptom->id, array_merge(['show', 'edit'], ($symptom->deleted_at == null) ? ['delete'] : ['restore'])) !!}
+                                            </td>
                                             <td class="exclude-search align-middle">
                                                 {{ $symptom->id }}
                                             </td>
@@ -76,9 +79,6 @@
                                             <td>{{ $symptom->symptom5 ?? null }}</td>
                                             <td>{{ $symptom->symptomversion5 ?? null }}</td>
                                             <td class="text-center">{{ $symptom->created_at->format(config('backend.datetime')) ?? '' }}</td>
-                                            <td class="exclude-search pr-3 text-center align-middle">
-                                                {!! Html::actionDropdown('backend.organization.symptoms', $symptom->id, array_merge(['show', 'edit'], ($symptom->deleted_at == null) ? ['delete'] : ['restore'])) !!}
-                                            </td>
                                         </tr>
                                     @empty
                                         <tr>

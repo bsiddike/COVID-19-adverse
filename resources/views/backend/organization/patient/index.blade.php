@@ -94,6 +94,7 @@
                                 <table class="table table-hover mb-0" id="branch-table">
                                     <thead class="thead-light">
                                     <tr>
+                                        <th class="text-center">{!! __('common.Actions') !!}</th>
                                         <th class="text-center">@sortablelink('id', '#')</th>
                                         <th class="text-center">@sortablelink('vaers_id', 'Vaers ID')</th>
                                         <th class="text-center">@sortablelink('recive_date', 'Receive Date')</th>
@@ -131,12 +132,14 @@
                                         <th class="text-center">@sortablelink('er_ed_visit', 'er_ed_visit')</th>
                                         <th class="text-center">@sortablelink('Allergies', 'allergies')</th>
                                         <th class="text-center">@sortablelink('created_at', __('common.Created'))</th>
-                                        <th class="text-center">{!! __('common.Actions') !!}</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     @forelse($patients as $index => $patient)
                                         <tr @if($patient->deleted_at != null) class="table-danger" @endif>
+                                            <td class="exclude-search pr-3 text-center align-middle">
+                                                {!! Html::actionDropdown('backend.organization.patients', $patient->id, array_merge(['show', 'edit'], ($patient->deleted_at == null) ? ['delete'] : ['restore'])) !!}
+                                            </td>
                                             <td class="exclude-search align-middle">
                                                 {{ $patient->id }}
                                             </td>
@@ -176,9 +179,6 @@
                                             <td class="text-center">{{ $patient->er_ed_visit ?? null }}</td>
                                             <td class="text-center">{{ $patient->allergies ?? null }}</td>
                                             <td class="text-center">{{ $patient->created_at->format(config('backend.datetime')) ?? '' }}</td>
-                                            <td class="exclude-search pr-3 text-center align-middle">
-                                                {!! Html::actionDropdown('backend.organization.patients', $patient->id, array_merge(['show', 'edit'], ($patient->deleted_at == null) ? ['delete'] : ['restore'])) !!}
-                                            </td>
                                         </tr>
                                     @empty
                                         <tr>

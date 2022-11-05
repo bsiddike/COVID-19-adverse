@@ -43,16 +43,16 @@
                                     <thead class="thead-light">
                                     <tr>
                                         <th class="align-middle">@sortablelink('id', '#')</th>
-                                        <th>@sortablelink('vaers_id', 'vaers_id'))</th>
-                                        <th>@sortablelink('symptom1', 'symptom1'))</th>
+                                        <th>@sortablelink('vaers_id', 'Vears ID'))</th>
+                                        <th>@sortablelink('symptom1', 'symptom 1'))</th>
                                         <th>@sortablelink('symptomversion1', 'symptomversion1'))</th>
-                                        <th>@sortablelink('symptom2', 'symptom2'))</th>
+                                        <th>@sortablelink('symptom2', 'symptom 2'))</th>
                                         <th>@sortablelink('symptomversion2', 'symptomversion2'))</th>
-                                        <th>@sortablelink('symptom3', 'symptom3'))</th>
+                                        <th>@sortablelink('symptom3', 'symptom 3'))</th>
                                         <th>@sortablelink('symptomversion3', 'symptomversion3'))</th>
-                                        <th>@sortablelink('symptom4', 'symptom4'))</th>
+                                        <th>@sortablelink('symptom4', 'symptom 4'))</th>
                                         <th>@sortablelink('symptomversion4', 'symptomversion4'))</th>
-                                        <th>@sortablelink('symptom5', 'symptom5'))</th>
+                                        <th>@sortablelink('symptom5', 'symptom 5'))</th>
                                         <th>@sortablelink('symptomversion5', 'symptomversion5'))</th>
                                         <th class="text-center">@sortablelink('created_at', __('common.Created'))</th>
                                         <th class="text-center">{!! __('common.Actions') !!}</th>

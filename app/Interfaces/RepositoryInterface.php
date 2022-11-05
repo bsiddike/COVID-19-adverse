@@ -19,7 +19,7 @@ interface RepositoryInterface
     /**
      * create a new record in the database
      *
-     * @param array $data
+     * @param  array  $data
      * @return Model|null
      *
      * @throws Exception
@@ -29,7 +29,7 @@ interface RepositoryInterface
     /**
      * update record in the database
      *
-     * @param array $data
+     * @param  array  $data
      * @param $id
      * @return mixed
      */
@@ -47,7 +47,7 @@ interface RepositoryInterface
      * show the record with the given id
      *
      * @param $id
-     * @param bool $purge
+     * @param  bool  $purge
      * @return mixed
      *
      * @throws Exception
@@ -64,7 +64,7 @@ interface RepositoryInterface
     /**
      * Associated Dynamically  model
      *
-     * @param Model $model
+     * @param  Model  $model
      * @return void
      */
     public function setModel(Model $model);
@@ -85,8 +85,8 @@ interface RepositoryInterface
     /**
      * Get the first Model meet this criteria
      *
-     * @param string $column
-     * @param string $operator
+     * @param  string  $column
+     * @param  string  $operator
      * @param $value
      * @return Model|null
      *
@@ -97,10 +97,10 @@ interface RepositoryInterface
     /**
      * Get the all Model meet this criteria
      *
-     * @param string $column
-     * @param string $operator
+     * @param  string  $column
+     * @param  string  $operator
      * @param $value
-     * @param array $with
+     * @param  array  $with
      * @return Collection|null
      *
      * @throws Exception
@@ -110,7 +110,7 @@ interface RepositoryInterface
     /**
      * Get the all Model Columns Collection
      *
-     * @param string $column
+     * @param  string  $column
      * @return mixed
      *
      * @throws Exception
@@ -127,8 +127,8 @@ interface RepositoryInterface
     public function handleException($exception);
 
     /**
-     * @param array $filters
-     * @param array $eagerRelations
+     * @param  array  $filters
+     * @param  array  $eagerRelations
      * @return mixed
      */
     public function paginateWith(array $filters = [], array $eagerRelations = []);

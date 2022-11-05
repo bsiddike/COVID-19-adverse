@@ -14,7 +14,7 @@ class VehicleExport extends FastExcelExport
     /**
      * VehicleExport constructor.
      *
-     * @param null $data
+     * @param  null  $data
      *
      * @throws InvalidArgumentException
      */
@@ -26,7 +26,7 @@ class VehicleExport extends FastExcelExport
     }
 
     /**
-     * @param Vehicle $row
+     * @param  Vehicle  $row
      * @return array
      */
     public function map($row): array

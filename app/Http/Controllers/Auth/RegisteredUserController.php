@@ -21,7 +21,7 @@ class RegisteredUserController extends Controller
     /**
      * RegisteredUserController constructor.
      *
-     * @param RegisteredUserService $registeredUserService
+     * @param  RegisteredUserService  $registeredUserService
      */
     public function __construct(RegisteredUserService $registeredUserService)
     {
@@ -41,7 +41,7 @@ class RegisteredUserController extends Controller
     /**
      * Handle an incoming registration request.
      *
-     * @param RegisterRequest $request
+     * @param  RegisterRequest  $request
      * @return RedirectResponse
      *
      * @throws Throwable

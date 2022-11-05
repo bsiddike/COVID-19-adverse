@@ -16,7 +16,7 @@ class EnumeratorWiseExport extends FastExcelExport
     /**
      * EnumeratorExport constructor.
      *
-     * @param null $data
+     * @param  null  $data
      *
      * @throws InvalidArgumentException
      */
@@ -28,7 +28,7 @@ class EnumeratorWiseExport extends FastExcelExport
     }
 
     /**
-     * @param Enumerator $row
+     * @param  Enumerator  $row
      * @return array
      */
     public function map($row): array
@@ -84,7 +84,7 @@ class EnumeratorWiseExport extends FastExcelExport
         $stateString = 'No District Available';
         if (isset($data)) {
             foreach ($data as $index => $state) {
-                $stateArray[] = ($index + 1) . '. ' . $state->name ?? null . "\n";
+                $stateArray[] = ($index + 1).'. '.$state->name ?? null."\n";
             }
             $stateString = implode("\n", $stateArray);
         }
@@ -102,7 +102,7 @@ class EnumeratorWiseExport extends FastExcelExport
         $stateString = 'No Survey Available';
         if (isset($data)) {
             foreach ($data as $index => $survey) {
-                $stateArray[] = ($index + 1) . '. ' . $survey->name ?? null . "\n";
+                $stateArray[] = ($index + 1).'. '.$survey->name ?? null."\n";
             }
             $stateString = implode("\n", $stateArray);
         }

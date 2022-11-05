@@ -2,13 +2,13 @@
 
 namespace App\Services\Auth;
 
-use DB;
 use function __;
 use App\Models\Setting\User;
 use App\Repositories\Eloquent\Backend\Setting\UserRepository;
 use App\Services\Backend\Common\FileUploadService;
 use App\Supports\Constant;
 use App\Supports\Utility;
+use DB;
 use Exception;
 use Illuminate\Support\Facades\Auth;
 use Spatie\MediaLibrary\MediaCollections\Exceptions\FileDoesNotExist;
@@ -29,10 +29,10 @@ class RegisteredUserService
     /**
      * RegisteredUserService constructor.
      *
-     * @param UserRepository $userRepository
-     * @param FileUploadService $fileUploadService
+     * @param  UserRepository  $userRepository
+     * @param  FileUploadService  $fileUploadService
      */
-    public function __construct(UserRepository    $userRepository,
+    public function __construct(UserRepository $userRepository,
                                 FileUploadService $fileUploadService)
     {
         $this->userRepository = $userRepository;
@@ -40,7 +40,7 @@ class RegisteredUserService
     }
 
     /**
-     * @param array $registerFormInputs
+     * @param  array  $registerFormInputs
      * @return array
      *
      * @throws Exception
@@ -75,7 +75,7 @@ class RegisteredUserService
     }
 
     /**
-     * @param array $request
+     * @param  array  $request
      * @return array
      *
      * @throws Exception
@@ -95,7 +95,7 @@ class RegisteredUserService
     }
 
     /**
-     * @param User $user
+     * @param  User  $user
      * @return bool
      *
      * @throws FileDoesNotExist
@@ -112,7 +112,7 @@ class RegisteredUserService
     }
 
     /**
-     * @param User $user
+     * @param  User  $user
      * @return bool
      */
     protected function attachDefaultRoles(User $user): bool

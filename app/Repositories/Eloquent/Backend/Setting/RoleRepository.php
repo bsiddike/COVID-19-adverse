@@ -25,7 +25,7 @@ class RoleRepository extends EloquentRepository
     }
 
     /**
-     * @param array $permissions
+     * @param  array  $permissions
      * @param $id
      * @return bool
      */
@@ -47,7 +47,7 @@ class RoleRepository extends EloquentRepository
     }
 
     /**
-     * @param array $permissions
+     * @param  array  $permissions
      * @param $id
      * @return bool
      */
@@ -69,7 +69,7 @@ class RoleRepository extends EloquentRepository
     }
 
     /**
-     * @param array $permissions
+     * @param  array  $permissions
      * @param $id
      * @return bool
      */
@@ -101,29 +101,29 @@ class RoleRepository extends EloquentRepository
     /**
      * Search Function for Permissions
      *
-     * @param array $filters
-     * @param bool $is_sortable
+     * @param  array  $filters
+     * @param  bool  $is_sortable
      * @return Builder
      */
     private function filterData(array $filters = [], bool $is_sortable = false): Builder
     {
         $query = $this->getQueryBuilder();
 
-        if (!empty($filters['search'])) {
+        if (! empty($filters['search'])) {
             $query->where('name', 'like', "%{$filters['search']}%")
                 ->orWhere('guard_name', 'like', "%{$filters['search']}%")
                 ->orWhere('enabled', '=', "%{$filters['search']}%");
         }
 
-        if (!empty($filters['enabled'])) {
+        if (! empty($filters['enabled'])) {
             $query->where('enabled', '=', $filters['enabled']);
         }
 
-        if (!empty($filters['sort']) && !empty($filters['direction'])) {
+        if (! empty($filters['sort']) && ! empty($filters['direction'])) {
             $query->orderBy($filters['sort'], $filters['direction']);
         }
 
-        if (isset($filters['id']) && !empty($filters['id'])) {
+        if (isset($filters['id']) && ! empty($filters['id'])) {
             if (is_array($filters['id'])) {
                 $query->whereIn('id', $filters['id']);
             } else {
@@ -145,9 +145,9 @@ class RoleRepository extends EloquentRepository
     /**
      * Pagination Generator
      *
-     * @param array $filters
-     * @param array $eagerRelations
-     * @param bool $is_sortable
+     * @param  array  $filters
+     * @param  array  $eagerRelations
+     * @param  bool  $is_sortable
      * @return LengthAwarePaginator
      *
      * @throws Exception
@@ -165,9 +165,9 @@ class RoleRepository extends EloquentRepository
     }
 
     /**
-     * @param array $filters
-     * @param array $eagerRelations
-     * @param bool $is_sortable
+     * @param  array  $filters
+     * @param  array  $eagerRelations
+     * @param  bool  $is_sortable
      * @return Builder[]|Collection
      *
      * @throws Exception

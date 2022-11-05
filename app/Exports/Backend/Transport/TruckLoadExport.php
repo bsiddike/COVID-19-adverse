@@ -14,7 +14,7 @@ class TruckLoadExport extends FastExcelExport
     /**
      * TruckLoadExport constructor.
      *
-     * @param null $data
+     * @param  null  $data
      *
      * @throws InvalidArgumentException
      */
@@ -26,7 +26,7 @@ class TruckLoadExport extends FastExcelExport
     }
 
     /**
-     * @param TruckLoad $row
+     * @param  TruckLoad  $row
      * @return array
      */
     public function map($row): array

@@ -44,7 +44,7 @@ class NewPasswordRequest extends FormRequest
 
         //Password Field
         if (config('auth.credential_field') != Constant::LOGIN_OTP) {
-            $rules['password'] = ['required', 'min:' . config('auth.minimum_password_length'), 'max:255', 'string', 'confirmed', Password::defaults()];
+            $rules['password'] = ['required', 'min:'.config('auth.minimum_password_length'), 'max:255', 'string', 'confirmed', Password::defaults()];
         }
 
         $rules['token'] = ['required', 'min:40', 'max:255'];

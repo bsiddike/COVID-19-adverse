@@ -14,7 +14,7 @@ class SmsTemplateExport extends FastExcelExport
     /**
      * SmsTemplateExport constructor.
      *
-     * @param null $data
+     * @param  null  $data
      *
      * @throws InvalidArgumentException
      */
@@ -26,7 +26,7 @@ class SmsTemplateExport extends FastExcelExport
     }
 
     /**
-     * @param SmsTemplate $row
+     * @param  SmsTemplate  $row
      * @return array
      */
     public function map($row): array

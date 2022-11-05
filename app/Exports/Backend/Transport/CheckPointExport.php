@@ -14,7 +14,7 @@ class CheckPointExport extends FastExcelExport
     /**
      * CheckPointExport constructor.
      *
-     * @param null $data
+     * @param  null  $data
      *
      * @throws InvalidArgumentException
      */
@@ -26,7 +26,7 @@ class CheckPointExport extends FastExcelExport
     }
 
     /**
-     * @param CheckPoint $row
+     * @param  CheckPoint  $row
      * @return array
      */
     public function map($row): array

@@ -15,7 +15,7 @@ class CatalogExport extends FastExcelExport
     /**
      * CatalogExport constructor.
      *
-     * @param null $data
+     * @param  null  $data
      *
      * @throws InvalidArgumentException
      */
@@ -27,7 +27,7 @@ class CatalogExport extends FastExcelExport
     }
 
     /**
-     * @param Catalog $row
+     * @param  Catalog  $row
      * @return array
      */
     public function map($row): array

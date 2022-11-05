@@ -29,11 +29,11 @@ class PermissionController extends Controller
     private $permissionService;
 
     /**
-     * @param AuthenticatedSessionService $authenticatedSessionService
-     * @param PermissionService $permissionService
+     * @param  AuthenticatedSessionService  $authenticatedSessionService
+     * @param  PermissionService  $permissionService
      */
     public function __construct(AuthenticatedSessionService $authenticatedSessionService,
-                                PermissionService           $permissionService)
+                                PermissionService $permissionService)
     {
         $this->authenticatedSessionService = $authenticatedSessionService;
         $this->permissionService = $permissionService;
@@ -42,7 +42,7 @@ class PermissionController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param Request $request
+     * @param  Request  $request
      * @return Application|Factory|View
      *
      * @throws Exception
@@ -70,7 +70,7 @@ class PermissionController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param PermissionRequest $request
+     * @param  PermissionRequest  $request
      * @return RedirectResponse
      *
      * @throws Exception|Throwable
@@ -131,7 +131,7 @@ class PermissionController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param PermissionRequest $request
+     * @param  PermissionRequest  $request
      * @param    $id
      * @return RedirectResponse
      *
@@ -156,7 +156,7 @@ class PermissionController extends Controller
      * Remove the specified resource from storage.
      *
      * @param $id
-     * @param Request $request
+     * @param  Request  $request
      * @return RedirectResponse
      *
      * @throws Throwable
@@ -181,7 +181,7 @@ class PermissionController extends Controller
      * Restore a Soft Deleted Resource
      *
      * @param $id
-     * @param Request $request
+     * @param  Request  $request
      * @return RedirectResponse|void
      *
      * @throws Throwable
@@ -215,7 +215,7 @@ class PermissionController extends Controller
 
         $permissionExport = $this->permissionService->exportPermission($filters);
 
-        $filename = 'Permission-' . date('Ymd-His') . '.' . ($filters['format'] ?? 'xlsx');
+        $filename = 'Permission-'.date('Ymd-His').'.'.($filters['format'] ?? 'xlsx');
 
         return $permissionExport->download($filename, function ($permission) use ($permissionExport) {
             return $permissionExport->map($permission);
@@ -262,7 +262,7 @@ class PermissionController extends Controller
 
         $permissionExport = $this->permissionService->exportPermission($filters);
 
-        $filename = 'Permission-' . date('Ymd-His') . '.' . ($filters['format'] ?? 'xlsx');
+        $filename = 'Permission-'.date('Ymd-His').'.'.($filters['format'] ?? 'xlsx');
 
         return $permissionExport->download($filename, function ($permission) use ($permissionExport) {
             return $permissionExport->map($permission);

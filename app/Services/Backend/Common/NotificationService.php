@@ -20,7 +20,7 @@ class NotificationService extends Service
     private $userService;
 
     /**
-     * @param UserService $userService
+     * @param  UserService  $userService
      */
     public function __construct(UserService $userService)
     {
@@ -31,7 +31,7 @@ class NotificationService extends Service
      * Return Paginated Notifications
      * of current logged user
      *
-     * @param array $filters
+     * @param  array  $filters
      * @return LengthAwarePaginator
      *
      * @throws Exception
@@ -73,8 +73,8 @@ class NotificationService extends Service
     }
 
     /**
-     * @param array $filters
-     * @param array $eagerRelations
+     * @param  array  $filters
+     * @param  array  $eagerRelations
      * @return mixed
      *
      * @throws Exception
@@ -85,7 +85,7 @@ class NotificationService extends Service
     }
 
     /**
-     * @param string $id
+     * @param  string  $id
      * @return Notification|null
      *
      * @throws Exception
@@ -110,7 +110,7 @@ class NotificationService extends Service
     }
 
     /**
-     * @param array $inputs
+     * @param  array  $inputs
      * @return Model
      *
      * @throws Exception
@@ -121,7 +121,7 @@ class NotificationService extends Service
     }
 
     /**
-     * @param array $inputs
+     * @param  array  $inputs
      * @param $id
      * @return bool
      *
@@ -133,7 +133,7 @@ class NotificationService extends Service
     }
 
     /**
-     * @param array $filters
+     * @param  array  $filters
      * @return array
      */
     public function notificationDropdown(array $filters = []): array

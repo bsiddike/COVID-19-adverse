@@ -50,6 +50,7 @@ class SymptomSeeder extends Seeder
                                         );
                                         set_time_limit(2100);
                                         ini_set('memory_limit', -1);
+
                                         return Symptom::create(
                                             [
                                                 'vaers_id' => clean($line[0]),

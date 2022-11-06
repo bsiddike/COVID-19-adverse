@@ -21,17 +21,17 @@ class PatientSeeder extends Seeder
         $years = ['2019/', '2020/', '2021/', '2022/'];
         $folderName = 'data/';
         foreach ($years as $year) {
-            if (is_dir($basePath . $year . $folderName)) {
-                $arrFiles = scandir($basePath . $year . $folderName);
+            if (is_dir($basePath.$year.$folderName)) {
+                $arrFiles = scandir($basePath.$year.$folderName);
                 foreach ($arrFiles as $arrFile) {
-                    if (is_file($basePath . $year . $folderName . $arrFile)) {
+                    if (is_file($basePath.$year.$folderName.$arrFile)) {
                         //dump($basePath.$year.$folderName.$arrFile);
 
                         (new FastExcel)
                             ->withoutHeaders()
                             ->import(
                                 $basePath.$year.$folderName.$arrFile,
-                                function ($line) use($basePath,$year,$folderName,$arrFile) {
+                                function ($line) use ($basePath, $year, $folderName, $arrFile) {
                                     /*0 => "VAERS_ID"
                                       1 => "RECVDATE"
                                       2 => "STATE"
@@ -72,9 +72,10 @@ class PatientSeeder extends Seeder
                                     if ($line[0] != 'VAERS_ID') {
                                         $this->command->line($basePath.$year.$folderName.$arrFile.'--'
                                                              .date('Y-m-d H:i:s'));
+
                                         return Patient::create(
                                             [
-                                                'vaers_id' => (int)$line[0] ?? null,
+                                                'vaers_id' => (int) $line[0] ?? null,
                                                 'recive_date' => server_date(($line[1] ?? null)),
                                                 'state' => clean($line[2]),
                                                 'age_yrs' => clean($line[3]),

@@ -21,15 +21,15 @@ class VaccineSeeder extends Seeder
         $years = ['2019/', '2020/', '2021/', '2022/'];
         $folderName = 'vax/';
         foreach ($years as $year) {
-            if (is_dir($basePath . $year . $folderName)) {
-                $arrFiles = scandir($basePath . $year . $folderName);
+            if (is_dir($basePath.$year.$folderName)) {
+                $arrFiles = scandir($basePath.$year.$folderName);
                 foreach ($arrFiles as $arrFile) {
-                    if (is_file($basePath . $year . $folderName . $arrFile)) {
+                    if (is_file($basePath.$year.$folderName.$arrFile)) {
                         (new FastExcel)
                             ->withoutHeaders()
                             ->import(
-                                $basePath . $year . $folderName . $arrFile,
-                                function ($line) use ($basePath, $year, $folderName, $arrFile) {
+                                $basePath.$year.$folderName.$arrFile,
+                                function ($line) {
                                     /**
                                      * 0 => "VAERS_ID", 1 => "VAX_TYPE", 2 => "VAX_MANU", 3 => "VAX_LOT"
                                      * 4 => "VAX_DOSE_SERIES", 5 => "VAX_ROUTE", 6 => "VAX_SITE", 7 => "VAX_NAME"
@@ -37,7 +37,7 @@ class VaccineSeeder extends Seeder
                                     if ($line[0] != 'VAERS_ID') {
                                         return Vaccine::create(
                                             [
-                                                'vaers_id' => (int)$line[0] ?? null,
+                                                'vaers_id' => (int) $line[0] ?? null,
                                                 'vax_type' => clean($line[1]),
                                                 'vax_manu' => clean($line[2]),
                                                 'vax_lot' => clean($line[3]),

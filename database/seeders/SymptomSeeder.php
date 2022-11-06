@@ -21,14 +21,14 @@ class SymptomSeeder extends Seeder
         $years = ['2019/', '2020/', '2021/', '2022/'];
         $folderName = 'symptom/';
         foreach ($years as $year) {
-            if (is_dir($basePath . $year . $folderName)) {
-                $arrFiles = scandir($basePath . $year . $folderName);
+            if (is_dir($basePath.$year.$folderName)) {
+                $arrFiles = scandir($basePath.$year.$folderName);
                 foreach ($arrFiles as $arrFile) {
-                    if (is_file($basePath . $year . $folderName . $arrFile)) {
+                    if (is_file($basePath.$year.$folderName.$arrFile)) {
                         (new FastExcel)
                             ->withoutHeaders()
                             ->import(
-                                $basePath . $year . $folderName . $arrFile,
+                                $basePath.$year.$folderName.$arrFile,
                                 function ($line) use ($basePath, $year, $folderName, $arrFile) {
                                     /*0 => "VAERS_ID"
                                       1 => "SYMPTOM1"
@@ -45,8 +45,8 @@ class SymptomSeeder extends Seeder
 
                                     if ($line[0] != 'VAERS_ID') {
                                         $this->command->line(
-                                            $basePath . $year . $folderName . $arrFile . '--'
-                                            . date('Y-m-d H:i:s')
+                                            $basePath.$year.$folderName.$arrFile.'--'
+                                            .date('Y-m-d H:i:s')
                                         );
                                         set_time_limit(2100);
                                         ini_set('memory_limit', -1);

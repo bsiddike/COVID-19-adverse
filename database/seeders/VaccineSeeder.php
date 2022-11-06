@@ -29,7 +29,7 @@ class VaccineSeeder extends Seeder
                             ->withoutHeaders()
                             ->import(
                                 $basePath.$year.$folderName.$arrFile,
-                                function ($line) {
+                                function ($line) use ($basePath, $year, $folderName, $arrFile) {
                                     /**
                                      * 0 => "VAERS_ID", 1 => "VAX_TYPE", 2 => "VAX_MANU", 3 => "VAX_LOT"
                                      * 4 => "VAX_DOSE_SERIES", 5 => "VAX_ROUTE", 6 => "VAX_SITE", 7 => "VAX_NAME"

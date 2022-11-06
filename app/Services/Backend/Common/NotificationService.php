@@ -69,7 +69,7 @@ class NotificationService extends Service
             $notifications = $notifications->latest();
         }
 
-        return  $notifications->paginate();
+        return $notifications->paginate();
     }
 
     /**

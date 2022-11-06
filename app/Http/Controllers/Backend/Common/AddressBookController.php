@@ -14,6 +14,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\StreamedResponse;
+use Throwable;
 
 /**
  * @class AddressBookController
@@ -37,7 +38,7 @@ class AddressBookController extends Controller
      * @param  AddressBookService  $addressBookService
      */
     public function __construct(AuthenticatedSessionService $authenticatedSessionService,
-        AddressBookService $addressBookService)
+                                AddressBookService $addressBookService)
     {
         $this->authenticatedSessionService = $authenticatedSessionService;
         $this->addressBookService = $addressBookService;
@@ -76,7 +77,7 @@ class AddressBookController extends Controller
      * @param  AddressBookRequest  $request
      * @return RedirectResponse
      *
-     * @throws Exception|\Throwable
+     * @throws Exception|Throwable
      */
     public function store(AddressBookRequest $request): RedirectResponse
     {
@@ -138,7 +139,7 @@ class AddressBookController extends Controller
      * @param    $id
      * @return RedirectResponse
      *
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function update(AddressBookRequest $request, $id): RedirectResponse
     {
@@ -162,7 +163,7 @@ class AddressBookController extends Controller
      * @param  Request  $request
      * @return RedirectResponse
      *
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function destroy($id, Request $request)
     {
@@ -187,7 +188,7 @@ class AddressBookController extends Controller
      * @param  Request  $request
      * @return RedirectResponse|void
      *
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function restore($id, Request $request)
     {

@@ -8,6 +8,7 @@ use App\Repositories\Eloquent\Backend\Setting\UserRepository;
 use App\Services\Backend\Common\FileUploadService;
 use App\Supports\Constant;
 use App\Supports\Utility;
+use DB;
 use Exception;
 use Illuminate\Support\Facades\Auth;
 use Spatie\MediaLibrary\MediaCollections\Exceptions\FileDoesNotExist;
@@ -32,7 +33,7 @@ class RegisteredUserService
      * @param  FileUploadService  $fileUploadService
      */
     public function __construct(UserRepository $userRepository,
-        FileUploadService $fileUploadService)
+                                FileUploadService $fileUploadService)
     {
         $this->userRepository = $userRepository;
         $this->fileUploadService = $fileUploadService;
@@ -46,7 +47,7 @@ class RegisteredUserService
      */
     public function attemptRegistration(array $registerFormInputs): ?array
     {
-        \DB::beginTransaction();
+        DB::beginTransaction();
         //format request object
         $inputs = $this->formatRegistrationInfo($registerFormInputs);
         try {
@@ -54,7 +55,7 @@ class RegisteredUserService
             $newUser = $this->userRepository->create($inputs);
             if ($newUser instanceof User) {
                 if ($this->attachAvatarImage($newUser) && $this->attachDefaultRoles($newUser)) {
-                    \DB::commit();
+                    DB::commit();
                     $newUser->refresh();
 
                     Auth::login($newUser);
@@ -66,7 +67,7 @@ class RegisteredUserService
             } else {
                 return ['status' => false, 'message' => 'User model creation failed', 'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Error!'];
             }
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             $this->userRepository->handleException($exception);
 
             return ['status' => false, 'message' => __($exception->getMessage()), 'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Error!'];

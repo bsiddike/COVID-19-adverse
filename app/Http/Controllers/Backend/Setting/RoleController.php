@@ -44,8 +44,8 @@ class RoleController extends Controller
      * @param  PermissionService  $permissionService
      */
     public function __construct(AuthenticatedSessionService $authenticatedSessionService,
-        RoleService $roleService,
-        PermissionService $permissionService)
+                                RoleService $roleService,
+                                PermissionService $permissionService)
     {
         $this->roleService = $roleService;
         $this->authenticatedSessionService = $authenticatedSessionService;
@@ -203,7 +203,7 @@ class RoleController extends Controller
      * @param  Request  $request
      * @return RedirectResponse|void
      *
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function restore($id, Request $request)
     {

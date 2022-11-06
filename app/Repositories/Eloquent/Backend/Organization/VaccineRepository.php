@@ -4,8 +4,8 @@ namespace App\Repositories\Eloquent\Backend\Organization;
 
 use App\Abstracts\Repository\EloquentRepository;
 use App\Models\Vaccine;
-use App\Services\Auth\AuthenticatedSessionService;
 use Exception;
+use Generator;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
@@ -35,9 +35,15 @@ class VaccineRepository extends EloquentRepository
      */
     private function filterData(array $filters = [], bool $is_sortable = false): Builder
     {
-        $query = $this->getQueryBuilder();
+        $filters['metric'] = 'top_10_symptoms';
 
-        $query->leftJoin('users', 'users.id', '=', 'enumerators.created_by');
+        foreach ($filters as $key => $value) {
+            if (is_null($filters[$key])) {
+                unset($filters[$key]);
+            }
+        }
+
+        $query = $this->getQueryBuilder();
 
         if (! empty($filters['search'])) {
             $query->where('name', 'like', "%{$filters['search']}%")
@@ -66,8 +72,19 @@ class VaccineRepository extends EloquentRepository
             $query->sortable();
         }
 
-        if (AuthenticatedSessionService::isSuperAdmin()) {
-            $query->withTrashed();
+        if (! empty($filters['metric'])) {
+            switch ($filters['metric']) {
+                case 'top_10_symptoms' :
+                    $query->selectRaw('`vax_name`, `symptoms`.`symptom1`, count(`symptoms`.`symptom1`) as `aggregate`')
+                        ->join('symptoms', 'vaccines.vaers_id', '=', 'symptoms.vaers_id')
+                        ->where('vax_type', '=', 'COVID19')
+                        ->groupBy('vax_name', 'symptom1')
+                        ->orderBy('aggregate', 'desc');
+                    break;
+
+                default:
+                    $query;
+            }
         }
 
         return $query;
@@ -105,6 +122,7 @@ class VaccineRepository extends EloquentRepository
      */
     public function getWith(array $filters = [], array $eagerRelations = [], bool $is_sortable = false)
     {
+        $query = $this->getQueryBuilder();
         try {
             $query = $this->filterData($filters, $is_sortable);
         } catch (Exception $exception) {
@@ -118,11 +136,11 @@ class VaccineRepository extends EloquentRepository
      * @param  array  $filters
      * @param  array  $eagerRelations
      * @param  bool  $is_sortable
-     * @return \Generator
+     * @return Generator
      *
      * @throws Exception
      */
-    public function exportWith(array $filters = [], array $eagerRelations = [], bool $is_sortable = false): \Generator
+    public function exportWith(array $filters = [], array $eagerRelations = [], bool $is_sortable = false): Generator
     {
         try {
             $query = $this->filterData($filters, $is_sortable);

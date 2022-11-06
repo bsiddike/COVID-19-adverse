@@ -94,49 +94,52 @@
                                 <table class="table table-hover mb-0" id="branch-table">
                                     <thead class="thead-light">
                                     <tr>
+                                        <th class="text-center">{!! __('common.Actions') !!}</th>
                                         <th class="text-center">@sortablelink('id', '#')</th>
                                         <th class="text-center">@sortablelink('vaers_id', 'Vaers ID')</th>
                                         <th class="text-center">@sortablelink('recive_date', 'Receive Date')</th>
                                         <th class="text-center">@sortablelink('state', 'State')</th>
-                                        <th class="text-center">@sortablelink('age_yrs', 'Age(yr)')</th>
-                                        <th class="text-center">@sortablelink('cage_yr', 'Cage(yr)')</th>
+                                        <th class="text-center">@sortablelink('age_yrs', 'Age(Year)')</th>
+                                        <th class="text-center">@sortablelink('cage_yr', 'Cage(Year)')</th>
                                         <th class="text-center">@sortablelink('cage_mo', 'Cage month')</th>
                                         <th class="text-center">@sortablelink('sex', 'Sex')</th>
-                                        <th class="text-center">@sortablelink('rpt_date', 'rpt_date')</th>
+                                        <th class="text-center">@sortablelink('rpt_date', 'Report Date')</th>
                                         {{--                                        <th class="text-center">@sortablelink('symptom_text', 'symptom_text')</th>--}}
-                                        <th class="text-center">@sortablelink('died', 'died')</th>
+                                        <th class="text-center">@sortablelink('died', 'Died')</th>
                                         <th class="text-center">@sortablelink('datedied', 'datedied')</th>
-                                        <th class="text-center">@sortablelink('l_threat', 'l_threat')</th>
-                                        <th class="text-center">@sortablelink('er_visit', 'er_visit')</th>
-                                        <th class="text-center">@sortablelink('hospital', 'hospital')</th>
+                                        <th class="text-center">@sortablelink('l_threat', 'Life threat')</th>
+                                        <th class="text-center">@sortablelink('er_visit', 'Emergency visit')</th>
+                                        <th class="text-center">@sortablelink('hospital', 'Hospital')</th>
                                         <th class="text-center">@sortablelink('hospdays', 'hospdays')</th>
-                                        <th class="text-center">@sortablelink('x_stay', 'x_stay')</th>
-                                        <th class="text-center">@sortablelink('disable', 'disable')</th>
-                                        <th class="text-center">@sortablelink('recovd', 'recovd')</th>
-                                        <th class="text-center">@sortablelink('vax_date', 'vax_date')</th>
+                                        <th class="text-center">@sortablelink('x_stay', 'Previous Condition')</th>
+                                        <th class="text-center">@sortablelink('disable', 'Disable')</th>
+                                        <th class="text-center">@sortablelink('recovd', 'Re-Covid19')</th>
+                                        <th class="text-center">@sortablelink('vax_date', 'Vaccine Data')</th>
                                         <th class="text-center">@sortablelink('onset_date', 'onset_date')</th>
                                         <th class="text-center">@sortablelink('numdays', 'numdays')</th>
-{{--                                        <th class="text-center">@sortablelink('lab_data', 'lab_data')</th>--}}
+{{--                                        <th class="text-center">@sortablelink('lab_data', 'Lab_data')</th>--}}
                                         <th class="text-center">@sortablelink('v_adminby', 'v_adminby')</th>
                                         <th class="text-center">@sortablelink('v_fundby', 'v_fundby')</th>
                                         <th class="text-center">@sortablelink('other_meds', 'other_meds')</th>
-                                        <th class="text-center">@sortablelink('cur_ill', 'cur_ill')</th>
-                                        <th class="text-center">@sortablelink('history', 'history')</th>
+                                        <th class="text-center">@sortablelink('cur_ill', 'Current Illness')</th>
+                                        <th class="text-center">@sortablelink('history', 'History')</th>
                                         <th class="text-center">@sortablelink('prior_vax', 'prior_vax')</th>
                                         <th class="text-center">@sortablelink('splttype', 'splttype')</th>
                                         <th class="text-center">@sortablelink('form_vers', 'form_vers')</th>
-                                        <th class="text-center">@sortablelink('todays_date', 'todays_date')</th>
-                                        <th class="text-center">@sortablelink('birth_defect', 'birth_defect')</th>
-                                        <th class="text-center">@sortablelink('ofc_visit', 'ofc_visit')</th>
+                                        <th class="text-center">@sortablelink('todays_date', 'Todays Date')</th>
+                                        <th class="text-center">@sortablelink('birth_defect', 'Birth Defect')</th>
+                                        <th class="text-center">@sortablelink('ofc_visit', 'Office Visit')</th>
                                         <th class="text-center">@sortablelink('er_ed_visit', 'er_ed_visit')</th>
-                                        <th class="text-center">@sortablelink('allergies', 'allergies')</th>
+                                        <th class="text-center">@sortablelink('Allergies', 'allergies')</th>
                                         <th class="text-center">@sortablelink('created_at', __('common.Created'))</th>
-                                        <th class="text-center">{!! __('common.Actions') !!}</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     @forelse($patients as $index => $patient)
                                         <tr @if($patient->deleted_at != null) class="table-danger" @endif>
+                                            <td class="exclude-search pr-3 text-center align-middle">
+                                                {!! Html::actionDropdown('backend.organization.patients', $patient->id, array_merge(['show', 'edit'], ($patient->deleted_at == null) ? ['delete'] : ['restore'])) !!}
+                                            </td>
                                             <td class="exclude-search align-middle">
                                                 {{ $patient->id }}
                                             </td>
@@ -176,9 +179,6 @@
                                             <td class="text-center">{{ $patient->er_ed_visit ?? null }}</td>
                                             <td class="text-center">{{ $patient->allergies ?? null }}</td>
                                             <td class="text-center">{{ $patient->created_at->format(config('backend.datetime')) ?? '' }}</td>
-                                            <td class="exclude-search pr-3 text-center align-middle">
-                                                {!! Html::actionDropdown('backend.organization.patients', $patient->id, array_merge(['show', 'edit'], ($patient->deleted_at == null) ? ['delete'] : ['restore'])) !!}
-                                            </td>
                                         </tr>
                                     @empty
                                         <tr>

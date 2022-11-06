@@ -2,6 +2,11 @@
     <div class="card">
         <div class="card-header border-bottom-0">
             <h3 class="card-title">Gender Wise Affected</h3>
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                </button>
+            </div>
         </div>
         <div class="card-body">
             <canvas id="affectedGender"
@@ -14,18 +19,10 @@
 @push('page-script')
     <script>
         $(document).ready(function () {
-            var doughnut = new Chart($('#affectedGender').get(0).getContext('2d'), {
-                type: 'doughnut',
-                data: {!!  json_encode($affectedGender) !!},
-                options: {
-                    maintainAspectRatio: false,
-                    responsive: true,
-                    legend: {
-                        position: 'left'
-                    }
-
-                }
-            });
+            var doughnut = new Chart(
+                $('#affectedGender').get(0).getContext('2d'),
+                    {!!  json_encode($affectedGender) !!}
+            );
         });
     </script>
 @endpush

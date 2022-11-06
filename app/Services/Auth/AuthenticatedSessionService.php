@@ -4,6 +4,7 @@ namespace App\Services\Auth;
 
 use App\Http\Requests\Auth\LoginRequest;
 use App\Supports\Constant;
+use Exception;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -108,7 +109,7 @@ class AuthenticatedSessionService
 
             return ['status' => true, 'message' => 'User Logout Successful',
                 'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!', ];
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return ['status' => false, 'message' => 'Error: '.$exception->getMessage(),
                 'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Error!', ];
         }

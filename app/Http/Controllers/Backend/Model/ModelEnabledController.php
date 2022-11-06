@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Backend\Model;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\Model\ModelEnabledRequest;
 use App\Supports\Constant;
+use Exception;
 use Illuminate\Http\JsonResponse;
+use Log;
 
 class ModelEnabledController extends Controller
 {
@@ -43,8 +45,8 @@ class ModelEnabledController extends Controller
                     return response()->json(['status' => true, 'message' => __('Status Disabled Successful'),
                         'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Notification', ], 200);
                 }
-            } catch (\Exception $exception) {
-                \Log::error($exception->getMessage());
+            } catch (Exception $exception) {
+                Log::error($exception->getMessage());
 
                 return response()->json(['status' => false, 'message' => $exception->getMessage(),
                     'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Error!', ], 422);

@@ -9,6 +9,7 @@ use Exception;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
+use Log;
 
 class RoleRepository extends EloquentRepository
 {
@@ -38,8 +39,8 @@ class RoleRepository extends EloquentRepository
             $role->permissions()->attach($permissions);
 
             return true;
-        } catch (\Exception $exception) {
-            \Log::error($exception->getMessage());
+        } catch (Exception $exception) {
+            Log::error($exception->getMessage());
 
             return false;
         }
@@ -60,8 +61,8 @@ class RoleRepository extends EloquentRepository
             $role->permissions()->sync($permissions);
 
             return true;
-        } catch (\Exception $exception) {
-            \Log::error($exception->getMessage());
+        } catch (Exception $exception) {
+            Log::error($exception->getMessage());
 
             return false;
         }
@@ -84,16 +85,14 @@ class RoleRepository extends EloquentRepository
             //Remove All
             if (empty($existingPermissionIds)) {
                 $role->permissions()->detach($existingPermissionIds);
-            }
-
-            //Remove Selected
+            } //Remove Selected
             else {
                 $role->permissions()->detach($permissions);
             }
 
             return true;
-        } catch (\Exception $exception) {
-            \Log::error($exception->getMessage());
+        } catch (Exception $exception) {
+            Log::error($exception->getMessage());
 
             return false;
         }

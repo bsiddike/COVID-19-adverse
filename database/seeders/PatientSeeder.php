@@ -72,6 +72,8 @@ class PatientSeeder extends Seeder
                                     if ($line[0] != 'VAERS_ID') {
                                         $this->command->line($basePath.$year.$folderName.$arrFile.'--'
                                                              .date('Y-m-d H:i:s'));
+                                        set_time_limit(2100);
+                                        ini_set('memory_limit', -1);
                                         return Patient::create(
                                             [
                                                 'vaers_id' => (int)$line[0] ?? null,

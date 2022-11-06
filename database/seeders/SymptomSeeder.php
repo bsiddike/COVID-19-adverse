@@ -48,6 +48,8 @@ class SymptomSeeder extends Seeder
                                             $basePath . $year . $folderName . $arrFile . '--'
                                             . date('Y-m-d H:i:s')
                                         );
+                                        set_time_limit(2100);
+                                        ini_set('memory_limit', -1);
                                         return Symptom::create(
                                             [
                                                 'vaers_id' => clean($line[0]),

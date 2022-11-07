@@ -43,7 +43,11 @@ class DashboardController extends Controller
             'patientsDied' => $this->patientService->getAllPatients(array_merge($filters, ['died' => true]))->count(),
             'patientsRecovered' => $this->patientService->getAllPatients(array_merge($filters, ['recovered' => true]))->count(),
             'patientsHospitalized' => $this->patientService->getAllPatients(array_merge($filters, ['hospitalized' => true]))->count(),
-
+            'affectedGender' => $this->getGenderMetrics($filters),
+            'affectedAge' => $this->getAgeMetrics($filters),
+            'affectedMonth' => $this->getPatientLineChart($filters),
+            'patientsStateMap' => $this->getPatientMap($filters),
+            'vaccineOutcomes' => $this->getTopVaccinesOutcomesMetrics($filters),
         ]);
     }
 

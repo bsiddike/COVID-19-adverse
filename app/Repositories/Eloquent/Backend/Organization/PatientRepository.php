@@ -91,6 +91,7 @@ class PatientRepository extends EloquentRepository
         if (! empty($filters['year_distinct'])) {
             $query->selectRaw('YEAR(`todays_date`) as `year`')
                 ->whereNotNull('todays_date')
+                ->where(DB::raw('YEAR(`todays_date`)'), '>=', '2018')
                 ->distinct();
         }
 

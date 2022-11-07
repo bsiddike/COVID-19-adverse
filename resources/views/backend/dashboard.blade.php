@@ -72,11 +72,11 @@
                                  request()->get('sex'), false, [ 'placeholder' => 'Select a sex']) !!}
                             </div>
                             <div class="col-md-4">
-                                {{--{!! \Form::nSelect('vax_name', 'Vaccine',
+                                {!! \Form::nSelect('vax_name', 'Vaccine',
                                 \App\Models\Vaccine::all()->where('vax-type','COVID19')->groupBy('vax_name')->pluck('vax_name', 'vax_name')->toArray(),
                                  request()->get('vax_name'), false, [
                                      'placeholder' => 'Select a vaccine Brand name'
-                                 ]) !!}--}}
+                                 ]) !!}
                             </div>
                             <div class="col-md-4">
                                 {!! \Form::nText('symptom', 'Symptom', request()->get('symptom'), false) !!}
@@ -95,12 +95,12 @@
         </div>
         <!-- Small boxes (Stat box) -->
         <div class="row">
-            {{--@include('backend.wizard.total-patient')
+            @include('backend.wizard.total-patient')
             @include('backend.wizard.total-symptom')
             @include('backend.wizard.total-vaccine')
             @include('backend.wizard.total-patient-hospital')
             @include('backend.wizard.total-patient-recovered')
-            @include('backend.wizard.total-patient-died')--}}
+            @include('backend.wizard.total-patient-died')
         </div>
         <div class="row">
             {{--@include('backend.wizard.affected-gender')

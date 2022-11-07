@@ -72,9 +72,9 @@
                                  request()->get('sex'), false, [ 'placeholder' => 'Select a sex']) !!}
                             </div>
                             <div class="col-md-4">
-                                {!! \Form::nSelect('vaccine_id', 'Vaccine',
-                                \App\Models\Vaccine::all()->pluck('vax_name', 'vaers_id')->toArray(),
-                                 request()->get('vaccine_id'), false, [
+                                {!! \Form::nSelect('vax_name', 'Vaccine',
+                                \App\Models\Vaccine::all()->groupBy('vax_name')->pluck('vax_name', 'vax_name')->toArray(),
+                                 request()->get('vax_name'), false, [
                                      'placeholder' => 'Select a vaccine Brand name'
                                  ]) !!}
                             </div>

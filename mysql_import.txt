@@ -1,0 +1,4 @@
+LOAD DATA INFILE 'Path to the exported csv file'
+INTO TABLE employee_details
+FIELDS TERMINATED BY ','
+IGNORE 1 ROWS;

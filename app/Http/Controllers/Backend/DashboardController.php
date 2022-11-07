@@ -36,19 +36,7 @@ class DashboardController extends Controller
     {
         $filters = $request->except('page');
 
-        return view('backend.dashboard', [
-            'patients' => $this->patientService->getAllPatients($filters)->count(),
-            'symptoms' => $this->symptomService->getAllSymptoms($filters)->count(),
-            'vaccines' => $this->vaccineService->getAllVaccines($filters)->count(),
-            'patientsDied' => $this->patientService->getAllPatients(array_merge($filters, ['died' => true]))->count(),
-            'patientsRecovered' => $this->patientService->getAllPatients(array_merge($filters, ['recovered' => true]))->count(),
-            'patientsHospitalized' => $this->patientService->getAllPatients(array_merge($filters, ['hospitalized' => true]))->count(),
-            'affectedGender' => $this->getGenderMetrics($filters),
-            'affectedAge' => $this->getAgeMetrics($filters),
-            'affectedMonth' => $this->getPatientLineChart($filters),
-            'patientsStateMap' => $this->getPatientMap($filters),
-            'vaccineOutcomes' => $this->getTopVaccinesOutcomesMetrics($filters),
-        ]);
+        return view('backend.dashboard');
     }
 
     private function getGenderMetrics(array $filters = [])

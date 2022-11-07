@@ -73,7 +73,7 @@
                             </div>
                             <div class="col-md-4">
                                 {!! \Form::nSelect('vax_name', 'Vaccine',
-                                \App\Models\Vaccine::all()->groupBy('vax_name')->pluck('vax_name', 'vax_name')->toArray(),
+                                \App\Models\Vaccine::all()->where('vax-type','COVID19')->groupBy('vax_name')->pluck('vax_name', 'vax_name')->toArray(),
                                  request()->get('vax_name'), false, [
                                      'placeholder' => 'Select a vaccine Brand name'
                                  ]) !!}

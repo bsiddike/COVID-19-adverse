@@ -155,8 +155,13 @@
         //Date range picker
         $('#recive_date').daterangepicker(
             {
+                autoUpdateInput: false,
+                showDropdowns: true,
+                minYear: 2019,
+                maxYear: parseInt(moment().format('YYYY'),10),
                 locale: {
-                    format: 'YYYY-MM-DD'
+                    format: 'YYYY-MM-DD',
+                    cancelLabel: 'Clear'
                 }
             }
         )

@@ -10,7 +10,7 @@
             <div class="icon">
                 <i class="fas fa-sad-tear"></i>
             </div>
-            <a href="{{ route('backend.organization.patients.index', request()->all()) }}"
+            <a href="{{ query('backend.organization.patients.index', request()) }}"
                class="small-box-footer">{!! __('common.More info') !!} <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>

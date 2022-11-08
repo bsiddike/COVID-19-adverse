@@ -16,6 +16,7 @@ class PatientSeeder extends Seeder
      * Run the database seeds.
      *
      * @return void
+     *
      * @throws IOException
      * @throws UnsupportedTypeException
      * @throws ReaderNotOpenedException
@@ -32,7 +33,6 @@ class PatientSeeder extends Seeder
                 $arrFiles = scandir($basePath.$year.$folderName);
                 foreach ($arrFiles as $arrFile) {
                     if (is_file($basePath.$year.$folderName.$arrFile)) {
-
                         $start_time = microtime(true);
                         $this->command->line("Seeding : {$year} {$folderName} {$arrFile}");
 
@@ -40,7 +40,7 @@ class PatientSeeder extends Seeder
                             ->withoutHeaders()
                             ->import(
                                 $basePath.$year.$folderName.$arrFile,
-                                function ($line) use ($basePath, $year, $folderName, $arrFile) {
+                                function ($line) {
                                     /*0 => "VAERS_ID"
                                       1 => "RECVDATE"
                                       2 => "STATE"
@@ -127,7 +127,7 @@ class PatientSeeder extends Seeder
                                 }
                             );
 
-                        $this->command->line("Seeded In: " . ((microtime(true) - $start_time) * 1000000) . "sec");
+                        $this->command->line('Seeded In: '.((microtime(true) - $start_time) * 1000000).'sec');
                         break;
                     }
                 }

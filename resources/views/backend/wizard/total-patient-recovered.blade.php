@@ -5,7 +5,7 @@
             <div class="inner">
                 <h3>{{ $patientsRecovered ?? 0 }}</h3>
 
-                <p>Patient Recovered</p>
+                <p>Re-Covid19</p>
             </div>
             <div class="icon">
                 <i class="fas fa-smile"></i>

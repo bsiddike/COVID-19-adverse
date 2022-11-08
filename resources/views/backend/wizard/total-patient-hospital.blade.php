@@ -5,7 +5,7 @@
             <div class="inner">
                 <h3>{{ $patientsHospitalized ?? 0 }}</h3>
 
-                <p>Patient Hospitalized</p>
+                <p>Hospitalized</p>
             </div>
             <div class="icon">
                 <i class="fas fa-bed"></i>

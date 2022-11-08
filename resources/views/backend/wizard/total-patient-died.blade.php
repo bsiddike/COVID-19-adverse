@@ -5,7 +5,7 @@
             <div class="inner">
                 <h3>{{ $patientsDied ?? 0 }}</h3>
 
-                <p>Patient Deaths</p>
+                <p>Died</p>
             </div>
             <div class="icon">
                 <i class="fas fa-sad-tear"></i>

@@ -1,0 +1,1000 @@
+VAERS_ID,SYMPTOM1,SYMPTOMVERSION1,SYMPTOM2,SYMPTOMVERSION2,SYMPTOM3,SYMPTOMVERSION3,SYMPTOM4,SYMPTOMVERSION4,SYMPTOM5,SYMPTOMVERSION5
+0858975,Abdominal pain,22.10,Diarrhoea,22.10,,,,,,
+0858976,Seizure,22.10,,,,,,,,
+0858977,Carotid artery dissection,22.10,,,,,,,,
+0858978,Headache,23.00,Injection site erythema,23.00,Injection site pain,23.00,Injection site paraesthesia,23.00,Injection site reaction,23.00
+0858978,Injection site swelling,23.00,Injection site warmth,23.00,Sensory loss,23.00,,,,
+0858979,Abdominal discomfort,23.00,Altered state of consciousness,23.00,Asthenia,23.00,Dizziness,23.00,Headache,23.00
+0858979,Nausea,23.00,Pain,23.00,Pyrexia,23.00,,,,
+0858980,Unevaluable event,23.00,,,,,,,,
+0858986,Headache,23.00,Nausea,23.00,,,,,,
+0858987,Injection site pain,23.00,,,,,,,,
+0858988,Injection site pain,23.00,Pain in extremity,23.00,,,,,,
+0858989,Headache,23.00,,,,,,,,
+0858990,Death,22.10,Guillain-Barre syndrome,22.10,Respiratory failure,22.10,,,,
+0858991,Back pain,23.00,Inappropriate schedule of product administration,23.00,Injection site pain,23.00,Myalgia,23.00,Nausea,23.00
+0858991,Pain,23.00,Pain in extremity,23.00,Vaccine positive rechallenge,23.00,,,,
+0858992,Headache,23.00,Inappropriate schedule of product administration,23.00,Injection site swelling,23.00,Rash,23.00,Rash macular,23.00
+0858993,Injection site pain,23.00,,,,,,,,
+0858994,Abdominal pain upper,23.00,Bedridden,23.00,Headache,23.00,Nausea,23.00,Pyrexia,23.00
+0858995,Diarrhoea,23.00,,,,,,,,
+0858996,Pericarditis,22.10,,,,,,,,
+0858997,Injection site erythema,22.10,Injection site swelling,22.10,Injection site warmth,22.10,Local reaction,22.10,,
+0858998,Fall,22.10,Lip injury,22.10,Skin abrasion,22.10,Syncope,22.10,,
+0858999,Injection site erythema,23.00,Injection site induration,23.00,Injection site warmth,23.00,,,,
+0859000,Diarrhoea,23.00,Injection site erythema,23.00,,,,,,
+0859001,Injection site pain,22.10,Neuropathy peripheral,22.10,Paraesthesia,22.10,,,,
+0859002,Biopsy,23.00,Diarrhoea,23.00,Electrocardiogram ambulatory normal,23.00,Eosinophilic pustular folliculitis,23.00,Heart rate irregular,23.00
+0859002,Impetigo,23.00,Injection site reaction,23.00,Laboratory test,23.00,Rash,23.00,Stereotypy,23.00
+0859002,Tic,23.00,,,,,,,,
+0859003,Injection site erythema,23.00,,,,,,,,
+0859007,No adverse event,23.00,Product storage error,23.00,,,,,,
+0859008,Herpes zoster,22.10,Neuropathy peripheral,22.10,,,,,,
+0859009,Herpes zoster,22.10,Neuropathy peripheral,22.10,,,,,,
+0859010,Injection site extravasation,23.00,,,,,,,,
+0859011,Pyrexia,23.00,,,,,,,,
+0859012,Pyrexia,23.00,,,,,,,,
+0859013,Adverse event,23.00,,,,,,,,
+0859014,Herpes zoster,22.10,Laboratory test abnormal,22.10,Rash,22.10,Vaccination failure,22.10,,
+0859015,Cough,23.00,Influenza like illness,23.00,Malaise,23.00,Nasopharyngitis,23.00,Respiratory symptom,23.00
+0859015,Sinus congestion,23.00,,,,,,,,
+0859016,Back pain,23.00,Balance disorder,23.00,Chills,23.00,Decreased appetite,23.00,Dizziness,23.00
+0859016,Headache,23.00,Insomnia,23.00,Musculoskeletal stiffness,23.00,Pain,23.00,Pain in extremity,23.00
+0859016,Pyrexia,23.00,,,,,,,,
+0859017,Injection site erythema,23.00,Injection site pain,23.00,Injection site rash,23.00,Injection site warmth,23.00,,
+0859018,Erythema,23.00,Fatigue,23.00,Injection site erythema,23.00,Injection site pain,23.00,Pain,23.00
+0859018,Skin warm,23.00,,,,,,,,
+0859019,Product administered to patient of inappropriate age,23.00,,,,,,,,
+0859020,Adverse event,22.10,Anaemia,22.10,Blood test,22.10,Cataract,22.10,Cataract operation,22.10
+0859020,Colectomy,22.10,Hepatic enzyme increased,22.10,Large intestine polyp,22.10,Pain in extremity,22.10,Precancerous cells present,22.10
+0859020,Procedural haemorrhage,22.10,Transfusion,22.10,Ultrasound scan,22.10,,,,
+0859021,Burning sensation,22.10,Herpes zoster,22.10,Pruritus,22.10,Rash,22.10,Skin abrasion,22.10
+0859021,Vaccination failure,22.10,,,,,,,,
+0859022,Injected limb mobility decreased,23.00,Injection site rash,23.00,Injection site swelling,23.00,Injection site warmth,23.00,Skin tightness,23.00
+0859023,Joint range of motion decreased,22.10,Musculoskeletal stiffness,22.10,Pain in extremity,22.10,,,,
+0859024,Agitation,23.00,Erythema,23.00,Fatigue,23.00,,,,
+0859025,Administration site swelling,23.00,Chest pain,23.00,Epistaxis,23.00,Pain in extremity,23.00,Peripheral swelling,23.00
+0859026,Injection site erythema,23.00,Injection site rash,23.00,,,,,,
+0859027,Injection site bruising,23.00,Injection site erythema,23.00,,,,,,
+0859028,Pyrexia,23.00,Swelling,23.00,,,,,,
+0859029,Purpura,23.00,Rash,23.00,,,,,,
+0859030,Electroencephalogram normal,23.00,Seizure,23.00,,,,,,
+0859031,Anti-neutrophil cytoplasmic antibody positive vasculitis,22.10,Decreased appetite,22.10,Intensive care,22.10,Malaise,22.10,Renal failure,22.10
+0859032,Headache,23.00,Injection site pain,23.00,Insomnia,23.00,Migraine,23.00,Musculoskeletal pain,23.00
+0859032,Myalgia,23.00,Neck pain,23.00,Nightmare,23.00,,,,
+0859035,No adverse event,23.00,Product storage error,23.00,,,,,,
+0859036,No adverse event,23.00,Product storage error,23.00,,,,,,
+0859037,No adverse event,23.00,Product storage error,23.00,,,,,,
+0859038,Expired product administered,23.00,No adverse event,23.00,,,,,,
+0859039,Pain in extremity,22.10,,,,,,,,
+0859040,Musculoskeletal pain,22.10,Needle issue,22.10,,,,,,
+0859041,Inappropriate schedule of product administration,23.00,No adverse event,23.00,,,,,,
+0859042,Extra dose administered,22.10,Injection site pain,22.10,,,,,,
+0859043,No adverse event,22.10,Product administered to patient of inappropriate age,22.10,,,,,,
+0859044,Expired product administered,23.00,No adverse event,23.00,,,,,,
+0859045,No adverse event,23.00,Product storage error,23.00,,,,,,
+0859046,Injection site erythema,23.00,Injection site inflammation,23.00,Injection site pruritus,23.00,Injection site swelling,23.00,,
+0860033,Injection site erythema,23.00,Injection site streaking,23.00,Lymph node pain,23.00,Skin warm,23.00,,
+0860034,Erythema,23.00,Feeling abnormal,23.00,Pain in extremity,23.00,Ultrasound scan normal,23.00,,
+0860035,Erythema,23.00,Hypersensitivity,23.00,Injection site erythema,23.00,Injection site pain,23.00,Pruritus,23.00
+0860035,Rash,23.00,Skin warm,23.00,,,,,,
+0860036,Injection site hypoaesthesia,22.10,Injection site pain,22.10,,,,,,
+0860037,Body temperature increased,23.00,Injection site induration,23.00,Injection site reaction,23.00,Injection site warmth,23.00,,
+0860038,Chills,22.10,Cold sweat,22.10,Fatigue,22.10,Flushing,22.10,Loss of personal independence in daily activities,22.10
+0860038,Mental status changes,22.10,Pyrexia,22.10,Somnolence,22.10,Urticaria,22.10,,
+0860039,Aphasia,22.10,Autism spectrum disorder,22.10,Cyst,22.10,Emotional distress,22.10,Feeling abnormal,22.10
+0860039,Pyrexia,22.10,Rash,22.10,Screaming,22.10,X-ray,22.10,,
+0860040,Injected limb mobility decreased,22.10,Injection site pain,22.10,,,,,,
+0860041,Pruritus,23.00,Urticaria,23.00,,,,,,
+0860042,Blister,23.00,Rash,23.00,,,,,,
+0860043,Injected limb mobility decreased,23.00,Pain in extremity,23.00,,,,,,
+0860044,Rash papular,23.00,Skin lesion,23.00,,,,,,
+0860045,Amnesia,22.10,Asthenia,22.10,Back pain,22.10,Balance disorder,22.10,Blood test,22.10
+0860045,Chest X-ray abnormal,22.10,Computerised tomogram normal,22.10,Confusional state,22.10,Cough,22.10,Echocardiogram normal,22.10
+0860045,Fatigue,22.10,Gait disturbance,22.10,Immunology test normal,22.10,Magnetic resonance imaging brain abnormal,22.10,Memory impairment,22.10
+0860045,Myocardial necrosis marker increased,22.10,Nail bed disorder,22.10,Pain,22.10,Pain in extremity,22.10,Pulmonary embolism,22.10
+0860045,Renal disorder,22.10,Rhinalgia,22.10,Swelling,22.10,Ultrasound scan,22.10,Vaccination complication,22.10
+0860045,Vascular test normal,22.10,Viral infection,22.10,X-ray,22.10,,,,
+0860047,Product storage error,23.00,,,,,,,,
+0860048,Contraindication to vaccination,23.00,,,,,,,,
+0860049,No adverse event,23.00,Product storage error,23.00,,,,,,
+0860050,Injection site pain,23.00,Injection site swelling,23.00,,,,,,
+0860051,Injection site erythema,23.00,Injection site pain,23.00,Injection site swelling,23.00,Injection site warmth,23.00,,
+0860052,Rash,23.00,Varicella post vaccine,23.00,,,,,,
+0860053,Hypoaesthesia,23.00,Musculoskeletal pain,23.00,Paraesthesia,23.00,,,,
+0860054,Angiogram normal,23.00,Computerised tomogram normal,23.00,Erythema,23.00,Facial pain,23.00,Headache,23.00
+0860054,Influenza like illness,23.00,Peripheral swelling,23.00,,,,,,
+0860055,No adverse event,22.10,Product administered to patient of inappropriate age,22.10,Wrong product administered,22.10,,,,
+0860056,Asthenia,23.00,Chills,23.00,Myalgia,23.00,Nausea,23.00,Pyrexia,23.00
+0860057,Erythema,23.00,Pain,23.00,Swelling,23.00,,,,
+0860058,Musculoskeletal disorder,22.10,Pain in extremity,22.10,,,,,,
+0860059,Ear pain,22.10,Influenza B virus test positive,22.10,Malaise,22.10,Oropharyngeal pain,22.10,Pyrexia,22.10
+0860060,Expired product administered,23.00,,,,,,,,
+0860061,Discomfort,22.10,Pain,22.10,Peripheral swelling,22.10,,,,
+0860062,Arthralgia,23.00,Back pain,23.00,Dyspnoea,23.00,Feeling abnormal,23.00,Headache,23.00
+0860062,Joint swelling,23.00,Neck pain,23.00,Nervousness,23.00,Pulmonary pain,23.00,Renal pain,23.00
+0860062,Somnolence,23.00,,,,,,,,
+0860063,Pruritus,23.00,,,,,,,,
+0860064,Injection site erythema,23.00,Injection site pruritus,23.00,Injection site rash,23.00,Rash erythematous,23.00,Rash pruritic,23.00
+0860065,Injection site erythema,23.00,Injection site pain,23.00,Injection site swelling,23.00,,,,
+0860066,Injected limb mobility decreased,22.10,Pain in extremity,22.10,,,,,,
+0860067,Injection site erythema,23.00,Injection site pain,23.00,Injection site reaction,23.00,Injection site swelling,23.00,Injection site warmth,23.00
+0860067,Urticaria,23.00,,,,,,,,
+0860068,Asthenia,23.00,Inflammatory marker test,23.00,Myalgia,23.00,,,,
+0860069,Blood glucose normal,23.00,Dizziness,23.00,Fall,23.00,Hypotension,23.00,Syncope,23.00
+0860070,Injection site erythema,22.10,Injection site pruritus,22.10,Injection site warmth,22.10,,,,
+0860071,Haematoma infection,23.00,Injection site erythema,23.00,Pyrexia,23.00,,,,
+0860072,Erythema,23.00,Rash,23.00,Swelling,23.00,,,,
+0860073,Feeling hot,23.00,Pruritus,23.00,Rash,23.00,Rash macular,23.00,,
+0860074,Injection site erythema,22.10,Injection site pain,22.10,Injection site swelling,22.10,,,,
+0860075,Injection site erythema,23.00,Injection site pain,23.00,Injection site swelling,23.00,Pyrexia,23.00,,
+0860076,Cyanosis,23.00,Hyporesponsive to stimuli,23.00,Hypotonia,23.00,,,,
+0860077,Bacterial infection,23.00,Cellulitis,23.00,Diarrhoea,23.00,Injection site induration,23.00,Injection site inflammation,23.00
+0860077,Injection site rash,23.00,Injection site warmth,23.00,Insomnia,23.00,Nausea,23.00,Vomiting,23.00
+0860078,Asthenia,23.00,Chills,23.00,Dizziness,23.00,Tremor,23.00,,
+0860079,Arthralgia,22.10,Erythema,22.10,Pain in extremity,22.10,Paraesthesia,22.10,Skin warm,22.10
+0860080,Crying,23.00,Injection site erythema,23.00,Injection site swelling,23.00,Injection site warmth,23.00,Irritability,23.00
+0860081,Paraesthesia,23.00,Peripheral swelling,23.00,,,,,,
+0860082,Injection site erythema,23.00,Injection site pain,23.00,Injection site warmth,23.00,Pyrexia,23.00,,
+0860083,Asthenia,23.00,Contusion,23.00,Dizziness,23.00,Erythema,23.00,Feeling abnormal,23.00
+0860083,Feeling cold,23.00,Influenza like illness,23.00,Nodule,23.00,Syncope,23.00,,
+0860084,Dizziness,22.10,Vomiting,22.10,,,,,,
+0860085,Fatigue,22.10,Injection site pain,22.10,Pain in extremity,22.10,Pain of skin,22.10,,
+0860086,Chills,23.00,Pain,23.00,Pyrexia,23.00,,,,
+0860087,Arthralgia,23.00,Fatigue,23.00,Myalgia,23.00,Sensitive skin,23.00,,
+0860088,Angioplasty,22.10,Electrocardiogram ST segment elevation,22.10,Myocardial infarction,22.10,Myocardial necrosis marker increased,22.10,Stent placement,22.10
+0860088,Troponin increased,22.10,,,,,,,,
+0860089,Pyrexia,23.00,Rash,23.00,,,,,,
+0860091,Dysphonia,22.10,Urticaria,22.10,,,,,,
+0860092,Arthralgia,23.00,Chills,23.00,Eye swelling,23.00,Oedema,23.00,Peripheral swelling,23.00
+0860092,Pyrexia,23.00,Rash,23.00,Swelling face,23.00,Swelling of eyelid,23.00,Throat tightness,23.00
+0860093,Influenza like illness,22.10,Injected limb mobility decreased,22.10,Injection site coldness,22.10,Injection site warmth,22.10,Joint stiffness,22.10
+0860093,Nausea,22.10,Pain,22.10,Pain in extremity,22.10,,,,
+0860094,Injection site vesicles,23.00,,,,,,,,
+0860095,Cough,23.00,Diplopia,23.00,Dizziness,23.00,Fatigue,23.00,Vertigo,23.00
+0860096,Biopsy,22.10,Lichen planus,22.10,Rash,22.10,Rash pruritic,22.10,Urticaria,22.10
+0860097,Injection site inflammation,22.10,Injection site pain,22.10,Magnetic resonance imaging,22.10,Pain,22.10,Product administered at inappropriate site,22.10
+0860097,Pyrexia,22.10,,,,,,,,
+0860098,Body temperature increased,23.00,Injection site erythema,23.00,Injection site pruritus,23.00,Injection site swelling,23.00,Pain in extremity,23.00
+0860098,Peripheral swelling,23.00,,,,,,,,
+0860099,Influenza like illness,23.00,Rash,23.00,,,,,,
+0860100,Body temperature increased,23.00,Headache,23.00,Injection site erythema,23.00,Injection site pain,23.00,Vomiting,23.00
+0860108,Discomfort,23.00,Pain,23.00,,,,,,
+0860109,Antibody test abnormal,23.00,,,,,,,,
+0860110,Postural orthostatic tachycardia syndrome,23.00,,,,,,,,
+0860111,No adverse event,23.00,Product storage error,23.00,,,,,,
+0860112,No adverse event,23.00,Product storage error,23.00,,,,,,
+0860113,No adverse event,23.00,Product storage error,23.00,,,,,,
+0860114,Arthralgia,22.10,Muscular weakness,22.10,Musculoskeletal pain,22.10,Musculoskeletal stiffness,22.10,Pain in extremity,22.10
+0860114,Polymyalgia rheumatica,22.10,,,,,,,,
+0860115,Herpes zoster,22.10,,,,,,,,
+0860116,Incorrect route of product administration,23.00,Myalgia,23.00,,,,,,
+0860117,Expired product administered,23.00,No adverse event,23.00,,,,,,
+0860118,Skin laceration,23.00,Syringe issue,23.00,,,,,,
+0860119,Fatigue,23.00,Headache,23.00,Pain,23.00,Pyrexia,23.00,,
+0860120,Injection site discomfort,23.00,,,,,,,,
+0860121,Erythema,23.00,Injection site erythema,23.00,,,,,,
+0860122,Incorrect route of product administration,23.00,Injection site erythema,23.00,Injection site pain,23.00,Injection site reaction,23.00,Rash papular,23.00
+0860123,Herpes zoster,22.10,Pain,22.10,Vaccination failure,22.10,,,,
+0860124,Herpes zoster,22.10,Vaccination failure,22.10,,,,,,
+0860125,Rash,23.00,Rash erythematous,23.00,,,,,,
+0860126,Injection site rash,23.00,Pain,23.00,Rash,23.00,Urticaria,23.00,,
+0860127,Injection site pain,23.00,,,,,,,,
+0860128,Fatigue,22.10,Heart rate increased,22.10,Muscular weakness,22.10,Musculoskeletal pain,22.10,Pain in extremity,22.10
+0860128,Periorbital swelling,22.10,Tremor,22.10,X-ray limb,22.10,,,,
+0860129,Cellulitis,22.10,Injection site erythema,22.10,Injection site swelling,22.10,Injection site warmth,22.10,,
+0860130,Injection site induration,23.00,Injection site pain,23.00,Injection site swelling,23.00,Injection site warmth,23.00,,
+0860131,Arthralgia,23.00,Erythema,23.00,Fatigue,23.00,Migraine,23.00,Pyrexia,23.00
+0860131,Rash macular,23.00,Swelling,23.00,,,,,,
+0860133,Presyncope,23.00,,,,,,,,
+0860134,Abdominal pain upper,23.00,Diarrhoea,23.00,Ear pain,23.00,Hypoaesthesia eye,23.00,Pain,23.00
+0860134,Pyrexia,23.00,Rash,23.00,,,,,,
+0860135,Cardiac arrest,22.10,Death,22.10,,,,,,
+0860136,Asthenia,23.00,Chest discomfort,23.00,Flushing,23.00,Injection site pain,23.00,Insomnia,23.00
+0860136,Neuralgia,23.00,Pain,23.00,Pain in extremity,23.00,,,,
+0860137,Rhinorrhoea,23.00,Sneezing,23.00,,,,,,
+0860138,Erythema,23.00,Fatigue,23.00,Feeling abnormal,23.00,Hypoaesthesia,23.00,Paraesthesia,23.00
+0860138,Peripheral swelling,23.00,Urticaria,23.00,,,,,,
+0860140,Rash,22.10,Urticaria,22.10,,,,,,
+0860148,No adverse event,23.00,Product storage error,23.00,,,,,,
+0860149,Deafness neurosensory,22.10,Deafness unilateral,22.10,Dizziness,22.10,Ear congestion,22.10,Ear pain,22.10
+0860149,Tinnitus,22.10,Vertigo,22.10,,,,,,
+0860150,Incorrect route of product administration,23.00,No adverse event,23.00,,,,,,
+0860151,No adverse event,23.00,Product administered to patient of inappropriate age,23.00,,,,,,
+0860152,Loss of consciousness,22.10,Syncope,22.10,,,,,,
+0860153,Extra dose administered,23.00,No adverse event,23.00,,,,,,
+0860156,Cataract,22.10,Cataract nuclear,22.10,Condition aggravated,22.10,Glare,22.10,Headache,22.10
+0860156,Inappropriate schedule of product administration,22.10,Intraocular lens implant,22.10,Lens extraction,22.10,Loss of personal independence in daily activities,22.10,Ophthalmic herpes zoster,22.10
+0860156,Palpitations,22.10,Vision blurred,22.10,Vitreous detachment,22.10,,,,
+0860157,Pyrexia,23.00,,,,,,,,
+0860158,Hyperaesthesia,23.00,Injected limb mobility decreased,23.00,Injection site bruising,23.00,Injection site erythema,23.00,Injection site pain,23.00
+0860158,Injection site reaction,23.00,Injection site swelling,23.00,Injection site warmth,23.00,Insomnia,23.00,Livedo reticularis,23.00
+0860158,Pain,23.00,Pain in extremity,23.00,Skin discolouration,23.00,Skin lesion,23.00,,
+0860159,Erythema,23.00,Inappropriate schedule of product administration,23.00,Pruritus,23.00,,,,
+0860160,Herpes zoster,23.00,,,,,,,,
+0860161,Hepatitis B antibody negative,23.00,Therapy non-responder,23.00,,,,,,
+0860162,Injection site pruritus,23.00,Injection site swelling,23.00,,,,,,
+0860163,Neck pain,23.00,Pain in extremity,23.00,,,,,,
+0860164,Rash,23.00,Swelling,23.00,,,,,,
+0860165,Diarrhoea,23.00,Headache,23.00,Injection site pain,23.00,Injection site swelling,23.00,Pruritus,23.00
+0860166,Congenital choroid plexus cyst,22.10,Exposure during pregnancy,22.10,Gestational diabetes,22.10,Gestational hypertension,22.10,Placental disorder,22.10
+0860166,Ultrasound antenatal screen abnormal,22.10,,,,,,,,
+0860167,Caesarean section,22.10,Exposure during pregnancy,22.10,Gestational hypertension,22.10,Labour complication,22.10,Prolonged labour,22.10
+0860168,Exposure during pregnancy,22.10,Foetal disorder,22.10,Foetal renal imaging abnormal,22.10,Ultrasound antenatal screen abnormal,22.10,,
+0860169,Apgar score normal,22.10,Congenital anomaly,22.10,Foetal exposure during pregnancy,22.10,Penis disorder,22.10,,
+0860170,Exposure during pregnancy,22.10,Ultrasound antenatal screen normal,22.10,Upper respiratory tract infection,22.10,,,,
+0860171,Exposure during pregnancy,22.10,Ultrasound antenatal screen abnormal,22.10,Umbilical cord abnormality,22.10,,,,
+0860172,Apgar score low,22.10,Caesarean section,22.10,Foetal exposure during pregnancy,22.10,,,,
+0860173,Erythema,23.00,Injection site erythema,23.00,Injection site pain,23.00,Injection site swelling,23.00,Injection site warmth,23.00
+0860173,Peripheral swelling,23.00,Skin warm,23.00,Tenderness,23.00,,,,
+0860174,Acne,23.00,Emotional disorder,23.00,Irritability,23.00,Pruritus,23.00,Sleep terror,23.00
+0860174,Urticaria,23.00,,,,,,,,
+0860175,Chills,23.00,Eye pain,23.00,Fatigue,23.00,Headache,23.00,Nausea,23.00
+0860175,Pain,23.00,Pyrexia,23.00,,,,,,
+0860176,Asthenia,23.00,Dizziness,23.00,Feeling hot,23.00,Hyperhidrosis,23.00,,
+0860177,Arthralgia,22.10,Back pain,22.10,Groin pain,22.10,Muscle spasms,22.10,,
+0860178,Diarrhoea,23.00,Fatigue,23.00,Injection site erythema,23.00,Injection site pain,23.00,Injection site swelling,23.00
+0860178,Muscle spasms,23.00,Pain,23.00,,,,,,
+0860179,Tinnitus,23.00,,,,,,,,
+0860180,Injection site erythema,23.00,Injection site swelling,23.00,,,,,,
+0860181,Type IV hypersensitivity reaction,23.00,,,,,,,,
+0860182,Blood test,23.00,Erythema,23.00,Impaired driving ability,23.00,Insomnia,23.00,Pain in extremity,23.00
+0860182,Pruritus,23.00,Rash,23.00,Rash pruritic,23.00,Scar,23.00,Tenderness,23.00
+0860183,Exposure during pregnancy,22.10,No adverse event,22.10,Pregnancy test positive,22.10,,,,
+0860184,Body temperature increased,23.00,Cellulitis,23.00,Chills,23.00,Injection site erythema,23.00,Injection site swelling,23.00
+0860184,Injection site warmth,23.00,,,,,,,,
+0860192,Dizziness,23.00,Dyspnoea,23.00,Peripheral swelling,23.00,Pruritus,23.00,Respiratory tract congestion,23.00
+0860196,Inappropriate schedule of product administration,23.00,,,,,,,,
+0860197,Anxiety,22.10,Basedow's disease,22.10,Blindness,22.10,Diplopia,22.10,Discomfort,22.10
+0860197,Endocrine ophthalmopathy,22.10,Fatigue,22.10,Pain,22.10,Surgery,22.10,Tachycardia,22.10
+0860197,Therapeutic procedure,22.10,Tremor,22.10,,,,,,
+0860198,Asthenopia,22.10,Dysarthria,22.10,Dysphagia,22.10,Eyelid function disorder,22.10,Facial paralysis,22.10
+0860198,Facial paresis,22.10,Hypoaesthesia oral,22.10,Magnetic resonance imaging abnormal,22.10,Mastication disorder,22.10,Muscular weakness,22.10
+0860198,Neuritis,22.10,Speech disorder,22.10,,,,,,
+0860199,Limb discomfort,23.00,,,,,,,,
+0860200,Product preparation issue,23.00,,,,,,,,
+0860201,Extra dose administered,23.00,No adverse event,23.00,,,,,,
+0860202,Injection site urticaria,23.00,Respiratory distress,23.00,Urticaria,23.00,Vaccination site swelling,23.00,,
+0860203,Abnormal faeces,22.10,Arthralgia,22.10,Chills,22.10,Lip blister,22.10,Malaise,22.10
+0860203,Nausea,22.10,Night sweats,22.10,,,,,,
+0860204,Back pain,23.00,C-reactive protein increased,23.00,Musculoskeletal stiffness,23.00,Neck pain,23.00,Pain,23.00
+0860204,Pain in extremity,23.00,,,,,,,,
+0860205,Dizziness,23.00,Ear discomfort,23.00,Ear pain,23.00,Feeling abnormal,23.00,Feeling cold,23.00
+0860205,Headache,23.00,Hot flush,23.00,Impaired work ability,23.00,Influenza A virus test negative,23.00,Influenza B virus test,23.00
+0860205,Influenza virus test negative,23.00,Middle insomnia,23.00,Nausea,23.00,Pain,23.00,Pain in extremity,23.00
+0860205,Pallor,23.00,Tremor,23.00,Vomiting,23.00,,,,
+0860206,Asthenia,23.00,Back pain,23.00,Headache,23.00,Neck pain,23.00,Pyrexia,23.00
+0860210,Blood glucose decreased,23.00,Fall,23.00,Lip injury,23.00,Suture insertion,23.00,,
+0860211,Blood test,23.00,Computerised tomogram,23.00,Seizure,23.00,,,,
+0860212,Head discomfort,22.10,Syncope,22.10,,,,,,
+0860213,Injection site pain,23.00,Pain,23.00,Sleep disorder,23.00,,,,
+0860214,Dizziness,22.10,Feeling abnormal,22.10,Injection site pain,22.10,Injection site swelling,22.10,Loss of personal independence in daily activities,22.10
+0860214,Malaise,22.10,Pain,22.10,Sluggishness,22.10,,,,
+0860215,Dizziness,23.00,Dysgeusia,23.00,Dyskinesia,23.00,Feeling hot,23.00,Flushing,23.00
+0860215,Headache,23.00,Immediate post-injection reaction,23.00,Injection site pain,23.00,Injection site reaction,23.00,Loss of consciousness,23.00
+0860215,Musculoskeletal stiffness,23.00,Myalgia,23.00,Seizure,23.00,,,,
+0860216,Injection site pain,23.00,Injection site swelling,23.00,Injection site warmth,23.00,,,,
+0860217,Hypersensitivity,23.00,Injection site reaction,23.00,Rash,23.00,Rash erythematous,23.00,,
+0860218,Abdominal pain upper,23.00,Chills,23.00,Fatigue,23.00,Pyrexia,23.00,,
+0860219,Chest pain,22.10,Pericarditis,22.10,Troponin increased,22.10,,,,
+0860220,Herpes zoster,23.00,,,,,,,,
+0860221,Dizziness,23.00,Pallor,23.00,,,,,,
+0860222,Injection site erythema,23.00,Injection site warmth,23.00,,,,,,
+0860223,Injection site streaking,23.00,Injection site swelling,23.00,,,,,,
+0860224,Contusion,23.00,,,,,,,,
+0860225,Herpes zoster,23.00,Injection site rash,23.00,Neuralgia,23.00,Rash,23.00,,
+0860226,Headache,23.00,Malaise,23.00,Pain,23.00,Pyrexia,23.00,,
+0860227,Dizziness,23.00,Fall,23.00,Hyperhidrosis,23.00,Hypotension,23.00,Unresponsive to stimuli,23.00
+0860227,Visual impairment,23.00,,,,,,,,
+0860228,Gait disturbance,23.00,Pyrexia,23.00,,,,,,
+0860229,Chills,23.00,Pyrexia,23.00,,,,,,
+0860230,Blood test,22.10,Computerised tomogram,22.10,Electrocardiogram,22.10,Haemorrhage,22.10,Head injury,22.10
+0860230,Loss of consciousness,22.10,Nausea,22.10,,,,,,
+0860231,Rash,23.00,,,,,,,,
+0860232,Dysstasia,22.10,Pain in extremity,22.10,Pyrexia,22.10,,,,
+0860233,Hyperaesthesia,23.00,Injection site erythema,23.00,Myalgia,23.00,Pyrexia,23.00,,
+0860234,Hyperhidrosis,23.00,Hypotonia,23.00,Loss of consciousness,23.00,Moaning,23.00,Muscle contractions involuntary,23.00
+0860234,Posture abnormal,23.00,,,,,,,,
+0860240,No adverse event,23.00,Product storage error,23.00,,,,,,
+0860241,Product storage error,23.00,,,,,,,,
+0860242,No adverse event,23.00,Product storage error,23.00,,,,,,
+0860243,No adverse event,23.00,Product storage error,23.00,,,,,,
+0860244,Wrong product administered,23.00,,,,,,,,
+0860245,Expired product administered,23.00,No adverse event,23.00,,,,,,
+0860246,Pneumonia,22.10,,,,,,,,
+0860247,Blindness,22.10,Eye injury,22.10,Retinal detachment,22.10,Surgery,22.10,Vision blurred,22.10
+0860248,Condition aggravated,22.10,Glare,22.10,Ophthalmic herpes zoster,22.10,Vision blurred,22.10,Visual impairment,22.10
+0860248,Vitreous floaters,22.10,,,,,,,,
+0860249,Insomnia,23.00,International normalised ratio increased,23.00,Limb discomfort,23.00,Malaise,23.00,Mental impairment,23.00
+0860249,Musculoskeletal stiffness,23.00,Pain in extremity,23.00,Pain in jaw,23.00,Trismus,23.00,,
+0860250,Injection site erythema,23.00,Limb discomfort,23.00,Wrong product administered,23.00,,,,
+0860251,Injection site mass,23.00,,,,,,,,
+0860252,Injection site erythema,23.00,Injection site pain,23.00,Injection site swelling,23.00,,,,
+0860253,Asthenia,23.00,,,,,,,,
+0860254,Underdose,23.00,,,,,,,,
+0860255,Mobility decreased,22.10,Muscle spasms,22.10,Pain in extremity,22.10,,,,
+0860256,Discomfort,22.10,Influenza like illness,22.10,Myalgia,22.10,,,,
+0860259,Product administered to patient of inappropriate age,23.00,Product prescribing error,23.00,,,,,,
+0860260,Pain in extremity,23.00,,,,,,,,
+0860261,Diplopia,23.00,Rash,23.00,,,,,,
+0860262,Injection site pain,23.00,,,,,,,,
+0860263,Injection site indentation,22.10,Injection site reaction,22.10,Injection site swelling,22.10,Muscle injury,22.10,Pain in extremity,22.10
+0860263,Tissue injury,22.10,,,,,,,,
+0860264,Injection site cellulitis,23.00,Injection site erythema,23.00,Injection site pain,23.00,Injection site swelling,23.00,,
+0860265,Injection site nerve damage,23.00,Injection site pain,23.00,,,,,,
+0860266,Antinuclear antibody,22.10,Antinuclear antibody positive,22.10,Arthralgia,22.10,,,,
+0860267,Abnormal behaviour,23.00,Crying,23.00,Decreased eye contact,23.00,Dyskinesia,23.00,Feeling cold,23.00
+0860267,Panic reaction,23.00,Photophobia,23.00,Psychomotor hyperactivity,23.00,Staring,23.00,Tic,23.00
+0860268,Confusional state,23.00,Diarrhoea,23.00,Opisthotonus,23.00,Pain,23.00,Screaming,23.00
+0860268,Somnolence,23.00,Staring,23.00,,,,,,
+0860269,Chills,23.00,Injection site erythema,23.00,Injection site swelling,23.00,Injection site warmth,23.00,Pain,23.00
+0860269,Pyrexia,23.00,,,,,,,,
+0860270,Fatigue,23.00,Headache,23.00,Injection site pain,23.00,Myalgia,23.00,,
+0860271,Chills,23.00,Fatigue,23.00,Headache,23.00,Pain,23.00,Pyrexia,23.00
+0860272,Bradyphrenia,23.00,Chills,23.00,Fatigue,23.00,Feeling cold,23.00,Injected limb mobility decreased,23.00
+0860272,Injection site pain,23.00,Nausea,23.00,Pain,23.00,Pain in extremity,23.00,Productive cough,23.00
+0860272,Pyrexia,23.00,Sinus headache,23.00,Taste disorder,23.00,,,,
+0860280,Incorrect route of product administration,23.00,No adverse event,23.00,,,,,,
+0860281,Product administered to patient of inappropriate age,23.00,,,,,,,,
+0860282,Extra dose administered,23.00,No adverse event,23.00,,,,,,
+0860283,No adverse event,23.00,Product storage error,23.00,,,,,,
+0860284,Inappropriate schedule of product administration,23.00,No adverse event,23.00,,,,,,
+0860286,Akinesia,22.10,Dizziness,22.10,Fear,22.10,General physical health deterioration,22.10,Headache,22.10
+0860286,Hypoaesthesia,22.10,Loss of personal independence in daily activities,22.10,Paraesthesia,22.10,Walking aid user,22.10,,
+0860287,Injection site erythema,23.00,,,,,,,,
+0860288,Acute respiratory distress syndrome,22.10,Bronchoalveolar lavage abnormal,22.10,Cough,22.10,Dyspnoea,22.10,Endotracheal intubation,22.10
+0860288,H1N1 influenza,22.10,Influenza A virus test positive,22.10,Lung assist device therapy,22.10,Renal failure,22.10,Renal replacement therapy,22.10
+0860288,Vaccination failure,22.10,,,,,,,,
+0860289,Burning sensation,23.00,Neuralgia,23.00,,,,,,
+0860290,Headache,23.00,Inappropriate schedule of product administration,23.00,Injection site erythema,23.00,,,,
+0860291,Headache,23.00,Inappropriate schedule of product administration,23.00,Injection site erythema,23.00,,,,
+0860292,Exposure during pregnancy,22.10,Polyhydramnios,22.10,,,,,,
+0860293,Exposure during pregnancy,22.10,Hypothyroidism,22.10,,,,,,
+0860294,Apgar score normal,22.10,Caesarean section,22.10,Foetal exposure during pregnancy,22.10,Large for dates baby,22.10,,
+0860295,Herpes zoster,23.00,,,,,,,,
+0860296,Injection site urticaria,22.10,Lip erythema,22.10,Lip swelling,22.10,Malaise,22.10,Pruritus,22.10
+0860296,Urticaria,22.10,,,,,,,,
+0860297,Urticaria,22.10,,,,,,,,
+0860298,Expired product administered,23.00,,,,,,,,
+0860299,Pyrexia,22.10,Vomiting,22.10,,,,,,
+0860300,Myalgia,23.00,,,,,,,,
+0860301,Injection site induration,23.00,Pain in extremity,23.00,,,,,,
+0860302,Erythema,23.00,Induration,23.00,,,,,,
+0860303,Injection site mass,23.00,Injection site pain,23.00,Injection site swelling,23.00,Local reaction,23.00,,
+0860304,Cold sweat,23.00,Dizziness,23.00,Pain,23.00,Pyrexia,23.00,Tremor,23.00
+0860305,Injection site erythema,23.00,Injection site oedema,23.00,Injection site pain,23.00,Injection site pruritus,23.00,Injection site swelling,23.00
+0860306,Mobility decreased,22.10,Pain in extremity,22.10,,,,,,
+0860307,Unevaluable event,23.00,,,,,,,,
+0860308,Abdominal pain upper,23.00,Nausea,23.00,Pain,23.00,Pyrexia,23.00,,
+0860314,Bacterial vaginosis,22.10,Papilloma viral infection,22.10,Vaginal discharge,22.10,Vaginal infection,22.10,Vaginal odour,22.10
+0860315,Influenza virus test negative,22.10,Injection site reaction,22.10,Injection site swelling,22.10,Papule,22.10,Pyrexia,22.10
+0860315,Skin lesion,22.10,,,,,,,,
+0860316,Expired product administered,23.00,No adverse event,23.00,,,,,,
+0860318,Arthralgia,23.00,Erythema,23.00,Injection site erythema,23.00,Injection site warmth,23.00,Pain in extremity,23.00
+0860318,Peripheral swelling,23.00,Skin warm,23.00,,,,,,
+0860319,Pruritus,23.00,Rash,23.00,,,,,,
+0860320,Vertigo,22.10,,,,,,,,
+0860321,Injected limb mobility decreased,22.10,Musculoskeletal pain,22.10,,,,,,
+0860322,Extra dose administered,22.10,Wrong product administered,22.10,,,,,,
+0860323,Injection site cellulitis,23.00,Injection site erythema,23.00,Injection site pain,23.00,Injection site warmth,23.00,Local reaction,23.00
+0860323,Rash,23.00,,,,,,,,
+0860325,Erythema,23.00,Peripheral swelling,23.00,,,,,,
+0860327,Ear infection,22.10,Influenza,22.10,Pyrexia,22.10,,,,
+0860328,No adverse event,23.00,Product preparation issue,23.00,,,,,,
+0860329,Expired product administered,23.00,No adverse event,23.00,,,,,,
+0860330,Extra dose administered,23.00,No adverse event,23.00,Wrong product administered,23.00,,,,
+0860331,Pertussis,23.00,,,,,,,,
+0860332,No adverse event,22.10,Product administered to patient of inappropriate age,22.10,,,,,,
+0860333,Extra dose administered,22.10,No adverse event,22.10,,,,,,
+0860334,No adverse event,23.00,Product administered to patient of inappropriate age,23.00,,,,,,
+0860335,No adverse event,23.00,Product administered to patient of inappropriate age,23.00,Wrong product administered,23.00,,,,
+0860336,No adverse event,23.00,Product administered to patient of inappropriate age,23.00,Wrong product administered,23.00,,,,
+0860337,Antibody test negative,23.00,,,,,,,,
+0860338,No adverse event,23.00,Product preparation error,23.00,,,,,,
+0860339,No adverse event,23.00,Product administered to patient of inappropriate age,23.00,,,,,,
+0860340,Urticaria,22.10,,,,,,,,
+0860341,Rash,23.00,Rash erythematous,23.00,Rash papular,23.00,,,,
+0860342,Malaise,23.00,,,,,,,,
+0860343,Arthralgia,23.00,Injection site erythema,23.00,Injection site nodule,23.00,Injection site swelling,23.00,Joint stiffness,23.00
+0860344,Headache,23.00,Herpes zoster,23.00,Pain,23.00,Pain in extremity,23.00,Rash,23.00
+0860345,Chills,23.00,Injected limb mobility decreased,23.00,Injection site pain,23.00,Injection site swelling,23.00,Poor quality sleep,23.00
+0860345,Pyrexia,23.00,,,,,,,,
+0860346,Herpes zoster,23.00,,,,,,,,
+0860347,Extra dose administered,22.10,No adverse event,22.10,,,,,,
+0860348,Dizziness,22.10,Fall,22.10,,,,,,
+0860349,Pain in extremity,22.10,Ultrasound scan,22.10,,,,,,
+0860350,Loss of consciousness,23.00,,,,,,,,
+0860351,Chills,23.00,Influenza like illness,23.00,Pain,23.00,Pyrexia,23.00,,
+0860352,Injection site pain,23.00,Injection site swelling,23.00,,,,,,
+0860353,Hypoaesthesia,23.00,,,,,,,,
+0860354,Incorrect route of product administration,23.00,Injection site erythema,23.00,Injection site irritation,23.00,,,,
+0860355,Allergy to vaccine,23.00,Rash,23.00,,,,,,
+0860356,Asthenia,23.00,Influenza like illness,23.00,Lethargy,23.00,Pain,23.00,,
+0860357,Asthenia,23.00,Lethargy,23.00,Myalgia,23.00,,,,
+0860358,Pain in extremity,23.00,Peripheral swelling,23.00,Skin reaction,23.00,Tenderness,23.00,,
+0860359,Asthenia,23.00,Decreased appetite,23.00,Dizziness,23.00,Fatigue,23.00,Feeling cold,23.00
+0860359,Heart rate increased,23.00,Injection site erythema,23.00,Injection site pain,23.00,Injection site swelling,23.00,Loss of personal independence in daily activities,23.00
+0860359,Nausea,23.00,Pain,23.00,Pain in extremity,23.00,Pyrexia,23.00,,
+0860360,Injection site bruising,23.00,Injection site erythema,23.00,Injection site oedema,23.00,Injection site swelling,23.00,,
+0860361,Skin laceration,22.10,Syncope,22.10,,,,,,
+0860362,Chills,23.00,Headache,23.00,Pain,23.00,Pain in extremity,23.00,Pyrexia,23.00
+0860363,Influenza like illness,22.10,Oropharyngeal discomfort,22.10,Pain in extremity,22.10,Somnolence,22.10,Urticaria,22.10
+0860364,Herpes zoster,23.00,,,,,,,,
+0860365,Asthenia,23.00,Feeling abnormal,23.00,Hypersomnia,23.00,Paraesthesia,23.00,Tremor,23.00
+0860366,Arthralgia,23.00,Pain in extremity,23.00,Pyrexia,23.00,Staring,23.00,,
+0860367,Musculoskeletal pain,23.00,Pain in extremity,23.00,,,,,,
+0860368,Lip swelling,23.00,Mouth swelling,23.00,,,,,,
+0860379,No adverse event,23.00,Product storage error,23.00,,,,,,
+0860380,Biopsy cervix,23.00,Colposcopy,23.00,Smear cervix abnormal,23.00,,,,
+0860381,Herpes zoster,22.10,,,,,,,,
+0860382,Therapeutic product effect decreased,23.00,,,,,,,,
+0860383,No adverse event,23.00,Product administered to patient of inappropriate age,23.00,,,,,,
+0860384,Cardiac disorder,22.10,Pain,22.10,Pneumonia,22.10,Rash,22.10,Swelling,22.10
+0860385,Blindness unilateral,22.10,Neuromyelitis optica spectrum disorder,22.10,,,,,,
+0860386,No adverse event,23.00,Product storage error,23.00,,,,,,
+0860387,Staring,23.00,,,,,,,,
+0860388,Injection site cellulitis,22.10,Swelling,22.10,,,,,,
+0860389,Diabetes mellitus,22.10,,,,,,,,
+0860390,Product storage error,23.00,,,,,,,,
+0860391,Injection site swelling,22.10,Injection site warmth,22.10,Pain in extremity,22.10,,,,
+0860392,Antibody test negative,23.00,,,,,,,,
+0860393,No adverse event,23.00,Product storage error,23.00,,,,,,
+0860394,No adverse event,23.00,Product storage error,23.00,,,,,,
+0860395,No adverse event,23.00,Product storage error,23.00,,,,,,
+0860396,Asthenia,23.00,Dizziness,23.00,Pain,23.00,,,,
+0860397,Headache,23.00,Pain,23.00,,,,,,
+0860398,Balance disorder,23.00,Pain,23.00,,,,,,
+0860399,Myalgia,23.00,,,,,,,,
+0860400,Rash vesicular,23.00,,,,,,,,
+0860401,Fatigue,23.00,Pain,23.00,,,,,,
+0860402,Discomfort,23.00,Pain,23.00,Pruritus,23.00,,,,
+0860403,Urticaria,23.00,,,,,,,,
+0860404,Herpes zoster,23.00,,,,,,,,
+0860405,Injection site pain,23.00,,,,,,,,
+0860406,Injection site erythema,23.00,Injection site pain,23.00,Injection site swelling,23.00,,,,
+0860407,Injection site pain,23.00,Myalgia,23.00,Pain in extremity,23.00,,,,
+0860408,Injection site pain,23.00,Injection site rash,23.00,,,,,,
+0860409,Herpes zoster,23.00,,,,,,,,
+0860410,Pain in extremity,23.00,,,,,,,,
+0860411,Herpes zoster,23.00,,,,,,,,
+0860412,Injection site erythema,23.00,Injection site induration,23.00,,,,,,
+0860413,Chest discomfort,23.00,Respiratory disorder,23.00,,,,,,
+0860414,Abdominal pain upper,23.00,Arthralgia,23.00,Chills,23.00,Headache,23.00,Injection site erythema,23.00
+0860414,Injection site pain,23.00,Injection site swelling,23.00,Pyrexia,23.00,,,,
+0860415,Unevaluable event,23.00,,,,,,,,
+0860416,Aspiration,22.10,Ear infection,22.10,Gait inability,22.10,Guillain-Barre syndrome,22.10,Immobile,22.10
+0860416,Immunoglobulin therapy,22.10,Loss of personal independence in daily activities,22.10,Magnetic resonance imaging brain normal,22.10,Magnetic resonance imaging normal,22.10,Musculoskeletal disorder,22.10
+0860416,Paralysis,22.10,Pyrexia,22.10,Rash,22.10,Swallow study abnormal,22.10,White blood cell count increased,22.10
+0860417,Cyanosis,22.10,Electrocardiogram,22.10,Hyperventilation,22.10,Hypotonia,22.10,Pallor,22.10
+0860417,Vomiting,22.10,,,,,,,,
+0860418,Chills,23.00,Hyperhidrosis,23.00,Injection site erythema,23.00,Injection site nodule,23.00,Injection site swelling,23.00
+0860418,Pain,23.00,Pyrexia,23.00,,,,,,
+0860419,No adverse event,23.00,Product storage error,23.00,,,,,,
+0860420,Fatigue,23.00,Headache,23.00,Urticaria,23.00,,,,
+0860421,Fall,23.00,Hypoaesthesia,23.00,Rib fracture,23.00,Sensory loss,23.00,,
+0860422,Musculoskeletal pain,23.00,Myalgia,23.00,,,,,,
+0860423,Computerised tomogram,22.10,Dizziness,22.10,Headache,22.10,Herpes zoster,22.10,Impaired driving ability,22.10
+0860423,Neck pain,22.10,Rash,22.10,Vaccination failure,22.10,,,,
+0860424,Acne,23.00,Headache,23.00,Immediate post-injection reaction,23.00,Injected limb mobility decreased,23.00,Injection site erythema,23.00
+0860424,Injection site pain,23.00,Injection site swelling,23.00,Injection site warmth,23.00,Rash erythematous,23.00,Skin discolouration,23.00
+0860425,Heart rate increased,23.00,Heart rate irregular,23.00,Pain,23.00,,,,
+0860426,Herpes zoster,23.00,,,,,,,,
+0860427,Erythema,23.00,Pain,23.00,Peripheral swelling,23.00,,,,
+0860428,Dizziness,22.10,Fall,22.10,Fatigue,22.10,Hypersomnia,22.10,Loss of consciousness,22.10
+0860429,Dizziness,23.00,Fall,23.00,Muscle fatigue,23.00,Paralysis,23.00,,
+0860430,Expired product administered,23.00,No adverse event,23.00,,,,,,
+0860431,Injection site cellulitis,23.00,Injection site erythema,23.00,Injection site pain,23.00,Injection site swelling,23.00,Injection site warmth,23.00
+0860432,Rash,23.00,,,,,,,,
+0860433,Acute zonal occult outer retinopathy,22.10,Bartonella test negative,22.10,Borrelia test negative,22.10,Central vision loss,22.10,Dengue virus test negative,22.10
+0860433,Retinal vasculitis,22.10,Retinitis,22.10,Viral test negative,22.10,Visual field defect,22.10,,
+0860434,Chills,23.00,Dizziness,23.00,Gait inability,23.00,Nausea,23.00,Pyrexia,23.00
+0860435,Chills,23.00,Headache,23.00,Injection site pain,23.00,Injection site swelling,23.00,,
+0860436,No adverse event,23.00,Product administered to patient of inappropriate age,23.00,,,,,,
+0860437,Chills,23.00,Injection site pain,23.00,Injection site swelling,23.00,Pain in extremity,23.00,,
+0860438,No adverse event,23.00,Product administered to patient of inappropriate age,23.00,Wrong product administered,23.00,,,,
+0860439,Blood pressure increased,23.00,Influenza A virus test negative,23.00,Influenza B virus test,23.00,Influenza like illness,23.00,Influenza virus test negative,23.00
+0860439,Pain,23.00,Pyrexia,23.00,,,,,,
+0860440,Crying,23.00,Cyanosis,23.00,Dehydration,23.00,Diarrhoea,23.00,Dyskinesia,23.00
+0860440,Emotional disorder,23.00,Fatigue,23.00,Glassy eyes,23.00,Hyporesponsive to stimuli,23.00,Immediate post-injection reaction,23.00
+0860440,Irritability,23.00,Lethargy,23.00,Oxygen saturation decreased,23.00,Personality change,23.00,Staring,23.00
+0860440,Vital signs measurement,23.00,,,,,,,,
+0860441,Antibody test,23.00,Differential white blood cell count,23.00,Full blood count,23.00,Platelet count,23.00,Pruritus,23.00
+0860441,Swelling,23.00,Urticaria,23.00,,,,,,
+0860442,Erythema,23.00,Peripheral swelling,23.00,Skin warm,23.00,,,,
+0860457,No adverse event,23.00,Product storage error,23.00,,,,,,
+0860458,Retinal artery occlusion,22.10,Vision blurred,22.10,,,,,,
+0860459,Allergy to vaccine,23.00,Drug hypersensitivity,23.00,,,,,,
+0860460,Pain in extremity,23.00,Vaccine positive rechallenge,23.00,,,,,,
+0860461,Headache,23.00,Injection site swelling,23.00,Pyrexia,23.00,,,,
+0860462,Myalgia,23.00,,,,,,,,
+0860463,Chest discomfort,23.00,,,,,,,,
+0860464,Abdominal pain upper,23.00,Dizziness,23.00,Palpitations,23.00,,,,
+0860465,Chills,23.00,Pyrexia,23.00,,,,,,
+0860466,Adverse event,23.00,,,,,,,,
+0860467,Inappropriate schedule of product administration,23.00,Pain in extremity,23.00,,,,,,
+0860468,Injection site pruritus,23.00,,,,,,,,
+0860469,Throat tightness,23.00,,,,,,,,
+0860471,Chills,23.00,Erythema,23.00,Fatigue,23.00,Insomnia,23.00,Myalgia,23.00
+0860471,Pyrexia,23.00,,,,,,,,
+0860472,Herpes zoster,23.00,,,,,,,,
+0860473,Nausea,23.00,Pain in extremity,23.00,Pyrexia,23.00,,,,
+0860475,Immediate post-injection reaction,23.00,Rash,23.00,,,,,,
+0860476,Arthralgia,23.00,Immediate post-injection reaction,23.00,Injection site pain,23.00,Pain in extremity,23.00,,
+0860477,Herpes zoster,23.00,,,,,,,,
+0860478,Herpes zoster,23.00,,,,,,,,
+0860479,Erythema,23.00,Injection site erythema,23.00,,,,,,
+0860480,Injection site erythema,23.00,Injection site pain,23.00,Skin discolouration,23.00,,,,
+0860481,Immediate post-injection reaction,23.00,Pain,23.00,Pain in extremity,23.00,Peripheral swelling,23.00,,
+0860483,Exposure during pregnancy,23.00,Injection site pruritus,23.00,Skin mass,23.00,,,,
+0860484,Headache,23.00,Injection site inflammation,23.00,Injection site pain,23.00,,,,
+0860485,Cough,23.00,Dizziness,23.00,Fatigue,23.00,Feeling abnormal,23.00,Nasal congestion,23.00
+0860485,Nervousness,23.00,Pain,23.00,Productive cough,23.00,Rhinorrhoea,23.00,Somnolence,23.00
+0860486,Injection site erythema,23.00,Injection site mass,23.00,Injection site swelling,23.00,Injection site warmth,23.00,Musculoskeletal disorder,23.00
+0860486,Pain,23.00,Rash,23.00,,,,,,
+0860487,Dyskinesia,23.00,Electroencephalogram,23.00,Staring,23.00,Tremor,23.00,,
+0860488,Wrong product administered,23.00,,,,,,,,
+0860489,Cough,22.10,Eye swelling,22.10,Mouth swelling,22.10,Rash,22.10,Swelling face,22.10
+0860499,No adverse event,23.00,Product storage error,23.00,,,,,,
+0860500,No adverse event,23.00,Product storage error,23.00,,,,,,
+0860501,Expired product administered,23.00,,,,,,,,
+0860502,Injection site induration,22.10,,,,,,,,
+0860503,Herpes zoster,22.10,Rash,22.10,,,,,,
+0860504,Incorrect route of product administration,23.00,No adverse event,23.00,,,,,,
+0860505,Product administered to patient of inappropriate age,23.00,,,,,,,,
+0860506,Inappropriate schedule of product administration,23.00,,,,,,,,
+0860507,Incomplete course of vaccination,23.00,,,,,,,,
+0860508,Extra dose administered,23.00,Musculoskeletal pain,23.00,Pain in extremity,23.00,Secretion discharge,23.00,,
+0860509,Chills,23.00,Headache,23.00,Influenza like illness,23.00,Malaise,23.00,Mobility decreased,23.00
+0860509,Pain in extremity,23.00,Pyrexia,23.00,,,,,,
+0860510,Fatigue,23.00,,,,,,,,
+0860511,Chills,23.00,Pyrexia,23.00,Swelling,23.00,Tenderness,23.00,,
+0860512,Delivery,22.10,Exposure during pregnancy,22.10,Foetal heart rate abnormal,22.10,Folliculitis,22.10,Haemorrhoids,22.10
+0860512,Premature separation of placenta,22.10,,,,,,,,
+0860513,Discomfort,22.10,Hypoaesthesia,22.10,Neck pain,22.10,Pain,22.10,Pain in extremity,22.10
+0860513,Paraesthesia,22.10,,,,,,,,
+0860514,Exposure during pregnancy,22.10,Gestational diabetes,22.10,Hypersensitivity,22.10,Polyhydramnios,22.10,,
+0860515,Exposure during pregnancy,22.10,Gestational diabetes,22.10,Hypersensitivity,22.10,Polyhydramnios,22.10,,
+0860517,Caesarean section,22.10,Foetal exposure during pregnancy,22.10,Foetal heart rate abnormal,22.10,,,,
+0860518,Atrioventricular block first degree,22.10,Delivery,22.10,Eclampsia,22.10,Exposure during pregnancy,22.10,Ocular myasthenia,22.10
+0860518,Pre-eclampsia,22.10,Premature delivery,22.10,,,,,,
+0860519,Amniotic cavity infection,22.10,Apgar score normal,22.10,Foetal exposure during pregnancy,22.10,,,,
+0860520,Heart rate increased,23.00,Syncope,23.00,,,,,,
+0860521,Asthenia,22.10,CSF protein increased,22.10,Computerised tomogram head,22.10,Computerised tomogram neck,22.10,Demyelination,22.10
+0860521,Electromyogram abnormal,22.10,Gait disturbance,22.10,Guillain-Barre syndrome,22.10,Hypoaesthesia,22.10,Immunoglobulin therapy,22.10
+0860521,Lumbar puncture,22.10,Magnetic resonance imaging brain normal,22.10,Magnetic resonance imaging spinal normal,22.10,Paraesthesia,22.10,Walking aid user,22.10
+0860522,Blister,23.00,Culture positive,23.00,Herpes simplex test positive,23.00,Influenza like illness,23.00,,
+0860523,Musculoskeletal pain,23.00,Pain in extremity,23.00,Pyrexia,23.00,Rash,23.00,,
+0860524,Heart rate increased,23.00,Injection site rash,23.00,Injection site swelling,23.00,Injection site urticaria,23.00,,
+0860525,Body temperature increased,23.00,Dizziness,23.00,Heart rate increased,23.00,Injection site pain,23.00,,
+0860526,Dizziness,23.00,Posture abnormal,23.00,,,,,,
+0860527,Cellulitis,23.00,Chills,23.00,Headache,23.00,Injection site erythema,23.00,Rash macular,23.00
+0860527,Rash pruritic,23.00,Vaccination site swelling,23.00,Vaccination site warmth,23.00,,,,
+0860529,No adverse event,23.00,Product administered to patient of inappropriate age,23.00,,,,,,
+0860530,Thrombocytopenic purpura,22.10,,,,,,,,
+0860531,No adverse event,23.00,Product storage error,23.00,,,,,,
+0860532,No adverse event,23.00,Product storage error,23.00,,,,,,
+0860533,Deafness,22.10,Deafness neurosensory,22.10,Dizziness,22.10,Nausea,22.10,Sudden hearing loss,22.10
+0860533,Tinnitus,22.10,Vertigo,22.10,,,,,,
+0860534,No adverse event,23.00,Product administered to patient of inappropriate age,23.00,Wrong product administered,23.00,,,,
+0860535,No adverse event,23.00,Product preparation error,23.00,Product preparation issue,23.00,,,,
+0860536,No adverse event,23.00,Product preparation issue,23.00,,,,,,
+0860537,No adverse event,23.00,Product administered to patient of inappropriate age,23.00,Wrong product administered,23.00,,,,
+0860538,Extra dose administered,23.00,No adverse event,23.00,,,,,,
+0860539,Exposure via eye contact,23.00,Occupational exposure to product,23.00,,,,,,
+0860540,Expired product administered,23.00,No adverse event,23.00,,,,,,
+0860541,Expired product administered,23.00,No adverse event,23.00,,,,,,
+0860542,Expired product administered,23.00,,,,,,,,
+0860543,Incorrect dose administered,22.10,Overdose,22.10,Product administered to patient of inappropriate age,22.10,,,,
+0860544,Inappropriate schedule of product administration,23.00,No adverse event,23.00,,,,,,
+0860545,Cellulitis,23.00,Injection site erythema,23.00,Injection site oedema,23.00,Injection site pain,23.00,Injection site warmth,23.00
+0860546,Basedow's disease,22.10,Blood test,22.10,Goitre,22.10,Scan thyroid gland,22.10,,
+0860547,Immune thrombocytopenic purpura,22.10,Petechiae,22.10,Platelet count decreased,22.10,,,,
+0860548,Injection site swelling,23.00,Injection site warmth,23.00,Peripheral swelling,23.00,Skin warm,23.00,,
+0860549,Urticaria,23.00,,,,,,,,
+0860550,Herpes zoster,23.00,Ophthalmic herpes zoster,23.00,Rash,23.00,,,,
+0860551,Dizziness,23.00,Flushing,23.00,Nausea,23.00,,,,
+0860552,Erythema,23.00,,,,,,,,
+0860553,No adverse event,23.00,Wrong product administered,23.00,,,,,,
+0860554,Discomfort,23.00,Headache,23.00,Immediate post-injection reaction,23.00,Injection site swelling,23.00,Malaise,23.00
+0860555,Erythema,23.00,,,,,,,,
+0860556,Back pain,23.00,Exposure during pregnancy,23.00,Injection site swelling,23.00,Musculoskeletal pain,23.00,Pain,23.00
+0860556,Peripheral swelling,23.00,Tenderness,23.00,,,,,,
+0860557,Chills,23.00,Fatigue,23.00,Headache,23.00,Pain,23.00,Pyrexia,23.00
+0860557,Rash erythematous,23.00,Rash pruritic,23.00,Skin warm,23.00,,,,
+0860558,Chest pain,23.00,Dyspnoea,23.00,Electrocardiogram,23.00,Full blood count,23.00,Injection site pain,23.00
+0860558,Metabolic function test,23.00,Myocarditis,23.00,Troponin,23.00,,,,
+0860559,Headache,23.00,Muscle spasms,23.00,Myalgia,23.00,,,,
+0860560,Full blood count,23.00,Metabolic function test,23.00,Nausea,23.00,Pain,23.00,Urine analysis,23.00
+0860560,Vomiting,23.00,,,,,,,,
+0860561,Arthralgia,22.10,C-reactive protein,22.10,Chest X-ray,22.10,Computerised tomogram thorax,22.10,Dyspnoea,22.10
+0860561,Electrocardiogram,22.10,Full blood count,22.10,Impaired work ability,22.10,Metabolic function test,22.10,Peripheral swelling,22.10
+0860561,Red blood cell sedimentation rate,22.10,Serum sickness,22.10,Troponin,22.10,,,,
+0860562,Erythema multiforme,22.10,Skin lesion,22.10,,,,,,
+0860563,Erythema,23.00,,,,,,,,
+0860564,Injection site erythema,23.00,Injection site rash,23.00,,,,,,
+0860565,Erythema,23.00,Hypoaesthesia,23.00,,,,,,
+0860566,Abdominal discomfort,23.00,Chills,23.00,Fatigue,23.00,Headache,23.00,Injection site pain,23.00
+0860566,Myalgia,23.00,,,,,,,,
+0860567,Back pain,22.10,Chest X-ray normal,22.10,Chest pain,22.10,Cough,22.10,Muscle spasms,22.10
+0860567,Musculoskeletal chest pain,22.10,Musculoskeletal pain,22.10,Respiration abnormal,22.10,Spinal X-ray normal,22.10,,
+0860568,Erythema,23.00,Peripheral swelling,23.00,Pruritus,23.00,,,,
+0860569,Hypersomnia,23.00,Lethargy,23.00,Nausea,23.00,Sinus headache,23.00,Vomiting,23.00
+0860570,Aphthous ulcer,23.00,Chills,23.00,Headache,23.00,Hypoaesthesia,23.00,Influenza like illness,23.00
+0860570,Loss of personal independence in daily activities,23.00,Pain,23.00,Pain in extremity,23.00,,,,
+0860571,Erythema,23.00,Feeling abnormal,23.00,Feeling hot,23.00,Flushing,23.00,Injection site erythema,23.00
+0860571,Injection site pruritus,23.00,Palpitations,23.00,Pruritus,23.00,Tremor,23.00,,
+0860572,Injection site pain,23.00,Muscular weakness,23.00,,,,,,
+0860573,Hyperaesthesia,23.00,Injection site erythema,23.00,Injection site reaction,23.00,Injection site warmth,23.00,,
+0860574,Inappropriate schedule of product administration,23.00,No adverse event,23.00,,,,,,
+0860575,Injection site erythema,23.00,Injection site rash,23.00,Injection site warmth,23.00,,,,
+0860576,Fatigue,23.00,Injection site erythema,23.00,Injection site pain,23.00,Injection site reaction,23.00,Musculoskeletal stiffness,23.00
+0860577,Extra dose administered,22.10,,,,,,,,
+0860578,Musculoskeletal disorder,23.00,Pain in extremity,23.00,,,,,,
+0860579,Injection site haematoma,23.00,Injection site induration,23.00,Injection site nodule,23.00,Injection site pain,23.00,,
+0860580,Chills,23.00,,,,,,,,
+0860581,Injection site erythema,23.00,Injection site rash,23.00,Injection site warmth,23.00,Pain in extremity,23.00,,
+0860583,Chills,23.00,Pain,23.00,Pyrexia,23.00,,,,
+0860584,Chest discomfort,23.00,Malaise,23.00,Oxygen saturation normal,23.00,,,,
+0860585,Chills,23.00,Lethargy,23.00,Pain,23.00,Pyrexia,23.00,,
+0860586,Arthralgia,23.00,Erythema,23.00,Pain,23.00,,,,
+0860587,Pruritus,23.00,Urticaria,23.00,,,,,,
+0860588,Arthralgia,23.00,Fatigue,23.00,Headache,23.00,Hypersensitivity,23.00,Influenza like illness,23.00
+0860588,Injection site discolouration,23.00,Injection site erythema,23.00,Injection site pain,23.00,Injection site swelling,23.00,Injection site urticaria,23.00
+0860588,Injection site warmth,23.00,Myalgia,23.00,,,,,,
+0860589,Arthralgia,22.10,Back pain,22.10,Body temperature decreased,22.10,Burning sensation,22.10,Chills,22.10
+0860589,Facial nerve disorder,22.10,Facial paralysis,22.10,Gait inability,22.10,Guillain-Barre syndrome,22.10,Heart rate increased,22.10
+0860589,Hypertension,22.10,Immunoglobulin therapy,22.10,Lumbar puncture,22.10,Magnetic resonance imaging brain,22.10,Magnetic resonance imaging spinal,22.10
+0860589,Muscle disorder,22.10,Neuropathy peripheral,22.10,Paraesthesia,22.10,,,,
+0860590,Erythema,23.00,Local reaction,23.00,Nodule,23.00,Swelling,23.00,,
+0860601,Antibody test negative,23.00,Incorrect route of product administration,23.00,,,,,,
+0860602,No adverse event,23.00,Product administered to patient of inappropriate age,23.00,,,,,,
+0860603,Herpes zoster,23.00,Rash,23.00,Varicella virus test positive,23.00,,,,
+0860604,Inappropriate schedule of product administration,23.00,No adverse event,23.00,,,,,,
+0860605,Extra dose administered,23.00,Mumps antibody test negative,23.00,,,,,,
+0860606,Dry eye,22.10,Endocrine ophthalmopathy,22.10,Exophthalmos,22.10,Pain,22.10,Vision blurred,22.10
+0860607,Cerebrovascular accident,22.10,Dysarthria,22.10,Facial paralysis,22.10,Hemiparesis,22.10,Hypoaesthesia,22.10
+0860608,Herpes zoster,22.10,Rash,22.10,Rash vesicular,22.10,,,,
+0860609,Ageusia,22.10,Balance disorder,22.10,Deafness neurosensory,22.10,Deafness unilateral,22.10,Tinnitus,22.10
+0860610,Burning sensation,22.10,Herpes zoster,22.10,Post herpetic neuralgia,22.10,Rash,22.10,,
+0860611,Deafness,22.10,,,,,,,,
+0860612,General physical health deterioration,23.00,Postural orthostatic tachycardia syndrome,23.00,Staring,23.00,,,,
+0860613,Headache,23.00,Injection site erythema,23.00,,,,,,
+0860614,Fatigue,23.00,,,,,,,,
+0860615,Fatigue,23.00,Feeling cold,23.00,Hyperhidrosis,23.00,Incomplete course of vaccination,23.00,Pyrexia,23.00
+0860616,Erythema,23.00,Injection site erythema,23.00,Injection site warmth,23.00,Skin warm,23.00,,
+0860617,Muscle disorder,23.00,Nervous system disorder,23.00,,,,,,
+0860618,Back pain,22.10,Herpes zoster,22.10,Vaccination failure,22.10,,,,
+0860619,Arthralgia,22.10,Asthenia,22.10,Fatigue,22.10,Guillain-Barre syndrome,22.10,Monoplegia,22.10
+0860619,Neurological decompensation,22.10,Upper respiratory tract infection,22.10,,,,,,
+0860620,Diarrhoea,22.10,Headache,22.10,Hyperhidrosis,22.10,Lymphadenopathy,22.10,Nausea,22.10
+0860620,Pyrexia,22.10,,,,,,,,
+0860621,Arthralgia,22.10,Immediate post-injection reaction,22.10,Middle insomnia,22.10,Mobility decreased,22.10,Pain,22.10
+0860622,Abdominal pain upper,23.00,Chills,23.00,Fatigue,23.00,Headache,23.00,Injection site pain,23.00
+0860622,Injection site swelling,23.00,Malaise,23.00,Nausea,23.00,Pyrexia,23.00,,
+0860625,Blood glucose abnormal,22.10,Blood ketone body present,22.10,Feeling abnormal,22.10,Loss of personal independence in daily activities,22.10,Vaccination complication,22.10
+0860626,Hypoaesthesia oral,23.00,,,,,,,,
+0860627,Arthritis bacterial,22.10,Burning sensation,22.10,Central venous catheterisation,22.10,Infection,22.10,Injection site erythema,22.10
+0860627,Joint surgery,22.10,Osteomyelitis,22.10,Pain,22.10,Swelling,22.10,,
+0860631,Influenza like illness,23.00,Injection site pain,23.00,Pain,23.00,,,,
+0860632,Rash,23.00,,,,,,,,
+0860633,Headache,23.00,Influenza like illness,23.00,Pain,23.00,Pyrexia,23.00,,
+0860634,Herpes zoster,23.00,Product administered to patient of inappropriate age,23.00,,,,,,
+0860635,Influenza like illness,23.00,Injection site pain,23.00,Pyrexia,23.00,,,,
+0860636,Anxiety,22.10,Blister,22.10,Fall,22.10,Foot deformity,22.10,Herpes zoster,22.10
+0860636,Orthosis user,22.10,Pruritus,22.10,Upper limb fracture,22.10,Vaccination failure,22.10,,
+0860637,Asthenia,23.00,Gait disturbance,23.00,Headache,23.00,Injection site pain,23.00,Nausea,23.00
+0860637,Pain,23.00,,,,,,,,
+0860638,Chills,23.00,Feeling cold,23.00,Headache,23.00,Hyperhidrosis,23.00,Incomplete course of vaccination,23.00
+0860638,Malaise,23.00,Nausea,23.00,Pyrexia,23.00,Tremor,23.00,,
+0860639,Injection site rash,23.00,,,,,,,,
+0860640,Chills,22.10,Headache,22.10,Influenza like illness,22.10,Pyrexia,22.10,Rash pruritic,22.10
+0860640,Rash pustular,22.10,Rash vesicular,22.10,Urticaria,22.10,,,,
+0860641,Injection site inflammation,23.00,Injection site swelling,23.00,,,,,,
+0860642,Fatigue,23.00,Myalgia,23.00,,,,,,
+0860643,Chills,23.00,Malaise,23.00,,,,,,
+0860644,Injection site rash,23.00,,,,,,,,
+0860645,Nerve compression,23.00,Pain in extremity,23.00,,,,,,
+0860663,Expired product administered,23.00,No adverse event,23.00,,,,,,
+0860664,Rash,22.10,Rash vesicular,22.10,,,,,,
+0860665,Ear infection,22.10,Influenza virus test negative,22.10,Injection site discolouration,22.10,Injection site induration,22.10,Measles,22.10
+0860665,Measles post vaccine,22.10,Pyrexia,22.10,Rash,22.10,Rash maculo-papular,22.10,,
+0860666,Expired product administered,23.00,Wrong product administered,23.00,,,,,,
+0860667,Feeling cold,23.00,Pain in extremity,23.00,,,,,,
+0860668,Chills,23.00,Headache,23.00,Pain,23.00,Pyrexia,23.00,,
+0860669,Rash,23.00,Rash erythematous,23.00,Rash pruritic,23.00,,,,
+0860670,Adverse drug reaction,23.00,,,,,,,,
+0860671,Feeling cold,23.00,Pain in extremity,23.00,,,,,,
+0860672,Back pain,23.00,Hypoaesthesia,23.00,Injection site pain,23.00,Muscle spasticity,23.00,Pain,23.00
+0860673,Injection site pain,23.00,Product preparation issue,23.00,Product storage error,23.00,,,,
+0860674,Influenza like illness,23.00,Injected limb mobility decreased,23.00,Injection site pain,23.00,Poor quality sleep,23.00,Pyrexia,23.00
+0860675,Influenza like illness,23.00,Injection site pain,23.00,Pyrexia,23.00,,,,
+0860676,Influenza like illness,23.00,Injection site pain,23.00,,,,,,
+0860677,Inflammation,23.00,Malaise,23.00,,,,,,
+0860678,Gait inability,23.00,Headache,23.00,,,,,,
+0860679,Myasthenia gravis crisis,22.10,,,,,,,,
+0860680,Angiogram retina,22.10,Bacterial test negative,22.10,Blood immunoglobulin G increased,22.10,C-reactive protein increased,22.10,Cardiolipin antibody negative,22.10
+0860680,Central vision loss,22.10,Computerised tomogram normal,22.10,Coxsackie virus test positive,22.10,Eye disorder,22.10,Fluorescence angiogram,22.10
+0860680,Fluorescence angiogram abnormal,22.10,Full blood count normal,22.10,Fundoscopy abnormal,22.10,HLA marker study positive,22.10,Headache,22.10
+0860680,Inflammatory marker test,22.10,Intraocular pressure test,22.10,Lumbar puncture normal,22.10,Macular oedema,22.10,Magnetic resonance imaging normal,22.10
+0860680,Metabolic function test normal,22.10,Ophthalmological examination abnormal,22.10,Optical coherence tomography abnormal,22.10,Retinal pigment epitheliopathy,22.10,Slit-lamp examination,22.10
+0860680,Viral test negative,22.10,Visual acuity reduced,22.10,Visual acuity tests abnormal,22.10,Visual field defect,22.10,X-ray normal,22.10
+0860681,Vomiting,23.00,,,,,,,,
+0860682,Erythema,23.00,Loss of personal independence in daily activities,23.00,Pain,23.00,Rash papular,23.00,Tenderness,23.00
+0860683,Abdominal pain upper,23.00,Blister,23.00,Diarrhoea,23.00,Flatulence,23.00,Gastric disorder,23.00
+0860683,Headache,23.00,Mucous stools,23.00,Musculoskeletal pain,23.00,Nausea,23.00,Rash pruritic,23.00
+0860684,Feeling hot,23.00,Headache,23.00,Injection site pain,23.00,Pain,23.00,,
+0860685,Injection site vesicles,23.00,Pain in extremity,23.00,Rash,23.00,,,,
+0860686,Lymphadenopathy,23.00,Peripheral swelling,23.00,Ultrasound scan abnormal,23.00,,,,
+0860688,Bedridden,23.00,Chills,23.00,Ear pain,23.00,Headache,23.00,Injection site pain,23.00
+0860688,Malaise,23.00,Pain,23.00,Pain in extremity,23.00,,,,
+0860689,Chills,23.00,Injection site erythema,23.00,Injection site pain,23.00,Injection site pruritus,23.00,Myalgia,23.00
+0860690,Chills,23.00,Injection site erythema,23.00,Injection site pain,23.00,Injection site pruritus,23.00,Myalgia,23.00
+0860691,Chills,23.00,Injection site erythema,23.00,Injection site pain,23.00,Injection site pruritus,23.00,Myalgia,23.00
+0860692,Pneumonia,22.10,Surgery,22.10,,,,,,
+0860693,No adverse event,23.00,Product administered to patient of inappropriate age,23.00,Wrong product administered,23.00,,,,
+0860694,Inappropriate schedule of product administration,23.00,No adverse event,23.00,,,,,,
+0860695,Expired product administered,23.00,No adverse event,23.00,,,,,,
+0860696,No adverse event,22.10,Product storage error,22.10,,,,,,
+0860697,Expired product administered,23.00,No adverse event,23.00,,,,,,
+0860698,Expired product administered,23.00,No adverse event,23.00,,,,,,
+0860699,Expired product administered,23.00,No adverse event,23.00,,,,,,
+0860700,No adverse event,23.00,Wrong product administered,23.00,,,,,,
+0860701,No adverse event,23.00,Product storage error,23.00,,,,,,
+0860702,No adverse event,23.00,Product storage error,23.00,,,,,,
+0860703,Biopsy skin,22.10,Pruritus,22.10,Rash erythematous,22.10,Skin test,22.10,Swelling,22.10
+0860704,Joint range of motion decreased,22.10,Loss of personal independence in daily activities,22.10,Musculoskeletal pain,22.10,,,,
+0860705,Dizziness,22.10,Erythema,22.10,Headache,22.10,Injection site urticaria,22.10,Nausea,22.10
+0860705,Pruritus,22.10,Rash,22.10,Swelling,22.10,,,,
+0860706,Injection site cellulitis,22.10,,,,,,,,
+0860707,Wrong product administered,23.00,,,,,,,,
+0860708,Chills,23.00,Headache,23.00,Nausea,23.00,Pain in extremity,23.00,Pyrexia,23.00
+0860709,Arthralgia,23.00,Bone pain,23.00,Injection site joint pain,23.00,Injection site pain,23.00,Nausea,23.00
+0860709,Pain,23.00,,,,,,,,
+0860710,Body temperature increased,23.00,Dizziness,23.00,Feeling hot,23.00,Headache,23.00,Nausea,23.00
+0860710,Peripheral coldness,23.00,,,,,,,,
+0860711,Loss of personal independence in daily activities,23.00,Myalgia,23.00,Pain,23.00,,,,
+0860712,Joint range of motion decreased,22.10,Musculoskeletal pain,22.10,,,,,,
+0860713,Crying,23.00,Injection site erythema,23.00,Injection site swelling,23.00,Injection site warmth,23.00,,
+0860714,Arthralgia,23.00,Fatigue,23.00,Impaired driving ability,23.00,Incomplete course of vaccination,23.00,Pain,23.00
+0860714,Screaming,23.00,Spinal pain,23.00,,,,,,
+0860750,No adverse event,23.00,Product storage error,23.00,,,,,,
+0860751,Extra dose administered,23.00,No adverse event,23.00,,,,,,
+0860752,Chills,23.00,Fatigue,23.00,Hyperhidrosis,23.00,Inappropriate schedule of product administration,23.00,Malaise,23.00
+0860752,Paraesthesia,23.00,Pruritus,23.00,Vaccine positive rechallenge,23.00,,,,
+0860753,Pyrexia,23.00,,,,,,,,
+0860754,Pyrexia,23.00,Vaccine positive rechallenge,23.00,,,,,,
+0860755,Injection site pain,23.00,,,,,,,,
+0860756,Chest pain,22.10,Herpes zoster,22.10,Rash,22.10,,,,
+0860757,Feeling hot,23.00,Injection site erythema,23.00,Injection site pruritus,23.00,Injection site swelling,23.00,Myalgia,23.00
+0860757,Pain,23.00,Pyrexia,23.00,,,,,,
+0860758,Asthenia,23.00,Erythema,23.00,Musculoskeletal pain,23.00,Pain in extremity,23.00,Rash,23.00
+0860758,Sleep disorder,23.00,,,,,,,,
+0860759,Arthralgia,23.00,Chest discomfort,23.00,Gait inability,23.00,Injection site erythema,23.00,Joint injury,23.00
+0860759,Ligament rupture,23.00,Mobility decreased,23.00,Pain,23.00,Weight bearing difficulty,23.00,,
+0860760,Pneumonia,23.00,,,,,,,,
+0860761,Headache,22.10,Injection site cellulitis,22.10,Injection site pain,22.10,Pain,22.10,Pain of skin,22.10
+0860761,Paraesthesia,22.10,Pyrexia,22.10,,,,,,
+0860762,Asthenia,23.00,Blood electrolytes,23.00,Blood glucose,23.00,Blood urea nitrogen/creatinine ratio,23.00,Blood urine present,23.00
+0860762,Chills,23.00,Chromaturia,23.00,Cough,23.00,Decreased appetite,23.00,Dehydration,23.00
+0860762,Diarrhoea,23.00,Dizziness,23.00,Dyspnoea,23.00,Eye irritation,23.00,Fatigue,23.00
+0860762,Feeling of body temperature change,23.00,Glycosylated haemoglobin,23.00,Haematuria,23.00,Headache,23.00,Hepatic enzyme increased,23.00
+0860762,Hypersomnia,23.00,Lethargy,23.00,Mononucleosis heterophile test negative,23.00,Nausea,23.00,Neck pain,23.00
+0860762,Ocular hyperaemia,23.00,Pallor,23.00,Protein urine present,23.00,Pyrexia,23.00,Red blood cells urine positive,23.00
+0860762,Respiratory tract congestion,23.00,Skin warm,23.00,Sluggishness,23.00,Specific gravity urine normal,23.00,Tachycardia,23.00
+0860762,Ultrasound abdomen abnormal,23.00,Urinary tract infection,23.00,Urine analysis,23.00,Urine ketone body present,23.00,Visual field defect,23.00
+0860762,Visual impairment,23.00,Vomiting,23.00,Weight decreased,23.00,pH urine normal,23.00,,
+0860763,Inappropriate schedule of product administration,23.00,,,,,,,,
+0860764,Herpes zoster,22.10,Ophthalmic herpes zoster,22.10,,,,,,
+0860765,Inappropriate schedule of product administration,23.00,No adverse event,23.00,,,,,,
+0860766,Peripheral swelling,23.00,Pruritus,23.00,Rash,23.00,Urticaria,23.00,,
+0860767,Anxiety,23.00,Feeling abnormal,23.00,Injection site reaction,23.00,Swelling,23.00,,
+0860768,Local reaction,22.10,,,,,,,,
+0860769,Product administered to patient of inappropriate age,23.00,,,,,,,,
+0860771,Decreased appetite,23.00,Dizziness,23.00,Erythema,23.00,Malaise,23.00,Pain in extremity,23.00
+0860771,Tenderness,23.00,,,,,,,,
+0860772,Pain,23.00,Pain in extremity,23.00,Urticaria,23.00,,,,
+0860773,Peripheral swelling,22.10,,,,,,,,
+0860774,Body temperature increased,23.00,Dizziness,23.00,Malaise,23.00,,,,
+0860775,Condition aggravated,23.00,Headache,23.00,Hypertension,23.00,Injection site swelling,23.00,Myalgia,23.00
+0860775,Pyrexia,23.00,Tachycardia,23.00,,,,,,
+0860776,Altered state of consciousness,23.00,Asthenia,23.00,Dizziness,23.00,Hyperhidrosis,23.00,,
+0860777,Influenza like illness,23.00,Rash,23.00,Rash pruritic,23.00,,,,
+0860778,Erythema,23.00,Injection site erythema,23.00,Injection site swelling,23.00,Rash,23.00,Swelling,23.00
+0860779,Pain in extremity,23.00,Rash,23.00,,,,,,
+0860781,Chills,23.00,Dyspnoea,23.00,Pyrexia,23.00,Tremor,23.00,,
+0860782,Extra dose administered,23.00,No adverse event,23.00,,,,,,
+0860783,Ataxia,22.10,Hyporeflexia,22.10,Laboratory test normal,22.10,Muscular weakness,22.10,Pyrexia,22.10
+0860784,Injection site pain,22.10,Insomnia,22.10,Loss of personal independence in daily activities,22.10,Pain,22.10,,
+0860785,Chills,23.00,Fatigue,23.00,Headache,23.00,Myalgia,23.00,Nausea,23.00
+0860785,Pyrexia,23.00,,,,,,,,
+0860786,Erythema,23.00,Fatigue,23.00,Lip blister,23.00,Malaise,23.00,Pruritus,23.00
+0860788,Erythema,23.00,Peripheral swelling,23.00,Skin warm,23.00,,,,
+0860789,Arthralgia,22.10,Immediate post-injection reaction,22.10,Incorrect route of product administration,22.10,Injection site pain,22.10,Rotator cuff syndrome,22.10
+0860790,Erythema,23.00,Pain,23.00,Skin warm,23.00,,,,
+0860791,Extra dose administered,23.00,Wrong product administered,23.00,,,,,,
+0860792,Altered state of consciousness,23.00,Balance disorder,23.00,Dysarthria,23.00,Gait disturbance,23.00,Imaging procedure,23.00
+0860792,Magnetic resonance imaging brain abnormal,23.00,Malaise,23.00,Orthostatic hypotension,23.00,Pain in extremity,23.00,,
+0860793,Injection site erythema,22.10,Injection site swelling,22.10,,,,,,
+0860794,Feeding disorder,23.00,Paraesthesia,23.00,,,,,,
+0860795,Rotator cuff syndrome,23.00,X-ray,23.00,,,,,,
+0860796,Chills,23.00,Impaired work ability,23.00,Pain,23.00,Pain in extremity,23.00,Pyrexia,23.00
+0860796,Tremor,23.00,,,,,,,,
+0860797,Injected limb mobility decreased,23.00,Injection site erythema,23.00,Injection site pain,23.00,Lymphadenopathy,23.00,Neck pain,23.00
+0860797,Product administered at inappropriate site,23.00,Tenderness,23.00,,,,,,
+0860798,Injection site erythema,23.00,Injection site pruritus,23.00,,,,,,
+0860799,Amenorrhoea,22.10,,,,,,,,
+0860800,Fatigue,23.00,Injection site rash,23.00,Pain,23.00,Pain in extremity,23.00,,
+0860801,Injection site pain,22.10,Pain in extremity,22.10,,,,,,
+0860802,Chills,23.00,Fatigue,23.00,Headache,23.00,Myalgia,23.00,,
+0860803,Cardiogenic shock,22.10,Cerebrovascular accident,22.10,Intraventricular haemorrhage,22.10,Malaise,22.10,Pulseless electrical activity,22.10
+0860803,Resuscitation,22.10,,,,,,,,
+0860804,Dermatitis contact,22.10,Erythema,22.10,Pruritus,22.10,Rash,22.10,Swelling face,22.10
+0860804,Urticaria,22.10,,,,,,,,
+0860805,Injection site erythema,23.00,Injection site pain,23.00,Injection site warmth,23.00,Pyrexia,23.00,,
+0860806,Asthenia,23.00,Dizziness,23.00,Erythema,23.00,Fatigue,23.00,Headache,23.00
+0860806,Musculoskeletal stiffness,23.00,Pain in extremity,23.00,,,,,,
+0860807,Expired product administered,23.00,,,,,,,,
+0860808,Anxiety,23.00,Insomnia,23.00,Paraesthesia,23.00,,,,
+0860809,Induration,23.00,Swelling,23.00,,,,,,
+0860810,Injection site erythema,23.00,Injection site inflammation,23.00,Injection site warmth,23.00,,,,
+0860811,Hypoaesthesia,23.00,Influenza like illness,23.00,Pain,23.00,Pyrexia,23.00,,
+0860812,Diarrhoea,23.00,Pruritus,23.00,,,,,,
+0860813,Chills,23.00,Fatigue,23.00,Headache,23.00,Pain,23.00,,
+0860815,Chills,23.00,Pain,23.00,Pyrexia,23.00,,,,
+0860816,Erythema,23.00,Pain,23.00,Swelling,23.00,,,,
+0860817,Mobility decreased,23.00,Pain,23.00,,,,,,
+0860818,Condition aggravated,22.10,Grip strength decreased,22.10,,,,,,
+0860819,Cough,23.00,Dyspnoea,23.00,Hypertension,23.00,Immediate post-injection reaction,23.00,Pain in extremity,23.00
+0860819,Paraesthesia,23.00,Peripheral swelling,23.00,Pruritus,23.00,Tachycardia,23.00,Throat tightness,23.00
+0860819,Wheezing,23.00,,,,,,,,
+0860820,Agitation,23.00,Arthralgia,23.00,Chapped lips,23.00,Dry skin,23.00,Dysphagia,23.00
+0860820,Eye pain,23.00,Fatigue,23.00,Feeling cold,23.00,Hallucination,23.00,Headache,23.00
+0860820,Insomnia,23.00,Lip dry,23.00,Livedo reticularis,23.00,Lymphadenopathy,23.00,Migraine,23.00
+0860820,Muscle tightness,23.00,Musculoskeletal stiffness,23.00,Nausea,23.00,Neck pain,23.00,Pain in extremity,23.00
+0860820,Pain in jaw,23.00,Pallor,23.00,Peripheral coldness,23.00,Photophobia,23.00,Pyrexia,23.00
+0860820,Salivary gland pain,23.00,Skin fissures,23.00,Somnolence,23.00,Temporomandibular joint syndrome,23.00,Tenderness,23.00
+0860821,Injection site erythema,22.10,Injection site pain,22.10,Injection site swelling,22.10,Injection site warmth,22.10,Local reaction,22.10
+0860821,Pain,22.10,,,,,,,,
+0860822,Influenza,22.10,Influenza A virus test positive,22.10,Lung assist device therapy,22.10,Respiratory distress,22.10,,
+0860824,No adverse event,23.00,Wrong product administered,23.00,,,,,,
+0860825,Induration,23.00,Nodule,23.00,Tenderness,23.00,,,,
+0860826,Discomfort,22.10,Gingival swelling,22.10,Lip swelling,22.10,Pain,22.10,Rash,22.10
+0860826,Rash macular,22.10,,,,,,,,
+0860827,Chills,23.00,Influenza like illness,23.00,Myalgia,23.00,Pyrexia,23.00,,
+0860828,Anger,23.00,Insomnia,23.00,Screaming,23.00,,,,
+0860829,Back pain,22.10,Muscular weakness,22.10,Myalgia,22.10,,,,
+0860830,Asthenia,23.00,Fatigue,23.00,Loss of personal independence in daily activities,23.00,Pain,23.00,,
+0860831,Injection site erythema,23.00,Injection site pain,23.00,Injection site warmth,23.00,,,,
+0860832,Musculoskeletal pain,22.10,Pain,22.10,,,,,,
+0860833,Hypoaesthesia,22.10,Mobility decreased,22.10,Myalgia,22.10,Paraesthesia,22.10,,
+0860834,Cellulitis,23.00,Erythema,23.00,Headache,23.00,Induration,23.00,Myalgia,23.00
+0860834,Pyrexia,23.00,,,,,,,,
+0860835,Fatigue,23.00,Hypersomnia,23.00,Pain,23.00,Pruritus,23.00,,
+0860836,Injection site rash,23.00,,,,,,,,
+0860837,Chills,23.00,Eructation,23.00,Influenza like illness,23.00,Pain,23.00,Upper respiratory tract congestion,23.00
+0860838,Headache,23.00,Injection site rash,23.00,Nausea,23.00,Rash,23.00,,
+0860839,Injection site erythema,23.00,Injection site warmth,23.00,Pruritus,23.00,,,,
+0860840,Erythema,23.00,Pain,23.00,Pyrexia,23.00,Swelling,23.00,,
+0860841,Injected limb mobility decreased,23.00,Injection site erythema,23.00,Pain in extremity,23.00,Vaccination site induration,23.00,Vaccination site nodule,23.00
+0860842,Chills,23.00,Dizziness,23.00,Dyspnoea,23.00,Exercise tolerance decreased,23.00,Fatigue,23.00
+0860842,Feeling hot,23.00,Heart rate increased,23.00,Hyperhidrosis,23.00,Loss of personal independence in daily activities,23.00,Motion sickness,23.00
+0860842,Pain in extremity,23.00,Palpitations,23.00,,,,,,
+0860843,Gluten sensitivity,23.00,Hyperthermia,23.00,Somnolence,23.00,,,,
+0860857,Blood culture negative,22.10,CSF culture negative,22.10,CSF lymphocyte count increased,22.10,CSF protein increased,22.10,Fatigue,22.10
+0860857,Headache,22.10,Herpes zoster,22.10,Herpes zoster meningitis,22.10,Mydriasis,22.10,Nuchal rigidity,22.10
+0860857,Pain in extremity,22.10,Pallor,22.10,Photophobia,22.10,Pleocytosis,22.10,Polymerase chain reaction positive,22.10
+0860857,Pyrexia,22.10,Rash,22.10,Rash erythematous,22.10,Rash maculo-papular,22.10,Urine analysis,22.10
+0860857,Varicella virus test positive,22.10,,,,,,,,
+0860858,Adnexa uteri pain,22.10,Arthralgia,22.10,Blood test,22.10,Fatigue,22.10,Gait disturbance,22.10
+0860858,Influenza like illness,22.10,Malaise,22.10,Memory impairment,22.10,Papilloma viral infection,22.10,Pelvic inflammatory disease,22.10
+0860858,Postural orthostatic tachycardia syndrome,22.10,Syncope,22.10,,,,,,
+0860859,Herpes zoster,23.00,,,,,,,,
+0860860,Herpes zoster,22.10,Ophthalmic herpes zoster,22.10,,,,,,
+0860861,Herpes zoster,22.10,,,,,,,,
+0860862,Immediate post-injection reaction,22.10,Seizure,22.10,,,,,,
+0860863,Blepharospasm,23.00,Muscle twitching,23.00,,,,,,
+0860864,Herpes zoster,22.10,,,,,,,,
+0860865,Expired product administered,23.00,,,,,,,,
+0860866,Diarrhoea,23.00,,,,,,,,
+0860867,Herpes zoster,22.10,,,,,,,,
+0860868,Abdominal adhesions,22.10,Abdominal operation,22.10,Abdominal pain,22.10,Abdominal pain upper,22.10,Constipation,22.10
+0860868,Diagnostic procedure,22.10,Enema administration,22.10,Faecal vomiting,22.10,Gastrointestinal pain,22.10,Gastrointestinal tube insertion,22.10
+0860868,Intestinal obstruction,22.10,Procedural nausea,22.10,Vomiting,22.10,,,,
+0860869,Diarrhoea,22.10,Irritable bowel syndrome,22.10,,,,,,
+0860870,Incomplete course of vaccination,22.10,Nausea,22.10,,,,,,
+0860871,Urinary tract infection,22.10,,,,,,,,
+0860872,Oral administration complication,22.10,Vomiting,22.10,,,,,,
+0860873,Pruritus,22.10,Rash,22.10,,,,,,
+0860874,Inappropriate schedule of product administration,22.10,Incomplete course of vaccination,22.10,Sinusitis,22.10,,,,
+0860875,Ill-defined disorder,23.00,Inappropriate schedule of product administration,23.00,,,,,,
+0860876,Fatigue,23.00,Incomplete course of vaccination,23.00,Influenza like illness,23.00,,,,
+0860877,Erythema,23.00,Extensive swelling of vaccinated limb,23.00,Injection site erythema,23.00,Injection site pruritus,23.00,Injection site swelling,23.00
+0860877,Product administered to patient of inappropriate age,23.00,Pruritus,23.00,,,,,,
+0860878,Arthritis bacterial,23.00,Blood culture negative,23.00,Clostridium test positive,23.00,Culture negative,23.00,Diarrhoea,23.00
+0860878,Gout,23.00,Gram stain,23.00,Gram stain negative,23.00,Incisional drainage,23.00,Microbiology test normal,23.00
+0860878,Pyrexia,23.00,Synovial fluid white blood cells positive,23.00,,,,,,
+0860879,Erythema,23.00,Peripheral swelling,23.00,,,,,,
+0860880,Acoustic stimulation tests normal,23.00,Blood glucose normal,23.00,Computerised tomogram head abnormal,23.00,Ophthalmological examination normal,23.00,Product administered to patient of inappropriate age,23.00
+0860881,Gaze palsy,23.00,Posture abnormal,23.00,,,,,,
+0860882,Injection site oedema,23.00,Injection site pruritus,23.00,Injection site warmth,23.00,,,,
+0860883,Erythema,23.00,Fatigue,23.00,Influenza like illness,23.00,Injection site pain,23.00,Lymph node pain,23.00
+0860883,Pyrexia,23.00,,,,,,,,
+0860884,Chills,22.10,Decreased appetite,22.10,Eye irritation,22.10,Inflammation,22.10,Musculoskeletal pain,22.10
+0860884,Neck pain,22.10,Pain,22.10,Pyrexia,22.10,Rash erythematous,22.10,Skin discolouration,22.10
+0860885,Headache,23.00,Migraine,23.00,Rhinorrhoea,23.00,Sinus disorder,23.00,,
+0860886,Tinnitus,23.00,,,,,,,,
+0860887,Chills,23.00,Injection site erythema,23.00,Injection site pain,23.00,Injection site swelling,23.00,Injection site warmth,23.00
+0860887,Pyrexia,23.00,,,,,,,,
+0860888,Hallucination,22.10,Moaning,22.10,Pyrexia,22.10,Tremor,22.10,Vertigo,22.10
+0860889,Injection site cellulitis,23.00,,,,,,,,
+0860890,Grip strength decreased,22.10,Injected limb mobility decreased,22.10,Pain in extremity,22.10,,,,
+0860891,Discomfort,23.00,,,,,,,,
+0860892,Blood uric acid increased,22.10,Bursitis,22.10,Cellulitis,22.10,Injected limb mobility decreased,22.10,Injection site erythema,22.10
+0860892,Injection site joint movement impairment,22.10,Injection site pain,22.10,Injection site reaction,22.10,Injection site swelling,22.10,Joint stiffness,22.10
+0860892,Magnetic resonance imaging abnormal,22.10,Muscle strain,22.10,Musculoskeletal stiffness,22.10,Pain in extremity,22.10,Peripheral swelling,22.10
+0860892,Tendon disorder,22.10,X-ray limb,22.10,,,,,,
+0860893,Anxiety,23.00,Dry throat,23.00,Nervousness,23.00,Pharyngeal swelling,23.00,,
+0860894,Hypoaesthesia,22.10,Injected limb mobility decreased,22.10,Injection site pain,22.10,Joint range of motion decreased,22.10,Magnetic resonance imaging abnormal,22.10
+0860894,Nerve injury,22.10,Pain in extremity,22.10,X-ray abnormal,22.10,,,,
+0860895,Erythema,23.00,Mass,23.00,,,,,,
+0860898,Extra dose administered,23.00,No adverse event,23.00,,,,,,
+0860899,Malaise,23.00,,,,,,,,
+0860900,Malaise,23.00,Vaccine positive rechallenge,23.00,,,,,,
+0860901,Herpes zoster,23.00,Influenza like illness,23.00,Malaise,23.00,Rash,23.00,,
+0860902,Erythema,23.00,Rash,23.00,Rash erythematous,23.00,Swelling,23.00,,
+0860903,Influenza like illness,22.10,,,,,,,,
+0860904,Hypoaesthesia,23.00,Paraesthesia,23.00,,,,,,
+0860905,Arthralgia,23.00,Joint swelling,23.00,,,,,,
+0860906,Needle issue,23.00,,,,,,,,
+0860907,Injection site erythema,23.00,Injection site urticaria,23.00,Injection site vesicles,23.00,,,,
+0860908,Herpes zoster,23.00,,,,,,,,
+0860909,Injection site pain,23.00,,,,,,,,
+0860910,Pruritus,23.00,Rash,23.00,,,,,,
+0860911,Facial paralysis,22.10,,,,,,,,
+0860912,Blood pressure increased,23.00,Dizziness,23.00,Immediate post-injection reaction,23.00,Palpitations,23.00,,
+0860913,Injection site pain,22.10,Joint range of motion decreased,22.10,Pain in extremity,22.10,,,,
+0860914,Fontanelle bulging,23.00,Pyrexia,23.00,,,,,,
+0860915,Body temperature increased,23.00,Chills,23.00,Fatigue,23.00,,,,
+0860917,Computerised tomogram abnormal,23.00,Lymph node pain,23.00,Lymph node rupture,23.00,Lymphadenopathy,23.00,Positron emission tomogram abnormal,23.00
+0860918,Musculoskeletal pain,22.10,,,,,,,,
+0860919,Rash macular,23.00,Tenderness,23.00,,,,,,
+0860920,Injection site cellulitis,23.00,Injection site erythema,23.00,Injection site infection,23.00,Injection site pain,23.00,Injection site pruritus,23.00
+0860920,Vaccination site pain,23.00,Vaccination site swelling,23.00,Vaccination site warmth,23.00,,,,
+0860921,Aphthous ulcer,23.00,Constipation,23.00,Depression,23.00,Fatigue,23.00,Feeling abnormal,23.00
+0860921,Injection site pain,23.00,Injection site rash,23.00,Lymph node pain,23.00,Pain,23.00,Pyrexia,23.00
+0860922,Chills,23.00,Dizziness,23.00,Fatigue,23.00,Headache,23.00,Hyperhidrosis,23.00
+0860922,Nausea,23.00,Paraesthesia,23.00,Presyncope,23.00,Pyrexia,23.00,,
+0860923,Dizziness,23.00,Headache,23.00,,,,,,
+0860932,Expired product administered,23.00,No adverse event,23.00,,,,,,
+0860933,Product storage error,23.00,,,,,,,,
+0860934,Cardiomyopathy,22.10,Cerebrovascular disorder,22.10,Chest discomfort,22.10,Chest pain,22.10,Dyspnoea,22.10
+0860935,Herpes zoster,22.10,Rash,22.10,,,,,,
+0860936,Headache,23.00,,,,,,,,
+0860937,Injection site pain,23.00,Pain,23.00,Pain in extremity,23.00,Sleep disorder,23.00,,
+0860938,Chills,23.00,Fatigue,23.00,Headache,23.00,Lethargy,23.00,Myalgia,23.00
+0860939,Herpes zoster,23.00,Pain,23.00,,,,,,
+0860940,Herpes zoster,23.00,,,,,,,,
+0860941,Immediate post-injection reaction,23.00,Injection site pain,23.00,,,,,,
+0860942,Chills,23.00,Injected limb mobility decreased,23.00,Injection site pain,23.00,Product administered to patient of inappropriate age,23.00,Pyrexia,23.00
+0860943,Injection site pain,23.00,Injection site swelling,23.00,,,,,,
+0860944,Injection site bruising,23.00,,,,,,,,
+0860946,Erythema,23.00,Pain,23.00,,,,,,
+0860947,Mass,23.00,Pain,23.00,Swelling,23.00,,,,
+0860948,Herpes zoster,22.10,Vaccination failure,22.10,,,,,,
+0860949,Eye pain,23.00,Influenza like illness,23.00,Ocular discomfort,23.00,Ophthalmological examination normal,23.00,Photopsia,23.00
+0860949,Vitreous floaters,23.00,,,,,,,,
+0860950,Pruritus,23.00,Rash erythematous,23.00,Rash pruritic,23.00,,,,
+0860951,Balance disorder,23.00,,,,,,,,
+0860952,Arthralgia,23.00,Fatigue,23.00,Myalgia,23.00,Pyrexia,23.00,,
+0860953,Arthritis,22.10,Injection site discomfort,22.10,Insomnia,22.10,Joint range of motion decreased,22.10,Limb discomfort,22.10
+0860953,Mobility decreased,22.10,Pain,22.10,Pain in extremity,22.10,X-ray limb abnormal,22.10,,
+0860954,Injection site erythema,23.00,Injection site induration,23.00,Vaccination site swelling,23.00,Vaccination site warmth,23.00,,
+0860955,Expired product administered,23.00,Wrong product administered,23.00,,,,,,
+0860956,Blister rupture,22.10,Injection site erythema,22.10,Injection site vesicles,22.10,Pain in extremity,22.10,Peripheral swelling,22.10
+0860957,Chills,23.00,Feeling hot,23.00,Malaise,23.00,Middle insomnia,23.00,Mobility decreased,23.00
+0860957,Nausea,23.00,Pyrexia,23.00,,,,,,
+0860958,Injection site erythema,23.00,Injection site pruritus,23.00,Injection site swelling,23.00,Vaccination site pain,23.00,,
+0860959,Eyelid function disorder,23.00,Facial asymmetry,23.00,Facial paresis,23.00,Sensory loss,23.00,,
+0860960,Rash,23.00,Rash erythematous,23.00,Rash pruritic,23.00,Urticaria,23.00,,
+0860961,Asthenia,23.00,Decreased appetite,23.00,Myalgia,23.00,Nausea,23.00,Vertigo,23.00
+0860962,Cardiac arrest,22.10,Death,22.10,Hypoxia,22.10,Influenza,22.10,Respiratory failure,22.10

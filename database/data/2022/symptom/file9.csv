@@ -1,0 +1,1000 @@
+VAERS_ID,SYMPTOM1,SYMPTOMVERSION1,SYMPTOM2,SYMPTOMVERSION2,SYMPTOM3,SYMPTOMVERSION3,SYMPTOM4,SYMPTOMVERSION4,SYMPTOM5,SYMPTOMVERSION5
+2014394,Expired product administered,24.10,,,,,,,,
+2014395,Expired product administered,24.10,,,,,,,,
+2014396,Expired product administered,24.10,No adverse event,24.10,,,,,,
+2014397,Blister,24.10,Blood test,24.10,Computerised tomogram,24.10,Hypoaesthesia,24.10,Magnetic resonance imaging heart,24.10
+2014397,Peripheral coldness,24.10,,,,,,,,
+2014398,Expired product administered,24.10,,,,,,,,
+2014399,Dizziness,24.10,Dyspnoea,24.10,Electrocardiogram abnormal,24.10,Palpitations,24.10,Ventricular extrasystoles,24.10
+2014400,Hypoaesthesia,24.10,Peripheral swelling,24.10,,,,,,
+2014401,Incorrect dose administered,24.10,,,,,,,,
+2014402,Incorrect dose administered,24.10,,,,,,,,
+2014403,Product storage error,24.10,,,,,,,,
+2014404,Product storage error,24.10,,,,,,,,
+2014405,Hypoaesthesia,24.10,Injection site rash,24.10,Injection site swelling,24.10,Injection site warmth,24.10,,
+2014406,Product storage error,24.10,,,,,,,,
+2014407,Product storage error,24.10,,,,,,,,
+2014408,Product storage error,24.10,,,,,,,,
+2014409,Product storage error,24.10,,,,,,,,
+2014410,Product storage error,24.10,,,,,,,,
+2014411,Product storage error,24.10,,,,,,,,
+2014413,Incorrect dose administered,24.10,,,,,,,,
+2014414,Acute motor axonal neuropathy,24.10,Amyotrophic lateral sclerosis,24.10,Anti-glomerular basement membrane antibody negative,24.10,Atrophy,24.10,Blood copper,24.10
+2014414,Blood creatine phosphokinase increased,24.10,Blood folate normal,24.10,Blood parathyroid hormone normal,24.10,Blood thyroid stimulating hormone decreased,24.10,Electromyogram abnormal,24.10
+2014414,Gene mutation identification test positive,24.10,HIV test negative,24.10,HTLV-1 test,24.10,HTLV-2 test,24.10,Immunoglobulin therapy,24.10
+2014414,Laboratory test,24.10,Magnetic resonance imaging head abnormal,24.10,Magnetic resonance imaging spinal normal,24.10,Muscle contractions involuntary,24.10,Muscular weakness,24.10
+2014414,Paranasal cyst,24.10,Scan with contrast abnormal,24.10,Vitamin B12 normal,24.10,Vitamin D,24.10,Vitamin E,24.10
+2014415,COVID-19,24.10,Cough,24.10,Oropharyngeal pain,24.10,Respiratory tract congestion,24.10,SARS-CoV-2 test positive,24.10
+2014416,Cough,24.10,Fatigue,24.10,Headache,24.10,Pyrexia,24.10,,
+2014417,Heart rate increased,24.10,Palpitations,24.10,Sleep disorder,24.10,,,,
+2014418,Blood sodium decreased,24.10,Blood test,24.10,Chest X-ray,24.10,Electrocardiogram,24.10,Electrolyte imbalance,24.10
+2014418,Feeling abnormal,24.10,Metabolic function test,24.10,Pyrexia,24.10,SARS-CoV-2 test,24.10,,
+2014419,Abdominal discomfort,24.10,Anxiety,24.10,Arthralgia,24.10,Condition aggravated,24.10,Depression,24.10
+2014419,Fatigue,24.10,Inflammation,24.10,Joint swelling,24.10,Malaise,24.10,Pain,24.10
+2014419,Panic attack,24.10,Pruritus,24.10,,,,,,
+2014420,Chills,24.10,Cough,24.10,Diarrhoea,24.10,Ear pain,24.10,Fatigue,24.10
+2014420,Infection,24.10,Lymphadenopathy,24.10,Myalgia,24.10,Rhinorrhoea,24.10,Tinnitus,24.10
+2014421,COVID-19,24.10,Chills,24.10,Fatigue,24.10,Nausea,24.10,SARS-CoV-2 test positive,24.10
+2014421,Vaccine breakthrough infection,24.10,Vomiting,24.10,,,,,,
+2014422,Back pain,24.10,Chills,24.10,Fatigue,24.10,Feeling cold,24.10,Injection site abscess,24.10
+2014422,Pain,24.10,,,,,,,,
+2014423,Diplopia,24.10,Laboratory test,24.10,,,,,,
+2014424,Incorrect dose administered,24.10,,,,,,,,
+2014425,Blood albumin decreased,24.10,Blood bilirubin increased,24.10,Blood glucose normal,24.10,COVID-19,24.10,Cerebrovascular accident,24.10
+2014425,Chest X-ray abnormal,24.10,Chronic obstructive pulmonary disease,24.10,Computerised tomogram thorax abnormal,24.10,Condition aggravated,24.10,Differential white blood cell count abnormal,24.10
+2014425,Dyspnoea,24.10,Dyspnoea exertional,24.10,Fibrin D dimer increased,24.10,Full blood count abnormal,24.10,Granulocyte percentage,24.10
+2014425,Haematocrit decreased,24.10,Haemoglobin decreased,24.10,Hypoxia,24.10,Immature granulocyte count increased,24.10,Ischaemic stroke,24.10
+2014425,Lung opacity,24.10,Lymphocyte percentage decreased,24.10,Metabolic function test abnormal,24.10,Neutrophil count increased,24.10,Neutrophil percentage increased,24.10
+2014425,Procalcitonin,24.10,Productive cough,24.10,Prohormone brain natriuretic peptide,24.10,Pulmonary fibrosis,24.10,Pulmonary mass,24.10
+2014425,Red blood cell count decreased,24.10,SARS-CoV-2 test positive,24.10,White blood cell count increased,24.10,,,,
+2014426,Dizziness,24.10,Headache,24.10,Hypoaesthesia,24.10,,,,
+2014427,Unevaluable event,24.10,,,,,,,,
+2014428,Alanine aminotransferase normal,24.10,Anion gap,24.10,Aspartate aminotransferase normal,24.10,Blood albumin normal,24.10,Blood alkaline phosphatase normal,24.10
+2014428,Blood bilirubin normal,24.10,Blood calcium normal,24.10,Blood chloride normal,24.10,Blood cholesterol increased,24.10,Blood creatinine normal,24.10
+2014428,Blood glucose normal,24.10,Blood potassium normal,24.10,Blood pressure increased,24.10,Blood sodium normal,24.10,Blood test normal,24.10
+2014428,Blood thyroid stimulating hormone normal,24.10,Carbon dioxide decreased,24.10,Condition aggravated,24.10,Dizziness,24.10,Dyspnoea,24.10
+2014428,Full blood count,24.10,Glomerular filtration rate normal,24.10,High density lipoprotein decreased,24.10,Lipids normal,24.10,Low density lipoprotein normal,24.10
+2014428,Metabolic function test,24.10,Protein total normal,24.10,Thyroxine free normal,24.10,Urine analysis,24.10,,
+2014429,COVID-19,24.10,Chills,24.10,Cough,24.10,Drainage,24.10,Fatigue,24.10
+2014429,Pyrexia,24.10,SARS-CoV-2 test positive,24.10,,,,,,
+2014432,Ankylosing spondylitis,24.10,Asthenia,24.10,Blood potassium decreased,24.10,COVID-19,24.10,Cough,24.10
+2014432,Gait inability,24.10,Mobility decreased,24.10,SARS-CoV-2 test positive,24.10,,,,
+2014433,No adverse event,24.10,Product storage error,24.10,,,,,,
+2014434,Anxiety,24.10,Blood test,24.10,Cardiac stress test normal,24.10,Chest pain,24.10,Echocardiogram normal,24.10
+2014434,Palpitations,24.10,,,,,,,,
+2014435,COVID-19,24.10,SARS-CoV-2 test positive,24.10,,,,,,
+2014436,Feeling cold,24.10,Nausea,24.10,Pain,24.10,Pyrexia,24.10,Tremor,24.10
+2014437,Headache,24.10,Injection site erythema,24.10,Injection site warmth,24.10,Nasal congestion,24.10,Pyrexia,24.10
+2014438,Back pain,24.10,Blood pressure increased,24.10,Dyspnoea,24.10,Electrocardiogram,24.10,Eye pain,24.10
+2014438,Fatigue,24.10,Gait disturbance,24.10,Headache,24.10,Heart rate increased,24.10,Heart rate irregular,24.10
+2014438,Nausea,24.10,Paraesthesia,24.10,Paraesthesia oral,24.10,Swelling face,24.10,Tremor,24.10
+2014438,Vision blurred,24.10,,,,,,,,
+2014439,Underdose,24.10,,,,,,,,
+2014440,Asymptomatic COVID-19,24.10,,,,,,,,
+2014441,Condition aggravated,24.10,Diarrhoea,24.10,Dysphagia,24.10,Dyspnoea,24.10,Fear,24.10
+2014441,Neck pain,24.10,Pain,24.10,Pain in extremity,24.10,Panic attack,24.10,Throat tightness,24.10
+2014441,Underdose,24.10,Urticaria,24.10,Wheezing,24.10,,,,
+2014443,Anticoagulant therapy,24.10,Arterial disorder,24.10,Blood fibrinogen normal,24.10,Blood immunoglobulin G increased,24.10,Blood lactate dehydrogenase increased,24.10
+2014443,Computerised tomogram thorax abnormal,24.10,Fibrin D dimer,24.10,Gingival bleeding,24.10,Heparin-induced thrombocytopenia,24.10,Hypoxia,24.10
+2014443,Influenza A virus test negative,24.10,Influenza B virus test,24.10,Influenza virus test negative,24.10,Mouth haemorrhage,24.10,Platelet count decreased,24.10
+2014443,Platelet factor 4,24.10,Pulmonary embolism,24.10,Respiratory syncytial virus test negative,24.10,SARS-CoV-2 test negative,24.10,Ultrasound Doppler normal,24.10
+2014444,Deep vein thrombosis,24.10,Pain in extremity,24.10,Peripheral swelling,24.10,Ultrasound Doppler abnormal,24.10,,
+2014445,Abdominal pain,24.10,Abdominal pain upper,24.10,Asthenia,24.10,Condition aggravated,24.10,Cough,24.10
+2014445,Dyspnoea,24.10,Fatigue,24.10,Nausea,24.10,Pain,24.10,Vomiting,24.10
+2014447,Blood test,24.10,Computerised tomogram,24.10,Gait inability,24.10,Magnetic resonance imaging,24.10,Pain,24.10
+2014447,Ultrasound scan,24.10,,,,,,,,
+2014448,Chest pain,24.10,Chills,24.10,Cough,24.10,Nausea,24.10,Oropharyngeal pain,24.10
+2014448,Pain,24.10,Pyrexia,24.10,,,,,,
+2014450,Expired product administered,24.10,No adverse event,24.10,,,,,,
+2014451,Ear pain,24.10,Fatigue,24.10,Nasal congestion,24.10,Oropharyngeal pain,24.10,Pyrexia,24.10
+2014451,SARS-CoV-2 test positive,24.10,,,,,,,,
+2014452,Abdominal pain upper,24.10,Arthralgia,24.10,Back pain,24.10,Blood test abnormal,24.10,Burning sensation,24.10
+2014452,Confusional state,24.10,Electromyogram normal,24.10,Fatigue,24.10,Feeling abnormal,24.10,Feeling hot,24.10
+2014452,Hypoaesthesia,24.10,Inflammation,24.10,Limb discomfort,24.10,Magnetic resonance imaging head normal,24.10,Magnetic resonance imaging neck,24.10
+2014452,Magnetic resonance imaging spinal normal,24.10,Mobility decreased,24.10,Muscle spasms,24.10,Muscle tightness,24.10,Muscular weakness,24.10
+2014452,Musculoskeletal stiffness,24.10,Neuralgia,24.10,Pain,24.10,Pain in extremity,24.10,Paraesthesia,24.10
+2014452,Pruritus,24.10,Sensory disturbance,24.10,Urticaria,24.10,,,,
+2014454,Urticaria,24.10,,,,,,,,
+2014455,Rash,24.10,,,,,,,,
+2014456,Pruritus,24.10,Rash,24.10,Urticaria,24.10,,,,
+2014457,Capillary fragility,24.10,Pain in extremity,24.10,Skin discolouration,24.10,,,,
+2014458,Expired product administered,24.10,,,,,,,,
+2014460,Angina pectoris,24.10,Blood test,24.10,,,,,,
+2014461,Condition aggravated,24.10,Menstruation irregular,24.10,Vaccine positive rechallenge,24.10,,,,
+2014462,Decreased appetite,24.10,,,,,,,,
+2014463,Fall,24.10,Hypotonia,24.10,Moaning,24.10,Musculoskeletal stiffness,24.10,Seizure,24.10
+2014463,Unresponsive to stimuli,24.10,,,,,,,,
+2014465,Interchange of vaccine products,24.10,Product administered to patient of inappropriate age,24.10,,,,,,
+2014466,COVID-19,24.10,Chills,24.10,Pain,24.10,Pyrexia,24.10,SARS-CoV-2 test positive,24.10
+2014466,Sinus congestion,24.10,,,,,,,,
+2014468,Discomfort,24.10,Disorientation,24.10,Fatigue,24.10,Headache,24.10,Illness,24.10
+2014468,Lethargy,24.10,Loss of personal independence in daily activities,24.10,Nausea,24.10,Pain,24.10,Pyrexia,24.10
+2014469,Expired product administered,24.10,No adverse event,24.10,,,,,,
+2014470,No adverse event,24.10,Product storage error,24.10,,,,,,
+2014471,Pruritus,24.10,Rash papular,24.10,Urticaria,24.10,,,,
+2014472,Product storage error,24.10,,,,,,,,
+2014473,Arthralgia,24.10,Chest discomfort,24.10,Chest pain,24.10,Condition aggravated,24.10,Extrasystoles,24.10
+2014473,Heart rate irregular,24.10,Joint swelling,24.10,Musculoskeletal stiffness,24.10,Periorbital swelling,24.10,Peripheral swelling,24.10
+2014474,Acne,24.10,Alopecia,24.10,Biopsy,24.10,Blister,24.10,Burning sensation,24.10
+2014474,Erythema,24.10,Pruritus,24.10,Skin ulcer,24.10,Swelling,24.10,,
+2014475,Blood culture,24.10,Blood immunoglobulin G,24.10,Death,24.10,Electrophoresis protein,24.10,Full blood count,24.10
+2014475,Immunoglobulins,24.10,Light chain analysis,24.10,Metabolic function test,24.10,Respiratory failure,24.10,Sinus tachycardia,24.10
+2014476,Dizziness,24.10,Hyperhidrosis,24.10,Syncope,24.10,,,,
+2014477,Burning sensation,24.10,Hypoaesthesia,24.10,Immediate post-injection reaction,24.10,Incorrect route of product administration,24.10,Injection site pain,24.10
+2014477,Mobility decreased,24.10,Paraesthesia,24.10,,,,,,
+2014478,Product storage error,24.10,,,,,,,,
+2014479,Angina pectoris,24.10,Chest discomfort,24.10,Fatigue,24.10,,,,
+2014480,COVID-19,24.10,Cough,24.10,Dyspnoea,24.10,Fatigue,24.10,Influenza like illness,24.10
+2014480,Oropharyngeal pain,24.10,Pyrexia,24.10,SARS-CoV-2 test positive,24.10,,,,
+2014481,Product storage error,24.10,,,,,,,,
+2014482,Ageusia,24.10,Anosmia,24.10,COVID-19,24.10,Chills,24.10,Cough,24.10
+2014482,Dyspnoea,24.10,Fatigue,24.10,Pyrexia,24.10,,,,
+2014483,Dermatitis,24.10,Erythema,24.10,Feeling hot,24.10,Flushing,24.10,Loss of personal independence in daily activities,24.10
+2014483,Pruritus,24.10,Urticaria,24.10,,,,,,
+2014485,Lymph node pain,24.10,Lymphadenopathy,24.10,,,,,,
+2014486,Product storage error,24.10,,,,,,,,
+2014487,Abnormal faeces,24.10,Parosmia,24.10,Skin odour abnormal,24.10,Taste disorder,24.10,,
+2014488,Pain in extremity,24.10,,,,,,,,
+2014489,Arthralgia,24.10,Injection site pain,24.10,,,,,,
+2014490,Headache,24.10,Heavy menstrual bleeding,24.10,Menstruation irregular,24.10,Muscle spasms,24.10,,
+2014491,Diarrhoea,24.10,Dyspnoea,24.10,Pyrexia,24.10,Vomiting,24.10,Weight decreased,24.10
+2014492,Expired product administered,24.10,,,,,,,,
+2014493,Alanine aminotransferase increased,24.10,Aspartate aminotransferase normal,24.10,Blood folate,24.10,Blood magnesium normal,24.10,C-reactive protein normal,24.10
+2014493,Electric shock sensation,24.10,Electrocardiogram normal,24.10,Full blood count normal,24.10,Injection site pain,24.10,Mobility decreased,24.10
+2014493,Pain,24.10,Red blood cell count normal,24.10,Tremor,24.10,Vitamin B12 normal,24.10,,
+2014494,Herpes zoster,24.10,Pain in extremity,24.10,Rash,24.10,,,,
+2014495,Product storage error,24.10,,,,,,,,
+2014496,COVID-19,24.10,COVID-19 pneumonia,24.10,Chest X-ray abnormal,24.10,Cholelithiasis,24.10,Computerised tomogram thorax abnormal,24.10
+2014496,Cough,24.10,Dyspnoea,24.10,Lung consolidation,24.10,Pyrexia,24.10,Renal atrophy,24.10
+2014497,Blood follicle stimulating hormone normal,24.10,Blood luteinising hormone,24.10,Blood thyroid stimulating hormone normal,24.10,Hyperhidrosis,24.10,Metabolic function test normal,24.10
+2014497,Night sweats,24.10,Thyroxine normal,24.10,,,,,,
+2014498,Angina pectoris,24.10,Dyspnoea,24.10,Dysstasia,24.10,Head discomfort,24.10,Heart rate increased,24.10
+2014498,Hyperhidrosis,24.10,Loss of consciousness,24.10,Mobility decreased,24.10,Nausea,24.10,Palpitations,24.10
+2014499,Product storage error,24.10,,,,,,,,
+2014501,Product storage error,24.10,,,,,,,,
+2014502,Rash,24.10,Rash pruritic,24.10,,,,,,
+2014503,Arthralgia,24.10,Pruritus,24.10,Urticaria,24.10,,,,
+2014504,Product storage error,24.10,,,,,,,,
+2014505,Lip swelling,24.10,Mouth ulceration,24.10,Salivary gland enlargement,24.10,Swelling face,24.10,Swollen tongue,24.10
+2014505,Tongue ulceration,24.10,,,,,,,,
+2014506,Product storage error,24.10,,,,,,,,
+2014507,Hypoaesthesia,24.10,,,,,,,,
+2014508,No adverse event,24.10,Product administered to patient of inappropriate age,24.10,,,,,,
+2014509,Tinnitus,24.10,,,,,,,,
+2014510,Arthritis,24.10,Herpes zoster,24.10,,,,,,
+2014511,Unevaluable event,24.10,,,,,,,,
+2014512,Product storage error,24.10,,,,,,,,
+2014513,COVID-19,24.10,Dyspnoea,24.10,Fibrin D dimer,24.10,Myalgia,24.10,Productive cough,24.10
+2014513,SARS-CoV-2 test positive,24.10,,,,,,,,
+2014514,Product storage error,24.10,,,,,,,,
+2014515,Angiogram cerebral abnormal,24.10,Cerebral venous sinus thrombosis,24.10,Headache,24.10,Nausea,24.10,Photophobia,24.10
+2014515,Vomiting,24.10,,,,,,,,
+2014516,Extra dose administered,24.10,,,,,,,,
+2014517,Extra dose administered,24.10,,,,,,,,
+2014518,Erythema,24.10,Pruritus,24.10,Urticaria,24.10,,,,
+2014519,Expired product administered,24.10,,,,,,,,
+2014521,Product storage error,24.10,,,,,,,,
+2014522,Autoscopy,24.10,Decreased appetite,24.10,Dizziness,24.10,Fatigue,24.10,Feeling abnormal,24.10
+2014522,Insomnia,24.10,Poor quality sleep,24.10,Somnolence,24.10,,,,
+2014523,Abdominal pain,24.10,COVID-19,24.10,Dyspnoea,24.10,SARS-CoV-2 test positive,24.10,,
+2014524,Product storage error,24.10,,,,,,,,
+2014525,Colitis,24.10,Haematochezia,24.10,Muscle spasms,24.10,Nausea,24.10,,
+2014526,Product storage error,24.10,,,,,,,,
+2014527,Chest discomfort,24.10,Dizziness,24.10,Dyspnoea,24.10,Electrocardiogram,24.10,Palpitations,24.10
+2014527,Tunnel vision,24.10,X-ray,24.10,,,,,,
+2014528,Urticaria,24.10,,,,,,,,
+2014529,Product storage error,24.10,,,,,,,,
+2014530,Burning mouth syndrome,24.10,,,,,,,,
+2014531,Blood pressure increased,24.10,Nausea,24.10,Pain,24.10,Pruritus,24.10,,
+2014532,Discomfort,24.10,Erythema,24.10,Pruritus,24.10,,,,
+2014533,Product storage error,24.10,,,,,,,,
+2014534,Atrial fibrillation,24.10,Blood test,24.10,Electrocardiogram,24.10,,,,
+2014535,Balance disorder,24.10,Dizziness,24.10,,,,,,
+2014536,Extra dose administered,24.10,,,,,,,,
+2014539,Incorrect dose administered,24.10,Product preparation issue,24.10,,,,,,
+2014541,Expired product administered,24.10,,,,,,,,
+2014542,Product storage error,24.10,,,,,,,,
+2014543,Unevaluable event,24.10,,,,,,,,
+2014544,Blood test,24.10,Chest X-ray,24.10,Chest pain,24.10,Electrocardiogram,24.10,,
+2014545,Dizziness,24.10,Dyspnoea,24.10,,,,,,
+2014546,Product storage error,24.10,,,,,,,,
+2014547,Blepharospasm,24.10,Blood test,24.10,Burning sensation,24.10,Erythema,24.10,Muscle contractions involuntary,24.10
+2014547,Neurological examination abnormal,24.10,Neuropathy peripheral,24.10,Paraesthesia,24.10,Tinnitus,24.10,,
+2014548,Expired product administered,24.10,,,,,,,,
+2014549,Product storage error,24.10,,,,,,,,
+2014550,Atrial fibrillation,24.10,Hypertension,24.10,Hypotension,24.10,Inflammation,24.10,Pain in extremity,24.10
+2014550,Palpitations,24.10,Presyncope,24.10,,,,,,
+2014551,No adverse event,24.10,Product storage error,24.10,,,,,,
+2014552,Oral mucosal eruption,24.10,Tongue eruption,24.10,,,,,,
+2014553,Product storage error,24.10,,,,,,,,
+2014554,Unevaluable event,24.10,,,,,,,,
+2014555,Crying,24.10,High-pitched crying,24.10,,,,,,
+2014556,Breast pain,24.10,Breast tenderness,24.10,Injection site erythema,24.10,Injection site pain,24.10,Injection site swelling,24.10
+2014556,Lymph node pain,24.10,Lymphadenopathy,24.10,Mastitis,24.10,,,,
+2014558,Product storage error,24.10,,,,,,,,
+2014559,Urticaria,24.10,,,,,,,,
+2014560,Product storage error,24.10,,,,,,,,
+2014561,Expired product administered,24.10,No adverse event,24.10,,,,,,
+2014562,Expired product administered,24.10,,,,,,,,
+2014563,Product storage error,24.10,,,,,,,,
+2014564,Eye movement disorder,24.10,Feeling cold,24.10,Loss of consciousness,24.10,Pallor,24.10,Unresponsive to stimuli,24.10
+2014565,Inappropriate schedule of product administration,24.10,No adverse event,24.10,,,,,,
+2014566,Unevaluable event,24.10,,,,,,,,
+2014567,Asthma,24.10,Condition aggravated,24.10,Erythema,24.10,Nausea,24.10,Peripheral swelling,24.10
+2014567,Pruritus,24.10,Urticaria,24.10,,,,,,
+2014568,Cardiac dysfunction,24.10,Endotracheal intubation,24.10,Paralysis,24.10,,,,
+2014569,Blood pH decreased,24.10,COVID-19,24.10,Confusional state,24.10,Cyanosis,24.10,Hypercapnia,24.10
+2014569,Hypoxia,24.10,PCO2 increased,24.10,Positive airway pressure therapy,24.10,SARS-CoV-2 test positive,24.10,,
+2014570,COVID-19,24.10,SARS-CoV-2 test positive,24.10,,,,,,
+2014571,Angle closure glaucoma,24.10,Eye pain,24.10,Headache,24.10,Nausea,24.10,Vision blurred,24.10
+2014572,Cough,24.10,Diarrhoea,24.10,Dyspnoea,24.10,Headache,24.10,Oropharyngeal pain,24.10
+2014572,Pain,24.10,Sinus congestion,24.10,,,,,,
+2014573,Abdominal pain upper,24.10,Cardiac pacemaker insertion,24.10,Implantable cardiac monitor insertion,24.10,Loss of consciousness,24.10,Syncope,24.10
+2014574,Product storage error,24.10,,,,,,,,
+2014576,No adverse event,24.10,Product storage error,24.10,,,,,,
+2014577,Blood test,24.10,Burning sensation,24.10,Computerised tomogram head abnormal,24.10,Computerised tomogram neck,24.10,Computerised tomogram thorax abnormal,24.10
+2014577,Deafness,24.10,Differential white blood cell count normal,24.10,Ear swelling,24.10,Full blood count normal,24.10,Lymphadenopathy,24.10
+2014577,Pain in jaw,24.10,Tinnitus,24.10,X-ray dental normal,24.10,,,,
+2014578,Unevaluable event,24.10,,,,,,,,
+2014579,Unevaluable event,24.10,,,,,,,,
+2014580,Product storage error,24.10,,,,,,,,
+2014581,Blood test normal,24.10,Impaired work ability,24.10,Loss of personal independence in daily activities,24.10,Pruritus,24.10,Urticaria,24.10
+2014582,No adverse event,24.10,Product storage error,24.10,,,,,,
+2014583,Arthralgia,24.10,Asthenia,24.10,Fatigue,24.10,Headache,24.10,Mobility decreased,24.10
+2014583,Nausea,24.10,Pain,24.10,Vomiting,24.10,,,,
+2014584,Carpal tunnel decompression,24.10,Carpal tunnel syndrome,24.10,Movement disorder,24.10,Pain in extremity,24.10,,
+2014585,Back pain,24.10,COVID-19,24.10,Cardiac disorder,24.10,Cough,24.10,Pyrexia,24.10
+2014585,SARS-CoV-2 test positive,24.10,,,,,,,,
+2014586,Expired product administered,24.10,No adverse event,24.10,,,,,,
+2014587,Blood test,24.10,Dizziness,24.10,Impaired driving ability,24.10,Laboratory test,24.10,Visual impairment,24.10
+2014588,COVID-19,24.10,Cough,24.10,Dyspnoea,24.10,Pyrexia,24.10,SARS-CoV-2 test positive,24.10
+2014589,Dysmenorrhoea,24.10,Heavy menstrual bleeding,24.10,Oligomenorrhoea,24.10,,,,
+2014590,Incorrect dose administered,24.10,No adverse event,24.10,,,,,,
+2014591,Alopecia,24.10,Anxiety,24.10,Back pain,24.10,Blood test,24.10,Chills,24.10
+2014591,Dehydration,24.10,Exercise tolerance decreased,24.10,Fatigue,24.10,Gynaecological examination,24.10,Headache,24.10
+2014591,Hyperhidrosis,24.10,Hypertension,24.10,Kidney infection,24.10,Oxygen saturation decreased,24.10,Renal disorder,24.10
+2014591,SARS-CoV-2 test negative,24.10,Urinary tract infection,24.10,Urine analysis,24.10,Vaccination complication,24.10,,
+2014593,Extra dose administered,24.10,No adverse event,24.10,,,,,,
+2014594,Expired product administered,24.10,No adverse event,24.10,,,,,,
+2014595,Immediate post-injection reaction,24.10,Syncope,24.10,,,,,,
+2014596,Product storage error,24.10,,,,,,,,
+2014597,Vasodilatation,24.10,,,,,,,,
+2014598,Amenorrhoea,24.10,Chills,24.10,Fatigue,24.10,Hyperpyrexia,24.10,Lymphadenopathy,24.10
+2014598,Malaise,24.10,Myalgia,24.10,Nausea,24.10,Pain in extremity,24.10,Pyrexia,24.10
+2014599,COVID-19,24.10,SARS-CoV-2 test positive,24.10,,,,,,
+2014600,Hypoaesthesia,24.10,Injection site mass,24.10,Injection site swelling,24.10,Injection site warmth,24.10,Nausea,24.10
+2014600,Pain in extremity,24.10,,,,,,,,
+2014601,Heavy menstrual bleeding,24.10,Menstruation irregular,24.10,Muscle spasms,24.10,Vaginal discharge,24.10,,
+2014602,Pain,24.10,Product administered to patient of inappropriate age,24.10,,,,,,
+2014603,Cough,24.10,Cyanosis,24.10,Respiratory arrest,24.10,,,,
+2014604,Injected limb mobility decreased,24.10,Injection site pain,24.10,Injection site swelling,24.10,,,,
+2014606,Chills,24.10,Condition aggravated,24.10,Dyspnoea,24.10,Headache,24.10,Hyperhidrosis,24.10
+2014606,Pain,24.10,Productive cough,24.10,Sinus congestion,24.10,Sneezing,24.10,Sputum discoloured,24.10
+2014607,Cellulitis,24.10,,,,,,,,
+2014608,Inappropriate schedule of product administration,24.10,,,,,,,,
+2014609,Inappropriate schedule of product administration,24.10,,,,,,,,
+2014610,Asthenia,24.10,Chills,24.10,Dizziness,24.10,Hypertension,24.10,Neck pain,24.10
+2014610,Pain in extremity,24.10,Palpitations,24.10,Pyrexia,24.10,Swelling,24.10,,
+2014611,Expired product administered,24.10,No adverse event,24.10,,,,,,
+2014612,Seizure,24.10,,,,,,,,
+2014613,Product storage error,24.10,,,,,,,,
+2014614,Dizziness,24.10,Headache,24.10,Hyperhidrosis,24.10,,,,
+2014615,Electrocardiogram ambulatory,24.10,Feeling abnormal,24.10,Impaired work ability,24.10,Laboratory test,24.10,,
+2014616,Ageusia,24.10,Anosmia,24.10,Asthenia,24.10,Headache,24.10,Productive cough,24.10
+2014616,Pyrexia,24.10,Rhinorrhoea,24.10,SARS-CoV-2 test negative,24.10,,,,
+2014617,Injection site pain,24.10,,,,,,,,
+2014618,COVID-19,24.10,Cough,24.10,Headache,24.10,Myalgia,24.10,Oropharyngeal pain,24.10
+2014618,Rhinorrhoea,24.10,SARS-CoV-2 test positive,24.10,,,,,,
+2014619,Angiogram abnormal,24.10,Computerised tomogram head,24.10,Dural arteriovenous fistula,24.10,Ear pain,24.10,Eustachian tube dysfunction,24.10
+2014619,Headache,24.10,Magnetic resonance imaging head,24.10,Otitis media acute,24.10,Tinnitus,24.10,,
+2014620,Interchange of vaccine products,24.10,No adverse event,24.10,,,,,,
+2014622,Acoustic stimulation tests,24.10,Tinnitus,24.10,,,,,,
+2014624,COVID-19,24.10,SARS-CoV-2 test positive,24.10,,,,,,
+2014625,Anxiety,24.10,Arthralgia,24.10,Joint swelling,24.10,Pain,24.10,Pain in extremity,24.10
+2014626,Rash,24.10,,,,,,,,
+2014627,Product storage error,24.10,,,,,,,,
+2014630,COVID-19,24.10,SARS-CoV-2 test positive,24.10,,,,,,
+2014632,Injection site erythema,24.10,Injection site pain,24.10,Injection site swelling,24.10,,,,
+2014633,COVID-19,24.10,Cough,24.10,Diarrhoea,24.10,SARS-CoV-2 test positive,24.10,,
+2014634,Angioedema,24.10,COVID-19,24.10,Rash,24.10,,,,
+2014635,Tension headache,24.10,Trismus,24.10,,,,,,
+2014636,Tinnitus,24.10,,,,,,,,
+2014637,Asthenia,24.10,Chills,24.10,Feeling cold,24.10,Headache,24.10,Injection site pain,24.10
+2014637,Pain,24.10,,,,,,,,
+2014638,Heart rate increased,24.10,Heavy menstrual bleeding,24.10,Lymph node pain,24.10,Lymphadenopathy,24.10,Pain,24.10
+2014638,Palpitations,24.10,,,,,,,,
+2014641,Abdominal pain upper,24.10,Chills,24.10,Fatigue,24.10,Injection site cellulitis,24.10,Nausea,24.10
+2014641,Pyrexia,24.10,,,,,,,,
+2014642,Injection site urticaria,24.10,Pruritus,24.10,,,,,,
+2014643,Interchange of vaccine products,24.10,Lymphadenopathy,24.10,,,,,,
+2014644,Asthenia,24.10,Blood test normal,24.10,C-reactive protein increased,24.10,Chondrocalcinosis pyrophosphate,24.10,Inflammation,24.10
+2014644,Pain,24.10,,,,,,,,
+2014645,Asthenia,24.10,Chills,24.10,Dizziness,24.10,Headache,24.10,Hyperhidrosis,24.10
+2014645,Injection site pain,24.10,Lymphadenopathy,24.10,Nausea,24.10,Pain,24.10,Pyrexia,24.10
+2014645,Vomiting,24.10,,,,,,,,
+2014646,Unevaluable event,24.10,,,,,,,,
+2014647,Product storage error,24.10,,,,,,,,
+2014648,Diarrhoea,24.10,Fatigue,24.10,Feeling abnormal,24.10,Headache,24.10,Loss of consciousness,24.10
+2014648,Nausea,24.10,,,,,,,,
+2014649,Abdominal distension,24.10,Chest discomfort,24.10,Electrocardiogram,24.10,Feeling abnormal,24.10,Painful respiration,24.10
+2014650,Condition aggravated,24.10,Fatigue,24.10,Hypotension,24.10,,,,
+2014651,Arthralgia,24.10,Back pain,24.10,Chest pain,24.10,Chills,24.10,Dysstasia,24.10
+2014651,Gait inability,24.10,Lip swelling,24.10,Mobility decreased,24.10,Myalgia,24.10,Pelvic pain,24.10
+2014651,Pruritus,24.10,Pyrexia,24.10,Swollen tongue,24.10,,,,
+2014652,Circumstance or information capable of leading to medication error,24.10,Incorrect dose administered,24.10,Product administration error,24.10,,,,
+2014653,Chills,24.10,Diarrhoea,24.10,Fatigue,24.10,Myalgia,24.10,Pyrexia,24.10
+2014654,Fatigue,24.10,Headache,24.10,Nausea,24.10,Palpitations,24.10,,
+2014655,Pyrexia,24.10,,,,,,,,
+2014656,Burning sensation,24.10,COVID-19,24.10,Dehydration,24.10,Eye pain,24.10,Fatigue,24.10
+2014656,Feeling hot,24.10,Full blood count,24.10,Haematemesis,24.10,Headache,24.10,Hypoaesthesia,24.10
+2014656,Lymph node pain,24.10,Nausea,24.10,Pain,24.10,SARS-CoV-2 test positive,24.10,Seizure,24.10
+2014656,Tinnitus,24.10,Vomiting,24.10,,,,,,
+2014658,Underdose,24.10,,,,,,,,
+2014659,Hypoaesthesia,24.10,Limb discomfort,24.10,Paraesthesia,24.10,Pharyngeal paraesthesia,24.10,Urticaria,24.10
+2014660,Burning sensation,24.10,Discomfort,24.10,Injection site swelling,24.10,Pain,24.10,,
+2014661,Product storage error,24.10,,,,,,,,
+2014662,Confusional state,24.10,Disturbance in attention,24.10,Dizziness,24.10,Fatigue,24.10,Impaired work ability,24.10
+2014663,Computerised tomogram head,24.10,Computerised tomogram normal,24.10,Electrocardiogram normal,24.10,Full blood count normal,24.10,Gait disturbance,24.10
+2014663,Grip strength decreased,24.10,Hypoaesthesia,24.10,Influenza A virus test negative,24.10,Influenza B virus test,24.10,Metabolic function test,24.10
+2014663,Neuropathy peripheral,24.10,Respiratory syncytial virus test positive,24.10,SARS-CoV-2 test negative,24.10,,,,
+2014664,C-reactive protein,24.10,Chest pain,24.10,Full blood count,24.10,Red blood cell sedimentation rate,24.10,Troponin T,24.10
+2014665,Burning sensation,24.10,Injection site erythema,24.10,Injection site swelling,24.10,Injection site warmth,24.10,Pain,24.10
+2014665,Pruritus,24.10,Throat tightness,24.10,,,,,,
+2014666,Anxiety,24.10,Muscle twitching,24.10,Speech disorder,24.10,,,,
+2014667,Product administered to patient of inappropriate age,24.10,,,,,,,,
+2014668,Asthenia,24.10,Chills,24.10,Fatigue,24.10,Gait disturbance,24.10,Headache,24.10
+2014668,Hyperhidrosis,24.10,Lymphadenopathy,24.10,Pain,24.10,Pyrexia,24.10,,
+2014670,Peripheral swelling,24.10,Skin warm,24.10,,,,,,
+2014671,Chills,24.10,Dyspnoea,24.10,Hyperhidrosis,24.10,Immediate post-injection reaction,24.10,Nausea,24.10
+2014671,Vertigo,24.10,,,,,,,,
+2014672,COVID-19,24.10,Influenza A virus test negative,24.10,Influenza B virus test,24.10,Malaise,24.10,Respiratory syncytial virus test negative,24.10
+2014672,SARS-CoV-2 test positive,24.10,,,,,,,,
+2014673,Tinnitus,24.10,,,,,,,,
+2014675,Unevaluable event,24.10,,,,,,,,
+2014676,Chills,24.10,Headache,24.10,Hyperhidrosis,24.10,Nausea,24.10,Pain,24.10
+2014676,Pyrexia,24.10,Tremor,24.10,Vomiting,24.10,,,,
+2014677,Amnesia,24.10,Apathy,24.10,Aphasia,24.10,Bradykinesia,24.10,Confusional state,24.10
+2014677,Disturbance in attention,24.10,Electroencephalogram normal,24.10,Exercise tolerance decreased,24.10,Fatigue,24.10,Feeling abnormal,24.10
+2014677,Impatience,24.10,Magnetic resonance imaging head,24.10,Magnetic resonance imaging normal,24.10,Sleep study normal,24.10,Somnolence,24.10
+2014677,Thinking abnormal,24.10,,,,,,,,
+2014678,Product storage error,24.10,,,,,,,,
+2014679,Product storage error,24.10,,,,,,,,
+2014680,Dizziness,24.10,Ear discomfort,24.10,Headache,24.10,Heart rate increased,24.10,Hypertension,24.10
+2014680,Hypoaesthesia,24.10,Hypoglycaemia,24.10,Oropharyngeal discomfort,24.10,Sensation of foreign body,24.10,Tinnitus,24.10
+2014681,Allergy test,24.10,Pruritus,24.10,Urticaria,24.10,,,,
+2014682,Cough,24.10,Fatigue,24.10,Gastrooesophageal reflux disease,24.10,Musculoskeletal pain,24.10,Nausea,24.10
+2014682,Pain,24.10,Pain in extremity,24.10,Pyrexia,24.10,SARS-CoV-2 test,24.10,Vomiting,24.10
+2014683,Contusion,24.10,Pain,24.10,,,,,,
+2014684,Chills,24.10,Cough,24.10,Dry throat,24.10,Fatigue,24.10,Heart rate increased,24.10
+2014684,Pain,24.10,Palpitations,24.10,Pyrexia,24.10,Sinus congestion,24.10,Sneezing,24.10
+2014685,Unevaluable event,24.10,,,,,,,,
+2014686,Cough,24.10,Headache,24.10,Nasal congestion,24.10,Oropharyngeal pain,24.10,Pain,24.10
+2014686,SARS-CoV-2 test positive,24.10,,,,,,,,
+2014687,Syncope,24.10,,,,,,,,
+2014688,Facial paralysis,24.10,Pain in extremity,24.10,Pyrexia,24.10,,,,
+2014689,Product storage error,24.10,,,,,,,,
+2014690,Chills,24.10,Loss of consciousness,24.10,Nausea,24.10,Retching,24.10,Syncope,24.10
+2014691,Arthralgia,24.10,Dyspnoea,24.10,Fatigue,24.10,Pain,24.10,Pyrexia,24.10
+2014692,Asthenia,24.10,Electromyogram,24.10,Gait disturbance,24.10,Guillain-Barre syndrome,24.10,Hypoaesthesia,24.10
+2014692,Nerve conduction studies,24.10,Pain,24.10,Paraesthesia,24.10,,,,
+2014694,Pruritus,24.10,Rash,24.10,Urticaria,24.10,,,,
+2014695,Erythema,24.10,Mass,24.10,Pain,24.10,,,,
+2014696,Death,24.10,Myocardial infarction,24.10,,,,,,
+2014697,Cardiac monitoring,24.10,Echocardiogram,24.10,Gastritis,24.10,Oesophagogastroduodenoscopy,24.10,Palpitations,24.10
+2014698,Arthralgia,24.10,Fatigue,24.10,Feeling abnormal,24.10,Headache,24.10,Injection site erythema,24.10
+2014698,Injection site pain,24.10,Injection site swelling,24.10,Injection site warmth,24.10,Pain,24.10,Pyrexia,24.10
+2014699,Unevaluable event,24.10,,,,,,,,
+2014700,Incorrect dose administered,24.10,,,,,,,,
+2014701,Atrial fibrillation,24.10,Blood test abnormal,24.10,COVID-19,24.10,Dyspnoea,24.10,Electrocardiogram normal,24.10
+2014701,Heart rate increased,24.10,Malaise,24.10,Myocardial infarction,24.10,SARS-CoV-2 test positive,24.10,,
+2014702,Cognitive disorder,24.10,Feeling abnormal,24.10,Memory impairment,24.10,,,,
+2014703,Incorrect dose administered,24.10,No adverse event,24.10,,,,,,
+2014704,COVID-19,24.10,Chills,24.10,Cough,24.10,SARS-CoV-2 test positive,24.10,,
+2014705,Asthenia,24.10,Dizziness,24.10,Haematoma,24.10,Mass,24.10,Pain,24.10
+2014705,Ultrasound scan abnormal,24.10,Urticaria,24.10,Vomiting,24.10,,,,
+2014706,Product preparation issue,24.10,,,,,,,,
+2014707,Incorrect dose administered,24.10,,,,,,,,
+2014708,Injection site reaction,24.10,Injection site scab,24.10,,,,,,
+2014709,Asthenia,24.10,Breast pain,24.10,Mobility decreased,24.10,Pain in extremity,24.10,Spinal pain,24.10
+2014710,Unevaluable event,24.10,,,,,,,,
+2014712,Arthralgia,24.10,Myalgia,24.10,,,,,,
+2014713,Back pain,24.10,Menstrual disorder,24.10,Myalgia,24.10,Suppressed lactation,24.10,,
+2014714,Incorrect dose administered,24.10,,,,,,,,
+2014715,Cough,24.10,Diarrhoea,24.10,SARS-CoV-2 test positive,24.10,,,,
+2014716,Incorrect dose administered,24.10,,,,,,,,
+2014717,Extra dose administered,24.10,Interchange of vaccine products,24.10,,,,,,
+2014718,Product administered to patient of inappropriate age,24.10,,,,,,,,
+2014719,Dysmenorrhoea,24.10,,,,,,,,
+2014720,COVID-19,24.10,Infection,24.10,SARS-CoV-2 test positive,24.10,,,,
+2014721,Acute respiratory distress syndrome,24.10,COVID-19 pneumonia,24.10,Dialysis,24.10,Endotracheal intubation,24.10,Mechanical ventilation,24.10
+2014721,Renal failure,24.10,,,,,,,,
+2014722,Arthralgia,24.10,Injection site pain,24.10,Musculoskeletal pain,24.10,Neck pain,24.10,Pain,24.10
+2014722,Pain in extremity,24.10,,,,,,,,
+2014723,Arthralgia,24.10,Chills,24.10,Dyspnoea,24.10,Laboratory test,24.10,Lethargy,24.10
+2014723,Orthostatic hypertension,24.10,Pain,24.10,Pyrexia,24.10,,,,
+2014724,Arthralgia,24.10,Chills,24.10,Discomfort,24.10,Headache,24.10,Insomnia,24.10
+2014724,Malaise,24.10,Mobility decreased,24.10,Pain,24.10,Periarthritis,24.10,,
+2014725,Bell's palsy,24.10,,,,,,,,
+2014726,Abdominal discomfort,24.10,Diarrhoea,24.10,Nausea,24.10,,,,
+2014727,Underdose,24.10,,,,,,,,
+2014728,Menstruation irregular,24.10,Polymenorrhoea,24.10,,,,,,
+2014730,Abdominal pain upper,24.10,Fatigue,24.10,Influenza virus test negative,24.10,Pyrexia,24.10,SARS-CoV-2 test,24.10
+2014730,SARS-CoV-2 test negative,24.10,Streptococcus test negative,24.10,Vomiting,24.10,,,,
+2014731,COVID-19,24.10,Cough,24.10,Headache,24.10,Oropharyngeal pain,24.10,Pyrexia,24.10
+2014731,SARS-CoV-2 test positive,24.10,,,,,,,,
+2014732,Unevaluable event,24.10,,,,,,,,
+2014734,Product administered to patient of inappropriate age,24.10,,,,,,,,
+2014735,Chest pain,24.10,Cough,24.10,Pain,24.10,Pain in extremity,24.10,Pyrexia,24.10
+2014735,SARS-CoV-2 test negative,24.10,Streptococcus test negative,24.10,,,,,,
+2014737,Abdominal pain,24.10,Asymptomatic COVID-19,24.10,Pelvic pain,24.10,SARS-CoV-2 test positive,24.10,,
+2014738,Asthenia,24.10,COVID-19,24.10,Chest X-ray normal,24.10,Confusional state,24.10,Death,24.10
+2014738,Failure to thrive,24.10,General physical health deterioration,24.10,Hypophagia,24.10,Metabolic encephalopathy,24.10,SARS-CoV-2 test positive,24.10
+2014739,Chest discomfort,24.10,Cough,24.10,Headache,24.10,Lethargy,24.10,Mobility decreased,24.10
+2014739,Nasal congestion,24.10,Pain,24.10,Pyrexia,24.10,SARS-CoV-2 test,24.10,Sneezing,24.10
+2014740,COVID-19,24.10,Headache,24.10,Respiratory tract congestion,24.10,SARS-CoV-2 test positive,24.10,,
+2014741,Anaphylactic reaction,24.10,,,,,,,,
+2014742,Dyspnoea,24.10,Laboratory test abnormal,24.10,Lymphadenopathy,24.10,,,,
+2014743,Chest pain,24.10,Dizziness,24.10,Nausea,24.10,Palpitations,24.10,,
+2014744,Blindness,24.10,Blood immunoglobulin E increased,24.10,Blood test,24.10,Cardiac monitoring,24.10,Contusion,24.10
+2014744,Dizziness,24.10,Echocardiogram,24.10,Erythema,24.10,Fall,24.10,Head injury,24.10
+2014744,Hyperhidrosis,24.10,Loss of consciousness,24.10,Photopsia,24.10,Pruritus,24.10,Skin disorder,24.10
+2014744,Skin irritation,24.10,Skin swelling,24.10,Tinnitus,24.10,Urine analysis,24.10,Urticaria,24.10
+2014744,White blood cell count increased,24.10,,,,,,,,
+2014745,COVID-19,24.10,Cough,24.10,Dyspnoea,24.10,Respiratory tract congestion,24.10,SARS-CoV-2 test positive,24.10
+2014746,Chills,24.10,Erythema,24.10,Fatigue,24.10,Headache,24.10,Nausea,24.10
+2014746,Nodule,24.10,Pyrexia,24.10,Swelling,24.10,,,,
+2014747,Product administered to patient of inappropriate age,24.10,,,,,,,,
+2014748,Product storage error,24.10,,,,,,,,
+2014749,Vision blurred,24.10,,,,,,,,
+2014750,Extra dose administered,24.10,,,,,,,,
+2014751,COVID-19,24.10,Dyspnoea,24.10,Illness,24.10,Product dose omission issue,24.10,SARS-CoV-2 test positive,24.10
+2014752,Fatigue,24.10,Nausea,24.10,Pyrexia,24.10,,,,
+2014753,COVID-19,24.10,Cough,24.10,Respiratory tract congestion,24.10,SARS-CoV-2 test positive,24.10,,
+2014754,Dysmenorrhoea,24.10,Heavy menstrual bleeding,24.10,Menstrual disorder,24.10,Parosmia,24.10,Taste disorder,24.10
+2014754,Thrombosis,24.10,,,,,,,,
+2014755,Angiopathy,24.10,Antibody test negative,24.10,Dry skin,24.10,Eczema,24.10,Laboratory test,24.10
+2014755,Peripheral coldness,24.10,Rash,24.10,Red blood cell sedimentation rate increased,24.10,Red blood cell sedimentation rate normal,24.10,,
+2014756,Dizziness,24.10,,,,,,,,
+2014757,Chills,24.10,Decreased appetite,24.10,Diarrhoea,24.10,Nausea,24.10,Vertigo,24.10
+2014757,Vomiting,24.10,,,,,,,,
+2014758,Blood cholesterol increased,24.10,Blood test,24.10,Chills,24.10,Dizziness,24.10,Headache,24.10
+2014758,Pain,24.10,Palpitations,24.10,Pyrexia,24.10,,,,
+2014759,Blood test,24.10,Breast mass,24.10,Immediate post-injection reaction,24.10,Lymphadenitis,24.10,Magnetic resonance imaging,24.10
+2014759,Mammogram,24.10,Maternal exposure during breast feeding,24.10,Menstrual disorder,24.10,Suppressed lactation,24.10,Ultrasound breast,24.10
+2014759,Ultrasound scan,24.10,,,,,,,,
+2014760,COVID-19,24.10,Cough,24.10,SARS-CoV-2 test positive,24.10,,,,
+2014761,Unevaluable event,24.10,,,,,,,,
+2014762,Ageusia,24.10,Anosmia,24.10,COVID-19,24.10,Cough,24.10,Diarrhoea,24.10
+2014762,Headache,24.10,Nausea,24.10,Pyrexia,24.10,SARS-CoV-2 test positive,24.10,,
+2014763,Arthralgia,24.10,Headache,24.10,Injection site erythema,24.10,Injection site pain,24.10,Injection site swelling,24.10
+2014763,Lymphadenopathy,24.10,Tinnitus,24.10,,,,,,
+2014764,Computerised tomogram,24.10,Magnetic resonance imaging,24.10,Seizure,24.10,,,,
+2014765,Erythema,24.10,Skin burning sensation,24.10,Urticaria,24.10,,,,
+2014766,Incorrect product formulation administered,24.10,,,,,,,,
+2014767,Dyskinesia,24.10,Hypoaesthesia,24.10,Lymphadenopathy,24.10,Magnetic resonance imaging head normal,24.10,Pain in extremity,24.10
+2014767,Tremor,24.10,,,,,,,,
+2014768,COVID-19,24.10,Confusional state,24.10,Death,24.10,Hypoxia,24.10,Pyrexia,24.10
+2014768,SARS-CoV-2 test positive,24.10,Sepsis,24.10,,,,,,
+2014769,COVID-19,24.10,Dyspnoea,24.10,Hypoxia,24.10,SARS-CoV-2 test positive,24.10,,
+2014770,Dizziness,24.10,Migraine with aura,24.10,,,,,,
+2014771,Electrocardiogram ST segment elevation,24.10,Intensive care,24.10,Myocarditis,24.10,Pericarditis,24.10,Troponin increased,24.10
+2014772,Arthralgia,24.10,Axillary pain,24.10,Back pain,24.10,Neck pain,24.10,Pain,24.10
+2014772,Pain in extremity,24.10,Peripheral swelling,24.10,Swelling,24.10,,,,
+2014773,Chills,24.10,Cough,24.10,Gene mutation,24.10,Malaise,24.10,Oropharyngeal pain,24.10
+2014774,Dysphagia,24.10,Dyspnoea,24.10,Pruritus,24.10,Urticaria,24.10,,
+2014775,Product storage error,24.10,,,,,,,,
+2014776,Myalgia,24.10,Pyrexia,24.10,Testicular pain,24.10,Tinnitus,24.10,,
+2014777,Incorrect dose administered,24.10,,,,,,,,
+2014779,COVID-19,24.10,Chills,24.10,Cough,24.10,Dyspnoea,24.10,Myalgia,24.10
+2014779,Pyrexia,24.10,SARS-CoV-2 test positive,24.10,,,,,,
+2014780,COVID-19,24.10,Device related infection,24.10,Hypoxia,24.10,Pyrexia,24.10,SARS-CoV-2 test positive,24.10
+2014781,No adverse event,24.10,,,,,,,,
+2014782,Exposure during pregnancy,24.10,,,,,,,,
+2014783,C-reactive protein,24.10,Chest pain,24.10,Cough,24.10,Dyspnoea,24.10,Electrocardiogram,24.10
+2014783,Exercise tolerance decreased,24.10,Joint swelling,24.10,Palpitations,24.10,Troponin,24.10,,
+2014784,COVID-19,24.10,Cough,24.10,Dyspnoea,24.10,SARS-CoV-2 test positive,24.10,Stridor,24.10
+2014785,COVID-19,24.10,Exposure during pregnancy,24.10,Exposure to SARS-CoV-2,24.10,SARS-CoV-2 test negative,24.10,SARS-CoV-2 test positive,24.10
+2014786,Peripheral swelling,24.10,,,,,,,,
+2014787,Hypoaesthesia,24.10,Paraesthesia,24.10,,,,,,
+2014788,Interchange of vaccine products,24.10,,,,,,,,
+2014789,Dysmenorrhoea,24.10,Heavy menstrual bleeding,24.10,Menstruation irregular,24.10,,,,
+2014790,COVID-19,24.10,Respiratory tract congestion,24.10,Rhinorrhoea,24.10,SARS-CoV-2 test positive,24.10,,
+2014791,Product storage error,24.10,,,,,,,,
+2014792,Gait inability,24.10,Joint swelling,24.10,Peripheral swelling,24.10,Pyrexia,24.10,Ultrasound Doppler normal,24.10
+2014793,Unevaluable event,24.10,,,,,,,,
+2014794,Bone densitometry,24.10,Chills,24.10,Fatigue,24.10,Sneezing,24.10,Upper-airway cough syndrome,24.10
+2014795,Dizziness,24.10,Pallor,24.10,,,,,,
+2014796,COVID-19,24.10,Cough,24.10,Dyspnoea,24.10,Respiratory tract congestion,24.10,SARS-CoV-2 test positive,24.10
+2014798,COVID-19,24.10,Death,24.10,Dyspnoea,24.10,General physical health deterioration,24.10,SARS-CoV-2 test positive,24.10
+2014799,Nausea,24.10,Vomiting,24.10,,,,,,
+2014800,COVID-19,24.10,Chills,24.10,Cough,24.10,Diarrhoea,24.10,Dizziness,24.10
+2014800,SARS-CoV-2 test positive,24.10,,,,,,,,
+2014801,Chills,24.10,Fatigue,24.10,Headache,24.10,Nasal congestion,24.10,Pyrexia,24.10
+2014802,Pain in extremity,24.10,Vaccination site induration,24.10,Vaccination site swelling,24.10,Vaccination site warmth,24.10,,
+2014803,Erythema,24.10,Pruritus,24.10,,,,,,
+2014804,Feeling cold,24.10,Feeling hot,24.10,Hyperhidrosis,24.10,Paraesthesia,24.10,,
+2014805,Unevaluable event,24.10,,,,,,,,
+2014806,Heavy menstrual bleeding,24.10,Infertility female,24.10,Progesterone decreased,24.10,,,,
+2014807,Dyspnoea,24.10,Heart rate increased,24.10,Tachycardia,24.10,,,,
+2014808,COVID-19,24.10,Dyspnoea,24.10,Fatigue,24.10,Hypoxia,24.10,Myalgia,24.10
+2014808,SARS-CoV-2 test positive,24.10,,,,,,,,
+2014809,No adverse event,24.10,Product administered to patient of inappropriate age,24.10,,,,,,
+2014810,Underdose,24.10,,,,,,,,
+2014811,Abdominal discomfort,24.10,Chills,24.10,Headache,24.10,Malaise,24.10,Nausea,24.10
+2014811,Pain,24.10,Pyrexia,24.10,Vomiting,24.10,,,,
+2014812,Underdose,24.10,,,,,,,,
+2014813,COVID-19,24.10,SARS-CoV-2 test positive,24.10,,,,,,
+2014814,Headache,24.10,,,,,,,,
+2014815,Chills,24.10,Cough,24.10,Decreased appetite,24.10,Dyspnoea,24.10,Nausea,24.10
+2014815,Pain,24.10,Pyrexia,24.10,Vomiting,24.10,,,,
+2014816,Unevaluable event,24.10,,,,,,,,
+2014818,Cough,24.10,Dysphonia,24.10,Paraesthesia,24.10,,,,
+2014819,Abdominal pain,24.10,Body temperature increased,24.10,Incorrect dose administered,24.10,Injection site pain,24.10,Product preparation issue,24.10
+2014819,Vomiting,24.10,,,,,,,,
+2014820,Product storage error,24.10,,,,,,,,
+2014822,Blood folate normal,24.10,Blood iron decreased,24.10,Blood thyroid stimulating hormone normal,24.10,C-reactive protein normal,24.10,Full blood count abnormal,24.10
+2014822,Glycosylated haemoglobin increased,24.10,Haematocrit decreased,24.10,Haemoglobin decreased,24.10,Metabolic function test,24.10,Metabolic function test normal,24.10
+2014822,Muscle contractions involuntary,24.10,Muscle twitching,24.10,Nervous system disorder,24.10,Sleep disorder,24.10,Vibratory sense increased,24.10
+2014822,Vitamin B12 normal,24.10,,,,,,,,
+2014823,Eye swelling,24.10,Pruritus,24.10,Rash,24.10,Skin swelling,24.10,Swelling face,24.10
+2014824,COVID-19,24.10,Death,24.10,,,,,,
+2014825,Anticoagulant therapy,24.10,Aphasia,24.10,Arthralgia,24.10,Asthenia,24.10,Blood test,24.10
+2014825,Cerebrovascular accident,24.10,Computerised tomogram head abnormal,24.10,Gait inability,24.10,Immediate post-injection reaction,24.10,Impaired driving ability,24.10
+2014825,Inflammation,24.10,Joint swelling,24.10,Pain,24.10,Pain in extremity,24.10,Peripheral swelling,24.10
+2014825,Scan,24.10,Ultrasound scan,24.10,Walking aid user,24.10,,,,
+2014826,COVID-19,24.10,Exposure during pregnancy,24.10,Foetal growth restriction,24.10,Gestational diabetes,24.10,Labour induction,24.10
+2014826,SARS-CoV-2 test positive,24.10,,,,,,,,
+2014827,Underdose,24.10,,,,,,,,
+2014828,No adverse event,24.10,,,,,,,,
+2014829,Fatigue,24.10,Nasal congestion,24.10,Pain,24.10,Pyrexia,24.10,,
+2014830,COVID-19,24.10,Cough,24.10,Dizziness,24.10,Oropharyngeal pain,24.10,,
+2014831,Abdominal pain,24.10,COVID-19,24.10,Death,24.10,Endotracheal intubation,24.10,Explorative laparotomy,24.10
+2014831,General physical health deterioration,24.10,Mechanical ventilation,24.10,Positive airway pressure therapy,24.10,SARS-CoV-2 test positive,24.10,,
+2014832,Abdominal pain upper,24.10,Arthralgia,24.10,Back pain,24.10,Chills,24.10,Influenza like illness,24.10
+2014832,Malaise,24.10,Pain,24.10,,,,,,
+2014833,Asymptomatic COVID-19,24.10,SARS-CoV-2 test positive,24.10,,,,,,
+2014834,Ear discomfort,24.10,Lymphadenopathy,24.10,Middle ear effusion,24.10,Tinnitus,24.10,,
+2014835,Blood test,24.10,Chest pain,24.10,Echocardiogram,24.10,Electrocardiogram,24.10,Feeling abnormal,24.10
+2014835,Hyperhidrosis,24.10,Neck pain,24.10,,,,,,
+2014836,Vomiting,24.10,,,,,,,,
+2014837,Asthenia,24.10,Chills,24.10,Decreased appetite,24.10,Dyspnoea,24.10,Mobility decreased,24.10
+2014839,Asymptomatic COVID-19,24.10,COVID-19,24.10,SARS-CoV-2 test positive,24.10,,,,
+2014840,Chills,24.10,Fatigue,24.10,Pain in extremity,24.10,Pyrexia,24.10,,
+2014841,Immediate post-injection reaction,24.10,Joint range of motion decreased,24.10,Pain in extremity,24.10,,,,
+2014842,Asymptomatic COVID-19,24.10,SARS-CoV-2 test positive,24.10,,,,,,
+2014843,Blood pressure increased,24.10,Dyspnoea,24.10,Oxygen therapy,24.10,Throat tightness,24.10,Urticaria,24.10
+2014844,COVID-19,24.10,Death,24.10,,,,,,
+2014845,Pruritus,24.10,Rash,24.10,Urticaria,24.10,,,,
+2014846,COVID-19,24.10,Endotracheal intubation,24.10,,,,,,
+2014847,Inappropriate schedule of product administration,24.10,,,,,,,,
+2014848,Asthma,24.10,COVID-19,24.10,Condition aggravated,24.10,,,,
+2014849,Underdose,24.10,,,,,,,,
+2014850,Pruritus,24.10,Urticaria,24.10,,,,,,
+2014851,Dyspnoea,24.10,Exposure to SARS-CoV-2,24.10,Feeling hot,24.10,Productive cough,24.10,,
+2014852,Headache,24.10,Pain in extremity,24.10,Somnolence,24.10,,,,
+2014854,Dizziness,24.10,Hyperhidrosis,24.10,Mydriasis,24.10,Nausea,24.10,Pallor,24.10
+2014854,Throat irritation,24.10,,,,,,,,
+2014855,COVID-19,24.10,Cough,24.10,Dyspnoea,24.10,SARS-CoV-2 test positive,24.10,,
+2014857,COVID-19,24.10,Dyspnoea,24.10,Hypervolaemia,24.10,SARS-CoV-2 test positive,24.10,,
+2014858,COVID-19,24.10,Pyrexia,24.10,,,,,,
+2014859,Extra dose administered,24.10,,,,,,,,
+2014860,COVID-19,24.10,Chest X-ray abnormal,24.10,Endotracheal intubation,24.10,Lung opacity,24.10,Mechanical ventilation,24.10
+2014860,Pleural effusion,24.10,Positive airway pressure therapy,24.10,SARS-CoV-2 test positive,24.10,,,,
+2014861,COVID-19,24.10,Dyspnoea,24.10,Oedema peripheral,24.10,Productive cough,24.10,Pyrexia,24.10
+2014861,Respiratory tract congestion,24.10,Sputum discoloured,24.10,,,,,,
+2014862,Underdose,24.10,,,,,,,,
+2014863,COVID-19,24.10,Nasopharyngitis,24.10,SARS-CoV-2 test positive,24.10,,,,
+2014864,Adverse event,24.10,Arthralgia,24.10,Fatigue,24.10,Injection site pain,24.10,Mobility decreased,24.10
+2014864,Myalgia,24.10,Neuralgia,24.10,Pain,24.10,,,,
+2014865,COVID-19,24.10,Dyspnoea,24.10,Exposure to SARS-CoV-2,24.10,Hypoxia,24.10,Respiratory symptom,24.10
+2014865,SARS-CoV-2 test positive,24.10,,,,,,,,
+2014866,Aphthous ulcer,24.10,Vulval ulceration,24.10,,,,,,
+2014867,Cold sweat,24.10,Hot flush,24.10,Influenza like illness,24.10,Injection site pain,24.10,Lymphadenopathy,24.10
+2014867,Pyrexia,24.10,,,,,,,,
+2014868,COVID-19,24.10,SARS-CoV-2 test positive,24.10,,,,,,
+2014869,Disorientation,24.10,Dizziness,24.10,Fall,24.10,Headache,24.10,Pallor,24.10
+2014870,COVID-19,24.10,Exposure to SARS-CoV-2,24.10,Exposure via direct contact,24.10,SARS-CoV-2 test positive,24.10,,
+2014871,No adverse event,24.10,,,,,,,,
+2014872,Computerised tomogram,24.10,Nodule,24.10,Pain,24.10,Pain in extremity,24.10,Positron emission tomogram,24.10
+2014873,Chills,24.10,Electrocardiogram ambulatory,24.10,Electrocardiogram normal,24.10,Fatigue,24.10,Full blood count normal,24.10
+2014873,Lymphadenopathy,24.10,Metabolic function test normal,24.10,Pyrexia,24.10,Thyroid function test normal,24.10,,
+2014874,Cough,24.10,Dyspnoea,24.10,Dyspnoea exertional,24.10,Myalgia,24.10,SARS-CoV-2 test negative,24.10
+2014875,Tinnitus,24.10,,,,,,,,
+2014876,Incorrect route of product administration,24.10,Mobility decreased,24.10,,,,,,
+2014877,COVID-19,24.10,Dyspnoea,24.10,SARS-CoV-2 test positive,24.10,,,,
+2014878,Axillary pain,24.10,Chest pain,24.10,Injection site pain,24.10,,,,
+2014879,COVID-19,24.10,,,,,,,,
+2014880,Amenorrhoea,24.10,,,,,,,,
+2014881,No adverse event,24.10,Product administered to patient of inappropriate age,24.10,,,,,,
+2014882,COVID-19,24.10,Cough,24.10,Respiratory symptom,24.10,SARS-CoV-2 test positive,24.10,,
+2014883,Cough,24.10,Hypopnoea,24.10,SARS-CoV-2 test negative,24.10,,,,
+2014884,Asthenia,24.10,COVID-19,24.10,Diarrhoea,24.10,Dyspnoea,24.10,SARS-CoV-2 test positive,24.10
+2014885,Arterial occlusive disease,24.10,Computerised tomogram,24.10,Cough,24.10,Deep vein thrombosis,24.10,Dyspnoea,24.10
+2014885,Hypoaesthesia,24.10,Laboratory test,24.10,Pain,24.10,Peripheral swelling,24.10,Pulmonary embolism,24.10
+2014885,SARS-CoV-2 test negative,24.10,Thrombosis,24.10,Ultrasound Doppler abnormal,24.10,X-ray,24.10,,
+2014886,COVID-19,24.10,Muscle twitching,24.10,SARS-CoV-2 test positive,24.10,,,,
+2014887,Asthenia,24.10,COVID-19,24.10,Respiratory symptom,24.10,SARS-CoV-2 test positive,24.10,,
+2014888,Extra dose administered,24.10,,,,,,,,
+2014889,COVID-19,24.10,Cytomegalovirus infection,24.10,Proctalgia,24.10,,,,
+2014890,COVID-19,24.10,Cough,24.10,Fatigue,24.10,Feeling abnormal,24.10,Gait disturbance,24.10
+2014890,Hypotension,24.10,Productive cough,24.10,Rhinorrhoea,24.10,SARS-CoV-2 test positive,24.10,Therapeutic response unexpected,24.10
+2014892,COVID-19,24.10,Cough,24.10,Laboratory test normal,24.10,Nausea,24.10,Rhinorrhoea,24.10
+2014892,SARS-CoV-2 test positive,24.10,Vomiting,24.10,,,,,,
+2014893,Blood test,24.10,Headache,24.10,Musculoskeletal stiffness,24.10,Urticaria,24.10,,
+2014894,Product storage error,24.10,,,,,,,,
+2014895,No adverse event,24.10,Underdose,24.10,,,,,,
+2014897,Incorrect dose administered,24.10,Pain in extremity,24.10,,,,,,
+2014898,Burning sensation,24.10,Pruritus,24.10,Rash,24.10,Rash macular,24.10,Urticaria,24.10
+2014899,Eye movement disorder,24.10,,,,,,,,
+2014900,Asthenia,24.10,Nausea,24.10,Tremor,24.10,,,,
+2014901,Chest pain,24.10,,,,,,,,
+2014902,Fatigue,24.10,Head discomfort,24.10,Hot flush,24.10,Hyperhidrosis,24.10,Laboratory test,24.10
+2014902,Oropharyngeal pain,24.10,Respiratory tract congestion,24.10,Sneezing,24.10,,,,
+2014903,Bell's palsy,24.10,,,,,,,,
+2014904,Chills,24.10,Nausea,24.10,Pain,24.10,Pyrexia,24.10,Rhinorrhoea,24.10
+2014905,Blood test,24.10,Culture throat,24.10,"Ear, nose and throat examination",24.10,Full blood count,24.10,Oropharyngeal pain,24.10
+2014905,Pharyngeal erythema,24.10,Pharyngeal swelling,24.10,Thyroid function test,24.10,Tinnitus,24.10,Ultrasound scan,24.10
+2014905,X-ray,24.10,,,,,,,,
+2014906,Breast engorgement,24.10,Breast swelling,24.10,Erythema,24.10,Mastitis,24.10,Mastitis postpartum,24.10
+2014906,Maternal exposure during breast feeding,24.10,Pyrexia,24.10,Suppressed lactation,24.10,,,,
+2014907,Chills,24.10,Muscle tightness,24.10,Myalgia,24.10,Pain,24.10,Pyrexia,24.10
+2014907,Retching,24.10,Vomiting,24.10,,,,,,
+2014908,Injection site bruising,24.10,Injection site erythema,24.10,Injection site pain,24.10,Injection site warmth,24.10,,
+2014909,Underdose,24.10,,,,,,,,
+2014910,Acoustic stimulation tests,24.10,Migraine,24.10,Tinnitus,24.10,,,,
+2014911,Chest discomfort,24.10,Head discomfort,24.10,Heavy menstrual bleeding,24.10,Menstrual disorder,24.10,Pain in extremity,24.10
+2014911,Paraesthesia,24.10,,,,,,,,
+2014912,Incorrect dose administered,24.10,Product preparation issue,24.10,,,,,,
+2014913,Acute kidney injury,24.10,Cough,24.10,Dialysis,24.10,Pulmonary mass,24.10,Vasculitis,24.10
+2014914,Acute respiratory failure,24.10,COVID-19,24.10,COVID-19 pneumonia,24.10,Cough,24.10,Endotracheal intubation,24.10
+2014914,Intensive care,24.10,Pain,24.10,Pyrexia,24.10,Respiratory tract congestion,24.10,Rhinorrhoea,24.10
+2014914,SARS-CoV-2 test positive,24.10,,,,,,,,
+2014915,Tremor,24.10,,,,,,,,
+2014916,Syncope,24.10,,,,,,,,
+2014917,Incorrect dose administered,24.10,Product preparation issue,24.10,,,,,,
+2014918,Erythema,24.10,Hypoaesthesia,24.10,Hypoaesthesia oral,24.10,Obstructive airways disorder,24.10,Pruritus,24.10
+2014919,Incorrect dose administered,24.10,Product preparation issue,24.10,,,,,,
+2014920,Inappropriate schedule of product administration,24.10,No adverse event,24.10,,,,,,
+2014921,Abdominal pain lower,24.10,Arthralgia,24.10,Chest discomfort,24.10,Chest pain,24.10,Condition aggravated,24.10
+2014921,Fatigue,24.10,Feeling abnormal,24.10,Influenza like illness,24.10,Migraine,24.10,Myalgia,24.10
+2014921,Nausea,24.10,Pain in extremity,24.10,Pyrexia,24.10,SARS-CoV-2 test negative,24.10,,
+2014922,Brain natriuretic peptide,24.10,Chest discomfort,24.10,Dyspnoea exertional,24.10,Electrocardiogram,24.10,Fibrin D dimer,24.10
+2014922,Full blood count,24.10,Heart rate irregular,24.10,Laboratory test,24.10,Metabolic function test,24.10,Tachycardia,24.10
+2014922,Troponin,24.10,,,,,,,,
+2014923,Abdominal distension,24.10,Blood albumin,24.10,Blood test,24.10,Computerised tomogram normal,24.10,Electrocardiogram normal,24.10
+2014923,Injection site erythema,24.10,Injection site induration,24.10,Injection site pruritus,24.10,Injection site rash,24.10,Injection site swelling,24.10
+2014923,Injection site warmth,24.10,Peripheral swelling,24.10,Ultrasound scan,24.10,Weight increased,24.10,,
+2014924,Bell's palsy,24.10,,,,,,,,
+2014925,Echocardiogram abnormal,24.10,Pericarditis,24.10,Red blood cell sedimentation rate increased,24.10,,,,
+2014926,Abdominal discomfort,24.10,Abdominal pain,24.10,Diarrhoea,24.10,Flatulence,24.10,,
+2014927,Underdose,24.10,,,,,,,,
+2014928,Joint range of motion decreased,24.10,,,,,,,,
+2014929,Burning sensation,24.10,C-reactive protein increased,24.10,Hypoaesthesia,24.10,Lip blister,24.10,Muscular weakness,24.10
+2014929,Nail discolouration,24.10,Pain in extremity,24.10,Paraesthesia,24.10,Sleep disorder,24.10,,
+2014930,Chest pain,24.10,Fatigue,24.10,Lip swelling,24.10,Paraesthesia oral,24.10,Swollen tongue,24.10
+2014930,Throat irritation,24.10,Tremor,24.10,,,,,,
+2014931,Incorrect dose administered,24.10,No adverse event,24.10,,,,,,
+2014932,Chills,24.10,Cough,24.10,Fatigue,24.10,Oropharyngeal pain,24.10,Pain,24.10
+2014932,Respiratory tract congestion,24.10,SARS-CoV-2 test negative,24.10,,,,,,
+2014933,Aphonia,24.10,Asthma,24.10,Chest discomfort,24.10,Computerised tomogram,24.10,Condition aggravated,24.10
+2014933,Dizziness,24.10,Dysphonia,24.10,Dyspnoea,24.10,Fatigue,24.10,Laboratory test,24.10
+2014934,Angiogram,24.10,Blood creatinine,24.10,Blood glucose,24.10,Blood magnesium,24.10,Electrocardiogram,24.10
+2014934,Hemiparesis,24.10,Metabolic function test,24.10,Protein total,24.10,Speech disorder,24.10,Urine analysis,24.10
+2014935,Anxiety,24.10,Discomfort,24.10,Feeling jittery,24.10,Flushing,24.10,Heart rate increased,24.10
+2014935,Hypoaesthesia,24.10,Immediate post-injection reaction,24.10,Jaw disorder,24.10,Magnetic resonance imaging abnormal,24.10,Muscle spasms,24.10
+2014935,Muscular weakness,24.10,Myelopathy,24.10,Neck pain,24.10,Nerve injury,24.10,Pain,24.10
+2014935,Paraesthesia,24.10,Swelling,24.10,X-ray abnormal,24.10,,,,
+2014936,Costochondritis,24.10,Cough,24.10,Headache,24.10,Oropharyngeal pain,24.10,Pain,24.10
+2014937,Injection site erythema,24.10,Injection site paraesthesia,24.10,,,,,,
+2014938,Back pain,24.10,Blood test,24.10,Chills,24.10,Electrocardiogram,24.10,Fatigue,24.10
+2014938,Heart rate increased,24.10,Musculoskeletal pain,24.10,Pain,24.10,Pyrexia,24.10,,
+2014939,Bell's palsy,24.10,Facial paralysis,24.10,Magnetic resonance imaging abnormal,24.10,Mouth swelling,24.10,,
+2014940,Weight increased,24.10,,,,,,,,
+2014941,Aphasia,24.10,Blindness,24.10,Cognitive disorder,24.10,Confusional state,24.10,Hypoaesthesia,24.10
+2014941,Ischaemic stroke,24.10,Paraesthesia,24.10,,,,,,
+2014942,Incorrect dose administered,24.10,Pain in extremity,24.10,,,,,,
+2014943,Extra dose administered,24.10,,,,,,,,
+2014944,Injection site erythema,24.10,Injection site inflammation,24.10,Injection site pain,24.10,Injection site swelling,24.10,Pain,24.10
+2014945,Blood calcium decreased,24.10,Blood test normal,24.10,Chest X-ray normal,24.10,Confusional state,24.10,Electrocardiogram normal,24.10
+2014945,Fatigue,24.10,Gait inability,24.10,Hypotension,24.10,Lethargy,24.10,Movement disorder,24.10
+2014945,Muscle rigidity,24.10,Musculoskeletal stiffness,24.10,Pyrexia,24.10,Speech disorder,24.10,Tremor,24.10
+2014945,Unresponsive to stimuli,24.10,,,,,,,,
+2014946,No adverse event,24.10,,,,,,,,
+2014947,Blood pressure increased,24.10,Dizziness,24.10,Nausea,24.10,,,,
+2014948,Acidosis,24.10,Cerebellar stroke,24.10,Dyspnoea,24.10,Haemofiltration,24.10,Mental status changes,24.10
+2014948,Shock,24.10,Thrombocytopenia,24.10,,,,,,
+2014949,Anxiety,24.10,Heart rate increased,24.10,Insomnia,24.10,Pyrexia,24.10,,
+2014950,COVID-19,24.10,Diabetes mellitus,24.10,Enterobacter bacteraemia,24.10,Escherichia infection,24.10,Hypoxia,24.10
+2014950,SARS-CoV-2 test positive,24.10,Sleep apnoea syndrome,24.10,Urosepsis,24.10,,,,
+2014951,Magnetic resonance imaging abnormal,24.10,Renal artery thrombosis,24.10,Renal infarct,24.10,,,,
+2014952,Rash papular,24.10,Rash pruritic,24.10,,,,,,
+2014953,Asthenia,24.10,Chills,24.10,Headache,24.10,Nausea,24.10,Vomiting,24.10
+2014954,Mastitis,24.10,Maternal exposure during breast feeding,24.10,,,,,,
+2014955,Superficial vein thrombosis,24.10,Ultrasound Doppler abnormal,24.10,,,,,,
+2014956,Asthenia,24.10,Fatigue,24.10,Headache,24.10,Pyrexia,24.10,,
+2014957,Headache,24.10,,,,,,,,
+2015078,Expired product administered,24.10,,,,,,,,
+2015079,Blood pressure increased,24.10,Dizziness,24.10,,,,,,
+2015080,Asthenia,24.10,Chills,24.10,Decreased appetite,24.10,Fatigue,24.10,Headache,24.10
+2015080,Pain,24.10,Somnolence,24.10,,,,,,
+2015081,COVID-19,24.10,COVID-19 pneumonia,24.10,Death,24.10,Respiratory failure,24.10,SARS-CoV-2 test positive,24.10
+2015081,Septic shock,24.10,Vaccine breakthrough infection,24.10,,,,,,
+2015082,Underdose,24.10,,,,,,,,
+2015083,Inappropriate schedule of product administration,24.10,,,,,,,,
+2015084,Asthenia,24.10,Blood test normal,24.10,Chest X-ray normal,24.10,Chills,24.10,Computerised tomogram normal,24.10
+2015084,Fatigue,24.10,Headache,24.10,Nausea,24.10,Pain,24.10,Parosmia,24.10
+2015084,Pyrexia,24.10,SARS-CoV-2 test negative,24.10,,,,,,
+2015085,Inappropriate schedule of product administration,24.10,,,,,,,,
+2015086,Abdominal discomfort,24.10,Burning sensation,24.10,Injection site pain,24.10,,,,
+2015087,Amenorrhoea,24.10,,,,,,,,
+2015088,Blood test,24.10,Catheterisation cardiac,24.10,Chest X-ray,24.10,Chest pain,24.10,Computerised tomogram,24.10
+2015088,Electrocardiogram,24.10,SARS-CoV-2 test,24.10,Scan with contrast,24.10,,,,
+2015089,Chest X-ray,24.10,Chest discomfort,24.10,Chest pain,24.10,Dyspnoea,24.10,Electrocardiogram,24.10
+2015089,Fatigue,24.10,Full blood count,24.10,Glomerular filtration rate,24.10,Metabolic function test,24.10,Troponin I,24.10
+2015090,Anxiety,24.10,Dizziness,24.10,Fall,24.10,Limb injury,24.10,Tinnitus,24.10
+2015090,Vision blurred,24.10,,,,,,,,
+2015091,Arthralgia,24.10,Asymptomatic COVID-19,24.10,Chest X-ray normal,24.10,Joint swelling,24.10,SARS-CoV-2 test positive,24.10
+2015092,Anxiety,24.10,Fatigue,24.10,Feeling hot,24.10,Headache,24.10,Malaise,24.10
+2015092,Nasopharyngitis,24.10,Pain,24.10,Pain in extremity,24.10,SARS-CoV-2 test negative,24.10,,
+2015093,Cough,24.10,Headache,24.10,Pain,24.10,Rhinorrhoea,24.10,SARS-CoV-2 test positive,24.10
+2015093,Sneezing,24.10,Throat irritation,24.10,,,,,,
+2015095,No adverse event,24.10,Underdose,24.10,,,,,,
+2015096,Expired product administered,24.10,,,,,,,,
+2015097,Arthralgia,24.10,Mobility decreased,24.10,,,,,,
+2015099,Blood test normal,24.10,Body temperature increased,24.10,Chills,24.10,Condition aggravated,24.10,Fatigue,24.10
+2015099,Feeling abnormal,24.10,Headache,24.10,Heart rate increased,24.10,,,,
+2015100,Inappropriate schedule of product administration,24.10,,,,,,,,
+2015101,No adverse event,24.10,Underdose,24.10,,,,,,
+2015102,Abdominal pain,24.10,Heavy menstrual bleeding,24.10,Intermenstrual bleeding,24.10,Menstrual disorder,24.10,,
+2015103,Product administered to patient of inappropriate age,24.10,,,,,,,,
+2015104,Complication associated with device,24.10,Computerised tomogram,24.10,Condition aggravated,24.10,Intra-uterine contraceptive device removal,24.10,Laboratory test abnormal,24.10
+2015104,Menstruation irregular,24.10,Papilloma excision,24.10,Polycystic ovaries,24.10,Skin disorder,24.10,Skin papilloma,24.10
+2015104,Ultrasound scan abnormal,24.10,,,,,,,,
+2015105,Blood glucose normal,24.10,Dizziness,24.10,Face injury,24.10,Loss of consciousness,24.10,Nausea,24.10
+2015105,Syncope,24.10,,,,,,,,
+2015106,Lymphadenopathy,24.10,Tonsillar inflammation,24.10,,,,,,
+2015107,Postmenopausal haemorrhage,24.10,,,,,,,,
+2015108,Underdose,24.10,,,,,,,,
+2015109,Dizziness,24.10,Immediate post-injection reaction,24.10,Tremor,24.10,,,,
+2015337,Dyspnoea,24.10,Hypertension,24.10,,,,,,
+2015338,Cerebral thrombosis,24.10,Cerebrovascular accident,24.10,Inappropriate schedule of product administration,24.10,Seizure,24.10,,
+2015339,Back pain,24.10,Burning sensation,24.10,Depressed mood,24.10,Feeling abnormal,24.10,Hyperhidrosis,24.10
+2015339,Increased appetite,24.10,Injection site pain,24.10,Limb discomfort,24.10,Lip swelling,24.10,Musculoskeletal discomfort,24.10
+2015339,Myalgia,24.10,Pain,24.10,Pruritus,24.10,Rash papular,24.10,Somnolence,24.10
+2015339,Swelling face,24.10,,,,,,,,
+2015340,COVID-19 pneumonia,24.10,Respiratory failure,24.10,,,,,,
+2015341,Fatigue,24.10,Hypoaesthesia,24.10,Nausea,24.10,,,,
+2015342,Arthralgia,24.10,Erythema,24.10,Mechanical urticaria,24.10,Pain in extremity,24.10,Pruritus,24.10
+2015342,Urticaria,24.10,,,,,,,,
+2015343,Blood test normal,24.10,Computerised tomogram normal,24.10,Condition aggravated,24.10,Dysstasia,24.10,Gait disturbance,24.10
+2015343,Hypertension,24.10,Hypoaesthesia,24.10,Interchange of vaccine products,24.10,Pain,24.10,Pain in extremity,24.10
+2015343,Paraesthesia,24.10,Sciatica,24.10,X-ray normal,24.10,,,,
+2015344,Disorientation,24.10,Hypotension,24.10,Vomiting,24.10,,,,
+2015345,Palpitations,24.10,Paraesthesia oral,24.10,,,,,,
+2015346,Injection site pruritus,24.10,Injection site swelling,24.10,Injection site warmth,24.10,,,,
+2015347,Blood test,24.10,Computerised tomogram thorax,24.10,Echocardiogram,24.10,Electrocardiogram,24.10,Immediate post-injection reaction,24.10
+2015347,Rash,24.10,Ventricular tachycardia,24.10,,,,,,
+2015349,Allergy test negative,24.10,Angioedema,24.10,Mechanical urticaria,24.10,Oropharyngeal pain,24.10,Rash,24.10
+2015349,Swelling,24.10,Urticaria,24.10,,,,,,
+2015350,Allergy test,24.10,Condition aggravated,24.10,Full blood count,24.10,Urticaria,24.10,,
+2015351,Blood pressure increased,24.10,Chest discomfort,24.10,Electrocardiogram,24.10,Headache,24.10,Malaise,24.10
+2015352,Cold sweat,24.10,Depressed level of consciousness,24.10,Pallor,24.10,Syncope,24.10,,
+2015353,Blister,24.10,Pruritus,24.10,Rash,24.10,,,,
+2015354,Dizziness,24.10,,,,,,,,
+2015355,Injection site erythema,24.10,,,,,,,,
+2015356,Incorrect dose administered,24.10,Product preparation issue,24.10,,,,,,
+2015357,Death,24.10,Syncope,24.10,,,,,,
+2015358,Product administered to patient of inappropriate age,24.10,,,,,,,,
+2015359,Fall,24.10,Haemorrhage,24.10,Head injury,24.10,Incoherent,24.10,Loss of consciousness,24.10
+2015359,Skin laceration,24.10,Syncope,24.10,,,,,,
+2015361,Product preparation issue,24.10,,,,,,,,
+2015362,No adverse event,24.10,Product administered to patient of inappropriate age,24.10,,,,,,
+2015363,Dizziness,24.10,Nausea,24.10,Swelling face,24.10,,,,
+2015364,Product preparation issue,24.10,,,,,,,,
+2015365,Underdose,24.10,,,,,,,,
+2015366,COVID-19,24.10,Haemorrhage urinary tract,24.10,SARS-CoV-2 test positive,24.10,,,,
+2015367,Pruritus,24.10,Urticaria,24.10,,,,,,
+2015368,Urticaria,24.10,,,,,,,,
+2015369,Incorrect dose administered,24.10,Product preparation issue,24.10,,,,,,
+2015370,Extra dose administered,24.10,,,,,,,,
+2015371,Blindness,24.10,Cerebrovascular accident,24.10,Computerised tomogram,24.10,Disturbance in attention,24.10,Erythema,24.10
+2015371,Feeling abnormal,24.10,Hypersomnia,24.10,IVth nerve paralysis,24.10,Immediate post-injection reaction,24.10,Injection site nodule,24.10
+2015371,Injection site pain,24.10,Laboratory test,24.10,Lumbar puncture,24.10,Magnetic resonance imaging head abnormal,24.10,Memory impairment,24.10
+2015371,Pain in extremity,24.10,Peripheral swelling,24.10,Scan with contrast,24.10,Skin warm,24.10,Vaccination complication,24.10
+2015371,Visual impairment,24.10,,,,,,,,
+2015372,Anticoagulant therapy,24.10,Deep vein thrombosis,24.10,Mammogram normal,24.10,Pain in extremity,24.10,Smear cervix normal,24.10
+2015372,Ultrasound Doppler abnormal,24.10,,,,,,,,
+2015373,Heavy menstrual bleeding,24.10,Polymenorrhoea,24.10,,,,,,
+2015374,Menstruation delayed,24.10,,,,,,,,
+2015375,Cardiac arrest,24.10,Deep vein thrombosis,24.10,Fatigue,24.10,Life support,24.10,Mechanical ventilation,24.10
+2015375,Muscular weakness,24.10,Resuscitation,24.10,,,,,,
+2015376,No adverse event,24.10,Product administered to patient of inappropriate age,24.10,,,,,,
+2015377,Dizziness,24.10,Loss of consciousness,24.10,Nausea,24.10,Syncope,24.10,,
+2015378,Anxiety,24.10,Balance disorder,24.10,Confusional state,24.10,Dizziness,24.10,Dizziness postural,24.10
+2015378,Echocardiogram,24.10,Electrocardiogram,24.10,Epistaxis,24.10,Fall,24.10,Fatigue,24.10
+2015378,Gait disturbance,24.10,Laboratory test,24.10,Loss of consciousness,24.10,Magnetic resonance imaging,24.10,Memory impairment,24.10
+2015378,Migraine,24.10,Monoclonal gammopathy,24.10,Somnolence,24.10,,,,
+2015379,Deep vein thrombosis,24.10,,,,,,,,
+2015380,Chest discomfort,24.10,Chills,24.10,Condition aggravated,24.10,Headache,24.10,Injection site induration,24.10
+2015380,Injection site pruritus,24.10,Injection site reaction,24.10,Injection site warmth,24.10,Lymph node pain,24.10,Musculoskeletal stiffness,24.10
+2015380,Pain in extremity,24.10,Productive cough,24.10,Pyrexia,24.10,Sensitive skin,24.10,,
+2015381,Chest pain,24.10,Dyskinesia,24.10,Loss of consciousness,24.10,,,,
+2015382,Antinuclear antibody positive,24.10,Computerised tomogram head normal,24.10,Full blood count,24.10,Hypoaesthesia,24.10,Laboratory test normal,24.10
+2015382,Limb discomfort,24.10,Muscle tightness,24.10,Pain,24.10,Pain of skin,24.10,Paraesthesia,24.10
+2015382,Ultrasound Doppler normal,24.10,,,,,,,,
+2015383,Chest discomfort,24.10,Dizziness,24.10,Headache,24.10,Heart rate increased,24.10,Pain,24.10
+2015383,Pain in extremity,24.10,Product administered to patient of inappropriate age,24.10,Pyrexia,24.10,,,,
+2015564,Erythema,24.10,,,,,,,,
+2015565,Heart rate increased,24.10,,,,,,,,
+2015566,Anal candidiasis,24.10,Candida infection,24.10,Vulvovaginal candidiasis,24.10,,,,
+2015567,Atrial fibrillation,24.10,Cardiac flutter,24.10,Dizziness,24.10,Electrocardiogram,24.10,Electrocardiogram ambulatory,24.10
+2015567,Fatigue,24.10,Hypersomnia,24.10,Pyrexia,24.10,,,,
+2015568,Herpes zoster,24.10,Pruritus,24.10,,,,,,
+2015569,Cardiac stress test,24.10,Chest X-ray,24.10,Computerised tomogram,24.10,Coronary arterial stent insertion,24.10,Coronary artery occlusion,24.10
+2015569,Echocardiogram,24.10,Electrocardiogram,24.10,Laboratory test,24.10,Myocardial infarction,24.10,X-ray,24.10
+2015570,Rash,24.10,Rash pruritic,24.10,,,,,,
+2015571,Injection site erythema,24.10,Injection site induration,24.10,Injection site swelling,24.10,Injection site warmth,24.10,,
+2015572,Dysphagia,24.10,Ear pain,24.10,Headache,24.10,Myalgia,24.10,Oropharyngeal pain,24.10
+2015573,Incorrect dose administered,24.10,Product preparation issue,24.10,,,,,,
+2015574,Chills,24.10,Headache,24.10,,,,,,
+2015575,Lymphadenopathy,24.10,,,,,,,,
+2015577,Urticaria,24.10,,,,,,,,
+2015578,Back pain,24.10,Condition aggravated,24.10,Musculoskeletal pain,24.10,Pain in extremity,24.10,,
+2015579,Incorrect dose administered,24.10,Product preparation issue,24.10,,,,,,
+2015580,Chest discomfort,24.10,Chest pain,24.10,,,,,,
+2015581,Cyst,24.10,Erythema,24.10,Musculoskeletal stiffness,24.10,Nodal osteoarthritis,24.10,Osteoarthritis,24.10
+2015581,Pain,24.10,Sleep disorder,24.10,X-ray abnormal,24.10,,,,
+2015582,Bell's palsy,24.10,Ear discomfort,24.10,Facial paralysis,24.10,Facial paresis,24.10,,
+2015583,Night sweats,24.10,SARS-CoV-2 test negative,24.10,,,,,,
+2015584,Dizziness,24.10,Pallor,24.10,Swollen tongue,24.10,Throat tightness,24.10,Tremor,24.10
+2015585,Blood test,24.10,Infection,24.10,Malaise,24.10,Peripheral swelling,24.10,Pyrexia,24.10
+2015585,Skin injury,24.10,Skin warm,24.10,Vomiting,24.10,,,,
+2015586,Discomfort,24.10,,,,,,,,
+2015740,Chromaturia,24.10,Flank pain,24.10,Haematuria,24.10,,,,
+2015741,Burning sensation,24.10,Erythema,24.10,Pruritus,24.10,Urticaria,24.10,,
+2015742,Rash,24.10,,,,,,,,
+2015743,Rash,24.10,,,,,,,,
+2015744,Lymph node pain,24.10,Lymphadenopathy,24.10,,,,,,
+2015745,Maternal exposure during breast feeding,24.10,,,,,,,,
+2015746,Injected limb mobility decreased,24.10,Joint range of motion decreased,24.10,Pain in extremity,24.10,,,,
+2015748,No adverse event,24.10,Product administered to patient of inappropriate age,24.10,,,,,,
+2015750,Dizziness,24.10,Dizziness postural,24.10,Vaccine positive rechallenge,24.10,,,,
+2015751,Adnexa uteri pain,24.10,Back pain,24.10,Fatigue,24.10,Pain,24.10,Pain in extremity,24.10
+2015751,Polymenorrhoea,24.10,Pyrexia,24.10,,,,,,
+2016410,Hypoaesthesia,24.10,Paraesthesia,24.10,,,,,,
+2016411,Oligomenorrhoea,24.10,,,,,,,,
+2016412,Adverse event,24.10,Eczema,24.10,Nasal congestion,24.10,Rash,24.10,Rash macular,24.10
+2016412,Viral rash,24.10,,,,,,,,
+2016413,Brain natriuretic peptide normal,24.10,Chest pain,24.10,Dizziness,24.10,Echocardiogram normal,24.10,Electrocardiogram ST segment elevation,24.10
+2016413,Electrocardiogram abnormal,24.10,Fatigue,24.10,Myocarditis,24.10,Painful respiration,24.10,Troponin increased,24.10
+2016414,Back pain,24.10,Balance disorder,24.10,Cold sweat,24.10,Decreased appetite,24.10,Dizziness,24.10
+2016414,Fatigue,24.10,Head injury,24.10,Headache,24.10,Hyperhidrosis,24.10,Loss of consciousness,24.10
+2016414,Lymph node pain,24.10,Lymphadenopathy,24.10,Mobility decreased,24.10,Nausea,24.10,Neck pain,24.10
+2016414,Pain,24.10,Pain in extremity,24.10,Seizure like phenomena,24.10,Syncope,24.10,,
+2016416,Swollen tongue,24.10,,,,,,,,
+2016417,Condition aggravated,24.10,Headache,24.10,Pyrexia,24.10,Rash,24.10,Urticaria,24.10
+2016418,Fatigue,24.10,Headache,24.10,Injection site erythema,24.10,Injection site warmth,24.10,Malaise,24.10
+2016418,Pain in extremity,24.10,,,,,,,,
+2016419,Dizziness,24.10,Fatigue,24.10,Head discomfort,24.10,Headache,24.10,Loss of personal independence in daily activities,24.10
+2016419,Migraine,24.10,,,,,,,,
+2016420,Blood test,24.10,Mechanical urticaria,24.10,Urticaria,24.10,,,,
+2016421,Injection site cellulitis,24.10,Injection site hypoaesthesia,24.10,Injection site pain,24.10,,,,
+2016422,Oropharyngeal pain,24.10,Rash,24.10,Rash papular,24.10,,,,
+2016423,Acute cardiac event,24.10,Atrial fibrillation,24.10,Atrial tachycardia,24.10,Cardiac ablation,24.10,Cardiac electrophysiologic study,24.10
+2016423,Cardiac flutter,24.10,Cardiac monitoring,24.10,Chest X-ray,24.10,Chest pain,24.10,Dyspnoea,24.10
+2016423,Echocardiogram,24.10,Heart rate increased,24.10,,,,,,
+2016424,Rash erythematous,24.10,Rash pruritic,24.10,Urticaria,24.10,,,,
+2016425,Abortion spontaneous,24.10,Biopsy,24.10,Breast mass,24.10,Breast pain,24.10,Exposure during pregnancy,24.10
+2016425,Mammogram,24.10,Pain in extremity,24.10,,,,,,
+2016426,Feeling abnormal,24.10,Hyperaesthesia,24.10,Injection site erythema,24.10,Injection site pain,24.10,Injection site swelling,24.10
+2016426,Myalgia,24.10,Pyrexia,24.10,,,,,,
+2016427,Menstrual disorder,24.10,Tachycardia,24.10,,,,,,
+2016429,Fatigue,24.10,Headache,24.10,Impaired work ability,24.10,Loss of personal independence in daily activities,24.10,Muscle spasms,24.10
+2016429,Myalgia,24.10,Pain,24.10,Pyrexia,24.10,Sleep disorder,24.10,,
+2016430,Pericarditis,24.10,,,,,,,,
+2016431,Fatigue,24.10,Pruritus,24.10,Somnolence,24.10,,,,
+2016432,Cardiac monitoring,24.10,Echocardiogram,24.10,Electrocardiogram,24.10,Heart rate increased,24.10,Magnetic resonance imaging,24.10
+2016433,Condition aggravated,24.10,Dyspnoea,24.10,Fear,24.10,Lymphadenitis,24.10,Lymphadenopathy,24.10
+2016433,Myocarditis,24.10,Palpitations,24.10,Swelling,24.10,,,,
+2016434,Pain,24.10,Swelling,24.10,,,,,,
+2016435,Abortion spontaneous,24.10,Exposure during pregnancy,24.10,,,,,,
+2016436,Headache,24.10,Heavy menstrual bleeding,24.10,Menstruation irregular,24.10,,,,
+2016437,Blood thyroid stimulating hormone normal,24.10,Body temperature increased,24.10,C-reactive protein increased,24.10,Ear pain,24.10,Fatigue,24.10
+2016437,Neck pain,24.10,Pain,24.10,Pain in jaw,24.10,Platelet count increased,24.10,Pyrexia,24.10
+2016437,Red blood cell sedimentation rate increased,24.10,Swelling,24.10,Thyroid mass,24.10,Thyroxine normal,24.10,Ultrasound thyroid abnormal,24.10
+2016438,Dizziness,24.10,Fatigue,24.10,Injection site pain,24.10,Tinnitus,24.10,Vision blurred,24.10
+2016439,Diarrhoea,24.10,,,,,,,,
+2016440,Lacrimation increased,24.10,Swelling of eyelid,24.10,,,,,,
+2016441,Chest pain,24.10,Echocardiogram,24.10,Myocarditis,24.10,Troponin,24.10,Troponin increased,24.10
+2016488,COVID-19,24.10,Maternal exposure during pregnancy,24.10,,,,,,
+2016689,Body temperature,24.10,Chills,24.10,Immunisation,24.10,Pain,24.10,Pyrexia,24.10
+2016689,Vision blurred,24.10,,,,,,,,
+2016806,Chest pain,24.10,Pain in extremity,24.10,Pyrexia,24.10,Sleep disorder,24.10,,
+2017235,Cardiac arrest,24.10,Vomiting,24.10,,,,,,
+2017238,Expired product administered,24.10,No adverse event,24.10,,,,,,
+2017239,Expired product administered,24.10,Incorrect route of product administration,24.10,No adverse event,24.10,,,,
+2017240,Back pain,24.10,Dizziness,24.10,Dysstasia,24.10,,,,
+2017241,Incomplete course of vaccination,24.10,,,,,,,,
+2017242,Expired product administered,24.10,,,,,,,,
+2017243,Exposure during pregnancy,24.10,,,,,,,,
+2017244,Product storage error,24.10,,,,,,,,
+2017245,Expired product administered,24.10,,,,,,,,
+2017246,Expired product administered,24.10,No adverse event,24.10,,,,,,
+2017247,Expired product administered,24.10,No adverse event,24.10,,,,,,
+2017248,Product storage error,24.10,,,,,,,,
+2017249,Bacterial vaginosis,24.10,,,,,,,,
+2017250,Accidental exposure to product,24.10,No adverse event,24.10,,,,,,
+2017251,No adverse event,24.10,Product storage error,24.10,,,,,,
+2017252,Product storage error,24.10,,,,,,,,
+2017253,No adverse event,24.10,Product storage error,24.10,,,,,,
+2017254,No adverse event,24.10,Product storage error,24.10,,,,,,
+2017255,Product storage error,24.10,,,,,,,,
+2017256,Product storage error,24.10,,,,,,,,
+2017257,Product storage error,24.10,,,,,,,,
+2017258,Product storage error,24.10,,,,,,,,
+2017259,Product storage error,24.10,,,,,,,,
+2017260,No adverse event,24.10,Product storage error,24.10,,,,,,
+2017261,Product storage error,24.10,,,,,,,,
+2017262,No adverse event,24.10,Product storage error,24.10,,,,,,
+2017263,Product storage error,24.10,,,,,,,,
+2017264,Product storage error,24.10,,,,,,,,
+2017265,Product storage error,24.10,,,,,,,,
+2017266,Product storage error,24.10,,,,,,,,
+2017267,No adverse event,24.10,Product storage error,24.10,,,,,,
+2017268,Product storage error,24.10,,,,,,,,
+2017269,No adverse event,24.10,Product storage error,24.10,,,,,,
+2017270,Product storage error,24.10,,,,,,,,
+2017271,Product storage error,24.10,,,,,,,,
+2017272,No adverse event,24.10,Product storage error,24.10,,,,,,
+2017273,Product storage error,24.10,,,,,,,,
+2017274,Unevaluable event,24.10,,,,,,,,
+2017275,Product storage error,24.10,,,,,,,,
+2017276,No adverse event,24.10,Product storage error,24.10,,,,,,
+2017277,Herpes zoster,24.10,Pain,24.10,,,,,,
+2017278,Expired product administered,24.10,,,,,,,,
+2017279,Expired product administered,24.10,,,,,,,,
+2017280,No adverse event,24.10,Product administered to patient of inappropriate age,24.10,,,,,,
+2017281,No adverse event,24.10,Product storage error,24.10,,,,,,
+2017282,Expired product administered,24.10,,,,,,,,
+2017283,Product storage error,24.10,,,,,,,,
+2017284,No adverse event,24.10,Product storage error,24.10,,,,,,
+2017285,No adverse event,24.10,Product storage error,24.10,,,,,,
+2017286,Inappropriate schedule of product administration,24.10,,,,,,,,
+2017287,No adverse event,24.10,Product storage error,24.10,,,,,,
+2017288,No adverse event,24.10,Product storage error,24.10,,,,,,
+2017289,Product storage error,24.10,,,,,,,,
+2017290,No adverse event,24.10,Product administered to patient of inappropriate age,24.10,,,,,,
+2017291,No adverse event,24.10,Product storage error,24.10,,,,,,
+2017292,No adverse event,24.10,Product storage error,24.10,,,,,,
+2017293,Expired product administered,24.10,,,,,,,,
+2017294,Anxiety,24.10,Asthenia,24.10,Autoimmune disorder,24.10,Autonomic nervous system imbalance,24.10,Depression,24.10
+2017294,Diarrhoea,24.10,Discomfort,24.10,Dizziness,24.10,Dysphagia,24.10,Dyspnoea,24.10
+2017294,Fatigue,24.10,Fear,24.10,Feeling abnormal,24.10,Feeling cold,24.10,Food allergy,24.10
+2017294,Gait disturbance,24.10,Hyperhidrosis,24.10,Hypokinesia,24.10,Impaired driving ability,24.10,Loss of personal independence in daily activities,24.10
+2017294,Malaise,24.10,Motor dysfunction,24.10,Muscular weakness,24.10,Musculoskeletal stiffness,24.10,Nail discolouration,24.10
+2017294,Orthostatic intolerance,24.10,Pain,24.10,Palpitations,24.10,Paraesthesia,24.10,Postural orthostatic tachycardia syndrome,24.10
+2017294,Presyncope,24.10,Tachycardia,24.10,Tilt table test positive,24.10,Tremor,24.10,Underweight,24.10
+2017294,Weight decreased,24.10,,,,,,,,
+2017295,Product storage error,24.10,,,,,,,,
+2017296,Herpes zoster,24.10,Vaccination failure,24.10,,,,,,
+2017297,Herpes zoster,24.10,Neuralgia,24.10,Pain,24.10,Rash,24.10,,
+2017298,No adverse event,24.10,Product storage error,24.10,,,,,,
+2017299,No adverse event,24.10,Product storage error,24.10,,,,,,
+2017300,Expired product administered,24.10,,,,,,,,
+2017301,Expired product administered,24.10,No adverse event,24.10,,,,,,
+2017302,Incorrect route of product administration,24.10,,,,,,,,
+2017303,Product storage error,24.10,,,,,,,,
+2017304,Expired product administered,24.10,,,,,,,,
+2017305,No adverse event,24.10,Product storage error,24.10,,,,,,
+2017306,Product storage error,24.10,,,,,,,,
+2017307,No adverse event,24.10,Product storage error,24.10,,,,,,
+2017308,Herpes zoster,24.10,Pain,24.10,Post herpetic neuralgia,24.10,Rash,24.10,,
+2017309,Product storage error,24.10,,,,,,,,
+2017310,No adverse event,24.10,Product storage error,24.10,,,,,,
+2017311,No adverse event,24.10,Product storage error,24.10,,,,,,
+2017312,No adverse event,24.10,Product storage error,24.10,,,,,,
+2017313,Product storage error,24.10,,,,,,,,
+2017314,No adverse event,24.10,Product storage error,24.10,,,,,,
+2017315,No adverse event,24.10,Product storage error,24.10,,,,,,
+2017316,Product storage error,24.10,,,,,,,,
+2017317,No adverse event,24.10,Product storage error,24.10,,,,,,

@@ -52,6 +52,10 @@ class PatientRepository extends EloquentRepository
             $query->where(DB::raw('YEAR(`recive_date`)'), '=', $filters['year']);
         }
 
+        if (! empty($filters['recive_date'])) {
+            $query->whereBetween('recive_date', explode(' - ', $filters['recive_date']));
+        }
+
         if (! empty($filters['sex'])) {
             $query->where('sex', '=', $filters['sex']);
         }

@@ -29,16 +29,17 @@
 
 @section('breadcrumbs', Breadcrumbs::render())
 
-@section('actions'){{--
-    <div class="input-group">
-        <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        <i class="far fa-calendar-alt"></i>
-                      </span>
+@section('actions')
+    {{--
+        <div class="input-group">
+            <div class="input-group-prepend">
+                          <span class="input-group-text">
+                            <i class="far fa-calendar-alt"></i>
+                          </span>
+            </div>
+            <input type="text" class="form-control float-right" id="reservation">
         </div>
-        <input type="text" class="form-control float-right" id="reservation">
-    </div>
-    <!-- /.input group -->--}}
+        <!-- /.input group -->--}}
 @endsection
 
 @section('content')
@@ -62,14 +63,29 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-4">
-                                {!! \Form::nText('year', 'Year', request()->get('year'), false) !!}
+                                {{--{!! \Form::nText('year', 'Year', request()->get('year'), false) !!}--}}
+                                <div class="form-group">
+                                    <label>Date range:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="far fa-calendar-alt"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control float-right" name="recive_date" id="recive_date">
+                                    </div>
+                                    <!-- /.input group -->
+                                </div>
                             </div>
                             <div class="col-md-4">
                                 {{--{!! \Form::nText('age', 'Age', request()->get('age'), false) !!}--}}
                                 <div class="slider-blue">
                                     <label for="age">Age</label><br>
-                                    <input type="text" value="" class="slider form-control" data-slider-min="0" data-slider-max="100"
-                                           data-slider-step="5" data-slider-value="[{{request()->get('age')??('0,100')}}]" data-slider-orientation="horizontal"
+                                    <input type="text" value="" class="slider form-control" data-slider-min="0"
+                                           data-slider-max="100"
+                                           data-slider-step="5"
+                                           data-slider-value="[{{request()->get('age')??('0,100')}}]"
+                                           data-slider-orientation="horizontal"
                                            data-slider-selection="before" data-slider-tooltip="show" name="age">
                                 </div>
                             </div>
@@ -134,5 +150,13 @@
     <script>
         /* BOOTSTRAP SLIDER */
         $('.slider').bootstrapSlider()
+        //Date range picker
+        $('#recive_date').daterangepicker(
+            {
+                locale: {
+                    format: 'YYYY-MM-DD'
+                }
+            }
+        )
     </script>
 @endpush

@@ -83,6 +83,11 @@
                             </div>
                             <div class="col-md-4">
                                 {!! \Form::nText('state', 'State', request()->get('state'), false) !!}
+                                {!! \Form::nSelect('state', 'State',
+                                \App\Supports\Constant::USA_STATE,
+                                 request()->get('state'), false, [
+                                     'placeholder' => 'Select a State'
+                                 ]) !!}
                             </div>
                         </div>
                     </div>

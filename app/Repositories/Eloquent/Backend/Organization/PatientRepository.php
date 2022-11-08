@@ -57,7 +57,6 @@ class PatientRepository extends EloquentRepository
             $query->where('vaccines.vax_dose_series', '=', $filters['vax_dose_series']);
         }
 
-
         if (! empty($filters['search'])) {
             /*$query->where('name', 'like', "%{$filters['search']}%")
                 ->orWhere('enabled', '=', "%{$filters['search']}%");*/

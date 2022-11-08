@@ -157,8 +157,9 @@
             {
                 autoUpdateInput: false,
                 showDropdowns: true,
-                minYear: 2019,
+                minYear: 2018,
                 maxYear: parseInt(moment().format('YYYY'),10),
+                startDate: '2019-01-01',
                 locale: {
                     format: 'YYYY-MM-DD',
                     cancelLabel: 'Clear'

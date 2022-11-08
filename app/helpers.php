@@ -94,3 +94,10 @@ if (! function_exists('filter')) {
         }
     }
 }
+
+if (! function_exists('query')) {
+    function query($route, \Illuminate\Http\Request $request)
+    {
+        return route($route) . http_build_query($request->query());
+    }
+}

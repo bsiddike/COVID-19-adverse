@@ -60,9 +60,9 @@ class PatientRepository extends EloquentRepository
             $query->where('sex', '=', $filters['sex']);
         }
 
-        /*if (! empty($filters['age'])) {
-            $query->where('age_yrs', '=', $filters['age']);
-        }*/
+        if (! empty($filters['age'])) {
+            $query->whereBetween('age_yrs', explode(',', $filters['age']));
+        }
 
         if (! empty($filters['age_start']) && ! empty($filters['age_end'])) {
             $query->whereBetween('age_yrs', [$filters['age_start'], $filters['age_end']]);

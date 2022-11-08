@@ -72,7 +72,7 @@
                                                 <i class="far fa-calendar-alt"></i>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control float-right" name="recive_date" id="recive_date">
+                                        <input type="text" class="form-control float-right" value="{{request()->get('recive_date')}}" name="recive_date" id="recive_date">
                                     </div>
                                     <!-- /.input group -->
                                 </div>

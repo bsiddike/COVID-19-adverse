@@ -79,14 +79,16 @@
                             </div>
                             <div class="col-md-4">
                                 {{--{!! \Form::nText('age', 'Age', request()->get('age'), false) !!}--}}
-                                <div class="slider-blue">
-                                    <label for="age">Age</label><br>
-                                    <input type="text" value="" class="slider form-control" data-slider-min="0"
-                                           data-slider-max="100"
-                                           data-slider-step="5"
-                                           data-slider-value="[{{request()->get('age')??('0,100')}}]"
-                                           data-slider-orientation="horizontal"
-                                           data-slider-selection="before" data-slider-tooltip="show" name="age">
+                                <div class="form-group">
+                                    <label for="age">Age</label>
+                                    <div class="slider-blue">
+                                        <input type="text" value="" class="slider form-control" data-slider-min="0"
+                                               data-slider-max="100"
+                                               data-slider-step="5"
+                                               data-slider-value="[{{request()->get('age')??('0,100')}}]"
+                                               data-slider-orientation="horizontal"
+                                               data-slider-selection="before" data-slider-tooltip="show" name="age">
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-4">

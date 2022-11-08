@@ -82,7 +82,7 @@
                                 {!! \Form::nText('symptom', 'Symptom', request()->get('symptom'), false) !!}
                             </div>
                             <div class="col-md-4">
-                                {!! \Form::nText('state', 'State', request()->get('state'), false) !!}
+                                {{--{!! \Form::nText('state', 'State', request()->get('state'), false) !!}--}}
                                 {!! \Form::nSelect('state', 'State',
                                 \App\Supports\Constant::USA_STATE,
                                  request()->get('state'), false, [

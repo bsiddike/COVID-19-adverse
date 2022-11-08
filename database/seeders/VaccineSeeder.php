@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Vaccine;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 use OpenSpout\Common\Exception\IOException;
 use OpenSpout\Common\Exception\UnsupportedTypeException;
@@ -22,33 +21,34 @@ class VaccineSeeder extends Seeder
      */
     public function run(...$parameters)
     {
-        extract($parameters);
+        $basePath = $parameters[0];
+        $years = $parameters[1];
         $folderName = 'vax/';
         foreach ($years as $year) {
-            if (is_dir($basePath.$year.$folderName)) {
-                $arrFiles = scandir($basePath.$year.$folderName);
+            if (is_dir($basePath . $year . $folderName)) {
+                $arrFiles = scandir($basePath . $year . $folderName);
                 foreach ($arrFiles as $arrFile) {
-                    if (is_file($basePath.$year.$folderName.$arrFile)) {
+
+                    if (is_file($basePath . $year . $folderName . $arrFile)) {
+                        $start_time = microtime(true);
+                        $this->command->line("Seeding : {$year} {$folderName} {$arrFile}");
+
                         (new FastExcel)
                             ->withoutHeaders()
                             ->import(
-                                $basePath.$year.$folderName.$arrFile,
+                                $basePath . $year . $folderName . $arrFile,
                                 function ($line) use ($basePath, $year, $folderName, $arrFile) {
                                     /**
                                      * 0 => "VAERS_ID", 1 => "VAX_TYPE", 2 => "VAX_MANU", 3 => "VAX_LOT"
                                      * 4 => "VAX_DOSE_SERIES", 5 => "VAX_ROUTE", 6 => "VAX_SITE", 7 => "VAX_NAME"
                                      */
                                     if ($line[0] != 'VAERS_ID') {
-                                        $this->command->line(
-                                            $basePath.$year.$folderName.$arrFile.'--'
-                                            .date('Y-m-d H:i:s')
-                                        );
                                         set_time_limit(2100);
                                         ini_set('memory_limit', -1);
 
                                         return Vaccine::create(
                                             [
-                                                'vaers_id' => (int) $line[0] ?? null,
+                                                'vaers_id' => (int)$line[0] ?? null,
                                                 'vax_type' => clean($line[1]),
                                                 'vax_manu' => clean($line[2]),
                                                 'vax_lot' => clean($line[3]),
@@ -63,6 +63,9 @@ class VaccineSeeder extends Seeder
                                     return null;
                                 }
                             );
+
+                        $end_time = microtime(true);
+                        $this->command->line("Seeded In: " . (($end_time - $start_time) / 1000000) . "sec");
                     }
                 }
             }

@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Patient;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 use OpenSpout\Common\Exception\IOException;
 use OpenSpout\Common\Exception\UnsupportedTypeException;
@@ -22,14 +21,17 @@ class PatientSeeder extends Seeder
      */
     public function run(...$parameters)
     {
-        extract($parameters);
+        $basePath = $parameters[0];
+        $years = $parameters[1];
         $folderName = 'data/';
         foreach ($years as $year) {
             if (is_dir($basePath.$year.$folderName)) {
                 $arrFiles = scandir($basePath.$year.$folderName);
                 foreach ($arrFiles as $arrFile) {
                     if (is_file($basePath.$year.$folderName.$arrFile)) {
-                        //dump($basePath.$year.$folderName.$arrFile);
+
+                        $start_time = microtime(true);
+                        $this->command->line("Seeding : {$year} {$folderName} {$arrFile}");
 
                         (new FastExcel)
                             ->withoutHeaders()
@@ -123,6 +125,9 @@ class PatientSeeder extends Seeder
                                     return null;
                                 }
                             );
+
+                        $end_time = microtime(true);
+                        $this->command->line("Seeded In: " . (($end_time - $start_time) / 1000000) . "sec");
                     }
                 }
             }

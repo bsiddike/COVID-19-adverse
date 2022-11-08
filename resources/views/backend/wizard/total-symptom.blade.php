@@ -9,7 +9,7 @@
         <div class="icon">
             <i class="fas fa-viruses"></i>
         </div>
-        <a href="{{ route('backend.organization.symptoms.index') }}"
+        <a href="{{ route('backend.organization.symptoms.index', request()->all()) }}"
            class="small-box-footer">{!! __('common.More info') !!} <i class="fas fa-arrow-circle-right"></i></a>
     </div>
 </div>

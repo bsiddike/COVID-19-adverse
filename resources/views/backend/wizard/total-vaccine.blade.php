@@ -9,7 +9,7 @@
             <div class="icon">
                 <i class="fas fa-first-aid"></i>
             </div>
-            <a href="{{ route('backend.organization.vaccines.index') }}"
+            <a href="{{ route('backend.organization.vaccines.index', request()->all()) }}"
                class="small-box-footer">{!! __('common.More info') !!} <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>

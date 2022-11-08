@@ -97,9 +97,9 @@ class PatientRepository extends EloquentRepository
         }
 
         if (! empty($filters['year_distinct'])) {
-            $query->selectRaw('YEAR(`todays_date`) as `year`')
-                ->whereNotNull('todays_date')
-                ->where(DB::raw('YEAR(`todays_date`)'), '>', '2018')
+            $query->selectRaw('YEAR(`recive_date`) as `year`')
+                ->whereNotNull('recive_date')
+                ->where(DB::raw('YEAR(`recive_date`)'), '>', '2018')
                 ->distinct();
         }
 
@@ -126,18 +126,18 @@ class PatientRepository extends EloquentRepository
                 case 'patient_month' :
 
                     $query->selectRaw(
-                        "sum(if(`todays_date` between '{$filters['today_year']}-01-01' and '{$filters['today_year']}-01-31', 1, 0)) as 'January', ".
-                        "sum(if(`todays_date` between '{$filters['today_year']}-02-01' and '{$filters['today_year']}-02-31', 1, 0)) as 'February', ".
-                        "sum(if(`todays_date` between '{$filters['today_year']}-03-01' and '{$filters['today_year']}-03-31', 1, 0)) as 'March', ".
-                        "sum(if(`todays_date` between '{$filters['today_year']}-04-01' and '{$filters['today_year']}-04-31', 1, 0)) as 'April', ".
-                        "sum(if(`todays_date` between '{$filters['today_year']}-05-01' and '{$filters['today_year']}-05-31', 1, 0)) as 'May', ".
-                        "sum(if(`todays_date` between '{$filters['today_year']}-06-01' and '{$filters['today_year']}-06-31', 1, 0)) as 'June', ".
-                        "sum(if(`todays_date` between '{$filters['today_year']}-07-01' and '{$filters['today_year']}-07-31', 1, 0)) as 'July', ".
-                        "sum(if(`todays_date` between '{$filters['today_year']}-08-01' and '{$filters['today_year']}-08-31', 1, 0)) as 'August', ".
-                        "sum(if(`todays_date` between '{$filters['today_year']}-09-01' and '{$filters['today_year']}-09-31', 1, 0)) as 'September', ".
-                        "sum(if(`todays_date` between '{$filters['today_year']}-10-01' and '{$filters['today_year']}-10-31', 1, 0)) as 'October', ".
-                        "sum(if(`todays_date` between '{$filters['today_year']}-11-01' and '{$filters['today_year']}-11-31', 1, 0)) as 'November', ".
-                        "sum(if(`todays_date` between '{$filters['today_year']}-12-01' and '{$filters['today_year']}-12-31', 1, 0)) as 'December'");
+                        "sum(if(`recive_date` between '{$filters['today_year']}-01-01' and '{$filters['today_year']}-01-31', 1, 0)) as 'January', ".
+                        "sum(if(`recive_date` between '{$filters['today_year']}-02-01' and '{$filters['today_year']}-02-31', 1, 0)) as 'February', ".
+                        "sum(if(`recive_date` between '{$filters['today_year']}-03-01' and '{$filters['today_year']}-03-31', 1, 0)) as 'March', ".
+                        "sum(if(`recive_date` between '{$filters['today_year']}-04-01' and '{$filters['today_year']}-04-31', 1, 0)) as 'April', ".
+                        "sum(if(`recive_date` between '{$filters['today_year']}-05-01' and '{$filters['today_year']}-05-31', 1, 0)) as 'May', ".
+                        "sum(if(`recive_date` between '{$filters['today_year']}-06-01' and '{$filters['today_year']}-06-31', 1, 0)) as 'June', ".
+                        "sum(if(`recive_date` between '{$filters['today_year']}-07-01' and '{$filters['today_year']}-07-31', 1, 0)) as 'July', ".
+                        "sum(if(`recive_date` between '{$filters['today_year']}-08-01' and '{$filters['today_year']}-08-31', 1, 0)) as 'August', ".
+                        "sum(if(`recive_date` between '{$filters['today_year']}-09-01' and '{$filters['today_year']}-09-31', 1, 0)) as 'September', ".
+                        "sum(if(`recive_date` between '{$filters['today_year']}-10-01' and '{$filters['today_year']}-10-31', 1, 0)) as 'October', ".
+                        "sum(if(`recive_date` between '{$filters['today_year']}-11-01' and '{$filters['today_year']}-11-31', 1, 0)) as 'November', ".
+                        "sum(if(`recive_date` between '{$filters['today_year']}-12-01' and '{$filters['today_year']}-12-31', 1, 0)) as 'December'");
 
                     break;
                 case 'state' :

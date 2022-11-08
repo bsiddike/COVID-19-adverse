@@ -16,6 +16,7 @@ class SymptomSeeder extends Seeder
      * Run the database seeds.
      *
      * @return void
+     *
      * @throws IOException
      * @throws UnsupportedTypeException
      * @throws ReaderNotOpenedException
@@ -28,19 +29,18 @@ class SymptomSeeder extends Seeder
         $years = $parameters[1];
         $folderName = 'symptom/';
         foreach ($years as $year) {
-            if (is_dir($basePath . $year . $folderName)) {
-                $arrFiles = scandir($basePath . $year . $folderName);
+            if (is_dir($basePath.$year.$folderName)) {
+                $arrFiles = scandir($basePath.$year.$folderName);
                 foreach ($arrFiles as $arrFile) {
-                    if (is_file($basePath . $year . $folderName . $arrFile)) {
-
+                    if (is_file($basePath.$year.$folderName.$arrFile)) {
                         $start_time = microtime(true);
                         $this->command->line("Seeding : {$year} {$folderName} {$arrFile}");
 
                         (new FastExcel)
                             ->withoutHeaders()
                             ->import(
-                                $basePath . $year . $folderName . $arrFile,
-                                function ($line) use ($basePath, $year, $folderName, $arrFile) {
+                                $basePath.$year.$folderName.$arrFile,
+                                function ($line) {
                                     /*0 => "VAERS_ID"
                                       1 => "SYMPTOM1"
                                       2 => "SYMPTOMVERSION1"
@@ -55,7 +55,6 @@ class SymptomSeeder extends Seeder
                                     */
 
                                     if ($line[0] != 'VAERS_ID') {
-
                                         set_time_limit(2100);
                                         ini_set('memory_limit', -1);
 
@@ -79,7 +78,7 @@ class SymptomSeeder extends Seeder
                                     return null;
                                 }
                             );
-                        $this->command->line("Seeded In: " . ((microtime(true) - $start_time) * 1000000) . "sec");
+                        $this->command->line('Seeded In: '.((microtime(true) - $start_time) * 1000000).'sec');
                         break;
                     }
                 }

@@ -5,6 +5,9 @@ namespace Database\Seeders;
 use App\Models\Symptom;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
+use OpenSpout\Common\Exception\IOException;
+use OpenSpout\Common\Exception\UnsupportedTypeException;
+use OpenSpout\Reader\Exception\ReaderNotOpenedException;
 use Rap2hpoutre\FastExcel\FastExcel;
 
 class SymptomSeeder extends Seeder
@@ -13,12 +16,13 @@ class SymptomSeeder extends Seeder
      * Run the database seeds.
      *
      * @return void
+     * @throws IOException
+     * @throws UnsupportedTypeException
+     * @throws ReaderNotOpenedException
      */
-    public function run()
+    public function run(...$parameters)
     {
-        Model::unguard();
-        $basePath = base_path('database/data/');
-        $years = ['2019/', '2020/', '2021/', '2022/'];
+        extract($parameters);
         $folderName = 'symptom/';
         foreach ($years as $year) {
             if (is_dir($basePath.$year.$folderName)) {
@@ -75,6 +79,5 @@ class SymptomSeeder extends Seeder
                 }
             }
         }
-        Model::reguard();
     }
 }

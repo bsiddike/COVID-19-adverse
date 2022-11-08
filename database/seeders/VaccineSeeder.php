@@ -5,6 +5,9 @@ namespace Database\Seeders;
 use App\Models\Vaccine;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
+use OpenSpout\Common\Exception\IOException;
+use OpenSpout\Common\Exception\UnsupportedTypeException;
+use OpenSpout\Reader\Exception\ReaderNotOpenedException;
 use Rap2hpoutre\FastExcel\FastExcel;
 
 class VaccineSeeder extends Seeder
@@ -13,12 +16,13 @@ class VaccineSeeder extends Seeder
      * Run the database seeds.
      *
      * @return void
+     * @throws IOException
+     * @throws UnsupportedTypeException
+     * @throws ReaderNotOpenedException
      */
-    public function run()
+    public function run(...$parameters)
     {
-        Model::unguard();
-        $basePath = base_path('database/data/');
-        $years = ['2019/', '2020/', '2021/', '2022/'];
+        extract($parameters);
         $folderName = 'vax/';
         foreach ($years as $year) {
             if (is_dir($basePath.$year.$folderName)) {
@@ -63,7 +67,5 @@ class VaccineSeeder extends Seeder
                 }
             }
         }
-
-        Model::reguard();
     }
 }

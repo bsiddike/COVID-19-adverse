@@ -20,6 +20,7 @@
 
 @push('page-style')
     <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('plugins/bootstrap-slider/css/bootstrap-slider.min.css') }}" type="text/css">
 @endpush
 
 @push('head-script')
@@ -64,7 +65,13 @@
                                 {!! \Form::nText('year', 'Year', request()->get('year'), false) !!}
                             </div>
                             <div class="col-md-4">
-                                {!! \Form::nText('age', 'Age', request()->get('age'), false) !!}
+                                {{--{!! \Form::nText('age', 'Age', request()->get('age'), false) !!}--}}
+                                <div class="slider-blue">
+                                    <label for="age">Age</label><br>
+                                    <input type="text" value="" class="slider form-control" data-slider-min="0" data-slider-max="100"
+                                           data-slider-step="5" data-slider-value="[{{request()->get('age')??('0,100')}}]" data-slider-orientation="horizontal"
+                                           data-slider-selection="before" data-slider-tooltip="show" name="age">
+                                </div>
                             </div>
                             <div class="col-md-4">
                                 {!! \Form::nSelect('sex', 'Sex',
@@ -123,4 +130,9 @@
     <script src="{{ asset('plugins/daterangepicker/moment.min.js') }}"></script>
     <script src="{{ asset('plugins/chart.js/Chart.min.js') }}"></script>
     <script src="{{ asset('plugins/daterangepicker/daterangepicker.js') }}"></script>
+    <script src="{{ asset('plugins/bootstrap-slider/bootstrap-slider.min.js') }}"></script>
+    <script>
+        /* BOOTSTRAP SLIDER */
+        $('.slider').bootstrapSlider()
+    </script>
 @endpush

@@ -49,8 +49,12 @@
                         <li class="nav-item">
                             <a href="#" class="nav-link">Vaccines</a>
                         </li>
+
                         <li class="nav-item">
                             <a href="{{ route('frontend.patient.apply') }}" class="nav-link">Apply</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('auth.login') }}" class="nav-link">Login</a>
                         </li>
 
                         {{--                        <li class="nav-item dropdown">

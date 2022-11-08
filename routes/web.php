@@ -46,6 +46,9 @@ Route::get('cache-clear', function () {
 
 //Frontend
 Route::name('frontend.')->group(function () {
+    Route::get('patient-apply', function () {
+        return '';
+    })->name('patient.apply');
 });
 
 Route::prefix('backend')->group(function () {

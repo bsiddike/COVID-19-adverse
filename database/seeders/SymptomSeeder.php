@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Symptom;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use OpenSpout\Common\Exception\IOException;
 use OpenSpout\Common\Exception\UnsupportedTypeException;
 use OpenSpout\Reader\Exception\ReaderNotOpenedException;
@@ -21,14 +22,16 @@ class SymptomSeeder extends Seeder
      */
     public function run(...$parameters)
     {
+        DB::table('symptoms')->truncate();
+
         $basePath = $parameters[0];
         $years = $parameters[1];
         $folderName = 'symptom/';
         foreach ($years as $year) {
-            if (is_dir($basePath.$year.$folderName)) {
-                $arrFiles = scandir($basePath.$year.$folderName);
+            if (is_dir($basePath . $year . $folderName)) {
+                $arrFiles = scandir($basePath . $year . $folderName);
                 foreach ($arrFiles as $arrFile) {
-                    if (is_file($basePath.$year.$folderName.$arrFile)) {
+                    if (is_file($basePath . $year . $folderName . $arrFile)) {
 
                         $start_time = microtime(true);
                         $this->command->line("Seeding : {$year} {$folderName} {$arrFile}");
@@ -36,7 +39,7 @@ class SymptomSeeder extends Seeder
                         (new FastExcel)
                             ->withoutHeaders()
                             ->import(
-                                $basePath.$year.$folderName.$arrFile,
+                                $basePath . $year . $folderName . $arrFile,
                                 function ($line) use ($basePath, $year, $folderName, $arrFile) {
                                     /*0 => "VAERS_ID"
                                       1 => "SYMPTOM1"
@@ -52,10 +55,7 @@ class SymptomSeeder extends Seeder
                                     */
 
                                     if ($line[0] != 'VAERS_ID') {
-                                        $this->command->line(
-                                            $basePath.$year.$folderName.$arrFile.'--'
-                                            .date('Y-m-d H:i:s')
-                                        );
+
                                         set_time_limit(2100);
                                         ini_set('memory_limit', -1);
 
@@ -79,8 +79,8 @@ class SymptomSeeder extends Seeder
                                     return null;
                                 }
                             );
-                        $end_time = microtime(true);
-                        $this->command->line("Seeded In: " . (($end_time - $start_time) / 1000000) . "sec");
+                        $this->command->line("Seeded In: " . ((microtime(true) - $start_time) * 1000000) . "sec");
+                        break;
                     }
                 }
             }

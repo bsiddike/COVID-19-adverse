@@ -2,6 +2,11 @@
 
 namespace Database\Seeders;
 
+use Database\Seeders\Backend\AdminRegisterSeeder;
+use Database\Seeders\Backend\SARegisterSeeder;
+use Database\Seeders\Backend\Setting\PermissionSeeder;
+use Database\Seeders\Backend\Setting\RolePermissionSeeder;
+use Database\Seeders\Backend\Setting\RoleSeeder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 

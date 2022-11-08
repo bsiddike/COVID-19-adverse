@@ -35,7 +35,7 @@ use Illuminate\Support\Facades\Route;
  * |
  */
 Route::get('/', function () {
-    return redirect()->to('backend/login');
+    return view('frontend.home');
 })->name('home');
 
 Route::get('translate-locale', TranslateController::class)->name('translate-locale');
@@ -46,13 +46,6 @@ Route::get('cache-clear', function () {
 
 //Frontend
 Route::name('frontend.')->group(function () {
-    Route::name('organization.')->group(function () {
-        /*        Route::get('applicant-registration', [ApplicantController::class, 'create'])
-                    ->name('applicants.create')->middleware('guest');
-
-                Route::post('applicant-registration', [ApplicantController::class, 'store'])
-                    ->name('applicants.store');*/
-    });
 });
 
 Route::prefix('backend')->group(function () {
@@ -123,7 +116,7 @@ Route::prefix('backend')->group(function () {
      * Admin Panel/ Backend Route
      */
     Route::get('/', function () {
-        return redirect(\route('backend.dashboard'));
+        return redirect(route('backend.dashboard'));
     })->name('backend');
 
     Route::middleware(['auth'])->name('backend.')->group(function () {

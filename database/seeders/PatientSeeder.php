@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Patient;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use OpenSpout\Common\Exception\IOException;
 use OpenSpout\Common\Exception\UnsupportedTypeException;
 use OpenSpout\Reader\Exception\ReaderNotOpenedException;
@@ -21,6 +22,8 @@ class PatientSeeder extends Seeder
      */
     public function run(...$parameters)
     {
+        DB::table('patients')->truncate();
+
         $basePath = $parameters[0];
         $years = $parameters[1];
         $folderName = 'data/';
@@ -76,8 +79,6 @@ class PatientSeeder extends Seeder
                                     */
 
                                     if ($line[0] != 'VAERS_ID') {
-                                        $this->command->line($basePath.$year.$folderName.$arrFile.'--'
-                                                             .date('Y-m-d H:i:s'));
                                         set_time_limit(2100);
                                         ini_set('memory_limit', -1);
 
@@ -126,8 +127,8 @@ class PatientSeeder extends Seeder
                                 }
                             );
 
-                        $end_time = microtime(true);
-                        $this->command->line("Seeded In: " . (($end_time - $start_time) / 1000000) . "sec");
+                        $this->command->line("Seeded In: " . ((microtime(true) - $start_time) * 1000000) . "sec");
+                        break;
                     }
                 }
             }

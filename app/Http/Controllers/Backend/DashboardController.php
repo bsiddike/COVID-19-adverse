@@ -35,8 +35,8 @@ class DashboardController extends Controller
     public function __invoke(Request $request)
     {
         //dd($request->all());
-        if(!empty($request->age)){
-            $age = explode(',',$request->age);
+        if (! empty($request->age)) {
+            $age = explode(',', $request->age);
             $request['age_start'] = $age[0];
             $request['age_end'] = $age[1];
         }

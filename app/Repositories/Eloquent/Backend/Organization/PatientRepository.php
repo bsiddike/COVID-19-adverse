@@ -107,11 +107,11 @@ class PatientRepository extends EloquentRepository
 
                     $query->selectRaw("sum(if(`age_yrs` < 10, 1, 0)) as '0.0-10.0', ".
                         "sum(if(`age_yrs` between 10 and 20, 1, 0)) as '10.1-20.0', ".
-                        "sum(if(`age_yrs` between 20 and 30, 1, 0)) as '20.1-20.0', ".
-                        "sum(if(`age_yrs` between 30 and 40, 1, 0)) as '30.1-20.0', ".
-                        "sum(if(`age_yrs` between 40 and 50, 1, 0)) as '40.1-20.0', ".
-                        "sum(if(`age_yrs` between 50 and 60, 1, 0)) as '50.1-20.0', ".
-                        "sum(if(`age_yrs` between 60 and 70, 1, 0)) as '60.1-20.0', ".
+                        "sum(if(`age_yrs` between 20 and 30, 1, 0)) as '20.1-30.0', ".
+                        "sum(if(`age_yrs` between 30 and 40, 1, 0)) as '30.1-40.0', ".
+                        "sum(if(`age_yrs` between 40 and 50, 1, 0)) as '40.1-50.0', ".
+                        "sum(if(`age_yrs` between 50 and 60, 1, 0)) as '50.1-60.0', ".
+                        "sum(if(`age_yrs` between 60 and 70, 1, 0)) as '60.1-70.0', ".
                         "sum(if(`age_yrs` > 70, 1, 0)) as '70.1-INF' ");
                     break;
 

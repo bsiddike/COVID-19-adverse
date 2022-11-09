@@ -43,20 +43,20 @@
                                     <thead class="thead-light">
                                     <tr>
                                         <th class="text-center">{!! __('common.Actions') !!}</th>
-                                        <th class="align-middle">@sortablelink('id', '#')</th>
+                                        {{--                                        <th class="align-middle">@sortablelink('id', '#')</th>--}}
                                         <th>@sortablelink('vaers_id', 'Patient\'s ID'))</th>
                                         <th>@sortablelink('symptom1', 'symptom 1'))</th>
-                                        <th>@sortablelink('symptomversion1', 'symptomversion1'))</th>
+                                        {{--                                        <th>@sortablelink('symptomversion1', 'symptomversion1'))</th>--}}
                                         <th>@sortablelink('symptom2', 'symptom 2'))</th>
-                                        <th>@sortablelink('symptomversion2', 'symptomversion2'))</th>
+                                        {{--                                        <th>@sortablelink('symptomversion2', 'symptomversion2'))</th>--}}
                                         <th>@sortablelink('symptom3', 'symptom 3'))</th>
-                                        <th>@sortablelink('symptomversion3', 'symptomversion3'))</th>
+                                        {{--                                        <th>@sortablelink('symptomversion3', 'symptomversion3'))</th>--}}
                                         <th>@sortablelink('symptom4', 'symptom 4'))</th>
-                                        <th>@sortablelink('symptomversion4', 'symptomversion4'))</th>
+                                        {{--                                        <th>@sortablelink('symptomversion4', 'symptomversion4'))</th>--}}
                                         <th>@sortablelink('symptom5', 'symptom 5'))</th>
-                                        <th>@sortablelink('symptomversion5', 'symptomversion5'))</th>
-                                        <th class="text-center">@sortablelink('created_at', __('common.Created'))</th>
-                                  </tr>
+                                        {{--                                        <th>@sortablelink('symptomversion5', 'symptomversion5'))</th>--}}
+                                        {{--                                        <th class="text-center">@sortablelink('created_at', __('common.Created'))</th>--}}
+                                    </tr>
                                     </thead>
                                     <tbody>
                                     @forelse($symptoms as $index => $symptom)
@@ -64,21 +64,22 @@
                                             <td class="exclude-search pr-3 text-center align-middle">
                                                 {!! Html::actionDropdown('backend.organization.symptoms', $symptom->id, array_merge(['show', 'edit'], ($symptom->deleted_at == null) ? ['delete'] : ['restore'])) !!}
                                             </td>
-                                            <td class="exclude-search align-middle">
-                                                {{ $symptom->id }}
+                                            <td>
+                                                <a href="{{ route('backend.organization.patients.show', $symptom->patient->id) }}">
+                                                    {{ $symptom->vaers_id ?? null }}
+                                                </a>
                                             </td>
-                                            <td>{{ $symptom->vaers_id ?? null }}</td>
                                             <td>{{ $symptom->symptom1 ?? null }}</td>
-                                            <td>{{ $symptom->symptomversion1 ?? null }}</td>
+{{--                                            <td>{{ $symptom->symptomversion1 ?? null }}</td>--}}
                                             <td>{{ $symptom->symptom2 ?? null }}</td>
-                                            <td>{{ $symptom->symptomversion2 ?? null }}</td>
+{{--                                            <td>{{ $symptom->symptomversion2 ?? null }}</td>--}}
                                             <td>{{ $symptom->symptom3 ?? null }}</td>
-                                            <td>{{ $symptom->symptomversion3 ?? null }}</td>
+{{--                                            <td>{{ $symptom->symptomversion3 ?? null }}</td>--}}
                                             <td>{{ $symptom->symptom4 ?? null }}</td>
-                                            <td>{{ $symptom->symptomversion4 ?? null }}</td>
+{{--                                            <td>{{ $symptom->symptomversion4 ?? null }}</td>--}}
                                             <td>{{ $symptom->symptom5 ?? null }}</td>
-                                            <td>{{ $symptom->symptomversion5 ?? null }}</td>
-                                            <td class="text-center">{{ $symptom->created_at->format(config('backend.datetime')) ?? '' }}</td>
+{{--                                            <td>{{ $symptom->symptomversion5 ?? null }}</td>--}}
+{{--                                            <td class="text-center">{{ $symptom->created_at->format(config('backend.datetime')) ?? '' }}</td>--}}
                                         </tr>
                                     @empty
                                         <tr>

@@ -26,20 +26,7 @@
     <div class="wrapper">
         @include('layouts.partials.navbar-frontend')
         <div class="content-wrapper" style="min-height: 388.4px;">
-            <div class="content-header">
-                <div class="container">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1 class="m-0"> Home</h1>
-                        </div>
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @yield('breadcrumbs')
             <div class="content">
                 @yield('content')
             </div>

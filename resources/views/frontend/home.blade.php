@@ -24,7 +24,7 @@
 
 
 
-{{--@section('breadcrumbs', Breadcrumbs::render())--}}
+@section('breadcrumbs', Breadcrumbs::render())
 
 @section('actions')
     {{--

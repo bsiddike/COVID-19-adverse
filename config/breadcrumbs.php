@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'view' => (1 == 2) ? 'layouts.partials.frontend-breadcrumb' : 'layouts.partials.backend-breadcrumb',
+    'view' => 'layouts.partials.breadcrumb',
 
     /*
     |--------------------------------------------------------------------------

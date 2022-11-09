@@ -69,18 +69,19 @@
                                         </li>--}}
             </ul>
 
-        {{--    <form class="form-inline ml-0 ml-md-3">
-                <div class="input-group input-group-sm">
-                    <input class="form-control form-control-navbar" type="search" placeholder="Search"
-                           aria-label="Search">
-                    <div class="input-group-append">
-                        <button class="btn btn-navbar" type="submit">
-                            <i class="fas fa-search"></i>
-                        </button>
+            {{--    <form class="form-inline ml-0 ml-md-3">
+                    <div class="input-group input-group-sm">
+                        <input class="form-control form-control-navbar" type="search" placeholder="Search"
+                               aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-navbar" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </form>
-        --}}</div>
+                </form>
+            --}}
+        </div>
 
         <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
 

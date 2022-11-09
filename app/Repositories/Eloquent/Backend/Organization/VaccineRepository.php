@@ -35,7 +35,7 @@ class VaccineRepository extends EloquentRepository
      */
     private function filterData(array $filters = [], bool $is_sortable = false): Builder
     {
-/*        $filters['metric'] = 'top_10_symptoms';*/
+        /*        $filters['metric'] = 'top_10_symptoms';*/
 
         foreach ($filters as $key => $value) {
             if (is_null($filters[$key])) {

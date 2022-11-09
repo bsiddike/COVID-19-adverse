@@ -27,12 +27,12 @@
 @section('breadcrumbs', Breadcrumbs::render())
 
 @section('actions')
-    {!! Html::linkButton( 'Add Vaccine', 'backend.organization.vaccines.create', [], 'fas fa-plus', 'success') !!}
-{{--    {!! Html::bulkDropdown('backend.organization.vaccines', 0, ['color' => 'warning']) !!}--}}
+{{--    {!! Html::linkButton( 'Add Vaccine', 'backend.organization.vaccines.create', [], 'fas fa-plus', 'success') !!}
+--}}{{--    {!! Html::bulkDropdown('backend.organization.vaccines', 0, ['color' => 'warning']) !!}--}}
 @endsection
 
 @section('content')
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="card card-default">

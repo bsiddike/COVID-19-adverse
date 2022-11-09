@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('title', __('patient.Edit Survey'))
+@section('title', 'Edit Symptom')
 
 @push('meta')
 
@@ -22,12 +22,11 @@
 
 @endpush
 
-{{\Route::getCurrentRoute()->getName()}}
 
-{{--@section('breadcrumbs', Breadcrumbs::render(, $patient))--}}
+@section('breadcrumbs', Breadcrumbs::render(Route::getCurrentRoute()->getName(), $symptom))
 
 @section('actions')
-    {!! Html::backButton('backend.organization.patients.index') !!}
+    {!! Html::backButton('backend.organization.symptoms.index') !!}
 @endsection
 
 @section('content')
@@ -35,8 +34,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                    {!! Form::open(['route' => ['backend.organization.patients.update', $patient->id], 'method' => 'put', 'id' => 'patient-form']) !!}
-                    @include('backend.organization.patient.form')
+                    {!! Form::open(['route' => ['backend.organization.symptoms.update', $symptom->id], 'method' => 'put', 'id' => 'symptom-form']) !!}
+                    @include('backend.organization.symptom.form')
                     {!! Form::close() !!}
                 </div>
             </div>

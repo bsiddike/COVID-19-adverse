@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('title', __('patient.Edit Survey'))
+@section('title', 'Add Vaccine')
 
 @push('meta')
 
@@ -22,21 +22,20 @@
 
 @endpush
 
-{{\Route::getCurrentRoute()->getName()}}
 
-{{--@section('breadcrumbs', Breadcrumbs::render(, $patient))--}}
+@section('breadcrumbs', Breadcrumbs::render(Route::getCurrentRoute()->getName()))
 
 @section('actions')
-    {!! Html::backButton('backend.organization.patients.index') !!}
+    {!! Html::backButton('backend.organization.vaccines.index') !!}
 @endsection
 
 @section('content')
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <div class="card">
-                    {!! Form::open(['route' => ['backend.organization.patients.update', $patient->id], 'method' => 'put', 'id' => 'patient-form']) !!}
-                    @include('backend.organization.patient.form')
+                <div class="card card-default">
+                    {!! Form::open(['route' => 'backend.organization.vaccines.store', 'id' => 'symptom-form']) !!}
+                    @include('backend.organization.vaccine.form')
                     {!! Form::close() !!}
                 </div>
             </div>

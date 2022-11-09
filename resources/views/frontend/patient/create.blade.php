@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('title', __('enumerator.Applicant Registration'))
+@section('title', 'Add Patients')
 
 @push('meta')
 
@@ -22,32 +22,27 @@
 
 @endpush
 
+
+@section('breadcrumbs', Breadcrumbs::render(Route::getCurrentRoute()->getName()))
+
+@section('actions')
+    {!! Html::backButton('backend.organization.patients.index') !!}
+@endsection
+
 @section('content')
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
                 <div class="card card-default">
-                    <div class="card-header border-bottom-0">
-                        <h4 class="mb-1 text-center font-weight-bold">{!! __('common.Government of the People’s Republic of Bangladesh') !!}</h4>
-                        <h5 class="mb-1 text-center">{!! __('common.Bangladesh Bureau of Statistics') !!}</h5>
-                        <h5 class="mb-1 text-center">{!! __('common.NSDS Implementation Support Project') !!}</h5>
-                        <h5 class="mb-1 text-center">{!! __('common.Parishankhyan Bhaban (8th Floor, Block-B)') !!}</h5>
-                        <h5 class="mb-1 text-center">{!! __('common.E-27/A, Agargaon, Dhaka-1207') !!}</h5>
-                        <h5 class="mb-1 text-center">
-                            <a href="https://www.bbs.gov.bd" style="text-decoration: underline">www.bbs.gov.bd</a>
-                        </h5>
-                        <h3 class="font-weight-bold text-center mt-3" style="text-decoration: underline">
-                            {!! __('common.Database of Enumerators') !!}
-                        </h3>
-                    </div>
-                    {!! Form::open(['route' => 'backend.applicants.store', 'id' => 'enumerator-form']) !!}
-                    @include('frontend.patient.form')
+                    {!! Form::open(['route' => 'backend.organization.patients.store', 'id' => 'patient-form']) !!}
+                    @include('backend.organization.patient.form')
                     {!! Form::close() !!}
                 </div>
             </div>
         </div>
     </div>
 @endsection
+
 
 @push('plugin-script')
 

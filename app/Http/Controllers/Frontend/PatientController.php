@@ -277,7 +277,7 @@ class PatientController extends Controller
      */
     public function apply()
     {
-        //
+        return view('frontend.patient.apply');
     }
 
     /**

@@ -281,7 +281,7 @@ Breadcrumbs::for('frontend.patients.show', function (BreadcrumbTrail $trail, Pat
     $trail->push('Patient Details', route('frontend.patients.show', $patient->id));
 });
 
-Breadcrumbs::for('frontend.patients.apply', function (BreadcrumbTrail $trail, Patient $patient) {
+Breadcrumbs::for('frontend.patients.apply', function (BreadcrumbTrail $trail) {
     $trail->parent('frontend.patients.index');
     $trail->push('Patient Apply', route('frontend.patients.apply'));
 });

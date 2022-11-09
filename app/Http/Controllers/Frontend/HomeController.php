@@ -11,13 +11,15 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     private PatientService $patientService;
+
     private SymptomService $symptomService;
+
     private VaccineService $vaccineService;
 
     /**
-     * @param PatientService $patientService
-     * @param SymptomService $symptomService
-     * @param VaccineService $vaccineService
+     * @param  PatientService  $patientService
+     * @param  SymptomService  $symptomService
+     * @param  VaccineService  $vaccineService
      */
     public function __construct(PatientService $patientService,
                                 SymptomService $symptomService,
@@ -31,8 +33,9 @@ class HomeController extends Controller
     /**
      * Handle the incoming request.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
+     *
      * @throws \Exception
      */
     public function __invoke(Request $request)

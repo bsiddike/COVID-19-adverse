@@ -45,7 +45,7 @@
                                         <th class="text-center">{!! __('common.Actions') !!}</th>
                                         <th class="align-middle">
                                             @sortablelink('id', '#')</th>
-                                        <th>@sortablelink('vaers_id', 'Vears ID')</th>
+                                        <th>@sortablelink('vaers_id', 'Patient\'s ID')</th>
                                         <th>@sortablelink('vax_name', 'Label')</th>
                                         <th>@sortablelink('vax_type', 'Type')</th>
                                         <th>@sortablelink('vax_manu', 'Manufacture')</th>

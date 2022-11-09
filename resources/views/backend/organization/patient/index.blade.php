@@ -129,7 +129,7 @@
                                                         ['placeholder' => 'Search Survey Name etc.',
                                                         'class' => 'form-control', 'id' => 'search', 'data-target-table' => 'survey-table']) !!}--}}
                             <div class="table-responsive">
-                                <table class="table table-hover mb-0" id="branch-table">
+                                <table class="table table-hover table-bordered table-striped mb-0" id="branch-table">
                                     <thead class="thead-light">
                                     <tr>
                                         <th class="text-center">{!! __('common.Actions') !!}</th>
@@ -142,16 +142,22 @@
                                         {{--                                        <th class="text-center">@sortablelink('cage_mo', 'Cage month')</th>--}}
                                         <th class="text-center">@sortablelink('sex', 'Sex')</th>
                                         {{--                                        <th class="text-center">@sortablelink('rpt_date', 'Report Date')</th>--}}
-                                        {{--                                        <th class="text-center">@sortablelink('symptom_text', 'symptom_text')</th>--}}
-                                        <th class="text-center">@sortablelink('died', 'Died')</th>
-                                        <th class="text-center">@sortablelink('datedied', 'datedied')</th>
+                                        <th class="text-center" style="width: 100px !important; overflow-x: hidden;">@sortablelink('symptom_text', 'symptom_text')</th>
+                                        @if(request()->has('died'))
+                                            <th class="text-center">@sortablelink('died', 'Died')</th>
+                                            <th class="text-center">@sortablelink('datedied', 'datedied')</th>
+                                        @endif
                                         <th class="text-center">@sortablelink('l_threat', 'Life threat')</th>
                                         <th class="text-center">@sortablelink('er_visit', 'Emergency visit')</th>
-                                        <th class="text-center">@sortablelink('hospital', 'Hospital')</th>
-                                        <th class="text-center">@sortablelink('hospdays', 'hospdays')</th>
+                                        @if(request()->has('hospitalized'))
+                                            <th class="text-center">@sortablelink('hospital', 'Hospital')</th>
+                                            <th class="text-center">@sortablelink('hospdays', 'hospdays')</th>
+                                        @endif
                                         <th class="text-center">@sortablelink('x_stay', 'Previous Condition')</th>
                                         <th class="text-center">@sortablelink('disable', 'Disable')</th>
-                                        <th class="text-center">@sortablelink('recovd', 'Re-Covid19')</th>
+                                        @if(request()->has('recovered'))
+                                            <th class="text-center">@sortablelink('recovd', 'Re-Covid19')</th>
+                                        @endif
                                         {{--                                        <th class="text-center">@sortablelink('vax_date', 'Vaccine Data')</th>--}}
                                         {{--                                        <th class="text-center">@sortablelink('onset_date', 'onset_date')</th>--}}
                                         <th class="text-center">@sortablelink('numdays', 'numdays')</th>
@@ -198,16 +204,24 @@
                                                 @endif
                                             </td>
                                             {{--                                            <td class="text-center">{{ $patient->rpt_date ?? null }}</td>--}}
-                                            {{--                                            <td class="text-center">{{ $patient->symptom_text ?? null }}</td>--}}
-                                            <td class="text-center">{{ $patient->died ?? null }}</td>
-                                            <td class="text-center">{{ $patient->datedied ?? null }}</td>
+                                            <td class="text-left">
+                                                {{ trim(($patient->symptom_text ?? null)) }}
+                                            </td>
+                                            @if(request()->has('died'))
+                                                <td class="text-center">{{ $patient->died ?? null }}</td>
+                                                <td class="text-center">{{ $patient->datedied ?? null }}</td>
+                                            @endif
                                             <td class="text-center">{{ $patient->l_threat ?? null }}</td>
                                             <td class="text-center">{{ $patient->er_visit ?? null }}</td>
-                                            <td class="text-center">{{ $patient->hospital ?? null }}</td>
-                                            <td class="text-center">{{ $patient->hospdays ?? null }}</td>
+                                            @if(request()->has('hospitalized'))
+                                                <td class="text-center">{{ $patient->hospital ?? null }}</td>
+                                                <td class="text-center">{{ $patient->hospdays ?? null }}</td>
+                                            @endif
                                             <td class="text-center">{{ $patient->x_stay ?? null }}</td>
                                             <td class="text-center">{{ $patient->disable ?? null }}</td>
-                                            <td class="text-center">{{ $patient->recovd ?? null }}</td>
+                                            @if(request()->has('recovered'))
+                                                <td class="text-center">{{ $patient->recovd ?? null }}</td>
+                                            @endif
                                             {{--                                            <td class="text-center">{{ $patient->vax_date ?? null }}</td>--}}
                                             {{--                                            <td class="text-center">{{ $patient->onset_date ?? null }}</td>--}}
                                             <td class="text-center">{{ $patient->numdays ?? null }}</td>

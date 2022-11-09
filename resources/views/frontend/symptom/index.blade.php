@@ -40,7 +40,7 @@
                     @if(!empty($symptoms))
                         <div class="card-body p-0">
                             <div class="table-responsive">
-                                <table class="table table-hover mb-0" id="employee-table">
+                                <table class="table table-hover table-bordered table-striped mb-0" id="employee-table">
                                     <thead class="thead-light">
                                     <tr>
                                         <th class="text-center">{!! __('common.Actions') !!}</th>

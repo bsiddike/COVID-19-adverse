@@ -46,7 +46,7 @@
                             ['placeholder' => 'Search Permission Display Name, Code, Guard, Status, etc.',
                             'class' => 'form-control', 'id' => 'search', 'data-target-table' => 'permission-table']) !!}
                             <div class="table-responsive">
-                                <table class="table table-hover mb-0" id="permission-table">
+                                <table class="table table-hover table-bordered table-striped mb-0" id="permission-table">
                                     <thead class="thead-light">
                                     <tr>
                                         <th class="align-middle">

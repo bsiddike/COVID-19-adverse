@@ -129,7 +129,7 @@
                                                         ['placeholder' => 'Search Survey Name etc.',
                                                         'class' => 'form-control', 'id' => 'search', 'data-target-table' => 'survey-table']) !!}--}}
                             <div class="table-responsive">
-                                <table class="table table-hover mb-0" id="branch-table">
+                                <table class="table table-hover table-bordered table-striped mb-0" id="branch-table">
                                     <thead class="thead-light">
                                     <tr>
                                         <th class="text-center">{!! __('common.Actions') !!}</th>

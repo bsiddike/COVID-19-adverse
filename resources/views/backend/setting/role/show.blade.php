@@ -152,7 +152,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <table class="table table-hover table-sm mb-0" id="permission-table">
+                                    <table class="table table-hover table-bordered table-striped table-sm mb-0" id="permission-table">
                                         <thead class="thead-light">
                                         <tr class="text-center">
                                             <th width="35" class="p-2 align-middle">

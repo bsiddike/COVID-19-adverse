@@ -44,7 +44,7 @@
         ['placeholder' => 'Search Role Name, Code, Guard, Status, etc.',
         'class' => 'form-control', 'id' => 'search', 'data-target-table' => 'user-table']) !!}
                             <div class="table-responsive">
-                                <table class="table table-hover mb-0" id="user-table">
+                                <table class="table table-hover table-bordered table-striped mb-0" id="user-table">
                                     <thead class="thead-light">
                                     <tr>
                                         <th class="align-middle">

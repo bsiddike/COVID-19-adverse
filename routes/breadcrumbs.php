@@ -23,7 +23,7 @@ Breadcrumbs::for('frontend.organization.applicants.create', function ($trail) {
 
 Breadcrumbs::for('backend', function (BreadcrumbTrail $trail) {
     $trail->parent('home');
-    $trail->push(__('menu-sidebar.Backend'), route('backend'));
+    $trail->push('Admin', route('backend'));
 });
 
 Breadcrumbs::for('backend.dashboard', function (BreadcrumbTrail $trail) {

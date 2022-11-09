@@ -19,7 +19,6 @@ use App\Http\Controllers\Backend\Setting\PermissionController;
 use App\Http\Controllers\Backend\Setting\RoleController;
 use App\Http\Controllers\Backend\Setting\UserController;
 use App\Http\Controllers\Backend\SettingController;
-use App\Http\Controllers\Frontend\Organization\ApplicantController;
 use App\Http\Controllers\TranslateController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
@@ -62,7 +61,7 @@ Route::name('frontend.')->group(function () {
         ->only('index', 'show');
 });
 
-Route::prefix('backend')->group(function () {
+Route::prefix('admin')->group(function () {
     /**
      * Authentication Route
      */

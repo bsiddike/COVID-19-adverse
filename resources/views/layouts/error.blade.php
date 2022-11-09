@@ -25,18 +25,18 @@
     <body class="hold-transition @yield('body-class')">
     <div class="wrapper">
         <!-- Preloader -->
-    @include('layouts.includes.preloader')
-    <!-- Navbar -->
-    @include('layouts.partials.navbar')
+        @include('layouts.includes.preloader')
+        <!-- Navbar -->
+        @include('layouts.partials.navbar-backend')
 
-    <!-- Main Sidebar Container -->
-    @include('layouts.partials.menu-sidebar')
+        <!-- Main Sidebar Container -->
+        @include('layouts.partials.menu-sidebar')
 
-    <!-- Content Wrapper. Contains page content -->
+        <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
-        @include('layouts.partials.content-header')
-        <!-- Main content -->
+            @include('layouts.partials.content-header')
+            <!-- Main content -->
             <section class="content">
 
                 <div class="error-page">
@@ -77,8 +77,8 @@
         <!-- /.content-wrapper -->
 
         <!-- Control Sidebar -->
-    @include('layouts.partials.control-sidebar')
-    <!-- Main Footer -->
+        @include('layouts.partials.control-sidebar')
+        <!-- Main Footer -->
         @include('layouts.partials.main-footer')
     </div>
     <!-- ./wrapper -->

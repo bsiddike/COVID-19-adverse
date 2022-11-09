@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.frontend')
 
-@section('title', __('menu-sidebar.Enumerators'))
+@section('title', 'Patients ')
 
 @push('meta')
 

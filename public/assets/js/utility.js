@@ -307,7 +307,7 @@ if (typeof $.validator === 'function') {
         "Please enter value on this 01XXXXXXXXX format."
     );
 
-    //applicant's id & password match method
+    //patient's id & password match method
     $.validator.addMethod("credential", function (value, element) {
             return this.optional(element) || /^[a-zA-Z0-9]{8,10}$/.test(value);
         },

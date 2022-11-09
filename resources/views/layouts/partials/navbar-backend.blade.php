@@ -3,13 +3,14 @@
 @endpush
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Menu sidebar toggle button -->
-    <a class="nav-link text-decoration-none text-dark" data-widget="pushmenu" href="#" role="button"><i
-                class="fas fa-bars"></i></a>
+    <a class="nav-link text-decoration-none text-dark" data-widget="pushmenu" href="#" role="button">
+        <i class="fas fa-bars"></i>
+    </a>
 
     <!-- Left navbar links -->
-{{--@include('layouts.partials.navbar.navbar-shortcut')--}}
+    {{--@include('layouts.partials.navbar.navbar-shortcut')--}}
 
-<!-- Right navbar links -->
+    <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
         <!-- Full screen -->
         <li class="nav-item">
@@ -33,12 +34,12 @@
             </div>
         </li>
         <!-- Navbar Search -->
-    {{--@include('layouts.partials.navbar.navbar-search')--}}
-    <!-- Messages Dropdown Menu -->
-    {{--@include('layouts.partials.navbar.navbar-message')--}}
-    <!-- Notifications Dropdown Menu -->
-    {{--@include('layouts.partials.navbar.navbar-notification')--}}
-    <!-- User Profile Dropdown menu -->
+        {{--@include('layouts.partials.navbar.navbar-search')--}}
+        <!-- Messages Dropdown Menu -->
+        {{--@include('layouts.partials.navbar.navbar-message')--}}
+        <!-- Notifications Dropdown Menu -->
+        {{--@include('layouts.partials.navbar.navbar-notification')--}}
+        <!-- User Profile Dropdown menu -->
         @include('layouts.partials.navbar.navbar-user')
         {{--<li class="nav-item">
             <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">

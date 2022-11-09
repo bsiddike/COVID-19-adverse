@@ -41,7 +41,7 @@
                         </h3>
                     </div>
                     {!! Form::open(['route' => 'backend.applicants.store', 'id' => 'enumerator-form']) !!}
-                    @include('frontend.organization.applicant.form')
+                    @include('frontend.patient.form')
                     {!! Form::close() !!}
                 </div>
             </div>

@@ -46,9 +46,21 @@ Route::get('cache-clear', function () {
 
 //Frontend
 Route::name('frontend.')->group(function () {
-    Route::get('patient-apply', function () {
-        return '';
-    })->name('patient.apply');
+    Route::resource('patients', \App\Http\Controllers\Frontend\PatientController::class)
+        ->only('index', 'show');
+
+    Route::get('patient-apply', [\App\Http\Controllers\Frontend\PatientController::class, 'apply'])
+        ->name('patients.apply');
+
+    Route::post('patient-register', [\App\Http\Controllers\Frontend\PatientController::class, 'register'])
+        ->name('patients.register');
+
+
+    Route::resource('symptoms', \App\Http\Controllers\Frontend\SymptomController::class)
+        ->only('index', 'show');
+
+    Route::resource('vaccines', \App\Http\Controllers\Frontend\VaccineController::class)
+        ->only('index', 'show');
 });
 
 Route::prefix('backend')->group(function () {
@@ -126,9 +138,9 @@ Route::prefix('backend')->group(function () {
         Route::get('/dashboard', DashboardController::class)
             ->name('dashboard');
 
-        /*        Route::get('applicant-registration', [ApplicantController::class, 'create'])
+        /*        Route::get('patient-registration', [ApplicantController::class, 'create'])
                     ->name('applicants.create');
-                Route::post('applicant-registration', [ApplicantController::class, 'store'])
+                Route::post('patient-registration', [ApplicantController::class, 'store'])
                     ->name('applicants.store');*/
 
         //Common Operations

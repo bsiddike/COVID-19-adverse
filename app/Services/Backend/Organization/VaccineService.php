@@ -122,7 +122,7 @@ class VaccineService extends Service
     }
 
     /**
-     * Return formatted applicant profile format array
+     * Return formatted patient profile format array
      *
      * @param  array  $inputs
      * @return array

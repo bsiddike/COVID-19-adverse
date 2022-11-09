@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Patients')
+@section('title', $title ?? 'Patients')
 
 @push('meta')
 
@@ -30,7 +30,7 @@
 
 @section('actions')
     {!! Html::linkButton('Add Patient', 'backend.organization.patients.create', [], 'fas fa-plus', 'success') !!}
-    {{--{!! \Html::bulkDropdown('backend.organization.surveys', 0, ['color' => 'warning']) !!}--}}
+    {{--{!! \Html::bulkDropdown('backend.organization.patients', 0, ['color' => 'warning']) !!}--}}
 @endsection
 
 @section('content')

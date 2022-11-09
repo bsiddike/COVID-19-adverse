@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $survey->name)
+@section('title', $patient->vaers_id)
 
 @push('meta')
 
@@ -22,12 +22,12 @@
 
 @endpush
 
-@section('breadcrumbs', Breadcrumbs::render(Route::getCurrentRoute()->getName(), $survey))
+@section('breadcrumbs', Breadcrumbs::render(Route::getCurrentRoute()->getName(), $patient))
 
 @section('actions')
-    {!! Html::backButton('backend.organization.surveys.index') !!}
-    {{--    {!! \Html::modelDropdown('backend.organization.surveys', $survey->id, ['color' => 'success',
-            'actions' => array_merge(['edit'], ($survey->deleted_at == null) ? ['delete'] : ['restore'])]) !!}--}}
+    {!! Html::backButton('backend.organization.patients.index') !!}
+    {{--    {!! \Html::modelDropdown('backend.organization.patients', $patient->id, ['color' => 'success',
+            'actions' => array_merge(['edit'], ($patient->deleted_at == null) ? ['delete'] : ['restore'])]) !!}--}}
 @endsection
 
 @section('content')
@@ -37,13 +37,10 @@
                 <div class="card card-default">
                     <div class="card-body min-vh-100">
                         <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label class="d-block">Name</label>
-                                <p class="font-weight-bold">{{ $survey->name ?? null }}</p>
-                            </div>
+                            <div class="col-md-6"><label class="d-block">Name</label><p class="font-weight-bold">{{ $patient->name ?? null }}</p></div>
                             <div class="col-md-6">
                                 <label class="d-block">Enabled</label>
-                                <p class="font-weight-bold">{{ \App\Supports\Constant::ENABLED_OPTIONS[$survey->enabled] }}</p>
+                                <p class="font-weight-bold"></p>
                             </div>
                         </div>
 

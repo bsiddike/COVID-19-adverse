@@ -7,10 +7,8 @@ use Illuminate\Http\Request;
 
 class VaccineController extends Controller
 {
-
     public function __construct()
     {
-
     }
 
     /**

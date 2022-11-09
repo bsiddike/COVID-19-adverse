@@ -55,7 +55,6 @@ Route::name('frontend.')->group(function () {
     Route::post('patient-register', [\App\Http\Controllers\Frontend\PatientController::class, 'register'])
         ->name('patients.register');
 
-
     Route::resource('symptoms', \App\Http\Controllers\Frontend\SymptomController::class)
         ->only('index', 'show');
 

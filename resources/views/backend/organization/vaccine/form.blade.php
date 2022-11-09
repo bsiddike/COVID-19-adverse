@@ -1,6 +1,6 @@
 <div class="card-body">
     <div class="row">
-        <div class="col-md-6">{!! Form::nText('vaers_id', 'Patient ID', old('vaers_id', $vaccine->vaers_id ?? null), true) !!}</div>
+        <div class="col-md-6">{!! Form::nText('vaers_id', 'Patient's ID', old('vaers_id', $vaccine->vaers_id ?? null), true) !!}</div>
         <div class="col-md-6">{!! Form::nText('vax_name', 'Vaccine Label', old('vax_name', $vaccine->vax_name ?? null), true) !!}</div>
         <div class="col-md-6">{!! Form::nText('vax_type', 'Vaccine Type', old('vax_type', $vaccine->vax_type ?? null), true) !!}</div>
         <div class="col-md-6">{!! Form::nText('vax_manu', 'Vaccine Manufacture', old('vax_manu', $vaccine->vax_manu ?? null), true) !!}</div>

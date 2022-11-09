@@ -129,7 +129,7 @@
                                     <tr>
                                         <th class="text-center">{!! __('common.Actions') !!}</th>
                                         <th class="text-center">@sortablelink('id', '#')</th>
-                                        <th class="text-center">@sortablelink('vaers_id', 'Vaers ID')</th>
+                                        <th class="text-center">@sortablelink('vaers_id', 'Patient's ID')</th>
                                         <th class="text-center">@sortablelink('recive_date', 'Receive Date')</th>
                                         <th class="text-center">@sortablelink('state', 'State')</th>
                                         <th class="text-center">@sortablelink('age_yrs', 'Age(Year)')</th>

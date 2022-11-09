@@ -1,6 +1,6 @@
 <div class="card-body">
     <div class="row">
-        <div class="col-md-12">{!! Form::nText('vaers_id', 'Patient's ID', old('vaers_id', $symptom->vaers_id ?? null), true) !!}</div>
+        <div class="col-md-12">{!! Form::nText('vaers_id', 'Patient\'s ID', old('vaers_id', $symptom->vaers_id ?? null), true) !!}</div>
  <div class="col-md-6">{!! Form::nText('symptom1', 'symptom 1', old('symptom1', $symptom->symptom1 ?? null), true) !!}</div>
  <div class="col-md-6">{!! Form::nText('symptomversion1', 'symptomversion1', old('symptomversion1', $symptom->symptomversion1 ?? null), true) !!}</div>
  <div class="col-md-6">{!! Form::nText('symptom2', 'symptom 2', old('symptom2', $symptom->symptom2 ?? null), true) !!}</div>

@@ -50,5 +50,4 @@ class DashboardController extends Controller
             'vaccineOutcomes' => $this->vaccineService->getTopVaccinesOutcomesMetrics($filters),
         ]);
     }
-
 }

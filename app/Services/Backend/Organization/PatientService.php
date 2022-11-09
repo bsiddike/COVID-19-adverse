@@ -35,6 +35,162 @@ class PatientService extends Service
         $this->patientRepository->itemsPerPage = 10;
     }
 
+    public function getGenderMetrics(array $filters = [])
+    {
+        $filters['metric'] = 'sex';
+
+        $data = $this->getAllPatients($filters)->toArray();
+
+        return [
+            'type' => 'doughnut',
+            'data' => [
+                'labels' => array_keys($data[0]),
+                'datasets' => [
+                    [
+                        'data' => array_values($data[0]),
+                        'backgroundColor' => ['#f56954', '#00a65a', '#f39c12'],
+                    ],
+                ],
+            ],
+            'options' => [
+                'maintainAspectRatio' => false,
+                'responsive' => true,
+                'legend' => [
+                    'position' => 'left',
+                ],
+            ],
+        ];
+    }
+
+    public function getAgeMetrics(array $filters = [])
+    {
+        $filters['metric'] = 'age_yrs';
+
+        $data = $this->getAllPatients($filters)->toArray();
+
+        return [
+            'type' => 'pie',
+            'data' => [
+                'labels' => array_keys($data[0]),
+                'datasets' => [
+                    [
+                        'data' => array_values($data[0]),
+                        'backgroundColor' => ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#a2d6de'],
+                    ],
+                ],
+            ],
+            'options' => [
+                'maintainAspectRatio' => false,
+                'responsive' => true,
+                'legend' => [
+                    'position' => 'left',
+                ],
+            ],
+        ];
+    }
+
+    public function getPatientLineChart(array $filters = [])
+    {
+        $years = $this->getAllPatients(array_merge($filters, ['year_distinct' => true]))
+            ->pluck('year')->toArray();
+
+        $months = ['January', 'February', 'March', 'April', 'May', 'June',
+            'July', 'August', 'September', 'October', 'November', 'December', ];
+
+        $datasets = [];
+
+        $filters['metric'] = 'patient_month';
+
+        foreach ($years as $year) {
+            $color = random_color();
+            $filters['today_year'] = $year;
+            $data = $this->getAllPatients($filters)->toArray();
+            $datasets[] = [
+                'label' => $year,
+                'backgroundColor' => $color,
+                'borderColor' => $color,
+                'pointRadius' => false,
+                'pointColor' => $color,
+                'pointStrokeColor' => $color,
+                'pointHighlightFill' => '#fff',
+                'pointHighlightStroke' => $color,
+                'data' => array_values($data[0]),
+                'fill' => false,
+            ];
+        }
+
+        return [
+            'type' => 'line',
+            'data' => [
+                'labels' => $months,
+                'datasets' => $datasets,
+            ],
+            'options' => [
+                'datasetFill' => true,
+                'maintainAspectRatio' => false,
+                'responsive' => true,
+                'legend' => [
+                    'display' => true,
+                ],
+                'scales' => [
+                    'xAxes' => [
+                        [
+                            'gridLines' => [
+                                'display' => false,
+                            ],
+                        ],
+                    ],
+                    'yAxes' => [
+                        [
+                            'gridLines' => [
+                                'display' => false,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ];
+    }
+
+    public function getPatientMap(array $filters = [])
+    {
+        $filters['metric'] = 'state';
+        $states = $this->getAllPatients($filters)->toArray();
+        $areas = [];
+
+        foreach ($states as $state) {
+            $state_name = strtoupper($state['state']);
+            $state_count = strtonumber($state['aggregate'], 0);
+            $areas[$state_name] = [
+                'value' => $state_count,
+                'href' => '#',
+                'tooltip' => [
+                    'content' => "<span style='font-weight:bold;'>{$state_name}</span><br/>Patients: {$state_count}",
+                ],
+            ];
+        }
+
+        return [
+            'map' => [
+                'name' => 'usa_states',
+                'zoom' => [
+                    'enabled' => true,
+                    'maxLevel' => 10,
+                ],
+                'defaultArea' => [
+                    'attrs' => [
+                        'stroke' => '#fff',
+                        'stroke-width' => 1,
+                    ],
+                    'attrsHover' => [
+                        'stroke-width' => 2,
+                    ],
+                ],
+            ],
+            'areas' => $areas,
+        ];
+    }
+
     /**
      * Get All Patient models as collection
      *

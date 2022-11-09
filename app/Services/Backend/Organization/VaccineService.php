@@ -35,6 +35,54 @@ class VaccineService extends Service
         $this->vaccineRepository->itemsPerPage = 10;
     }
 
+    public function getTopVaccinesOutcomesMetrics(array $filters = [])
+    {
+        $filters['metric'] = 'top_10_symptoms';
+
+        $data = $this->getAllVaccines($filters)
+            ->toArray();
+
+        $formatData = [];
+
+        foreach ($data as $datum) {
+            if (! isset($formatData[$datum['vax_name']])) {
+                $formatData[$datum['vax_name']] = [
+                    'data' => [],
+                    'label' => 'Unknown',
+                    'backgroundColor' => [],
+                ];
+            }
+            $formatData[$datum['vax_name']]['data'][] = $datum['aggregate'];
+            $formatData[$datum['vax_name']]['label'] = $datum['symptom1'];
+            $formatData[$datum['vax_name']]['backgroundColor'][] = random_color();
+        }
+
+        return [
+            'type' => 'bar',
+            'data' => [
+                'labels' => array_keys($formatData),
+                'datasets' => array_values($formatData),
+            ],
+            'options' => [
+                'maintainAspectRatio' => false,
+                'datasetFill' => false,
+                'responsive' => true,
+                'legend' => [
+                    'display' => false,
+                    'position' => 'left',
+                ],
+                'scales' => [
+                    'xAxes' => [[
+                        'stacked' => true,
+                    ]],
+                    'yAxes' => [[
+                        'stacked' => true,
+                    ]],
+                ],
+            ],
+        ];
+    }
+
     /**
      * Get All Vaccine models as collection
      *

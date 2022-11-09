@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Services\Auth\AuthenticatedSessionService;
 use App\Services\Backend\Organization\PatientService;
+use App\Services\Backend\Organization\SymptomService;
+use App\Services\Backend\Organization\VaccineService;
 use App\Supports\Utility;
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
@@ -22,28 +24,35 @@ class PatientController extends Controller
      */
     private $authenticatedSessionService;
 
-    /**
-     * @var PatientService
-     */
-    private $patientService;
+    private PatientService $patientService;
+
+    private SymptomService $symptomService;
+
+    private VaccineService $vaccineService;
 
     /**
      * PatientController Constructor
      *
-     * @param  AuthenticatedSessionService  $authenticatedSessionService
-     * @param  PatientService  $patientService
+     * @param AuthenticatedSessionService $authenticatedSessionService
+     * @param PatientService $patientService
+     * @param SymptomService $symptomService
+     * @param VaccineService $vaccineService
      */
     public function __construct(AuthenticatedSessionService $authenticatedSessionService,
-                                PatientService $patientService)
+                                PatientService              $patientService,
+                                SymptomService              $symptomService,
+                                VaccineService              $vaccineService)
     {
         $this->authenticatedSessionService = $authenticatedSessionService;
         $this->patientService = $patientService;
+        $this->symptomService = $symptomService;
+        $this->vaccineService = $vaccineService;
     }
 
     /**
      * Display a listing of the resource.
      *
-     * @param  Request  $request
+     * @param Request $request
      * @return Application|Factory|View
      *
      * @throws Exception
@@ -55,6 +64,11 @@ class PatientController extends Controller
 
         return view('frontend.patient.index', [
             'patients' => $patients,
+            'affectedGender' => $this->patientService->getGenderMetrics($filters),
+            'affectedAge' => $this->patientService->getAgeMetrics($filters),
+            'affectedMonth' => $this->patientService->getPatientLineChart($filters),
+            'patientsStateMap' => $this->patientService->getPatientMap($filters),
+            'vaccineOutcomes' => $this->vaccineService->getTopVaccinesOutcomesMetrics($filters),
         ]);
     }
 
@@ -71,7 +85,7 @@ class PatientController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  Request  $request
+     * @param Request $request
      * @return RedirectResponse
      *
      * @throws Throwable
@@ -132,7 +146,7 @@ class PatientController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  PatientRequest  $request
+     * @param PatientRequest $request
      * @param    $id
      * @return RedirectResponse
      *
@@ -157,7 +171,7 @@ class PatientController extends Controller
      * Remove the specified resource from storage.
      *
      * @param $id
-     * @param  Request  $request
+     * @param Request $request
      * @return RedirectResponse
      *
      * @throws Throwable
@@ -182,7 +196,7 @@ class PatientController extends Controller
      * Restore a Soft Deleted Resource
      *
      * @param $id
-     * @param  Request  $request
+     * @param Request $request
      * @return RedirectResponse|void
      *
      * @throws Throwable
@@ -216,7 +230,7 @@ class PatientController extends Controller
 
         $patientExport = $this->patientService->exportPatient($filters);
 
-        $filename = 'Patient-'.date('Ymd-His').'.'.($filters['format'] ?? 'xlsx');
+        $filename = 'Patient-' . date('Ymd-His') . '.' . ($filters['format'] ?? 'xlsx');
 
         return $patientExport->download($filename, function ($patient) use ($patientExport) {
             return $patientExport->map($patient);
@@ -263,7 +277,7 @@ class PatientController extends Controller
 
         $patientExport = $this->patientService->exportPatient($filters);
 
-        $filename = 'Patient-'.date('Ymd-His').'.'.($filters['format'] ?? 'xlsx');
+        $filename = 'Patient-' . date('Ymd-His') . '.' . ($filters['format'] ?? 'xlsx');
 
         return $patientExport->download($filename, function ($patient) use ($patientExport) {
             return $patientExport->map($patient);

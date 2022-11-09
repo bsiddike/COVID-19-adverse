@@ -268,7 +268,6 @@ Breadcrumbs::for('frontend.patients.apply', function (BreadcrumbTrail $trail, Pa
     $trail->push('Patient Apply', route('frontend.patients.apply'));
 });
 
-
 Breadcrumbs::for('frontend.symptoms.index', function (BreadcrumbTrail $trail) {
     $trail->parent('home');
     $trail->push('Symptoms', route('frontend.symptoms.index'));
@@ -278,7 +277,6 @@ Breadcrumbs::for('frontend.symptoms.show', function (BreadcrumbTrail $trail, Sym
     $trail->parent('frontend.symptoms.index');
     $trail->push('Symptom Details', route('frontend.symptoms.show'));
 });
-
 
 Breadcrumbs::for('frontend.vaccines.index', function (BreadcrumbTrail $trail) {
     $trail->parent('home');

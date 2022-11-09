@@ -63,7 +63,9 @@
                                                 <i class="far fa-calendar-alt"></i>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control float-right" value="{{request()->get('recive_date')}}" name="recive_date" id="recive_date">
+                                        <input type="text" class="form-control float-right"
+                                               value="{{request()->get('recive_date')}}" name="recive_date"
+                                               id="recive_date">
                                     </div>
                                     <!-- /.input group -->
                                 </div>
@@ -128,15 +130,15 @@
                                     <thead class="thead-light">
                                     <tr>
                                         <th class="text-center">{!! __('common.Actions') !!}</th>
-                                        <th class="text-center">@sortablelink('id', '#')</th>
+                                        {{--                                        <th class="text-center">@sortablelink('id', '#')</th>--}}
                                         <th class="text-center">@sortablelink('vaers_id', 'Patient\'s ID')</th>
                                         <th class="text-center">@sortablelink('recive_date', 'Receive Date')</th>
                                         <th class="text-center">@sortablelink('state', 'State')</th>
                                         <th class="text-center">@sortablelink('age_yrs', 'Age(Year)')</th>
-                                        <th class="text-center">@sortablelink('cage_yr', 'Cage(Year)')</th>
-                                        <th class="text-center">@sortablelink('cage_mo', 'Cage month')</th>
+                                        {{--                                        <th class="text-center">@sortablelink('cage_yr', 'Cage(Year)')</th>--}}
+                                        {{--                                        <th class="text-center">@sortablelink('cage_mo', 'Cage month')</th>--}}
                                         <th class="text-center">@sortablelink('sex', 'Sex')</th>
-                                        <th class="text-center">@sortablelink('rpt_date', 'Report Date')</th>
+                                        {{--                                        <th class="text-center">@sortablelink('rpt_date', 'Report Date')</th>--}}
                                         {{--                                        <th class="text-center">@sortablelink('symptom_text', 'symptom_text')</th>--}}
                                         <th class="text-center">@sortablelink('died', 'Died')</th>
                                         <th class="text-center">@sortablelink('datedied', 'datedied')</th>
@@ -147,24 +149,24 @@
                                         <th class="text-center">@sortablelink('x_stay', 'Previous Condition')</th>
                                         <th class="text-center">@sortablelink('disable', 'Disable')</th>
                                         <th class="text-center">@sortablelink('recovd', 'Re-Covid19')</th>
-                                        <th class="text-center">@sortablelink('vax_date', 'Vaccine Data')</th>
-                                        <th class="text-center">@sortablelink('onset_date', 'onset_date')</th>
+                                        {{--                                        <th class="text-center">@sortablelink('vax_date', 'Vaccine Data')</th>--}}
+                                        {{--                                        <th class="text-center">@sortablelink('onset_date', 'onset_date')</th>--}}
                                         <th class="text-center">@sortablelink('numdays', 'numdays')</th>
-{{--                                        <th class="text-center">@sortablelink('lab_data', 'Lab_data')</th>--}}
-                                        <th class="text-center">@sortablelink('v_adminby', 'v_adminby')</th>
-                                        <th class="text-center">@sortablelink('v_fundby', 'v_fundby')</th>
-                                        <th class="text-center">@sortablelink('other_meds', 'other_meds')</th>
+                                        {{--                                        <th class="text-center">@sortablelink('lab_data', 'Lab_data')</th>--}}
+                                        {{--                                        <th class="text-center">@sortablelink('v_adminby', 'v_adminby')</th>--}}
+                                        {{--                                        <th class="text-center">@sortablelink('v_fundby', 'v_fundby')</th>--}}
+{{--                                        <th class="text-center">@sortablelink('other_meds', 'other_meds')</th>--}}
                                         <th class="text-center">@sortablelink('cur_ill', 'Current Illness')</th>
                                         <th class="text-center">@sortablelink('history', 'History')</th>
-                                        <th class="text-center">@sortablelink('prior_vax', 'prior_vax')</th>
-                                        <th class="text-center">@sortablelink('splttype', 'splttype')</th>
-                                        <th class="text-center">@sortablelink('form_vers', 'form_vers')</th>
-                                        <th class="text-center">@sortablelink('todays_date', 'Todays Date')</th>
+                                        {{--                                        <th class="text-center">@sortablelink('prior_vax', 'prior_vax')</th>--}}
+                                        {{--                                        <th class="text-center">@sortablelink('splttype', 'splttype')</th>--}}
+                                        {{--                                        <th class="text-center">@sortablelink('form_vers', 'form_vers')</th>--}}
+                                        {{--                                        <th class="text-center">@sortablelink('todays_date', 'Todays Date')</th>--}}
                                         <th class="text-center">@sortablelink('birth_defect', 'Birth Defect')</th>
-                                        <th class="text-center">@sortablelink('ofc_visit', 'Office Visit')</th>
+                                        {{--                                        <th class="text-center">@sortablelink('ofc_visit', 'Office Visit')</th>--}}
                                         <th class="text-center">@sortablelink('er_ed_visit', 'er_ed_visit')</th>
                                         <th class="text-center">@sortablelink('Allergies', 'allergies')</th>
-                                        <th class="text-center">@sortablelink('created_at', __('common.Created'))</th>
+                                        {{--                                        <th class="text-center">@sortablelink('created_at', __('common.Created'))</th>--}}
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -176,14 +178,23 @@
                                             <td class="exclude-search align-middle">
                                                 {{ $patient->id }}
                                             </td>
-                                            <td class="text-center">{{ $patient->vaers_id ?? null }}</td>
+                                            {{--                                            <td class="text-center">{{ $patient->vaers_id ?? null }}</td>--}}
                                             <td class="text-center">{{ $patient->recive_date ?? null }}</td>
                                             <td class="text-center">{{ $patient->state ?? null }}</td>
                                             <td class="text-center">{{ $patient->age_yrs ?? null }}</td>
-                                            <td class="text-center">{{ $patient->cage_yr ?? null }}</td>
-                                            <td class="text-center">{{ $patient->cage_mo ?? null }}</td>
-                                            <td class="text-center">{{ $patient->sex ?? null }}</td>
-                                            <td class="text-center">{{ $patient->rpt_date ?? null }}</td>
+                                            {{--                                            <td class="text-center">{{ $patient->cage_yr ?? null }}</td>--}}
+                                            {{--                                            <td class="text-center">{{ $patient->cage_mo ?? null }}</td>--}}
+                                            <td class="text-center">
+                                                @if($patient->sex == 'M')
+                                                    Male
+
+                                                @elseif($patient->sex == 'F')
+                                                    Female
+                                                @else
+                                                    Unknown
+                                                @endif
+                                            </td>
+                                            {{--                                            <td class="text-center">{{ $patient->rpt_date ?? null }}</td>--}}
                                             {{--                                            <td class="text-center">{{ $patient->symptom_text ?? null }}</td>--}}
                                             <td class="text-center">{{ $patient->died ?? null }}</td>
                                             <td class="text-center">{{ $patient->datedied ?? null }}</td>
@@ -194,24 +205,24 @@
                                             <td class="text-center">{{ $patient->x_stay ?? null }}</td>
                                             <td class="text-center">{{ $patient->disable ?? null }}</td>
                                             <td class="text-center">{{ $patient->recovd ?? null }}</td>
-                                            <td class="text-center">{{ $patient->vax_date ?? null }}</td>
-                                            <td class="text-center">{{ $patient->onset_date ?? null }}</td>
+                                            {{--                                            <td class="text-center">{{ $patient->vax_date ?? null }}</td>--}}
+                                            {{--                                            <td class="text-center">{{ $patient->onset_date ?? null }}</td>--}}
                                             <td class="text-center">{{ $patient->numdays ?? null }}</td>
-{{--                                            <td class="text-center">{{ $patient->lab_data ?? null }}</td>--}}
-                                            <td class="text-center">{{ $patient->v_adminby ?? null }}</td>
-                                            <td class="text-center">{{ $patient->v_fundby ?? null }}</td>
-                                            <td class="text-center">{{ $patient->other_meds ?? null }}</td>
+                                            {{--                                            <td class="text-center">{{ $patient->lab_data ?? null }}</td>--}}
+                                            {{--                                            <td class="text-center">{{ $patient->v_adminby ?? null }}</td>--}}
+                                            {{--                                            <td class="text-center">{{ $patient->v_fundby ?? null }}</td>--}}
+{{--                                            <td class="text-center">{{ $patient->other_meds ?? null }}</td>--}}
                                             <td class="text-center">{{ $patient->cur_ill ?? null }}</td>
                                             <td class="text-center">{{ $patient->history ?? null }}</td>
-                                            <td class="text-center">{{ $patient->prior_vax ?? null }}</td>
-                                            <td class="text-center">{{ $patient->splttype ?? null }}</td>
-                                            <td class="text-center">{{ $patient->form_vers ?? null }}</td>
-                                            <td class="text-center">{{ $patient->todays_date ?? null }}</td>
+                                            {{--                                            <td class="text-center">{{ $patient->prior_vax ?? null }}</td>--}}
+                                            {{--                                            <td class="text-center">{{ $patient->splttype ?? null }}</td>--}}
+                                            {{--                                            <td class="text-center">{{ $patient->form_vers ?? null }}</td>--}}
+                                            {{--                                            <td class="text-center">{{ $patient->todays_date ?? null }}</td>--}}
                                             <td class="text-center">{{ $patient->birth_defect ?? null }}</td>
-                                            <td class="text-center">{{ $patient->ofc_visit ?? null }}</td>
+                                            {{--                                            <td class="text-center">{{ $patient->ofc_visit ?? null }}</td>--}}
                                             <td class="text-center">{{ $patient->er_ed_visit ?? null }}</td>
                                             <td class="text-center">{{ $patient->allergies ?? null }}</td>
-                                            <td class="text-center">{{ $patient->created_at->format(config('backend.datetime')) ?? '' }}</td>
+                                            {{--                                            <td class="text-center">{{ $patient->created_at->format(config('backend.datetime')) ?? '' }}</td>--}}
                                         </tr>
                                     @empty
                                         <tr>
@@ -251,7 +262,7 @@
                 autoUpdateInput: true,
                 showDropdowns: true,
                 minYear: 2018,
-                maxYear: parseInt(moment().format('YYYY'),10),
+                maxYear: parseInt(moment().format('YYYY'), 10),
                 startDate: '2019-01-01',
                 locale: {
                     format: 'YYYY-MM-DD',

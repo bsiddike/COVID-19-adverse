@@ -26,8 +26,8 @@
 
 @section('actions')
     {!! Html::backButton('backend.organization.symptoms.index') !!}
-    {!! Html::modelDropdown('backend.organization.symptoms', $symptom->id, ['color' => 'success',
-        'actions' => array_merge(['edit'], ($symptom->deleted_at == null) ? ['delete'] : ['restore'])]) !!}
+{{--    {!! Html::modelDropdown('backend.organization.symptoms', $symptom->id, ['color' => 'success',
+        'actions' => array_merge(['edit'], ($symptom->deleted_at == null) ? ['delete'] : ['restore'])]) !!}--}}
 @endsection
 
 @section('content')
@@ -103,22 +103,22 @@
                             <tr>
                                 <th>{!! __('symptom.Select the district(s) where you have worked earlier (it can be multiple)') !!}</th>
                                 <td>
-                                    @forelse($symptom->previousPostings as $state)
+{{--                                    @forelse($symptom->previousPostings as $state)
                                         {{  $state->name }},
                                     @empty
                                         No District Available
-                                    @endforelse
+                                    @endforelse--}}
                                 </td>
                             </tr>
                             <tr>
                                 <th>{!! __('symptom.Select the district(s) where you want to work in future (maximum 3)') !!}</th>
                                 <td>
                                     <ul>
-                                        @forelse($symptom->futurePostings as $state)
+   {{--                                     @forelse($symptom->futurePostings as $state)
                                             <li>{{  $state->name }}</li>
                                         @empty
                                             <li>No District Available</li>
-                                        @endforelse
+                                        @endforelse--}}
                                     </ul>
 
                                 </td>
@@ -139,11 +139,11 @@
                                 <th>{!! __('symptom.Work Experience in BBS as Enumerator') !!}</th>
                                 <td>
                                     <ul>
-                                        @forelse($symptom->surveys as $index => $survey)
+           {{--                             @forelse($symptom->surveys as $index => $survey)
                                             <li> {{ $index + 1 }}. {{ $survey->name ?? null }}</li>
                                         @empty
                                             <li> No Survey Available</li>
-                                        @endforelse
+                                        @endforelse--}}
                                     </ul>
                                 </td>
                             </tr>

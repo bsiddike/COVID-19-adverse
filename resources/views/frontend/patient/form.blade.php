@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-6">{!! Form::nText('vaers_id', 'Vaers ID', old('vaers_id', $patient->vaers_id ?? null), true) !!}</div>
         <div class="col-md-6">{!! Form::nText('recive_date', 'Receive Date', old('recive_date', $patient->recive_date ?? null), true) !!}</div>
-	<div class="col-md-6">{!! Form::nText('state', 'State', old('state', $patient->state ?? null), true) !!}</div>
+        <div class="col-md-6">{!! Form::nText('state', 'State', old('state', $patient->state ?? null), true) !!}</div>
         <div class="col-md-6">{!! Form::nText('age_yrs', 'Age Year', old('age_yrs', $patient->age_yrs ?? null), true) !!}</div>
         <div class="col-md-6">{!! Form::nText('cage_yr', 'Cage Year', old('cage_yr', $patient->cage_yr ?? null), true) !!}</div>
         <div class="col-md-6">{!! Form::nText('cage_mo', 'Cage Month', old('cage_mo', $patient->cage_mo ?? null), true) !!}</div>

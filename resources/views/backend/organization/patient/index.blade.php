@@ -1,3 +1,6 @@
+@php use App\Models\Vaccine; @endphp
+@php use App\Supports\Constant; @endphp
+@php use App\Supports\CHTML; @endphp
 @extends('layouts.app')
 
 @section('title', $title ?? 'Patients')
@@ -85,27 +88,27 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                {!! \Form::nSelect('sex', 'Sex',
+                                {!! Form::nSelect('sex', 'Sex',
                                 ['M' => 'Male', 'F' => 'Female', 'U' => 'Unknown'],
                                  request()->get('sex'), false, [ 'placeholder' => 'Select a sex']) !!}
                             </div>
                             <div class="col-md-3">
-                                {!! \Form::nSelect('vax_name', 'Vaccine',
-                                \App\Models\Vaccine::all()->where('vax_type','COVID19')->pluck('vax_name', 'vax_name')->toArray(),
+                                {!! Form::nSelect('vax_name', 'Vaccine',
+                                Vaccine::all()->where('vax_type','COVID19')->pluck('vax_name', 'vax_name')->toArray(),
                                  request()->get('vax_name'), false, [
                                      'placeholder' => 'Select a vaccine Brand name'
                                  ]) !!}
                             </div>
                             <div class="col-md-3">
-                                {!! \Form::nText('symptom', 'Symptom', request()->get('symptom'), false) !!}
+                                {!! Form::nText('symptom', 'Symptom', request()->get('symptom'), false) !!}
                             </div>
                             <div class="col-md-3">
-                                {!! \Form::nText('vax_dose_series', 'Dose Series', request()->get('vax_dose_series'), false) !!}
+                                {!! Form::nText('vax_dose_series', 'Dose Series', request()->get('vax_dose_series'), false) !!}
                             </div>
                             <div class="col-md-3">
                                 {{--{!! \Form::nText('state', 'State', request()->get('state'), false) !!}--}}
-                                {!! \Form::nSelect('state', 'State',
-                                \App\Supports\Constant::USA_STATE,
+                                {!! Form::nSelect('state', 'State',
+                                Constant::USA_STATE,
                                  request()->get('state'), false, [
                                      'placeholder' => 'Select a State'
                                  ]) !!}
@@ -115,7 +118,7 @@
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary">Search</button>
                     </div>
-                    {!! \Form::close() !!}
+                    {!! Form::close() !!}
                 </div>
             </div>
             <div class="col-12">
@@ -155,7 +158,7 @@
                                         {{--                                        <th class="text-center">@sortablelink('lab_data', 'Lab_data')</th>--}}
                                         {{--                                        <th class="text-center">@sortablelink('v_adminby', 'v_adminby')</th>--}}
                                         {{--                                        <th class="text-center">@sortablelink('v_fundby', 'v_fundby')</th>--}}
-{{--                                        <th class="text-center">@sortablelink('other_meds', 'other_meds')</th>--}}
+                                        {{--                                        <th class="text-center">@sortablelink('other_meds', 'other_meds')</th>--}}
                                         <th class="text-center">@sortablelink('cur_ill', 'Current Illness')</th>
                                         <th class="text-center">@sortablelink('history', 'History')</th>
                                         {{--                                        <th class="text-center">@sortablelink('prior_vax', 'prior_vax')</th>--}}
@@ -211,7 +214,7 @@
                                             {{--                                            <td class="text-center">{{ $patient->lab_data ?? null }}</td>--}}
                                             {{--                                            <td class="text-center">{{ $patient->v_adminby ?? null }}</td>--}}
                                             {{--                                            <td class="text-center">{{ $patient->v_fundby ?? null }}</td>--}}
-{{--                                            <td class="text-center">{{ $patient->other_meds ?? null }}</td>--}}
+                                            {{--                                            <td class="text-center">{{ $patient->other_meds ?? null }}</td>--}}
                                             <td class="text-center">{{ $patient->cur_ill ?? null }}</td>
                                             <td class="text-center">{{ $patient->history ?? null }}</td>
                                             {{--                                            <td class="text-center">{{ $patient->prior_vax ?? null }}</td>--}}
@@ -234,7 +237,7 @@
                             </div>
                         </div>
                         <div class="card-footer bg-transparent pb-0">
-                            {!! \App\Supports\CHTML::pagination($patients) !!}
+                            {!! CHTML::pagination($patients) !!}
                         </div>
                     @else
                         <div class="card-body min-vh-100">
@@ -246,7 +249,7 @@
         </div>
     </div>
     <!-- /.container-fluid -->
-    {!! \App\Supports\CHTML::confirmModal('Patient', ['export', 'delete', 'restore']) !!}
+    {!! CHTML::confirmModal('Patient', ['export', 'delete', 'restore']) !!}
 @endsection
 
 

@@ -1,3 +1,4 @@
+@php use App\Supports\CHTML; @endphp
 @extends('layouts.app')
 
 @section('title', 'Symptoms')
@@ -70,16 +71,16 @@
                                                 </a>
                                             </td>
                                             <td>{{ $symptom->symptom1 ?? null }}</td>
-{{--                                            <td>{{ $symptom->symptomversion1 ?? null }}</td>--}}
+                                            {{--                                            <td>{{ $symptom->symptomversion1 ?? null }}</td>--}}
                                             <td>{{ $symptom->symptom2 ?? null }}</td>
-{{--                                            <td>{{ $symptom->symptomversion2 ?? null }}</td>--}}
+                                            {{--                                            <td>{{ $symptom->symptomversion2 ?? null }}</td>--}}
                                             <td>{{ $symptom->symptom3 ?? null }}</td>
-{{--                                            <td>{{ $symptom->symptomversion3 ?? null }}</td>--}}
+                                            {{--                                            <td>{{ $symptom->symptomversion3 ?? null }}</td>--}}
                                             <td>{{ $symptom->symptom4 ?? null }}</td>
-{{--                                            <td>{{ $symptom->symptomversion4 ?? null }}</td>--}}
+                                            {{--                                            <td>{{ $symptom->symptomversion4 ?? null }}</td>--}}
                                             <td>{{ $symptom->symptom5 ?? null }}</td>
-{{--                                            <td>{{ $symptom->symptomversion5 ?? null }}</td>--}}
-{{--                                            <td class="text-center">{{ $symptom->created_at->format(config('backend.datetime')) ?? '' }}</td>--}}
+                                            {{--                                            <td>{{ $symptom->symptomversion5 ?? null }}</td>--}}
+                                            {{--                                            <td class="text-center">{{ $symptom->created_at->format(config('backend.datetime')) ?? '' }}</td>--}}
                                         </tr>
                                     @empty
                                         <tr>
@@ -91,7 +92,7 @@
                             </div>
                         </div>
                         <div class="card-footer bg-transparent pb-0">
-                            {!! \App\Supports\CHTML::pagination($symptoms) !!}
+                            {!! CHTML::pagination($symptoms) !!}
                         </div>
                     @else
                         <div class="card-body min-vh-100">
@@ -103,7 +104,7 @@
         </div>
     </div>
     <!-- /.container-fluid -->
-    {!! \App\Supports\CHTML::confirmModal('Enumerator', ['export', 'delete', 'restore']) !!}
+    {!! CHTML::confirmModal('Enumerator', ['export', 'delete', 'restore']) !!}
 @endsection
 
 

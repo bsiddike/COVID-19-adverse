@@ -1,3 +1,6 @@
+@php use Modules\Admin\Supports\Utility; @endphp
+@php use Illuminate\Support\Facades\Crypt; @endphp
+@php use Carbon\Carbon; @endphp
 @extends('admin::layouts.master')
 
 @section('title', 'System Logs')
@@ -50,9 +53,9 @@
                     <div class="card-body p-0">
                         <ul class="list-group p-0 list-group-flush">
                             @foreach($files as $file)
-                                <a href="?l={{ \Illuminate\Support\Facades\Crypt::encrypt($file) }}"
+                                <a href="?l={{ Crypt::encrypt($file) }}"
                                    class=" list-group-item list-group-item-action @if ($current_file == $file) active @endif">
-                                    {{ \Modules\Admin\Supports\Utility::formatLogFilename($file) }}
+                                    {{ Utility::formatLogFilename($file) }}
                                 </a>
                             @endforeach
                         </ul>
@@ -68,26 +71,26 @@
                                 <div class="btn-group" role="group" aria-label="Basic example">
                                     <a class="btn btn-primary" data-toggle="tooltip" data-placement="top"
                                        title="Download"
-                                       href="?dl={{ \Illuminate\Support\Facades\Crypt::encrypt($current_file) }}{{ ($current_folder) ? '&f=' . \Illuminate\Support\Facades\Crypt::encrypt($current_folder) : '' }}">
+                                       href="?dl={{ Crypt::encrypt($current_file) }}{{ ($current_folder) ? '&f=' . Crypt::encrypt($current_folder) : '' }}">
                                         <i class="fa fa-download"></i>
                                         <span class="d-none d-sm-inline-flex">Download</span>
                                     </a>
                                     <a id="clean-log" class="btn btn-info" data-toggle="tooltip" data-placement="top"
                                        title="Clean"
-                                       href="?clean={{ \Illuminate\Support\Facades\Crypt::encrypt($current_file) }}{{ ($current_folder) ? '&f=' . \Illuminate\Support\Facades\Crypt::encrypt($current_folder) : '' }}">
+                                       href="?clean={{ Crypt::encrypt($current_file) }}{{ ($current_folder) ? '&f=' . Crypt::encrypt($current_folder) : '' }}">
                                         <i class="fa fa-eraser"></i>
                                         <span class="d-none d-sm-inline-flex">Clean</span>
                                     </a>
                                     <a id="delete-log" class="btn btn-warning" data-toggle="tooltip"
                                        data-placement="top" title="Delete"
-                                       href="?del={{ \Illuminate\Support\Facades\Crypt::encrypt($current_file) }}{{ ($current_folder) ? '&f=' . \Illuminate\Support\Facades\Crypt::encrypt($current_folder) : '' }}">
+                                       href="?del={{ Crypt::encrypt($current_file) }}{{ ($current_folder) ? '&f=' . Crypt::encrypt($current_folder) : '' }}">
                                         <i class="fa fa-trash"></i>
                                         <span class="d-none d-sm-inline-flex">Delete</span>
                                     </a>
                                     @if(count($files) > 1)
                                         <a id="delete-all-log" class="btn btn-danger" data-toggle="tooltip"
                                            data-placement="top" title="Delete All"
-                                           href="?delall=true{{ ($current_folder) ? '&f=' . \Illuminate\Support\Facades\Crypt::encrypt($current_folder) : '' }}">
+                                           href="?delall=true{{ ($current_folder) ? '&f=' . Crypt::encrypt($current_folder) : '' }}">
                                             <span class="fa fa-trash-alt"></span>
                                             <span class="d-none d-sm-inline-flex"> Delete All</span>
 
@@ -127,7 +130,7 @@
                                             </td>
                                             <td class="text">{{$log['context']}}</td>
                                         @endif
-                                        <td class="date">{!! \Carbon\Carbon::parse($log['date'])->format('H:i:s') !!}</td>
+                                        <td class="date">{!! Carbon::parse($log['date'])->format('H:i:s') !!}</td>
                                         <td class="text">
                                             @if ($log['stack'])
                                                 <button type="button" onclick="showContent(this);"

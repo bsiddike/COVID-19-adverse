@@ -1,3 +1,5 @@
+@php use Carbon\Carbon; @endphp
+@php use App\Supports\CHTML; @endphp
 @extends('layouts.app')
 
 @section('title', $vaccine->name)
@@ -52,7 +54,7 @@
                             <tr>
                                 <th>{!!  __('symptom.Date of Birth') !!}</th>
                                 <td>@if($vaccine->dob != null)
-                                        {!! \Carbon\Carbon::parse($vaccine->dob)->format('dS F, Y') !!}
+                                        {!! Carbon::parse($vaccine->dob)->format('dS F, Y') !!}
                                     @endif
                                 </td>
                             </tr>
@@ -162,7 +164,7 @@
             </div>
         </div>
     </div>
-    {!! \App\Supports\CHTML::confirmModal('Enumerator', ['delete', 'restore']) !!}
+    {!! CHTML::confirmModal('Enumerator', ['delete', 'restore']) !!}
 @endsection
 
 

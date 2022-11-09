@@ -1,3 +1,4 @@
+@php use App\Supports\CHTML; @endphp
 @extends('layouts.app')
 
 @section('title', 'Vaccines')
@@ -28,7 +29,7 @@
 
 @section('actions')
     {!! Html::linkButton( 'Add Vaccine', 'backend.organization.vaccines.create', [], 'fas fa-plus', 'success') !!}
-{{--    {!! Html::bulkDropdown('backend.organization.vaccines', 0, ['color' => 'warning']) !!}--}}
+    {{--    {!! Html::bulkDropdown('backend.organization.vaccines', 0, ['color' => 'warning']) !!}--}}
 @endsection
 
 @section('content')
@@ -44,7 +45,8 @@
                                     <tr>
                                         <th class="text-center">{!! __('common.Actions') !!}</th>
                                         <th class="align-middle">
-                                            @sortablelink('id', '#')</th>
+                                            @sortablelink('id', '#')
+                                        </th>
                                         <th>@sortablelink('vaers_id', 'Patient\'s ID')</th>
                                         <th>@sortablelink('vax_name', 'Label')</th>
                                         <th>@sortablelink('vax_type', 'Type')</th>
@@ -86,7 +88,7 @@
                             </div>
                         </div>
                         <div class="card-footer bg-transparent pb-0">
-                            {!! \App\Supports\CHTML::pagination($vaccines) !!}
+                            {!! CHTML::pagination($vaccines) !!}
                         </div>
                     @else
                         <div class="card-body min-vh-100">
@@ -98,7 +100,7 @@
         </div>
     </div>
     <!-- /.container-fluid -->
-    {!! \App\Supports\CHTML::confirmModal('Enumerator', ['export', 'delete', 'restore']) !!}
+    {!! CHTML::confirmModal('Enumerator', ['export', 'delete', 'restore']) !!}
 @endsection
 
 

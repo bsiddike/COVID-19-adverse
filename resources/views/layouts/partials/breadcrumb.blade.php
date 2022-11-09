@@ -1,5 +1,5 @@
 @unless ($breadcrumbs->isEmpty())
-    @if(\Route::is('backend.*'))
+    @if(Route::is('backend.*'))
         <nav aria-label="breadcrumb">
             <h4 class="mb-0">@yield('title')</h4>
             <ol class="breadcrumb bg-transparent p-0 mb-0 d-none d-sm-flex">

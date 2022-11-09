@@ -1,7 +1,8 @@
+@php use App\Supports\Constant; @endphp
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{ route('home') }}" class="brand-link">
-        <img src="{{ asset(\App\Supports\Constant::USER_PROFILE_IMAGE) }}" alt="AdminLTE Logo"
+        <img src="{{ asset(Constant::USER_PROFILE_IMAGE) }}" alt="AdminLTE Logo"
              class="brand-image img-circle elevation-3"
              style="opacity: .8">
         <span class="brand-text font-weight-light">
@@ -66,7 +67,7 @@
                                     </a>
                                 </li>
                             @endcan
-                                @can('backend.organization.vaccines.index')
+                            @can('backend.organization.vaccines.index')
                                 <li class="nav-item">
                                     <a href="{{ route('backend.organization.vaccines.index') }}"
                                        class="nav-link @if(Route::is('backend.organization.vaccines.*')) active @endif">
@@ -114,7 +115,7 @@
                             @can('backend.settings.permissions.index')
                                 <li class="nav-item">
                                     <a href="{{ route('backend.settings.permissions.index') }}"
-                                       class="nav-link @if(\Route::is('backend.settings.permissions.*')) active @endif">
+                                       class="nav-link @if(Route::is('backend.settings.permissions.*')) active @endif">
                                         <i class="fas fa-list-alt nav-icon"></i>
                                         <p>{!! __('menu-sidebar.Permissions') !!}</p>
                                     </a>

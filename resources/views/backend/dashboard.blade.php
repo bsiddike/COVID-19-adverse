@@ -1,3 +1,5 @@
+@php use App\Models\Vaccine; @endphp
+@php use App\Supports\Constant; @endphp
 @extends('layouts.app')
 
 @section('title', __('menu-sidebar.Dashboard'))
@@ -72,7 +74,9 @@
                                                 <i class="far fa-calendar-alt"></i>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control float-right" value="{{request()->get('recive_date')}}" name="recive_date" id="recive_date">
+                                        <input type="text" class="form-control float-right"
+                                               value="{{request()->get('recive_date')}}" name="recive_date"
+                                               id="recive_date">
                                     </div>
                                     <!-- /.input group -->
                                 </div>
@@ -92,27 +96,27 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                {!! \Form::nSelect('sex', 'Sex',
+                                {!! Form::nSelect('sex', 'Sex',
                                 ['M' => 'Male', 'F' => 'Female', 'U' => 'Unknown'],
                                  request()->get('sex'), false, [ 'placeholder' => 'Select a sex']) !!}
                             </div>
                             <div class="col-md-3">
-                                {!! \Form::nSelect('vax_name', 'Vaccine',
-                                \App\Models\Vaccine::all()->where('vax_type','COVID19')->pluck('vax_name', 'vax_name')->toArray(),
+                                {!! Form::nSelect('vax_name', 'Vaccine',
+                                Vaccine::all()->where('vax_type','COVID19')->pluck('vax_name', 'vax_name')->toArray(),
                                  request()->get('vax_name'), false, [
                                      'placeholder' => 'Select a vaccine Brand name'
                                  ]) !!}
                             </div>
                             <div class="col-md-3">
-                                {!! \Form::nText('symptom', 'Symptom', request()->get('symptom'), false) !!}
+                                {!! Form::nText('symptom', 'Symptom', request()->get('symptom'), false) !!}
                             </div>
                             <div class="col-md-3">
-                                {!! \Form::nText('vax_dose_series', 'Dose Series', request()->get('vax_dose_series'), false) !!}
+                                {!! Form::nText('vax_dose_series', 'Dose Series', request()->get('vax_dose_series'), false) !!}
                             </div>
                             <div class="col-md-3">
                                 {{--{!! \Form::nText('state', 'State', request()->get('state'), false) !!}--}}
-                                {!! \Form::nSelect('state', 'State',
-                                \App\Supports\Constant::USA_STATE,
+                                {!! Form::nSelect('state', 'State',
+                                Constant::USA_STATE,
                                  request()->get('state'), false, [
                                      'placeholder' => 'Select a State'
                                  ]) !!}
@@ -122,7 +126,7 @@
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary">Search</button>
                     </div>
-                    {!! \Form::close() !!}
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>
@@ -161,7 +165,7 @@
                 autoUpdateInput: true,
                 showDropdowns: true,
                 minYear: 2018,
-                maxYear: parseInt(moment().format('YYYY'),10),
+                maxYear: parseInt(moment().format('YYYY'), 10),
                 startDate: '2019-01-01',
                 locale: {
                     format: 'YYYY-MM-DD',

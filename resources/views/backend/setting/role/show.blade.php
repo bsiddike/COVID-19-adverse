@@ -1,3 +1,5 @@
+@php use App\Supports\Constant; @endphp
+@php use App\Supports\CHTML; @endphp
 @extends('layouts.app')
 
 @section('title', $role->name ?? 'Details')
@@ -29,7 +31,7 @@
 
 
 @section('actions')
-    {!! \Html::backButton('backend.settings.roles.index') !!}
+    {!! Html::backButton('backend.settings.roles.index') !!}
     @can('backend.settings.roles.permission')
         <a href="#!" data-toggle="modal" data-target="#bd-example-modal-lg"
            class="btn btn-primary m-1 m-md-0">
@@ -38,7 +40,7 @@
         </a>
     @endcan
 
-    {!! \Html::modelDropdown('backend.settings.roles', $role->id, ['color' => 'success',
+    {!! Html::modelDropdown('backend.settings.roles', $role->id, ['color' => 'success',
         'actions' => array_merge(['edit'], ($role->deleted_at == null) ? ['delete'] : ['restore'])]) !!}
 @endsection
 
@@ -83,7 +85,7 @@
                                     </div>
                                     <div class="col-md-4">
                                         <label class="d-block">Enabled</label>
-                                        <p class="font-weight-bold">{{ \App\Supports\Constant::ENABLED_OPTIONS[$role->enabled] ?? null }}</p>
+                                        <p class="font-weight-bold">{{ Constant::ENABLED_OPTIONS[$role->enabled] ?? null }}</p>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
@@ -125,7 +127,7 @@
              aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
-                    {!! \Form::open(['route' => ['backend.settings.roles.permission', $role->id], 'method' => 'put', 'id' => 'role-permission-form']) !!}
+                    {!! Form::open(['route' => ['backend.settings.roles.permission', $role->id], 'method' => 'put', 'id' => 'role-permission-form']) !!}
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLongTitle">Available Permissions</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -165,7 +167,7 @@
                                         </thead>
                                         <tbody>
                                         @forelse($permissions as $permission)
-                                            <tr class="@if($permission->enabled == \App\Supports\Constant::ENABLED_OPTION) table-success @else table-danger @endif">
+                                            <tr class="@if($permission->enabled == Constant::ENABLED_OPTION) table-success @else table-danger @endif">
                                                 <td class="p-2 text-center align-middle">
                                                     <div class="icheck-primary">
                                                         {!! Form::checkbox('permissions[]', $permission->id,
@@ -175,7 +177,7 @@
                                                     </div>
                                                 </td>
                                                 <td class="align-middle">{{ $permission->display_name }}</td>
-                                                <td class="align-middle text-center">{{ \App\Supports\Constant::ENABLED_OPTIONS[$permission->enabled] }}</td>
+                                                <td class="align-middle text-center">{{ Constant::ENABLED_OPTIONS[$permission->enabled] }}</td>
                                             </tr>
                                         @empty
                                             <tr>
@@ -194,12 +196,12 @@
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary">Save changes</button>
                     </div>
-                    {!! \Form::close(); !!}
+                    {!! Form::close(); !!}
                 </div>
             </div>
         </div>
     @endcan
-    {!! \App\Supports\CHTML::confirmModal('Role', ['delete', 'restore']) !!}
+    {!! CHTML::confirmModal('Role', ['delete', 'restore']) !!}
 @endsection
 
 @push('page-script')

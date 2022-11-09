@@ -1,3 +1,5 @@
+@php use App\Supports\Constant; @endphp
+@php use App\Supports\CHTML; @endphp
 @extends('layouts.app')
 
 @section('title', $permission->display_name)
@@ -79,7 +81,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <label class="d-block">Enabled</label>
-                                        <p class="font-weight-bold">{{ \App\Supports\Constant::ENABLED_OPTIONS[$permission->enabled] }}</p>
+                                        <p class="font-weight-bold">{{ Constant::ENABLED_OPTIONS[$permission->enabled] }}</p>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -99,7 +101,7 @@
             </div>
         </div>
     </div>
-    {!! \App\Supports\CHTML::confirmModal('Permission', ['delete', 'restore']) !!}
+    {!! CHTML::confirmModal('Permission', ['delete', 'restore']) !!}
 @endsection
 
 

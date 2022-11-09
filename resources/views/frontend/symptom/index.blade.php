@@ -1,3 +1,4 @@
+@php use App\Supports\CHTML; @endphp
 @extends('layouts.frontend')
 
 @section('title', 'Symptoms')
@@ -56,7 +57,7 @@
                                         <th>@sortablelink('symptom5', 'symptom 5'))</th>
                                         <th>@sortablelink('symptomversion5', 'symptomversion5'))</th>
                                         <th class="text-center">@sortablelink('created_at', __('common.Created'))</th>
-                                  </tr>
+                                    </tr>
                                     </thead>
                                     <tbody>
                                     @forelse($symptoms as $index => $symptom)
@@ -90,7 +91,7 @@
                             </div>
                         </div>
                         <div class="card-footer bg-transparent pb-0">
-                            {!! \App\Supports\CHTML::pagination($symptoms) !!}
+                            {!! CHTML::pagination($symptoms) !!}
                         </div>
                     @else
                         <div class="card-body min-vh-100">
@@ -102,7 +103,7 @@
         </div>
     </div>
     <!-- /.container-fluid -->
-    {!! \App\Supports\CHTML::confirmModal('Enumerator', ['export', 'delete', 'restore']) !!}
+    {!! CHTML::confirmModal('Enumerator', ['export', 'delete', 'restore']) !!}
 @endsection
 
 

@@ -1,3 +1,4 @@
+@php use App\Supports\CHTML; @endphp
 @extends('layouts.app')
 
 @section('title', $patient->vaers_id)
@@ -37,7 +38,8 @@
                 <div class="card card-default">
                     <div class="card-body min-vh-100">
                         <div class="row mb-3">
-                            <div class="col-md-6"><label class="d-block">Name</label><p class="font-weight-bold">{{ $patient->name ?? null }}</p></div>
+                            <div class="col-md-6"><label class="d-block">Name</label>
+                                <p class="font-weight-bold">{{ $patient->name ?? null }}</p></div>
                             <div class="col-md-6">
                                 <label class="d-block">Enabled</label>
                                 <p class="font-weight-bold"></p>
@@ -49,7 +51,7 @@
             </div>
         </div>
     </div>
-    {!! \App\Supports\CHTML::confirmModal('Enumerator', ['delete', 'restore']) !!}
+    {!! CHTML::confirmModal('Enumerator', ['delete', 'restore']) !!}
 @endsection
 
 

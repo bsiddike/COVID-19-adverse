@@ -1,34 +1,35 @@
+@php use App\Supports\Constant; @endphp
 @push('plugin-style')
     <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }}" type="text/css">
 @endpush
 
 <div class="card-body">
-    {!! Form::hidden('home_page', \App\Supports\Constant::DASHBOARD_ROUTE) !!}
-    {!! Form::hidden('locale', \App\Supports\Constant::LOCALE) !!}
+    {!! Form::hidden('home_page', Constant::DASHBOARD_ROUTE) !!}
+    {!! Form::hidden('locale', Constant::LOCALE) !!}
     <div class="row">
         <div class="col-md-6">
             {!! Form::nText('name', __('common.Name'), old('name', $user->name ?? null), true) !!}
         </div>
         <div class="col-md-6">
             {!! Form::nText('username', __('setting.Username'), old('username', $user->username ?? null),
-                (config('auth.credential_field') == \App\Supports\Constant::LOGIN_USERNAME)) !!}
+                (config('auth.credential_field') == Constant::LOGIN_USERNAME)) !!}
         </div>
     </div>
     <div class="row">
         <div class="col-md-6">
             {!! Form::nEmail('email', __('common.Email'), old('email', $user->email ?? null),
-                (config('auth.credential_field') == \App\Supports\Constant::LOGIN_EMAIL
-                || (config('auth.credential_field') == \App\Supports\Constant::LOGIN_OTP
-                    && config('auth.credential_otp_field') == \App\Supports\Constant::OTP_EMAIL))) !!}
+                (config('auth.credential_field') == Constant::LOGIN_EMAIL
+                || (config('auth.credential_field') == Constant::LOGIN_OTP
+                    && config('auth.credential_otp_field') == Constant::OTP_EMAIL))) !!}
         </div>
         <div class="col-md-6">
             {!! Form::nTel('mobile', __('common.Mobile'), old('mobile', $user->mobile ?? null),
-                (config('auth.credential_field') == \App\Supports\Constant::LOGIN_MOBILE
-                || (config('auth.credential_field') == \App\Supports\Constant::LOGIN_OTP
-                    && config('auth.credential_otp_field') == \App\Supports\Constant::OTP_MOBILE))) !!}
+                (config('auth.credential_field') == Constant::LOGIN_MOBILE
+                || (config('auth.credential_field') == Constant::LOGIN_OTP
+                    && config('auth.credential_otp_field') == Constant::OTP_MOBILE))) !!}
         </div>
     </div>
-    @if(config('auth.credential_field') != \App\Supports\Constant::LOGIN_OTP)
+    @if(config('auth.credential_field') != Constant::LOGIN_OTP)
         <div class="row">
             <div class="col-md-6">
                 {!! Form::nPassword('password', __('setting.Password'), empty($user->password)) !!}
@@ -41,18 +42,18 @@
     <div class="row">
         <div class="col-md-6">
             {!! Form::nSelectMulti('role_id', __('setting.Role'), $roles,
-    old('role_id.*', ($user_roles ?? [\App\Supports\Constant::GUEST_ROLE_ID])), true,
+    old('role_id.*', ($user_roles ?? [Constant::GUEST_ROLE_ID])), true,
     ['class' => 'form-control custom-select select2']) !!}
 
-            {!! Form::nSelect('enabled', __('common.Enabled'), \App\Supports\Constant::ENABLED_OPTIONS,
-old('enabled', ($user->enabled ?? \App\Supports\Constant::ENABLED_OPTION))) !!}
+            {!! Form::nSelect('enabled', __('common.Enabled'), Constant::ENABLED_OPTIONS,
+old('enabled', ($user->enabled ?? Constant::ENABLED_OPTION))) !!}
         </div>
         <div class="col-md-6">
             {!! Form::nImage('photo', __('setting.Photo'), false,
                 ['preview' => true, 'height' => '69',
                  'default' => (isset($user))
                  ? $user->getFirstMediaUrl('avatars')
-                 : asset(\App\Supports\Constant::USER_PROFILE_IMAGE)]) !!}
+                 : asset(Constant::USER_PROFILE_IMAGE)]) !!}
         </div>
     </div>
     <div class="row">

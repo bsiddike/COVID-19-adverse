@@ -1,3 +1,5 @@
+@php use App\Supports\Constant; @endphp
+@php use App\Supports\CHTML; @endphp
 @extends('layouts.frontend')
 
 @section('title', $survey->name)
@@ -43,7 +45,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label class="d-block">Enabled</label>
-                                <p class="font-weight-bold">{{ \App\Supports\Constant::ENABLED_OPTIONS[$survey->enabled] }}</p>
+                                <p class="font-weight-bold">{{ Constant::ENABLED_OPTIONS[$survey->enabled] }}</p>
                             </div>
                         </div>
 
@@ -52,7 +54,7 @@
             </div>
         </div>
     </div>
-    {!! \App\Supports\CHTML::confirmModal('Enumerator', ['delete', 'restore']) !!}
+    {!! CHTML::confirmModal('Enumerator', ['delete', 'restore']) !!}
 @endsection
 
 

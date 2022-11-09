@@ -1,3 +1,6 @@
+@php use App\Models\Vaccine; @endphp
+@php use App\Supports\Constant; @endphp
+@php use App\Supports\CHTML; @endphp
 @extends('layouts.frontend')
 
 @section('title', 'Patients')
@@ -29,7 +32,7 @@
 @section('breadcrumbs', Breadcrumbs::render())
 
 @section('actions')
-{{--    {!! Html::linkButton('Add Patient', 'frontend.patients.create', [], 'fas fa-plus', 'success') !!}--}}
+    {{--    {!! Html::linkButton('Add Patient', 'frontend.patients.create', [], 'fas fa-plus', 'success') !!}--}}
     {{--{!! \Html::bulkDropdown('frontend.surveys', 0, ['color' => 'warning']) !!}--}}
 @endsection
 
@@ -63,7 +66,9 @@
                                                 <i class="far fa-calendar-alt"></i>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control float-right" value="{{request()->get('recive_date')}}" name="recive_date" id="recive_date">
+                                        <input type="text" class="form-control float-right"
+                                               value="{{request()->get('recive_date')}}" name="recive_date"
+                                               id="recive_date">
                                     </div>
                                     <!-- /.input group -->
                                 </div>
@@ -83,27 +88,27 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                {!! \Form::nSelect('sex', 'Sex',
+                                {!! Form::nSelect('sex', 'Sex',
                                 ['M' => 'Male', 'F' => 'Female', 'U' => 'Unknown'],
                                  request()->get('sex'), false, [ 'placeholder' => 'Select a sex']) !!}
                             </div>
                             <div class="col-md-3">
-                                {!! \Form::nSelect('vax_name', 'Vaccine',
-                                \App\Models\Vaccine::all()->where('vax_type','COVID19')->pluck('vax_name', 'vax_name')->toArray(),
+                                {!! Form::nSelect('vax_name', 'Vaccine',
+                                Vaccine::all()->where('vax_type','COVID19')->pluck('vax_name', 'vax_name')->toArray(),
                                  request()->get('vax_name'), false, [
                                      'placeholder' => 'Select a vaccine Brand name'
                                  ]) !!}
                             </div>
                             <div class="col-md-3">
-                                {!! \Form::nText('symptom', 'Symptom', request()->get('symptom'), false) !!}
+                                {!! Form::nText('symptom', 'Symptom', request()->get('symptom'), false) !!}
                             </div>
                             <div class="col-md-3">
-                                {!! \Form::nText('vax_dose_series', 'Dose Series', request()->get('vax_dose_series'), false) !!}
+                                {!! Form::nText('vax_dose_series', 'Dose Series', request()->get('vax_dose_series'), false) !!}
                             </div>
                             <div class="col-md-3">
                                 {{--{!! \Form::nText('state', 'State', request()->get('state'), false) !!}--}}
-                                {!! \Form::nSelect('state', 'State',
-                                \App\Supports\Constant::USA_STATE,
+                                {!! Form::nSelect('state', 'State',
+                                Constant::USA_STATE,
                                  request()->get('state'), false, [
                                      'placeholder' => 'Select a State'
                                  ]) !!}
@@ -113,7 +118,7 @@
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary">Search</button>
                     </div>
-                    {!! \Form::close() !!}
+                    {!! Form::close() !!}
                 </div>
             </div>
             <div class="col-12">
@@ -150,7 +155,7 @@
                                         <th class="text-center">@sortablelink('vax_date', 'Vaccine Data')</th>
                                         <th class="text-center">@sortablelink('onset_date', 'onset_date')</th>
                                         <th class="text-center">@sortablelink('numdays', 'numdays')</th>
-{{--                                        <th class="text-center">@sortablelink('lab_data', 'Lab_data')</th>--}}
+                                        {{--                                        <th class="text-center">@sortablelink('lab_data', 'Lab_data')</th>--}}
                                         <th class="text-center">@sortablelink('v_adminby', 'v_adminby')</th>
                                         <th class="text-center">@sortablelink('v_fundby', 'v_fundby')</th>
                                         <th class="text-center">@sortablelink('other_meds', 'other_meds')</th>
@@ -197,7 +202,7 @@
                                             <td class="text-center">{{ $patient->vax_date ?? null }}</td>
                                             <td class="text-center">{{ $patient->onset_date ?? null }}</td>
                                             <td class="text-center">{{ $patient->numdays ?? null }}</td>
-{{--                                            <td class="text-center">{{ $patient->lab_data ?? null }}</td>--}}
+                                            {{--                                            <td class="text-center">{{ $patient->lab_data ?? null }}</td>--}}
                                             <td class="text-center">{{ $patient->v_adminby ?? null }}</td>
                                             <td class="text-center">{{ $patient->v_fundby ?? null }}</td>
                                             <td class="text-center">{{ $patient->other_meds ?? null }}</td>
@@ -223,7 +228,7 @@
                             </div>
                         </div>
                         <div class="card-footer bg-transparent pb-0">
-                            {!! \App\Supports\CHTML::pagination($patients) !!}
+                            {!! CHTML::pagination($patients) !!}
                         </div>
                     @else
                         <div class="card-body min-vh-100">
@@ -235,7 +240,7 @@
         </div>
     </div>
     <!-- /.container-fluid -->
-    {!! \App\Supports\CHTML::confirmModal('Patient', ['export', 'delete', 'restore']) !!}
+    {!! CHTML::confirmModal('Patient', ['export', 'delete', 'restore']) !!}
 @endsection
 
 
@@ -251,7 +256,7 @@
                 autoUpdateInput: true,
                 showDropdowns: true,
                 minYear: 2018,
-                maxYear: parseInt(moment().format('YYYY'),10),
+                maxYear: parseInt(moment().format('YYYY'), 10),
                 startDate: '2019-01-01',
                 locale: {
                     format: 'YYYY-MM-DD',

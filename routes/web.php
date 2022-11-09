@@ -19,6 +19,7 @@ use App\Http\Controllers\Backend\Setting\PermissionController;
 use App\Http\Controllers\Backend\Setting\RoleController;
 use App\Http\Controllers\Backend\Setting\UserController;
 use App\Http\Controllers\Backend\SettingController;
+use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\TranslateController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
@@ -33,9 +34,7 @@ use Illuminate\Support\Facades\Route;
  * | contains the "web" middleware group. Now create something great!
  * |
  */
-Route::get('/', function () {
-    return view('frontend.home');
-})->name('home');
+Route::get('/', HomeController::class)->name('home');
 
 Route::get('translate-locale', TranslateController::class)->name('translate-locale');
 

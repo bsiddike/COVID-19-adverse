@@ -130,7 +130,7 @@ Route::prefix('backend')->group(function () {
      * Admin Panel/ Backend Route
      */
     Route::get('/', function () {
-        return redirect(route('backend.dashboard'));
+        return redirect()->route('backend.dashboard');
     })->name('backend');
 
     Route::middleware(['auth'])->name('backend.')->group(function () {
@@ -154,8 +154,9 @@ Route::prefix('backend')->group(function () {
         Route::prefix('organization')->name('organization.')->group(function () {
             //Survey
             Route::prefix('patients')->name('patients.')->group(function () {
-                Route::patch('{patient}/restore', [PatientController::class, 'restore'])->name('restore');
-                Route::get('export', [PatientController::class, 'export'])->name('export');
+                Route::get('hospitalized', [PatientController::class, 'index'])->name('hospitalized');
+                Route::get('recovered', [PatientController::class, 'index'])->name('recovered');
+                Route::get('died', [PatientController::class, 'index'])->name('died');
             });
             Route::resource('patients', PatientController::class)->where(['patient' => '([0-9]+)']);
 

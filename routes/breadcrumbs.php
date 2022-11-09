@@ -176,6 +176,24 @@ Breadcrumbs::for('backend.organization.patients.index', function (BreadcrumbTrai
     $trail->push('Patients', route('backend.organization.patients.index'));
 });
 
+Breadcrumbs::for('backend.organization.patients.hospitalized', function (BreadcrumbTrail $trail) {
+    $trail->parent('backend.organization.patients.index');
+
+    $trail->push('Hospitalized', route('backend.organization.patients.hospitalized'));
+});
+
+Breadcrumbs::for('backend.organization.patients.recovered', function (BreadcrumbTrail $trail) {
+    $trail->parent('backend.organization.patients.index');
+
+    $trail->push('Re-Covid19', route('backend.organization.patients.recovered'));
+});
+
+Breadcrumbs::for('backend.organization.patients.died', function (BreadcrumbTrail $trail) {
+    $trail->parent('backend.organization.patients.index');
+
+    $trail->push('Died', route('backend.organization.patients.died'));
+});
+
 Breadcrumbs::for('backend.organization.patients.create', function (BreadcrumbTrail $trail) {
     $trail->parent('backend.organization.patients.index');
 
@@ -187,7 +205,7 @@ Breadcrumbs::for('backend.organization.patients.show', function (BreadcrumbTrail
 
     $patient = ($patient instanceof Patient) ? $patient : $patient[0];
 
-    $trail->push($patient->name, route('backend.organization.patients.show', $patient->id));
+    $trail->push($patient->vaers_id, route('backend.organization.patients.show', $patient->id));
 });
 
 Breadcrumbs::for('backend.organization.patients.edit', function (BreadcrumbTrail $trail, Patient $patient) {
@@ -260,7 +278,7 @@ Breadcrumbs::for('frontend.patients.index', function (BreadcrumbTrail $trail) {
 
 Breadcrumbs::for('frontend.patients.show', function (BreadcrumbTrail $trail, Patient $patient) {
     $trail->parent('frontend.patients.index');
-    $trail->push('Patient Details', route('frontend.patients.show'));
+    $trail->push('Patient Details', route('frontend.patients.show', $patient->id));
 });
 
 Breadcrumbs::for('frontend.patients.apply', function (BreadcrumbTrail $trail, Patient $patient) {

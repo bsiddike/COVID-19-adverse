@@ -10,7 +10,7 @@
             <div class="icon">
                 <i class="fas fa-smile"></i>
             </div>
-            <a href="{{ route('backend.organization.patients.index', array_merge(request()->all(), ['recovered'=>true])) }}"
+            <a href="{{ route('backend.organization.patients.recovered', array_merge(request()->all(), ['recovered'=>true])) }}"
                class="small-box-footer">{!! __('common.More info') !!} <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>

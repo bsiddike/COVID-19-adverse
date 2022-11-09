@@ -26,17 +26,63 @@
 
 @section('breadcrumbs', Breadcrumbs::render())
 
-@section('actions')
-    {{--
-    {!! Html::linkButton(__('enumerator.Add Enumerator'), 'backend.organization.enumerators.create', [], 'fas fa-plus', 'success') !!}
-    {!! \Html::bulkDropdown('backend.organization.enumerators', 0, ['color' => 'warning']) !!}
-    --}}
-@endsection
-
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <!-- small box -->
+                <div class="small-box bg-primary">
+                    <div class="inner">
+                        <h3>{{ $patients ?? 0 }}</h3>
+
+                        <p>Patients</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-user-nurse"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <!-- small box -->
+                <div class="small-box bg-warning">
+                    <div class="inner">
+                        <h3>{{ $symptoms ?? 0 }}</h3>
+
+                        <p>Symptoms</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-viruses"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <!-- small box -->
+                <div class="small-box bg-success">
+                    <div class="inner">
+                        <h3>{{ $vaccines ?? 0 }}</h3>
+
+                        <p>Vaccines</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-first-aid"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <!-- small box -->
+                <div class="small-box bg-danger">
+                    <div class="inner">
+                        <h3>{{ $patientsDied ?? 0 }}</h3>
+
+                        <p>Died</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-sad-tear"></i>
+                    </div>
+                </div>
+            </div>
+
+{{--            <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
                         <h5 class="card-title m-0">Apply Form</h5>
@@ -188,7 +234,7 @@
                         </form>
                     </div>
                 </div>
-            </div>
+            </div>--}}
         </div>
     </div>
 @endsection

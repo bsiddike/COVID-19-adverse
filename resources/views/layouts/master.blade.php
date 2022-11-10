@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <title>{{ config('app.name', 'Laravel') }} | @yield('title')</title>
+    <title>@yield('title') | {{ config('app.name', 'Laravel') }}</title>
     <!-- favicon -->
     <link rel="icon" type="image/png" href="{{ asset(config('backend.preloader')) }}">
     <!-- meta Tags -->

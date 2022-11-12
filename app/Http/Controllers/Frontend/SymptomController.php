@@ -75,15 +75,15 @@ class SymptomController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param int $symptom_number
-     * @param Request $request
+     * @param  int  $symptom_number
+     * @param  Request  $request
      * @return JsonResponse
      *
      * @throws Exception
      */
     public function search(int $symptom_number, Request $request)
     {
-        $key = 'symptom' . $symptom_number;
+        $key = 'symptom'.$symptom_number;
 
         $filters[$key] = $request->get('query');
 
@@ -91,7 +91,6 @@ class SymptomController extends Controller
 
         return response()->json(array_unique($symptoms), 200);
     }
-
 
     /**
      * Show the form for creating a new resource.

@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
         $basePath = base_path('database/data/');
-        $years = ['2019/'/*, '2020/', '2021/', '2022/'*/];
+        $years = ['2019/', '2020/', '2021/', '2022/'];
 
         $this->call([
             PermissionSeeder::class,

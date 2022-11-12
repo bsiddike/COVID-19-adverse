@@ -43,9 +43,58 @@
                         </div>
                     </div>
                     {!! Form::open(['route' => 'frontend.patients.register', 'id' => 'patient-form']) !!}
-                    @include('frontend.patient.form')
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <label for="symptom1" class="col-sm-3 col-form-label">
+                                First Symptom
+                                <span class="font-weight-bold text-danger">*</span>
+                            </label>
+                            <div class="col-sm-9">
+                                <select class="form-control custom-select" name="symptom1" id="symptom1" required>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="symptom2" class="col-sm-3 col-form-label">
+                                Second Symptom
+                            </label>
+                            <div class="col-sm-9">
+                                <select class="form-control custom-select" name="symptom2" id="symptom2">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="symptom3" class="col-sm-3 col-form-label">
+                                Third Symptom
+                            </label>
+                            <div class="col-sm-9">
+                                <select class="form-control custom-select" name="symptom3" id="symptom3">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="symptom4" class="col-sm-3 col-form-label">
+                                Forth Symptom
+                            </label>
+                            <div class="col-sm-9">
+                                <select class="form-control custom-select" name="symptom4" id="symptom4">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="symptom5" class="col-sm-3 col-form-label">
+                                Fifth Symptom
+                            </label>
+                            <div class="col-sm-9">
+                                <select class="form-control custom-select" name="symptom5" id="symptom5">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-end">
+                        {!! Form::nSubmit('submit', 'Search') !!}
+                    </div>
                     {!! Form::close() !!}
-
                 </div>
             </div>
         </div>
@@ -65,7 +114,7 @@
                 theme: 'bootstrap4',
                 tags: true,
                 placeholder: "Please type or select your symptom",
-                minimumInputLength: 5,
+                minimumInputLength: 3,
                 clearSelection: true,
                 templateResult: function (option) {
                     return option.text;
@@ -75,6 +124,138 @@
                 },
                 ajax: {
                     url: '{{ route('frontend.symptoms.search', 1) }}',
+                    dataType: 'json',
+                    delay: 100,
+                    data: function (params) {
+                        return {
+                            query: params.term
+                        };
+                    },
+                    processResults: function (data) {
+                        var results = data.map(option => {
+                            return {id: option, text: option};
+                        });
+
+                        return {
+                            'results': results
+                        };
+                    }
+                }
+            });
+            $("#symptom2").select2({
+                width: '100%',
+                theme: 'bootstrap4',
+                tags: true,
+                placeholder: "Please type or select your symptom",
+                minimumInputLength: 3,
+                clearSelection: true,
+                templateResult: function (option) {
+                    return option.text;
+                },
+                templateSelection: function (option) {
+                    return option.text;
+                },
+                ajax: {
+                    url: '{{ route('frontend.symptoms.search', 2) }}',
+                    dataType: 'json',
+                    delay: 100,
+                    data: function (params) {
+                        return {
+                            query: params.term
+                        };
+                    },
+                    processResults: function (data) {
+                        var results = data.map(option => {
+                            return {id: option, text: option};
+                        });
+
+                        return {
+                            'results': results
+                        };
+                    }
+                }
+            });
+            $("#symptom3").select2({
+                width: '100%',
+                theme: 'bootstrap4',
+                tags: true,
+                placeholder: "Please type or select your symptom",
+                minimumInputLength: 3,
+                clearSelection: true,
+                templateResult: function (option) {
+                    return option.text;
+                },
+                templateSelection: function (option) {
+                    return option.text;
+                },
+                ajax: {
+                    url: '{{ route('frontend.symptoms.search', 3) }}',
+                    dataType: 'json',
+                    delay: 100,
+                    data: function (params) {
+                        return {
+                            query: params.term
+                        };
+                    },
+                    processResults: function (data) {
+                        var results = data.map(option => {
+                            return {id: option, text: option};
+                        });
+
+                        return {
+                            'results': results
+                        };
+                    }
+                }
+            });
+            $("#symptom4").select2({
+                width: '100%',
+                theme: 'bootstrap4',
+                tags: true,
+                placeholder: "Please type or select your symptom",
+                minimumInputLength: 3,
+                clearSelection: true,
+                templateResult: function (option) {
+                    return option.text;
+                },
+                templateSelection: function (option) {
+                    return option.text;
+                },
+                ajax: {
+                    url: '{{ route('frontend.symptoms.search', 4) }}',
+                    dataType: 'json',
+                    delay: 100,
+                    data: function (params) {
+                        return {
+                            query: params.term
+                        };
+                    },
+                    processResults: function (data) {
+                        var results = data.map(option => {
+                            return {id: option, text: option};
+                        });
+
+                        return {
+                            'results': results
+                        };
+                    }
+                }
+            });
+            $("#symptom5").select2({
+                width: '100%',
+                theme: 'bootstrap4',
+                tags: true,
+                placeholder: "Please type or select your symptom",
+                minimumInputLength: 3,
+                clearSelection: true,
+                templateResult: function (option) {
+                    return option.text;
+                },
+                templateSelection: function (option) {
+                    return option.text;
+                },
+                ajax: {
+                    url: '{{ route('frontend.symptoms.search', 5) }}',
                     dataType: 'json',
                     delay: 100,
                     data: function (params) {

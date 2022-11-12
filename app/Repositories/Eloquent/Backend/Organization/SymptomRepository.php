@@ -40,17 +40,25 @@ class SymptomRepository extends EloquentRepository
         if (! empty($filters['symptom1'])) {
             $query->where('symptom1', 'like', "%{$filters['symptom1']}%");
         }
+
         if (! empty($filters['symptom2'])) {
             $query->where('symptom2', 'like', "%{$filters['symptom2']}%");
         }
+
         if (! empty($filters['symptom3'])) {
             $query->where('symptom3', 'like', "%{$filters['symptom3']}%");
         }
+
         if (! empty($filters['symptom4'])) {
             $query->where('symptom4', 'like', "%{$filters['symptom4']}%");
         }
+
         if (! empty($filters['symptom5'])) {
             $query->where('symptom5', 'like', "%{$filters['symptom5']}%");
+        }
+
+        if (!empty($filters['search_column'])) {
+            $query->groupBy($filters['search_column']);
         }
 
         return $query;

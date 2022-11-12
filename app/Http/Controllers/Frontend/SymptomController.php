@@ -87,9 +87,11 @@ class SymptomController extends Controller
 
         $filters[$key] = $request->get('query');
 
+        $filters['search_column'] = $key;
+
         $symptoms = $this->symptomService->getAllSymptoms($filters)->pluck($key)->toArray();
 
-        return response()->json(array_unique($symptoms), 200);
+        return response()->json($symptoms, 200);
     }
 
     /**

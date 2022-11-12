@@ -20,9 +20,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-
         $basePath = base_path('database/data/');
-        $years = ['2019/'/*, '2020/', '2021/', '2022/'*/];
+        $years = ['2019/', '2020/', '2021/', '2022/'];
 
         $this->call([
             PermissionSeeder::class,
@@ -31,10 +30,9 @@ class DatabaseSeeder extends Seeder
             SARegisterSeeder::class,
             AdminRegisterSeeder::class, ]);
 
+        $this->call(SymptomSeeder::class, false, ['basePath' => $basePath, 'years' => $years]);
         $this->call(VaccineSeeder::class, false, ['basePath' => $basePath, 'years' => $years]);
         $this->call(PatientSeeder::class, false, ['basePath' => $basePath, 'years' => $years]);
-        $this->call(SymptomSeeder::class, false, ['basePath' => $basePath, 'years' => $years]);
-
         Model::reguard();
     }
 }

@@ -13,20 +13,30 @@
         <div class="collapse navbar-collapse order-3" id="navbarCollapse">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="{{ route('home') }}" class="nav-link">Home</a>
+                    <a href="{{ route('home') }}" 
+                    class="nav-link @if(\Route::is('home')) active font-weight-bold @endif">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('frontend.patients.index') }}" class="nav-link">Patients</a>
+                    <a href="{{ route('frontend.patients.index') }}" 
+                    class="nav-link @if(\Route::is('frontend.patients.index')) active font-weight-bold @endif">Patients</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('frontend.symptoms.index') }}" class="nav-link">Symptoms</a>
+                    <a href="{{ route('frontend.symptoms.index') }}"
+                    class="nav-link @if(\Route::is('frontend.symptoms.index')) active font-weight-bold @endif">Symptoms</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('frontend.vaccines.index') }}" class="nav-link">Vaccines</a>
+                    <a href="{{ route('frontend.vaccines.index') }}" 
+                    class="nav-link @if(\Route::is('frontend.vaccines.index')) active font-weight-bold @endif">Vaccines</a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{ route('frontend.patients.apply') }}" class="nav-link">Apply</a>
+                    <a href="{{ route('frontend.patients.apply') }}" 
+                    class="nav-link p-0 @if(\Route::is('frontend.patients.apply')) active font-weight-bold @endif">
+                        <button 
+                        class="btn btn-outline-light @if(\Route::is('frontend.patients.apply')) font-weight-bold @endif">
+                    Are you sick?
+                </button>
+                    </a>
                 </li>
             </ul>
 

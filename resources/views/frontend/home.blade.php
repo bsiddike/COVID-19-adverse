@@ -81,161 +81,90 @@
                     </div>
                 </div>
             </div>
-
-            {{--            <div class="col-lg-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h5 class="card-title m-0">Apply Form</h5>
-                                </div>
-                                <div class="card-body">
-
-                                    <form>
-                                        <div class="row">
-                                            <div class="col-sm-6">
-
-                                                <div class="form-group">
-                                                    <label>Text</label>
-                                                    <input type="text" class="form-control" placeholder="Enter ...">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <label>Text Disabled</label>
-                                                    <input type="text" class="form-control" placeholder="Enter ..." disabled="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-6">
-
-                                                <div class="form-group">
-                                                    <label>Textarea</label>
-                                                    <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <label>Textarea Disabled</label>
-                                                    <textarea class="form-control" rows="3" placeholder="Enter ..."
-                                                              disabled=""></textarea>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="col-form-label" for="inputSuccess"><i class="fas fa-check"></i> Input with
-                                                success</label>
-                                            <input type="text" class="form-control is-valid" id="inputSuccess"
-                                                   placeholder="Enter ...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-form-label" for="inputWarning"><i class="far fa-bell"></i> Input with
-                                                warning</label>
-                                            <input type="text" class="form-control is-warning" id="inputWarning"
-                                                   placeholder="Enter ...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-form-label" for="inputError"><i class="far fa-times-circle"></i> Input
-                                                with
-                                                error</label>
-                                            <input type="text" class="form-control is-invalid" id="inputError"
-                                                   placeholder="Enter ...">
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-6">
-
-                                                <div class="form-group">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox">
-                                                        <label class="form-check-label">Checkbox</label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" checked="">
-                                                        <label class="form-check-label">Checkbox checked</label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" disabled="">
-                                                        <label class="form-check-label">Checkbox disabled</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-
-                                                <div class="form-group">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="radio1">
-                                                        <label class="form-check-label">Radio</label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="radio1" checked="">
-                                                        <label class="form-check-label">Radio checked</label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" disabled="">
-                                                        <label class="form-check-label">Radio disabled</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-6">
-
-                                                <div class="form-group">
-                                                    <label>Select</label>
-                                                    <select class="form-control">
-                                                        <option>option 1</option>
-                                                        <option>option 2</option>
-                                                        <option>option 3</option>
-                                                        <option>option 4</option>
-                                                        <option>option 5</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <label>Select Disabled</label>
-                                                    <select class="form-control" disabled="">
-                                                        <option>option 1</option>
-                                                        <option>option 2</option>
-                                                        <option>option 3</option>
-                                                        <option>option 4</option>
-                                                        <option>option 5</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-6">
-
-                                                <div class="form-group">
-                                                    <label>Select Multiple</label>
-                                                    <select multiple="" class="form-control">
-                                                        <option>option 1</option>
-                                                        <option>option 2</option>
-                                                        <option>option 3</option>
-                                                        <option>option 4</option>
-                                                        <option>option 5</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <label>Select Multiple Disabled</label>
-                                                    <select multiple="" class="form-control" disabled="">
-                                                        <option>option 1</option>
-                                                        <option>option 2</option>
-                                                        <option>option 3</option>
-                                                        <option>option 4</option>
-                                                        <option>option 5</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>--}}
         </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="border-bottom p-1">
+                            Novel Corona Virus
+                        </h3>
+                        Coronaviruses are a large family of viruses that may cause illness in animals or humans.
+                        In humans, several coronaviruses cause respiratory infections ranging from the common cold
+                        to more severe diseases such as Middle East Respiratory Syndrome (MERS) and Severe Acute
+                        Respiratory Syndrome (SARS). The most recently discovered coronavirus causes coronavirus
+                        disease COVID-19.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="border-bottom p-1">
+                            what is covid-19
+                        </h3>
+                        COVID-19 is the infectious disease caused by the most recently discovered coronavirus.
+                        This new virus and disease were unknown before the outbreak began in Wuhan, China,
+                        in December 2019.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="border-bottom p-1">
+                            How COVID-19 Spreads
+                        </h3>
+                        The virus spreads mainly from person to person:
+                        Between people in close contact with one another (within about 6 feet).
+                        Respiratory droplets are produced when an infected person coughs or sneezes.
+                        These droplets can land in the mouths or noses of nearby people or possibly be inhaled into the lungs.
+                        COVID‑19 may be spread by people who are not showing any symptoms.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="border-bottom p-1">
+                            Prevention of COVID-19
+                        </h3>
+                        Vaccination is the best tool to protect people and communities from COVID-19.
+                        Like any vaccine, COVID-19 vaccines do not stop 100% of cases. But people who
+                        are up-to-date on their vaccines. They are also better protected from severe
+                        illness, hospitalization, and death. DSHS encourages the voluntary use of
+                        masks and other actions as prevention against COVID-19 and other respiratory infections.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-6">
+
+            </div>
+        </div>
+
     </div>
 @endsection
 

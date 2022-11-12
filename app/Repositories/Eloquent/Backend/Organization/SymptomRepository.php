@@ -37,15 +37,20 @@ class SymptomRepository extends EloquentRepository
     {
         $query = $this->getQueryBuilder();
 
-        if (! empty($filters['search'])) {
-            $query->where('name', 'like', "%{$filters['search']}%")
-                ->orWhere('enabled', 'like', "%{$filters['search']}%")
-                ->orWhere('nid', 'like', "%{$filters['search']}%")
-                ->orWhere('mobile_1', 'like', "%{$filters['search']}%")
-                ->orWhere('mobile_2', 'like', "%{$filters['search']}%")
-                ->orWhere('email', 'like', "%{$filters['search']}%")
-                ->orWhere('present_address', 'like', "%{$filters['search']}%")
-                ->orWhere('permanent_address', 'like', "%{$filters['search']}%");
+        if (! empty($filters['symptom1'])) {
+            $query->where('symptom1', 'like', "%{$filters['symptom1']}%");
+        }
+        if (! empty($filters['symptom2'])) {
+            $query->where('symptom2', 'like', "%{$filters['symptom2']}%");
+        }
+        if (! empty($filters['symptom3'])) {
+            $query->where('symptom3', 'like', "%{$filters['symptom3']}%");
+        }
+        if (! empty($filters['symptom4'])) {
+            $query->where('symptom4', 'like', "%{$filters['symptom4']}%");
+        }
+        if (! empty($filters['symptom5'])) {
+            $query->where('symptom5', 'like', "%{$filters['symptom5']}%");
         }
 
         return $query;

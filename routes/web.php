@@ -62,7 +62,6 @@ Route::name('frontend.')->group(function () {
 
     Route::resource('vaccines', \App\Http\Controllers\Frontend\VaccineController::class)
         ->only('index', 'show');
-
 });
 
 Route::prefix('admin')->group(function () {

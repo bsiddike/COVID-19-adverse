@@ -89,7 +89,7 @@ class SymptomController extends Controller
 
         $symptoms = $this->symptomService->getAllSymptoms($filters)->pluck($key)->toArray();
 
-        return response()->json($symptoms, 200);
+        return response()->json(array_unique($symptoms), 200);
     }
 
 

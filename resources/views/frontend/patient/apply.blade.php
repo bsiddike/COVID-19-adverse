@@ -82,8 +82,12 @@
                         };
                     },
                     processResults: function (data) {
+                        var results = data.map(option => {
+                            return {id: option, text: option};
+                        });
+
                         return {
-                            results: data
+                            'results': results
                         };
                     }
                 }

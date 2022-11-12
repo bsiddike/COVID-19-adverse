@@ -31,11 +31,6 @@ use Throwable;
 class SymptomController extends Controller
 {
     /**
-     * @var AuthenticatedSessionService
-     */
-    private $authenticatedSessionService;
-
-    /**
      * @var SymptomService
      */
     private $symptomService;
@@ -46,10 +41,8 @@ class SymptomController extends Controller
      * @param  AuthenticatedSessionService  $authenticatedSessionService
      * @param  SymptomService  $symptomService
      */
-    public function __construct(AuthenticatedSessionService $authenticatedSessionService,
-                                SymptomService $symptomService)
+    public function __construct(SymptomService $symptomService)
     {
-        $this->authenticatedSessionService = $authenticatedSessionService;
         $this->symptomService = $symptomService;
     }
 
@@ -95,48 +88,23 @@ class SymptomController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Display a listing of the resource.
      *
-     * @return Application|Factory|View
+     * @param Request $request
+     * @return JsonResponse
      *
-     * @throws ContainerExceptionInterface
-     * @throws NotFoundExceptionInterface
      * @throws Exception
      */
-    public function create()
+    public function register(Request $request)
     {
-        $enables = [];
-        foreach (Constant::ENABLED_OPTIONS as $field => $label) {
-            $enables[$field] = __('common.'.$label);
-        }
+        $filters = $request->except(['submit', '_token']);
 
-        return view('frontend.symptom.create');
+        $symptoms = $this->symptomService->getAllSymptoms($filters)->toArray();
+
+        dd($symptoms);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  CreateSymptomRequest  $request
-     * @return RedirectResponse
-     *
-     * @throws Exception|Throwable
-     */
-    public function store(Request $request): RedirectResponse
-    {
-        $inputs = $request->except('_token');
 
-        $confirm = $this->symptomService->storeSymptom($inputs);
-
-        if ($confirm['status'] == true) {
-            notify($confirm['message'], $confirm['level'], $confirm['title']);
-
-            return redirect()->route('frontend.symptoms.index');
-        }
-
-        notify($confirm['message'], $confirm['level'], $confirm['title']);
-
-        return redirect()->back()->withInput();
-    }
 
     /**
      * Display the specified resource.
@@ -156,162 +124,5 @@ class SymptomController extends Controller
         }
 
         abort(404);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param $id
-     * @return Application|Factory|View
-     *
-     * @throws ContainerExceptionInterface
-     * @throws NotFoundExceptionInterface
-     * @throws Exception
-     */
-    public function edit($id)
-    {
-        if ($symptom = $this->symptomService->getSymptomById($id)) {
-            return view('frontend.symptom.edit', [
-                'symptom' => $symptom,
-            ]);
-        }
-
-        abort(404);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  UpdateSymptomRequest  $request
-     * @param    $id
-     * @return RedirectResponse
-     *
-     * @throws Throwable
-     */
-    public function update(UpdateSymptomRequest $request, $id): RedirectResponse
-    {
-        $inputs = $request->except('_token', 'submit', '_method');
-        $confirm = $this->symptomService->updateSymptom($inputs, $id);
-
-        if ($confirm['status'] == true) {
-            notify($confirm['message'], $confirm['level'], $confirm['title']);
-
-            return redirect()->route('frontend.symptoms.index');
-        }
-
-        notify($confirm['message'], $confirm['level'], $confirm['title']);
-
-        return redirect()->back()->withInput();
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param $id
-     * @param  Request  $request
-     * @return RedirectResponse
-     *
-     * @throws Throwable
-     */
-    public function destroy($id, Request $request)
-    {
-        if ($this->authenticatedSessionService->validate($request)) {
-            $confirm = $this->symptomService->destroySymptom($id);
-
-            if ($confirm['status'] == true) {
-                notify($confirm['message'], $confirm['level'], $confirm['title']);
-            } else {
-                notify($confirm['message'], $confirm['level'], $confirm['title']);
-            }
-
-            return redirect()->route('frontend.symptoms.index');
-        }
-        abort(403, 'Wrong user credentials');
-    }
-
-    /**
-     * Restore a Soft Deleted Resource
-     *
-     * @param $id
-     * @param  Request  $request
-     * @return RedirectResponse|void
-     *
-     * @throws Throwable
-     */
-    public function restore($id, Request $request)
-    {
-        if ($this->authenticatedSessionService->validate($request)) {
-            $confirm = $this->symptomService->restoreSymptom($id);
-
-            if ($confirm['status'] == true) {
-                notify($confirm['message'], $confirm['level'], $confirm['title']);
-            } else {
-                notify($confirm['message'], $confirm['level'], $confirm['title']);
-            }
-
-            return redirect()->route('frontend.symptoms.index');
-        }
-        abort(403, 'Wrong user credentials');
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @param  Request  $request
-     * @return string|StreamedResponse
-     *
-     * @throws IOException
-     * @throws InvalidArgumentException
-     * @throws UnsupportedTypeException
-     * @throws WriterNotOpenedException
-     * @throws Exception
-     */
-    public function export(Request $request)
-    {
-        $counter = 1;
-
-        $filters = $request->except('page');
-
-        $symptomExport = $this->symptomService->exportSymptom($filters);
-
-        $filename = 'Symptom-'.date('Ymd-His').'-'.$request->get('filter').'.'.($filters['format'] ?? 'xlsx');
-
-        return $symptomExport->download($filename, function ($symptom) use ($symptomExport, &$counter) {
-            $symptom->counter = $counter;
-            $counter++;
-
-            return $symptomExport->map($symptom);
-        });
-    }
-
-    /**
-     * Display a detail of the resource.
-     *
-     * @param  Request  $request
-     * @return JsonResponse
-     *
-     * @throws Exception
-     */
-    public function ajax(Request $request): JsonResponse
-    {
-        $filters = $request->except('page');
-
-        $symptoms = $this->symptomService->getAllSymptoms($filters);
-
-        if (count($symptoms) > 0) {
-            foreach ($symptoms as $index => $symptom) {
-                $symptoms[$index]->update_route = route('frontend.symptoms.update', $symptom->id);
-                $symptoms[$index]->survey_id = $symptom->surveys->pluck('id')->toArray();
-                $symptoms[$index]->prev_post_state_id = $symptom->previousPostings->pluck('id')->toArray();
-                $symptoms[$index]->future_post_state_id = $symptom->futurePostings->pluck('id')->toArray();
-                unset($symptoms[$index]->surveys, $symptoms[$index]->previousPostings, $symptoms[$index]->futurePostings);
-            }
-
-            $jsonReturn = ['status' => true, 'data' => $symptoms];
-        } else {
-            $jsonReturn = ['status' => false, 'data' => []];
-        }
-
-        return response()->json($jsonReturn, 200);
     }
 }

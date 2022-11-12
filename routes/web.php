@@ -50,8 +50,6 @@ Route::name('frontend.')->group(function () {
     Route::get('patient-apply', [\App\Http\Controllers\Frontend\PatientController::class, 'apply'])
         ->name('patients.apply');
 
-    Route::post('patient-register', [\App\Http\Controllers\Frontend\PatientController::class, 'register'])
-        ->name('patients.register');
 
     Route::resource('symptoms', \App\Http\Controllers\Frontend\SymptomController::class)
         ->only('index', 'show');
@@ -59,6 +57,9 @@ Route::name('frontend.')->group(function () {
     Route::get('symptoms/{symptom_number}/search', [\App\Http\Controllers\Frontend\SymptomController::class, 'search'])
         ->where(['symptom_number' => '([0-9]+)'])
     ->name('symptoms.search');
+
+    Route::post('patient-register', [\App\Http\Controllers\Frontend\SymptomController::class, 'register'])
+        ->name('patients.register');
 
     Route::resource('vaccines', \App\Http\Controllers\Frontend\VaccineController::class)
         ->only('index', 'show');

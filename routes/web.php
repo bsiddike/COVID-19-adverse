@@ -56,8 +56,13 @@ Route::name('frontend.')->group(function () {
     Route::resource('symptoms', \App\Http\Controllers\Frontend\SymptomController::class)
         ->only('index', 'show');
 
+    Route::get('symptoms/{symptom_number}/search', [\App\Http\Controllers\Frontend\SymptomController::class, 'search'])
+        ->where(['symptom_number' => '([0-9]+)'])
+    ->name('symptoms.search');
+
     Route::resource('vaccines', \App\Http\Controllers\Frontend\VaccineController::class)
         ->only('index', 'show');
+
 });
 
 Route::prefix('admin')->group(function () {

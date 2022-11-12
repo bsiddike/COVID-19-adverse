@@ -63,6 +63,7 @@
             $("#symptom1").select2({
                 width: '100%',
                 theme: 'bootstrap4',
+                tags: true,
                 placeholder: "Please type or select your symptom",
                 minimumInputLength: 5,
                 clearSelection: true,

@@ -128,7 +128,6 @@ class PatientSeeder extends Seeder
                             );
 
                         $this->command->line('Seeded In: '.((microtime(true) - $start_time) * 1000000).'sec');
-                        break;
                     }
                 }
             }

@@ -87,7 +87,7 @@ class VaccineRepository extends EloquentRepository
             }
         }
 
-        $query->where('vax_type','COVID19');
+        $query->where('vax_type', 'COVID19');
 
         return $query;
     }

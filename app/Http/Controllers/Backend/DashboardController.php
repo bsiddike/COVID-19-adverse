@@ -37,12 +37,12 @@ class DashboardController extends Controller
         $filters = $request->except('page');
 
         return view('backend.dashboard', [
-            'patients' => $this->patientService->getAllPatients($filters)->count(),
-            'symptoms' => $this->symptomService->getAllSymptoms($filters)->count(),
-            'vaccines' => $this->vaccineService->getAllVaccines($filters)->count(),
-            'patientsDied' => $this->patientService->getAllPatients(array_merge($filters, ['died' => true]))->count(),
-            'patientsRecovered' => $this->patientService->getAllPatients(array_merge($filters, ['recovered' => true]))->count(),
-            'patientsHospitalized' => $this->patientService->getAllPatients(array_merge($filters, ['hospitalized' => true]))->count(),
+            'patients' => 0,
+            'symptoms' => 0,
+            'vaccines' => 0,
+            'patientsDied' => 0,
+            'patientsRecovered' => 0,
+            'patientsHospitalized' => 0,
             'affectedGender' => $this->patientService->getGenderMetrics($filters),
             'affectedAge' => $this->patientService->getAgeMetrics($filters),
             'affectedMonth' => $this->patientService->getPatientLineChart($filters),

@@ -87,7 +87,7 @@ class SymptomController extends Controller
     {
         $filters = $request->except(['submit', '_token']);
 
-        $symptoms = $this->symptomService->symptomPaginate($filters);
+        $symptoms = $this->symptomService->symptomPaginate($filters, ['vaccine', 'patient']);
 
         return view('frontend.patient.apply', [
             'symptoms' => $symptoms,

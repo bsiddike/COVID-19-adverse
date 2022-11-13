@@ -43,16 +43,21 @@
                                 <table class="table table-hover table-bordered table-striped mb-0" id="employee-table">
                                     <thead class="thead-light">
                                     <tr>
-                                        <th>@sortablelink('symptom1', 'symptom 1'))</th>
-                                        <th>@sortablelink('symptom2', 'symptom 2'))</th>
-                                        <th>@sortablelink('symptom3', 'symptom 3'))</th>
-                                        <th>@sortablelink('symptom4', 'symptom 4'))</th>
-                                        <th>@sortablelink('symptom5', 'symptom 5'))</th>
+                                        <th>@sortablelink('vaccine.vax_name', 'Vaccine')</th>
+                                        <th>@sortablelink('vaccine.vax_dose_series', 'Dose')</th>
+                                        <th>@sortablelink('symptom1', 'symptom 1')</th>
+                                        <th>@sortablelink('symptom2', 'symptom 2')</th>
+                                        <th>@sortablelink('symptom3', 'symptom 3')</th>
+                                        <th>@sortablelink('symptom4', 'symptom 4')</th>
+                                        <th>@sortablelink('symptom5', 'symptom 5')</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     @forelse($symptoms as $index => $symptom)
                                         <tr>
+
+                                            <td>{{ $symptom->vaccine->vax_name ?? null }}</td>
+                                            <td>{{ $symptom->vaccine->vax_dose_series ?? null }}</td>
                                             <td>{{ $symptom->symptom1 ?? null }}</td>
                                             <td>{{ $symptom->symptom2 ?? null }}</td>
                                             <td>{{ $symptom->symptom3 ?? null }}</td>
@@ -61,7 +66,7 @@
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="5" class="exclude-search text-center">No data to display</td>
+                                            <td colspan="7" class="exclude-search text-center">No data to display</td>
                                         </tr>
                                     @endforelse
                                     </tbody>

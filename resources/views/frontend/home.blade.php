@@ -35,23 +35,10 @@
                     <div class="inner">
                         <h3>{{ $patients ?? 0 }}</h3>
 
-                        <p>Patients</p>
+                        <p>Confirmed Case</p>
                     </div>
                     <div class="icon">
                         <i class="fas fa-user-nurse"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <!-- small box -->
-                <div class="small-box bg-warning">
-                    <div class="inner">
-                        <h3>{{ $symptoms ?? 0 }}</h3>
-
-                        <p>Symptoms</p>
-                    </div>
-                    <div class="icon">
-                        <i class="fas fa-viruses"></i>
                     </div>
                 </div>
             </div>

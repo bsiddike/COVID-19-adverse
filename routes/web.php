@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\PasswordResetController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\Model\ModelCountController;
 use App\Http\Controllers\Backend\Model\ModelEnabledController;
 use App\Http\Controllers\Backend\Model\ModelRestoreController;
 use App\Http\Controllers\Backend\Model\ModelSoftDeleteController;
@@ -150,6 +151,9 @@ Route::prefix('admin')->group(function () {
             Route::get('delete/{route}/{id}', ModelSoftDeleteController::class)->name('delete');
             Route::get('restore/{route}/{id}', ModelRestoreController::class)->name('restore');
             Route::get('enabled', ModelEnabledController::class)->name('enabled');
+            Route::get('count/{model}', ModelCountController::class)
+                ->where([['model' => '([a-zA-Z0-9]+)']])->name('count');
+
         });
 
         //Organization

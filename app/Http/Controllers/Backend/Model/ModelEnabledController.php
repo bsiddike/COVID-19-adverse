@@ -7,12 +7,10 @@ use App\Http\Requests\Backend\Model\ModelEnabledRequest;
 use App\Supports\Constant;
 use Exception;
 use Illuminate\Http\JsonResponse;
-use Log;
+use Illuminate\Support\Facades\Log;
 
 class ModelEnabledController extends Controller
 {
-    protected $userService;
-
     /**
      * ModelEnabledController constructor.
      */

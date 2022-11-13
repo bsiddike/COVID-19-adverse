@@ -127,27 +127,47 @@
                                 <table class="table table-hover table-bordered table-striped mb-0" id="employee-table">
                                     <thead class="thead-light">
                                     <tr>
-                                        <th>@sortablelink('symptom1', 'symptom 1'))</th>
-                                        <th>@sortablelink('symptom2', 'symptom 2'))</th>
-                                        <th>@sortablelink('symptom3', 'symptom 3'))</th>
-                                        <th>@sortablelink('symptom4', 'symptom 4'))</th>
-                                        <th>@sortablelink('symptom5', 'symptom 5'))</th>
+                                        @if(request()->has('symptom1'))
+                                            <th>Symptom 1</th>
+                                        @endif
+                                        @if(request()->has('symptom2'))
+                                            <th>Symptom 2</th>
+                                        @endif
+                                        @if(request()->has('symptom3'))
+                                            <th>Symptom 3</th>
+                                        @endif
+                                        @if(request()->has('symptom4'))
+                                            <th>Symptom 4</th>
+                                        @endif
+                                        @if(request()->has('symptom5'))
+                                            <th>Symptom 5</th>
+                                        @endif
                                         <th>Suggestive Medications</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     @forelse($symptoms as $index => $symptom)
                                         <tr>
-                                            <td>{{ $symptom->symptom1 ?? null }}</td>
-                                            <td>{{ $symptom->symptom2 ?? null }}</td>
-                                            <td>{{ $symptom->symptom3 ?? null }}</td>
-                                            <td>{{ $symptom->symptom4 ?? null }}</td>
-                                            <td>{{ $symptom->symptom5 ?? null }}</td>
+                                            @if(request()->has('symptom1'))
+                                                <td>{{ $symptom->symptom1 ?? null }}</td>
+                                            @endif
+                                            @if(request()->has('symptom2'))
+                                                <td>{{ $symptom->symptom2 ?? null }}</td>
+                                            @endif
+                                            @if(request()->has('symptom3'))
+                                                <td>{{ $symptom->symptom3 ?? null }}</td>
+                                            @endif
+                                            @if(request()->has('symptom4'))
+                                                <td>{{ $symptom->symptom4 ?? null }}</td>
+                                            @endif
+                                            @if(request()->has('symptom5'))
+                                                <td>{{ $symptom->symptom5 ?? null }}</td>
+                                            @endif
                                             <td>{{ $symptom->other_meds ?? null }}</td>
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="7" class="exclude-search text-center">No data to display</td>
+                                            <td colspan="6" class="exclude-search text-center">No data to display</td>
                                         </tr>
                                     @endforelse
                                     </tbody>

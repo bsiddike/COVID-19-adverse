@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('title', 'Some Title')
+@section('title', 'Patient Support')
 
 @push('meta')
 

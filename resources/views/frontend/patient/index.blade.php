@@ -1,6 +1,5 @@
 @php use App\Models\Vaccine; @endphp
 @php use App\Supports\Constant; @endphp
-@php use App\Supports\CHTML; @endphp
 @extends('layouts.frontend')
 
 @section('title', 'Patients')
@@ -29,11 +28,6 @@
 
 
 @section('breadcrumbs', Breadcrumbs::render())
-
-@section('actions')
-    {{--    {!! Html::linkButton('Add Patient', 'frontend.patients.create', [], 'fas fa-plus', 'success') !!}--}}
-    {{--{!! \Html::bulkDropdown('frontend.surveys', 0, ['color' => 'warning']) !!}--}}
-@endsection
 
 @section('content')
     <div class="container">
@@ -124,7 +118,6 @@
             @include('backend.wizard.affected-age-wise')
             @include('backend.wizard.affected-state')
             @include('backend.wizard.affected-monthly')
-            @include('backend.wizard.top-10-vaccine-record')
         </div>
     </div>
     <!-- /.container-fluid -->

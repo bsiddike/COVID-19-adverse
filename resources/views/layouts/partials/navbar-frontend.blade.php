@@ -22,7 +22,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('frontend.symptoms.index') }}"
-                    class="nav-link @if(\Route::is('frontend.symptoms.index')) active font-weight-bold @endif">Symptoms</a>
+                    class="nav-link @if(\Route::is('frontend.symptoms.index')) active font-weight-bold @endif">Symptoms & Outcomes</a>
                 </li>
 {{--                <li class="nav-item">
                     <a href="{{ route('frontend.vaccines.index') }}" 

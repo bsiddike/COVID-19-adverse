@@ -210,5 +210,4 @@ Route::prefix('admin')->group(function () {
             Route::resource('roles', RoleController::class)->where(['role' => '([0-9]+)']);
         });
     });
-
 });

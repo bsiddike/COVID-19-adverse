@@ -43,7 +43,7 @@ class HomeController extends Controller
         $filters = $request->except('page');
 
         return view('frontend.home', [
-            'patients' =>0,
+            'patients' => 0,
             'symptoms' => 0,
             'vaccines' => 0,
             'patientsDied' => 0,

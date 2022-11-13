@@ -1,4 +1,4 @@
-<div class="col-lg-6">
+<div class="col-lg-4 col-md-6">
     <div class="card">
         <div class="card-header border-bottom-0">
             <h3 class="card-title">State wise Patients count</h3>
@@ -12,7 +12,7 @@
             <div class="d-md-flex">
                 <div class="p-1 flex-fill" style="overflow: hidden">
                     <div id="world-map-markers" style="overflow: hidden" class="mapael">
-                        <div class="map"></div>
+                        <div class="map" style="height: 260px !important;"></div>
                     </div>
                 </div>
             </div>

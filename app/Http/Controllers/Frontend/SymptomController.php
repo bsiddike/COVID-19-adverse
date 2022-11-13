@@ -3,27 +3,15 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Backend\Organization\CreateSymptomRequest;
-use App\Http\Requests\Backend\Organization\UpdateSymptomRequest;
 use App\Services\Auth\AuthenticatedSessionService;
 use App\Services\Backend\Organization\SymptomService;
-use App\Supports\Constant;
 use App\Supports\Utility;
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use OpenSpout\Common\Exception\InvalidArgumentException;
-use OpenSpout\Common\Exception\IOException;
-use OpenSpout\Common\Exception\UnsupportedTypeException;
-use OpenSpout\Writer\Exception\WriterNotOpenedException;
-use Psr\Container\ContainerExceptionInterface;
-use Psr\Container\NotFoundExceptionInterface;
-use Symfony\Component\HttpFoundation\StreamedResponse;
-use Throwable;
 
 /**
  * @class SymptomController
@@ -90,7 +78,7 @@ class SymptomController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param Request $request
+     * @param  Request  $request
      * @return JsonResponse
      *
      * @throws Exception
@@ -103,8 +91,6 @@ class SymptomController extends Controller
 
         dd($symptoms);
     }
-
-
 
     /**
      * Display the specified resource.

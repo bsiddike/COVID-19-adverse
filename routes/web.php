@@ -51,7 +51,6 @@ Route::name('frontend.')->group(function () {
     Route::get('patient-apply', [\App\Http\Controllers\Frontend\PatientController::class, 'apply'])
         ->name('patients.apply');
 
-
     Route::resource('symptoms', \App\Http\Controllers\Frontend\SymptomController::class)
         ->only('index', 'show');
 

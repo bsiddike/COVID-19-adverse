@@ -137,6 +137,9 @@ Route::prefix('admin')->group(function () {
         return redirect()->route('backend.dashboard');
     })->name('backend');
 
+    Route::get('count/{model}', ModelCountController::class)
+        ->where(['model' => '([a-zA-Z0-9]+)'])->name('backend.model.count');
+
     Route::middleware(['auth'])->name('backend.')->group(function () {
         Route::get('/dashboard', DashboardController::class)
             ->name('dashboard');
@@ -151,9 +154,6 @@ Route::prefix('admin')->group(function () {
             Route::get('delete/{route}/{id}', ModelSoftDeleteController::class)->name('delete');
             Route::get('restore/{route}/{id}', ModelRestoreController::class)->name('restore');
             Route::get('enabled', ModelEnabledController::class)->name('enabled');
-            Route::get('count/{model}', ModelCountController::class)
-                ->where([['model' => '([a-zA-Z0-9]+)']])->name('count');
-
         });
 
         //Organization
@@ -211,4 +211,5 @@ Route::prefix('admin')->group(function () {
             Route::resource('roles', RoleController::class)->where(['role' => '([0-9]+)']);
         });
     });
+
 });

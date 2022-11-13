@@ -6,6 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Models\Patient;
 use App\Models\Symptom;
 use App\Models\Vaccine;
+use App\Services\Backend\Organization\PatientService;
+use App\Services\Backend\Organization\SymptomService;
+use App\Services\Backend\Organization\VaccineService;
+use Exception;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\JsonResponse;
@@ -14,35 +18,47 @@ use Illuminate\Http\Response;
 
 class ModelCountController extends Controller
 {
+    private PatientService $patientService;
+    private SymptomService $symptomService;
+    private VaccineService $vaccineService;
+
+    /**
+     * @param PatientService $patientService
+     * @param SymptomService $symptomService
+     * @param VaccineService $vaccineService
+     */
+    public function __construct(PatientService $patientService,
+                                SymptomService $symptomService,
+                                VaccineService $vaccineService)
+    {
+
+        $this->patientService = $patientService;
+        $this->symptomService = $symptomService;
+        $this->vaccineService = $vaccineService;
+    }
+
     /**
      * Handle the incoming request.
      *
      * @param string $model
      * @param Request $request
      * @return JsonResponse
-     * @throws BindingResolutionException
+     * @throws BindingResolutionException|Exception
      */
     public function __invoke(string $model, Request $request)
     {
-        if ($modelClass = $this->getModelClass($model)) {
-            $modelInstance = app()->make($modelClass);
-            return response()->json(['status' => true, 'count' => number_format($modelInstance->count())]);
-        }
-        return response()->json(['status' => false, 'count' => 0]);
+        $total = 0;
+
+        if ($model == 'patient')
+            $total = $this->patientService->getAllPatients($request->all())->count();
+        else if ($model == 'symptom')
+            $total = $this->symptomService->getAllSymptoms($request->all())->count();
+        else if ($model == 'vaccine')
+            $total = $this->vaccineService->getAllVaccines($request->all())->count();
+        else
+            $total = 0;
+
+        return response()->json(['status' => true, 'count' => number_format($total)]);
     }
 
-    /**
-     * @param string $key
-     * @return string|null
-     */
-    private function getModelClass(string $key)
-    {
-        $models = [
-            'patient' => Patient::class,
-            'symptom' => Symptom::class,
-            'vaccine' => Vaccine::class
-        ];
-
-        return $models[$key] ?? null;
-    }
 }

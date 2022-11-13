@@ -43,10 +43,10 @@ class HomeController extends Controller
         $filters = $request->except('page');
 
         return view('frontend.home', [
-            'patients' => $this->patientService->getAllPatients($filters)->count(),
-            'symptoms' => $this->symptomService->getAllSymptoms($filters)->count(),
-            'vaccines' => $this->vaccineService->getAllVaccines($filters)->count(),
-            'patientsDied' => $this->patientService->getAllPatients(array_merge($filters, ['died' => true]))->count(),
+            'patients' =>0,
+            'symptoms' => 0,
+            'vaccines' => 0,
+            'patientsDied' => 0,
 
         ]);
     }

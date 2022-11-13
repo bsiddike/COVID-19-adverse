@@ -3,7 +3,7 @@
         <!-- small box -->
         <div class="small-box bg-primary">
             <div class="inner">
-                <h3>{{ $patients ?? 0 }}</h3>
+                <h3 id="total_patient">0</h3>
 
                 <p>Patients</p>
             </div>
@@ -15,3 +15,13 @@
         </div>
     </div>
 @endcan
+
+@push('page-script')
+    <script>
+        $(document).ready(function () {
+            $.get('{{ route('backend.model.count', 'patient') }}', function (data) {
+                $("#total_patient").html(data.count ?? 0);
+            });
+        });
+    </script>
+@endpush

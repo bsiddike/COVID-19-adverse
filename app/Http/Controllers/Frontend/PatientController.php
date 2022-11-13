@@ -33,15 +33,15 @@ class PatientController extends Controller
     /**
      * PatientController Constructor
      *
-     * @param AuthenticatedSessionService $authenticatedSessionService
-     * @param PatientService $patientService
-     * @param SymptomService $symptomService
-     * @param VaccineService $vaccineService
+     * @param  AuthenticatedSessionService  $authenticatedSessionService
+     * @param  PatientService  $patientService
+     * @param  SymptomService  $symptomService
+     * @param  VaccineService  $vaccineService
      */
     public function __construct(AuthenticatedSessionService $authenticatedSessionService,
-                                PatientService              $patientService,
-                                SymptomService              $symptomService,
-                                VaccineService              $vaccineService)
+                                PatientService $patientService,
+                                SymptomService $symptomService,
+                                VaccineService $vaccineService)
     {
         $this->authenticatedSessionService = $authenticatedSessionService;
         $this->patientService = $patientService;
@@ -52,7 +52,7 @@ class PatientController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param Request $request
+     * @param  Request  $request
      * @return Application|Factory|View
      *
      * @throws Exception
@@ -85,7 +85,7 @@ class PatientController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param  Request  $request
      * @return RedirectResponse
      *
      * @throws Throwable
@@ -146,7 +146,7 @@ class PatientController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param PatientRequest $request
+     * @param  PatientRequest  $request
      * @param    $id
      * @return RedirectResponse
      *
@@ -171,7 +171,7 @@ class PatientController extends Controller
      * Remove the specified resource from storage.
      *
      * @param $id
-     * @param Request $request
+     * @param  Request  $request
      * @return RedirectResponse
      *
      * @throws Throwable
@@ -196,7 +196,7 @@ class PatientController extends Controller
      * Restore a Soft Deleted Resource
      *
      * @param $id
-     * @param Request $request
+     * @param  Request  $request
      * @return RedirectResponse|void
      *
      * @throws Throwable
@@ -230,7 +230,7 @@ class PatientController extends Controller
 
         $patientExport = $this->patientService->exportPatient($filters);
 
-        $filename = 'Patient-' . date('Ymd-His') . '.' . ($filters['format'] ?? 'xlsx');
+        $filename = 'Patient-'.date('Ymd-His').'.'.($filters['format'] ?? 'xlsx');
 
         return $patientExport->download($filename, function ($patient) use ($patientExport) {
             return $patientExport->map($patient);
@@ -277,7 +277,7 @@ class PatientController extends Controller
 
         $patientExport = $this->patientService->exportPatient($filters);
 
-        $filename = 'Patient-' . date('Ymd-His') . '.' . ($filters['format'] ?? 'xlsx');
+        $filename = 'Patient-'.date('Ymd-His').'.'.($filters['format'] ?? 'xlsx');
 
         return $patientExport->download($filename, function ($patient) use ($patientExport) {
             return $patientExport->map($patient);
@@ -292,7 +292,7 @@ class PatientController extends Controller
     public function apply()
     {
         return view('frontend.patient.apply', [
-            'symptoms' => []
+            'symptoms' => [],
         ]);
     }
 

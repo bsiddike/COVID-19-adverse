@@ -47,7 +47,7 @@
                                         <th class="align-middle">
                                             @sortablelink('id', '#')
                                         </th>
-                                        <th>@sortablelink('vaers_id', 'Vears ID')</th>
+                                        <th>@sortablelink('vaers_id', 'Patient\'s ID')</th>
                                         <th>@sortablelink('vax_name', 'Label')</th>
                                         <th>@sortablelink('vax_type', 'Type')</th>
                                         <th>@sortablelink('vax_manu', 'Manufacture')</th>
@@ -76,11 +76,10 @@
                                             <td>{{ $vaccine->vax_dose_series }}</td>
                                             <td>{{ $vaccine->vax_route }}</td>
                                             <td>{{ $vaccine->vax_site }}</td>
-                                            <td class="text-center">{{ $vaccine->created_at->format(config('backend.datetime')) ?? '' }}</td>
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="7" class="exclude-search text-center">No data to display</td>
+                                            <td colspan="100" class="exclude-search text-center">No data to display</td>
                                         </tr>
                                     @endforelse
                                     </tbody>

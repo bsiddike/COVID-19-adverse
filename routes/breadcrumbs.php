@@ -286,6 +286,11 @@ Breadcrumbs::for('frontend.patients.apply', function (BreadcrumbTrail $trail) {
     $trail->push('Patient Apply', route('frontend.patients.apply'));
 });
 
+Breadcrumbs::for('frontend.patients.register', function (BreadcrumbTrail $trail) {
+    $trail->parent('frontend.patients.index');
+    $trail->push('Patient Care', route('frontend.patients.register'));
+});
+
 Breadcrumbs::for('frontend.symptoms.index', function (BreadcrumbTrail $trail) {
     $trail->parent('home');
     $trail->push('Symptoms', route('frontend.symptoms.index'));

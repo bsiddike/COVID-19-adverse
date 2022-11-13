@@ -58,7 +58,7 @@ Route::name('frontend.')->group(function () {
         ->where(['symptom_number' => '([0-9]+)'])
     ->name('symptoms.search');
 
-    Route::post('patient-register', [\App\Http\Controllers\Frontend\SymptomController::class, 'register'])
+    Route::get('patient-register', [\App\Http\Controllers\Frontend\SymptomController::class, 'register'])
         ->name('patients.register');
 
     Route::resource('vaccines', \App\Http\Controllers\Frontend\VaccineController::class)

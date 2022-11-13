@@ -1,14 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers\Backend\Model;
 
 use App\Http\Controllers\Controller;
 use App\Services\Backend\Organization\PatientService;
 use App\Services\Backend\Organization\SymptomService;
 use App\Services\Backend\Organization\VaccineService;
+use Exception;
+use Illuminate\Contracts\Container\BindingResolutionException;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class ModelCountController extends Controller
 {
     private PatientService $patientService;
 
@@ -33,21 +36,26 @@ class HomeController extends Controller
     /**
      * Handle the incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param  string  $model
+     * @param  Request  $request
+     * @return JsonResponse
      *
-     * @throws \Exception
+     * @throws BindingResolutionException|Exception
      */
-    public function __invoke(Request $request)
+    public function __invoke(string $model, Request $request)
     {
-        $filters = $request->except('page');
+        $total = 0;
 
-        return view('frontend.home', [
-            'patients' => 0,
-            'symptoms' => 0,
-            'vaccines' => 0,
-            'patientsDied' => 0,
+        if ($model == 'patient') {
+            $total = $this->patientService->getAllPatients($request->all())->count();
+        } elseif ($model == 'symptom') {
+            $total = $this->symptomService->getAllSymptoms($request->all())->count();
+        } elseif ($model == 'vaccine') {
+            $total = $this->vaccineService->getAllVaccines($request->all())->count();
+        } else {
+            $total = 0;
+        }
 
-        ]);
+        return response()->json(['status' => true, 'count' => number_format($total)]);
     }
 }

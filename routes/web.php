@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\PasswordResetController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\Model\ModelCountController;
 use App\Http\Controllers\Backend\Model\ModelEnabledController;
 use App\Http\Controllers\Backend\Model\ModelRestoreController;
 use App\Http\Controllers\Backend\Model\ModelSoftDeleteController;
@@ -50,15 +51,15 @@ Route::name('frontend.')->group(function () {
     Route::get('patient-apply', [\App\Http\Controllers\Frontend\PatientController::class, 'apply'])
         ->name('patients.apply');
 
-    Route::post('patient-register', [\App\Http\Controllers\Frontend\PatientController::class, 'register'])
-        ->name('patients.register');
-
     Route::resource('symptoms', \App\Http\Controllers\Frontend\SymptomController::class)
         ->only('index', 'show');
 
     Route::get('symptoms/{symptom_number}/search', [\App\Http\Controllers\Frontend\SymptomController::class, 'search'])
         ->where(['symptom_number' => '([0-9]+)'])
     ->name('symptoms.search');
+
+    Route::post('patient-register', [\App\Http\Controllers\Frontend\SymptomController::class, 'register'])
+        ->name('patients.register');
 
     Route::resource('vaccines', \App\Http\Controllers\Frontend\VaccineController::class)
         ->only('index', 'show');
@@ -134,6 +135,9 @@ Route::prefix('admin')->group(function () {
     Route::get('/', function () {
         return redirect()->route('backend.dashboard');
     })->name('backend');
+
+    Route::get('count/{model}', ModelCountController::class)
+        ->where(['model' => '([a-zA-Z0-9]+)'])->name('backend.model.count');
 
     Route::middleware(['auth'])->name('backend.')->group(function () {
         Route::get('/dashboard', DashboardController::class)

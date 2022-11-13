@@ -33,9 +33,9 @@
                 <!-- small box -->
                 <div class="small-box bg-primary">
                     <div class="inner">
-                        <h3>{{ $patients ?? 0 }}</h3>
+                        <h3 id="total_patient">{{ $patients ?? 0 }}</h3>
 
-                        <p>Patients</p>
+                        <p>Confirmed Case</p>
                     </div>
                     <div class="icon">
                         <i class="fas fa-user-nurse"></i>
@@ -46,7 +46,7 @@
                 <!-- small box -->
                 <div class="small-box bg-warning">
                     <div class="inner">
-                        <h3>{{ $symptoms ?? 0 }}</h3>
+                        <h3 id="total_symptom">0</h3>
 
                         <p>Symptoms</p>
                     </div>
@@ -59,7 +59,7 @@
                 <!-- small box -->
                 <div class="small-box bg-success">
                     <div class="inner">
-                        <h3>{{ $vaccines ?? 0 }}</h3>
+                        <h3 id="total_vaccine">{{ $vaccines ?? 0 }}</h3>
 
                         <p>Vaccines</p>
                     </div>
@@ -72,7 +72,7 @@
                 <!-- small box -->
                 <div class="small-box bg-danger">
                     <div class="inner">
-                        <h3>{{ $patientsDied ?? 0 }}</h3>
+                        <h3 id="total_patient_died">{{ $patientsDied ?? 0 }}</h3>
 
                         <p>Died</p>
                     </div>
@@ -174,5 +174,25 @@
 @endpush
 
 @push('page-script')
+    <script>
+        $(document).ready(function () {
+            $.get('{{ route('backend.model.count', 'patient') }}', function (data) {
+                $("#total_patient").html(data.count ?? 0);
+            });
 
+            $.get('{{ route('backend.model.count', 'symptom') }}', function (data) {
+                $("#total_symptom").html(data.count ?? 0);
+            });
+
+            $.get('{{ route('backend.model.count', 'vaccine') }}', function (data) {
+                $("#total_vaccine").html(data.count ?? 0);
+            });
+
+            $.get('{{ route('backend.model.count', 'patient') }}?died=1', function (data) {
+                $("#total_patient_died").html(data.count ?? 0);
+            });
+
+        });
+    </script>
 @endpush
+

@@ -21,6 +21,4 @@ class Symptom extends Model implements Auditable
     {
         return $this->belongsTo(Vaccine::class, 'vaers_id', 'vaers_id');
     }
-
-
 }

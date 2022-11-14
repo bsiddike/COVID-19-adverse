@@ -2,7 +2,7 @@
     <!-- small box -->
     <div class="small-box bg-success">
         <div class="inner">
-            <h3>{{ $vaccines ?? 0 }}</h3>
+            <h3 id="total_vaccine">{{ $vaccines ?? 0 }}</h3>
 
             <p>Vaccines</p>
         </div>
@@ -13,3 +13,13 @@
            class="small-box-footer">{!! __('common.More info') !!} <i class="fas fa-arrow-circle-right"></i></a>
     </div>
 </div>
+
+@push('page-script')
+    <script>
+        $(document).ready(function () {
+            $.get('{{ route('backend.model.count', 'vaccine') }}', function (data) {
+                $("#total_vaccine").html(data.count ?? 0);
+            });
+        });
+    </script>
+@endpush

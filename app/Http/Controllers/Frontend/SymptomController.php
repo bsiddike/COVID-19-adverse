@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use App\Services\Auth\AuthenticatedSessionService;
 use App\Services\Backend\Organization\SymptomService;
+use App\Services\Backend\Organization\VaccineService;
 use App\Supports\Utility;
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
@@ -23,15 +23,19 @@ class SymptomController extends Controller
      */
     private $symptomService;
 
+    private VaccineService $vaccineService;
+
     /**
      * SymptomController Constructor
      *
-     * @param  AuthenticatedSessionService  $authenticatedSessionService
      * @param  SymptomService  $symptomService
+     * @param  VaccineService  $vaccineService
      */
-    public function __construct(SymptomService $symptomService)
+    public function __construct(SymptomService $symptomService,
+                                VaccineService $vaccineService)
     {
         $this->symptomService = $symptomService;
+        $this->vaccineService = $vaccineService;
     }
 
     /**
@@ -50,6 +54,7 @@ class SymptomController extends Controller
 
         return view('frontend.symptom.index', [
             'symptoms' => $symptoms,
+            'vaccineOutcomes' => $this->vaccineService->getTopVaccinesOutcomesMetrics($filters),
         ]);
     }
 
@@ -87,9 +92,11 @@ class SymptomController extends Controller
     {
         $filters = $request->except(['submit', '_token']);
 
-        $symptoms = $this->symptomService->getAllSymptoms($filters)->toArray();
+        $symptoms = $this->symptomService->symptomPaginate($filters, ['vaccine', 'patient']);
 
-        dd($symptoms);
+        return view('frontend.patient.apply', [
+            'symptoms' => $symptoms,
+        ]);
     }
 
     /**

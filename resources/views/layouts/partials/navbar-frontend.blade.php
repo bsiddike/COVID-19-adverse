@@ -22,12 +22,12 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('frontend.symptoms.index') }}"
-                    class="nav-link @if(\Route::is('frontend.symptoms.index')) active font-weight-bold @endif">Symptoms</a>
+                    class="nav-link @if(\Route::is('frontend.symptoms.index')) active font-weight-bold @endif">Symptoms & Outcomes</a>
                 </li>
-                <li class="nav-item">
+{{--                <li class="nav-item">
                     <a href="{{ route('frontend.vaccines.index') }}" 
                     class="nav-link @if(\Route::is('frontend.vaccines.index')) active font-weight-bold @endif">Vaccines</a>
-                </li>
+                </li>--}}
 
                 <li class="nav-item">
                     <a href="{{ route('frontend.patients.apply') }}" 

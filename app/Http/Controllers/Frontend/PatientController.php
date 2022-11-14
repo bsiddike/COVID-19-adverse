@@ -68,7 +68,6 @@ class PatientController extends Controller
             'affectedAge' => $this->patientService->getAgeMetrics($filters),
             'affectedMonth' => $this->patientService->getPatientLineChart($filters),
             'patientsStateMap' => $this->patientService->getPatientMap($filters),
-            'vaccineOutcomes' => $this->vaccineService->getTopVaccinesOutcomesMetrics($filters),
         ]);
     }
 
@@ -291,7 +290,9 @@ class PatientController extends Controller
      */
     public function apply()
     {
-        return view('frontend.patient.apply');
+        return view('frontend.patient.apply', [
+            'symptoms' => [],
+        ]);
     }
 
     /**

@@ -9,6 +9,7 @@ use Generator;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\DB;
 
 /**
  * @class EnumeratorRepository
@@ -60,7 +61,8 @@ class SymptomRepository extends EloquentRepository
         if (! empty($filters['search_column'])) {
             if ($filters['search_column'] == 'other_meds') {
                 $query->join('patients', 'symptoms.vaers_id', '=', 'patients.vaers_id')
-                    ->select(['symptom1', 'symptom2', 'symptom3', 'symptom4', 'symptom5', 'other_meds']);
+                    ->select(['symptom1', 'symptom2', 'symptom3', 'symptom4', 'symptom5', 'other_meds'])
+                    ->where(DB::raw('LENGTH(`patients`.`other_meds`)'), '>', 0);
             }
             $query->groupBy($filters['search_column']);
         }

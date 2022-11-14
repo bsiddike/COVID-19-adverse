@@ -283,12 +283,17 @@ Breadcrumbs::for('frontend.patients.show', function (BreadcrumbTrail $trail, Pat
 
 Breadcrumbs::for('frontend.patients.apply', function (BreadcrumbTrail $trail) {
     $trail->parent('frontend.patients.index');
-    $trail->push('Patient Apply', route('frontend.patients.apply'));
+    $trail->push('Patient Support', route('frontend.patients.apply'));
+});
+
+Breadcrumbs::for('frontend.patients.register', function (BreadcrumbTrail $trail) {
+    $trail->parent('frontend.patients.index');
+    $trail->push('Patient Support', route('frontend.patients.register'));
 });
 
 Breadcrumbs::for('frontend.symptoms.index', function (BreadcrumbTrail $trail) {
     $trail->parent('home');
-    $trail->push('Symptoms', route('frontend.symptoms.index'));
+    $trail->push('Symptoms & Outcomes', route('frontend.symptoms.index'));
 });
 
 Breadcrumbs::for('frontend.symptoms.show', function (BreadcrumbTrail $trail, Symptom $symptom) {

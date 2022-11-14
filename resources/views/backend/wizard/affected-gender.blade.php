@@ -1,4 +1,4 @@
-<div class="col-md-6 col-sm-12">
+<div class="col-lg-4 col-md-6 col-sm-12">
     <div class="card">
         <div class="card-header border-bottom-0">
             <h3 class="card-title">Gender Wise Affected</h3>

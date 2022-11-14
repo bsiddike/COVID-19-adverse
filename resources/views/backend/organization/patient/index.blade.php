@@ -255,7 +255,6 @@
                         </div>
                     @else
                         <div class="card-body min-vh-100">
-
                         </div>
                     @endif
                 </div>

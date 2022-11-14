@@ -61,7 +61,7 @@
                     <div class="inner">
                         <h3 id="total_vaccine">{{ $vaccines ?? 0 }}</h3>
 
-                        <p>Vaccines</p>
+                        <p>Vaccinated</p>
                     </div>
                     <div class="icon">
                         <i class="fas fa-first-aid"></i>
@@ -83,7 +83,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 d-flex align-items-stretch">
                 <div class="card">
                     <div class="card-body">
                         <h3 class="border-bottom p-1">
@@ -97,15 +97,14 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-
+            <div class="col-md-6 d-flex align-items-stretch">
+                <img src="{{ asset('assets/covid/novel-Medium.jpg') }}" class="img-fluid">
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
 
+            <div class="col-md-6  d-flex align-items-stretch">
+                <img src="{{ asset('assets/covid/covid-Medium.jpg') }}" class="img-fluid">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6  d-flex align-items-stretch">
                 <div class="card">
                     <div class="card-body">
                         <h3 class="border-bottom p-1">
@@ -117,9 +116,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
+
+            <div class="col-md-6  d-flex align-items-stretch">
                 <div class="card">
                     <div class="card-body">
                         <h3 class="border-bottom p-1">
@@ -128,20 +126,20 @@
                         The virus spreads mainly from person to person:
                         Between people in close contact with one another (within about 6 feet).
                         Respiratory droplets are produced when an infected person coughs or sneezes.
-                        These droplets can land in the mouths or noses of nearby people or possibly be inhaled into the lungs.
+                        These droplets can land in the mouths or noses of nearby people or possibly be inhaled into the
+                        lungs.
                         COVID‑19 may be spread by people who are not showing any symptoms.
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-
+            <div class="col-md-6  d-flex align-items-stretch">
+                <img src="{{ asset('assets/covid/spread-Medium.jpg') }}" class="img-fluid">
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
 
+            <div class="col-md-6  d-flex align-items-stretch">
+                <img src="{{ asset('assets/covid/prevention-Medium.jpg') }}" class="img-fluid">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6  d-flex align-items-stretch">
                 <div class="card">
                     <div class="card-body">
                         <h3 class="border-bottom p-1">

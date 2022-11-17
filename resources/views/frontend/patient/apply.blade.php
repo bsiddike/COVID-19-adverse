@@ -40,7 +40,7 @@
                         </div>
                     </div>
                     {!! Form::open(['route' => 'frontend.patients.register', 'id' => 'patient-form', 'method' => 'get']) !!}
-                    {!! Form::hidden('search_column', 'other_meds') !!}
+                    {{--{!! Form::hidden('search_column', 'patients.other_meds') !!}--}}
                     <div class="card-body">
                         <div class="form-group row">
                             <label for="symptom1" class="col-sm-3 col-form-label">

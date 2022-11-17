@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Vaccine;
 use App\Services\Auth\AuthenticatedSessionService;
 use App\Services\Backend\Organization\PatientService;
 use App\Services\Backend\Organization\SymptomService;
@@ -290,8 +291,11 @@ class PatientController extends Controller
      */
     public function apply()
     {
+        $vaccines = array_unique(Vaccine::all()->pluck('vax_name')->toArray());
+
         return view('frontend.patient.apply', [
             'symptoms' => [],
+            'vaccines' => $vaccines
         ]);
     }
 

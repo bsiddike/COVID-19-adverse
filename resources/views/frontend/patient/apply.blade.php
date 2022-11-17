@@ -44,6 +44,39 @@
                     <div class="card-body">
                         <div class="form-group row">
                             <label for="symptom1" class="col-sm-3 col-form-label">
+                                Vaccine
+                            </label>
+                            <div class="col-sm-9">
+                                <select class="form-control custom-select" name="vax_name" id="vax_name" required>
+                                    <option value="">Please select a Vaccine</option>
+                                    @foreach($vaccines as $vaccine)
+                                        <option value="{{ $vaccine }}"
+                                                @if(request()->get('vax_name') == $vaccine) selected @endif>
+                                            {{ $vaccine }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="symptom1" class="col-sm-3 col-form-label">
+                                Gender
+                            </label>
+                            <div class="col-sm-9">
+                                <select class="form-control custom-select" name="gender" id="gender" required>
+                                    <option value="">Please select a Gender</option>
+                                    @foreach(['M' => 'Male', 'F' => 'Female', 'U' => 'Unknown'] as $value => $gender)
+                                        <option value="{{ $value }}"
+                                                @if(request()->get('gender') == $gender) selected @endif>
+                                            {{ $gender }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="symptom1" class="col-sm-3 col-form-label">
                                 First Symptom
                                 <span class="font-weight-bold text-danger">*</span>
                             </label>

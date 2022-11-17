@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Vaccine;
 use App\Services\Backend\Organization\SymptomService;
 use App\Services\Backend\Organization\VaccineService;
 use App\Supports\Utility;
@@ -91,11 +92,13 @@ class SymptomController extends Controller
     public function register(Request $request)
     {
         $filters = $request->except(['submit', '_token']);
+        $vaccines = array_unique(Vaccine::all()->pluck('vax_name')->toArray());
 
         $symptoms = $this->symptomService->symptomPaginate($filters, ['vaccine', 'patient']);
 
         return view('frontend.patient.apply', [
             'symptoms' => $symptoms,
+            'vaccines' => $vaccines
         ]);
     }
 

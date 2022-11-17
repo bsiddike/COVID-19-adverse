@@ -75,7 +75,7 @@ class SymptomRepository extends EloquentRepository
         if (! empty($filters['search_column'])) {
             if ($filters['search_column'] == 'other_meds') {
                 $query->select(['symptoms.symptom1', 'symptoms.symptom2', 'symptoms.symptom3', 'symptoms.symptom4', 'symptoms.symptom5', 'patients.other_meds'])
-                    ->where(DB::raw('LENGTH(`patients`.`other_meds`)'), '>', 0);
+                    ->where(DB::raw('LENGTH(patients.other_meds)'), '>', 0);
             }
             $query->groupBy($filters['search_column']);
         }

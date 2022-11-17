@@ -11,4 +11,14 @@ use OwenIt\Auditing\Contracts\Auditable;
 class Patient extends Model implements Auditable
 {
     use AuditableTrait, HasFactory, Sortable;
+
+    public function vaccine()
+    {
+        return $this->hasOne(Vaccine::class, 'vaers_id', 'vaers_id');
+    }
+
+    public function symptom()
+    {
+        return $this->hasOne(Symptom::class, 'vaers_id', 'vaers_id');
+    }
 }

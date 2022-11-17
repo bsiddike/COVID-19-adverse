@@ -44,7 +44,7 @@ class VaccineService extends Service
 
         $formatData = [];
 
-        foreach ($data as $datum) {
+        foreach ($data as $index => $datum) {
             if (! isset($formatData[$datum['vax_name']])) {
                 $formatData[$datum['vax_name']] = [
                     'data' => [],
@@ -54,6 +54,7 @@ class VaccineService extends Service
             }
             $formatData[$datum['vax_name']]['data'][] = $datum['aggregate'];
             $formatData[$datum['vax_name']]['label'] = $datum['symptom1'];
+            $formatData[$datum['vax_name']]['stack'] = "Stack {$index}";
             $formatData[$datum['vax_name']]['backgroundColor'][] = random_color();
         }
 
@@ -72,6 +73,12 @@ class VaccineService extends Service
                     'position' => 'left',
                 ],
                 'scales' => [
+                    'x' => [
+                        'stacked' => true,
+                    ],
+                    'y' => [
+                        'stacked' => true,
+                    ],
                     'xAxes' => [[
                         'stacked' => true,
                     ]],

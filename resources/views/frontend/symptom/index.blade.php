@@ -44,6 +44,7 @@
                                 <table class="table table-hover table-bordered table-striped mb-0" id="employee-table">
                                     <thead class="thead-light">
                                     <tr>
+                                        <th>@sortablelink('patient.vaers_id', 'Patient\'s ID')</th>
                                         <th>@sortablelink('vaccine.vax_name', 'Vaccine')</th>
                                         <th>@sortablelink('vaccine.vax_dose_series', 'Dose')</th>
                                         <th>@sortablelink('patient.cur_ill', 'Current Illness')</th>
@@ -63,6 +64,11 @@
                                     <tbody>
                                     @forelse($symptoms as $index => $symptom)
                                         <tr>
+                                            <td>
+                                                <a href="{{ route('frontend.patients.show', $symptom->patient->id) }}">
+                                                    {{ $symptom->patient->vaers_id ?? null }}
+                                                </a>
+                                            </td>
                                             <td>{{ $symptom->vaccine->vax_name ?? null }}</td>
                                             <td>{{ $symptom->vaccine->vax_dose_series ?? null }}</td>
                                             <td>{{ $symptom->patient->cur_ill ?? null }}</td>

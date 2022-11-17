@@ -98,7 +98,7 @@ class SymptomController extends Controller
 
         return view('frontend.patient.apply', [
             'symptoms' => $symptoms,
-            'vaccines' => $vaccines
+            'vaccines' => $vaccines,
         ]);
     }
 

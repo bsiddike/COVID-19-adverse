@@ -295,7 +295,7 @@ class PatientController extends Controller
 
         return view('frontend.patient.apply', [
             'symptoms' => [],
-            'vaccines' => $vaccines
+            'vaccines' => $vaccines,
         ]);
     }
 

@@ -291,7 +291,7 @@ class PatientController extends Controller
      */
     public function apply()
     {
-        $vaccines = array_unique(Vaccine::all()->pluck('vax_name')->toArray());
+        $vaccines = array_unique(Vaccine::all()->where('vax_type', 'COVID19')->pluck('vax_name')->toArray());
 
         return view('frontend.patient.apply', [
             'symptoms' => [],

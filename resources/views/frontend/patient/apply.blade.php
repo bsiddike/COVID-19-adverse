@@ -47,7 +47,7 @@
                                 Vaccine
                             </label>
                             <div class="col-sm-9">
-                                <select class="form-control custom-select" name="vax_name" id="vax_name" required>
+                                <select class="form-control custom-select" name="vax_name" id="vax_name">
                                     <option value="">Please select a Vaccine</option>
                                     @foreach($vaccines as $vaccine)
                                         <option value="{{ $vaccine }}"
@@ -63,7 +63,7 @@
                                 Gender
                             </label>
                             <div class="col-sm-9">
-                                <select class="form-control custom-select" name="gender" id="gender" required>
+                                <select class="form-control custom-select" name="gender" id="gender">
                                     <option value="">Please select a Gender</option>
                                     @foreach(['M' => 'Male', 'F' => 'Female', 'U' => 'Unknown'] as $value => $gender)
                                         <option value="{{ $value }}"
@@ -81,7 +81,7 @@
                                 <span class="font-weight-bold text-danger">*</span>
                             </label>
                             <div class="col-sm-9">
-                                <select class="form-control custom-select" name="symptom1" id="symptom1" required>
+                                <select class="form-control custom-select" name="symptom1" id="symptom1">
                                     @if(request()->has('symptom1'))
                                         <option value="{{ request()->get('symptom1') }}"
                                                 selected>{{ request()->get('symptom1') }}</option>

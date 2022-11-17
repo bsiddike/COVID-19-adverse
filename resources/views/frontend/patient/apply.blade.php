@@ -81,7 +81,7 @@
                                 <span class="font-weight-bold text-danger">*</span>
                             </label>
                             <div class="col-sm-9">
-                                <select class="form-control custom-select" name="symptom1" id="symptom1">
+                                <select class="form-control custom-select" name="symptom1" id="symptom1" required>
                                     @if(request()->has('symptom1'))
                                         <option value="{{ request()->get('symptom1') }}"
                                                 selected>{{ request()->get('symptom1') }}</option>

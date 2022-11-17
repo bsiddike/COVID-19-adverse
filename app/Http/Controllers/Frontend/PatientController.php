@@ -67,7 +67,7 @@ class PatientController extends Controller
             'affectedGender' => $this->patientService->getGenderMetrics($filters),
             'affectedAge' => $this->patientService->getAgeMetrics($filters),
             'affectedMonth' => $this->patientService->getPatientLineChart($filters),
-            'patientsStateMap' => $this->patientService->getPatientMap($filters)
+            'patientsStateMap' => $this->patientService->getPatientMap($filters),
         ]);
     }
 

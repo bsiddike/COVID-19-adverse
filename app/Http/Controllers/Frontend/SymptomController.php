@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use App\Services\Auth\AuthenticatedSessionService;
 use App\Services\Backend\Organization\SymptomService;
 use App\Services\Backend\Organization\VaccineService;
 use App\Supports\Utility;
@@ -23,13 +22,14 @@ class SymptomController extends Controller
      * @var SymptomService
      */
     private $symptomService;
+
     private VaccineService $vaccineService;
 
     /**
      * SymptomController Constructor
      *
-     * @param SymptomService $symptomService
-     * @param VaccineService $vaccineService
+     * @param  SymptomService  $symptomService
+     * @param  VaccineService  $vaccineService
      */
     public function __construct(SymptomService $symptomService,
                                 VaccineService $vaccineService)
@@ -95,7 +95,7 @@ class SymptomController extends Controller
         $symptoms = $this->symptomService->symptomPaginate($filters, ['vaccine', 'patient']);
 
         return view('frontend.patient.apply', [
-            'symptoms' => $symptoms
+            'symptoms' => $symptoms,
         ]);
     }
 

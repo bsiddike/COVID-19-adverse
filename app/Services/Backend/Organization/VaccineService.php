@@ -38,10 +38,13 @@ class VaccineService extends Service
     public function getTopVaccinesOutcomesMetrics(array $filters = [])
     {
         $filters['metric'] = 'top_10_symptoms';
-
-        $data = $this->getAllVaccines($filters)
-            ->toArray();
-
+        $filters['symptomVariation'] = 'symptom1';
+        $data = $this->getAllVaccines($filters)->toArray();
+        //$filters['symptomVariation'] = 'symptom2';
+        //$data2 = $this->getAllVaccines($filters)->toArray();
+//dd(json_decode(json_encode($data), true));
+        //$data = array_merge($data1, $data2);
+//dd(json_decode(json_encode($data), true));
         $formatData = [];
 
         foreach ($data as $index => $datum) {
@@ -56,8 +59,20 @@ class VaccineService extends Service
             $formatData[$datum['vax_name']]['label'] = $datum['symptom1'];
             $formatData[$datum['vax_name']]['stack'] = "Stack {$index}";
             $formatData[$datum['vax_name']]['backgroundColor'][] = random_color();
-        }
+/*            if(!empty($datum['symptom1'])){
+                $formatData[$datum['vax_name']]['symptom1']['data'][] = $datum['aggregate'];
+                $formatData[$datum['vax_name']]['symptom1']['label'][] = $datum['symptom1'];
+                $formatData[$datum['vax_name']]['symptom1']['stack'] = "Stack symptom1";
+                $formatData[$datum['vax_name']]['symptom1']['backgroundColor'][] = random_color();
+            }elseif (!empty($datum['symptom2'])){
+                $formatData[$datum['vax_name']]['symptom2']['data'][] = $datum['aggregate'];
+                $formatData[$datum['vax_name']]['symptom2']['label'][] = $datum['symptom2'];
+                $formatData[$datum['vax_name']]['symptom2']['stack'] = "Stack symptom2";
+                $formatData[$datum['vax_name']]['symptom2']['backgroundColor'][] = random_color();
 
+            }*/
+        }
+        //dd(json_decode(json_encode($formatData), true));
         return [
             'type' => 'bar',
             'data' => [

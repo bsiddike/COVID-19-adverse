@@ -158,6 +158,18 @@ class PatientService extends Service
         $states = $this->getAllPatients($filters)->toArray();
         $areas = [];
 
+        foreach(Constant::USA_STATE as $usa_state){
+            $state_name = strtoupper(explode(' - ',$usa_state)[0]);
+            $state_count = 0;
+            $areas[$state_name] = [
+                'value' => $state_count,
+                'href' => route('frontend.patients.index', array_merge($filters, ['state'=>$state_name])),
+                //'href' => '#',
+                'tooltip' => [
+                    'content' => "<span style='font-weight:bold;'>{$state_name}</span><br/>Patients: {$state_count}",
+                ],
+            ];
+        }
         foreach ($states as $state) {
             $state_name = strtoupper($state['state']);
             $state_count = strtonumber($state['aggregate'], 0);

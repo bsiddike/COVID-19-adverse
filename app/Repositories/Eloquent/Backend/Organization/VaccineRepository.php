@@ -80,6 +80,10 @@ class VaccineRepository extends EloquentRepository
                         ->where('vax_type', '=', 'COVID19')
                         ->groupBy('vax_name', 'symptom1')
                         ->orderBy('aggregate', 'desc');
+                    if($filters['gender']){
+                        $query->join('patients', 'patients.vaers_id', '=', 'symptoms.vaers_id')
+                            ->where('patients.sex', 'like', "%{$filters['gender']}%");
+                    }
                     break;
 
                 default:

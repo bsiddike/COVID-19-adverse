@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Vaccine;
+use App\Services\Backend\Organization\PatientService;
 use App\Services\Backend\Organization\SymptomService;
 use App\Services\Backend\Organization\VaccineService;
 use App\Supports\Utility;
@@ -25,18 +26,22 @@ class SymptomController extends Controller
     private $symptomService;
 
     private VaccineService $vaccineService;
+    private PatientService $patientService;
 
     /**
      * SymptomController Constructor
      *
-     * @param  SymptomService  $symptomService
-     * @param  VaccineService  $vaccineService
+     * @param SymptomService $symptomService
+     * @param VaccineService $vaccineService
+     * @param PatientService $patientService
      */
     public function __construct(SymptomService $symptomService,
-                                VaccineService $vaccineService)
+                                VaccineService $vaccineService,
+                                PatientService $patientService)
     {
         $this->symptomService = $symptomService;
         $this->vaccineService = $vaccineService;
+        $this->patientService = $patientService;
     }
 
     /**
@@ -56,6 +61,9 @@ class SymptomController extends Controller
         return view('frontend.symptom.index', [
             'symptoms' => $symptoms,
             'vaccineOutcomes' => $this->vaccineService->getTopVaccinesOutcomesMetrics($filters),
+            'affectedGender' => $this->patientService->getGenderMetrics($filters),
+            'affectedAge' => $this->patientService->getAgeMetrics($filters),
+            'patientsStateMap' => $this->patientService->getPatientMap($filters),
         ]);
     }
 

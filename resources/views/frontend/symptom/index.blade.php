@@ -117,6 +117,10 @@
                     {!! Form::close() !!}
                 </div>
             </div>
+            @include('backend.wizard.affected-gender')
+            @include('backend.wizard.affected-age-wise')
+            @include('backend.wizard.affected-state')
+
             @include('backend.wizard.top-10-vaccine-record')
             <div class="col-12">
                 <div class="card card-default">

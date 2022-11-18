@@ -26,14 +26,15 @@ class SymptomController extends Controller
     private $symptomService;
 
     private VaccineService $vaccineService;
+
     private PatientService $patientService;
 
     /**
      * SymptomController Constructor
      *
-     * @param SymptomService $symptomService
-     * @param VaccineService $vaccineService
-     * @param PatientService $patientService
+     * @param  SymptomService  $symptomService
+     * @param  VaccineService  $vaccineService
+     * @param  PatientService  $patientService
      */
     public function __construct(SymptomService $symptomService,
                                 VaccineService $vaccineService,

@@ -148,9 +148,14 @@
                                     @forelse($symptoms as $index => $symptom)
                                         <tr>
                                             <td>
+                                                @if($symptom->patient()->exists())
+
                                                 <a href="{{ route('frontend.patients.show', $symptom->patient->id) }}">
                                                     {{ $symptom->patient->vaers_id ?? null }}
                                                 </a>
+                                                    @else
+                                                    {{ $symptom->patient->vaers_id ?? null }}
+                                                @endif
                                             </td>
                                             <td>{{ $symptom->vaccine->vax_name ?? null }}</td>
                                             <td>{{ $symptom->vaccine->vax_dose_series ?? null }}</td>

@@ -19,9 +19,12 @@
 @push('page-script')
     <script>
         $(document).ready(function () {
-            var doughnut = new Chart($('#affectedAgeWise').get(0).getContext('2d'),
-                    {!!  json_encode($affectedAge) !!}
-            );
+            $.get('{{ route('backend.patient.charts', 'asset-age') .'?' . http_build_query(request()->all()) }}',
+                function (data) {
+                    var doughnut = new Chart($('#affectedAgeWise')
+                        .get(0)
+                        .getContext('2d'), data);
+                });
         });
     </script>
 @endpush

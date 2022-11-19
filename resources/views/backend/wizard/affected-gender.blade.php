@@ -19,10 +19,18 @@
 @push('page-script')
     <script>
         $(document).ready(function () {
+            $.get('{{ route('backend.patient.charts', 'asset-gender') .'?' . http_build_query(request()->all()) }}',
+                function (data) {
+                    var doughnut = new Chart($('#affectedGender')
+                        .get(0)
+                        .getContext('2d'), data);
+                });
+        });
+/*        $(document).ready(function () {
             var doughnut = new Chart(
                 $('#affectedGender').get(0).getContext('2d'),
                     {!!  json_encode($affectedGender) !!}
             );
-        });
+        });*/
     </script>
 @endpush

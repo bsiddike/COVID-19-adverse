@@ -30,7 +30,10 @@
 @push('page-script')
     <script>
         $(document).ready(function () {
-            $('#world-map-markers').mapael({!!  json_encode($patientsStateMap); !!});
+            $.get('{{ route('backend.patient.charts', 'patient-state-map') .'?' . http_build_query(request()->all()) }}',
+                function (data) {
+                    $('#world-map-markers').mapael(data);
+                });
         });
     </script>
 @endpush

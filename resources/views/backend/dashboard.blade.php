@@ -142,8 +142,8 @@
         <div class="row">
             @include('backend.wizard.affected-gender')
             @include('backend.wizard.affected-age-wise')
-            @include('backend.wizard.affected-monthly')
             @include('backend.wizard.affected-state')
+            @include('backend.wizard.affected-monthly')
             @include('backend.wizard.top-10-vaccine-record')
         </div>
         <!-- /.container-fluid -->

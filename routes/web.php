@@ -139,6 +139,10 @@ Route::prefix('admin')->group(function () {
     Route::get('count/{model}', ModelCountController::class)
         ->where(['model' => '([a-zA-Z0-9]+)'])->name('backend.model.count');
 
+    Route::get('patients/charts/{type}', [\App\Http\Controllers\Frontend\PatientController::class, 'charts'])
+        ->name('backend.patient.charts');
+
+
     Route::middleware(['auth'])->name('backend.')->group(function () {
         Route::get('/dashboard', DashboardController::class)
             ->name('dashboard');

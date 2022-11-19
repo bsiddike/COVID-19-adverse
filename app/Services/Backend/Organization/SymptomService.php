@@ -183,16 +183,16 @@ class SymptomService extends Service
             //Male
             $labels[] = $datum['symptom'];
             $formatData[0]['data'][] = $datum['male'];
-            $formatData[0]['backgroundColor'][] = "#00a65a";
-            $formatData[0]['borderColor'][] = "#00a65a";
+            $formatData[0]['backgroundColor'][] = '#00a65a';
+            $formatData[0]['borderColor'][] = '#00a65a';
             //Female
             $formatData[1]['data'][] = $datum['female'];
-            $formatData[1]['backgroundColor'][] = "#f56954";
-            $formatData[1]['borderColor'][] = "#f56954";
+            $formatData[1]['backgroundColor'][] = '#f56954';
+            $formatData[1]['borderColor'][] = '#f56954';
             //Unknown
             $formatData[2]['data'][] = $datum['unknown'];
-            $formatData[2]['backgroundColor'][] = "#f39c12";
-            $formatData[2]['borderColor'][] = "#f39c12";
+            $formatData[2]['backgroundColor'][] = '#f39c12';
+            $formatData[2]['borderColor'][] = '#f39c12';
         }
 
         return [

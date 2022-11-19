@@ -135,7 +135,7 @@ class SymptomRepository extends EloquentRepository
         }
 
         if (true == env('ONLY_COVID', false)) {
-            $query->where('vaccines.vax_type', "=", 'COVID19');
+            $query->where('vaccines.vax_type', '=', 'COVID19');
         }
 
         return $query;

@@ -30,52 +30,52 @@ class SymptomRepository extends EloquentRepository
     /**
      * Search Function
      *
-     * @param array $filters
-     * @param bool $is_sortable
+     * @param  array  $filters
+     * @param  bool  $is_sortable
      * @return Builder
      */
     private function filterData(array $filters = [], bool $is_sortable = false): Builder
     {
         $query = $this->getQueryBuilder();
 
-        if (!empty($filters['symptom1'])) {
+        if (! empty($filters['symptom1'])) {
             $query->where('symptoms.symptom1', 'like', "%{$filters['symptom1']}%");
         }
 
-        if (!empty($filters['symptom2'])) {
+        if (! empty($filters['symptom2'])) {
             $query->orWhere('symptoms.symptom2', 'like', "%{$filters['symptom2']}%");
         }
 
-        if (!empty($filters['symptom3'])) {
+        if (! empty($filters['symptom3'])) {
             $query->orWhere('symptoms.symptom3', 'like', "%{$filters['symptom3']}%");
         }
 
-        if (!empty($filters['symptom4'])) {
+        if (! empty($filters['symptom4'])) {
             $query->orWhere('symptoms.symptom4', 'like', "%{$filters['symptom4']}%");
         }
 
-        if (!empty($filters['symptom5'])) {
+        if (! empty($filters['symptom5'])) {
             $query->orWhere('symptoms.symptom5', 'like', "%{$filters['symptom5']}%");
         }
 
-        if (!empty($filters['vax_name'])) {
-            $query->join('vaccines', 'vaccines.vaers_id', "=", "symptoms.vaers_id")
+        if (! empty($filters['vax_name'])) {
+            $query->join('vaccines', 'vaccines.vaers_id', '=', 'symptoms.vaers_id')
                 ->where('vaccines.vax_type', '=', 'COVID19')
                 ->orWhere('vaccines.vax_name', 'like', "%{$filters['vax_name']}%");
         }
-        if (!empty($filters['gender'])) {
-            $query->join('patients', 'patients.vaers_id', "=", "symptoms.vaers_id")
+        if (! empty($filters['gender'])) {
+            $query->join('patients', 'patients.vaers_id', '=', 'symptoms.vaers_id')
                 ->orWhere('patients.sex', 'like', "%{$filters['gender']}%");
         }
 
-        if (!empty($filters['symptom5'])) {
+        if (! empty($filters['symptom5'])) {
             $query->orWhere('symptoms.symptom5', 'like', "%{$filters['symptom5']}%");
         }
 
-        if (!empty($filters['search_column'])) {
+        if (! empty($filters['search_column'])) {
             if ($filters['search_column'] == 'other_meds') {
                 $query->select(['symptoms.symptom1', 'symptoms.symptom2', 'symptoms.symptom3', 'symptoms.symptom4', 'symptoms.symptom5', 'patients.other_meds'])
-                    ->where(DB::raw('LENGTH(`patients`.`other_meds`)'), '>', 0);
+                    ->where(DB::raw('LENGTH(patients.other_meds)'), '>', 0);
             }
             $query->groupBy($filters['search_column']);
         }
@@ -86,9 +86,9 @@ class SymptomRepository extends EloquentRepository
     /**
      * Pagination Generator
      *
-     * @param array $filters
-     * @param array $eagerRelations
-     * @param bool $is_sortable
+     * @param  array  $filters
+     * @param  array  $eagerRelations
+     * @param  bool  $is_sortable
      * @return LengthAwarePaginator
      *
      * @throws Exception
@@ -106,9 +106,9 @@ class SymptomRepository extends EloquentRepository
     }
 
     /**
-     * @param array $filters
-     * @param array $eagerRelations
-     * @param bool $is_sortable
+     * @param  array  $filters
+     * @param  array  $eagerRelations
+     * @param  bool  $is_sortable
      * @return Builder[]|Collection
      *
      * @throws Exception
@@ -125,9 +125,9 @@ class SymptomRepository extends EloquentRepository
     }
 
     /**
-     * @param array $filters
-     * @param array $eagerRelations
-     * @param bool $is_sortable
+     * @param  array  $filters
+     * @param  array  $eagerRelations
+     * @param  bool  $is_sortable
      * @return Generator
      *
      * @throws Exception

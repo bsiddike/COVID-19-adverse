@@ -40,14 +40,14 @@
                         </div>
                     </div>
                     {!! Form::open(['route' => 'frontend.patients.register', 'id' => 'patient-form', 'method' => 'get']) !!}
-                    {!! Form::hidden('search_column', 'other_meds') !!}
+                    {{--{!! Form::hidden('search_column', 'patients.other_meds') !!}--}}
                     <div class="card-body">
                         <div class="form-group row">
                             <label for="symptom1" class="col-sm-3 col-form-label">
                                 Vaccine
                             </label>
                             <div class="col-sm-9">
-                                <select class="form-control custom-select" name="vax_name" id="vax_name" required>
+                                <select class="form-control custom-select" name="vax_name" id="vax_name">
                                     <option value="">Please select a Vaccine</option>
                                     @foreach($vaccines as $vaccine)
                                         <option value="{{ $vaccine }}"
@@ -63,7 +63,7 @@
                                 Gender
                             </label>
                             <div class="col-sm-9">
-                                <select class="form-control custom-select" name="gender" id="gender" required>
+                                <select class="form-control custom-select" name="gender" id="gender">
                                     <option value="">Please select a Gender</option>
                                     @foreach(['M' => 'Male', 'F' => 'Female', 'U' => 'Unknown'] as $value => $gender)
                                         <option value="{{ $value }}"

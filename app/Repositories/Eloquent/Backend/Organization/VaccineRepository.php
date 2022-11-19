@@ -75,11 +75,15 @@ class VaccineRepository extends EloquentRepository
         if (! empty($filters['metric'])) {
             switch ($filters['metric']) {
                 case 'top_10_symptoms' :
-                    $query->selectRaw('`vax_name`, `symptoms`.`symptom1`, count(`symptoms`.`symptom1`) as `aggregate`')
+                    $query->selectRaw('`vax_name`, `symptoms`.`'.$filters['symptomVariation'].'`, count(`symptoms`.`'.$filters['symptomVariation'].'`) as `aggregate`')
                         ->join('symptoms', 'vaccines.vaers_id', '=', 'symptoms.vaers_id')
                         ->where('vax_type', '=', 'COVID19')
-                        ->groupBy('vax_name', 'symptom1')
+                        ->groupBy('vax_name', $filters['symptomVariation'])
                         ->orderBy('aggregate', 'desc');
+                    if (! empty($filters['gender'])) {
+                        $query->join('patients', 'patients.vaers_id', '=', 'symptoms.vaers_id')
+                            ->where('patients.sex', 'like', "%{$filters['gender']}%");
+                    }
                     break;
 
                 default:

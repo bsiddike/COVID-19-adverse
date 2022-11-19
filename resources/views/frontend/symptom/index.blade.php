@@ -88,20 +88,17 @@
                                 ['M' => 'Male', 'F' => 'Female', 'U' => 'Unknown'],
                                  request()->get('gender'), false, [ 'placeholder' => 'Select a sex']) !!}
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 {!! Form::nSelect('vax_name', 'Vaccine',
                                 \App\Models\Vaccine::all()->where('vax_type','COVID19')->pluck('vax_name', 'vax_name')->toArray(),
                                  request()->get('vax_name'), false, [
                                      'placeholder' => 'Select a vaccine Brand name'
                                  ]) !!}
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-6">
                                 {!! Form::nText('symptom', 'Symptom', request()->get('symptom'), false) !!}
                             </div>
-                            {{--<div class="col-md-3">
-                                {!! Form::nText('vax_dose_series', 'Dose Series', request()->get('vax_dose_series'), false) !!}
-                            </div>--}}
-                            <div class="col-md-3">
+                            <div class="col-md-6">
                                 {{--{!! \Form::nText('state', 'State', request()->get('state'), false) !!}--}}
                                 {!! Form::nSelect('state', 'State',
                                 \App\Supports\Constant::USA_STATE,
@@ -117,11 +114,11 @@
                     {!! Form::close() !!}
                 </div>
             </div>
-            @include('backend.wizard.affected-gender')
+{{--            @include('backend.wizard.affected-gender')
             @include('backend.wizard.affected-age-wise')
-            @include('backend.wizard.affected-state')
-
+            @include('backend.wizard.affected-state')--}}
             @include('backend.wizard.top-10-vaccine-record')
+            @include('backend.wizard.top-10-symptom-gender-record')
             <div class="col-12">
                 <div class="card card-default">
                     @if(!empty($symptoms))
@@ -171,7 +168,7 @@
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="7" class="exclude-search text-center">No data to display</td>
+                                            <td colspan="20" class="exclude-search text-center">No data to display</td>
                                         </tr>
                                     @endforelse
                                     </tbody>

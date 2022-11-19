@@ -224,8 +224,8 @@ class SymptomService extends Service
                                 'enabled' => true,
                             ],
                             'mode' => 'xy',
-                        ]
-                    ]
+                        ],
+                    ],
                 ],
             ],
         ];

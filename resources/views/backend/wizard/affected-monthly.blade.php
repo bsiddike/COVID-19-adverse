@@ -30,7 +30,8 @@
 @push('page-script')
     <script>
         $(document).ready(function () {
-            $.get('{{ route('backend.patient.charts', 'asset-month') .'?' . http_build_query(request()->all()) }}',
+            $.get('{{ route('backend.patient.charts', 'asset-month') }}',
+                    {!! json_encode(request()->all()) !!},
                 function (data) {
                     var doughnut = new Chart($('#lineChart')
                         .get(0)

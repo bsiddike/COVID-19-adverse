@@ -19,7 +19,8 @@
 @push('page-script')
     <script>
         $(document).ready(function () {
-            $.get('{{ route('backend.patient.charts', 'asset-gender') .'?' . http_build_query(request()->all()) }}',
+            $.get('{{ route('backend.patient.charts', 'asset-gender') }}',
+                {!! json_encode(request()->all()) !!},
                 function (data) {
                     var doughnut = new Chart($('#affectedGender')
                         .get(0)

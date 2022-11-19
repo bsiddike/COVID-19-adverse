@@ -19,7 +19,8 @@
 @push('page-script')
     <script>
         $(document).ready(function () {
-            $.get('{{ route('backend.patient.charts', 'asset-age') .'?' . http_build_query(request()->all()) }}',
+            $.get('{{ route('backend.patient.charts', 'asset-age') }}',
+                {!! json_encode(request()->all()) !!},
                 function (data) {
                     var doughnut = new Chart($('#affectedAgeWise')
                         .get(0)

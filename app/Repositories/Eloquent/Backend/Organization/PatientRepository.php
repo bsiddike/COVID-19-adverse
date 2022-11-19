@@ -9,7 +9,6 @@ use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
 
 /**
  * @class SurveyRepository
@@ -129,7 +128,7 @@ class PatientRepository extends EloquentRepository
                         "sum(if(patients.age_yrs > 70, 1, 0)) as '70.1-INF' ");
                     break;
 
-                case 'patient_month' :
+                case 'patient_month':
 
                     $query->selectRaw(
                         "sum(if(patients.recive_date between '{$filters['today_year']}-01-01' and '{$filters['today_year']}-01-31', 1, 0)) as 'January', ".
@@ -146,20 +145,18 @@ class PatientRepository extends EloquentRepository
                         "sum(if(patients.recive_date between '{$filters['today_year']}-12-01' and '{$filters['today_year']}-12-31', 1, 0)) as 'December'");
 
                     break;
-                case 'state' :
+                case 'state':
                     $query
                         ->selectRaw('count(patients.id) as aggregate, patients.state')
                         ->whereNotNull(DB::raw('patients.state'))
                         ->where(DB::raw('LENGTH(patients.state)'), '>', 0)
                         ->orderBy('patients.state')
                         ->groupBy('patients.state');
-
             }
         }
 
-
         if (true == env('ONLY_COVID', false)) {
-            $query->where('vaccines.vax_type', "=", 'COVID19');
+            $query->where('vaccines.vax_type', '=', 'COVID19');
         }
 
         return $query;

@@ -59,17 +59,17 @@ class VaccineService extends Service
             $formatData[$datum['vax_name']]['label'] = $datum['symptom1'];
             //$formatData[$datum['vax_name']]['stack'] = "Stack {$index}";
             $formatData[$datum['vax_name']]['backgroundColor'][] = random_color();
-                        /*if(!empty($datum['symptom1'])){
-                            $formatData[$datum['vax_name']][0]['data'][] = $datum['aggregate'];
-                            $formatData[$datum['vax_name']][0]['label'] = $datum['symptom1'];
-                            //$formatData[$datum['vax_name']][0]['stack'] = "Stack symptom1";
-                            $formatData[$datum['vax_name']][0]['backgroundColor'][] = random_color();
-                        }elseif (!empty($datum['symptom2'])){
-                            $formatData[$datum['vax_name']][1]['data'][] = $datum['aggregate'];
-                            $formatData[$datum['vax_name']][1]['label'] = $datum['symptom2'];
-                            //$formatData[$datum['vax_name']][1]['stack'] = "Stack symptom2";
-                            $formatData[$datum['vax_name']][1]['backgroundColor'][] = random_color();
-                        }*/
+            /*if(!empty($datum['symptom1'])){
+                $formatData[$datum['vax_name']][0]['data'][] = $datum['aggregate'];
+                $formatData[$datum['vax_name']][0]['label'] = $datum['symptom1'];
+                //$formatData[$datum['vax_name']][0]['stack'] = "Stack symptom1";
+                $formatData[$datum['vax_name']][0]['backgroundColor'][] = random_color();
+            }elseif (!empty($datum['symptom2'])){
+                $formatData[$datum['vax_name']][1]['data'][] = $datum['aggregate'];
+                $formatData[$datum['vax_name']][1]['label'] = $datum['symptom2'];
+                //$formatData[$datum['vax_name']][1]['stack'] = "Stack symptom2";
+                $formatData[$datum['vax_name']][1]['backgroundColor'][] = random_color();
+            }*/
         }
         //dd(json_decode(json_encode($formatData), true));
         return [

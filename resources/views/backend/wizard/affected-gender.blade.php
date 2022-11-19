@@ -26,11 +26,5 @@
                         .getContext('2d'), data);
                 });
         });
-/*        $(document).ready(function () {
-            var doughnut = new Chart(
-                $('#affectedGender').get(0).getContext('2d'),
-                    {!!  json_encode($affectedGender) !!}
-            );
-        });*/
     </script>
 @endpush

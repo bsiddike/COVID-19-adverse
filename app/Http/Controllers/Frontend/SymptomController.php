@@ -60,12 +60,37 @@ class SymptomController extends Controller
         $symptoms = $this->symptomService->symptomPaginate($filters);
 
         return view('frontend.symptom.index', [
-            'symptoms' => $symptoms,
-            'vaccineOutcomes' => $this->vaccineService->getTopVaccinesOutcomesMetrics($filters),
-            'affectedGender' => $this->patientService->getGenderMetrics($filters),
-            'affectedAge' => $this->patientService->getAgeMetrics($filters),
-            'patientsStateMap' => $this->patientService->getPatientMap($filters),
+            'symptoms' => $symptoms
         ]);
+    }
+
+    /***
+     * @param string $type
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function charts(string $type, Request $request)
+    {
+        $filters = $request->except('page');
+
+        $result = [];
+
+        switch ($type) {
+            case 'vaccine-outcome':
+                $result = $this->vaccineService->getTopVaccinesOutcomesMetrics($filters);
+                break;
+            case 'asset-month':
+                $result = $this->patientService->getPatientLineChart($filters);
+                break;
+            case 'asset-age':
+                $result = $this->patientService->getAgeMetrics($filters);
+                break;
+            case 'patient-state-map':
+                $result = $this->patientService->getPatientMap($filters);
+                break;
+        }
+
+        return response()->json($result);
     }
 
     /**

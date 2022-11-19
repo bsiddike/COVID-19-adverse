@@ -40,7 +40,7 @@ class SymptomRepository extends EloquentRepository
 
         $query->join('vaccines', 'vaccines.vaers_id', '=', 'symptoms.vaers_id')
             ->join('patients', 'patients.vaers_id', '=', 'symptoms.vaers_id')
-            /*->where('vaccines.vax_type', '=', 'COVID19')*/
+            ->where('vaccines.vax_type', '=', 'COVID19')
         ;
 
         if (!empty($filters['symptom1'])) {

@@ -60,7 +60,7 @@ class SymptomController extends Controller
         $symptoms = $this->symptomService->symptomPaginate($filters);
 
         return view('frontend.symptom.index', [
-            'symptoms' => $symptoms
+            'symptoms' => $symptoms,
         ]);
     }
 

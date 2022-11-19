@@ -205,30 +205,30 @@ class PatientService extends Service
                     'title' => 'Confirm Case Recorded',
                     'slices' => [
                         [
-                            'max' => 100,
+                            'max' => 0,
                             'attrs' => [
-                                'fill' => '#97e766',
+                                'fill' => '#6d767e',
                             ],
-                            'label' => 'Less than de 100 cases',
+                            'label' => 'Less than de 0 cases',
                         ],
                         [
-                            'min' => 100,
-                            'max' => 300,
+                            'min' => 1,
+                            'max' => 500,
                             'attrs' => [
                                 'fill' => '#7fd34d',
                             ],
                             'label' => 'Between 100  and 300 cases',
                         ],
                         [
-                            'min' => 300,
-                            'max' => 500,
+                            'min' => 500,
+                            'max' => 1000,
                             'attrs' => [
                                 'fill' => '#5faa32',
                             ],
                             'label' => 'Between 300 and 500 cases',
                         ],
                         [
-                            'min' => 500,
+                            'min' => 1000,
                             'attrs' => [
                                 'fill' => '#3f7d1a',
                             ],

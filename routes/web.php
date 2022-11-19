@@ -142,7 +142,6 @@ Route::prefix('admin')->group(function () {
     Route::get('patients/charts/{type}', [\App\Http\Controllers\Frontend\PatientController::class, 'charts'])
         ->name('backend.patient.charts');
 
-
     Route::middleware(['auth'])->name('backend.')->group(function () {
         Route::get('/dashboard', DashboardController::class)
             ->name('dashboard');

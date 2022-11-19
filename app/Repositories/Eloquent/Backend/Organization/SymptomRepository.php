@@ -39,8 +39,7 @@ class SymptomRepository extends EloquentRepository
         $query = $this->getQueryBuilder();
 
         $query->join('vaccines', 'vaccines.vaers_id', '=', 'symptoms.vaers_id')
-            ->join('patients', 'patients.vaers_id', '=', 'symptoms.vaers_id')
-            ->where('vaccines.vax_type', '=', 'COVID19');
+            ->join('patients', 'patients.vaers_id', '=', 'symptoms.vaers_id');
 
         if (! empty($filters['symptom1'])) {
             $query->where('symptoms.symptom1', 'like', "%{$filters['symptom1']}%");
@@ -82,7 +81,7 @@ class SymptomRepository extends EloquentRepository
                         "sum(if(patients.sex = 'F', 1, 0)) as 'female', ".
                         "sum(if(patients.sex = 'M', 1, 0)) as 'male', ".
                         "sum(if(patients.sex = 'U', 1, 0)) as 'unknown'")
-                        ->groupBy("symptoms.{$symptom_col}")->limit(10);
+                        ->groupBy("symptoms.{$symptom_col}")->limit(50);
                     break;
 
                 case 'age_yrs':
@@ -133,6 +132,10 @@ class SymptomRepository extends EloquentRepository
                     ->where(DB::raw('LENGTH(patients.other_meds)'), '>', 0);
             }
             $query->groupBy($filters['search_column']);
+        }
+
+        if (true == env('ONLY_COVID', false)) {
+            $query->where('vaccines.vax_type', "=", 'COVID19');
         }
 
         return $query;

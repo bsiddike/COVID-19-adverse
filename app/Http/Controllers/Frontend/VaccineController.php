@@ -145,8 +145,6 @@ class VaccineController extends Controller
      * @param $id
      * @return Application|Factory|View
      *
-     * @throws ContainerExceptionInterface
-     * @throws NotFoundExceptionInterface
      * @throws Exception
      */
     public function edit($id)

@@ -44,6 +44,8 @@ class PatientRepository extends EloquentRepository
 
         $query = $this->getQueryBuilder();
 
+        $query->join('vaccines', 'vaccines.vaers_id', '=', 'symptoms.vaers_id');
+
         if (! empty($filters['vax_name']) || ! empty($filters['vax_dose_series'])) {
             $query->leftJoin('vaccines', 'vaccines.vaers_id', '=', 'patients.vaers_id');
             //$selectTable[] = 'vaccines.*';
@@ -167,10 +169,11 @@ class PatientRepository extends EloquentRepository
             }
         }
 
-        //$selectTable[] = DB::raw('patients.*');
-        //$query->select($selectTable);
-        //$sql = Str::replaceArray('?', $query->getBindings(), $query->toSql());
-        //dump($sql);
+
+        if (true == env('ONLY_COVID', false)) {
+            $query->where('vaccines.vax_type', "=", 'COVID19');
+        }
+
         return $query;
     }
 

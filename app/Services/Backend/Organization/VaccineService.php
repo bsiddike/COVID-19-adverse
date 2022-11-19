@@ -27,7 +27,7 @@ class VaccineService extends Service
     /**
      * VaccineService constructor.
      *
-     * @param  VaccineRepository  $vaccineRepository
+     * @param VaccineRepository $vaccineRepository
      */
     public function __construct(VaccineRepository $vaccineRepository)
     {
@@ -38,17 +38,76 @@ class VaccineService extends Service
     public function getTopVaccinesOutcomesMetrics(array $filters = [])
     {
         $filters['metric'] = 'top_10_symptoms';
-        $filters['symptomVariation'] = 'symptom1';
-        $data = $this->getAllVaccines($filters)->toArray();
-        //$filters['symptomVariation'] = 'symptom2';
-        //$data2 = $this->getAllVaccines($filters)->toArray();
-        //dd(json_decode(json_encode($data), true));
-        //$data = array_merge($data1, $data2);
-        //dd(json_decode(json_encode($data), true));
         $formatData = [];
 
+        $this->formatDataSymptomWise($formatData, 'symptom1', $filters);
+
+        return [
+            'type' => 'bar',
+            'data' => [
+                'labels' => array_keys($formatData),
+                'datasets' => array_values($formatData),
+            ],
+            'options' => [
+                'maintainAspectRatio' => false,
+                'datasetFill' => false,
+                'responsive' => true,
+                'legend' => [
+                    'display' => false,
+                    'position' => 'left',
+                ],
+                'scales' => [
+                    'x' => [
+                        'stacked' => true,
+                        'beginAtZero' => true,
+                    ],
+                    'y' => [
+                        'stacked' => true,
+                        'beginAtZero' => true,
+                    ],
+                ],
+            ],
+        ];
+    }
+
+    /**
+     * @param array $formatData
+     * @param string $column
+     * @param array $filters
+     * @return void
+     * @throws Exception
+     */
+
+    /*
+{
+      label: 'Dataset 1',
+      data: Utils.numbers(NUMBER_CFG),
+      backgroundColor: Utils.CHART_COLORS.red,
+      stack: 'Stack 0',
+    },
+    {
+      label: 'Dataset 2',
+      data: Utils.numbers(NUMBER_CFG),
+      backgroundColor: Utils.CHART_COLORS.blue,
+      stack: 'Stack 0',
+    },
+    {
+      label: 'Dataset 3',
+      data: Utils.numbers(NUMBER_CFG),
+      backgroundColor: Utils.CHART_COLORS.green,
+      stack: 'Stack 1',
+    },
+
+
+     */
+    private function formatDataSymptomWise(array &$formatData, string $column = 'symptom1', array $filters = [])
+    {
+        $filters['symptomVariation'] = $column;
+
+        $data = $this->getAllVaccines($filters)->toArray();
+
         foreach ($data as $index => $datum) {
-            if (! isset($formatData[$datum['vax_name']])) {
+            if (!isset($formatData[$datum['vax_name']])) {
                 $formatData[$datum['vax_name']] = [
                     'data' => [],
                     'label' => 'Unknown',
@@ -71,44 +130,13 @@ class VaccineService extends Service
                 $formatData[$datum['vax_name']][1]['backgroundColor'][] = random_color();
             }*/
         }
-        //dd(json_decode(json_encode($formatData), true));
-        return [
-            'type' => 'bar',
-            'data' => [
-                'labels' => array_keys($formatData),
-                'datasets' => array_values($formatData),
-            ],
-            'options' => [
-                'maintainAspectRatio' => false,
-                'datasetFill' => false,
-                'responsive' => true,
-                'legend' => [
-                    'display' => false,
-                    'position' => 'left',
-                ],
-                'scales' => [
-                    'x' => [
-                        'stacked' => true,
-                    ],
-                    'y' => [
-                        'stacked' => true,
-                    ],
-                    'xAxes' => [[
-                        'stacked' => true,
-                    ]],
-                    'yAxes' => [[
-                        'stacked' => true,
-                    ]],
-                ],
-            ],
-        ];
     }
 
     /**
      * Get All Vaccine models as collection
      *
-     * @param  array  $filters
-     * @param  array  $eagerRelations
+     * @param array $filters
+     * @param array $eagerRelations
      * @return Builder[]|Collection
      *
      * @throws Exception
@@ -121,8 +149,8 @@ class VaccineService extends Service
     /**
      * Create Vaccine Model Pagination
      *
-     * @param  array  $filters
-     * @param  array  $eagerRelations
+     * @param array $filters
+     * @param array $eagerRelations
      * @return LengthAwarePaginator
      *
      * @throws Exception
@@ -135,8 +163,8 @@ class VaccineService extends Service
     /**
      * Show Vaccine Model
      *
-     * @param  int  $id
-     * @param  bool  $purge
+     * @param int $id
+     * @param bool $purge
      * @return mixed
      *
      * @throws Exception
@@ -149,7 +177,7 @@ class VaccineService extends Service
     /**
      * Save Vaccine Model
      *
-     * @param  array  $inputs
+     * @param array $inputs
      * @return array
      *
      * @throws Exception
@@ -171,13 +199,13 @@ class VaccineService extends Service
                 DB::commit();
 
                 return ['status' => true, 'message' => __('New Vaccine Created'),
-                    'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!', ];
+                    'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!',];
             } else {
                 Log::error('Vaccine Create Rollback', [$newVaccineInfo]);
                 DB::rollBack();
 
                 return ['status' => false, 'message' => __('New Vaccine Creation Failed'),
-                    'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!', ];
+                    'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!',];
             }
         } catch (Exception $exception) {
             $this->vaccineRepository->handleException($exception);
@@ -186,14 +214,14 @@ class VaccineService extends Service
             DB::rollBack();
 
             return ['status' => false, 'message' => $exception->getMessage(),
-                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!', ];
+                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!',];
         }
     }
 
     /**
      * Return formatted patient profile format array
      *
-     * @param  array  $inputs
+     * @param array $inputs
      * @return array
      */
     private function formatVaccineInfo(array $inputs)
@@ -235,7 +263,7 @@ class VaccineService extends Service
     /**
      * Return formatted education qualification model collection
      *
-     * @param  array  $inputs
+     * @param array $inputs
      * @return array
      *
      * @throws Exception
@@ -266,7 +294,7 @@ class VaccineService extends Service
     /**
      * Return formatted work experience model collection
      *
-     * @param  array  $inputs
+     * @param array $inputs
      * @return array
      *
      * @throws Exception
@@ -290,7 +318,7 @@ class VaccineService extends Service
     /**
      * Update Vaccine Model
      *
-     * @param  array  $inputs
+     * @param array $inputs
      * @param $id
      * @return array
      *
@@ -312,17 +340,17 @@ class VaccineService extends Service
                     DB::commit();
 
                     return ['status' => true, 'message' => __('Vaccine Info Updated'),
-                        'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!', ];
+                        'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!',];
                 } else {
                     Log::error('Vaccine Update Rollback', [$vaccine]);
                     DB::rollBack();
 
                     return ['status' => false, 'message' => __('Vaccine Info Update Failed'),
-                        'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!', ];
+                        'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!',];
                 }
             } else {
                 return ['status' => false, 'message' => __('Vaccine Model Not Found'),
-                    'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Alert!', ];
+                    'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Alert!',];
             }
         } catch (Exception $exception) {
             $this->vaccineRepository->handleException($exception);
@@ -331,7 +359,7 @@ class VaccineService extends Service
             DB::rollBack();
 
             return ['status' => false, 'message' => $exception->getMessage(),
-                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!', ];
+                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!',];
         }
     }
 
@@ -351,19 +379,19 @@ class VaccineService extends Service
                 DB::commit();
 
                 return ['status' => true, 'message' => __('Vaccine is Trashed'),
-                    'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!', ];
+                    'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!',];
             } else {
                 DB::rollBack();
 
                 return ['status' => false, 'message' => __('Vaccine is Delete Failed'),
-                    'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!', ];
+                    'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!',];
             }
         } catch (Exception $exception) {
             $this->vaccineRepository->handleException($exception);
             DB::rollBack();
 
             return ['status' => false, 'message' => $exception->getMessage(),
-                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!', ];
+                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!',];
         }
     }
 
@@ -383,26 +411,26 @@ class VaccineService extends Service
                 DB::commit();
 
                 return ['status' => true, 'message' => __('Vaccine is Restored'),
-                    'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!', ];
+                    'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!',];
             } else {
                 DB::rollBack();
 
                 return ['status' => false, 'message' => __('Vaccine is Restoration Failed'),
-                    'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!', ];
+                    'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!',];
             }
         } catch (Exception $exception) {
             $this->vaccineRepository->handleException($exception);
             DB::rollBack();
 
             return ['status' => false, 'message' => $exception->getMessage(),
-                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!', ];
+                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!',];
         }
     }
 
     /**
      * Export Object for Export Download
      *
-     * @param  array  $filters
+     * @param array $filters
      * @return SurveyWiseExport|VaccineWiseExport
      *
      * @throws Exception

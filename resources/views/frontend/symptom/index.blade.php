@@ -16,7 +16,7 @@
 @endpush
 
 @push('plugin-style')
-
+    <link rel="stylesheet" href="{{ asset('plugins/bootstrap-slider/css/bootstrap-slider.min.css') }}" type="text/css">
 @endpush
 
 @push('page-style')
@@ -196,5 +196,10 @@
 
 @push('plugin-script')
     <script src="{{ asset('plugins/chart.js/Chart.min.js') }}"></script>
+    <script src="{{ asset('plugins/bootstrap-slider/bootstrap-slider.min.js') }}"></script>
+    <script>
+        /* BOOTSTRAP SLIDER */
+        $('.slider').bootstrapSlider()
+    </script>
 @endpush
 

@@ -44,12 +44,7 @@ class PatientRepository extends EloquentRepository
 
         $query = $this->getQueryBuilder();
 
-        $query->join('vaccines', 'vaccines.vaers_id', '=', 'symptoms.vaers_id');
-
-        if (! empty($filters['vax_name']) || ! empty($filters['vax_dose_series'])) {
-            $query->leftJoin('vaccines', 'vaccines.vaers_id', '=', 'patients.vaers_id');
-            //$selectTable[] = 'vaccines.*';
-        }
+        $query->join('vaccines', 'vaccines.vaers_id', '=', 'patients.vaers_id');
 
         if (! empty($filters['vax_name'])) {
             $query->where('vaccines.vax_name', '=', $filters['vax_name']);
@@ -57,11 +52,6 @@ class PatientRepository extends EloquentRepository
 
         if (! empty($filters['vax_dose_series'])) {
             $query->where('vaccines.vax_dose_series', '=', $filters['vax_dose_series']);
-        }
-
-        if (! empty($filters['search'])) {
-            /*$query->where('name', 'like', "%{$filters['search']}%")
-                ->orWhere('enabled', '=', "%{$filters['search']}%");*/
         }
 
         if (! empty($filters['year'])) {
@@ -164,8 +154,6 @@ class PatientRepository extends EloquentRepository
                         ->orderBy('patients.state')
                         ->groupBy('patients.state');
 
-                default:
-                    $query = $query;
             }
         }
 

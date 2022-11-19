@@ -74,7 +74,7 @@ class VaccineRepository extends EloquentRepository
             $symptomVariation = $filters['symptomVariation'] ?? 'symptom1';
             switch ($filters['metric']) {
                 case 'top_10_symptoms' :
-                    $query->selectRaw("vax_name, symptoms.{$symptomVariation}, count(symptoms.{$symptomVariation}) as aggregate')")
+                    $query->selectRaw("vax_name, symptoms.{$symptomVariation}, count(symptoms.{$symptomVariation}) as aggregate")
                         ->join('symptoms', 'vaccines.vaers_id', '=', 'symptoms.vaers_id')
                         ->groupBy('vax_name', $filters['symptomVariation'])
                         ->orderBy('aggregate', 'desc');

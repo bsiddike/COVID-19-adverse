@@ -79,8 +79,8 @@ class SymptomController extends Controller
             case 'vaccine-outcome':
                 $result = $this->vaccineService->getTopVaccinesOutcomesMetrics($filters);
                 break;
-            case 'asset-month':
-                $result = $this->patientService->getPatientLineChart($filters);
+            case 'symptom-gender':
+                $result = $this->symptomService->getSymptomGenderBarMetrics($filters, 'symptom1');
                 break;
             case 'asset-age':
                 $result = $this->patientService->getAgeMetrics($filters);

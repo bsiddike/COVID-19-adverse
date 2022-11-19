@@ -55,10 +55,10 @@ class VaccineService extends Service
                     'backgroundColor' => [],
                 ];
             }
-            $formatData[$datum['vax_name']]['data'][] = $datum['aggregate'];
+/*            $formatData[$datum['vax_name']]['data'][] = $datum['aggregate'];
             $formatData[$datum['vax_name']]['label'] = $datum['symptom1'];
             $formatData[$datum['vax_name']]['stack'] = "Stack {$index}";
-            $formatData[$datum['vax_name']]['backgroundColor'][] = random_color();
+            $formatData[$datum['vax_name']]['backgroundColor'][] = random_color();*/
             /*            if(!empty($datum['symptom1'])){
                             $formatData[$datum['vax_name']]['symptom1']['data'][] = $datum['aggregate'];
                             $formatData[$datum['vax_name']]['symptom1']['label'][] = $datum['symptom1'];

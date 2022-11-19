@@ -163,6 +163,61 @@ class SymptomService extends Service
         return $symptomInfo;
     }
 
+    public function getSymptomGenderBarMetrics(array $filters, string $column = 'symptom1')
+    {
+        $filters['metric'] = 'sex';
+        $filters['metric_group_column'] = $column;
+
+        $data = $this->getAllSymptoms($filters)->toArray();
+        $formatData = [];
+        $labels = [];
+
+        $formatData[0]['label'] = 'Male';
+        $formatData[1]['label'] = 'Female';
+        $formatData[2]['label'] = 'Unknown';
+        $formatData[0]['borderWidth'] = 1;
+        $formatData[1]['borderWidth'] = 1;
+        $formatData[2]['borderWidth'] = 1;
+
+        foreach ($data as $index => $datum) {
+            //Male
+            $labels[] = $datum['symptom'];
+            $formatData[0]['data'][] = $datum['male'];
+            $formatData[0]['backgroundColor'][] = random_color();
+            $formatData[0]['borderColor'][] = random_color();
+            //Female
+            $formatData[1]['data'][] = $datum['female'];
+            $formatData[1]['backgroundColor'][] = random_color();
+            $formatData[1]['borderColor'][] = random_color();
+            //Unknown
+            $formatData[2]['data'][] = $datum['unknown'];
+            $formatData[2]['backgroundColor'][] = random_color();
+            $formatData[2]['borderColor'][] = random_color();
+        }
+
+        return [
+            'type' => 'bar',
+            'data' => [
+                'labels' => $labels,
+                'datasets' => array_values($formatData),
+            ],
+            'options' => [
+                'maintainAspectRatio' => false,
+                'datasetFill' => false,
+                'responsive' => true,
+                'legend' => [
+                    'display' => false,
+                    'position' => 'left',
+                ],
+                'scales' => [
+                    'y' => [
+                        'beginAtZero' => true,
+                    ],
+                ],
+            ],
+        ];
+    }
+
     /**
      * Return formatted education qualification model collection
      *

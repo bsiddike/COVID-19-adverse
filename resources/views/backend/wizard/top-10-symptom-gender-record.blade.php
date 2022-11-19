@@ -19,7 +19,7 @@
 @push('page-script')
     <script>
         $(document).ready(function () {
-            $.get('{{ route('backend.symptom.charts', 'vaccine-outcome') }}',
+            $.get('{{ route('backend.symptom.charts', 'symptom-gender') }}',
                     {!!  json_encode(request()->all()) !!},
                 function (data) {
                     var doughnut = new Chart($('#genderOutcomesVaccine')

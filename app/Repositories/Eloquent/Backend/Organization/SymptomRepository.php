@@ -47,6 +47,14 @@ class SymptomRepository extends EloquentRepository
             $query->join('patients', 'symptoms.vaers_id', '=', 'patients.vaers_id');
         }
 
+        if (!empty($filters['symptom'])) {
+            $query->where('symptoms.symptom1', 'like', "%{$filters['symptom']}%");
+            $query->orWhere('symptoms.symptom2', 'like', "%{$filters['symptom']}%");
+            $query->orWhere('symptoms.symptom3', 'like', "%{$filters['symptom']}%");
+            $query->orWhere('symptoms.symptom4', 'like', "%{$filters['symptom']}%");
+            $query->orWhere('symptoms.symptom5', 'like', "%{$filters['symptom']}%");
+        }
+
         if (!empty($filters['symptom1'])) {
             $query->where('symptoms.symptom1', 'like', "%{$filters['symptom1']}%");
         }

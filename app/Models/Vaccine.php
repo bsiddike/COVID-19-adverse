@@ -2,13 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Kyslik\ColumnSortable\Sortable;
-use OwenIt\Auditing\Auditable as AuditableTrait;
-use OwenIt\Auditing\Contracts\Auditable;
 
-class Vaccine extends Model implements Auditable
+class Vaccine extends Model
 {
-    use AuditableTrait, HasFactory, Sortable;
+    use Sortable;
+
+    public $timestamps = false;
+
 }

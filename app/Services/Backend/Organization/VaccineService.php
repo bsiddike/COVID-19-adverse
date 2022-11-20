@@ -78,29 +78,6 @@ class VaccineService extends Service
      *
      * @throws Exception
      */
-
-    /*
-{
-      label: 'Dataset 1',
-      data: Utils.numbers(NUMBER_CFG),
-      backgroundColor: Utils.CHART_COLORS.red,
-      stack: 'Stack 0',
-    },
-    {
-      label: 'Dataset 2',
-      data: Utils.numbers(NUMBER_CFG),
-      backgroundColor: Utils.CHART_COLORS.blue,
-      stack: 'Stack 0',
-    },
-    {
-      label: 'Dataset 3',
-      data: Utils.numbers(NUMBER_CFG),
-      backgroundColor: Utils.CHART_COLORS.green,
-      stack: 'Stack 1',
-    },
-
-
-     */
     private function formatDataSymptomWise(array &$formatData, string $column = 'symptom1', array $filters = [])
     {
         $filters['symptomVariation'] = $column;
@@ -200,7 +177,7 @@ class VaccineService extends Service
                 DB::commit();
 
                 return ['status' => true, 'message' => __('New Vaccine Created'),
-                    'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!', ];
+                    'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!',];
             } else {
                 Log::error('Vaccine Create Rollback', [$newVaccineInfo]);
                 DB::rollBack();

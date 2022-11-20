@@ -43,16 +43,6 @@ class VaccineRepository extends EloquentRepository
 
         $query = $this->getQueryBuilder();
 
-        if (! empty($filters['search'])) {
-            $query->where('name', 'like', "%{$filters['search']}%")
-                ->orWhere('enabled', 'like', "%{$filters['search']}%")
-                ->orWhere('nid', 'like', "%{$filters['search']}%")
-                ->orWhere('mobile_1', 'like', "%{$filters['search']}%")
-                ->orWhere('mobile_2', 'like', "%{$filters['search']}%")
-                ->orWhere('email', 'like', "%{$filters['search']}%")
-                ->orWhere('present_address', 'like', "%{$filters['search']}%")
-                ->orWhere('permanent_address', 'like', "%{$filters['search']}%");
-        }
 
         if (! empty($filters['enabled'])) {
             $query->where('enabled', '=', $filters['enabled']);
@@ -77,11 +67,12 @@ class VaccineRepository extends EloquentRepository
                     $query->selectRaw("vax_name, symptoms.{$symptomVariation}, count(symptoms.{$symptomVariation}) as aggregate")
                         ->join('symptoms', 'vaccines.vaers_id', '=', 'symptoms.vaers_id')
                         ->groupBy('vax_name', $filters['symptomVariation'])
-                        ->orderBy('aggregate', 'desc');
-                    if (! empty($filters['gender'])) {
+                        ->orderBy('aggregate', 'desc')
+                        ->limit(20);
+/*                    if (! empty($filters['gender'])) {
                         $query->join('patients', 'patients.vaers_id', '=', 'symptoms.vaers_id')
                             ->where('patients.sex', 'like', "%{$filters['gender']}%");
-                    }
+                    }*/
                     break;
             }
         }

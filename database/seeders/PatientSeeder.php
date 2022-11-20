@@ -34,42 +34,6 @@ class PatientSeeder extends Seeder
                     ->import(
                         $target_dir . $file,
                         function ($line) {
-                            /*0 => "VAERS_ID"
-                              1 => "RECVDATE"
-                              2 => "STATE"
-                              3 => "AGE_YRS"
-                              4 => "CAGE_YR"
-                              5 => "CAGE_MO"
-                              6 => "SEX"
-                              7 => "RPT_DATE"
-                              8 => "SYMPTOM_TEXT"
-                              9 => "DIED"
-                              10 => "DATEDIED"
-                              11 => "L_THREAT"
-                              12 => "ER_VISIT"
-                              13 => "HOSPITAL"
-                              14 => "HOSPDAYS"
-                              15 => "X_STAY"
-                              16 => "DISABLE"
-                              17 => "RECOVD"
-                              18 => "VAX_DATE"
-                              19 => "ONSET_DATE"
-                              20 => "NUMDAYS"
-                              21 => "LAB_DATA"
-                              22 => "V_ADMINBY"
-                              23 => "V_FUNDBY"
-                              24 => "OTHER_MEDS"
-                              25 => "CUR_ILL"
-                              26 => "HISTORY"
-                              27 => "PRIOR_VAX"
-                              28 => "SPLTTYPE"
-                              29 => "FORM_VERS"
-                              30 => "TODAYS_DATE"
-                              31 => "BIRTH_DEFECT"
-                              32 => "OFC_VISIT"
-                              33 => "ER_ED_VISIT"
-                              34 => "ALLERGIES"
-                            */
                             set_time_limit(2100);
                             ini_set('memory_limit', -1);
 

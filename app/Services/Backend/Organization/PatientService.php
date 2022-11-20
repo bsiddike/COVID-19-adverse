@@ -284,7 +284,7 @@ class PatientService extends Service
             'value' => 0,
             'href' => route('frontend.patients.index', array_merge($filters, ['state' => $state_name])),
             'text' => [
-                'content' =>  "<span style='font-weight:bold; color: blue;'>{$state_name}</span>",
+                'content' =>  $state_name,
             ],
             'tooltip' => [
                 'content' => "<span style='font-weight:bold;'>{$state_name}</span><br/>Patients: 0",

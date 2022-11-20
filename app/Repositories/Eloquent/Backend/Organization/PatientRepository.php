@@ -43,17 +43,17 @@ class PatientRepository extends EloquentRepository
 
         $query = $this->getQueryBuilder();
 
-        if (!empty($filters['vax_name'])) {
+        if (!empty($filters['vax_name']) || !empty($filters['vax_dose_series']) ) {
             if (!is_joined($query, 'vaccines')) {
                 $query->join('vaccines', 'patients.vaers_id', '=', 'vaccines.vaers_id');
             }
+        }
+
+        if (!empty($filters['vax_name'])){
             $query->where('vaccines.vax_name', 'like', "%{$filters['vax_name']}%");
         }
 
         if (!empty($filters['vax_dose_series'])) {
-            if (!is_joined($query, 'vaccines')) {
-                $query->join('vaccines', 'patients.vaers_id', '=', 'vaccines.vaers_id');
-            }
             $query->where('vaccines.vax_dose_series', '=', $filters['vax_dose_series']);
         }
 

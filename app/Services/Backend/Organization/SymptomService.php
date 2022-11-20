@@ -174,10 +174,9 @@ class SymptomService extends Service
 
         $formatData[0]['label'] = 'Male';
         $formatData[1]['label'] = 'Female';
-        $formatData[2]['label'] = 'Unknown';
+
         $formatData[0]['borderWidth'] = 1;
         $formatData[1]['borderWidth'] = 1;
-        $formatData[2]['borderWidth'] = 1;
 
         foreach ($data as $index => $datum) {
             //Male
@@ -189,10 +188,6 @@ class SymptomService extends Service
             $formatData[1]['data'][] = $datum['female'];
             $formatData[1]['backgroundColor'][] = '#f56954';
             $formatData[1]['borderColor'][] = '#f56954';
-            //Unknown
-            $formatData[2]['data'][] = $datum['unknown'];
-            $formatData[2]['backgroundColor'][] = '#f39c12';
-            $formatData[2]['borderColor'][] = '#f39c12';
         }
 
         return [

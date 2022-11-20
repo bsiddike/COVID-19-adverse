@@ -76,8 +76,11 @@ class SymptomRepository extends EloquentRepository
                 case 'sex':
                     $query->selectRaw("symptoms.{$symptom_col} as symptom, " .
                         "sum(if(patients.sex = 'F', 1, 0)) as 'female', " .
-                        "sum(if(patients.sex = 'M', 1, 0)) as 'male', ")
-                        ->groupBy("symptoms.{$symptom_col}")->limit(50);
+                        "sum(if(patients.sex = 'M', 1, 0)) as 'male'")
+                        ->groupBy("symptoms.{$symptom_col}")
+                        ->orderBy('male', 'desc')
+                        ->orderBy('female', 'desc')
+                        ->limit(10);
                     break;
 
                 case 'age_yrs':

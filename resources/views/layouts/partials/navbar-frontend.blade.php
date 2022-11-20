@@ -1,4 +1,4 @@
-<nav class="main-header navbar navbar-expand-md navbar-dark navbar-primary">
+<nav class="main-header navbar navbar-expand-sm navbar-dark navbar-primary">
     <div class="container">
         <a href="{{ route('home') }}" class="navbar-brand">
             <img src="{{ asset(config('backend.preloader')) }}" alt="{{ config('app.name') }}"

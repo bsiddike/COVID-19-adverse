@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Vaccine;
 use App\Services\Backend\Organization\PatientService;
 use App\Services\Backend\Organization\SymptomService;
 use App\Services\Backend\Organization\VaccineService;

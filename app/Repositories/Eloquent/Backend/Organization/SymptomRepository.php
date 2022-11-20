@@ -130,10 +130,10 @@ class SymptomRepository extends EloquentRepository
             $query->groupBy($filters['search_column']);
         }
 
-        if($filters['other_meds_not_none'] == 'yes')
+        /*if($filters['other_meds_not_none'] == 'yes')
         {
-            //$query->where(DB::raw('LOWER(patients.other_meds)'), '!=', 'none');
-        }
+            $query->whereNotIn(DB::raw('LOWER(patients.other_meds)'), ['none']);
+        }*/
         if (true == env('ONLY_COVID', false)) {
             $query->where('vaccines.vax_type', '=', 'COVID19');
         }

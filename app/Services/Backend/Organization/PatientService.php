@@ -40,6 +40,11 @@ class PatientService extends Service
         $filters['metric'] = 'sex';
 
         $data = $this->getAllPatients($filters)->toArray();
+        $values = array_values($data[0]);
+        $total = array_sum($values);
+        foreach ($values as $index => $value) {
+                $values[$index] = round((($value * 100) / $total), 2);
+        }
 
         return [
             'type' => 'doughnut',
@@ -47,7 +52,7 @@ class PatientService extends Service
                 'labels' => array_keys($data[0]),
                 'datasets' => [
                     [
-                        'data' => array_values($data[0]),
+                        'data' => $values,
                         'backgroundColor' => ['#f56954', '#00a65a', '#f39c12'],
                     ],
                 ],
@@ -81,13 +86,19 @@ class PatientService extends Service
 
         $data = $this->getAllPatients($filters)->toArray();
 
+        $values = array_values($data[0]);
+        $total = array_sum($values);
+        foreach ($values as $index => $value) {
+            $values[$index] = round((($value * 100) / $total), 2);
+        }
+
         return [
             'type' => 'pie',
             'data' => [
                 'labels' => array_keys($data[0]),
                 'datasets' => [
                     [
-                        'data' => array_values($data[0]),
+                        'data' => $values,
                         'backgroundColor' => ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#a2d6de'],
                     ],
                 ],

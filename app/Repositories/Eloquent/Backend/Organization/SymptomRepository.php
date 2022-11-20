@@ -140,6 +140,7 @@ class SymptomRepository extends EloquentRepository
         }
         $sql = Str::replaceArray('?', $query->getBindings(), $query->toSql());
         var_dump($sql);
+
         return $query;
     }
 

@@ -151,7 +151,6 @@ class PatientRepository extends EloquentRepository
                 case 'state':
                     $query
                         ->selectRaw('count(patients.id) as aggregate, patients.state')
-                        ->whereNotNull(DB::raw('patients.state'))
                         ->where(DB::raw('LENGTH(patients.state)'), '>', 0)
                         ->orderBy('patients.state')
                         ->groupBy('patients.state');

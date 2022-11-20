@@ -196,28 +196,20 @@ class PatientService extends Service
         $states = $this->getAllPatients($filters)->toArray();
         $areas = [];
 
-        foreach (Constant::USA_STATE as $usa_state) {
-            $state_name = strtoupper(explode(' - ', $usa_state)[0]);
-            $state_count = 0;
-            $areas[$state_name] = [
-                'value' => $state_count,
-                'href' => route('frontend.patients.index', array_merge($filters, ['state' => $state_name])),
-                'text' => [
-                    'content' => $state_name
-                ],
-                'tooltip' => [
-                    'content' => "<span style='font-weight:bold;'>{$state_name}</span><br/>Patients: {$state_count}",
-                ],
-            ];
+        foreach (Constant::USA_STATE as $state_name => $usa_state) {
+            $areas[$state_name] = $this->stateSkeleton($state_name, $filters);
         }
 
         foreach ($states as $state) {
             $state_name = strtoupper($state['state']);
             $state_count = strtonumber($state['aggregate'], 0);
+
+            if (!isset($areas[$state_name])) {
+                $areas[$state_name] = $this->stateSkeleton($state_name, $filters);
+            }
+
             $areas[$state_name] = [
                 'value' => $state_count,
-                'href' => route('frontend.patients.index', array_merge($filters, ['state' => $state_name])),
-                //'href' => '#',
                 'tooltip' => [
                     'content' => "<span style='font-weight:bold;'>{$state_name}</span><br/>Patients: {$state_count}",
                 ],
@@ -279,6 +271,20 @@ class PatientService extends Service
                 ],
             ],
             'areas' => $areas,
+        ];
+    }
+
+    private function stateSkeleton($state_name, $filters)
+    {
+        return [
+            'value' => 0,
+            'href' => route('frontend.patients.index', array_merge($filters, ['state' => $state_name])),
+            'text' => [
+                'content' => $state_name
+            ],
+            'tooltip' => [
+                'content' => "<span style='font-weight:bold;'>{$state_name}</span><br/>Patients: 0",
+            ],
         ];
     }
 

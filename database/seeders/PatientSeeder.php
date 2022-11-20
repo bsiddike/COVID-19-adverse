@@ -28,6 +28,7 @@ class PatientSeeder extends Seeder
         $files = scandir($target_dir);
         foreach ($files as $file) {
             if (is_file($target_dir . $file)) {
+                $this->command->warn("Seeding {$file} started, Date: " . date("c"));
                 (new FastExcel)
                     ->withoutHeaders()
                     ->import(
@@ -110,6 +111,7 @@ class PatientSeeder extends Seeder
                                 'allergies' => clean($line[34]),
                             ]);
                         });
+                $this->command->info("Seeded: {$file} finished, Date: " . date("c"));
             }
         }
     }

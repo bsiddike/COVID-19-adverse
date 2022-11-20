@@ -30,3 +30,4 @@ composer.lock
 /build/*
 public/error.log
 public/access.log
+covid19-project.pem

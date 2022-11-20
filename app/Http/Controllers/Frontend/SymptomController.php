@@ -128,7 +128,7 @@ class SymptomController extends Controller
         $filters = $request->except(['submit', '_token']);
         $vaccines = array_unique(Vaccine::all()->where('vax_type', 'COVID19')->pluck('vax_name')->toArray());
 
-        $symptoms = $this->symptomService->symptomPaginate($filters, ['vaccine', 'patient'])->where('patients.other_meds' != 'none');
+        $symptoms = $this->symptomService->symptomPaginate($filters, ['vaccine', 'patient']);
 
         return view('frontend.patient.apply', [
             'symptoms' => $symptoms,

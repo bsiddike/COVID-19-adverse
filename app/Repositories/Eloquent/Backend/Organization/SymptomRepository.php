@@ -99,9 +99,16 @@ class SymptomRepository extends EloquentRepository
 
             switch ($filters['metric']) {
                 case 'sex':
-                    $query->selectRaw("symptoms.{$symptom_col} as symptom, " .
-                        "sum(if(patients.sex = 'F', 1, 0)) as 'female', " .
-                        "sum(if(patients.sex = 'M', 1, 0)) as 'male'")
+                    $select = ["symptoms.{$symptom_col} as symptom"];
+                    $select[] = (isset($filters['gender']) && $filters['gender'] == 'M')
+                        ? "0 as `female`"
+                        : DB::raw("sum(if(patients.sex = 'F', 1, 0)) as `female`");
+
+                    $select[] = (isset($filters['gender']) && $filters['gender'] == 'F')
+                        ? "0 as `male`"
+                        : DB::raw("sum(if(patients.sex = 'M', 1, 0)) as `male`");
+
+                    $query->select($select)
                         ->groupBy("symptoms.{$symptom_col}")
                         ->orderBy('male', 'desc')
                         ->orderBy('female', 'desc')

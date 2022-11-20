@@ -114,3 +114,16 @@ if (!function_exists('data_limit')) {
         return ($file_count <= 10);
     }
 }
+
+if (!function_exists('is_joined')) {
+    /**
+     * @param \Illuminate\Database\Query\Builder|\Illuminate\Database\Eloquent\Builder $query
+     * @param string $table
+     * @return bool
+     */
+    function is_joined($query, string $table)
+    {
+        $joins = $query->getQuery()->joins ?? [];
+        return (!empty($joins) && in_array($table, $joins));
+    }
+}

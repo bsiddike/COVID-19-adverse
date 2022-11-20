@@ -11,6 +11,7 @@ use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Throwable;
 
 /**
@@ -199,6 +200,8 @@ class PatientService extends Service
         foreach (Constant::USA_STATE as $state_name => $usa_state) {
             $areas[$state_name] = $this->stateSkeleton($state_name, $filters);
         }
+
+        Log::error("States", [$states]);
 
         foreach ($states as $state) {
             $state_name = strtoupper($state['state']);

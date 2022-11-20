@@ -68,10 +68,6 @@ class SymptomRepository extends EloquentRepository
             $query->orWhere('patients.sex', 'like', "%{$filters['gender']}%");
         }
 
-        if (! empty($filters['symptom5'])) {
-            $query->orWhere('symptoms.symptom5', 'like', "%{$filters['symptom5']}%");
-        }
-
         if (! empty($filters['metric'])) {
             $symptom_col = $filters['metric_group_column'] ?? 'symptom1';
 
@@ -134,10 +130,10 @@ class SymptomRepository extends EloquentRepository
             $query->groupBy($filters['search_column']);
         }
 
-        /*if($filters['other_meds_not_none'] == 'yes')
+        if($filters['other_meds_not_none'] == 'yes')
         {
             $query->where(DB::raw('LOWER(patients.other_meds)'), '!=', 'none');
-        }*/
+        }
         if (true == env('ONLY_COVID', false)) {
             $query->where('vaccines.vax_type', '=', 'COVID19');
         }

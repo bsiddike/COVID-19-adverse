@@ -7,7 +7,6 @@ use Database\Seeders\Backend\SARegisterSeeder;
 use Database\Seeders\Backend\Setting\PermissionSeeder;
 use Database\Seeders\Backend\Setting\RolePermissionSeeder;
 use Database\Seeders\Backend\Setting\RoleSeeder;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -24,6 +23,6 @@ class DatabaseSeeder extends Seeder
             SARegisterSeeder::class, AdminRegisterSeeder::class
         ]);
 
-        $this->call([VaccineSeeder::class, SymptomSeeder::class, PatientSeeder::class]);
+/*        $this->call([VaccineSeeder::class, SymptomSeeder::class, PatientSeeder::class]);*/
     }
 }

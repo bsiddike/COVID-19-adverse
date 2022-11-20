@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Patient;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use OpenSpout\Common\Exception\IOException;
@@ -23,11 +24,12 @@ class PatientSeeder extends Seeder
      */
     public function run()
     {
+        Model::unguard();
         DB::table('patients')->truncate();
         $target_dir = base_path('database/data/2020-2022-VAERSDATA/');
         $files = scandir($target_dir);
         foreach ($files as $file) {
-            if (is_file($target_dir . $file)) {
+            if (is_file($target_dir . $file) && data_limit($file)) {
                 $this->command->warn("Seeding {$file} started, Date: " . date("c"));
                 (new FastExcel)
                     ->withoutHeaders()
@@ -78,5 +80,6 @@ class PatientSeeder extends Seeder
                 $this->command->info("Seeded: {$file} finished, Date: " . date("c"));
             }
         }
+        Model::reguard();
     }
 }

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Symptom;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use OpenSpout\Common\Exception\IOException;
@@ -23,11 +24,12 @@ class SymptomSeeder extends Seeder
      */
     public function run()
     {
+        Model::unguard();
         DB::table('symptoms')->truncate();
         $target_dir = base_path('database/data/2020-2022-VAERSSYMPTOMS/');
         $files = scandir($target_dir);
         foreach ($files as $file) {
-            if (is_file($target_dir . $file)) {
+            if (is_file($target_dir . $file) && data_limit($file)) {
                 $this->command->warn("Seeding {$file} started, Date: " . date("c"));
                 (new FastExcel)
                     ->withoutHeaders()
@@ -64,5 +66,6 @@ class SymptomSeeder extends Seeder
                 $this->command->info("Seeded: {$file} finished, Date: " . date("c"));
             }
         }
+        Model::reguard();
     }
 }

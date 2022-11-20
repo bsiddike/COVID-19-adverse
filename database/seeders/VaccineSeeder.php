@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Vaccine;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use OpenSpout\Common\Exception\IOException;
@@ -23,11 +24,12 @@ class VaccineSeeder extends Seeder
      */
     public function run()
     {
+        Model::unguard();
         DB::table('vaccines')->truncate();
         $target_dir = base_path('database/data/2020-2022-VAERSVAX/');
         $files = scandir($target_dir);
         foreach ($files as $file) {
-            if (is_file($target_dir . $file)) {
+            if (is_file($target_dir . $file) && data_limit($file)) {
                 $this->command->warn("Seeding {$file} started, Date: " . date("c"));
                 (new FastExcel)
                     ->withoutHeaders()
@@ -55,5 +57,6 @@ class VaccineSeeder extends Seeder
                 $this->command->info("Seeded: {$file} finished, Date: " . date("c"));
             }
         }
+        Model::reguard();
     }
 }

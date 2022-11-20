@@ -106,12 +106,11 @@ if (!function_exists('query')) {
 if (!function_exists('data_limit')) {
     /**
      * @param $filename
-     * @param $divider
      * @return bool
      */
-    function data_limit($filename, $divider = 1)
+    function data_limit($filename)
     {
         $file_count = (int)filter_var($filename, FILTER_SANITIZE_NUMBER_INT);
-        return (($file_count % $divider) == 0);
+       /* return (($file_count % $divider) == 0);*/
     }
 }

@@ -69,6 +69,14 @@ class SymptomRepository extends EloquentRepository
             $query->orWhere('patients.sex', 'like', "%{$filters['gender']}%");
         }
 
+        if (!empty($filters['age'])) {
+            $query->whereBetween('patients.age_yrs', explode(",", $filters['age']));
+        }
+
+        if (! empty($filters['recive_date'])) {
+            $query->whereBetween('patients.recive_date', explode(' - ', $filters['recive_date']));
+        }
+
         if (!empty($filters['metric'])) {
             $symptom_col = $filters['metric_group_column'] ?? 'symptom1';
 

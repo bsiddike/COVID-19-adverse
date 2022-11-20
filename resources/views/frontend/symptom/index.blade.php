@@ -17,6 +17,8 @@
 
 @push('plugin-style')
     <link rel="stylesheet" href="{{ asset('plugins/bootstrap-slider/css/bootstrap-slider.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('plugins/bootstrap-slider/css/bootstrap-slider.min.css') }}" type="text/css">
 @endpush
 
 @push('page-style')
@@ -52,8 +54,7 @@
                     {!! Form::open(['route' => 'frontend.symptoms.index', 'method'=> 'get']) !!}
                     <div class="card-body">
                         <div class="row">
-                            {{--<div class="col-md-4">
-                                --}}{{--{!! \Form::nText('year', 'Year', request()->get('year'), false) !!}--}}{{--
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Date range:</label>
                                     <div class="input-group">
@@ -68,9 +69,8 @@
                                     </div>
                                     <!-- /.input group -->
                                 </div>
-                            </div>--}}
+                            </div>
                             <div class="col-md-4">
-                                {{--{!! \Form::nText('age', 'Age', request()->get('age'), false) !!}--}}
                                 <div class="form-group">
                                     <label for="age">Age</label>
                                     <div class="slider-blue">
@@ -95,11 +95,10 @@
                                      'placeholder' => 'Select a vaccine Brand name'
                                  ]) !!}
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 {!! Form::nText('symptom', 'Symptom', request()->get('symptom'), false) !!}
                             </div>
-                            <div class="col-md-6">
-                                {{--{!! \Form::nText('state', 'State', request()->get('state'), false) !!}--}}
+                            <div class="col-md-4">
                                 {!! Form::nSelect('state', 'State',
                                 \App\Supports\Constant::USA_STATE,
                                  request()->get('state'), false, [
@@ -114,9 +113,9 @@
                     {!! Form::close() !!}
                 </div>
             </div>
-{{--            @include('backend.wizard.affected-gender')
-            @include('backend.wizard.affected-age-wise')
-            @include('backend.wizard.affected-state')--}}
+            {{--            @include('backend.wizard.affected-gender')
+                        @include('backend.wizard.affected-age-wise')
+                        @include('backend.wizard.affected-state')--}}
             @include('backend.wizard.top-10-vaccine-record')
             @include('backend.wizard.top-10-symptom-gender-record')
             <div class="col-12">
@@ -150,10 +149,10 @@
                                             <td>
                                                 @if($symptom->patient()->exists())
 
-                                                <a href="{{ route('frontend.patients.show', $symptom->patient->id) }}">
-                                                    {{ $symptom->patient->vaers_id ?? null }}
-                                                </a>
-                                                    @else
+                                                    <a href="{{ route('frontend.patients.show', $symptom->patient->id) }}">
+                                                        {{ $symptom->patient->vaers_id ?? null }}
+                                                    </a>
+                                                @else
                                                     {{ $symptom->patient->vaers_id ?? null }}
                                                 @endif
                                             </td>
@@ -197,11 +196,28 @@
 
 
 @push('plugin-script')
+    <script src="{{ asset('plugins/daterangepicker/moment.min.js') }}"></script>
     <script src="{{ asset('plugins/chart.js/Chart.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/1.2.1/chartjs-plugin-zoom.min.js"
+            integrity="sha512-klQv6lz2YR+MecyFYMFRuU2eAl8IPRo6zHnsc9n142TJuJHS8CG0ix4Oq9na9ceeg1u5EkBfZsFcV3U7J51iew=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{ asset('plugins/bootstrap-slider/bootstrap-slider.min.js') }}"></script>
+    <script src="{{ asset('plugins/daterangepicker/daterangepicker.js') }}"></script>
     <script>
         /* BOOTSTRAP SLIDER */
-        $('.slider').bootstrapSlider()
+        $('.slider').bootstrapSlider();
+        //Date range picker
+        $('#recive_date').daterangepicker({
+            autoUpdateInput: true,
+            showDropdowns: true,
+            minYear: 2018,
+            maxYear: parseInt(moment().format('YYYY'), 10),
+            startDate: '2019-01-01',
+            locale: {
+                format: 'YYYY-MM-DD',
+                cancelLabel: 'Clear'
+            }
+        });
     </script>
 @endpush
 

@@ -24,9 +24,7 @@ class SymptomSeeder extends Seeder
     public function run()
     {
         DB::table('symptoms')->truncate();
-
         $filePath = base_path('database/data/2020-2022-VAERSVAX.csv');
-
         if (is_file($filePath)) {
             (new FastExcel)
                 ->withoutHeaders()

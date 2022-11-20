@@ -18,11 +18,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([
+/*        $this->call([
             PermissionSeeder::class, RoleSeeder::class, RolePermissionSeeder::class,
             SARegisterSeeder::class, AdminRegisterSeeder::class
-        ]);
+        ]);*/
 
-/*        $this->call([VaccineSeeder::class, SymptomSeeder::class, PatientSeeder::class]);*/
+        $this->call([VaccineSeeder::class, SymptomSeeder::class, PatientSeeder::class]);
     }
 }

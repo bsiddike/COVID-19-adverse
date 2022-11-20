@@ -38,6 +38,15 @@ class SymptomRepository extends EloquentRepository
     {
         $query = $this->getQueryBuilder();
 
+        if (!empty($filters['gender']) ||
+            !empty($filters['age']) ||
+            !empty($filters['recive_date']) ||
+            (!empty($filters['metric']) && in_array($filters['metric'], ['sex', 'age_yrs', 'patient_month']) ||
+                !empty($filters['search_column'])
+            )) {
+            $query->join('patients', 'symptoms.vaers_id', '=', 'patients.vaers_id');
+        }
+
         if (!empty($filters['symptom1'])) {
             $query->where('symptoms.symptom1', 'like', "%{$filters['symptom1']}%");
         }
@@ -64,24 +73,16 @@ class SymptomRepository extends EloquentRepository
             }
             $query->where('vaccines.vax_name', 'like', "%{$filters['vax_name']}%");
         }
+
         if (!empty($filters['gender'])) {
-            if (!is_joined($query, 'patients')) {
-                $query->join('patients', 'symptoms.vaers_id', '=', 'patients.vaers_id');
-            }
             $query->where('patients.sex', '=', strtoupper($filters['gender']));
         }
 
         if (!empty($filters['age'])) {
-            if (!is_joined($query, 'patients')) {
-                $query->join('patients', 'symptoms.vaers_id', '=', 'patients.vaers_id');
-            }
             $query->whereBetween('patients.age_yrs', explode(",", $filters['age']));
         }
 
         if (!empty($filters['recive_date'])) {
-            if (!is_joined($query, 'patients')) {
-                $query->join('patients', 'symptoms.vaers_id', '=', 'patients.vaers_id');
-            }
             $query->whereBetween('patients.recive_date', explode(' - ', $filters['recive_date']));
         }
 
@@ -90,9 +91,6 @@ class SymptomRepository extends EloquentRepository
 
             switch ($filters['metric']) {
                 case 'sex':
-                    if (!is_joined($query, 'patients')) {
-                        $query->join('patients', 'symptoms.vaers_id', '=', 'patients.vaers_id');
-                    }
                     $query->selectRaw("symptoms.{$symptom_col} as symptom, " .
                         "sum(if(patients.sex = 'F', 1, 0)) as 'female', " .
                         "sum(if(patients.sex = 'M', 1, 0)) as 'male'")
@@ -103,10 +101,6 @@ class SymptomRepository extends EloquentRepository
                     break;
 
                 case 'age_yrs':
-
-                    if (!is_joined($query, 'patients')) {
-                        $query->join('patients', 'symptoms.vaers_id', '=', 'patients.vaers_id');
-                    }
 
                     $query->selectRaw("sum(if(patients.age_yrs < 10, 1, 0)) as '0.0-10.0', " .
                         "sum(if(patients.age_yrs between 10 and 20, 1, 0)) as '10.1-20.0', " .
@@ -119,11 +113,6 @@ class SymptomRepository extends EloquentRepository
                     break;
 
                 case 'patient_month':
-
-                    if (!is_joined($query, 'patients')) {
-                        $query->join('patients', 'symptoms.vaers_id', '=', 'patients.vaers_id');
-                    }
-
                     $query->selectRaw(
                         "sum(if(patients.recive_date between '{$filters['today_year']}-01-01' and '{$filters['today_year']}-01-31', 1, 0)) as 'January', " .
                         "sum(if(patients.recive_date between '{$filters['today_year']}-02-01' and '{$filters['today_year']}-02-31', 1, 0)) as 'February', " .
@@ -143,9 +132,7 @@ class SymptomRepository extends EloquentRepository
 
         if (!empty($filters['search_column'])) {
             if ($filters['search_column'] == 'other_meds') {
-                if (!is_joined($query, 'patients')) {
-                    $query->join('patients', 'symptoms.vaers_id', '=', 'patients.vaers_id');
-                }
+
                 $query->select(['symptoms.symptom1', 'symptoms.symptom2', 'symptoms.symptom3', 'symptoms.symptom4', 'symptoms.symptom5', 'patients.other_meds'])
                     ->where(DB::raw('LENGTH(patients.other_meds)'), '>', 0)
                     ->whereNotIn(DB::raw('LOWER(patients.other_meds)'), ['none'])

@@ -97,7 +97,7 @@
                             </div>
                             <div class="col-md-4">
                                 {!! Form::nSelect('sex', 'Sex',
-                                ['M' => 'Male', 'F' => 'Female', 'U' => 'Unknown'],
+                                ['M' => 'Male', 'F' => 'Female'],
                                  request()->get('sex'), false, [ 'placeholder' => 'Select a sex']) !!}
                             </div>
                             <div class="col-md-3">

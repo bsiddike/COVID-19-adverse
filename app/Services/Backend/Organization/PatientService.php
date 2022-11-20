@@ -3,8 +3,6 @@
 namespace App\Services\Backend\Organization;
 
 use App\Abstracts\Service\Service;
-use App\Exports\Backend\Organization\PatientExport;
-use App\Models\Backend\Organization\Patient;
 use App\Repositories\Eloquent\Backend\Organization\PatientRepository;
 use App\Supports\Constant;
 use Exception;

@@ -112,8 +112,7 @@ class PatientRepository extends EloquentRepository
             switch ($filters['metric']) {
                 case 'sex':
                     $query->selectRaw("sum(if(patients.sex = 'F', 1, 0)) as 'Female', ".
-                        "sum(if(patients.sex = 'M', 1, 0)) as 'Male', ".
-                        "sum(if(patients.sex = 'U', 1, 0)) as 'Unknown'");
+                        "sum(if(patients.sex = 'M', 1, 0)) as 'Male'");
                     break;
 
                 case 'age_yrs':

@@ -24,7 +24,7 @@ class PatientSeeder extends Seeder
     public function run()
     {
         DB::table('patients')->truncate();
-        $target_dir = base_path('database/data/patients/');
+        $target_dir = base_path('database/data/2020-2022-VAERSDATA/');
         $files = scandir($target_dir);
         foreach ($files as $file) {
             if (is_file($target_dir . $file)) {

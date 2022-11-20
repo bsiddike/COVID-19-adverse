@@ -54,7 +54,7 @@ class PatientRepository extends EloquentRepository
             if (!is_joined($query, 'vaccines')) {
                 $query->join('vaccines', 'patients.vaers_id', '=', 'vaccines.vaers_id');
             }
-            return $query->where('vaccines.vax_dose_series', '=', $filters['vax_dose_series']);
+            $query->where('vaccines.vax_dose_series', '=', $filters['vax_dose_series']);
         }
 
         if (!empty($filters['year'])) {

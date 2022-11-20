@@ -194,6 +194,7 @@ class PatientService extends Service
     public function getPatientMap(array $filters = [])
     {
         $filters['metric'] = 'state';
+
         $states = $this->getAllPatients($filters)->toArray();
         $areas = [];
 

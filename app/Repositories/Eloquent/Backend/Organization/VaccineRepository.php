@@ -29,8 +29,8 @@ class VaccineRepository extends EloquentRepository
     /**
      * Search Function
      *
-     * @param  array  $filters
-     * @param  bool  $is_sortable
+     * @param array $filters
+     * @param bool $is_sortable
      * @return Builder
      */
     private function filterData(array $filters = [], bool $is_sortable = false): Builder
@@ -44,15 +44,15 @@ class VaccineRepository extends EloquentRepository
         $query = $this->getQueryBuilder();
 
 
-        if (! empty($filters['enabled'])) {
+        if (!empty($filters['enabled'])) {
             $query->where('enabled', '=', $filters['enabled']);
         }
 
-        if (! empty($filters['nid'])) {
+        if (!empty($filters['nid'])) {
             $query->where('nid', '=', $filters['nid']);
         }
 
-        if (! empty($filters['sort']) && ! empty($filters['direction'])) {
+        if (!empty($filters['sort']) && !empty($filters['direction'])) {
             $query->orderBy($filters['sort'], $filters['direction']);
         }
 
@@ -60,7 +60,7 @@ class VaccineRepository extends EloquentRepository
             $query->sortable();
         }
 
-        if (! empty($filters['metric'])) {
+        if (!empty($filters['metric'])) {
             $symptomVariation = $filters['symptomVariation'] ?? 'symptom1';
             switch ($filters['metric']) {
                 case 'top_10_symptoms':
@@ -69,27 +69,22 @@ class VaccineRepository extends EloquentRepository
                         ->groupBy('vax_name', $filters['symptomVariation'])
                         ->orderBy('aggregate', 'desc')
                         ->limit(20);
-/*                    if (! empty($filters['gender'])) {
-                        $query->join('patients', 'patients.vaers_id', '=', 'symptoms.vaers_id')
-                            ->where('patients.sex', 'like', "%{$filters['gender']}%");
-                    }*/
+                    /*                    if (! empty($filters['gender'])) {
+                                            $query->join('patients', 'patients.vaers_id', '=', 'symptoms.vaers_id')
+                                                ->where('patients.sex', 'like', "%{$filters['gender']}%");
+                                        }*/
                     break;
             }
         }
-
-        if (true == env('ONLY_COVID', false)) {
-            $query->where('vaccines.vax_type', '=', 'COVID19');
-        }
-
         return $query;
     }
 
     /**
      * Pagination Generator
      *
-     * @param  array  $filters
-     * @param  array  $eagerRelations
-     * @param  bool  $is_sortable
+     * @param array $filters
+     * @param array $eagerRelations
+     * @param bool $is_sortable
      * @return LengthAwarePaginator
      *
      * @throws Exception
@@ -107,9 +102,9 @@ class VaccineRepository extends EloquentRepository
     }
 
     /**
-     * @param  array  $filters
-     * @param  array  $eagerRelations
-     * @param  bool  $is_sortable
+     * @param array $filters
+     * @param array $eagerRelations
+     * @param bool $is_sortable
      * @return Builder[]|Collection
      *
      * @throws Exception
@@ -127,9 +122,9 @@ class VaccineRepository extends EloquentRepository
     }
 
     /**
-     * @param  array  $filters
-     * @param  array  $eagerRelations
-     * @param  bool  $is_sortable
+     * @param array $filters
+     * @param array $eagerRelations
+     * @param bool $is_sortable
      * @return Generator
      *
      * @throws Exception

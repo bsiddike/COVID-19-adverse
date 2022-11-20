@@ -11,4 +11,13 @@ class Vaccine extends Model
 
     public $timestamps = false;
 
+    public function patient()
+    {
+        return $this->belongsTo(Patient::class, 'vaers_id', 'vaers_id');
+    }
+
+    public function symptom()
+    {
+        return $this->hasOne(Symptom::class, 'vaers_id', 'vaers_id');
+    }
 }

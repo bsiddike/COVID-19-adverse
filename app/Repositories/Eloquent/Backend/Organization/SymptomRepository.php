@@ -10,6 +10,7 @@ use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 /**
  * @class EnumeratorRepository
@@ -131,13 +132,14 @@ class SymptomRepository extends EloquentRepository
         }
 
         if ($filters['other_meds_not_none'] == 'yes') {
-            $query->whereNotIn(DB::raw('LOWER(patients.other_meds)'), ['none', null, '']);
+            $query->where(DB::raw('LOWER(patients.other_meds)'), '!=', 'none');
             $query->where(DB::raw('LENGTH(patients.other_meds)'), '>', 0);
         }
         if (true == env('ONLY_COVID', false)) {
             $query->where('vaccines.vax_type', '=', 'COVID19');
         }
-
+        $sql = Str::replaceArray('?', $query->getBindings(), $query->toSql());
+        var_dump($sql);
         return $query;
     }
 

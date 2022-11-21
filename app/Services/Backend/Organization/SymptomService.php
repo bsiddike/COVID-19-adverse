@@ -221,6 +221,10 @@ class SymptomService extends Service
                             'mode' => 'xy',
                         ],
                     ],
+                    'datalabels' => [
+                        'align' => 'end',
+                        'anchor' => 'end'
+                    ]
                 ],
             ],
         ];

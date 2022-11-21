@@ -100,6 +100,11 @@ class SymptomRepository extends EloquentRepository
         if (!empty($filters['recive_date'])) {
             $query->whereBetween('patients.recive_date', explode(' - ', $filters['recive_date']));
         }
+        if (!empty($filters['other_meds_not_none']) && $filters['other_meds_not_none'] == 'yes') {
+            $query->where(DB::raw('LENGTH(patients.other_meds)'), '>', 0)
+                ->whereNotIn(DB::raw('LOWER(TRIM(patients.other_meds))'), ['none', '', 'n/a'])
+                ->whereNotNull('patients.other_meds');
+        }
 
         if (!empty($filters['metric'])) {
             $symptom_col = $filters['metric_group_column'] ?? 'symptom1';
@@ -155,13 +160,13 @@ class SymptomRepository extends EloquentRepository
         if (!empty($filters['search_column'])) {
             if ($filters['search_column'] == 'other_meds') {
 
-                $query->groupBy($filters['search_column']);
+                $query->select(['symptoms.symptom1', 'symptoms.symptom2', 'symptoms.symptom3', 'symptoms.symptom4', 'symptoms.symptom5', 'patients.other_meds'])
+                    ->where(DB::raw('LENGTH(patients.other_meds)'), '>', 0)
+                    ->whereNotIn(DB::raw('LOWER(TRIM(patients.other_meds))'), ['none', '', 'n/a'])
+                    ->whereNotNull('patients.other_meds');
             }
+            $query->groupBy($filters['search_column']);
         }
-        $query->select(['symptoms.symptom1', 'symptoms.symptom2', 'symptoms.symptom3', 'symptoms.symptom4', 'symptoms.symptom5', 'patients.other_meds'])
-            ->where(DB::raw('LENGTH(patients.other_meds)'), '>', 0)
-            ->whereNotIn(DB::raw('LOWER(TRIM(patients.other_meds))'), ['none', '', 'n/a'])
-            ->whereNotNull('patients.other_meds');
 
         return $query;
     }

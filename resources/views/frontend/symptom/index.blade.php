@@ -198,9 +198,6 @@
 @push('plugin-script')
     <script src="{{ asset('plugins/daterangepicker/moment.min.js') }}"></script>
     <script src="{{ asset('plugins/chart.js/Chart.min.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/1.2.1/chartjs-plugin-zoom.min.js"
-            integrity="sha512-klQv6lz2YR+MecyFYMFRuU2eAl8IPRo6zHnsc9n142TJuJHS8CG0ix4Oq9na9ceeg1u5EkBfZsFcV3U7J51iew=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{ asset('plugins/bootstrap-slider/bootstrap-slider.min.js') }}"></script>
     <script src="{{ asset('plugins/daterangepicker/daterangepicker.js') }}"></script>
     <script>

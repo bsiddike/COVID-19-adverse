@@ -217,17 +217,6 @@ class SymptomService extends Service
                     ],
                 ],
                 'plugins' => [
-                    'zoom' => [
-                        'zoom' => [
-                            'wheel' => [
-                                'enabled' => true,
-                            ],
-                            'pinch' => [
-                                'enabled' => true,
-                            ],
-                            'mode' => 'xy',
-                        ],
-                    ],
                     'datalabels' => [
                         'color' => 'white',
                         'display' => true,

@@ -63,19 +63,7 @@ class PatientService extends Service
                 'legend' => [
                     'position' => 'left',
                 ],
-                'plugins' => [
-                    'zoom' => [
-                        'zoom' => [
-                            'wheel' => [
-                                'enabled' => true,
-                            ],
-                            'pinch' => [
-                                'enabled' => true,
-                            ],
-                            'mode' => 'xy',
-                        ],
-                    ],
-                ],
+                'plugins' => [],
             ],
         ];
     }
@@ -110,17 +98,6 @@ class PatientService extends Service
                     'position' => 'left',
                 ],
                 'plugins' => [
-                    'zoom' => [
-                        'zoom' => [
-                            'wheel' => [
-                                'enabled' => true,
-                            ],
-                            'pinch' => [
-                                'enabled' => true,
-                            ],
-                            'mode' => 'xy',
-                        ],
-                    ],
                 ],
             ],
         ];
@@ -186,17 +163,6 @@ class PatientService extends Service
                     ],
                 ],
                 'plugins' => [
-                    'zoom' => [
-                        'zoom' => [
-                            'wheel' => [
-                                'enabled' => true,
-                            ],
-                            'pinch' => [
-                                'enabled' => true,
-                            ],
-                            'mode' => 'xy',
-                        ],
-                    ],
                 ],
             ],
         ];

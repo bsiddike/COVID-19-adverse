@@ -53,8 +53,7 @@ class VaccineService extends Service
                 'datasetFill' => false,
                 'responsive' => true,
                 'legend' => [
-                    'display' => false,
-                    'position' => 'left',
+                    'display' => true
                 ],
                 'scales' => [
                     'x' => [

@@ -77,7 +77,7 @@ class SymptomRepository extends EloquentRepository
 
         if (!empty($filters['vax_name'])) {
             if (!is_joined($query, 'vaccines')) {
-                $query->join('vaccines', 'patients.vaers_id', '=', 'vaccines.vaers_id');
+                $query->join('vaccines', 'symptoms.vaers_id', '=', 'vaccines.vaers_id');
             }
             $query->where('vaccines.vax_name', 'like', "%{$filters['vax_name']}%");
         }

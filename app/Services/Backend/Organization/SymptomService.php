@@ -208,8 +208,8 @@ class SymptomService extends Service
                 'datasetFill' => false,
                 'responsive' => true,
                 'legend' => [
-                    'display' => false,
-                    'position' => 'left',
+                    'display' => true,
+                    'position' => 'center',
                 ],
                 'scales' => [
                     'y' => [
@@ -230,6 +230,7 @@ class SymptomService extends Service
                     ],
                     'datalabels' => [
                         'color' => 'white',
+                        'display' => true,
                         'font' => [
                             'weight' => 'bold'
                         ]

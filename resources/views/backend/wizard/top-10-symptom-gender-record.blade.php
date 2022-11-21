@@ -22,6 +22,7 @@
             $.get('{{ route('backend.symptom.charts', 'symptom-gender') }}',
                     {!!  json_encode(request()->all()) !!},
                 function (data) {
+                    Chart.register(ChartDataLabels);
                     var doughnut = new Chart($('#genderOutcomesVaccine')
                         .get(0)
                         .getContext('2d'), data);

@@ -55,6 +55,13 @@ class SymptomRepository extends EloquentRepository
             $query->orWhere('symptoms.symptom5', 'like', "%{$filters['symptom']}%");
         }
 
+        if (!empty($filters['symptom']) || !empty($filters['symptom1']) || !empty($filters['symptom2'])
+            || !empty($filters['symptom3']) || !empty($filters['symptom4']) || !empty($filters['symptom5'])) {
+            if (!is_joined($query, 'patients')) {
+                $query->join('patients', 'patients.vaers_id', '=', 'symptoms.vaers_id');
+            }
+
+        }
         if (!empty($filters['symptom1'])) {
             $query->where('symptoms.symptom1', 'like', "%{$filters['symptom1']}%");
         }
@@ -76,9 +83,6 @@ class SymptomRepository extends EloquentRepository
         }
 
         if (!empty($filters['vax_name'])) {
-            if (!is_joined($query, 'patients')) {
-                $query->join('patients', 'patients.vaers_id', '=', 'symptoms.vaers_id');
-            }
             if (!is_joined($query, 'vaccines')) {
                 $query->join('vaccines', 'patients.vaers_id', '=', 'vaccines.vaers_id');
             }

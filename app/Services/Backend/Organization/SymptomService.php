@@ -209,7 +209,7 @@ class SymptomService extends Service
                 'responsive' => true,
                 'legend' => [
                     'display' => true,
-                    'position' => 'center',
+                    'position' => 'top',
                 ],
                 'scales' => [
                     'y' => [
@@ -219,7 +219,6 @@ class SymptomService extends Service
                 'plugins' => [
                     'datalabels' => [
                         'color' => 'white',
-                        'display' => true,
                         'font' => [
                             'weight' => 'bold'
                         ]

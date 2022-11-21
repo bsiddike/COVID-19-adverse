@@ -17,6 +17,8 @@
 </div>
 
 @push('page-script')
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.1.0/dist/chartjs-plugin-datalabels.min.js"></script>
+
     <script>
         $(document).ready(function () {
             $.get('{{ route('backend.symptom.charts', 'symptom-gender') }}',

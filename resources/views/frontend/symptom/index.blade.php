@@ -200,7 +200,6 @@
     <script src="{{ asset('plugins/chart.js/Chart.min.js') }}"></script>
     <script src="{{ asset('plugins/bootstrap-slider/bootstrap-slider.min.js') }}"></script>
     <script src="{{ asset('plugins/daterangepicker/daterangepicker.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.1.0/dist/chartjs-plugin-datalabels.min.js"></script>
     <script>
         /* BOOTSTRAP SLIDER */
         $('.slider').bootstrapSlider();

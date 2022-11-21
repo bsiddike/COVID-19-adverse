@@ -76,7 +76,9 @@ class SymptomRepository extends EloquentRepository
         }
 
         if (!empty($filters['vax_name'])) {
-
+            if (!is_joined($query, 'patients')) {
+                $query->join('patients', 'patients.vaers_id', '=', 'symptoms.vaers_id');
+            }
             if (!is_joined($query, 'vaccines')) {
                 $query->join('vaccines', 'patients.vaers_id', '=', 'vaccines.vaers_id');
             }
@@ -148,9 +150,7 @@ class SymptomRepository extends EloquentRepository
 
         if (!empty($filters['search_column'])) {
             if ($filters['search_column'] == 'other_meds') {
-                if (!is_joined($query, 'patients')) {
-                    $query->join('patients', 'patients.vaers_id', '=', 'symptoms.vaers_id');
-                }
+
                 $query->select(['symptoms.symptom1', 'symptoms.symptom2', 'symptoms.symptom3', 'symptoms.symptom4', 'symptoms.symptom5', 'patients.other_meds'])
                     ->where(DB::raw('LENGTH(patients.other_meds)'), '>', 0)
                     ->whereNotIn(DB::raw('LOWER(patients.other_meds)'), ['none'])

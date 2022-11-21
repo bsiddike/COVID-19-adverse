@@ -157,11 +157,11 @@ class SymptomRepository extends EloquentRepository
 
                 $query->groupBy($filters['search_column']);
             }
-            $query->select(['symptoms.symptom1', 'symptoms.symptom2', 'symptoms.symptom3', 'symptoms.symptom4', 'symptoms.symptom5', 'patients.other_meds'])
-                ->where(DB::raw('LENGTH(patients.other_meds)'), '>', 0)
-                ->whereIn(DB::raw('LOWER(TRIM(patients.other_meds))'), ['none', null])
-                ->whereNotNull('patients.other_meds');
         }
+        $query->select(['symptoms.symptom1', 'symptoms.symptom2', 'symptoms.symptom3', 'symptoms.symptom4', 'symptoms.symptom5', 'patients.other_meds'])
+            ->where(DB::raw('LENGTH(patients.other_meds)'), '>', 0)
+            ->whereIn(DB::raw('LOWER(TRIM(patients.other_meds))'), ['none', null])
+            ->whereNotNull('patients.other_meds');
 
         return $query;
     }

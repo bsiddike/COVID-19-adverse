@@ -209,7 +209,7 @@ class SymptomService extends Service
                 'responsive' => true,
                 'legend' => [
                     'display' => true,
-                    'position' => 'center',
+                    'position' => 'top',
                 ],
                 'scales' => [
                     'y' => [

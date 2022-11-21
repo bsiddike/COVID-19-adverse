@@ -178,12 +178,12 @@ class SymptomService extends Service
         $formatData[0]['borderWidth'] = 1;
         $formatData[1]['borderWidth'] = 1;
         $formatData[0]['datalabels'] = [
-            'align' => 'end',
-            'anchor' => 'end'
+            'align' => 'center',
+            'anchor' => 'center'
         ];
         $formatData[1]['datalabels'] = [
-            'align' => 'end',
-            'anchor' => 'end'
+            'align' => 'center',
+            'anchor' => 'center'
         ];
         foreach ($data as $index => $datum) {
             //Male
@@ -228,7 +228,12 @@ class SymptomService extends Service
                             'mode' => 'xy',
                         ],
                     ],
-
+                    'datalabels' => [
+                        'color' => 'white',
+                        'font' => [
+                            'weight' => 'bold'
+                        ]
+                    ]
                 ],
             ],
         ];

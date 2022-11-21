@@ -25,7 +25,7 @@ class SymptomSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-        DB::table('symptoms')->truncate();
+/*        DB::table('symptoms')->truncate();*/
         $target_dir = base_path('database/data/2020-2022-VAERSSYMPTOMS/');
         $files = scandir($target_dir);
         foreach ($files as $file) {

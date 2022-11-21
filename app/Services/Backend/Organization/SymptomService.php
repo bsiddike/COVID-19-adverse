@@ -230,7 +230,6 @@ class SymptomService extends Service
                     ],
                     'datalabels' => [
                         'color' => 'white',
-                        'display' => true,
                         'font' => [
                             'weight' => 'bold'
                         ]

@@ -228,7 +228,12 @@ class SymptomService extends Service
                             'mode' => 'xy',
                         ],
                     ],
-
+                    'datalabels' => [
+                        'color' => 'white',
+                        'font' => [
+                            'weight' => 'bold'
+                        ]
+                    ]
                 ],
             ],
         ];

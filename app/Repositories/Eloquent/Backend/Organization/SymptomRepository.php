@@ -38,12 +38,13 @@ class SymptomRepository extends EloquentRepository
     {
         $query = $this->getQueryBuilder();
 
-        if (!empty($filters['gender']) ||
-            !empty($filters['age']) ||
-            !empty($filters['recive_date']) ||
-            (!empty($filters['metric']) && in_array($filters['metric'], ['sex', 'age_yrs', 'patient_month']) ||
-                !empty($filters['search_column'])
-            )) {
+        if (!empty($filters['gender']) || !empty($filters['age'])
+            || !empty($filters['recive_date']) || !empty($filters['search_column'])
+            || (!empty($filters['metric']) && in_array($filters['metric'], ['sex', 'age_yrs', 'patient_month']))
+            || !empty($filters['symptom']) || !empty($filters['vax_name'])
+            || !empty($filters['symptom1']) || !empty($filters['symptom2'])
+            || !empty($filters['symptom3']) || !empty($filters['symptom4'])
+            || !empty($filters['symptom5'])) {
             $query->join('patients', 'symptoms.vaers_id', '=', 'patients.vaers_id');
         }
 
@@ -55,13 +56,6 @@ class SymptomRepository extends EloquentRepository
             $query->orWhere('symptoms.symptom5', 'like', "%{$filters['symptom']}%");
         }
 
-        if (!empty($filters['symptom']) || !empty($filters['vax_name'])
-            || !empty($filters['symptom1']) || !empty($filters['symptom2'])
-            || !empty($filters['symptom3']) || !empty($filters['symptom4']) || !empty($filters['symptom5'])) {
-            if (!is_joined($query, 'patients')) {
-                $query->join('patients', 'patients.vaers_id', '=', 'symptoms.vaers_id');
-            }
-        }
         if (!empty($filters['symptom1'])) {
             $query->where('symptoms.symptom1', 'like', "%{$filters['symptom1']}%");
         }
@@ -112,9 +106,9 @@ class SymptomRepository extends EloquentRepository
             switch ($filters['metric']) {
                 case 'sex':
                     $select = [DB::raw("symptoms.{$symptom_col} as symptom")];
-                    $select[] =  DB::raw((isset($filters['gender']) && $filters['gender'] == 'M')
+                    $select[] = DB::raw((isset($filters['gender']) && $filters['gender'] == 'M')
                         ? "0 as female"
-                        :"sum(if(patients.sex = 'F', 1, 0)) as female");
+                        : "sum(if(patients.sex = 'F', 1, 0)) as female");
 
                     $select[] = DB::raw((isset($filters['gender']) && $filters['gender'] == 'F')
                         ? "0 as male"

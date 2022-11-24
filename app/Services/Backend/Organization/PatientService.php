@@ -227,22 +227,22 @@ class PatientService extends Service
                         ],
                         [
                             'min' => 1,
-                            'max' => 500,
+                            'max' => 25000,
                             'attrs' => [
                                 'fill' => '#7fd34d',
                             ],
                             'label' => 'Between 100  and 300 cases',
                         ],
                         [
-                            'min' => 500,
-                            'max' => 1000,
+                            'min' => 25000,
+                            'max' => 50000,
                             'attrs' => [
                                 'fill' => '#5faa32',
                             ],
                             'label' => 'Between 300 and 500 cases',
                         ],
                         [
-                            'min' => 1000,
+                            'min' => 50000,
                             'attrs' => [
                                 'fill' => '#3f7d1a',
                             ],

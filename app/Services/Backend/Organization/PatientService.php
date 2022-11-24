@@ -231,7 +231,7 @@ class PatientService extends Service
                             'attrs' => [
                                 'fill' => '#b0f890',
                             ],
-                            'label' => 'Between 100  and 300 cases',
+                            'label' => 'Between 1  and 5000 cases',
                         ],
                         [
                             'min' => 5000,
@@ -239,7 +239,7 @@ class PatientService extends Service
                             'attrs' => [
                                 'fill' => '#98f56f',
                             ],
-                            'label' => 'Between 100  and 300 cases',
+                            'label' => 'Between 5000  and 10000 cases',
                         ],
                         [
                             'min' => 10000,
@@ -247,7 +247,7 @@ class PatientService extends Service
                             'attrs' => [
                                 'fill' => '#80f34d',
                             ],
-                            'label' => 'Between 300 and 500 cases',
+                            'label' => 'Between 10000 and 15000 cases',
                         ],
                         [
                             'min' => 15000,
@@ -255,7 +255,7 @@ class PatientService extends Service
                             'attrs' => [
                                 'fill' => '#68f12b',
                             ],
-                            'label' => 'Between 300 and 500 cases',
+                            'label' => 'Between 15000 and 20000 cases',
                         ],
                         [
                             'min' => 20000,
@@ -263,7 +263,7 @@ class PatientService extends Service
                             'attrs' => [
                                 'fill' => '#52eb0e',
                             ],
-                            'label' => 'Between 300 and 500 cases',
+                            'label' => 'Between 20000 and 30000 cases',
                         ],
                         [
                             'min' => 30000,
@@ -271,7 +271,7 @@ class PatientService extends Service
                             'attrs' => [
                                 'fill' => '#46c90c',
                             ],
-                            'label' => 'Between 300 and 500 cases',
+                            'label' => 'Between 30000 and 40000 cases',
                         ],
                         [
                             'min' => 40000,
@@ -279,7 +279,7 @@ class PatientService extends Service
                             'attrs' => [
                                 'fill' => '#3ba70a',
                             ],
-                            'label' => 'Between 300 and 500 cases',
+                            'label' => 'Between 40000 and 50000 cases',
                         ],
                         [
                             'min' => 50000,
@@ -287,7 +287,7 @@ class PatientService extends Service
                             'attrs' => [
                                 'fill' => '#2f8608',
                             ],
-                            'label' => 'Between 300 and 500 cases',
+                            'label' => 'Between 50000 and 60000 cases',
                         ],
                         [
                             'min' => 60000,
@@ -295,14 +295,14 @@ class PatientService extends Service
                             'attrs' => [
                                 'fill' => '#236406',
                             ],
-                            'label' => 'Between 300 and 500 cases',
+                            'label' => 'Between 60000 and 70000 cases',
                         ],
                         [
                             'min' => 70000,
                             'attrs' => [
                                 'fill' => '#174304',
                             ],
-                            'label' => 'More than 500 cases',
+                            'label' => 'More than 70000 cases',
                         ],
                     ],
                 ],

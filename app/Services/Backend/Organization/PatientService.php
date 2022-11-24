@@ -227,24 +227,80 @@ class PatientService extends Service
                         ],
                         [
                             'min' => 1,
-                            'max' => 25000,
+                            'max' => 5000,
                             'attrs' => [
-                                'fill' => '#7fd34d',
+                                'fill' => '#b0f890',
                             ],
                             'label' => 'Between 100  and 300 cases',
                         ],
                         [
-                            'min' => 25000,
+                            'min' => 5000,
+                            'max' => 10000,
+                            'attrs' => [
+                                'fill' => '#98f56f',
+                            ],
+                            'label' => 'Between 100  and 300 cases',
+                        ],
+                        [
+                            'min' => 10000,
+                            'max' => 15000,
+                            'attrs' => [
+                                'fill' => '#80f34d',
+                            ],
+                            'label' => 'Between 300 and 500 cases',
+                        ],
+                        [
+                            'min' => 15000,
+                            'max' => 20000,
+                            'attrs' => [
+                                'fill' => '#68f12b',
+                            ],
+                            'label' => 'Between 300 and 500 cases',
+                        ],
+                        [
+                            'min' => 20000,
+                            'max' => 30000,
+                            'attrs' => [
+                                'fill' => '#52eb0e',
+                            ],
+                            'label' => 'Between 300 and 500 cases',
+                        ],
+                        [
+                            'min' => 30000,
+                            'max' => 40000,
+                            'attrs' => [
+                                'fill' => '#46c90c',
+                            ],
+                            'label' => 'Between 300 and 500 cases',
+                        ],
+                        [
+                            'min' => 40000,
                             'max' => 50000,
                             'attrs' => [
-                                'fill' => '#5faa32',
+                                'fill' => '#3ba70a',
                             ],
                             'label' => 'Between 300 and 500 cases',
                         ],
                         [
                             'min' => 50000,
+                            'max' => 60000,
                             'attrs' => [
-                                'fill' => '#3f7d1a',
+                                'fill' => '#2f8608',
+                            ],
+                            'label' => 'Between 300 and 500 cases',
+                        ],
+                        [
+                            'min' => 60000,
+                            'max' => 70000,
+                            'attrs' => [
+                                'fill' => '#236406',
+                            ],
+                            'label' => 'Between 300 and 500 cases',
+                        ],
+                        [
+                            'min' => 70000,
+                            'attrs' => [
+                                'fill' => '#174304',
                             ],
                             'label' => 'More than 500 cases',
                         ],

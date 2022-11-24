@@ -191,6 +191,10 @@ class PatientService extends Service
 
             $areas[$state_name] = [
                 'value' => $state_count,
+                'href' => route('frontend.patients.index', array_merge($filters, ['state' => $state_name])),
+                'text' => [
+                    'content' =>  $state_name,
+                ],
                 'tooltip' => [
                     'content' => "<span style='font-weight:bold;'>{$state_name}</span><br/>Patients: {$state_count}",
                 ],

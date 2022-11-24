@@ -10,7 +10,9 @@
         </div>
         <style>
             div.map svg text tspan {
-                color: #ff0000!important;
+                fill: royalblue !important;
+                font-size: 20px !important;
+                font-weight: bold !important;
             }
         </style>
         <div class="card-body pt-0">

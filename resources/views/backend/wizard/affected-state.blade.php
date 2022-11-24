@@ -8,6 +8,11 @@
                 </button>
             </div>
         </div>
+        <style>
+            div.map svg text tspan {
+                color: #ff0000!important;
+            }
+        </style>
         <div class="card-body pt-0">
             <div class="d-md-flex">
                 <div class="p-1 flex-fill" style="overflow: hidden">

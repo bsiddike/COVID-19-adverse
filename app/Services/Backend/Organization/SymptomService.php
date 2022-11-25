@@ -217,12 +217,13 @@ class SymptomService extends Service
                     ],
                 ],
                 'plugins' => [
-                    'datalabels' => [
-                        'color' => 'white',
-                        'font' => [
-                            'weight' => 'bold'
-                        ]
-                    ]
+                    'labels' => [
+                        'render' => 'value',
+                        'position' => 'border',
+                        'fontColor' => '#fff',
+                        'fontStyle'=> 'bold',
+                        'precision' => 2,
+                    ],
                 ],
             ],
         ];
@@ -275,6 +276,10 @@ class SymptomService extends Service
                 'plugins' => [
                     'labels' => [
                         'render' => 'percentage',
+                        'arc' => true,
+                        'position' => 'border',
+                        'fontColor' => '#fff',
+                        'fontStyle'=> 'bold',
                         'precision' => 2,
                     ],
                 ],

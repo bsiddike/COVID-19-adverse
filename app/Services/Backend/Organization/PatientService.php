@@ -63,7 +63,16 @@ class PatientService extends Service
                 'legend' => [
                     'position' => 'left',
                 ],
-                'plugins' => [],
+                'plugins' => [
+                    'labels' => [
+                        'render' => 'percentage',
+                        'arc' => true,
+                        'position' => 'border',
+                        'fontColor' => '#fff',
+                        'fontStyle'=> 'bold',
+                        'precision' => 2,
+                    ],
+                ],
             ],
         ];
     }
@@ -98,6 +107,14 @@ class PatientService extends Service
                     'position' => 'left',
                 ],
                 'plugins' => [
+                    'labels' => [
+                        'render' => 'percentage',
+                        'arc' => true,
+                        'position' => 'border',
+                        'fontColor' => '#fff',
+                        'fontStyle'=> 'bold',
+                        'precision' => 2,
+                    ],
                 ],
             ],
         ];

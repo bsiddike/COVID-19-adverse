@@ -16,10 +16,6 @@
     </div>
 </div>
 
-@push('plugin-script')
-    <script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
-@endpush
-
 @push('page-script')
     <script>
         $(document).ready(function () {

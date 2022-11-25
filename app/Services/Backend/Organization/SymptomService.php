@@ -258,7 +258,7 @@ class SymptomService extends Service
                 'datasets' => [
                     [
                         'data' => [$totalMale, $totalFemale],
-                        'backgroundColor' => ['#f56954', '#00a65a'],
+                        'backgroundColor' => ['#00a65a', '#f56954',],
                     ],
                 ],
             ],

@@ -16,11 +16,15 @@
     </div>
 </div>
 
+@push('plugin-script')
+    <script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
+@endpush
+
 @push('page-script')
     <script>
         $(document).ready(function () {
             $.get('{{ route('backend.symptom.charts', 'symptom-piechart-gender') }}',
-                {!! json_encode(request()->all()) !!},
+                    {!! json_encode(request()->all()) !!},
                 function (data) {
                     var doughnut = new Chart($('#symptomGender')
                         .get(0)

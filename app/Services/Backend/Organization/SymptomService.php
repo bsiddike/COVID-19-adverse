@@ -268,7 +268,12 @@ class SymptomService extends Service
                 'legend' => [
                     'position' => 'top',
                 ],
-                'plugins' => [],
+                'plugins' => [
+                    'labels' => [
+                        'render' => 'percentage',
+                        'precision' => 2,
+                    ],
+                ],
             ],
         ];
     }
@@ -283,7 +288,8 @@ class SymptomService extends Service
      *
      * @throws Throwable
      */
-    public function updateSymptom(array $inputs, $id): array
+    public
+    function updateSymptom(array $inputs, $id): array
     {
         $newSymptomInfo = $this->formatSymptomInfo($inputs);
         DB::beginTransaction();
@@ -330,7 +336,8 @@ class SymptomService extends Service
      *
      * @throws Throwable
      */
-    public function destroySymptom($id): array
+    public
+    function destroySymptom($id): array
     {
         DB::beginTransaction();
         try {
@@ -362,7 +369,8 @@ class SymptomService extends Service
      *
      * @throws Throwable
      */
-    public function restoreSymptom($id): array
+    public
+    function restoreSymptom($id): array
     {
         DB::beginTransaction();
         try {
@@ -394,7 +402,8 @@ class SymptomService extends Service
      *
      * @throws Exception
      */
-    public function exportSymptom(array $filters = [])
+    public
+    function exportSymptom(array $filters = [])
     {
         $filterType = $filters['filter'] ?? 'symptom';
 

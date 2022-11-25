@@ -228,6 +228,47 @@ class SymptomService extends Service
         ];
     }
 
+
+    public function getSymptomGenderPieMetrics(array $filters, string $column = 'symptom1')
+    {
+        $filters['metric'] = 'sex';
+        $filters['metric_group_column'] = $column;
+
+        $data = $this->getAllSymptoms($filters);
+
+        dd($data);
+
+        $values = array_values($data[0]);
+
+        $total = array_sum($values);
+
+        foreach ($values as $index => $value) {
+            $values[$index] = round((($value * 100) / $total), 2);
+        }
+
+        return [
+            'type' => 'doughnut',
+            'data' => [
+                'labels' => array_keys($data[0]),
+                'datasets' => [
+                    [
+                        'data' => $values,
+                        'backgroundColor' => ['#f56954', '#00a65a', '#f39c12'],
+                    ],
+                ],
+            ],
+            'options' => [
+                'maintainAspectRatio' => false,
+                'responsive' => true,
+                'legend' => [
+                    'position' => 'top',
+                ],
+                'plugins' => [],
+            ],
+        ];
+    }
+
+
     /**
      * Update Symptom Model
      *

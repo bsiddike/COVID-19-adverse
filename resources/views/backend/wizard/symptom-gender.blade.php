@@ -1,4 +1,4 @@
-<div class="col-lg-8">
+<div class="col-lg-4 col-md-6 col-sm-12">
     <div class="card">
         <div class="card-header border-bottom-0">
             <h3 class="card-title">Gender Wise Symptoms</h3>
@@ -9,26 +9,23 @@
             </div>
         </div>
         <div class="card-body">
-            <canvas id="genderOutcomesVaccine"
-                    style="min-height: 458px; height: 458px; max-height: 458px; max-width: 100%;">
+            <canvas id="symptomGender"
+                    style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;">
             </canvas>
         </div>
     </div>
 </div>
 
 @push('page-script')
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.1.0/dist/chartjs-plugin-datalabels.min.js"></script>
-
     <script>
         $(document).ready(function () {
-            $.get('{{ route('backend.symptom.charts', 'symptom-gender') }}',
-                    {!!  json_encode(request()->all()) !!},
+            $.get('{{ route('backend.symptom.charts', 'symptom-piechart-gender') }}',
+                {!! json_encode(request()->all()) !!},
                 function (data) {
-                    var doughnut = new Chart($('#genderOutcomesVaccine')
+                    var doughnut = new Chart($('#symptomGender')
                         .get(0)
                         .getContext('2d'), data);
                 });
         });
     </script>
 @endpush
-

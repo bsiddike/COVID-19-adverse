@@ -81,6 +81,10 @@ class SymptomController extends Controller
             case 'symptom-gender':
                 $result = $this->symptomService->getSymptomGenderBarMetrics($filters, 'symptom1');
                 break;
+                case 'symptom-piechart-gender':
+                $result = $this->symptomService->getSymptomGenderPieMetrics($filters, 'symptom1');
+                break;
+
             case 'asset-age':
                 $result = $this->patientService->getAgeMetrics($filters);
                 break;

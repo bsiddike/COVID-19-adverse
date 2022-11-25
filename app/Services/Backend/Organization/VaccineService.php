@@ -52,9 +52,9 @@ class VaccineService extends Service
                 'maintainAspectRatio' => false,
                 'datasetFill' => false,
                 'responsive' => true,
-                'legend' => [
+/*                'legend' => [
                     'display' => true
-                ],
+                ],*/
                 'scales' => [
                     'x' => [
                         'stacked' => true,

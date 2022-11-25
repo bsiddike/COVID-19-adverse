@@ -76,6 +76,10 @@ class VaccineRepository extends EloquentRepository
                                                 ->where('patients.sex', 'like', "%{$filters['gender']}%");
                                         }*/
                     break;
+
+                case 'total_vaccines' :
+                    $query->selectRaw("COUNT(vaccines.id) as aggregate");
+                    break;
             }
         }
         return $query;

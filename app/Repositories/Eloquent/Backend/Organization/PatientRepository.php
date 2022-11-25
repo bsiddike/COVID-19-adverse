@@ -148,14 +148,20 @@ class PatientRepository extends EloquentRepository
                         "sum(if(patients.recive_date between '{$filters['today_year']}-12-01' and LAST_DAY('{$filters['today_year']}-12-01'), 1, 0)) as 'December'");
 
                     break;
+
                 case 'state':
                     $query
                         ->selectRaw('count(patients.id) as aggregate, patients.state')
                         ->where(DB::raw('LENGTH(patients.state)'), '>', 0)
                         ->orderBy('patients.state')
                         ->groupBy('patients.state');
+
+                case 'total_patients' :
+                    $query->selectRaw("COUNT(patients.id) as aggregate");
+                    break;
             }
         }
+
 
         return $query;
     }

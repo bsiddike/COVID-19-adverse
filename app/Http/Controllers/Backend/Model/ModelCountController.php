@@ -44,14 +44,17 @@ class ModelCountController extends Controller
      */
     public function __invoke(string $model, Request $request)
     {
-        $total = 0;
+        $filters = $request->all();
 
         if ($model == 'patient') {
-            $total = $this->patientService->getAllPatients($request->all())->count();
+            $filters['metric'] = 'total_patients';
+            $total = $this->patientService->getAllPatients($filters)->first()->aggregate;
         } elseif ($model == 'symptom') {
-            $total = $this->symptomService->getAllSymptoms($request->all())->count();
+            $filters['metric'] = 'total_symptoms';
+            $total = $this->symptomService->getAllSymptoms($filters)->first()->aggregate;
         } elseif ($model == 'vaccine') {
-            $total = $this->vaccineService->getAllVaccines($request->all())->count();
+            $filters['metric'] = 'total_vaccines';
+            $total = $this->vaccineService->getAllVaccines($filters)->first()->aggregate;
         } else {
             $total = 0;
         }

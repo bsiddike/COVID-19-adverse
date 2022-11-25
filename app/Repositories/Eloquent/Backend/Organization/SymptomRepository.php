@@ -148,6 +148,10 @@ class SymptomRepository extends EloquentRepository
                         "sum(if(patients.recive_date between '{$filters['today_year']}-11-01' and LAST_DAY('{$filters['today_year']}-11-01'), 1, 0)) as 'November', " .
                         "sum(if(patients.recive_date between '{$filters['today_year']}-12-01' and LAST_DAY('{$filters['today_year']}-12-01'), 1, 0)) as 'December'");
                     break;
+
+                case 'total_symptoms' :
+                    $query->selectRaw("COUNT(symptoms.id) as aggregate");
+                    break;
             }
         }
 

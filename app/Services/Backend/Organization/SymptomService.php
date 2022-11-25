@@ -246,9 +246,13 @@ class SymptomService extends Service
             $totalFemale += $datum['female'];
         }
 
-        $totalMale = round((($totalMale * 100) / $total), 2);
+        $totalMale = ($totalMale != 0)
+            ? round((($totalMale * 100) / $total), 2)
+            : 0;
 
-        $totalFemale = round((($totalFemale * 100) / $total), 2);
+        $totalFemale = ($totalFemale != 0)
+            ? round((($totalFemale * 100) / $total), 2)
+            : 0;
 
 
         return [

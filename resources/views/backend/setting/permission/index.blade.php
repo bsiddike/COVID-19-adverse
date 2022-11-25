@@ -1,3 +1,4 @@
+@php use App\Supports\CHTML; @endphp
 @extends('layouts.app')
 
 @section('title', 'Permissions')
@@ -45,7 +46,7 @@
                             ['placeholder' => 'Search Permission Display Name, Code, Guard, Status, etc.',
                             'class' => 'form-control', 'id' => 'search', 'data-target-table' => 'permission-table']) !!}
                             <div class="table-responsive">
-                                <table class="table table-hover mb-0" id="permission-table">
+                                <table class="table table-hover table-bordered table-striped mb-0" id="permission-table">
                                     <thead class="thead-light">
                                     <tr>
                                         <th class="align-middle">
@@ -94,7 +95,7 @@
                             </div>
                         </div>
                         <div class="card-footer bg-transparent pb-0">
-                            {!! \App\Supports\CHTML::pagination($permissions) !!}
+                            {!! CHTML::pagination($permissions) !!}
                         </div>
                     @else
                         <div class="card-body min-vh-100">
@@ -106,7 +107,7 @@
         </div>
     </div>
     <!-- /.container-fluid -->
-    {!! \App\Supports\CHTML::confirmModal('Permission', ['export', 'delete', 'restore']) !!}
+    {!! CHTML::confirmModal('Permission', ['export', 'delete', 'restore']) !!}
 @endsection
 
 

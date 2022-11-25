@@ -23,7 +23,7 @@ Breadcrumbs::for('frontend.organization.applicants.create', function ($trail) {
 
 Breadcrumbs::for('backend', function (BreadcrumbTrail $trail) {
     $trail->parent('home');
-    $trail->push(__('menu-sidebar.Backend'), route('backend'));
+    $trail->push('Admin', route('backend'));
 });
 
 Breadcrumbs::for('backend.dashboard', function (BreadcrumbTrail $trail) {
@@ -176,6 +176,24 @@ Breadcrumbs::for('backend.organization.patients.index', function (BreadcrumbTrai
     $trail->push('Patients', route('backend.organization.patients.index'));
 });
 
+Breadcrumbs::for('backend.organization.patients.hospitalized', function (BreadcrumbTrail $trail) {
+    $trail->parent('backend.organization.patients.index');
+
+    $trail->push('Hospitalized', route('backend.organization.patients.hospitalized'));
+});
+
+Breadcrumbs::for('backend.organization.patients.recovered', function (BreadcrumbTrail $trail) {
+    $trail->parent('backend.organization.patients.index');
+
+    $trail->push('Re-Covid19', route('backend.organization.patients.recovered'));
+});
+
+Breadcrumbs::for('backend.organization.patients.died', function (BreadcrumbTrail $trail) {
+    $trail->parent('backend.organization.patients.index');
+
+    $trail->push('Died', route('backend.organization.patients.died'));
+});
+
 Breadcrumbs::for('backend.organization.patients.create', function (BreadcrumbTrail $trail) {
     $trail->parent('backend.organization.patients.index');
 
@@ -187,7 +205,7 @@ Breadcrumbs::for('backend.organization.patients.show', function (BreadcrumbTrail
 
     $patient = ($patient instanceof Patient) ? $patient : $patient[0];
 
-    $trail->push($patient->name, route('backend.organization.patients.show', $patient->id));
+    $trail->push($patient->vaers_id, route('backend.organization.patients.show', $patient->id));
 });
 
 Breadcrumbs::for('backend.organization.patients.edit', function (BreadcrumbTrail $trail, Patient $patient) {
@@ -250,4 +268,45 @@ Breadcrumbs::for('backend.organization.vaccines.edit', function (BreadcrumbTrail
     $trail->parent('backend.organization.vaccines.show', [$vaccine]);
 
     $trail->push(__('common.Edit'), route('backend.organization.vaccines.edit', $vaccine->id));
+});
+
+/****************************************** Enumerator ******************************************/
+Breadcrumbs::for('frontend.patients.index', function (BreadcrumbTrail $trail) {
+    $trail->parent('home');
+    $trail->push('Patients', route('frontend.patients.index'));
+});
+
+Breadcrumbs::for('frontend.patients.show', function (BreadcrumbTrail $trail, Patient $patient) {
+    $trail->parent('frontend.patients.index');
+    $trail->push('Patient Details', route('frontend.patients.show', $patient->id));
+});
+
+Breadcrumbs::for('frontend.patients.apply', function (BreadcrumbTrail $trail) {
+    $trail->parent('frontend.patients.index');
+    $trail->push('Patient Support', route('frontend.patients.apply'));
+});
+
+Breadcrumbs::for('frontend.patients.register', function (BreadcrumbTrail $trail) {
+    $trail->parent('frontend.patients.index');
+    $trail->push('Patient Support', route('frontend.patients.register'));
+});
+
+Breadcrumbs::for('frontend.symptoms.index', function (BreadcrumbTrail $trail) {
+    $trail->parent('home');
+    $trail->push('Symptoms & Outcomes', route('frontend.symptoms.index'));
+});
+
+Breadcrumbs::for('frontend.symptoms.show', function (BreadcrumbTrail $trail, Symptom $symptom) {
+    $trail->parent('frontend.symptoms.index');
+    $trail->push('Symptom Details', route('frontend.symptoms.show'));
+});
+
+Breadcrumbs::for('frontend.vaccines.index', function (BreadcrumbTrail $trail) {
+    $trail->parent('home');
+    $trail->push('Vaccines', route('frontend.vaccines.index'));
+});
+
+Breadcrumbs::for('frontend.vaccines.show', function (BreadcrumbTrail $trail, Vaccine $vaccine) {
+    $trail->parent('frontend.vaccines.index');
+    $trail->push('Vaccine Details', route('frontend.vaccines.show'));
 });

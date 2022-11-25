@@ -26,7 +26,6 @@ class CreateSymptomsTable extends Migration
             $table->float('symptomversion4')->nullable()->default(null);
             $table->string('symptom5')->nullable()->default(null);
             $table->float('symptomversion5')->nullable()->default(null);
-            $table->timestamps();
         });
     }
 

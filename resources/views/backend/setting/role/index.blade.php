@@ -1,3 +1,4 @@
+@php use App\Supports\CHTML; @endphp
 @extends('layouts.app')
 
 @section('title', 'Roles')
@@ -46,7 +47,7 @@
         ['placeholder' => 'Search Role Name, Code, Guard, Status, etc.',
         'class' => 'form-control', 'id' => 'search', 'data-target-table' => 'role-table']) !!}
                             <div class="table-responsive">
-                                <table class="table table-hover mb-0" id="role-table">
+                                <table class="table table-hover table-bordered table-striped mb-0" id="role-table">
                                     <thead class="thead-light">
                                     <tr>
                                         <th class="align-middle">
@@ -98,7 +99,7 @@
                             </div>
                         </div>
                         <div class="card-footer bg-transparent pb-0">
-                            {!! \App\Supports\CHTML::pagination($roles) !!}
+                            {!! CHTML::pagination($roles) !!}
                         </div>
                     @else
                         <div class="card-body min-vh-100">
@@ -110,7 +111,7 @@
         </div>
     </div>
     <!-- /.container-fluid -->
-    {!! \App\Supports\CHTML::confirmModal('Role', ['export','delete', 'restore']) !!}
+    {!! CHTML::confirmModal('Role', ['export','delete', 'restore']) !!}
 @endsection
 
 

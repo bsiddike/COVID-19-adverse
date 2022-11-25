@@ -29,11 +29,14 @@
 
 @push('page-script')
     <script>
-
-        $(function () {
-            var lineChart = new Chart($('#lineChart').get(0).getContext('2d'),
-                    {!! json_encode($affectedMonth) !!}
-            );
+        $(document).ready(function () {
+            $.get('{{ route('backend.patient.charts', 'asset-month') }}',
+                    {!! json_encode(request()->all()) !!},
+                function (data) {
+                    var doughnut = new Chart($('#lineChart')
+                        .get(0)
+                        .getContext('2d'), data);
+                });
         });
     </script>
 @endpush

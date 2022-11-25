@@ -1,3 +1,4 @@
+@php use App\Supports\Constant; @endphp
 @push('plugin-style')
     <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }}" type="text/css">
 @endpush
@@ -8,33 +9,33 @@
 
 <div class="row">
     <div class="col-md-6">
-        {!! Form::nSelect('locale', 'Locale', \App\Supports\Constant::LOCALES,
-        old('locale', ($user->locale ?? \App\Supports\Constant::LOCALE)), true) !!}
+        {!! Form::nSelect('locale', 'Locale', Constant::LOCALES,
+        old('locale', ($user->locale ?? Constant::LOCALE)), true) !!}
     </div>
     <div class="col-md-6">
         @switch(config('auth.credential_field'))
-            @case(\App\Supports\Constant::LOGIN_USERNAME)
-            {!! Form::nText('username', 'Username', old('username', $user->username ?? null),
-                (config('auth.credential_field') == \App\Supports\Constant::LOGIN_USERNAME)) !!}
-            @break
+            @case(Constant::LOGIN_USERNAME)
+                {!! Form::nText('username', 'Username', old('username', $user->username ?? null),
+                    (config('auth.credential_field') == Constant::LOGIN_USERNAME)) !!}
+                @break
 
 
-            @case(\App\Supports\Constant::LOGIN_MOBILE)
-            {!! Form::nTel('mobile', __('common.Mobile'), old('mobile', $user->mobile ?? null),
-            (config('auth.credential_field') == \App\Supports\Constant::LOGIN_MOBILE
-            || (config('auth.credential_field') == \App\Supports\Constant::LOGIN_OTP
-                && config('auth.credential_otp_field') == \App\Supports\Constant::OTP_MOBILE))) !!}
-            @break
+            @case(Constant::LOGIN_MOBILE)
+                {!! Form::nTel('mobile', __('common.Mobile'), old('mobile', $user->mobile ?? null),
+                (config('auth.credential_field') == Constant::LOGIN_MOBILE
+                || (config('auth.credential_field') == Constant::LOGIN_OTP
+                    && config('auth.credential_otp_field') == Constant::OTP_MOBILE))) !!}
+                @break
 
             @default
-            {!! Form::nEmail('email', 'Email Address', old('email', $user->email ?? null),
-            (config('auth.credential_field') == \App\Supports\Constant::LOGIN_EMAIL
-            || (config('auth.credential_field') == \App\Supports\Constant::LOGIN_OTP
-                && config('auth.credential_otp_field') == \App\Supports\Constant::OTP_EMAIL))) !!}
-            @break
+                {!! Form::nEmail('email', 'Email Address', old('email', $user->email ?? null),
+                (config('auth.credential_field') == Constant::LOGIN_EMAIL
+                || (config('auth.credential_field') == Constant::LOGIN_OTP
+                    && config('auth.credential_otp_field') == Constant::OTP_EMAIL))) !!}
+                @break
         @endswitch
     </div>
-    @if(config('auth.credential_field') != \App\Supports\Constant::LOGIN_OTP)
+    @if(config('auth.credential_field') != Constant::LOGIN_OTP)
         <div class="col-md-6">
             {!! Form::nPassword('password', 'Password', empty($user->password), ['placeholder' => 'Enter Password']) !!}
         </div>
@@ -44,13 +45,13 @@
     @endif
     <div class="col-md-6">
         {!! Form::nSelectMulti('role_id', 'Role', $roles,
-        old('role_id.*', ($user_roles ?? [\App\Supports\Constant::GUEST_ROLE_ID])), true,
+        old('role_id.*', ($user_roles ?? [Constant::GUEST_ROLE_ID])), true,
         ['class' => 'form-control custom-select select2', 'disabled' => ($user->id == auth()->user()->id)]) !!}
 
     </div>
     <div class="col-md-6">
-        {!! Form::nSelect('enabled', __('common.Enabled'), \App\Supports\Constant::ENABLED_OPTIONS,
-        old('enabled', ($user->enabled ?? \App\Supports\Constant::ENABLED_OPTION))) !!}
+        {!! Form::nSelect('enabled', __('common.Enabled'), Constant::ENABLED_OPTIONS,
+        old('enabled', ($user->enabled ?? Constant::ENABLED_OPTION))) !!}
     </div>
 </div>
 <div class="row mt-3">

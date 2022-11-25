@@ -23,7 +23,6 @@ class CreateVaccinesTable extends Migration
             $table->string('vax_route')->nullable()->default(null);
             $table->string('vax_site')->nullable()->default(null);
             $table->string('vax_name')->nullable()->default(null);
-            $table->timestamps();
         });
     }
 

@@ -35,6 +35,80 @@ class VaccineService extends Service
         $this->vaccineRepository->itemsPerPage = 10;
     }
 
+    public function getTopVaccinesOutcomesMetrics(array $filters = [])
+    {
+        $filters['metric'] = 'top_10_symptoms';
+        $formatData = [];
+
+        $this->formatDataSymptomWise($formatData, 'symptom1', $filters);
+
+        return [
+            'type' => 'bar',
+            'data' => [
+                'labels' => array_keys($formatData),
+                'datasets' => array_values($formatData),
+            ],
+            'options' => [
+                'maintainAspectRatio' => false,
+                'datasetFill' => false,
+                'responsive' => true,
+                'legend' => [
+                    'display' => true
+                ],
+                'scales' => [
+                    'x' => [
+                        'stacked' => true,
+                        'beginAtZero' => true,
+                    ],
+                    'y' => [
+                        'stacked' => true,
+                        'beginAtZero' => true,
+                    ],
+                ],
+            ],
+        ];
+    }
+
+    /**
+     * @param  array  $formatData
+     * @param  string  $column
+     * @param  array  $filters
+     * @return void
+     *
+     * @throws Exception
+     */
+    private function formatDataSymptomWise(array &$formatData, string $column = 'symptom1', array $filters = [])
+    {
+        $filters['symptomVariation'] = $column;
+
+        $data = $this->getAllVaccines($filters)->toArray();
+
+        foreach ($data as $index => $datum) {
+            if (! isset($formatData[$datum['vax_name']])) {
+                $formatData[$datum['vax_name']] = [
+                    'data' => [],
+                    'label' => 'Unknown',
+                    'backgroundColor' => [],
+                ];
+            }
+            $formatData[$datum['vax_name']]['data'][] = $datum['aggregate'];
+            $formatData[$datum['vax_name']]['label'] = $datum['symptom1'];
+            //$formatData[$datum['vax_name']]['stack'] = "Stack {$index}";
+            $formatData[$datum['vax_name']]['backgroundColor'][] = random_color();
+            /*if(!empty($datum['symptom1'])){
+                $formatData[$datum['vax_name']][0]['data'][] = $datum['aggregate'];
+                $formatData[$datum['vax_name']][0]['label'] = $datum['symptom1'];
+                //$formatData[$datum['vax_name']][0]['stack'] = "Stack symptom1";
+                $formatData[$datum['vax_name']][0]['backgroundColor'][] = random_color();
+            }elseif (!empty($datum['symptom2'])){
+                $formatData[$datum['vax_name']][1]['data'][] = $datum['aggregate'];
+                $formatData[$datum['vax_name']][1]['label'] = $datum['symptom2'];
+                //$formatData[$datum['vax_name']][1]['stack'] = "Stack symptom2";
+                $formatData[$datum['vax_name']][1]['backgroundColor'][] = random_color();
+            }*/
+        }
+    }
+
     /**
      * Get All Vaccine models as collection
      *
@@ -102,7 +176,7 @@ class VaccineService extends Service
                 DB::commit();
 
                 return ['status' => true, 'message' => __('New Vaccine Created'),
-                    'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!', ];
+                    'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!',];
             } else {
                 Log::error('Vaccine Create Rollback', [$newVaccineInfo]);
                 DB::rollBack();
@@ -122,7 +196,7 @@ class VaccineService extends Service
     }
 
     /**
-     * Return formatted applicant profile format array
+     * Return formatted patient profile format array
      *
      * @param  array  $inputs
      * @return array

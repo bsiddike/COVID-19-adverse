@@ -1,4 +1,5 @@
-<!-- Modal -->
+@php use App\Supports\Constant; @endphp
+        <!-- Modal -->
 <div class="modal fade" id="exportConfirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -16,8 +17,8 @@
                              'enumerator', true) !!}
                     @endif
 
-                    {!! Form::nSelect('format', 'Export Format', \App\Supports\Constant::EXPORT_OPTIONS,
-                         \App\Supports\Constant::EXPORT_DEFAULT, true) !!}
+                    {!! Form::nSelect('format', 'Export Format', Constant::EXPORT_OPTIONS,
+                         Constant::EXPORT_DEFAULT, true) !!}
 
                     @hasrole(\App\Supports\Constant::SUPER_ADMIN_ROLE)
                     {!! Form::nRadio('with_trashed', 'Include Trashed',

@@ -59,7 +59,25 @@ class PatientController extends Controller
 
         return view('backend.organization.patient.index', [
             'patients' => $patients,
+            'title' => $this->filterPage($filters),
         ]);
+    }
+
+    public function filterPage(array $filters = [])
+    {
+        if (! empty($filters['hospitalized'])) {
+            return 'Hospitalized';
+        }
+
+        if (! empty($filters['recovered'])) {
+            return 'Re-Covid19';
+        }
+
+        if (! empty($filters['died'])) {
+            return 'Died';
+        } else {
+            return 'Patients';
+        }
     }
 
     /**

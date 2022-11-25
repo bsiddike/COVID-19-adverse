@@ -1,3 +1,4 @@
+@php use App\Supports\CHTML; @endphp
 @extends('layouts.app')
 
 @section('title', __('menu-sidebar.Users'))
@@ -43,7 +44,7 @@
         ['placeholder' => 'Search Role Name, Code, Guard, Status, etc.',
         'class' => 'form-control', 'id' => 'search', 'data-target-table' => 'user-table']) !!}
                             <div class="table-responsive">
-                                <table class="table table-hover mb-0" id="user-table">
+                                <table class="table table-hover table-bordered table-striped mb-0" id="user-table">
                                     <thead class="thead-light">
                                     <tr>
                                         <th class="align-middle">
@@ -69,7 +70,7 @@
                                             </td>
                                             <td class="text-center">{{ $user->mobile ?? '-' }}</td>
                                             <td class="text-center">
-                                                {!! \App\Supports\CHTML::displayTags($user->roles->pluck('name')->toArray(), 'fas fa-user-secret') !!}
+                                                {!! CHTML::displayTags($user->roles->pluck('name')->toArray(), 'fas fa-user-secret') !!}
                                             </td>
                                             <td class="text-left">{{ $user->email ?? '-' }}</td>
                                             <td class="text-center exclude-search">
@@ -90,7 +91,7 @@
                             </div>
                         </div>
                         <div class="card-footer bg-transparent pb-0">
-                            {!! \App\Supports\CHTML::pagination($users) !!}
+                            {!! CHTML::pagination($users) !!}
                         </div>
                     @else
                         <div class="card-body min-vh-100">
@@ -102,7 +103,7 @@
         </div>
     </div>
     <!-- /.container-fluid -->
-    {!! \App\Supports\CHTML::confirmModal('User', ['export', 'delete', 'restore']) !!}
+    {!! CHTML::confirmModal('User', ['export', 'delete', 'restore']) !!}
 @endsection
 
 

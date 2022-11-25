@@ -3,8 +3,10 @@
 /public/storage
 /storage/*.key
 /vendor
+/_vendor
 .env
 .env.backup
+.editorconfig
 .phpunit.result.cache
 docker-compose.override.yml
 Homestead.json
@@ -21,9 +23,11 @@ some.js
 some.sql
 some.json
 some.html
-.htaccess
 vendor.zip
 composer.phar
 error_log
 composer.lock
 /build/*
+public/error.log
+public/access.log
+covid19-project.pem

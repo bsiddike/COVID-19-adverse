@@ -1,3 +1,4 @@
+@php use App\Supports\CHTML; @endphp
 @extends('layouts.app')
 
 @section('title', $user->name ?? '')
@@ -85,7 +86,7 @@
             </div>
         </div>
     </div>
-    {!! \App\Supports\CHTML::confirmModal('User', ['export', 'delete', 'restore']) !!}
+    {!! CHTML::confirmModal('User', ['export', 'delete', 'restore']) !!}
 @endsection
 
 @push('plugin-script')

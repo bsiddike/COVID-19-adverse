@@ -1,4 +1,4 @@
-<div class="col-md-6 col-sm-12">
+<div class="col-lg-4 col-md-6 col-sm-12">
     <div class="card">
         <div class="card-header border-bottom-0">
             <h3 class="card-title">Age(s) Wise Affected</h3>
@@ -19,9 +19,13 @@
 @push('page-script')
     <script>
         $(document).ready(function () {
-            var doughnut = new Chart($('#affectedAgeWise').get(0).getContext('2d'),
-                    {!!  json_encode($affectedAge) !!}
-            );
+            $.get('{{ route('backend.patient.charts', 'asset-age') }}',
+                {!! json_encode(request()->all()) !!},
+                function (data) {
+                    var doughnut = new Chart($('#affectedAgeWise')
+                        .get(0)
+                        .getContext('2d'), data);
+                });
         });
     </script>
 @endpush

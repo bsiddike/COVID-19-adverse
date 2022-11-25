@@ -116,11 +116,11 @@ class Utility
     {
         $auditCollection = [];
 
-        $audits = $model->audits()->with('user')->latest()->get();
+        /*$audits = $model->audits()->with('user')->latest()->get();
 
         foreach ($audits as $audit) {
             $auditCollection[Carbon::parse($audit->created_at)->format('Y-m-d')][] = $audit;
-        }
+        }*/
 
         return $auditCollection;
     }

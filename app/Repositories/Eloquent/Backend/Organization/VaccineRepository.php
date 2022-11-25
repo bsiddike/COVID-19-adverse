@@ -29,14 +29,12 @@ class VaccineRepository extends EloquentRepository
     /**
      * Search Function
      *
-     * @param  array  $filters
-     * @param  bool  $is_sortable
+     * @param array $filters
+     * @param bool $is_sortable
      * @return Builder
      */
     private function filterData(array $filters = [], bool $is_sortable = false): Builder
     {
-        $filters['metric'] = 'top_10_symptoms';
-
         foreach ($filters as $key => $value) {
             if (is_null($filters[$key])) {
                 unset($filters[$key]);
@@ -45,26 +43,16 @@ class VaccineRepository extends EloquentRepository
 
         $query = $this->getQueryBuilder();
 
-        if (! empty($filters['search'])) {
-            $query->where('name', 'like', "%{$filters['search']}%")
-                ->orWhere('enabled', 'like', "%{$filters['search']}%")
-                ->orWhere('nid', 'like', "%{$filters['search']}%")
-                ->orWhere('mobile_1', 'like', "%{$filters['search']}%")
-                ->orWhere('mobile_2', 'like', "%{$filters['search']}%")
-                ->orWhere('email', 'like', "%{$filters['search']}%")
-                ->orWhere('present_address', 'like', "%{$filters['search']}%")
-                ->orWhere('permanent_address', 'like', "%{$filters['search']}%");
-        }
 
-        if (! empty($filters['enabled'])) {
+        if (!empty($filters['enabled'])) {
             $query->where('enabled', '=', $filters['enabled']);
         }
 
-        if (! empty($filters['nid'])) {
+        if (!empty($filters['nid'])) {
             $query->where('nid', '=', $filters['nid']);
         }
 
-        if (! empty($filters['sort']) && ! empty($filters['direction'])) {
+        if (!empty($filters['sort']) && !empty($filters['direction'])) {
             $query->orderBy($filters['sort'], $filters['direction']);
         }
 
@@ -72,30 +60,37 @@ class VaccineRepository extends EloquentRepository
             $query->sortable();
         }
 
-        if (! empty($filters['metric'])) {
+        if (!empty($filters['metric'])) {
+            $symptomVariation = $filters['symptomVariation'] ?? 'symptom1';
             switch ($filters['metric']) {
-                case 'top_10_symptoms' :
-                    $query->selectRaw('`vax_name`, `symptoms`.`symptom1`, count(`symptoms`.`symptom1`) as `aggregate`')
-                        ->join('symptoms', 'vaccines.vaers_id', '=', 'symptoms.vaers_id')
-                        ->where('vax_type', '=', 'COVID19')
-                        ->groupBy('vax_name', 'symptom1')
-                        ->orderBy('aggregate', 'desc');
+                case 'top_10_symptoms':
+                    if (!is_joined($query, 'symptoms')) {
+                        $query->join('symptoms', 'symptoms.vaers_id', '=', 'vaccines.vaers_id');
+                    }
+                    $query->selectRaw("vax_name, symptoms.{$symptomVariation}, count(symptoms.{$symptomVariation}) as aggregate")
+                        ->groupBy('vax_name', $filters['symptomVariation'])
+                        ->orderBy('aggregate', 'desc')
+                        ->limit(20);
+                    /*                    if (! empty($filters['gender'])) {
+                                            $query->join('patients', 'patients.vaers_id', '=', 'symptoms.vaers_id')
+                                                ->where('patients.sex', 'like', "%{$filters['gender']}%");
+                                        }*/
                     break;
 
-                default:
-                    $query;
+                case 'total_vaccines' :
+                    $query->selectRaw("COUNT(vaccines.id) as aggregate");
+                    break;
             }
         }
-
         return $query;
     }
 
     /**
      * Pagination Generator
      *
-     * @param  array  $filters
-     * @param  array  $eagerRelations
-     * @param  bool  $is_sortable
+     * @param array $filters
+     * @param array $eagerRelations
+     * @param bool $is_sortable
      * @return LengthAwarePaginator
      *
      * @throws Exception
@@ -113,9 +108,9 @@ class VaccineRepository extends EloquentRepository
     }
 
     /**
-     * @param  array  $filters
-     * @param  array  $eagerRelations
-     * @param  bool  $is_sortable
+     * @param array $filters
+     * @param array $eagerRelations
+     * @param bool $is_sortable
      * @return Builder[]|Collection
      *
      * @throws Exception
@@ -133,9 +128,9 @@ class VaccineRepository extends EloquentRepository
     }
 
     /**
-     * @param  array  $filters
-     * @param  array  $eagerRelations
-     * @param  bool  $is_sortable
+     * @param array $filters
+     * @param array $eagerRelations
+     * @param bool $is_sortable
      * @return Generator
      *
      * @throws Exception

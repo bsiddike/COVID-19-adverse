@@ -22,7 +22,7 @@
 
 @endpush
 
-{{\Route::getCurrentRoute()->getName()}}
+{{Route::getCurrentRoute()->getName()}}
 
 {{--@section('breadcrumbs', Breadcrumbs::render(, $patient))--}}
 

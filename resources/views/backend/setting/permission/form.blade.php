@@ -1,3 +1,4 @@
+@php use App\Supports\Constant; @endphp
 <div class="card-body">
     <div class="row">
         <div class="col-md-6">
@@ -5,17 +6,17 @@
         </div>
         <div class="col-md-6">
             {!! Form::nText('name', __('common.Name'), old('name', $permission->name ?? null), true ,[
-            'pattern' => \App\Supports\Constant::PERMISSION_NAME_ALLOW_CHAR,
+            'pattern' => Constant::PERMISSION_NAME_ALLOW_CHAR,
              'onkeyup' => 'this.value = this.value.replace(/\s+/g, \'-\').toLowerCase()',
              'title' => 'Only Alphanumeric, Hyphen(-), UnderScope(_), Fullstops(.) Allowed'
              ]) !!}
         </div>
         <div class="col-md-6">
-            {!! Form::nSelect('guard_name', 'Guard', config('backend.guard'), old('guard_name', $role->guard_name ?? \App\Supports\Constant::PERMISSION_GUARD)) !!}
+            {!! Form::nSelect('guard_name', 'Guard', config('backend.guard'), old('guard_name', $role->guard_name ?? Constant::PERMISSION_GUARD)) !!}
         </div>
         <div class="col-md-6">
-            {!! Form::nSelect('enabled', __('common.Enabled'), \App\Supports\Constant::ENABLED_OPTIONS,
-                old('enabled', ($permission->enabled ?? \App\Supports\Constant::ENABLED_OPTION)), true) !!}
+            {!! Form::nSelect('enabled', __('common.Enabled'), Constant::ENABLED_OPTIONS,
+                old('enabled', ($permission->enabled ?? Constant::ENABLED_OPTION)), true) !!}
         </div>
     </div>
     <div class="row">
@@ -46,7 +47,7 @@
                         required: true,
                         minlength: 3,
                         maxlength: 255,
-                        regex: '{{ \App\Supports\Constant::PERMISSION_NAME_ALLOW_CHAR }}',
+                        regex: '{{ Constant::PERMISSION_NAME_ALLOW_CHAR }}',
                     },
                     enabled: {
                         required: true

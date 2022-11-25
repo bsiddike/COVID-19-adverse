@@ -1,22 +1,25 @@
-<!-- The timeline -->
+@php use App\Supports\Utility; @endphp
+@php use App\Supports\CHTML; @endphp
+@php use Carbon\Carbon; @endphp
+        <!-- The timeline -->
 @if(!empty($timeline))
     <div class="timeline timeline-inverse">
-    @foreach($timeline as $date => $actions)
-        <!-- timeline time label -->
+        @foreach($timeline as $date => $actions)
+            <!-- timeline time label -->
             <div class="time-label">
-            <span class="{{ \App\Supports\Utility::randomBadgeBackground() }}">
+            <span class="{{ Utility::randomBadgeBackground() }}">
                 {{ date('d M. Y', strtotime($date)) }}
             </span>
             </div>
             <!-- /.timeline-label -->
-        @foreach($actions as $action)
-            <!-- timeline item -->
+            @foreach($actions as $action)
+                <!-- timeline item -->
                 <div>
-                    {!! \App\Supports\CHTML::eventIcons($action->event) !!}
+                    {!! CHTML::eventIcons($action->event) !!}
                     <div class="timeline-item">
                         <span class="time">
                             <i class="far fa-clock"></i>
-                            {{ \Carbon\Carbon::parse($action->created_at)->format('h:i a')  }}
+                            {{ Carbon::parse($action->created_at)->format('h:i a')  }}
                         </span>
                         <h3 class="timeline-header">
                             <a href="{{ route('backend.settings.users.show', ($action->user->id ?? 1)) }}">

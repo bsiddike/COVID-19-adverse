@@ -1,3 +1,4 @@
+@php use App\Supports\Constant; @endphp
 <div class="row">
     <div class="col-md-6">
         <label class="d-block">Name</label>
@@ -17,11 +18,11 @@
     </div>
     <div class="col-md-6">
         <label class="d-block">Enabled</label>
-        <p class="font-weight-normal">{{ \App\Supports\Constant::ENABLED_OPTIONS[$user->enabled] ?? null }}</p>
+        <p class="font-weight-normal">{{ Constant::ENABLED_OPTIONS[$user->enabled] ?? null }}</p>
     </div>
     <div class="col-md-6">
         <label class="d-block">Locale</label>
-        <p class="font-weight-normal">{{ \App\Supports\Constant::LOCALES[$user->locale] ?? null }}</p>
+        <p class="font-weight-normal">{{ Constant::LOCALES[$user->locale] ?? null }}</p>
     </div>
     <div class="col-md-6">
         <label class="d-block">Role(s)</label>

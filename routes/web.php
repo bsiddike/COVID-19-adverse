@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\PasswordResetController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\Model\ModelCountController;
 use App\Http\Controllers\Backend\Model\ModelEnabledController;
 use App\Http\Controllers\Backend\Model\ModelRestoreController;
 use App\Http\Controllers\Backend\Model\ModelSoftDeleteController;
@@ -19,7 +20,7 @@ use App\Http\Controllers\Backend\Setting\PermissionController;
 use App\Http\Controllers\Backend\Setting\RoleController;
 use App\Http\Controllers\Backend\Setting\UserController;
 use App\Http\Controllers\Backend\SettingController;
-use App\Http\Controllers\Frontend\Organization\ApplicantController;
+use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\TranslateController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
@@ -34,9 +35,7 @@ use Illuminate\Support\Facades\Route;
  * | contains the "web" middleware group. Now create something great!
  * |
  */
-Route::get('/', function () {
-    return redirect()->to('backend/login');
-})->name('home');
+Route::get('/', HomeController::class)->name('home');
 
 Route::get('translate-locale', TranslateController::class)->name('translate-locale');
 
@@ -46,16 +45,27 @@ Route::get('cache-clear', function () {
 
 //Frontend
 Route::name('frontend.')->group(function () {
-    Route::name('organization.')->group(function () {
-        /*        Route::get('applicant-registration', [ApplicantController::class, 'create'])
-                    ->name('applicants.create')->middleware('guest');
+    Route::resource('patients', \App\Http\Controllers\Frontend\PatientController::class)
+        ->only('index', 'show');
 
-                Route::post('applicant-registration', [ApplicantController::class, 'store'])
-                    ->name('applicants.store');*/
-    });
+    Route::get('patient-apply', [\App\Http\Controllers\Frontend\PatientController::class, 'apply'])
+        ->name('patients.apply');
+
+    Route::resource('symptoms', \App\Http\Controllers\Frontend\SymptomController::class)
+        ->only('index', 'show');
+
+    Route::get('symptoms/{symptom_number}/search', [\App\Http\Controllers\Frontend\SymptomController::class, 'search'])
+        ->where(['symptom_number' => '([0-9]+)'])
+    ->name('symptoms.search');
+
+    Route::get('patient-register', [\App\Http\Controllers\Frontend\SymptomController::class, 'register'])
+        ->name('patients.register');
+
+    Route::resource('vaccines', \App\Http\Controllers\Frontend\VaccineController::class)
+        ->only('index', 'show');
 });
 
-Route::prefix('backend')->group(function () {
+Route::prefix('admin')->group(function () {
     /**
      * Authentication Route
      */
@@ -123,16 +133,25 @@ Route::prefix('backend')->group(function () {
      * Admin Panel/ Backend Route
      */
     Route::get('/', function () {
-        return redirect(\route('backend.dashboard'));
+        return redirect()->route('backend.dashboard');
     })->name('backend');
+
+    Route::get('count/{model}', ModelCountController::class)
+        ->where(['model' => '([a-zA-Z0-9]+)'])->name('backend.model.count');
+
+    Route::get('patients/charts/{type}', [\App\Http\Controllers\Frontend\PatientController::class, 'charts'])
+        ->name('backend.patient.charts');
+
+    Route::get('symptoms/charts/{type}', [\App\Http\Controllers\Frontend\SymptomController::class, 'charts'])
+        ->name('backend.symptom.charts');
 
     Route::middleware(['auth'])->name('backend.')->group(function () {
         Route::get('/dashboard', DashboardController::class)
             ->name('dashboard');
 
-        /*        Route::get('applicant-registration', [ApplicantController::class, 'create'])
+        /*        Route::get('patient-registration', [ApplicantController::class, 'create'])
                     ->name('applicants.create');
-                Route::post('applicant-registration', [ApplicantController::class, 'store'])
+                Route::post('patient-registration', [ApplicantController::class, 'store'])
                     ->name('applicants.store');*/
 
         //Common Operations
@@ -147,8 +166,9 @@ Route::prefix('backend')->group(function () {
         Route::prefix('organization')->name('organization.')->group(function () {
             //Survey
             Route::prefix('patients')->name('patients.')->group(function () {
-                Route::patch('{patient}/restore', [PatientController::class, 'restore'])->name('restore');
-                Route::get('export', [PatientController::class, 'export'])->name('export');
+                Route::get('hospitalized', [PatientController::class, 'index'])->name('hospitalized');
+                Route::get('recovered', [PatientController::class, 'index'])->name('recovered');
+                Route::get('died', [PatientController::class, 'index'])->name('died');
             });
             Route::resource('patients', PatientController::class)->where(['patient' => '([0-9]+)']);
 

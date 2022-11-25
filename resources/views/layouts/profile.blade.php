@@ -1,3 +1,4 @@
+@php use App\Supports\CHTML; @endphp
 @extends('layouts.app')
 
 @section('content')
@@ -43,84 +44,84 @@
                 </div>
             </div>
         </div>
-    {{--    <div class="modal fade" id="bd-example-modal-lg" tabindex="-1" role="dialog"
-             aria-labelledby="myLargeModalLabel"
-             aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    {!! \Form::open(['route' => ['backend.settings.roles.user', $role->id], 'method' => 'put', 'id' => 'role-user-form']) !!}
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Available Permissions</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body" style="max-height: 70vh; overflow-y: scroll;">
-                        <div class="container-fluid px-0">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">
-                                                <i class="mdi mdi-magnify"></i>
-                                                </span>
+        {{--    <div class="modal fade" id="bd-example-modal-lg" tabindex="-1" role="dialog"
+                 aria-labelledby="myLargeModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        {!! \Form::open(['route' => ['backend.settings.roles.user', $role->id], 'method' => 'put', 'id' => 'role-user-form']) !!}
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Available Permissions</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" style="max-height: 70vh; overflow-y: scroll;">
+                            <div class="container-fluid px-0">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                    <i class="mdi mdi-magnify"></i>
+                                                    </span>
+                                                </div>
+                                                <input class="form-control" onkeyup="searchFilter(this.value, 'role-table');"
+                                                       placeholder="Search Permission Name" id="search" type="search">
                                             </div>
-                                            <input class="form-control" onkeyup="searchFilter(this.value, 'role-table');"
-                                                   placeholder="Search Permission Name" id="search" type="search">
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-12">
-                                    <table class="table table-hover table-sm mb-0" id="role-table">
-                                        <thead class="thead-light">
-                                        <tr class="text-center">
-                                            <th width="35" class="p-2 align-middle">
-                                                <div class="icheck-primary">
-                                                    {!! Form::checkbox('test', 1,false, ['id' => 'role_all']) !!}
-                                                    <label for="role_all"></label>
-                                                </div>
-                                            </th>
-                                            <th class="align-middle">Permission</th>
-                                            <th class="align-middle">Enabled</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        @forelse($roles as $role)
-                                            <tr class="@if($role->enabled == \App\Supports\Constant::ENABLED_OPTION) table-success @else table-danger @endif">
-                                                <td class="p-2 text-center align-middle">
+                                    <div class="col-12">
+                                        <table class="table table-hover table-bordered table-striped table-sm mb-0" id="role-table">
+                                            <thead class="thead-light">
+                                            <tr class="text-center">
+                                                <th width="35" class="p-2 align-middle">
                                                     <div class="icheck-primary">
-                                                        {!! Form::checkbox('roles[]', $role->id,
-                                                            in_array($role->id, $availablePermissionIds),
-                                                             ['id' => 'role_' . $role->id, 'class' => 'role-checkbox']) !!}
-                                                        <label for="{{ 'role_' . $role->id }}"></label>
+                                                        {!! Form::checkbox('test', 1,false, ['id' => 'role_all']) !!}
+                                                        <label for="role_all"></label>
                                                     </div>
-                                                </td>
-                                                <td class="align-middle">{{ $role->display_name }}</td>
-                                                <td class="align-middle text-center">{{ \App\Supports\Constant::ENABLED_OPTIONS[$role->enabled] }}</td>
+                                                </th>
+                                                <th class="align-middle">Permission</th>
+                                                <th class="align-middle">Enabled</th>
                                             </tr>
-                                        @empty
-                                            <tr>
-                                                <td colspan="3" class="text-center font-weight-bolder">
-                                                    No Permission/Privileges Available
-                                                </td>
-                                            </tr>
-                                        @endforelse
-                                        </tbody>
-                                    </table>
+                                            </thead>
+                                            <tbody>
+                                            @forelse($roles as $role)
+                                                <tr class="@if($role->enabled == \App\Supports\Constant::ENABLED_OPTION) table-success @else table-danger @endif">
+                                                    <td class="p-2 text-center align-middle">
+                                                        <div class="icheck-primary">
+                                                            {!! Form::checkbox('roles[]', $role->id,
+                                                                in_array($role->id, $availablePermissionIds),
+                                                                 ['id' => 'role_' . $role->id, 'class' => 'role-checkbox']) !!}
+                                                            <label for="{{ 'role_' . $role->id }}"></label>
+                                                        </div>
+                                                    </td>
+                                                    <td class="align-middle">{{ $role->display_name }}</td>
+                                                    <td class="align-middle text-center">{{ \App\Supports\Constant::ENABLED_OPTIONS[$role->enabled] }}</td>
+                                                </tr>
+                                            @empty
+                                                <tr>
+                                                    <td colspan="3" class="text-center font-weight-bolder">
+                                                        No Permission/Privileges Available
+                                                    </td>
+                                                </tr>
+                                            @endforelse
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                        {!! \Form::close(); !!}
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
-                    </div>
-                    {!! \Form::close(); !!}
                 </div>
-            </div>
-        </div>--}}
-    <!-- Address Modal -->
+            </div>--}}
+        <!-- Address Modal -->
         {{--    <div class="modal fade" id="staticBackdrop" data-backdrop="static"
                  data-keyboard="false" tabindex="-1"
                  aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -155,7 +156,7 @@
                     </div>
                 </div>
             </div>--}}
-        {!! \App\Supports\CHTML::confirmModal('User', ['export', 'delete', 'restore']) !!}
+        {!! CHTML::confirmModal('User', ['export', 'delete', 'restore']) !!}
     </div>
 @endsection
 

@@ -122,7 +122,7 @@ class SymptomService extends Service
     }
 
     /**
-     * Return formatted applicant profile format array
+     * Return formatted patient profile format array
      *
      * @param  array  $inputs
      * @return array
@@ -163,59 +163,69 @@ class SymptomService extends Service
         return $symptomInfo;
     }
 
-    /**
-     * Return formatted education qualification model collection
-     *
-     * @param  array  $inputs
-     * @return array
-     *
-     * @throws Exception
-     */
-    private function formatEducationQualification(array $inputs): array
+    public function getSymptomGenderBarMetrics(array $filters, string $column = 'symptom1')
     {
-        $examLevels = $this->examLevelRepository->getWith(['id' => $inputs['exam_level']]);
+        $filters['metric'] = 'sex';
+        $filters['metric_group_column'] = $column;
 
-        $qualifications = [];
+        $data = $this->getAllSymptoms($filters)->toArray();
+        $formatData = [];
+        $labels = [];
 
-        foreach ($examLevels as $examLevel) {
-            $prefix = $examLevel->code;
-            $qualifications[$examLevel->id]['exam_level_id'] = $inputs["{$prefix}_exam_level_id"] ?? null;
-            $qualifications[$examLevel->id]['exam_title_id'] = $inputs["{$prefix}_exam_title_id"] ?? null;
-            $qualifications[$examLevel->id]['exam_board_id'] = $inputs["{$prefix}_exam_board_id"] ?? null;
-            $qualifications[$examLevel->id]['exam_group_id'] = $inputs["{$prefix}_exam_group_id"] ?? null;
-            $qualifications[$examLevel->id]['institute_id'] = $inputs["{$prefix}_institute_id"] ?? null;
-            $qualifications[$examLevel->id]['pass_year'] = $inputs["{$prefix}_pass_year"] ?? null;
-            $qualifications[$examLevel->id]['roll_number'] = $inputs["{$prefix}_roll_number"] ?? null;
-            $qualifications[$examLevel->id]['grade_type'] = $inputs["{$prefix}_grade_type"] ?? null;
-            $qualifications[$examLevel->id]['grade_point'] = $inputs["{$prefix}_grade_point"] ?? null;
-            $qualifications[$examLevel->id]['enabled'] = 'yes';
+        $formatData[0]['label'] = 'Male';
+        $formatData[1]['label'] = 'Female';
+
+        $formatData[0]['borderWidth'] = 1;
+        $formatData[1]['borderWidth'] = 1;
+        $formatData[0]['datalabels'] = [
+            'align' => 'center',
+            'anchor' => 'center'
+        ];
+        $formatData[1]['datalabels'] = [
+            'align' => 'center',
+            'anchor' => 'center'
+        ];
+        foreach ($data as $index => $datum) {
+            //Male
+            $labels[] = $datum['symptom'];
+            $formatData[0]['data'][] = $datum['male'];
+            $formatData[0]['backgroundColor'][] = '#00a65a';
+            $formatData[0]['borderColor'][] = '#00a65a';
+            //Female
+            $formatData[1]['data'][] = $datum['female'];
+            $formatData[1]['backgroundColor'][] = '#f56954';
+            $formatData[1]['borderColor'][] = '#f56954';
         }
 
-        return $qualifications;
-    }
-
-    /**
-     * Return formatted work experience model collection
-     *
-     * @param  array  $inputs
-     * @return array
-     *
-     * @throws Exception
-     */
-    private function formatWorkQualification(array $inputs): array
-    {
-        $qualifications = [];
-
-        foreach ($inputs['job'] as $index => $input) {
-            $qualifications[$index]['company'] = $input['company'] ?? null;
-            $qualifications[$index]['designation'] = $input['designation'] ?? null;
-            $qualifications[$index]['start_date'] = $input['start_date'] ?? null;
-            $qualifications[$index]['end_date'] = $input['end_date'] ?? null;
-            $qualifications[$index]['responsibility'] = $input['responsibility'] ?? null;
-            $qualifications[$index]['enabled'] = 'yes';
-        }
-
-        return $qualifications;
+        return [
+            'type' => 'bar',
+            'data' => [
+                'labels' => $labels,
+                'datasets' => array_values($formatData),
+            ],
+            'options' => [
+                'maintainAspectRatio' => false,
+                'datasetFill' => false,
+                'responsive' => true,
+                'legend' => [
+                    'display' => true,
+                    'position' => 'top',
+                ],
+                'scales' => [
+                    'y' => [
+                        'beginAtZero' => true,
+                    ],
+                ],
+                'plugins' => [
+                    'datalabels' => [
+                        'color' => 'white',
+                        'font' => [
+                            'weight' => 'bold'
+                        ]
+                    ]
+                ],
+            ],
+        ];
     }
 
     /**

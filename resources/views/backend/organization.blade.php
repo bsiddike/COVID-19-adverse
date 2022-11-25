@@ -1,3 +1,4 @@
+@php use App\Supports\CHTML; @endphp
 @extends('layouts.app')
 
 @section('title', 'Settings')
@@ -78,7 +79,7 @@
         </div>
     </div>
     <!-- /.container-fluid -->
-    {!! \App\Supports\CHTML::confirmModal('Setting', ['export', 'delete', 'restore']) !!}
+    {!! CHTML::confirmModal('Setting', ['export', 'delete', 'restore']) !!}
 @endsection
 
 

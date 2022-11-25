@@ -1,0 +1,57 @@
+version: '3'
+
+services:
+  app:
+    container_name: App
+    build:
+      context: .
+      dockerfile: ./docker/nginx.dockerfile
+      args:
+        - USER=hafijul233
+        - GROUP=hafijul233
+    ports:
+      - 4000:80
+    volumes:
+      - ./:/var/www/html
+
+    depends_on:
+      - db
+      - php
+
+  db:
+    container_name: DB
+    image: mariadb:10.5
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_DATABASE=laravel
+      - MYSQL_USER=laravel
+      - MYSQL_PASSWORD=secret
+      - MYSQL_ROOT_PASSWORD=secret
+    restart: always
+
+  php:
+    container_name: PHP
+    build:
+      context: .
+      dockerfile: ./docker/php.dockerfile
+      args:
+        - USER=hafijul233
+        - GROUP=hafijul233
+    volumes:
+      - ./:/var/www/html
+
+  artisan:
+    container_name: Artisan
+    build:
+      context: .
+      dockerfile: ./docker/php.dockerfile
+      args:
+        - USER=hafijul233
+        - GROUP=hafijul233
+    volumes:
+      - ./:/var/www/html
+    working_dir: /var/www/html
+    depends_on:
+      - db
+    entrypoint: [ "php", "/var/www/html/artisan" ]

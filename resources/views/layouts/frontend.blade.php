@@ -10,8 +10,7 @@
 @endpush
 
 @push('plugin-style')
-    <!-- icheck bootstrap -->
-    <link rel="stylesheet" href="{{ asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+
 @endpush
 
 @push('theme-style')
@@ -20,16 +19,21 @@
 @endpush
 
 @section('body')
-    <body class=" @yield('body-class') login-page"
-          style="font-family: @if(session()->get('locale') == 'bd') 'SolaimanLipi' @else 'Times New Roman' @endif !important;">
+    <body class="layout-top-nav">
 
     @include('layouts.includes.preloader')
 
-    @include('layouts.includes.translator')
+    <div class="wrapper">
+        @include('layouts.partials.navbar-frontend')
+        <div class="content-wrapper" style="min-height: 388.4px;">
+            @yield('breadcrumbs')
+            <div class="content">
+                @yield('content')
+            </div>
+        </div>
+        @include('layouts.partials.main-footer')
+    </div>
 
-    @yield('content')
-
-    @include('layouts.includes.footer')
     <!-- jQuery -->
     <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
     <!-- Bootstrap 4 -->

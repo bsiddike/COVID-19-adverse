@@ -27,13 +27,14 @@
     "require": {
         "php": "^7.4|^8.0",
         "ext-gd": "*",
-        "ext-pdo": "*",
         "ext-json": "*",
+        "ext-pdo": "*",
         "diglactic/laravel-breadcrumbs": "^7.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "hafijul233/form": "^0.0.8",
         "intervention/image": "^2.7",
+        "kevincobain2000/laravel-erd": "^1.6",
         "kyslik/column-sortable": "^6.4",
         "laravel/framework": "^8.54",
         "laravelcollective/html": "^6.2",
@@ -45,7 +46,7 @@
         "yoeunes/notify": "^1.0"
     },
     "require-dev": {
-        "roave/security-advisories": "dev-latest",
+        "barryvdh/laravel-debugbar": "^3.7",
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
         "mockery/mockery": "^1.4.4",
@@ -57,7 +58,8 @@
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan-deprecation-rules": "^1.0",
         "phpstan/phpstan-phpunit": "^1.1",
-        "phpunit/phpunit": "^9.5.10"
+        "phpunit/phpunit": "^9.5.10",
+        "roave/security-advisories": "dev-latest"
     },
     "autoload": {
         "psr-4": {

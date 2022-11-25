@@ -7,7 +7,6 @@ use Database\Seeders\Backend\SARegisterSeeder;
 use Database\Seeders\Backend\Setting\PermissionSeeder;
 use Database\Seeders\Backend\Setting\RolePermissionSeeder;
 use Database\Seeders\Backend\Setting\RoleSeeder;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -19,18 +18,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Model::unguard();
-        $this->call([
-            PermissionSeeder::class,
-            RoleSeeder::class,
-            RolePermissionSeeder::class,
-            SARegisterSeeder::class,
-            AdminRegisterSeeder::class,
-            VaccineSeeder::class,
-            PatientSeeder::class,
-            SymptomSeeder::class,
-        ]);
+/*        $this->call([
+            PermissionSeeder::class, RoleSeeder::class, RolePermissionSeeder::class,
+            SARegisterSeeder::class, AdminRegisterSeeder::class
+        ]);*/
 
-        Model::reguard();
+        $this->call([VaccineSeeder::class, SymptomSeeder::class, PatientSeeder::class]);
+        //$this->call([SymptomSeeder::class, PatientSeeder::class]);
     }
 }

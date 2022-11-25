@@ -1,3 +1,5 @@
+@php use App\Models\Vaccine; @endphp
+@php use App\Supports\Constant; @endphp
 @extends('layouts.app')
 
 @section('title', __('menu-sidebar.Dashboard'))
@@ -20,6 +22,7 @@
 
 @push('page-style')
     <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('plugins/bootstrap-slider/css/bootstrap-slider.min.css') }}" type="text/css">
 @endpush
 
 @push('head-script')
@@ -28,16 +31,17 @@
 
 @section('breadcrumbs', Breadcrumbs::render())
 
-@section('actions'){{--
-    <div class="input-group">
-        <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        <i class="far fa-calendar-alt"></i>
-                      </span>
+@section('actions')
+    {{--
+        <div class="input-group">
+            <div class="input-group-prepend">
+                          <span class="input-group-text">
+                            <i class="far fa-calendar-alt"></i>
+                          </span>
+            </div>
+            <input type="text" class="form-control float-right" id="reservation">
         </div>
-        <input type="text" class="form-control float-right" id="reservation">
-    </div>
-    <!-- /.input group -->--}}
+        <!-- /.input group -->--}}
 @endsection
 
 @section('content')
@@ -61,35 +65,68 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-4">
-                                {!! \Form::nText('year', 'Year', request()->get('year'), false) !!}
+                                {{--{!! \Form::nText('year', 'Year', request()->get('year'), false) !!}--}}
+                                <div class="form-group">
+                                    <label>Date range:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="far fa-calendar-alt"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control float-right"
+                                               value="{{request()->get('recive_date')}}" name="recive_date"
+                                               id="recive_date">
+                                    </div>
+                                    <!-- /.input group -->
+                                </div>
                             </div>
                             <div class="col-md-4">
-                                {!! \Form::nText('age', 'Age', request()->get('age'), false) !!}
+                                {{--{!! \Form::nText('age', 'Age', request()->get('age'), false) !!}--}}
+                                <div class="form-group">
+                                    <label for="age">Age</label>
+                                    <div class="slider-blue">
+                                        <input type="text" value="" class="slider form-control" data-slider-min="0"
+                                               data-slider-max="100"
+                                               data-slider-step="5"
+                                               data-slider-value="[{{request()->get('age')??('0,100')}}]"
+                                               data-slider-orientation="horizontal"
+                                               data-slider-selection="before" data-slider-tooltip="show" name="age">
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-md-4">
-                                {!! \Form::nSelect('sex', 'Sex',
-                                ['M' => 'Male', 'F' => 'Female', 'U' => 'Unknown'],
+                                {!! Form::nSelect('sex', 'Sex',
+                                ['M' => 'Male', 'F' => 'Female'],
                                  request()->get('sex'), false, [ 'placeholder' => 'Select a sex']) !!}
                             </div>
-                            <div class="col-md-4">
-                                {!! \Form::nSelect('vaccine_id', 'Vaccine',
-                                \App\Models\Vaccine::all()->pluck('vax_name', 'vaers_id')->toArray(),
-                                 request()->get('vaccine_id'), false, [
+                            <div class="col-md-3">
+                                {!! Form::nSelect('vax_name', 'Vaccine',
+                                Vaccine::all()->where('vax_type','COVID19')->pluck('vax_name', 'vax_name')->toArray(),
+                                 request()->get('vax_name'), false, [
                                      'placeholder' => 'Select a vaccine Brand name'
                                  ]) !!}
                             </div>
-                            <div class="col-md-4">
-                                {!! \Form::nText('symptom', 'Symptom', request()->get('symptom'), false) !!}
+                            <div class="col-md-3">
+                                {!! Form::nText('symptom', 'Symptom', request()->get('symptom'), false) !!}
                             </div>
-                            <div class="col-md-4">
-                                {!! \Form::nText('state', 'State', request()->get('state'), false) !!}
+                            <div class="col-md-3">
+                                {!! Form::nText('vax_dose_series', 'Dose Series', request()->get('vax_dose_series'), false) !!}
+                            </div>
+                            <div class="col-md-3">
+                                {{--{!! \Form::nText('state', 'State', request()->get('state'), false) !!}--}}
+                                {!! Form::nSelect('state', 'State',
+                                Constant::USA_STATE,
+                                 request()->get('state'), false, [
+                                     'placeholder' => 'Select a State'
+                                 ]) !!}
                             </div>
                         </div>
                     </div>
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary">Search</button>
                     </div>
-                    {!! \Form::close() !!}
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>
@@ -105,8 +142,8 @@
         <div class="row">
             @include('backend.wizard.affected-gender')
             @include('backend.wizard.affected-age-wise')
-            @include('backend.wizard.affected-monthly')
             @include('backend.wizard.affected-state')
+            @include('backend.wizard.affected-monthly')
             @include('backend.wizard.top-10-vaccine-record')
         </div>
         <!-- /.container-fluid -->
@@ -117,5 +154,25 @@
     <!-- OPTIONAL SCRIPTS -->
     <script src="{{ asset('plugins/daterangepicker/moment.min.js') }}"></script>
     <script src="{{ asset('plugins/chart.js/Chart.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/1.2.1/chartjs-plugin-zoom.min.js" integrity="sha512-klQv6lz2YR+MecyFYMFRuU2eAl8IPRo6zHnsc9n142TJuJHS8CG0ix4Oq9na9ceeg1u5EkBfZsFcV3U7J51iew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{ asset('plugins/daterangepicker/daterangepicker.js') }}"></script>
+    <script src="{{ asset('plugins/bootstrap-slider/bootstrap-slider.min.js') }}"></script>
+    <script>
+        /* BOOTSTRAP SLIDER */
+        $('.slider').bootstrapSlider()
+        //Date range picker
+        $('#recive_date').daterangepicker(
+            {
+                autoUpdateInput: true,
+                showDropdowns: true,
+                minYear: 2018,
+                maxYear: parseInt(moment().format('YYYY'), 10),
+                startDate: '2019-01-01',
+                locale: {
+                    format: 'YYYY-MM-DD',
+                    cancelLabel: 'Clear'
+                }
+            }
+        )
+    </script>
 @endpush

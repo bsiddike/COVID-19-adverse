@@ -50,7 +50,6 @@ class CreatePatientsTable extends Migration
             $table->string('ofc_visit')->nullable()->default(null);
             $table->string('er_ed_visit')->nullable()->default(null);
             $table->text('allergies')->nullable()->default(null);
-            $table->timestamps();
         });
     }
 

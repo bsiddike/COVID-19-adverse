@@ -27,7 +27,7 @@ class SymptomService extends Service
     /**
      * SymptomService constructor.
      *
-     * @param  SymptomRepository  $symptomRepository
+     * @param SymptomRepository $symptomRepository
      */
     public function __construct(SymptomRepository $symptomRepository)
     {
@@ -38,8 +38,8 @@ class SymptomService extends Service
     /**
      * Get All Symptom models as collection
      *
-     * @param  array  $filters
-     * @param  array  $eagerRelations
+     * @param array $filters
+     * @param array $eagerRelations
      * @return Builder[]|Collection
      *
      * @throws Exception
@@ -52,8 +52,8 @@ class SymptomService extends Service
     /**
      * Create Symptom Model Pagination
      *
-     * @param  array  $filters
-     * @param  array  $eagerRelations
+     * @param array $filters
+     * @param array $eagerRelations
      * @return LengthAwarePaginator
      *
      * @throws Exception
@@ -66,8 +66,8 @@ class SymptomService extends Service
     /**
      * Show Symptom Model
      *
-     * @param  int  $id
-     * @param  bool  $purge
+     * @param int $id
+     * @param bool $purge
      * @return mixed
      *
      * @throws Exception
@@ -80,7 +80,7 @@ class SymptomService extends Service
     /**
      * Save Symptom Model
      *
-     * @param  array  $inputs
+     * @param array $inputs
      * @return array
      *
      * @throws Exception
@@ -102,13 +102,13 @@ class SymptomService extends Service
                 DB::commit();
 
                 return ['status' => true, 'message' => __('New Symptom Created'),
-                    'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!', ];
+                    'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!',];
             } else {
                 Log::error('Symptom Create Rollback', [$newSymptomInfo]);
                 DB::rollBack();
 
                 return ['status' => false, 'message' => __('New Symptom Creation Failed'),
-                    'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!', ];
+                    'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!',];
             }
         } catch (Exception $exception) {
             $this->symptomRepository->handleException($exception);
@@ -117,14 +117,14 @@ class SymptomService extends Service
             DB::rollBack();
 
             return ['status' => false, 'message' => $exception->getMessage(),
-                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!', ];
+                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!',];
         }
     }
 
     /**
      * Return formatted patient profile format array
      *
-     * @param  array  $inputs
+     * @param array $inputs
      * @return array
      */
     private function formatSymptomInfo(array $inputs)
@@ -234,26 +234,31 @@ class SymptomService extends Service
         $filters['metric'] = 'sex';
         $filters['metric_group_column'] = $column;
 
-        $data = $this->getAllSymptoms($filters);
+        $data = $this->getAllSymptoms($filters)->toArray();
 
-        dd($data);
+        $total = 0;
+        $totalMale = 0;
+        $totalFemale = 0;
 
-        $values = array_values($data[0]);
-
-        $total = array_sum($values);
-
-        foreach ($values as $index => $value) {
-            $values[$index] = round((($value * 100) / $total), 2);
+        foreach ($data as $datum) {
+            $total += ($datum['male'] + $datum['female']);
+            $totalMale += $datum['male'];
+            $totalFemale += $datum['female'];
         }
 
+        $totalMale = round((($totalMale * 100) / $total), 2);
+
+        $totalFemale = round((($totalFemale * 100) / $total), 2);
+
+
         return [
-            'type' => 'doughnut',
+            'type' => 'pie',
             'data' => [
-                'labels' => array_keys($data[0]),
+                'labels' => ['Male', 'Female'],
                 'datasets' => [
                     [
-                        'data' => $values,
-                        'backgroundColor' => ['#f56954', '#00a65a', '#f39c12'],
+                        'data' => [$totalMale, $totalFemale],
+                        'backgroundColor' => ['#f56954', '#00a65a'],
                     ],
                 ],
             ],
@@ -272,7 +277,7 @@ class SymptomService extends Service
     /**
      * Update Symptom Model
      *
-     * @param  array  $inputs
+     * @param array $inputs
      * @param $id
      * @return array
      *
@@ -294,17 +299,17 @@ class SymptomService extends Service
                     DB::commit();
 
                     return ['status' => true, 'message' => __('Symptom Info Updated'),
-                        'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!', ];
+                        'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!',];
                 } else {
                     Log::error('Symptom Update Rollback', [$symptom]);
                     DB::rollBack();
 
                     return ['status' => false, 'message' => __('Symptom Info Update Failed'),
-                        'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!', ];
+                        'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!',];
                 }
             } else {
                 return ['status' => false, 'message' => __('Symptom Model Not Found'),
-                    'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Alert!', ];
+                    'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Alert!',];
             }
         } catch (Exception $exception) {
             $this->symptomRepository->handleException($exception);
@@ -313,7 +318,7 @@ class SymptomService extends Service
             DB::rollBack();
 
             return ['status' => false, 'message' => $exception->getMessage(),
-                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!', ];
+                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!',];
         }
     }
 
@@ -333,19 +338,19 @@ class SymptomService extends Service
                 DB::commit();
 
                 return ['status' => true, 'message' => __('Symptom is Trashed'),
-                    'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!', ];
+                    'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!',];
             } else {
                 DB::rollBack();
 
                 return ['status' => false, 'message' => __('Symptom is Delete Failed'),
-                    'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!', ];
+                    'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!',];
             }
         } catch (Exception $exception) {
             $this->symptomRepository->handleException($exception);
             DB::rollBack();
 
             return ['status' => false, 'message' => $exception->getMessage(),
-                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!', ];
+                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!',];
         }
     }
 
@@ -365,26 +370,26 @@ class SymptomService extends Service
                 DB::commit();
 
                 return ['status' => true, 'message' => __('Symptom is Restored'),
-                    'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!', ];
+                    'level' => Constant::MSG_TOASTR_SUCCESS, 'title' => 'Notification!',];
             } else {
                 DB::rollBack();
 
                 return ['status' => false, 'message' => __('Symptom is Restoration Failed'),
-                    'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!', ];
+                    'level' => Constant::MSG_TOASTR_ERROR, 'title' => 'Alert!',];
             }
         } catch (Exception $exception) {
             $this->symptomRepository->handleException($exception);
             DB::rollBack();
 
             return ['status' => false, 'message' => $exception->getMessage(),
-                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!', ];
+                'level' => Constant::MSG_TOASTR_WARNING, 'title' => 'Error!',];
         }
     }
 
     /**
      * Export Object for Export Download
      *
-     * @param  array  $filters
+     * @param array $filters
      * @return SurveyWiseExport|SymptomWiseExport
      *
      * @throws Exception

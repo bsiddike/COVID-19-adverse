@@ -220,7 +220,7 @@ class SymptomService extends Service
                     'labels' => [
                         'render' => 'value',
                         'position' => 'border',
-                        'fontColor' => '#fff',
+                        'fontColor' => '#9c9c9c',
                         'fontStyle'=> 'bold',
                         'precision' => 2,
                     ],

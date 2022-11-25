@@ -10,7 +10,7 @@
         </div>
         <div class="card-body">
             <canvas id="genderOutcomesVaccine"
-                    style="min-height: 458px; height: 458px; max-height: 458px; max-width: 100%;">
+                    style="min-height: 294px; height: 294px; max-height: 294px; max-width: 100%;">
             </canvas>
         </div>
     </div>

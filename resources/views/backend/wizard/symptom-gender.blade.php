@@ -8,8 +8,8 @@
                 </button>
             </div>
         </div>
-        <div class="card-body">
-            <canvas id="symptomGender"
+        <div class="card-body pt-3">
+            <canvas id="symptomGender" class="chartjs-render-monitor mt-5"
                     style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;">
             </canvas>
         </div>

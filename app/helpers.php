@@ -112,7 +112,7 @@ if (!function_exists('data_limit')) {
     function data_limit($filename)
     {
         $file_count = (int)filter_var($filename, FILTER_SANITIZE_NUMBER_INT);
-        return ($file_count > 5 && $file_count <= 20);
+        return ($file_count > 20);
     }
 }
 

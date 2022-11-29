@@ -42,21 +42,18 @@ class PatientClearCommand extends Command
     {
         try {
             $dates = array_unique(Patient::select('todays_date')->pluck('todays_date')->toArray());
-
-            dd($dates);
-
-
             foreach ($dates as $date) {
-                if (DB::connection()
-                    ->getPdo()
-                    ->prepare("delete from `patients` where `todays_date` = '{$date}' limit 500, 100000")
-                    ->execute()) {
-                    $this->info("Date {$date} extra data deleted");
-                } else {
-                    $this->error("Date {$date} extra data failed");
+                if ($date != null) {
+                    if (DB::connection()
+                        ->getPdo()
+                        ->prepare("delete from `patients` where `todays_date` = '{$date}' limit 500, 100000")
+                        ->execute()) {
+                        $this->info("Date {$date} extra data deleted");
+                    } else {
+                        $this->error("Date {$date} extra data failed");
+                    }
                 }
             }
-
             return Command::SUCCESS;
 
         } catch (\Exception $exception) {

@@ -36,6 +36,7 @@ class PatientClearCommand extends Command
      * Execute the console command.
      *
      * @return int
+     * @throws \Exception
      */
     public function handle()
     {
@@ -44,7 +45,7 @@ class PatientClearCommand extends Command
             $dates = ["2020-12-18"];
 
             foreach ($dates as $date) {
-                dd(DB::unprepared("SELECT `id` from patients where `todays_date` = '2020-12-18' limit 500, 10000000"));
+                dd(Patient::where('todays_date', '=', '2020-12-18')->limit(500)->offset(10000)->get()->toArray());
             }
 
             return Command::SUCCESS;

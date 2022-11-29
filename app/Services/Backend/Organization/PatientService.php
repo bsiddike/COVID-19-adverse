@@ -42,9 +42,9 @@ class PatientService extends Service
         $data = $this->getAllPatients($filters)->toArray();
         $values = array_values($data[0]);
         $total = array_sum($values);
-        foreach ($values as $index => $value) {
+        /*foreach ($values as $index => $value) {
                 $values[$index] = round((($value * 100) / $total), 2);
-        }
+        }*/
 
         return [
             'type' => 'doughnut',

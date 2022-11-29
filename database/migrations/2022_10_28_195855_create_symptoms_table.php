@@ -15,7 +15,7 @@ class CreateSymptomsTable extends Migration
     {
         Schema::create('symptoms', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('vaers_id')->nullable()->default(null);
+            $table->bigInteger('vaers_id')->nullable()->default(null)->index();
             $table->string('symptom1')->nullable()->default(null);
             $table->float('symptomversion1')->nullable()->default(null);
             $table->string('symptom2')->nullable()->default(null);
@@ -26,6 +26,11 @@ class CreateSymptomsTable extends Migration
             $table->float('symptomversion4')->nullable()->default(null);
             $table->string('symptom5')->nullable()->default(null);
             $table->float('symptomversion5')->nullable()->default(null);
+            $table->foreign('vaers_id')
+                ->references('vaers_id')
+                ->on('patients')
+                ->cascadeOnUpdate()
+                ->cascadeOnDelete();
         });
     }
 

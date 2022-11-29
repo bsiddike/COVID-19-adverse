@@ -44,15 +44,17 @@ class PatientClearCommand extends Command
 
         foreach ($dates as $date) {
             if (is_string($date)) {
-
                 $this->line("Date {$date}, Type " . gettype($date));
-
                 $pdo = DB::connection()->getPdo();
-                $query = $pdo->prepare("delete from `patients` where `todays_date` = '{$date}' limit 500, 100000");
-
-                ($query->execute())
-                    ? $this->info("Date {$date} extra data deleted")
-                    : $this->error("Date {$date} extra data failed");
+                $query = $pdo->prepare("select `id` from `patients` where `todays_date` = '{$date}' limit 500, 100000");
+                if ($query->execute()) {
+                    while ($row = $query->fetch(\PDO::FETCH_ASSOC)) {
+                        DB::table('patients')->delete($row['id']);
+                    }
+                    $this->info("Date {$date} extra data deleted");
+                } else {
+                    $this->error("Date {$date} extra data failed");
+                }
             }
         }
         return Command::SUCCESS;

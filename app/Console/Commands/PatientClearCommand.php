@@ -43,7 +43,8 @@ class PatientClearCommand extends Command
         try {
             $dates = array_unique(Patient::select('todays_date')->pluck('todays_date')->toArray());
             foreach ($dates as $date) {
-                if ($date != null) {
+                $this->line("Date : ({$date}) Type : " . gettype($date));
+/*                if ($date != null) {
                     if (DB::connection()
                         ->getPdo()
                         ->prepare("delete from `patients` where `todays_date` = '{$date}' limit 500, 100000")
@@ -52,7 +53,7 @@ class PatientClearCommand extends Command
                     } else {
                         $this->error("Date {$date} extra data failed");
                     }
-                }
+                }*/
             }
             return Command::SUCCESS;
 

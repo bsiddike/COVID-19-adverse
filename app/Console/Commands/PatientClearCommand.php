@@ -45,8 +45,15 @@ class PatientClearCommand extends Command
             $dates = ["2020-12-18"];
 
             foreach ($dates as $date) {
-                dd(Patient::where('todays_date', '=', '2020-12-18')->limit(500)->offset(10000)->toSql());
+                $pdo = DB::connection()->getPdo();
+                $query = $pdo->prepare("select * from `patients` where `todays_date` = :select_date limit 500, 10000");
+                $query->execute(['select_date' => $date]);
+                while ($row = $query->fetch(\PDO::FETCH_ASSOC)) {
+                    dump($row);
+                }
             }
+
+            dd();
 
             return Command::SUCCESS;
 

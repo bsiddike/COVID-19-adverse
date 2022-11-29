@@ -44,7 +44,7 @@ class PatientClearCommand extends Command
             $dates = ["2020-12-18"];
 
             foreach ($dates as $date) {
-                dd(DB::table('patients')->where('todays_date', '=', $date)->limit(500)->offset(10000000)->get()->toArray());
+                dd(DB::unprepared("SELECT `id` from patients where `todays_date` = '2020-12-18' limit 500, 10000000"));
             }
 
             return Command::SUCCESS;

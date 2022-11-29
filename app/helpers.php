@@ -1,6 +1,7 @@
 <?php
 
 use Carbon\Carbon;
+use Illuminate\Database\Query\Builder;
 
 if (!function_exists('percent')) {
     function percent($total, $individual, $decimals = 2, $thou_sep = '', $symbol = '%')
@@ -111,13 +112,13 @@ if (!function_exists('data_limit')) {
     function data_limit($filename)
     {
         $file_count = (int)filter_var($filename, FILTER_SANITIZE_NUMBER_INT);
-        return ($file_count <= 5);
+        return ($file_count > 5 && $file_count <= 20);
     }
 }
 
 if (!function_exists('is_joined')) {
     /**
-     * @param \Illuminate\Database\Query\Builder|\Illuminate\Database\Eloquent\Builder $query
+     * @param Builder|\Illuminate\Database\Eloquent\Builder $query
      * @param string $table
      * @return bool
      */

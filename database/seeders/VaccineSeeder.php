@@ -25,7 +25,7 @@ class VaccineSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-/*        DB::table('vaccines')->truncate();*/
+        /*        DB::table('vaccines')->truncate();*/
         $target_dir = base_path('database/data/2020-2022-VAERSVAX/');
         $files = scandir($target_dir);
         foreach ($files as $file) {
@@ -43,16 +43,17 @@ class VaccineSeeder extends Seeder
                             set_time_limit(2100);
                             ini_set('memory_limit', -1);
 
-                            return Vaccine::create([
-                                'vaers_id' => (int)$line[0] ?? null,
-                                'vax_type' => clean($line[1]),
-                                'vax_manu' => clean($line[2]),
-                                'vax_lot' => clean($line[3]),
-                                'vax_dose_series' => clean($line[4]),
-                                'vax_route' => clean($line[5]),
-                                'vax_site' => clean($line[6]),
-                                'vax_name' => clean($line[7]),
-                            ]);
+                            return DB::table('vaccines')
+                                ->insertOrIgnore([
+                                    'vaers_id' => (int)$line[0] ?? null,
+                                    'vax_type' => clean($line[1]),
+                                    'vax_manu' => clean($line[2]),
+                                    'vax_lot' => clean($line[3]),
+                                    'vax_dose_series' => clean($line[4]),
+                                    'vax_route' => clean($line[5]),
+                                    'vax_site' => clean($line[6]),
+                                    'vax_name' => clean($line[7]),
+                                ]);
                         });
                 $this->command->info("Seeded: {$file} finished, Date: " . date("c"));
             }

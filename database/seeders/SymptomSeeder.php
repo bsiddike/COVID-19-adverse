@@ -49,7 +49,8 @@ class SymptomSeeder extends Seeder
                             set_time_limit(2100);
                             ini_set('memory_limit', -1);
 
-                            return Symptom::create([
+                            return DB::table('symptoms')
+                                ->insertOrIgnore([
                                 'vaers_id' => (int)clean($line[0]),
                                 'symptom1' => clean($line[1]),
                                 'symptomversion1' => clean($line[2]),

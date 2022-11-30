@@ -21,9 +21,10 @@ class DatabaseSeeder extends Seeder
 /*        $this->call([
             PermissionSeeder::class, RoleSeeder::class, RolePermissionSeeder::class,
             SARegisterSeeder::class, AdminRegisterSeeder::class
-        ]);*/
+        ]);
 
         $this->call(PatientSeeder::class);
-        //, VaccineSeeder::class, SymptomSeeder::class]);
+*/
+        $this->call([VaccineSeeder::class, SymptomSeeder::class]);
     }
 }
